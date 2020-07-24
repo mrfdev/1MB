@@ -1,7 +1,7 @@
 #!/bin/bash
 # chmod a+x update.sh
 # ./update.sh
-# Update Papermc.io's jar, build 002, for Minecraft 1.15.2, by Floris
+# Update Papermc.io's jar, build 003, for Minecraft 1.16.1, by Floris
 
 
 #### NOT FINISHED : DO NOT USE

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-LWC.sh
-# @Version: 1.0, build 002
-# @Release: December 17th, 2018
+# @Version: 1.0, build 003
+# @Release: July 25th, 2020
 # @Description: Shell script for Modern LWC 2.1.1, help convert SQLite player names to UUID
 # @Contact: mrfloris in MineCraft / https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-LWC.sh

@@ -17,3 +17,10 @@ Sure, feel free to correct urls, submit suggestions, etc.
 [sqlite cli](https://www.sqlite.org/cli.html)
 
 [Spigot Wiki: rate-limi](https://www.spigotmc.org/wiki/rate-limit/)
+
+[tldp: comparisons](http://tldp.org/LDP/abs/html/comparison-ops.html)
+[tldr helper](https://tldr.ostera.io)
+
+[bash shell check](https://www.shellcheck.net/)
+[bash colors](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
+[bash minifier](http://bash-minifier.appspot.com/)

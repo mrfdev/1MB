@@ -91,7 +91,5 @@ done
 echo " ---- 1MB-lwc.sh script ended. ($LWC updated, log file: $LOG)"
 
 # NOTEPAD (you can ignore this.. just blah blah I don't want to forget)
-# https://www.sqlite.org/cli.html
 # POST https://api.mojang.com/users/profiles/minecraft/mrfloris
 # RESL {"id":"631e3896da2a4077974bd047859d76bc","name":"mrfloris"}
-# https://www.spigotmc.org/wiki/rate-limit/

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ##### https://scripts.1moreblock.com/mcf
-# version 1.1 build 003, by mrfloris
+# version 1.1 build 004, by mrfloris
+# release: July 25th, 2020
 #
 # Little shell script to process all the .jars at once
 # and it puts the output in a MCF.log file.

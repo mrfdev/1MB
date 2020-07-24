@@ -18,7 +18,7 @@
 # To start the Minecraft Spigot Server each time, 
 # and NOT fork it into the background, Type:  ./1MB-minecraft.sh
 
-# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/start
+# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/
 
 
 ### CONFIGURATION

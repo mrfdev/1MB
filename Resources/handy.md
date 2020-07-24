@@ -15,3 +15,5 @@ Sure, feel free to correct urls, submit suggestions, etc.
 [YAML Validator](http://www.yamllint.com/)
 
 [sqlite cli](https://www.sqlite.org/cli.html)
+
+[Spigot Wiki: rate-limi](https://www.spigotmc.org/wiki/rate-limit/)

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 1.9, build 046
-# @Release: July 24th, 2020
+# @Version: 1.9, build 047
+# @Release: July 25th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv

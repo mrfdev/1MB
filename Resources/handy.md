@@ -14,3 +14,4 @@ Sure, feel free to correct urls, submit suggestions, etc.
 
 [YAML Validator](http://www.yamllint.com/)
 
+[sqlite cli](https://www.sqlite.org/cli.html)

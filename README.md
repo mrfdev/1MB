@@ -21,3 +21,7 @@ If you wish to play, please understand we're a family friendly survival server, 
 
 `1moreblock.com:25565` (Currently Java Edition: 1.16.1)
 
+## Information (Useful links)
+
+Our website [www.1moreblock.com](https://omgboards.com/)
+Our discord [discord.1moreblock.com](https://discord.gg/KzTDhxv)

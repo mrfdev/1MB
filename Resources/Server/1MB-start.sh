@@ -22,7 +22,7 @@
 # one with .spigot, behind the pid id. then: screen -r spigot
 # Tip: To get out of the server console, without quitting: Control+AD
 
-# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/start
+# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/
 
 
 ### CONFIGURATION

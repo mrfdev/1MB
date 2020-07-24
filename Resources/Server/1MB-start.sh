@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-start.sh
-# @Version: 1.5, build 024 for Spigot 1.16.1 (java 11)
-# @Release: July 24th, 2020
+# @Version: 1.5, build 025 for Spigot 1.16.1 (java 11)
+# @Release: July 25th, 2020
 # @Description: Helps us start a Minecraft Spigot 1.16.1 server.
 # @Contact:	I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv

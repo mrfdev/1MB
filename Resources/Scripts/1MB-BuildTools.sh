@@ -9,7 +9,7 @@
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 
-# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/
+# @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
 #

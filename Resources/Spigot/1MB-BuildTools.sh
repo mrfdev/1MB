@@ -429,15 +429,6 @@ okay "That's it, we're done!"
 
 
 ## TODO ##################
-
-# info
-# http://tldp.org/LDP/abs/html/comparison-ops.html
-# https://www.shellcheck.net/
-# https://misc.flogisoft.com/bash/tip_colors_and_formatting
-# http://bash-minifier.appspot.com/
-# https://tldr.ostera.io
-
 # move 'failed' and 'quitting' into oops function
 # debug and oops and output # should be one functions, .. different means. 
-
 #### END OF TODO

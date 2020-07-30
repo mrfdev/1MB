@@ -9,7 +9,7 @@
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 
-# @URL: Latest source, info, & terms: https://scripts.1moreblock.com/
+# @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
 #
@@ -48,7 +48,7 @@ JAVA_MEMORY=""
 ###
 
 # What to call the cache-file (default: cache.txt)
-CACHEFILE="cache.txt"
+CACHEFILE="cachespigot.txt"
 
 # What to call the output jar file
 JAR_SPIGOT="spigot-$MINECRAFT_VERSION.jar" 

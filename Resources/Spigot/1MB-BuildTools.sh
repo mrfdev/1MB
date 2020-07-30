@@ -455,7 +455,7 @@ else
 fi
 
 _output debug "Done. Next, isolating $JAR_SPIGOT .."
-mv "$JAR_SPIGOT" "$DIR_BASE" || _output oops "Failed; No such file or directory. Quitting!"
+mv -f "$JAR_SPIGOT" "$DIR_BASE" || _output oops "Failed; No such file or directory. Quitting!"
 cd "$DIR_BASE" || _output oops "Failed; Could not change to $DIR_BASE. Quitting!"
 
 ls -lh "$JAR_SPIGOT" || _output oops "Failed; Could not list '$JAR_SPIGOT'. Quitting!"

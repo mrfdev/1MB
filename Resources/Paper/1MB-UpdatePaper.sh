@@ -302,10 +302,11 @@ _downloadedJar="paper-$CURRENT_PAPER_BUILD.jar"
 
 if [ -f "$_downloadedJar" ]
 then
-    _output debug "Found downloaded jar $_downloadedJar"
+    _output debug "Done. Next, isolating $_downloadedJar .."
     mv -f "$_downloadedJar" "$CURRENTFILE" || _output oops "Was unable to rename $_downloadedJar to $CURRENTFILE"
     _output debug "Renamed $_downloadedJar to $CURRENTFILE, printing list:"
-    ls -all *.jar
+    ls -lh "$CURRENTFILE"
+    pwd
 else
     _output oops "Could not find downloaded jar $_downloadedJar"
 fi

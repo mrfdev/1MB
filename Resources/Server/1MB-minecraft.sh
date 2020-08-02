@@ -46,7 +46,7 @@ _javaBin=""
 # 11 (if you want to make spigot for 1.13.2 - 1.16.1)
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
 
-_javaMemory=""
+_javaMemory="-Xms4G -Xmx4G"
 #	"" = uses the default
 #	"-Xmx2G" = maximum memory allocation pool of memory for JVM.
 #	"-Xms1G" = initial memory allocation pool of memory for JVM.
@@ -62,7 +62,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 _noGui="--nogui" # leave "" if you want the 1.16.1 server-gui
 
 # Debug mode on or off?
-_debug=true
+_debug=false
 # Default: true (that means it spits out progress))
 #######################################################
 #### !You're done, stop editing beyond this point! ####

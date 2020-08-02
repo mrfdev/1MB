@@ -222,7 +222,7 @@ function binDetails() {
 
 function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
 
-#prequisites
+#prerequisites
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 

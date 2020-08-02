@@ -89,7 +89,7 @@ function _output {
     esac
 }
 
-#prequisites
+#prerequisites
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme

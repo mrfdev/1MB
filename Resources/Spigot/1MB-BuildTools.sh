@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 050
-# @Release: July 30th, 2020
+# @Version: 2.0, build 051
+# @Release: August 2nd, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
-
-# @URL: Latest source, info, & support: https://scripts.1moreblock.com/
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
 #
@@ -122,24 +121,21 @@ DIR_BUILDTOOLS="$DIR_BASE/BuildTools/"
 function _output {
     case "$1" in
     oops)
-        _args="${*:2}"
-        _prefix="(Script Halted!)"
+        _args="${*:2}"; _prefix="(Script Halted!)";
         echo -e "\\n$B$Y$_prefix$X $_args $R" >&2
         cache false "$_prefix $_args" # Updating cachefile
         rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     okay)
-        _args="${*:2}"
-        _prefix="(Info)"
+        _args="${*:2}"; _prefix="(Info)";
         echo -e "\\n$B$Y$_prefix$C $_args $R" >&2
         cache true "$_prefix $_args"
         rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     debug)
-        _args="${*:2}"
-        _prefix="(Debug)"
+        _args="${*:2}"; _prefix="(Debug)";
         if [ "$DEBUG" == true ]; then
             if [ "$2" != 1 ]; then
                 echo -e "\\n$Y$_prefix$C $_args $R"
@@ -150,8 +146,7 @@ function _output {
         fi
     ;;
     *)
-        _args="${*:1}"
-        _prefix="(Unknown)"
+        _args="${*:1}"; _prefix="(Unknown)";
         echo "$_prefix $_args"
     ;;
     esac
@@ -183,8 +178,7 @@ function cache {
 #
 ###
 
-if [ -f "$CACHEFILE" ]
-then
+if [ -f "$CACHEFILE" ]; then
     # success
     # There's an existing cache
     _output debug "Found an existing CACHEFILE '$CACHEFILE'."
@@ -213,14 +207,10 @@ CACHE_BT_BUILD=$(sed '3q;d' $CACHEFILE) #line3
 CACHE_SH_STATE=$(sed '4q;d' $CACHEFILE) #line4
 CACHE_SH_STMSG=$(sed '5q;d' $CACHEFILE) #line5
 
-
-function binExists() { 
-    type "$1" >/dev/null 2>&1
-}
+function binExists() { type "$1">/dev/null 2>&1; }
 
 function binDetails() { 
-    _cmd="$_"
-    _cmd="$_cmd"
+    _cmd="$_"; _cmd="$_cmd";
     _cmdpath=$(command -V "$_cmd" | awk '{print $3}')
     if [ "$_cmd" == "java" ]; then
         _cmdversion=$($_cmd -version 2>&1 | awk -F '"' '/version/ {print $2}')
@@ -230,11 +220,7 @@ function binDetails() {
     _output debug "cmd: $_cmd, path: $_cmdpath, version: $_cmdversion"
 }
 
-function version_gt() { 
-    test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1";
-}
-
-
+function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
 
 #prequisites
 
@@ -428,7 +414,6 @@ else
     mv $JAR_BUILDTOOLS $DIR_BUILDTOOLS
     #TODO make this: cp -f spigot-*.jar "${SERVER_DIR}"
     _output debug "Upgrade: BuildTools jar downloaded .. ready to go."
-
 fi
 
 # Update: What happened?

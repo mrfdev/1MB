@@ -95,24 +95,21 @@ CACHEFILE="$DIR_BASE/$CACHEFILE"
 function _output {
     case "$1" in
     oops)
-        _args="${*:2}"
-        _prefix="(Script Halted!)"
+        _args="${*:2}"; _prefix="(Script Halted!)";
         echo -e "\\n$B$Y$_prefix$X $_args $R" >&2
         cache false "$_prefix $_args" # Updating cachefile
         rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     okay)
-        _args="${*:2}"
-        _prefix="(Info)"
+        _args="${*:2}"; _prefix="(Info)";
         echo -e "\\n$B$Y$_prefix$C $_args $R" >&2
         cache true "$_prefix $_args"
         rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     debug)
-        _args="${*:2}"
-        _prefix="(Debug)"
+        _args="${*:2}"; _prefix="(Debug)";
         if [ "$DEBUG" == true ]; then
             if [ "$2" != 1 ]; then
                 echo -e "\\n$Y$_prefix$C $_args $R"
@@ -123,8 +120,7 @@ function _output {
         fi
     ;;
     *)
-        _args="${*:1}"
-        _prefix="(Unknown)"
+        _args="${*:1}"; _prefix="(Unknown)";
         echo "$_prefix $_args"
     ;;
     esac
@@ -155,8 +151,7 @@ function cache {
 #
 ###
 
-if [ -f "$CACHEFILE" ]
-then
+if [ -f "$CACHEFILE" ]; then
     # success
     # There's an existing cache
     _output debug "Found an existing CACHEFILE '$CACHEFILE'."
@@ -186,13 +181,10 @@ CACHE_SH_STATE=$(sed '4q;d' $CACHEFILE) #line4
 CACHE_SH_STMSG=$(sed '5q;d' $CACHEFILE) #line5
 
 
-function binExists() { 
-    type "$1" >/dev/null 2>&1
-}
+function binExists() { type "$1" >/dev/null 2>&1; }
 
 function binDetails() { 
-    _cmd="$_"
-    _cmd="$_cmd"
+    _cmd="$_"; _cmd="$_cmd";
     _cmdpath=$(command -V "$_cmd" | awk '{print $3}')
     if [ "$_cmd" == "java" ]; then
         _cmdversion=$($_cmd -version 2>&1 | awk -F '"' '/version/ {print $2}')
@@ -202,11 +194,7 @@ function binDetails() {
     _output debug "cmd: $_cmd, path: $_cmdpath, version: $_cmdversion"
 }
 
-function version_gt() { 
-    test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1";
-}
-
-
+function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
 
 #prequisites
 
@@ -260,8 +248,7 @@ _output debug "Found the current build (offline): $CACHE_PP_BUILD"
 _output debug "Found the current build (online): $CURRENT_PAPER_BUILD"
 
 # if our cached number is less than our found online number, it's time to backup and upgrade.
-if [ "$CACHE_PP_BUILD" -lt "$CURRENT_PAPER_BUILD" ]
-then
+if [ "$CACHE_PP_BUILD" -lt "$CURRENT_PAPER_BUILD" ]; then
     _output debug "Cache $CACHE_PP_BUILD is less than online $CURRENT_PAPER_BUILD (We can continue..)"
     # Updating our cache file with the newer build number
     sed -i.tmp "2s#.*#${CURRENT_PAPER_BUILD}#" "$CACHEFILE"
@@ -275,8 +262,7 @@ CURRENTFILE="$DIR_BASE/$CURRENTFILE"
 cd "$DIR_BASE" || _output oops "Could not change to $DIR_BASE"
 
 # is there an old paper jar backup?
-if [ -f "$BACKUPFILE" ]
-then
+if [ -f "$BACKUPFILE" ]; then
 	_output debug "Found an existing jar backed up: '$BACKUPFILE', removing it.."
 	rm -f "$BACKUPFILE" # Clean up; removing backup
 else
@@ -284,8 +270,7 @@ else
 fi
 
 # is there a current paper jar file to backup?
-if [ -f "$CURRENTFILE" ]
-then
+if [ -f "$CURRENTFILE" ]; then
 	_output debug "Found an existing jar '$CURRENTFILE', backing it up.."
 	mv -f "$CURRENTFILE" "$BACKUPFILE" || _output oops "Backup move of $CURRENTFILE failed. "
 else
@@ -300,8 +285,7 @@ $_GETTER $URL_DOWNLOAD || _output oops "Download of $DOWNLOADFILE failed."
 # let's rename it to paper-1.16.1.jar
 _downloadedJar="paper-$CURRENT_PAPER_BUILD.jar"
 
-if [ -f "$_downloadedJar" ]
-then
+if [ -f "$_downloadedJar" ]; then
     _output debug "Done. Next, isolating $_downloadedJar .."
     mv -f "$_downloadedJar" "$CURRENTFILE" || _output oops "Was unable to rename $_downloadedJar to $CURRENTFILE"
     _output debug "Renamed $_downloadedJar to $CURRENTFILE, printing list:"

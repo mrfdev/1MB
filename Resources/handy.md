@@ -24,3 +24,6 @@ Sure, feel free to correct urls, submit suggestions, etc.
 [bash shell check](https://www.shellcheck.net/)
 [bash colors](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 [bash minifier](http://bash-minifier.appspot.com/)
+
+[tmux on macOS Catalina](https://nangkyeong.tistory.com/entry/Using-tmux-on-macOS-Catalina)
+[screen on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server)

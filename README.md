@@ -25,3 +25,7 @@ If you wish to play, please understand we're a family friendly survival server, 
 
 Our website [www.1moreblock.com](https://omgboards.com/)
 Our discord [discord.1moreblock.com](https://discord.gg/KzTDhxv)
+
+## Version
+
+This is 1MB Github version 1.0 build 003, August 2nd, 2020.

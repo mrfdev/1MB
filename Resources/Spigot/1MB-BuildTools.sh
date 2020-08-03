@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 051
-# @Release: August 2nd, 2020
+# @Version: 2.0, build 052
+# @Release: August 3rd, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -12,73 +12,68 @@
 
 ### CONFIGURATION
 #
-# Configuration variables you can declare 
-# to match your personal situation.
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
 #
 ###
 
-# Which version are we trying to build?
-MINECRAFT_VERSION="1.16.1"
+_minecraftVersion="1.16.1"
+# Which version are we running?
 
 _minJavaVersion=11.0
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up.
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up.
 
-# Debug mode on or off?
-DEBUG=true
-# Default: true (that means it spits out progress))
-
+_jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
-JAR_BUILDTOOLS="BuildTools.jar"
 
-JAVA_MEMORY=""
-#   "" = uses the default
-#   "-Xmx2G" = maximum memory allocation pool of memory for JVM.
-#   "-Xms1G" = initial memory allocation pool of memory for JVM.
-# For Spigot servers we recommend -Xms10G -Xmx10G for 16GB systems.
+_javaMemory=""
+# "" = uses the default
+# "-Xmx2G" = maximum memory allocation pool of memory for JVM.
+# "-Xms1G" = initial memory allocation pool of memory for JVM.
+# For Spigot / Paper servers we recommend -Xms10G -Xmx10G for 16GB systems.
 # More details here: https://stackoverflow.com/questions/14763079/
 
-
-### INTERNAL CONFIGURATION
+### FUNCTIONS AND CODE
 #
-# Configuration variables you should probably
-# leave alone, but can change if really needed.
+# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
 #
 ###
 
 # What to call the cache-file (default: cache.txt)
-CACHEFILE="cachespigot.txt"
+_cacheFile="cachespigot.txt"
 
 # What to call the output jar file
-JAR_SPIGOT="spigot-$MINECRAFT_VERSION.jar" 
+_jarSpigot="spigot-$_minecraftVersion.jar" 
 # 1MB-start.sh defaults to spigot-1.16.1.jar
 
-JAVA_JDK=""
-# Leave empty for auto-discovery of java path, if 
-# this fails, you could hard code the path, as below
-# 08 (if you want to make spigot for 1.12.2 or 1.13.2)
-# JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
-# 11 (if you want to make spigot for 1.13.2 - 1.16.1)
-# JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
+_javaBin=""
+# Leave empty for auto-discovery of java path, and 
+# if this fails, you could hard code the path, as below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
 
-DIR_SCRIPT="" #leave empty for auto discovery
-# example: DIR_SCRIPT="/Users/floris/MinecraftServer/_development"
+_dirScript="" #leave empty for auto discovery
+# example: _dirScript="/Users/floris/MinecraftServer/_development"
 
-JAVA_VERBOSE=false
-# true <--- The output of the JVE will be visible,
-# false <-- "> /dev/null 2>&1" <-- it will be hidden.
+_verboseOutput=false
+# true <--- The output of the JVE will be visible, else it will try to be hidden
 
-JAR_PARAMS="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
-#   "--compile craftbukkit" If you need to make specifically craftbukkit
-#   -Dfile.encoding=UTF-8 (ensure that all UTF-8 chars are being saved properly)
-#   -Dapple.awt.UIElement=true (helps on macOS to not show icon in cmd-tab)
+# jvm startup parameters
+_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
+# -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
+# -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
+# -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
+# --compile craftbukkit (In case you have a reason to et craftbukkit)
 
-URL_BASE="https://hub.spigotmc.org"
-JSON_URL_MINECRAFT="$URL_BASE/stash/projects/SPIGOT/repos/builddata/raw/info.json"
-JSON_URL_SPIGOT="$URL_BASE/versions/$MINECRAFT_VERSION.json"
-JSON_URL_BUILDTOOLS="$URL_BASE/jenkins/job/BuildTools/lastSuccessfulBuild/buildNumber"
-JAR_URL_BUILDTOOLS="$URL_BASE/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/$JAR_BUILDTOOLS"
+_urlBase="https://hub.spigotmc.org"
+_jsonMcUrl="$_urlBase/stash/projects/SPIGOT/repos/builddata/raw/info.json"
+_jsonSpUrl="$_urlBase/versions/$_minecraftVersion.json"
+_jsonBtUrl="$_urlBase/jenkins/job/BuildTools/lastSuccessfulBuild/buildNumber"
+_jarBtUrl="$_urlBase/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/$_jarBuildtools"
 
+_debug=true
+# Debug mode off or on? Default: true (means it spits out progress)
 
 # Stop configuring things beyond this point.
 
@@ -87,25 +82,25 @@ JAR_URL_BUILDTOOLS="$URL_BASE/jenkins/job/BuildTools/lastSuccessfulBuild/artifac
 # theme
 B="\\033[1m"; Y="\\033[33m"; C="\\033[36m"; X="\\033[91m"; R="\\033[0m"
 
-if [ -z "$DIR_SCRIPT" ]; then
-    SH_SOURCE="${BASH_SOURCE[0]}"
-    while [ -h "$SH_SOURCE" ]; do
-        SH_TARGET="$(readlink "$SH_SOURCE")"
-        if [[ $SH_TARGET == /* ]]; then
-            SH_SOURCE="$SH_TARGET"
+if [ -z "$_dirScript" ]; then
+    _shellSource="${BA_shellSource[0]}"
+    while [ -h "$_shellSource" ]; do
+        _shellTarget="$(readlink "$_shellSource")"
+        if [[ $_shellTarget == /* ]]; then
+            _shellSource="$_shellTarget"
         else
-            DIR_BASE="$( dirname "$SH_SOURCE" )"
-            SH_SOURCE="$DIR_BASE/$SH_TARGET"
+            _dirBase="$( dirname "$_shellSource" )"
+            _shellSource="$_dirBase/$_shellTarget"
         fi
     done
-    # RDIR="$( dirname "$SH_SOURCE" )"
-    DIR_BASE="$( cd -P "$( dirname "$SH_SOURCE" )" && pwd )"
+    # RDIR="$( dirname "$_shellSource" )"
+    _dirBase="$( cd -P "$( dirname "$_shellSource" )" && pwd )"
 else
-    DIR_BASE="$DIR_SCRIPT"
+    _dirBase="$_dirScript"
 fi
-CACHEFILE="$DIR_BASE/$CACHEFILE"
+_cacheFile="$_dirBase/$_cacheFile"
 
-DIR_BUILDTOOLS="$DIR_BASE/BuildTools/"
+_dirBuildtools="$_dirBase/BuildTools/"
 
 ### FUNCTIONS
 
@@ -123,20 +118,20 @@ function _output {
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
         echo -e "\\n$B$Y$_prefix$X $_args $R" >&2
-        cache false "$_prefix $_args" # Updating cachefile
-        rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
+        cache false "$_prefix $_args" # Updating _cacheFile
+        rm -f "$_cacheFile.tmp" # Clean up; removing temp _cacheFile.
         exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
         echo -e "\\n$B$Y$_prefix$C $_args $R" >&2
         cache true "$_prefix $_args"
-        rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
+        rm -f "$_cacheFile.tmp" # Clean up; removing temp _cacheFile.
         exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        if [ "$DEBUG" == true ]; then
+        if [ "$_debug" == true ]; then
             if [ "$2" != 1 ]; then
                 echo -e "\\n$Y$_prefix$C $_args $R"
                 cache true "$_prefix $_args"
@@ -146,66 +141,66 @@ function _output {
         fi
     ;;
     *)
-        _args="${*:1}"; _prefix="(Unknown)";
-        echo "$_prefix $_args"
+        _args="${*:1}"; _prefix="(Info)";
+        echo -e "\\n$B $_prefix $_args"
     ;;
     esac
 }
 
 function cache {
-    # Write given msg true/false to cachefile
-    sed -i.tmp "4s#.*#${1}#" "$CACHEFILE"
-    sed -i.tmp "5s#.*#${2}#" "$CACHEFILE"
-    # debug "cachefile: $1, msg: $2."
-    # debug 1 "cat $CACHEFILE"
+    # Write given msg true/false to _cacheFile
+    sed -i.tmp "4s#.*#${1}#" "$_cacheFile"
+    sed -i.tmp "5s#.*#${2}#" "$_cacheFile"
+    # debug "_cacheFile: $1, msg: $2."
+    # debug 1 "cat $_cacheFile"
 }
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.15.2)
-# line 2 : Spigot nightly build version (example: 2591)
-# line 3 : BuildTools build version (example: 108)
+# line 1 : Minecraft version (example: 1.16.1)
+# line 2 : Spigot nightly build version (example: 2848)
+# line 3 : BuildTools build version (example: 120)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
-# At any time the cache.txt file can be renamed, 
+# At any time the cache txt file can be renamed, 
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.15.2,
+# The 'default' values are for Spigot 1.16.1,
 # but you can change this obviously. 
 # The other values are 'old' on purpose, so when you
-# delete the cache.txt file, it also forces a rebuild,
+# delete the cache txt file, it also forces a rebuild,
 # of both buildtools and spigot jar files.
 #
 ###
 
-if [ -f "$CACHEFILE" ]; then
+if [ -f "$_cacheFile" ]; then
     # success
     # There's an existing cache
-    _output debug "Found an existing CACHEFILE '$CACHEFILE'."
-    _output debug 1 "cat $CACHEFILE"
+    _output debug "Found an existing _cacheFile '$_cacheFile'."
+    _output debug 1 "cat $_cacheFile"
 else
     # failure
     # File was never made, or manually deleted. Let's create a new one. 
-cat <<- EOF > $CACHEFILE
-$MINECRAFT_VERSION
+cat <<- EOF > $_cacheFile
+$_minecraftVersion
 0
 0
 true
 Never
 EOF
-    _output debug "Found no existing cache: '$CACHEFILE', created with defaults:"
-    _output debug 1 "cat $CACHEFILE"
+    _output debug "Found no existing cache: '$_cacheFile', created with defaults:"
+    _output debug 1 "cat $_cacheFile"
 fi
 
 # At this point we have an old or a new cache file, adding them to variables
 # debug: https://stackoverflow.com/questions/6022384/bash-tool-to-get-nth-line-from-a-file
 # debug: sed 'NUMq;d' file // sed "${NUM}q;d" file
 
-CACHE_MC_BUILD=$(sed '1q;d' $CACHEFILE) #line1
-CACHE_SP_BUILD=$(sed '2q;d' $CACHEFILE) #line2
-CACHE_BT_BUILD=$(sed '3q;d' $CACHEFILE) #line3
-CACHE_SH_STATE=$(sed '4q;d' $CACHEFILE) #line4
-CACHE_SH_STMSG=$(sed '5q;d' $CACHEFILE) #line5
+_cacheMcBuild=$(sed '1q;d' $_cacheFile) #line1
+_cacheSpBuild=$(sed '2q;d' $_cacheFile) #line2
+_cacheBtBuild=$(sed '3q;d' $_cacheFile) #line3
+_cacheShState=$(sed '4q;d' $_cacheFile) #line4
+_cacheShStMsg=$(sed '5q;d' $_cacheFile) #line5
 
 function binExists() { type "$1">/dev/null 2>&1; }
 
@@ -236,20 +231,20 @@ if binExists "java"; then
     binDetails "$_"
     if version_gt "$_cmdversion" "$_minJavaVersion"; then
         _output debug "Installed $_cmd version $_cmdversion is newer than $_minJavaVersion (this is great)!"
-        if [ -z "$JAVA_JDK" ]; then
-            # if java_jdk is empty, we want to auto discover, lets try
-            _output debug "JAVA_JDK is empty, trying to auto discover java path"
+        if [ -z "$_javaBin" ]; then
+            # if _javaBin is empty, we want to auto discover, lets try
+            _output debug "_javaBin is empty, trying to auto discover java path"
             if [ -z "$_cmdpath" ]; then
                 # if cmdpath is empty, we are in trouble, quit script
-                _output oops "Path to java bin was found empty, maybe set JAVA_JDK"
+                _output oops "Path to java bin was found empty, maybe set _javaBin"
             else
                 # else cmdpath is not empty, we could use that path, set it
                 _output debug "Path to java auto discovered: $_cmdpath"
-                JAVA_JDK="$_cmdpath"
+                _javaBin="$_cmdpath"
             fi
         else
-            # else java_jdk is not empty, we want to use this instead of cmdpath, set it
-            _output debug "Path to java was set in JAVA_JDK, using this instead of auto discovery."
+            # else _javaBin is not empty, we want to use this instead of cmdpath, set it
+            _output debug "Path to java was set in _javaBin, using this instead of auto discovery."
         fi
     else
         _output oops "Installed $_cmd version $_cmdversion is NOT newer \\n -> Please upgrade to he minimal required version: $_minJavaVersion "
@@ -266,15 +261,25 @@ fi
 
 if binExists "curl"; then
     binDetails "$_"
-    JSON_GET="curl -f -L -s"
-    JSON_GET_DL="curl -L -s -O"
+    if [ "$_verboseOutput" == true ]; then
+        _jsonGet="curl -f -L "
+        _jsonDownload="curl -L -O"
+    else
+        _jsonGet="curl -f -L -s"
+        _jsonDownload="curl -L -s -O"
+    fi
     _output debug "We can use curl, no need to check for wget"
 else
     _output debug "$_ Not found, .. maybe we can use wget?"
     if binExists "wget"; then
         binDetails "$_"
-        JSON_GET="wget -q -O -"
-        JSON_GET_DL="wget"
+        if [ "$_verboseOutput" == true ]; then
+            _jsonGet="wget -O -"
+            _jsonDownload="wget"
+        else
+            _jsonGet="wget -q -O -"
+            _jsonDownload="wget -q"
+        fi
         _output debug "We can use wget, great."
     else
         _output oops "$_ also not found, .. we require either curl or wget \\n -> https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/ \\n -> https://www.cyberciti.biz/faq/how-to-install-wget-togetrid-of-error-bash-wget-command-not-found/"
@@ -291,26 +296,27 @@ fi
 # # What is the latest Minecraft build they're making Spigot for?
 # https://hub.spigotmc.org/stash/projects/SPIGOT/repos/builddata/raw/info.json
 # debug: JSON minecraftVersion NUM
-# You can change JSON_URL and JSON_KEY
+# You can change _jsonUrls and _jsonKey
 #
 ###
 
-JSON_KEY="minecraftVersion"
+_jsonKey="minecraftVersion"
 
-JSON_DATA=$($JSON_GET $JSON_URL_MINECRAFT)
-JSON_VALUE="\"($JSON_KEY)\": \"([^\"]*)\""
+_jsonData=$($_jsonGet $_jsonMcUrl)
+_jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
 while read -r l; do
-    if [[ $l =~ $JSON_VALUE ]]; then
-        JSON_RESULT="${BASH_REMATCH[2]}"
+    if [[ $l =~ $_jsonValue ]]; then
+        _jsonResult="${BASH_REMATCH[2]}"
     fi
-done <<< "$JSON_DATA"
+done <<< "$_jsonData"
 
-if [ -z "$JSON_RESULT" ]; then
-    _output oops "Failed to get $JSON_KEY from $JSON_URL_MINECRAFT, quitting script!"
+if [ -z "$_jsonResult" ]; then
+    _output oops "Failed to get $_jsonKey from $_jsonMcUrl, quitting script!"
 else
-    CURRENT_MC_BUILD="$JSON_RESULT"
-    unset JSON_RESULT
-    _output debug "Found MineCraft version number online: $CURRENT_MC_BUILD"
+    _currentMcBuild="$_jsonResult"
+    unset _jsonResult
+    _output debug "Found MineCraft version number online: $_currentMcBuild "
+    # sed -i.tmp "1s#.*#${$_currentMcBuild}#" "$_cacheFile"
 fi
 
 ###
@@ -321,22 +327,22 @@ fi
 #
 ###
 
-JSON_KEY="name"
+_jsonKey="name"
 
-JSON_DATA=$($JSON_GET $JSON_URL_SPIGOT)
-JSON_VALUE="\"($JSON_KEY)\": \"([^\"]*)\""
+_jsonData=$($_jsonGet $_jsonSpUrl)
+_jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
 while read -r l; do
-    if [[ $l =~ $JSON_VALUE ]]; then
-        JSON_RESULT="${BASH_REMATCH[2]}"
+    if [[ $l =~ $_jsonValue ]]; then
+        _jsonResult="${BASH_REMATCH[2]}"
     fi
-done <<< "$JSON_DATA"
+done <<< "$_jsonData"
 
-if [ -z "$JSON_RESULT" ]; then
-    _output oops "Failed to get $JSON_KEY from $JSON_URL_SPIGOT, quitting script!"
+if [ -z "$_jsonResult" ]; then
+    _output oops "Failed to get $_jsonKey from $_jsonSpUrl, quitting script!"
 else
-    CURRENT_SP_BUILD="$JSON_RESULT"
-    unset JSON_RESULT
-    _output debug "Found Spigot build number online: $CURRENT_SP_BUILD"
+    _currentSpBuild="$_jsonResult"
+    unset _jsonResult
+    _output debug "Found Spigot build number online: $_currentSpBuild"
 fi
 
 ###
@@ -347,71 +353,76 @@ fi
 #
 ###
 
-JSON_DATA=$($JSON_GET $JSON_URL_BUILDTOOLS)
+_jsonData=$($_jsonGet $_jsonBtUrl)
 
-if [ -z "$JSON_DATA" ]; then
-    _output oops "Failed to get data from $JSON_URL_BUILDTOOLS, quitting script!"
+if [ -z "$_jsonData" ]; then
+    _output oops "Failed to get data from $_jsonBtUrl, quitting script!"
 else
-    CURRENT_BT_BUILD="$JSON_DATA"
-    _output debug "Found BuildTools build number online: $CURRENT_BT_BUILD"
+    _currentBtBuild="$_jsonData"
+    _output debug "Found BuildTools build number online: $_currentBtBuild"
 fi
 
 ## What do we have?
-_output debug "Found the cached data (offline): MC: $CACHE_MC_BUILD, SP: $CACHE_SP_BUILD, BT: $CACHE_BT_BUILD"
-_output debug "Found the current data (online): MC: $CURRENT_MC_BUILD, SP: $CURRENT_SP_BUILD, BT: $CURRENT_BT_BUILD"
+_output debug "Found the cached data (offline): MC: $_cacheMcBuild, SP: $_cacheSpBuild, BT: $_cacheBtBuild"
+_output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_currentSpBuild, BT: $_currentBtBuild"
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
 # We want builds for 1.16.1, so the cached version and the current version have to both be 1.16.1
-# PATCH if [ "$CACHE_MC_BUILD" == "$CURRENT_MC_BUILD" ]; then
-if [ "$CURRENT_MC_BUILD" == "$CURRENT_MC_BUILD" ]; then
+# PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
+if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
     # success, 1.16.1 == 1.16.1
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
-    _output oops "Comparing MC : Failure; Spigot $CURRENT_MC_BUILD detected, we only want Minecraft $CACHE_MC_BUILD builds. Quitting!"
+    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we only want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.17 or whatever!"
     # May we desire to auto update regardless of number, we might want to update the cache
     # since we don't commenting this out:
-    # sed -ie "1s/.*/$CURRENT_MC_BUILD/" $CACHEFILE
+    # sed -ie "1s/.*/$_currentMcBuild/" $_cacheFile
+    read -p "Do you still want to build $_jarSpigot? [y/N]" -n 1 -r
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    	[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+	fi
+	sed -i.tmp "1s#.*#${_currentMcBuild}#" "$_cacheFile"
 fi
 
 # Spigot is being build against the right Minecraft version, but do we want to build a new Spigot?
 # If the cached version is the same as the current version, we are done, exit the script.
 # and otherwise there is a newer build out, we should go get it and compile a new jar.
-if [ "$CURRENT_SP_BUILD" -le "$CACHE_SP_BUILD" ]; then
+if [ "$_currentSpBuild" -le "$_cacheSpBuild" ]; then
     # success, current Spigot build is less than or equal to our cached version (so it's older, or the same)
-    _output oops "Comparing SP : OK; Latest Spigot $CURRENT_SP_BUILD is not newer, nothing to do. Quitting!"
+    _output oops "Comparing SP : OK; Latest Spigot $_currentSpBuild is not newer, nothing to do. Quitting!"
     # Wait, .. check if cache file state is false, if so .. we quit last time we run it.. 
     # maybe it's fixed now, we have to assume we want to run the script again.
     # if state is positive, then we're outtah here.
 else
     # failure, current must be newer, we should go get it and copmile a new jar
-    _output debug "Comparing SP : OK; Newer build found ($CURRENT_SP_BUILD), we can continue.."
+    _output debug "Comparing SP : OK; Newer build found ($_currentSpBuild), we can continue.."
     # Updating our cache file with the newer build number
-    sed -i.tmp "2s#.*#${CURRENT_SP_BUILD}#" "$CACHEFILE"
+    sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
 # Ok, we know there's a new build out for Spigot for Minecraft 1.16.1,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
-if [ "$CURRENT_BT_BUILD" == "$CACHE_BT_BUILD" ]; then
+if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
     # success, current BuildTools build is equal to our cached version (so it's the same)
     _output debug "Comparing BT : OK; No newer build found, we can just do an upgrade.." 
     # no need to quit script or download anything, compile Spigot with the buildtools.jar we have
 else
     # failure, current must be newer, we should go get it and use that instead.
-    _output debug "Comparing BT : OK; Not matching. Build found ($CURRENT_BT_BUILD), we should get it.."
+    _output debug "Comparing BT : OK; Not matching. Build found ($_currentBtBuild), we should get it.."
     # updating cache with newer build number:
-    sed -i.tmp "3s#.*#${CURRENT_BT_BUILD}#" "$CACHEFILE"
+    sed -i.tmp "3s#.*#${_currentBtBuild}#" "$_cacheFile"
     # we need to download the newer buildtools before we compile spigot with the new bt jar.
 
-    _output debug "Deleting old $DIR_BUILDTOOLS directory .."
-    rm -rf $DIR_BUILDTOOLS
-    _output debug "Done. Next, downloading $JAR_BUILDTOOLS .."
-    cd "$DIR_BASE" || _output oops "Could not change to $DIR_BASE"
-    $JSON_GET_DL $JAR_URL_BUILDTOOLS || _output oops "Download of $JAR_URL_BUILDTOOLS failed."
-    mkdir $DIR_BUILDTOOLS
-    mv $JAR_BUILDTOOLS $DIR_BUILDTOOLS
+    _output debug "Deleting old $_dirBuildtools directory .."
+    rm -rf $_dirBuildtools
+    _output debug "Done. Next, downloading $_jarBuildtools .."
+    cd "$_dirBase" || _output oops "Could not change to $_dirBase"
+    $_jsonDownload $_jarBtUrl || _output oops "Download of $_jarBtUrl failed."
+    mkdir $_dirBuildtools
+    mv $_jarBuildtools $_dirBuildtools
     #TODO make this: cp -f spigot-*.jar "${SERVER_DIR}"
     _output debug "Upgrade: BuildTools jar downloaded .. ready to go."
 fi
@@ -426,24 +437,24 @@ fi
 ## cache sh ends here
 ## buildtools sh starts here
 
-_output debug "Done. Next, building new $JAR_SPIGOT .. $B(can take a while, leave it running)"
-cd "$DIR_BUILDTOOLS" || _output oops "Could not change to $DIR_BUILDTOOLS"
-if [ "$JAVA_VERBOSE" == true ]; then
+_output debug "Done. Next, building new $_jarSpigot .. $B(can take a while, leave it running)"
+cd "$_dirBuildtools" || _output oops "Could not change to $_dirBuildtools"
+if [ "$_verboseOutput" == true ]; then
     # do not hide JVE output during compile
-    $JAVA_JDK $JAVA_MEMORY $JAR_PARAMS -jar $JAR_BUILDTOOLS --rev $MINECRAFT_VERSION || _output oops "Failed; Could not build '$JAR_BUILDTOOLS'. Quitting!"
+    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools --rev $_minecraftVersion || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
     # _output debug "pretending to build.."
 else
     # do not display JVE output during compile (assuming value false)
     # todo: should else if and failover else
-    $JAVA_JDK $JAVA_MEMORY $JAR_PARAMS -jar $JAR_BUILDTOOLS --rev $MINECRAFT_VERSION > /dev/null 2>&1 || _output oops "Failed; Could not build '$JAR_BUILDTOOLS'. Quitting!"
+    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools --rev $_minecraftVersion > /dev/null 2>&1 || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
     # _output debug "pretending to build.."
 fi
 
-_output debug "Done. Next, isolating $JAR_SPIGOT .."
-mv -f "$JAR_SPIGOT" "$DIR_BASE" || _output oops "Failed; No such file or directory. Quitting!"
-cd "$DIR_BASE" || _output oops "Failed; Could not change to $DIR_BASE. Quitting!"
+_output debug "Done. Next, isolating $_jarSpigot .."
+mv -f "$_jarSpigot" "$_dirBase" || _output oops "Failed; No such file or directory. Quitting!"
+cd "$_dirBase" || _output oops "Failed; Could not change to $_dirBase. Quitting!"
 
-ls -lh "$JAR_SPIGOT" || _output oops "Failed; Could not list '$JAR_SPIGOT'. Quitting!"
+ls -lh "$_jarSpigot" || _output oops "Failed; Could not list '$_jarSpigot'. Quitting!"
 pwd
 
 # We are done, let's get outtah here

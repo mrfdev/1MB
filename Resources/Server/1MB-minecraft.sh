@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.0, build 028 for Spigot 1.16.1 (java 11)
-# @Release: August 2nd, 2020
+# @Version: 2.0, build 029 for Spigot 1.16.1 (java 11)
+# @Release: August 3rd, 2020
 # @Description: Helps us start a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -67,8 +67,8 @@ _javaBin=""
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
 
-# Debug mode off or on? Default: false (true means it spits out progress)
 _debug=false
+# Debug mode off or on? Default: false (true means it spits out progress)
 
 function _output {
     case "$1" in

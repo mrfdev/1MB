@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 054
+# @Version: 2.0, build 055
 # @Release: August 5th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -142,6 +142,8 @@ function _output {
             else
                 echo -e "\\n------------------\\n$C$($3)$R\\n------------------"
             fi
+        else
+            cache true "$_prefix $_args"
         fi
     ;;
     *)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 053
+# @Version: 2.0, build 054
 # @Release: August 5th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -44,13 +44,13 @@ _javaMemory=""
 _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
-_jarSpigot="spigot-$_minecraftVersion.jar" 
+_jarSpigot="spigot-$_minecraftVersion.jar"
 # 1MB-start.sh defaults to spigot-1.16.1.jar
-_jarSpigotBackup="spigot-$_minecraftVersion._jar" 
+_jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
 _javaBin=""
-# Leave empty for auto-discovery of java path, and 
+# Leave empty for auto-discovery of java path, and
 # if this fails, you could hard code the path, as below:
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
@@ -147,6 +147,7 @@ function _output {
     *)
         _args="${*:1}"; _prefix="(Info)";
         echo -e "\\n$B $_prefix $_args"
+        cache true "$_prefix $_args"
     ;;
     esac
 }
@@ -167,10 +168,10 @@ function cache {
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
-# At any time the cache txt file can be renamed, 
+# At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
 # The 'default' values are for Spigot 1.16.1,
-# but you can change this obviously. 
+# but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
 # of both buildtools and spigot jar files.
@@ -184,7 +185,7 @@ if [ -f "$_cacheFile" ]; then
     _output debug 1 "cat $_cacheFile"
 else
     # failure
-    # File was never made, or manually deleted. Let's create a new one. 
+    # File was never made, or manually deleted. Let's create a new one.
 cat <<- EOF > $_cacheFile
 $_minecraftVersion
 0
@@ -206,8 +207,8 @@ _cacheBtBuild=$(sed '3q;d' $_cacheFile) #line3
 _cacheShState=$(sed '4q;d' $_cacheFile) #line4
 _cacheShStMsg=$(sed '5q;d' $_cacheFile) #line5
 
+function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
 function binExists() { type "$1">/dev/null 2>&1; }
-
 function binDetails() { 
     _cmd="$_"; _cmd="$_cmd";
     _cmdpath=$(command -V "$_cmd" | awk '{print $3}')
@@ -218,8 +219,6 @@ function binDetails() {
     fi
     _output debug "cmd: $_cmd, path: $_cmdpath, version: $_cmdversion"
 }
-
-function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
 
 #prerequisites
 
@@ -243,8 +242,8 @@ if binExists "java"; then
                 _output oops "Path to java bin was found empty, maybe set _javaBin"
             else
                 # else cmdpath is not empty, we could use that path, set it
-                _output debug "Path to java auto discovered: $_cmdpath"
                 _javaBin="$_cmdpath"
+                _output debug "Path to java auto discovered: $_javaBin"
             fi
         else
             # else _javaBin is not empty, we want to use this instead of cmdpath, set it
@@ -290,7 +289,6 @@ else
     fi
 fi
 
-
 # And now we can get some online data about spigot and buildtools
 
 ### GET BUILD NUMBERS
@@ -305,7 +303,6 @@ fi
 ###
 
 _jsonKey="minecraftVersion"
-
 _jsonData=$($_jsonGet $_jsonMcUrl)
 _jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
 while read -r l; do
@@ -313,14 +310,12 @@ while read -r l; do
         _jsonResult="${BASH_REMATCH[2]}"
     fi
 done <<< "$_jsonData"
-
 if [ -z "$_jsonResult" ]; then
     _output oops "Failed to get $_jsonKey from $_jsonMcUrl, quitting script!"
 else
     _currentMcBuild="$_jsonResult"
     unset _jsonResult
     _output debug "Found MineCraft version number online: $_currentMcBuild "
-    # sed -i.tmp "1s#.*#${$_currentMcBuild}#" "$_cacheFile"
 fi
 
 ###
@@ -332,7 +327,6 @@ fi
 ###
 
 _jsonKey="name"
-
 _jsonData=$($_jsonGet $_jsonSpUrl)
 _jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
 while read -r l; do
@@ -340,7 +334,6 @@ while read -r l; do
         _jsonResult="${BASH_REMATCH[2]}"
     fi
 done <<< "$_jsonData"
-
 if [ -z "$_jsonResult" ]; then
     _output oops "Failed to get $_jsonKey from $_jsonSpUrl, quitting script!"
 else
@@ -358,7 +351,6 @@ fi
 ###
 
 _jsonData=$($_jsonGet $_jsonBtUrl)
-
 if [ -z "$_jsonData" ]; then
     _output oops "Failed to get data from $_jsonBtUrl, quitting script!"
 else
@@ -393,7 +385,7 @@ fi
 if [ "$_currentSpBuild" -le "$_cacheSpBuild" ]; then
     # success, current Spigot build is less than or equal to our cached version (so it's older, or the same)
     _output oops "Comparing SP : OK; Latest Spigot $_currentSpBuild is not newer, nothing to do. Quitting!"
-    # Wait, .. check if cache file state is false, if so .. we quit last time we run it.. 
+    # Wait, .. check if cache file state is false, if so .. we quit last time we run it..
     # maybe it's fixed now, we have to assume we want to run the script again.
     # if state is positive, then we're outtah here.
 else
@@ -408,7 +400,7 @@ fi
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
     # success, current BuildTools build is equal to our cached version (so it's the same)
-    _output debug "Comparing BT : OK; No newer build found, we can just do an upgrade.." 
+    _output debug "Comparing BT : OK; No newer build found, we can just do an upgrade.."
     # no need to quit script or download anything, compile Spigot with the buildtools.jar we have
 else
     # failure, current must be newer, we should go get it and use that instead.

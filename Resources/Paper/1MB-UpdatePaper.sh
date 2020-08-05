@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 1.0, build 005
-# @Release: July 30th, 2020
+# @Version: 1.0, build 006
+# @Release: August 4th, 2020
 # @Description: Helps us get a Minecraft Paper 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -13,8 +13,8 @@
 
 ### CONFIGURATION
 #
-# Configuration variables you can declare 
-# to match your personal situation.
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
 #
 ###
 
@@ -211,7 +211,7 @@ else
     if binExists "wget"; then
         binDetails "$_"
         _jsonGetter="wget -q -O -"
-        _GETTER="wget --content-disposition"
+        _GETTER="wget -q --content-disposition"
         _output debug "We can use wget, great."
     else
         _output oops "$_ also not found, .. we require either curl or wget \\n -> https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/ \\n -> https://www.cyberciti.biz/faq/how-to-install-wget-togetrid-of-error-bash-wget-command-not-found/"

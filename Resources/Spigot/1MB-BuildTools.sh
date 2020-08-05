@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 052
-# @Release: August 3rd, 2020
+# @Version: 2.0, build 053
+# @Release: August 5th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -46,6 +46,8 @@ _cacheFile="cachespigot.txt"
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar" 
 # 1MB-start.sh defaults to spigot-1.16.1.jar
+_jarSpigotBackup="spigot-$_minecraftVersion._jar" 
+# And the backup file we create
 
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
@@ -57,14 +59,14 @@ _dirScript="" #leave empty for auto discovery
 # example: _dirScript="/Users/floris/MinecraftServer/_development"
 
 _verboseOutput=false
-# true <--- The output of the JVE will be visible, else it will try to be hidden
+# true: The output of the JVE will be visible, else it will try to be hidden
 
 # jvm startup parameters
 _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
-# --compile craftbukkit (In case you have a reason to et craftbukkit)
+# --compile craftbukkit (In case you have a reason to build craftbukkit)
 
 _urlBase="https://hub.spigotmc.org"
 _jsonMcUrl="$_urlBase/stash/projects/SPIGOT/repos/builddata/raw/info.json"
@@ -83,7 +85,7 @@ _debug=true
 B="\\033[1m"; Y="\\033[33m"; C="\\033[36m"; X="\\033[91m"; R="\\033[0m"
 
 if [ -z "$_dirScript" ]; then
-    _shellSource="${BA_shellSource[0]}"
+    _shellSource="${BASH_SOURCE[0]}"
     while [ -h "$_shellSource" ]; do
         _shellTarget="$(readlink "$_shellSource")"
         if [[ $_shellTarget == /* ]]; then
@@ -93,14 +95,16 @@ if [ -z "$_dirScript" ]; then
             _shellSource="$_dirBase/$_shellTarget"
         fi
     done
-    # RDIR="$( dirname "$_shellSource" )"
     _dirBase="$( cd -P "$( dirname "$_shellSource" )" && pwd )"
 else
     _dirBase="$_dirScript"
 fi
-_cacheFile="$_dirBase/$_cacheFile"
 
+_cacheFile="$_dirBase/$_cacheFile"
 _dirBuildtools="$_dirBase/BuildTools/"
+
+_jarSpigotExisting="$_dirBase/$_jarSpigot"
+_jarSpigotBackup="$_dirBase/$_jarSpigotBackup"
 
 ### FUNCTIONS
 
@@ -376,12 +380,9 @@ if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
 else
     # failure, current must be newer
     _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we only want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.17 or whatever!"
-    # May we desire to auto update regardless of number, we might want to update the cache
-    # since we don't commenting this out:
-    # sed -ie "1s/.*/$_currentMcBuild/" $_cacheFile
     read -p "Do you still want to build $_jarSpigot? [y/N]" -n 1 -r
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    	[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+    	[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
 	fi
 	sed -i.tmp "1s#.*#${_currentMcBuild}#" "$_cacheFile"
 fi
@@ -423,7 +424,6 @@ else
     $_jsonDownload $_jarBtUrl || _output oops "Download of $_jarBtUrl failed."
     mkdir $_dirBuildtools
     mv $_jarBuildtools $_dirBuildtools
-    #TODO make this: cp -f spigot-*.jar "${SERVER_DIR}"
     _output debug "Upgrade: BuildTools jar downloaded .. ready to go."
 fi
 
@@ -436,6 +436,24 @@ fi
 
 ## cache sh ends here
 ## buildtools sh starts here
+
+cd "$_dirBase" || _output oops "Could not change to $_dirBase"
+
+# is there an old spigot jar backup?
+if [ -f "$_jarSpigotBackup" ]; then
+    _output debug "Found an existing jar backed up: '$_jarSpigotBackup', removing it.."
+    rm -f "$_jarSpigotBackup" # Clean up; removing backup
+else
+    _output debug "Found no existing jar backed up: '$_jarSpigotBackup', attempting to make one.."
+fi
+
+# is there a current spigot jar file to backup?
+if [ -f "$_jarSpigotExisting" ]; then
+    _output debug "Found an existing jar '$_jarSpigotExisting', backing it up.."
+    mv -f "$_jarSpigotExisting" "$_jarSpigotBackup" || _output oops "Backup move of $_jarSpigotExisting failed. "
+else
+    _output debug "Found no existing jar '$_jarSpigotExisting', it's okay, we're going to make one."
+fi
 
 _output debug "Done. Next, building new $_jarSpigot .. $B(can take a while, leave it running)"
 cd "$_dirBuildtools" || _output oops "Could not change to $_dirBuildtools"

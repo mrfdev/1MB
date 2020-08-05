@@ -79,6 +79,7 @@ if [ -z "$DIR_SCRIPT" ]; then
 else
     DIR_BASE="$DIR_SCRIPT"
 fi
+
 CACHEFILE="$DIR_BASE/$CACHEFILE"
 
 ### FUNCTIONS

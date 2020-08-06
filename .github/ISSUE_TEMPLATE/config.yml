@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 1MoreBlock Forum Support
+    url: https://omgboards.com
+    about: If you wish to send a direct msg in a forum conversation instead.
+  - name: 1MoreBlock Discord Support
+    url: https://discord.gg/KzTDhxv
+    about: If you wish to send a direct msg in a discord msg instead.

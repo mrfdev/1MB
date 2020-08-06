@@ -1,11 +1,13 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
+about: Suggest an idea for a script
+title: "[FEATURE]"
+labels: enhancement
 assignees: ''
 
 ---
+
+**Script name**
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]

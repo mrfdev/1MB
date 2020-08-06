@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 1.0, build 006
-# @Release: August 4th, 2020
+# @Version: 1.0, build 007
+# @Release: August 6th, 2020
 # @Description: Helps us get a Minecraft Paper 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-UpdatePaper.sh
 # @Syntax: ./1MB-UpdatePaper.sh
-
 # @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION

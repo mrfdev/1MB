@@ -1,8 +1,22 @@
 #!/bin/bash
 
-# Description: spits out if proc is running on port or not.
+# @Filename: 1MB-CheckPort.sh
+# @Version: 1.0, build 002
+# @Release: August 5th, 2020
+# @Description: Spits out if proc is running on port or not.
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Install: chmod a+x 1MB-CheckPort.sh
+# @Syntax: ./1MB-CheckPort.sh
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
-# config
+### CONFIGURATION
+#
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
+#
+###
+
 _file="server.properties"
 
 if [[ -f "$_file" ]]; then

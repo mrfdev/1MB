@@ -1,37 +1,31 @@
 #!/bin/bash
 
-##### https://scripts.1moreblock.com/mcf
-# version 1.1 build 004, by mrfloris
-# release: July 25th, 2020
-#
-# Little shell script to process all the .jars at once
-# and it puts the output in a MCF.log file.
-#
-# Want to double check on just one file?
-# Then use the MCF.jar without this script.
-# 
+# @Filename: 1MB-MCF.sh
+# @Version: 1.1, build 005
+# @Release: August 6th, 2020
+# @Description: Little shell script to process all the .jars at once using MaliciousCodeFinder 1.1 and it puts the output in a MCF.log file.
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Install: see below
+# @Syntax: ./1MB-MCF.sh
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
-##### Made for: MCF.jar, by HoverCatz
-# Tested with MaliciousCodeFinder 1.1:
-# https://www.spigotmc.org/resources/MCF.56001/
+##### Installation and stuff
 #
-
-##### Installation:
+# chmod a+x 1MB-MCF.sh first, set things up, run it, read .log
 # Get MCF.jar from the above link, and 1MB-MCF.sh from github, 
 # and put them in a new empty directory.
 # Either create a plugins/ directory with all your .jar files
 # or configure the /full/path/to/them/*.jar so it can find it
 #
+###
 
-##### Usage:
-# chmod a+x 1MB-MCF.sh
-# ./1MB-MCF.sh
-# When it's done you have a MCF.log file with the results.
+### CONFIGURATION
 #
-
-##### Configuration:
-# In case you need to configure something:
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
 #
+###
 
 # Where are those Spigot jar files?
 jarfiles="./plugins/*.jar"

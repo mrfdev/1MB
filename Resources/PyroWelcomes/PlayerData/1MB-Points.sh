@@ -1,14 +1,22 @@
 #!/bin/bash
 
 # @Filename: 1MB-Points.sh
-# @Version: 1.0, build 005
-# @Release: July 25th, 2020
-# @Description: Figures out UUID with most points from PyroWelcomes 2.4.0 (1.16.1)
-# @Contact: I am @floris on Twitter and mrfloris in MineCraft
-# @Install: chmod a+x 1MB-Points.sh (and then put it in PyroWelcomes/PlayerData/)
+# @Version: 1.0, build 006
+# @Release: August 6th, 2020
+# @Description: Figures out UUID with most points from PyroWelcomes 2.4.x (1.16.1)
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Install: chmod a+x 1MB-Points.sh
 # @Syntax: ./1MB-Points.sh
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
-# CONFIG
+### CONFIGURATION
+#
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
+#
+###
+
 EXT=yml
 LOG=points.log
 if [ -f $LOG ];then rm -f $LOG;fi

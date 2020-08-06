@@ -10,7 +10,7 @@ assignees: ''
 **Script filename**
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is:
 
 
 **To Reproduce**
@@ -18,18 +18,16 @@ Steps to reproduce the behavior:
 
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+A clear and concise description of what you expected to happen:
 
 
 **Screenshots or videos**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain your problem:
 
 
-**Desktop (please complete the following information):**
- - OS: [e.g. macOS]
- - Browser [e.g. chrome, Terminal.app, cli]
- - Version [e.g. v2 build 005]
-
+**Desktop or Server**
+ - OS (and version): 
+ 
 
 **Additional context**
 Add any other context about the problem here.

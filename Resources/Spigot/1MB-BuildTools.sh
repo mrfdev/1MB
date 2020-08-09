@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 055
-# @Release: August 5th, 2020
+# @Version: 2.0, build 056
+# @Release: August 9th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -431,7 +431,17 @@ fi
 ## cache sh ends here
 ## buildtools sh starts here
 
-cd "$_dirBase" || _output oops "Could not change to $_dirBase"
+cd "$_dirBase" || _output oops "Could not change to '$_dirBase'"
+
+_file="server.properties"
+_netfind() { _test=$(lsof -iTCP -sTCP:LISTEN -n -P | grep -i "$1");
+    if [ -z "$_test" ]; then
+        _output debug "Found '$_file' (good!), and found nothing listening on port '$_port' (good!).\\nAssuming there's no server running, we can make the server jar"
+    else
+        _output debug "$_test\\nPossible solutions: Stop the server first, or run this script in an empty directory"
+        _output oops "Found a server running, halting script, I don't want to replace that jar!"
+    fi
+}; [[ -f "$_file" ]] && _port=$(grep "^server-port=" $_file | awk -F= '{print $2}') && _netfind $_port || _output debug "Found no '$_file' (good!), we can replace the server jar"
 
 # is there an old spigot jar backup?
 if [ -f "$_jarSpigotBackup" ]; then

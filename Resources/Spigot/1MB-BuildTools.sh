@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 056
+# @Version: 2.0, build 057
 # @Release: August 9th, 2020
 # @Description: Helps us get a Minecraft Spigot 1.16.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -103,9 +103,6 @@ fi
 _cacheFile="$_dirBase/$_cacheFile"
 _dirBuildtools="$_dirBase/BuildTools/"
 
-_jarSpigotExisting="$_dirBase/$_jarSpigot"
-_jarSpigotBackup="$_dirBase/$_jarSpigotBackup"
-
 ### FUNCTIONS
 
 # oops = spit out failure and exit script
@@ -148,7 +145,7 @@ function _output {
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";
-        echo -e "\\n$B $_prefix $_args"
+        echo -e "\\n$B $_prefix $_args $R"
         cache true "$_prefix $_args"
     ;;
     esac
@@ -303,7 +300,7 @@ fi
 # You can change _jsonUrls and _jsonKey
 #
 ###
-
+_latest=false
 _jsonKey="minecraftVersion"
 _jsonData=$($_jsonGet $_jsonMcUrl)
 _jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
@@ -313,11 +310,11 @@ while read -r l; do
     fi
 done <<< "$_jsonData"
 if [ -z "$_jsonResult" ]; then
-    _output oops "Failed to get $_jsonKey from $_jsonMcUrl, quitting script!"
+    _output oops "Failed to get '$_jsonKey' from '$_jsonMcUrl', quitting script!"
 else
     _currentMcBuild="$_jsonResult"
     unset _jsonResult
-    _output debug "Found MineCraft version number online: $_currentMcBuild "
+    _output debug "Found MineCraft version number online: '$_currentMcBuild' "
 fi
 
 ###
@@ -327,7 +324,6 @@ fi
 # debug: JSON name NUM
 #
 ###
-
 _jsonKey="name"
 _jsonData=$($_jsonGet $_jsonSpUrl)
 _jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
@@ -337,11 +333,28 @@ while read -r l; do
     fi
 done <<< "$_jsonData"
 if [ -z "$_jsonResult" ]; then
-    _output oops "Failed to get $_jsonKey from $_jsonSpUrl, quitting script!"
+    _output debug "Failed to get '$_jsonKey' from '$_jsonSpUrl', trying with --rev latest"
+    _jsonSpUrl="$_urlBase/versions/latest.json"
+    _jsonData=$($_jsonGet $_jsonSpUrl)
+    _jsonValue="\"($_jsonKey)\": \"([^\"]*)\""
+    while read -r l; do
+        if [[ $l =~ $_jsonValue ]]; then
+            _jsonResult="${BASH_REMATCH[2]}"
+        fi
+    done <<< "$_jsonData"
+    if [ -z "$_jsonResult" ]; then
+        _output oops "Failed to get '$_jsonKey' from '$_jsonSpUrl', I really tried."
+    else
+        _currentSpBuild="$_jsonResult"
+        _latest=true
+        _output debug "Couldn't find what you wanted, but latest Spigot build number online seems to be: '$_currentSpBuild'"
+        _output debug "$B *!* NOTICE PLEASE: This is not really '$_minecraftVersion', but actually build: '$_currentSpBuild', please double check what you set for _minecraftVersion."
+    fi
+    unset _jsonResult
 else
     _currentSpBuild="$_jsonResult"
     unset _jsonResult
-    _output debug "Found Spigot build number online: $_currentSpBuild"
+    _output debug "Found Spigot build number online: '$_currentSpBuild'"
 fi
 
 ###
@@ -373,7 +386,7 @@ if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
-    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we only want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.17 or whatever!"
+    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we seem to want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.17 or whatever!"
     read -p "Do you still want to build $_jarSpigot? [y/N]" -n 1 -r
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     	[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
@@ -443,7 +456,17 @@ _netfind() { _test=$(lsof -iTCP -sTCP:LISTEN -n -P | grep -i "$1");
     fi
 }; [[ -f "$_file" ]] && _port=$(grep "^server-port=" $_file | awk -F= '{print $2}') && _netfind $_port || _output debug "Found no '$_file' (good!), we can replace the server jar"
 
+if [ $_latest = true ]; then
+    _minecraftVersion="$_currentMcBuild"
+    _jarSpigot="spigot-$_minecraftVersion.jar"
+    _jarSpigotBackup="spigot-$_minecraftVersion._jar"
+fi 
+
+_jarSpigotExisting="$_dirBase/$_jarSpigot"
+_jarSpigotBackup="$_dirBase/$_jarSpigotBackup"
+
 # is there an old spigot jar backup?
+# TODO only make a backup if there is actually a jar to backup as well.
 if [ -f "$_jarSpigotBackup" ]; then
     _output debug "Found an existing jar backed up: '$_jarSpigotBackup', removing it.."
     rm -f "$_jarSpigotBackup" # Clean up; removing backup
@@ -461,14 +484,15 @@ fi
 
 _output debug "Done. Next, building new $_jarSpigot .. $B(can take a while, leave it running)"
 cd "$_dirBuildtools" || _output oops "Could not change to $_dirBuildtools"
+[ $_latest = true ] && _rev="--rev latest" || _rev="--rev $_minecraftVersion"
 if [ "$_verboseOutput" == true ]; then
     # do not hide JVE output during compile
-    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools --rev $_minecraftVersion || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
+    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools $_rev || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
     # _output debug "pretending to build.."
 else
     # do not display JVE output during compile (assuming value false)
     # todo: should else if and failover else
-    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools --rev $_minecraftVersion > /dev/null 2>&1 || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
+    $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools $_rev > /dev/null 2>&1 || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
     # _output debug "pretending to build.."
 fi
 

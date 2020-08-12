@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-Points.sh
-# @Version: 1.0, build 006
-# @Release: August 6th, 2020
-# @Description: Figures out UUID with most points from PyroWelcomes 2.4.x (1.16.1)
+# @Version: 1.0, build 007
+# @Release: August 12th, 2020
+# @Description: Figures out UUID with most points from PyroWelcomes 2.4.x (1.16.2)
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-Points.sh

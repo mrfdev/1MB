@@ -19,7 +19,7 @@ If you require support, maybe these scripts aren't for you. But, you're always f
 
 If you wish to play, please understand we're a family friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Currently Java Edition: 1.16.1)
+`1moreblock.com:25565` (Currently Java Edition: 1.16.1, and soon 1.16.2)
 
 ## Information (Useful links)
 
@@ -28,4 +28,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/KzTDhxv)
 
 ## Version
 
-This is 1MB Github version 1.0 build 005, August 5th, 2020.
+This is 1MB Github version 1.0 build 006, August 12th, 2020.

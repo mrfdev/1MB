@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 1.0, build 007
-# @Release: August 6th, 2020
-# @Description: Helps us get a Minecraft Paper 1.16.1 server.
+# @Version: 1.0, build 008
+# @Release: August 12th, 2020
+# @Description: Helps us get a Minecraft Paper 1.16.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-UpdatePaper.sh
@@ -17,7 +17,7 @@
 #
 ###
 
-MINECRAFT_VERSION="1.16.1"
+MINECRAFT_VERSION="1.16.2"
 
 _minJavaVersion=11.0
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up.
@@ -37,7 +37,7 @@ JAVA_JDK=""
 # this fails, you could hard code the path, as below
 # 08 (if you want to make Paper for 1.12.2 or 1.13.2)
 # JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
-# 11 (if you want to make Paper for 1.13.2 - 1.16.1)
+# 11 (if you want to make Paper for 1.13.2 - 1.16.2)
 # JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
 
 DIR_SCRIPT="" #leave empty for auto discovery
@@ -136,7 +136,7 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.16.1)
+# line 1 : Minecraft version (example: 1.16.2)
 # line 2 : Paper build version (example: 128)
 # line 3 : BuildTools build version (example: 108) (not used)
 # line 4 : Shell script last-run state (example: true|false)
@@ -144,7 +144,7 @@ function cache {
 #
 # At any time the cache file can be renamed, 
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Paper 1.16.1,
+# The 'default' values are for Paper 1.16.2,
 # but you can change this obviously. 
 # The other values are 'old' on purpose, so when you
 # delete the cache file, it also forces a redownload.
@@ -220,8 +220,8 @@ fi
 ###
 #
 # What is the latest Paper build number?
-# https://papermc.io/api/v1/paper/1.16.1/latest
-# {"project":"paper","version":"1.16.1","build":"128"}
+# https://papermc.io/api/v1/paper/1.16.2/latest
+# {"project":"paper","version":"1.16.2","build":"128"}
 #
 ###
 
@@ -242,7 +242,7 @@ else
     unset JSON_RESULT
 fi
 # ## What do we have?
-# TODO: Check against version 1.16.1 so we dont accidentally make a 1.17.2 in the future thinking it's 1.16.1
+# TODO: Check against version 1.16.2 so we dont accidentally make a 1.17.2 in the future thinking it's 1.16.2
 
 _output debug "Found the current build (offline): $CACHE_PP_BUILD"
 _output debug "Found the current build (online): $CURRENT_PAPER_BUILD"
@@ -282,7 +282,7 @@ $_GETTER $URL_DOWNLOAD || _output oops "Download of $DOWNLOADFILE failed."
 
 # we should now have paper-NUMBER.jar, 
 # we know with CURRENT_PAPER_BUILD what the build number is, 
-# let's rename it to paper-1.16.1.jar
+# let's rename it to paper-1.16.2.jar
 _downloadedJar="paper-$CURRENT_PAPER_BUILD.jar"
 
 if [ -f "$_downloadedJar" ]; then

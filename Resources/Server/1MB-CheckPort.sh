@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 1.0, build 002
-# @Release: August 5th, 2020
+# @Version: 1.0, build 003
+# @Release: August 12th, 2020
 # @Description: Spits out if proc is running on port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -18,6 +18,7 @@
 ###
 
 _file="server.properties"
+# We will check if the current directory for example has a 1.16.2 server.properties file
 
 if [[ -f "$_file" ]]; then
 	#todo result might be empty, might need to check against that.

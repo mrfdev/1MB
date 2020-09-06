@@ -28,4 +28,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/KzTDhxv)
 
 ## Version
 
-This is 1MB Github version 1.0 build 006, August 12th, 2020.
+This is 1MB Github version 1.0 build 007, September 6th, 2020.

@@ -29,7 +29,7 @@ The world is a singleplayer world that's been created, chunks loaded, states sav
 
 - Optionally, make sure players are in spectator mode, and that your spawnpoint is set properly. I've included my worlds.yml file as an example guilde.
 
-- To manually do this, you can go to the world: /mvtp debug, once you're in the right spot, change to creative mode, and land on a block. Then type: /mvset spawn, and go back into spectator mode. Then /mvm set gamemode spectator. And /save-all
+- To manually do this, you can go to the world: /mvtp debug, once you're in the right spot, change to creative mode, and land on a block. Then type: /mvsetspawn, and go back into spectator mode. Then /mvm set gamemode spectator. And /save-all
 
 - Don't forget to add the permission to the group for those who should have access to this world: /lp group GROUPNAME permission set multiverse.access.debug true
 

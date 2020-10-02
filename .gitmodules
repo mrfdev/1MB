@@ -1,0 +1,3 @@
+[submodule "Resources/cmi"]
+	path = Resources/cmi
+	url = https://github.com/mrfdev/cmi

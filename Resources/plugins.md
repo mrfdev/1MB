@@ -20,7 +20,7 @@
 | FoundDiamonds | https://www.spigotmc.org/resources/founddiamonds-updated.81124/ | x | x |
 | HeadDatabase | https://www.spigotmc.org/resources/head-database.14280/ | x | Premium |
 | JobsReborn | https://www.spigotmc.org/resources/jobs-reborn.4216/ | x | x |
-| LuckPerms | https://www.spigotmc.org/resources/luckperms.28140/ | x | x |
+| LuckPerms | https://www.spigotmc.org/resources/luckperms.28140/ | https://ci.lucko.me/job/LuckPerms/ | x |
 | LWC Extended | https://www.spigotmc.org/resources/lwc-extended.69551/ | https://papermc.io/ci/job/LWCX/ | Use pop4959's version. |
 | mcMMO | https://www.spigotmc.org/resources/official-mcmmo-classic.2445/ | https://papermc.io/ci/view/%20%20Plugins/job/mcMMO/ | Premium, 2.x Overhaul |
 | mcMMO Placeholders | https://github.com/electronicboy/mcmmo-placeholders | https://atlas.valaria.pw/jenkins/view/Plugins/job/mcmmo-placeholders/ | Used via BossShopPro |
@@ -30,7 +30,6 @@
 | Multiverse-Inventories | unknown | http://ci.onarandombox.com/job/Multiverse-Inventories/ | 3.0.1-SNAPSHOT-b461 |
 | PlaceholderAPI | https://www.spigotmc.org/resources/placeholderapi.6245/ | https://ci.extendedclip.com/job/PlaceholderAPI/ | x |
 | PlotSquared | https://www.spigotmc.org/resources/plotsquared-v5.77506/ | x | Premium |
-| ProCosmetics | https://www.spigotmc.org/resources/procosmetics-280-cosmetics-treasurechests-eula-compliant-1-8-1-16-support.49106/ | x | Premium |
 | PvPToggle | https://www.spigotmc.org/resources/pvptoggle.49112/ | x | x |
 | PyroFishingPro | https://www.spigotmc.org/resources/pyrofishingpro-1-13-x-1-16-x-v4-huge-update.60729/ | x | Premium |
 | PyroWelcomes | https://www.spigotmc.org/resources/pyrowelcomes-1-9-x-1-16-x.47583/ | x | Using 2.4.0 build provided by Pyro |

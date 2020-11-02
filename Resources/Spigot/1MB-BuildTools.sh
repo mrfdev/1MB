@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.0, build 059
-# @Release: September 11th, 2020
-# @Description: Helps us get a Minecraft Spigot 1.16.3 server.
+# @Version: 2.0, build 060
+# @Release: November 2nd, 2020
+# @Description: Helps us get a Minecraft Spigot 1.16.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -17,7 +17,7 @@
 #
 ###
 
-_minecraftVersion="1.16.3"
+_minecraftVersion="1.16.4"
 # Which version are we running?
 
 _minJavaVersion=11.0
@@ -45,7 +45,7 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to spigot-1.16.3.jar
+# 1MB-start.sh defaults to spigot-1.16.4.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
@@ -161,7 +161,7 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.16.3)
+# line 1 : Minecraft version (example: 1.16.4)
 # line 2 : Spigot nightly build version (example: 2848)
 # line 3 : BuildTools build version (example: 120)
 # line 4 : Shell script last-run state (example: true|false)
@@ -169,7 +169,7 @@ function cache {
 #
 # At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.16.3,
+# The 'default' values are for Spigot 1.16.4,
 # but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
@@ -379,10 +379,10 @@ _output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_curr
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
-# We want builds for 1.16.3, so the cached version and the current version have to both be 1.16.3
+# We want builds for 1.16.4, so the cached version and the current version have to both be 1.16.4
 # PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
 if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
-    # success, 1.16.3 == 1.16.3
+    # success, 1.16.4 == 1.16.4
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
@@ -410,7 +410,7 @@ else
     sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
-# Ok, we know there's a new build out for Spigot for Minecraft 1.16.3,
+# Ok, we know there's a new build out for Spigot for Minecraft 1.16.4,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
@@ -435,7 +435,7 @@ else
 fi
 
 # Update: What happened?
-# If the script didn't quit here, that means we have a new spigot build for 1.16.3 of minecraft,
+# If the script didn't quit here, that means we have a new spigot build for 1.16.4 of minecraft,
 # and we know if we can upgrade spigot with the buildtools we have, or if we need to get a new jar.
 
 # do we just update spigot?

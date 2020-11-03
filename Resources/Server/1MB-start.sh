@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.0, build 031 for Spigot 1.16.3 (java 11)
-# @Release: September 11th, 2020
-# @Description: Helps us start and fork a Minecraft 1.16.3 server.
+# @Version: 2.0, build 031 for Spigot 1.16.4 (java 11)
+# @Release: November 3rd, 2020
+# @Description: Helps us start and fork a Minecraft 1.16.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-start.sh

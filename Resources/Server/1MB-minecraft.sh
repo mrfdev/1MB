@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.0, build 031 for Spigot 1.16.3 (java 11)
-# @Release: September 11th, 2020
-# @Description: Helps us start a Minecraft Spigot 1.16.3 server.
+# @Version: 2.0, build 032 for Spigot 1.16.4 (java 11)
+# @Release: November 3rd, 2020
+# @Description: Helps us start a Minecraft Spigot 1.16.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,7 +17,7 @@
 #
 ###
 
-_minecraftVersion="1.16.3"
+_minecraftVersion="1.16.4"
 # Which version are we running?
 
 _minJavaVersion=11.0
@@ -39,9 +39,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.16.3.jar 
-# "spigot" assumes to look for spigot-1.16.3.jar
-# "paper" assumes to look for paper-1.16.3.jar
+# "" assumes auto detection for <engine>-1.16.4.jar 
+# "spigot" assumes to look for spigot-1.16.4.jar
+# "paper" assumes to look for paper-1.16.4.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -52,7 +52,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.16.3 server-gui
+# leave "" if you want the 1.16.4 server-gui
 _noGui="--nogui"
 
 ### FUNCTIONS AND CODE

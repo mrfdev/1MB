@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.0, build 032 for Spigot 1.16.4 (java 11)
-# @Release: November 3rd, 2020
-# @Description: Helps us start a Minecraft Spigot 1.16.4 server.
+# @Version: 2.1, build 033 for Spigot 1.16.5 (java 11)
+# @Release: January 16th, 2021
+# @Description: Helps us start a Minecraft Spigot 1.16.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,7 +17,7 @@
 #
 ###
 
-_minecraftVersion="1.16.4"
+_minecraftVersion="1.16.5"
 # Which version are we running?
 
 _minJavaVersion=11.0
@@ -39,9 +39,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.16.4.jar 
-# "spigot" assumes to look for spigot-1.16.4.jar
-# "paper" assumes to look for paper-1.16.4.jar
+# "" assumes auto detection for <engine>-1.16.5.jar 
+# "spigot" assumes to look for spigot-1.16.5.jar
+# "paper" assumes to look for paper-1.16.5.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -52,7 +52,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.16.4 server-gui
+# leave "" if you want the 1.16.5 server-gui
 _noGui="--nogui"
 
 ### FUNCTIONS AND CODE
@@ -158,4 +158,4 @@ fi
 _startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
 $_startJVM || _output oops "Failed to start the jvm for some reason."
 
-#EOF (c)2011-2020 Floris Fiedeldij Dop
+#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

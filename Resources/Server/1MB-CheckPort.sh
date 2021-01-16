@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 1.0, build 003
-# @Release: August 12th, 2020
+# @Version: 1.0, build 004
+# @Release: January 16th, 2021
 # @Description: Spits out if proc is running on port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -18,7 +18,7 @@
 ###
 
 _file="server.properties"
-# We will check if the current directory for example has a 1.16.2 server.properties file
+# We will check if the current directory for example has a 1.16.5 server.properties file
 
 if [[ -f "$_file" ]]; then
 	#todo result might be empty, might need to check against that.
@@ -28,6 +28,7 @@ else
 	echo -e "Could not grep port from $_file, defaulting to $_port"
 fi
 _proc="java"
+
 
 # function
 _netfind() {
@@ -48,3 +49,5 @@ else
 	echo -e "Did not find $_file, checking for all $_proc instead:"
 	_netfind $_proc
 fi
+
+#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

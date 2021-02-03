@@ -23,6 +23,7 @@ Sure, feel free to correct urls, submit suggestions, etc.
 - [tldr helper](https://tldr.ostera.io)
 
 - [bash shell check](https://www.shellcheck.net/)
+- [shell explaininer](https://explainshell.com/)
 - [bash colors](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 - [bash minifier](http://bash-minifier.appspot.com/)
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.1, build 033 for Spigot 1.16.5 (java 11)
-# @Release: January 16th, 2021
-# @Description: Helps us start and fork a Minecraft 1.16.5 server.
+# @Version: 2.2, build 034 for Spigot 1.16.5 (java 11, 64bit)
+# @Release: February 26th, 2021
+# @Description: Helps us start and fork a Minecraft 1.16.5 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-start.sh
-# @Syntax: ./1MB-start.sh
+# @Syntax: ./1MB-start.sh (name)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
@@ -18,8 +18,9 @@
 ###
 
 _serverName="mcserver"
-# This name makes it easier to spot in 'screen -ls'
-# Keep this lowercase, short, simple, no weird characters
+# Keep the name short, simple, and lowercase (no numbers or weird characters).
+# The name makes it easier to recognize the session in 'tmux ls', you can
+# re-attach to the forked sessions with 'tmux attach -t (name)'.
 
 ### FUNCTIONS AND CODE
 #
@@ -58,22 +59,26 @@ function _output {
 
 if [ -n "$1" ]; then
     _input=$(echo "$1" | awk '{ print tolower($1) }'); _input=$(echo "${_input}" | awk '{print substr ($0, 0, 16)}');
-    [[ "$_input" =~ ^[a-z]+$ ]] && _serverName="$_input" || _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
+    if [[ "$_input" =~ ^[a-z]+$ ]]; then
+        _serverName="$_input"
+    else
+        _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
+	fi
 fi
 
 _output debug "Attempting to start your Minecraft '$_serverName' server ... "
 
-if type "screen" >/dev/null 2>&1; then
-    _output debug "Found 'screen', attempting to fork session into background ..."
-    screen -dmS $_serverName bash "$_sibling"
-    [[ "$_debug" == true ]] && screen -ls
-elif type "tmux" >/dev/null 2>&1; then
-    _output debug "Could not find 'screen', but found 'tmux', attempting to fork session into background ..."
+if type "tmux" >/dev/null 2>&1; then
+    _output debug "Found 'tmux', attempting to create and fork a new tmux session into background ..."
     tmux new -d -s "$_serverName" 2>/dev/null || return 1
     tmux send-keys -t "$_serverName" "./$_sibling" ENTER
-    [[ "$_debug" == true ]] && tmus ls && _output debug "To re-attach: tmux attach -t $_serverName"
+    [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
+elif type "screen" >/dev/null 2>&1; then
+    _output debug "Could not find 'tmux' (preferred), but found 'screen', attempting to create and fork a new screen session into background ..."
+    screen -dmS "$_serverName" bash "$_sibling"
+    [[ "$_debug" == true ]] && screen -ls; _output debug "To re-attach: screen -r $_serverName"
 else
-    _output debug "Oops, 'screen', nor 'tmux' seems to be installed. Try installing either. \\n -> macOS: brew install tmux, Ubuntu: apt install screen \\n -> Can't fork session, trying '$_sibling' directly ..."
+    _output debug "Oops, 'tmux' (preferred), nor 'screen' seems to be installed. Try installing either. \\n -> macOS: brew install tmux, Ubuntu: apt install screen \\n -> Can't fork session, trying '$_sibling' directly ..."
     sleep 4
     bash "$_sibling" || _output oops "Something is wrong, I could not start your server."
 fi

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.1, build 033 for Spigot 1.16.5 (java 11)
-# @Release: January 16th, 2021
+# @Version: 2.2, build 034 for Spigot 1.16.5 (java 11, 64bit)
+# @Release: February 26th, 2021
 # @Description: Helps us start a Minecraft Spigot 1.16.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -28,14 +28,16 @@ _javaMemory="-Xms4G -Xmx4G"
 # "" = uses the default
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
-# For Spigot / Paper servers we recommend -Xms10G -Xmx10G for 16GB systems.
 # More details here: https://stackoverflow.com/questions/14763079/
+# Example: (16GB dedicated paper 1.16.5 server with custom flags, using 10GB ram, etc.)
+# _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 
 # jvm startup parameters
 _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
+# -Dterminal.ansi=false (Temporary fix for older screen sessions that have hex-issues)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
@@ -65,7 +67,7 @@ _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as below:
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 
 _debug=false
 # Debug mode off or on? Default: false (true means it spits out progress)

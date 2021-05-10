@@ -93,7 +93,7 @@ Pretty Big tip: You can run it offsite. Your current host giving you issues? You
 
 Big tip: You can cluster, you can run 5 instances of your server for example, pregen your spawn world first (your first world) so you don't risk losing or corrupting data. Put that on all the servers. Then put all the small worlds on the first one, and some bigger worlds one by one on the others. And just run the instances at basically the same time. The --forceUpgrade and pre-gen doesn't take much cpu/ram and you can easily run multiple instances at the same time (each on their own port) and you basically never have to login to the game anyway. But what finishes successfully you can move to the live server and test there. What hasn't completed doesn't add a queue and you can just run another instance at the same time for another world. 
 
-Tip: When you run different instances on different ports to help you convert your worlds quickly, and pre-gen them quicly etc. You can remove any plugin that it really doesn't need, such as discord plugins, voting plugins, etc. Do keep multiverse-core and world generators that you need of course. Maybe keep world protection plugins as well.
+Tip: When you run different instances on different ports to help you convert your worlds quickly, and pre-gen them quickly etc. You can remove any plugin that it really doesn't need, such as discord plugins, voting plugins, etc. Do keep multiverse-core and world generators that you need of course. Maybe keep world protection plugins as well.
 
 Generic tip: You can even keep your live server running, but limit your players to your spawn and general world. While taking other things like a mini game world etc offline. You can prevent them from using that world. This way you have less downtime. And when a converted/pregenned world has finished you can just swap it live basically. And then test it, and if things seem fine you can grant players access to it again. 
 
@@ -121,4 +121,4 @@ Use Chunky, and if you can't use Chunky, use WorldBorder plugin. I've tried othe
 
 ### github version
 
-This is the initial draft, created May 10th, 2021, version 1.0.0, by Floris Fiedeldij Dop - https://www.1moreblock.com/
+This is the initial draft, created May 10th, 2021, version 1.0.1, by Floris Fiedeldij Dop - https://www.1moreblock.com/

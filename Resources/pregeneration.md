@@ -1,3 +1,124 @@
-# one
-## two
-### three
+# Pre-generation of Worlds on Minecraft
+
+This page is a suggestion on managing your Minecraft worlds through chunk pre-generation (pregen) to help your server performance and give your players an improved gaming experience.
+
+Every server (type) is different, what works for me might not work for you. The goal here is to realise your options, learn from it, and to apply it to your personal situation. 
+
+## Introduction to chunk pre-generation
+
+To pre-generate a world, or more specifically a chunk within your world map region file, is to take away the load 'now' so it doesn't have to do these calculations 'later'. 
+
+Normally when a player joined the server and starts exploring they will potentially load chunks that have never been visited before. As that happens it has to generate it (based on the world seed etc) and load it and present it to the player, who can then see it and interact with it. 
+
+Doing the pre-generation of that chunk ahead of time means we can skip that step and save stress on the server, remove the 'wait time' for the player. 
+
+And while this might be just a tiny bit of server stress and a tiny bit of wait time that we're saving, with a multiplayer server it's realistic that more than one player is active, is moving, some are teleporting, or randomly teleporting, switching worlds, etc. It all adds up, and if that normally would cause the TPS to drop for your server, pre-generating a world could potentially help fix that as it takes the edge off.
+
+### Questions I always get
+
+Q: Can I pregen on 1.8 or only on 1.16 worlds?
+A: There are plugins for almost every version.
+
+Q: But pregen drops the tps of the server!!
+A: Sometimes, this depends on your hosting solution. This is server-management, don't run it live if it impacts your server too much.
+
+Q: Do I need to have a big server to pregen?
+A: Not really, but yes, I do recommend having 4GB or more available, and you can offsite pregenerate most of the time (local system for example)
+
+Q: It keeps crashing my server!
+A: See previous Q/A, and to be honest, this isn't a support page. Talk to the authors of the plugins.
+
+Q: Can I pregen all my worlds/servers?
+A: Yes, I would do them all.
+
+Q: My world uses a special world generator, now what?
+A: Pregen it, that world generator should kick in and generate the chunks as expected.
+
+Q: Do I still need the custom world generator plugin when everything's generated?
+A: Yes, and no. No, because it's all generated, yes, because some world gen plugins offer special features. Use common sense in this case.
+
+Q: Do I need a worldborder?
+A: Yes and no. Yes, because it's making pregen a lot easier (gives you control), and once done, you don't want players to into un-genned areas. But no, you can temporarily use a worldborder, and when the pregenning is done you can remove the worldborder. I know some people just want to pregen the first 50k radius of their world. 
+
+Q: How much storage will this take up to pregen a whole world?
+A: This depends on how much you do. 50,000 blocks by 50,000 blocks (25k square radius) can be between 25 to 50gb. So make sure your host can support this.
+
+Q: Which plugin do you recommend?
+A: I will get into that further down this document, but the short answer is Chunky, unless you're on 1.12.2 or older, then it will be WorldBorder.
+
+Q: Any tricks to speed things up?
+A: Yes, see further down this document, but the short answer is: cluster your tasks.
+
+Q: Do I still need to --forceUpgrade and everything?
+A: Well, I am sure people will say no, but my personal experience is that I have the Least amount of issues when I --forceUpgrade between bigger version updates, before running Chunky.
+
+Q: Okay, I have a 5k world pregenned, now 1.17 comes out, NOW WHAT
+A: Well, that's something you have to think about BEFORE doing any pregen, rather than realise after the fact. See further down this document 'World expansions'.
+
+Q: What if I already have started pregen and want to stop it?
+A: I believe both worldborder and chunky support pause and/or stop/cancel task. 
+
+Q: What if I already have a pregen world and need to do it again?
+A: If you started with say 500x500 and want to make it 1000x1000, you can start pregen again. The plugins will check if the chunk has already been generated and finish really quickly on it. If it took an hour first, then that same amount of chunks will now take a few minutes maybe fifteen. But not another hour (just an example).
+
+## Minecraft version Upgrades
+
+Personally I don't run --forceUpgrade going from 1.16.2 to 1.16.3, unless there's a world-generation tweak/bugfix or something world generation related.
+
+Personally I do run --forceUPgrade going from for example 1.12 to 1.13, or 1.13 to 1.15, or 1.15 to 1.16.5
+
+I recommend to run --forceUpgrade before running a world pre-generation. This way existing chunks are converted by Mojang's server engine to the version you're upgrading to. Before generating new chunks for it, which will then be made for that version. It feels like this would be common sense. 
+
+See the topic below this one as to how I recommend dealing with upgrading/expanding existing worlds.
+
+## World Expansion
+
+New world? Easy: Pick a size, make it square, pre-generate it. When done: let your users enjoy it.
+
+Upgrading in the future? Easy: Think about this before starting a new world. This way you can decide you will never expand again, or maybe reset when there's a big new version out. Or maybe you start small and expand over time. You can run --forceUpgrade and then expand the border a bit and pregen what's new.
+
+Expanding existing world? Possible. When you've thought about it and started with a small world border and pregen that world. You can now run change the worldborder size and then pregen what's new.
+
+Expanding existing world with a version upgrade? Possible. When you've thought about it and started with a small world border and pregen that world. You can now run --forceUpgrade and then expand the border a bit and pregen what's new. 
+
+Personally I never delete worlds. So pregenning a world can start small. Small can be 500x500 but also 5000x5000. It all depends on what you can host, what you want to do, how many players you expect to get and what your long term plans are. For example, I have a ten year old world that started with very old beta stuff and over time we've expanded it with each version upgrade of Minecraft, so yes, around spawn the chunks are from old world generation but near the world border everything's fresh and new. Players in my experience have no issue with this. 
+
+## Tricks and Tips
+
+Uber tip: Backup your whole server, including MYSQL databases etc, before even making any changes to your servers, be it an plugin update, --forceUpgrade run, a world pregen, or just tweaking configuration settings. Learn how to make backups, how to confirm they are working backups, how to roll back, etc. 
+
+Biggest tip: Run --forceUpgrade when you go between major version updates of Minecraft. And even if you don't do that: pre-generate your worlds. All of them, on all your servers. There's no realistic downside to it.
+
+Pretty Big tip: You can run it offsite. Your current host giving you issues? You can of course change to something else, but you can rent a cloud solution for the time you need it to keep the cost down a lot. And run a clone of your server there for --forceUpgrade and pre-generation. While you work on your live-server updates. This allows you to get a very expensive high quality host cheap for a short time, and you can convert multiple servers and worlds and lower your overall downtime. 
+
+Big tip: You can cluster, you can run 5 instances of your server for example, pregen your spawn world first (your first world) so you don't risk losing or corrupting data. Put that on all the servers. Then put all the small worlds on the first one, and some bigger worlds one by one on the others. And just run the instances at basically the same time. The --forceUpgrade and pre-gen doesn't take much cpu/ram and you can easily run multiple instances at the same time (each on their own port) and you basically never have to login to the game anyway. But what finishes successfully you can move to the live server and test there. What hasn't completed doesn't add a queue and you can just run another instance at the same time for another world. 
+
+Tip: When you run different instances on different ports to help you convert your worlds quickly, and pre-gen them quicly etc. You can remove any plugin that it really doesn't need, such as discord plugins, voting plugins, etc. Do keep multiverse-core and world generators that you need of course. Maybe keep world protection plugins as well.
+
+Generic tip: You can even keep your live server running, but limit your players to your spawn and general world. While taking other things like a mini game world etc offline. You can prevent them from using that world. This way you have less downtime. And when a converted/pregenned world has finished you can just swap it live basically. And then test it, and if things seem fine you can grant players access to it again. 
+
+Note: If you want to run pregen while the server is live: yes, this is possible. But it can and probably does slow it down. You and your players will have a longer 'meh' experience versus doing some smarty-pants server management as mentioned in the tips above. 
+
+And final tip:
+
+Keep the console to the server open, so you can see what goes wrong. If something goes wrong you can just start over that one world (after applying fixes) versus having to redo everything. Read the console, know what is going on. etc.
+
+## Plugins and Tools/Resources
+
+Get hosting that gives you console access, personally I avoid any control panel. I want full server access and a command line. Allowing me to use basic kernel commands to manage the data on the hosting solution is important. Having control over your data means you can back up properly, you can start servers properly, you can customize your servers properly, and you can run multiple instances properly and pre-gen in a comfortable way. Free hosting solutions that give you 5gb storage and no console access besides read-only: worthless in my opinion to properly run a server.
+
+Use Chunky, and if you can't use Chunky, use WorldBorder plugin. I've tried other plugins but I had so/so experiences with them and reverted back to WorldBorder. I don't suggest running a server for a Minecraft version that isn't able to run Chunky. Stay current, keep your plugins current. 
+
+**WorldBorder:**
+- github (source code): https://github.com/Brettflan/WorldBorder
+- download (1.15 and 1.16 fork): https://www.spigotmc.org/resources/worldborder-1-15.80466/
+- download (1.13 and 1.14): https://www.spigotmc.org/resources/worldborder.60905/
+- download (1.8.8 and 1.12.2): https://dev.bukkit.org/projects/worldborder
+
+**Chunky:**
+- github (source code): https://github.com/pop4959/Chunky
+- download (1.13, 1.14, 1.15 and 1.16): https://www.spigotmc.org/resources/chunky.81534/
+
+### github version
+
+This is the initial draft, created May 10th, 2021, version 1.0.0, by Floris Fiedeldij Dop - https://www.1moreblock.com/

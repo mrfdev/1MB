@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.2, build 034 for Spigot 1.16.5 (java 11, 64bit)
-# @Release: February 26th, 2021
+# @Version: 2.3, build 035 for Spigot 1.16.5 (java 16, 64bit)
+# @Release: May 10th, 2021
 # @Description: Helps us start and fork a Minecraft 1.16.5 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -63,7 +63,7 @@ if [ -n "$1" ]; then
         _serverName="$_input"
     else
         _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
-	fi
+    fi
 fi
 
 _output debug "Attempting to start your Minecraft '$_serverName' server ... "

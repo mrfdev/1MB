@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.2, build 034 for Spigot 1.16.5 (java 11, 64bit)
-# @Release: February 26th, 2021
+# @Version: 2.3, build 035 for Spigot 1.16.5 (java 16, 64bit)
+# @Release: May 10th, 2021
 # @Description: Helps us start a Minecraft Spigot 1.16.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
@@ -20,7 +20,8 @@
 _minecraftVersion="1.16.5"
 # Which version are we running?
 
-_minJavaVersion=11.0
+_minJavaVersion=16.0
+# 16.0 = java 16, can be used for Minecraft 1.16.5 and up.
 # 11.0 = java 11, can be used for Minecraft 1.13.x and up.
 # 1.8 = java 8, required for Minecraft 1.12.x and up.
 
@@ -29,7 +30,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB dedicated paper 1.16.5 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB dedicated Paper 1.16.5 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 
 # jvm startup parameters
@@ -38,6 +39,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
 # -Dterminal.ansi=false (Temporary fix for older screen sessions that have hex-issues)
+# --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED (Temporary fix for asyncworldedit and java16)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
@@ -65,9 +67,10 @@ _noGui="--nogui"
 
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
-# if this fails, you could hard code the path, as below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
+# if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
 
 _debug=false
 # Debug mode off or on? Default: false (true means it spits out progress)
@@ -118,10 +121,10 @@ if binExists "java"; then
         else
             # todo: Reconsider how to approach this, if _javaBin is set, check that. If that fails, try auto discovery.
             if [[ -f "$_javaBin" ]]; then
-        		_output debug "Path to java was set in _javaBin, found it and trying to use this instead of auto discovery."
-    		else
-    			_output oops "Could not find $_javaBin, leave _javaBin empty for auto discovery or install java properly."
-    		fi
+                _output debug "Path to java was set in _javaBin, found it and trying to use this instead of auto discovery."
+            else
+                _output oops "Could not find $_javaBin, leave _javaBin empty for auto discovery or install java properly."
+            fi
         fi
         _output debug "Installed $_cmd version $_cmdversion is newer than $_minJavaVersion (this is great)!"
     else

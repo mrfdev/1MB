@@ -61,6 +61,9 @@ A: I believe both worldborder and chunky support pause and/or stop/cancel task.
 Q: What if I already have a pregen world and need to do it again?
 A: If you started with say 500x500 and want to make it 1000x1000, you can start pregen again. The plugins will check if the chunk has already been generated and finish really quickly on it. If it took an hour first, then that same amount of chunks will now take a few minutes maybe fifteen. But not another hour (just an example).
 
+Q: After an upgrade, convert, pregen I get weird (world) errors in the console?
+A: You can ask for server and plugin support on SpigotMC.org in the appropriate forum. 
+
 ## Minecraft version Upgrades
 
 Personally I don't run --forceUpgrade going from 1.16.2 to 1.16.3, unless there's a world-generation tweak/bugfix or something world generation related.
@@ -83,6 +86,26 @@ Expanding existing world with a version upgrade? Possible. When you've thought a
 
 Personally I never delete worlds. So pregenning a world can start small. Small can be 500x500 but also 5000x5000. It all depends on what you can host, what you want to do, how many players you expect to get and what your long term plans are. For example, I have a ten year old world that started with very old beta stuff and over time we've expanded it with each version upgrade of Minecraft, so yes, around spawn the chunks are from old world generation but near the world border everything's fresh and new. Players in my experience have no issue with this. 
 
+## Additional benefits
+
+As previously mentioned, the performance on the server improves, places where pregen can benefit your server:
+
+- Do the work now, to avoid having to do it later.
+- Players moving around, and having a better experience.
+- Overall server performance increase, creating room for fast players.
+- Elytra is a feature in newer versions, chunks will show faster to the player.
+- Trident in the rain with Riptide while wearing Elytra can create super speeds. In some situations having a pregen world can actually prevent a server from crawling to a halt. 
+- No need in some situations to run a special custom world generator, the chunks are already there, you can technically remove the world generator plugins and save on cpu/ram.
+- No weird old vs new chunk generation due to visited/unvisited chunks (consistency).
+- Variety of world maps for websites look complete, instead of looking weird of having huge chunks of unvisited areas (dynmap, etc).
+- Random teleporting features (BetterRTP, /cmi rt, etc) will have an easier time async loading and preloading chunks. This can help keep the tps up and give the player a smooth teleporting experience. 
+
+## Trimming chunks
+
+Pre-generating a chunk is generally referred to as filling, while removing chunks is called trimming. It's important to consider trimming chunks (accidentally) generated outside of the world border. This way they're all newly generated for the version of Minecraft you're generating new chunks when you expand the world border. 
+
+So don't forget to trim outside of the old world border first, before expanding the world border and running another fill pregen.
+
 ## Tricks and Tips
 
 Uber tip: Backup your whole server, including MYSQL databases etc, before even making any changes to your servers, be it an plugin update, --forceUpgrade run, a world pregen, or just tweaking configuration settings. Learn how to make backups, how to confirm they are working backups, how to roll back, etc. 
@@ -103,6 +126,22 @@ And final tip:
 
 Keep the console to the server open, so you can see what goes wrong. If something goes wrong you can just start over that one world (after applying fixes) versus having to redo everything. Read the console, know what is going on. etc.
 
+## Force Upgrade side-note
+
+Eventually I might write a Github page like this one about server upgrades, but I will make a side note here regarding upgrading worlds from one version of Minecraft to another. 
+
+Mojang has offered a way to forcefully run optimize and upgrade on your worlds. You can do this in singleplayer techcnically by pressing a button or just loading the world I think. But for a server you need to update your jvm startup parameters with either Force Upgrade option, and/or the Erase Cache option.
+
+`--forceUpgrade` - One time converts world chunks to new engine version
+`--eraseCache` - Removes caches. Cached data is used to store the skylight, blocklight and biomes, alongside other stuff
+
+It's important to realise that you only need to run this once, subsequent server startups do not need this. This is recommended (in my opinion) to do between major versions or at least when there's world generation changes between versions.
+
+`java` starts the jvm, `-jar` tells the jvm which jar file to start, like spigot.jar or paper.jar, and behind that, you can add `--forceUpgrade`. Do not add it before -jar, it has to be go behind it, because java startup flags go behind java and before -jar, and the Minecraft server startup params go behind the -jar
+
+i.e.
+`java -jar spigot.jar --forceUpgrade --eraseCache`
+
 ## Plugins and Tools/Resources
 
 Get hosting that gives you console access, personally I avoid any control panel. I want full server access and a command line. Allowing me to use basic kernel commands to manage the data on the hosting solution is important. Having control over your data means you can back up properly, you can start servers properly, you can customize your servers properly, and you can run multiple instances properly and pre-gen in a comfortable way. Free hosting solutions that give you 5gb storage and no console access besides read-only: worthless in my opinion to properly run a server.
@@ -119,6 +158,15 @@ Use Chunky, and if you can't use Chunky, use WorldBorder plugin. I've tried othe
 - github (source code): https://github.com/pop4959/Chunky
 - download (1.13, 1.14, 1.15 and 1.16): https://www.spigotmc.org/resources/chunky.81534/
 
-### github version
+`Chunky commands I use PER world and from console:`
+```
+chunky world <world> - Set the world target
+chunky worldborder - Use the world border center & radius
+chunky shape <shape> - Set the shape to generate (I use square)
+chunky quiet <interval> - Set the quiet interval (I use 120)
+chunky start - Start a new chunk generation task
+```
 
-This is the initial draft, created May 10th, 2021, version 1.0.1, by Floris Fiedeldij Dop - https://www.1moreblock.com/
+### Github document version
+
+This is the initial draft, created May 10th, 2021, version 1.0.2, by Floris Fiedeldij Dop - https://www.1moreblock.com/

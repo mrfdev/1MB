@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.4, build 036 for Spigot 1.17 (java 16, 64bit)
-# @Release: June 11th, 2021
-# @Description: Helps us start a Minecraft Spigot 1.17 server.
+# @Version: 2.5, build 037 for Spigot 1.17.1 (java 16, 64bit)
+# @Release: July 6th, 2021
+# @Description: Helps us start a Minecraft Spigot 1.17.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.17"
+_minecraftVersion="1.17.1"
 # Which version are we running?
 
 _minJavaVersion=16.0
-# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and (is required for) 1.17 and up.
+# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and (is required for) 1.17.1 and up.
 # use 16.0 for java 16 which can also be used for Minecraft 1.16.5
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
@@ -32,7 +32,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB dedicated Paper 1.17 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB dedicated Paper 1.17.1 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 
 # jvm startup parameters
@@ -44,13 +44,13 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.security=ALL-UNNAMED (Temporary fix for asyncworldedit and java16)
 # and --add-opens java.desktop/java.awt=ALL-UNNAMED
 # and --add-opens java.desktop/java.awt.color=ALL-UNNAMED
-# --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17)
+# --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17.1)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.17.jar 
-# "spigot" assumes to look for spigot-1.17.jar
-# "paper" assumes to look for paper-1.17.jar
+# "" assumes auto detection for <engine>-1.17.1.jar 
+# "spigot" assumes to look for spigot-1.17.1.jar
+# "paper" assumes to look for paper-1.17.1.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -61,7 +61,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.17 server-gui
+# leave "" if you want the 1.17.1 server-gui
 _noGui="--nogui"
 
 ### FUNCTIONS AND CODE

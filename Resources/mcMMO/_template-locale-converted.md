@@ -1,9 +1,5 @@
-# mcMMO Party Information
+# mcMMO Locale converted to a template to use for wiki stuff
 
-#I'm going to try to normalize our locale file, forgive the mess for now.
-
-#DO NOT USE COLOR CODES IN THE JSON KEYS
-#COLORS ARE DEFINED IN advanced.yml IF YOU WISH TO CHANGE THEM
 ## JSON Rank
 `Rank`
 ## JSON DescriptionHeader

@@ -30,7 +30,7 @@ Thick Fur
 ## Taming Ability Bonus 3
 
 ```
-1/{0} Damage, Fire Resistance
+1/x Damage, Fire Resistance
 ```
 
 ## Taming Ability Bonus 4
@@ -42,7 +42,7 @@ Shock Proof
 ## Taming Ability Bonus 5
 
 ```
-Explosives do 1/{0} normal damage
+Explosives do 1/x normal damage
 ```
 
 ## Taming Ability Bonus 6
@@ -54,7 +54,7 @@ Sharpened Claws
 ## Taming Ability Bonus 7
 
 ```
-+{0} Damage
++x Damage
 ```
 
 ## Taming Ability Bonus 8
@@ -66,7 +66,7 @@ Fast Food Service
 ## Taming Ability Bonus 9
 
 ```
-{0} Chance for heal on attack
+x Chance for heal on attack
 ```
 
 ## Taming Ability Bonus 10
@@ -84,37 +84,37 @@ Regain health when damaged by magic or poison
 ## Taming Ability Locked 0
 
 ```
-LOCKED UNTIL {0}+ SKILL (ENVIRONMENTALLY AWARE)
+LOCKED UNTIL x+ SKILL (ENVIRONMENTALLY AWARE)
 ```
 
 ## Taming Ability Locked 1
 
 ```
-LOCKED UNTIL {0}+ SKILL (THICK FUR)
+LOCKED UNTIL x+ SKILL (THICK FUR)
 ```
 
 ## Taming Ability Locked 2
 
 ```
-LOCKED UNTIL {0}+ SKILL (SHOCK PROOF)
+LOCKED UNTIL x+ SKILL (SHOCK PROOF)
 ```
 
 ## Taming Ability Locked 3
 
 ```
-LOCKED UNTIL {0}+ SKILL (SHARPENED CLAWS)
+LOCKED UNTIL x+ SKILL (SHARPENED CLAWS)
 ```
 
 ## Taming Ability Locked 4
 
 ```
-LOCKED UNTIL {0}+ SKILL (FAST FOOD SERVICE)
+LOCKED UNTIL x+ SKILL (FAST FOOD SERVICE)
 ```
 
 ## Taming Ability Locked 5
 
 ```
-LOCKED UNTIL {0}+ SKILL (HOLY HOUND)
+LOCKED UNTIL x+ SKILL (HOLY HOUND)
 ```
 
 ## Taming Combat Chance Gore
@@ -162,8 +162,8 @@ Summon an animal to your side
 ## Taming.SubSkill CallOfTheWild Description 2
 
 ```
-&7COTW: Crouch and left-click with
-  {0} {1} (Ocelot), {2} {3} (Wolf), {4} {5} (Horse)
+COTW: Crouch and left-click with
+  x x (Ocelot), x x (Wolf), {4} {5} (Horse)
 ```
 
 ## Taming SubSkill FastFoodService Name
@@ -259,7 +259,7 @@ You've been knocked back by a wolf!
 ## Taming Listener Wolf
 
 ```
-&8Your wolf scurries back to you...
+Your wolf scurries back to you...
 ```
 
 ## Taming Listener
@@ -277,49 +277,49 @@ TAMING
 ## Taming.Summon COTW Success WithoutLifespan
 
 ```
-&a(Call Of The Wild) &7You have summoned a &6{0}&7
+(Call Of The Wild) You have summoned a x
 ```
 
 ## Taming.Summon COTW Success WithLifespan
 
 ```
-&a(Call Of The Wild) &7You have summoned a &6{0}&7 and it has a duration of &6{1}&7 seconds.
+(Call Of The Wild) You have summoned a x and it has a duration of x seconds.
 ```
 
 ## Taming Summon COTW Limit
 
 ```
-&a(Call Of The Wild) &7You can only have &c{0} &7summoned &7{1} pets at the same time.
+(Call Of The Wild) You can only have x summoned x pets at the same time.
 ```
 
 ## Taming Summon COTW TimeExpired
 
 ```
-&a(Call Of The Wild) &7Time is up, your &6{0}&7 departs.
+(Call Of The Wild) Time is up, your x departs.
 ```
 
 ## Taming Summon COTW Removed
 
 ```
-&a(Call Of The Wild) &7Your summoned &6{0}&7 has vanished from this world.
+(Call Of The Wild) Your summoned x has vanished from this world.
 ```
 
 ## Taming Summon COTW BreedingDisallowed
 
 ```
-&a(Call Of The Wild) &cYou cannot breed a summoned animal.
+(Call Of The Wild) You cannot breed a summoned animal.
 ```
 
 ## Taming Summon COTW NeedMoreItems
 
 ```
-&a(Call Of The Wild) &7You need &e{0}&7 more &3{1}&7(s)
+(Call Of The Wild) You need x more x(s)
 ```
 
 ## Taming Summon Name Format
 
 ```
-&6(COTW) &f{0}'s {1}
+(COTW) x's x
 ```
 
 
@@ -328,80 +328,80 @@ TAMING
 ## Guides Taming Section 0
 
 ```
-&3About Taming:
-&eTaming will give players various combat bonuses when using
-&etamed wolves.
+About Taming:
+Taming will give players various combat bonuses when using
+tamed wolves.
 
-&3XP GAIN:
-&eTo gain XP in this skill, you need to tame wolves/ocelots or
-&eget into combat with your wolves.
+XP GAIN:
+To gain XP in this skill, you need to tame wolves/ocelots or
+get into combat with your wolves.
 ```
 
 ## Guides Taming Section 1
 
 ```
-&3How does Call of the Wild work?
-&eCall of the Wild is an active ability that will allow you to summon
-&ea wolf or an ocelot by your side. You can do this by
-&esneaking + left-clicking while holding bones or fish.
+How does Call of the Wild work?
+Call of the Wild is an active ability that will allow you to summon
+a wolf or an ocelot by your side. You can do this by
+sneaking + left-clicking while holding bones or fish.
 ```
 
 ## Guides Taming Section 2
 
 ```
-&3How does Beast Lore work?
-&eBeast Lore allows players to inspect pets and to check the
-&estats of wolves and ocelots. Left-click a wolf or ocelot to use
-&eBeast Lore.
+How does Beast Lore work?
+Beast Lore allows players to inspect pets and to check the
+stats of wolves and ocelots. Left-click a wolf or ocelot to use
+Beast Lore.
 ```
 
 ## Guides Taming Section 3
 
 ```
-&3How does Gore work?
-&eGore is a passive ability that has a chance of inflicting a
-&ebleeding effect on your wolves' targets.
+How does Gore work?
+Gore is a passive ability that has a chance of inflicting a
+bleeding effect on your wolves' targets.
 ```
 
 ## Guides Taming Section 4
 
 ```
-&3How does Sharpened Claws work?
-&eSharpened Claws provides a damage bonus to damage dealt
-&eby wolves. The damage bonus depends on your Taming level.
+How does Sharpened Claws work?
+Sharpened Claws provides a damage bonus to damage dealt
+by wolves. The damage bonus depends on your Taming level.
 ```
 
 ## Guides Taming Section 5
 
 ```
-&3How does Environmentally Aware work?
-&eThis passive ability will allow wolves to teleport to you when
-&ethey get near hazards, such as Cacti/Lava. It will also give
-&ewolves fall damage immunity.
+How does Environmentally Aware work?
+This passive ability will allow wolves to teleport to you when
+they get near hazards, such as Cacti/Lava. It will also give
+wolves fall damage immunity.
 ```
 
 ## Guides Taming Section 6
 
 ```
-&3How does Thick Fur work?
-&eThis passive ability will reduce damage and make wolves
-&efire resistant.
+How does Thick Fur work?
+This passive ability will reduce damage and make wolves
+fire resistant.
 ```
 
 ## Guides Taming Section 7
 
 ```
-&3How does Shock Proof work?
-&eThis passive ability reduces damage done to wolves
-&efrom explosions.
+How does Shock Proof work?
+This passive ability reduces damage done to wolves
+from explosions.
 ```
 
 ## Guides Taming Section 8
 
 ```
-&3How does Fast Food Service work?
-&eThis passive ability gives wolves a chance to heal whenever
-&ethey perform an attack.
+How does Fast Food Service work?
+This passive ability gives wolves a chance to heal whenever
+they perform an attack.
 ```
 
 

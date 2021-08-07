@@ -3,61 +3,61 @@
 ## Commands Scoreboard Clear
 
 ```
-&3mcMMO scoreboard cleared.
+mcMMO scoreboard cleared.
 ```
 
 ## Commands Scoreboard NoBoard
 
 ```
-&cThe mcMMO scoreboard is not active.
+The mcMMO scoreboard is not active.
 ```
 
 ## Commands Scoreboard Keep
 
 ```
-&3The mcMMO scoreboard will stay up until you use &a/mcscoreboard clear&3.
+The mcMMO scoreboard will stay up until you use /mcscoreboard clear.
 ```
 
 ## Commands Scoreboard Timer
 
 ```
-&3The mcMMO scoreboard will clear &6{0}&3 seconds from now.
+The mcMMO scoreboard will clear x seconds from now.
 ```
 
 ## Commands Scoreboard Help 0
 
 ```
-&6 == &aHelp for &c/mcscoreboard&6 ==
+ == Help for /mcscoreboard ==
 ```
 
 ## Commands Scoreboard Help 1
 
 ```
-&3/mcscoreboard&b clear &f - clear the McMMO scoreboard
+/mcscoreboard clear  - clear the McMMO scoreboard
 ```
 
 ## Commands Scoreboard Help 2
 
 ```
-&3/mcscoreboard&b keep &f - keep the mcMMO scoreboard up
+/mcscoreboard keep  - keep the mcMMO scoreboard up
 ```
 
 ## Commands Scoreboard Help 3
 
 ```
-&3/mcscoreboard&b time [n] &f - clear the McMMO scoreboard after &dn&f seconds
+/mcscoreboard time [n]  - clear the McMMO scoreboard after n seconds
 ```
 
 ## Commands Scoreboard Tip Keep
 
 ```
-&6Tip: Use &c/mcscoreboard keep&6 while the scoreboard is shown to keep it from going away.
+Tip: Use /mcscoreboard keep while the scoreboard is shown to keep it from going away.
 ```
 
 ## Commands Scoreboard Tip Clear
 
 ```
-&6Tip: Use &c/mcscoreboard clear&6 to get rid of the scoreboard.
+Tip: Use /mcscoreboard clear to get rid of the scoreboard.
 ```
 
 
@@ -66,67 +66,67 @@
 ## Scoreboard Header PlayerStats
 
 ```
-&emcMMO Stats
+mcMMO Stats
 ```
 
 ## Scoreboard Header PlayerCooldowns
 
 ```
-&emcMMO Cooldowns
+mcMMO Cooldowns
 ```
 
 ## Scoreboard Header PlayerRank
 
 ```
-&emcMMO Rankings
+mcMMO Rankings
 ```
 
 ## Scoreboard Header PlayerInspect
 
 ```
-&emcMMO Stats: {0}
+mcMMO Stats: x
 ```
 
 ## Scoreboard Header PowerLevel
 
 ```
-&cPower Level
+Power Level
 ```
 
 ## Scoreboard Misc PowerLevel
 
 ```
-&6Power Level
+Power Level
 ```
 
 ## Scoreboard Misc Level
 
 ```
-&3Level
+Level
 ```
 
 ## Scoreboard Misc CurrentXP
 
 ```
-&aCurrent XP
+Current XP
 ```
 
 ## Scoreboard Misc RemainingXP
 
 ```
-&eRemaining XP
+Remaining XP
 ```
 
 ## Scoreboard Misc Cooldown
 
 ```
-&dCooldown
+Cooldown
 ```
 
 ## Scoreboard Misc Overall
 
 ```
-&6Overall
+Overall
 ```
 
 ## Scoreboard Misc Ability

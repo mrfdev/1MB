@@ -24,19 +24,19 @@ You need more seeds to spread Green Terra.
 ## Herbalism Ability GTh
 
 ```
-&a**GREEN THUMB**
+**GREEN THUMB**
 ```
 
 ## Herbalism Ability Lower
 
 ```
-&7You lower your Hoe.
+You lower your Hoe.
 ```
 
 ## Herbalism Ability Ready
 
 ```
-&3You &6ready&3 your Hoe.
+You ready your Hoe.
 ```
 
 ## Herbalism Ability ShroomThumb Fail
@@ -84,7 +84,7 @@ Green Thumb Chance
 ## Herbalism.SubSkill GreenThumb Stat Extra
 
 ```
-Green Thumb Stage: &a Crops grow in stage {0}
+Green Thumb Stage:  Crops grow in stage x
 ```
 
 ## Herbalism Effect 4
@@ -114,7 +114,7 @@ Improves hunger restored from farmed foods
 ## Herbalism SubSkill FarmersDiet Stat
 
 ```
-Farmer's Diet: &aRank {0}
+Farmer's Diet: Rank x
 ```
 
 ## Herbalism SubSkill DoubleDrops Name
@@ -174,7 +174,7 @@ Shroom Thumb Chance
 ## Herbalism HylianLuck
 
 ```
-&aThe luck of Hyrule is with you today!
+The luck of Hyrule is with you today!
 ```
 
 ## Herbalism Listener
@@ -198,25 +198,25 @@ HERBALISM
 ## Herbalism Skills GTe On
 
 ```
-&a**GREEN TERRA ACTIVATED**
+**GREEN TERRA ACTIVATED**
 ```
 
 ## Herbalism Skills GTe Refresh
 
 ```
-&aYour &eGreen Terra &aability is refreshed!
+Your Green Terra ability is refreshed!
 ```
 
 ## Herbalism.Skills GTe Other Off
 
 ```
-Green Terra&a has worn off for &e{0}
+Green Terra has worn off for x
 ```
 
 ## Herbalism.Skills GTe Other On
 
 ```
-&a{0}&2 has used &cGreen Terra!
+x has used Green Terra!
 ```
 
 
@@ -224,76 +224,76 @@ Green Terra&a has worn off for &e{0}
 ## Guides Herbalism Section 0
 
 ```
-&3About Herbalism:
-&eHerbalism is about collecting herbs and plants.
+About Herbalism:
+Herbalism is about collecting herbs and plants.
 
 
-&3XP GAIN:
-&eCollect plants and herbs.
+XP GAIN:
+Collect plants and herbs.
 ```
 
 ## Guides Herbalism Section 1
 
 ```
-&3Compatible Blocks
-&eWheat, Potatoes, Carrots, Melons, 
-&ePumpkins, Sugar Canes, Cocoa Beans, Flowers, Cacti, Mushrooms,
-&eNether Wart, Lily Pads, and Vines.
+Compatible Blocks
+Wheat, Potatoes, Carrots, Melons, 
+Pumpkins, Sugar Canes, Cocoa Beans, Flowers, Cacti, Mushrooms,
+Nether Wart, Lily Pads, and Vines.
 ```
 
 ## Guides Herbalism Section 2
 
 ```
-&3How does Green Terra work?
-&eGreen Terra is an active ability, you can right-click
-&ewhile holding a hoe to activate Green Terra.
-&eGreen Terra grants players a chance to get 3x drops from
-&eharvesting plants. It also gives players the ability to
-&espread life into blocks and transform them using seeds
-&efrom your inventory.
+How does Green Terra work?
+Green Terra is an active ability, you can right-click
+while holding a hoe to activate Green Terra.
+Green Terra grants players a chance to get 3x drops from
+harvesting plants. It also gives players the ability to
+spread life into blocks and transform them using seeds
+from your inventory.
 ```
 
 ## Guides Herbalism Section 3
 
 ```
-&3How does Green Thumb (Crops) work?
-&eThis passive ability will automatically replant crops when
-&eharvesting.
-&eYour chance of success depends on your Herbalism skill.
+How does Green Thumb (Crops) work?
+This passive ability will automatically replant crops when
+harvesting.
+Your chance of success depends on your Herbalism skill.
 ```
 
 ## Guides Herbalism Section 4
 
 ```
-&3How does Green Thumb (Cobble/Stone Brick/Dirt) work?
-&eThis active ability allows you to turn blocks into their
-&e"plant-related" counterparts. You can do this by right-clicking
-&ea block, while holding seeds. This will consume 1 seed.
+How does Green Thumb (Cobble/Stone Brick/Dirt) work?
+This active ability allows you to turn blocks into their
+"plant-related" counterparts. You can do this by right-clicking
+a block, while holding seeds. This will consume 1 seed.
 ```
 
 ## Guides Herbalism Section 5
 
 ```
-&3How does Farmer's Diet work?
-&eThis passive skill increases the amount of hunger restored 
-&ewhen eating Bread, Cookies, Melons, Mushroom Soup, Carrots,
-&eand Potatoes.
+How does Farmer's Diet work?
+This passive skill increases the amount of hunger restored 
+when eating Bread, Cookies, Melons, Mushroom Soup, Carrots,
+and Potatoes.
 ```
 
 ## Guides Herbalism Section 6
 
 ```
-&3How does Hylian Luck work?
-&eThis passive ability gives you a chance to find rare items
-&ewhen certain blocks are broken with a sword.
+How does Hylian Luck work?
+This passive ability gives you a chance to find rare items
+when certain blocks are broken with a sword.
 ```
 
 ## Guides Herbalism Section 7
 
 ```
-&3How do Double Drops work?
-&eThis passive ability gives players more yield from their
-&eharvests.
+How do Double Drops work?
+This passive ability gives players more yield from their
+harvests.
 ```
 
 

@@ -11,7 +11,7 @@ Gains levels from Parent Skills
 ## Anvil SingleItemStack
 
 ```
-&cYou cannot salvage or repair item stacks that have more than one item, split the stack first.
+You cannot salvage or repair item stacks that have more than one item, split the stack first.
 ```
 
 
@@ -51,7 +51,7 @@ Salvage materials from an item, a perfect salvage depends on skill and luck.
 ## Salvage SubSkill ScrapCollector Stat
 
 ```
-Scrap Collector: &aSalvage up to &e{0}&a items. Some luck is involved.
+Scrap Collector: Salvage up to x items. Some luck is involved.
 ```
 
 ## Salvage SubSkill ArcaneSalvage Name
@@ -69,7 +69,7 @@ Extract enchantments from items
 ## Salvage SubSkill ArcaneSalvage Stat
 
 ```
-Arcane Salvaging: &eRank {0}/{1}
+Arcane Salvaging: Rank x/x
 ```
 
 ## Salvage Ability Bonus 0
@@ -81,67 +81,67 @@ Scrap Collector
 ## Salvage Ability Bonus 1
 
 ```
-Salvage up to &e{0}&a items. Some luck is involved.
+Salvage up to x items. Some luck is involved.
 ```
 
 ## Salvage Arcane ExtractFull
 
 ```
-&7AS Full-Enchant Chance
+AS Full-Enchant Chance
 ```
 
 ## Salvage Arcane ExtractPartial
 
 ```
-&7AS Partial-Enchant Chance
+AS Partial-Enchant Chance
 ```
 
 ## Salvage Skills Success
 
 ```
-&aItem salvaged!
+Item salvaged!
 ```
 
 ## Salvage Skills Adept Damaged
 
 ```
-&4You aren't skilled enough to salvage damaged items.
+You aren't skilled enough to salvage damaged items.
 ```
 
 ## Salvage Skills Adept Level
 
 ```
-You must be level &e{0}&c to salvage &e{1}
+You must be level x to salvage x
 ```
 
 ## Salvage Skills TooDamaged
 
 ```
-&4This item is too damaged to be salvaged.
+This item is too damaged to be salvaged.
 ```
 
 ## Salvage Skills ArcaneFailed
 
 ```
-&cYou were unable to extract the knowledge contained within this item.
+You were unable to extract the knowledge contained within this item.
 ```
 
 ## Salvage Skills ArcanePartial
 
 ```
-&cYou were only able to extract some of the knowledge contained within this item.
+You were only able to extract some of the knowledge contained within this item.
 ```
 
 ## Salvage Skills ArcaneSuccess
 
 ```
-&aYou able to extract all of the knowledge contained within this item!
+You able to extract all of the knowledge contained within this item!
 ```
 
 ## Salvage Listener Anvil
 
 ```
-&4You have placed a Salvage anvil, use this to Salvage tools and armor.
+You have placed a Salvage anvil, use this to Salvage tools and armor.
 ```
 
 ## Salvage Listener
@@ -159,19 +159,19 @@ SALVAGE
 ## Salvage Skills Lottery Normal
 
 ```
-&6You were able to salvage &3{0}&6 materials from &e{1}&6.
+You were able to salvage x materials from x.
 ```
 
 ## Salvage Skills Lottery Perfect
 
 ```
-&a&lPerfect!&r&6 You salvaged &3{1}&6 effortlessly, retrieving &3{0}&6 materials.
+Perfect! You salvaged x effortlessly, retrieving x materials.
 ```
 
 ## Salvage Skills Lottery Untrained
 
 ```
-&7You aren't properly trained in salvaging. You were only able to recover &c{0}&7 materials from &a{1}&7.
+You aren't properly trained in salvaging. You were only able to recover x materials from x.
 ```
 
 
@@ -188,62 +188,62 @@ This item is unbreakable!
 ## Guides Salvage Section 0
 
 ```
-&3About Salvage:
-&eSalvage allows you to use a gold block to salvage armor and
-&etools.
+About Salvage:
+Salvage allows you to use a gold block to salvage armor and
+tools.
 
-&3XP GAIN:
-&eSalvage is a child skill of Repair and Fishing, your Salvage
-&eskill level is based on your Fishing and Repair skill levels.
+XP GAIN:
+Salvage is a child skill of Repair and Fishing, your Salvage
+skill level is based on your Fishing and Repair skill levels.
 ```
 
 ## Guides Salvage Section 1
 
 ```
-&3How can I use Salvage?
-&ePlace down a mcMMO Salvage Anvil and right-click to salvage
-&ethe item you're currently holding. This will break apart the item,
-&eand give back materials used to craft the item.
+How can I use Salvage?
+Place down a mcMMO Salvage Anvil and right-click to salvage
+the item you're currently holding. This will break apart the item,
+and give back materials used to craft the item.
 
-&eFor example, salvaging an iron pickaxe will give you iron bars.
+For example, salvaging an iron pickaxe will give you iron bars.
 ```
 
 ## Guides Salvage Section 2
 
 ```
-&3How does Advanced Salvage work?
-&eWhen unlocked, this ability allows you to salvage damaged items.
-&eThe yield percentage increases as you level up. A higher yield
-&emeans that you can get more materials back.
-&eWith advanced salvage you will always get 1 material back,
-&eunless the item is too damaged. So you don't have to worry
-&eabout destroying items without getting anything in return.
+How does Advanced Salvage work?
+When unlocked, this ability allows you to salvage damaged items.
+The yield percentage increases as you level up. A higher yield
+means that you can get more materials back.
+With advanced salvage you will always get 1 material back,
+unless the item is too damaged. So you don't have to worry
+about destroying items without getting anything in return.
 ```
 
 ## Guides Salvage Section 3
 
 ```
-&3To illustrate how this works, here's an example:
-&eLet's say we salvage a gold pickaxe which is damaged for 20%,
-&ethis means that the maximum amount you could get is only 2
-&e(because the pick is crafted with 3 ingots - each worth
-&e33,33% durability) which is equal to 66%. If your yield
-&epercentage is below 66% you are not able to get 2 ingots.
-&eIf it is above this value you are able to gain the "full amount",
-&ewhich means that you will get 2 ingots.
+To illustrate how this works, here's an example:
+Let's say we salvage a gold pickaxe which is damaged for 20%,
+this means that the maximum amount you could get is only 2
+(because the pick is crafted with 3 ingots - each worth
+33,33% durability) which is equal to 66%. If your yield
+percentage is below 66% you are not able to get 2 ingots.
+If it is above this value you are able to gain the "full amount",
+which means that you will get 2 ingots.
 ```
 
 ## Guides Salvage Section 4
 
 ```
-&3How does Arcane Salvage work?
-&eThis ability allows you to get enchanted books when salvaging
-&eenchanted items. Depending on your level the chance of
-&esuccessfully extracting a full or partial enchantment varies.
+How does Arcane Salvage work?
+This ability allows you to get enchanted books when salvaging
+enchanted items. Depending on your level the chance of
+successfully extracting a full or partial enchantment varies.
 
-&eWhen an enchantment is partially extracted, the enchantment
-&ebook will have a lower level enchantment compared to what
-&eit was on the item.
+When an enchantment is partially extracted, the enchantment
+book will have a lower level enchantment compared to what
+it was on the item.
 ```
 
 

@@ -12,55 +12,55 @@ Attacking Monsters
 ## Swords Ability Lower
 
 ```
-&7You lower your sword.
+You lower your sword.
 ```
 
 ## Swords Ability Ready
 
 ```
-&3You &6ready&3 your Sword.
+You ready your Sword.
 ```
 
 ## Swords.Combat.Rupture Note Update One
 
 ```
-&7(Rupture Note): Periodic damage is non-lethal occurring twice a second and bypasses armor
+(Rupture Note): Periodic damage is non-lethal occurring twice a second and bypasses armor
 ```
 
 ## Swords Combat Bleeding Started
 
 ```
-&4 You're bleeding!
+ You're bleeding!
 ```
 
 ## Swords Combat Bleeding Stopped
 
 ```
-&7The bleeding has &astopped&7!
+The bleeding has stopped!
 ```
 
 ## Swords Combat Bleeding
 
 ```
-&a**ENEMY BLEEDING**
+**ENEMY BLEEDING**
 ```
 
 ## Swords Combat Counter Hit
 
 ```
-&4Hit with a counter-attack!
+Hit with a counter-attack!
 ```
 
 ## Swords Combat Countered
 
 ```
-&a**COUNTER-ATTACKED**
+**COUNTER-ATTACKED**
 ```
 
 ## Swords Combat SS Struck
 
 ```
-&4Struck by SERRATED STRIKES!
+Struck by SERRATED STRIKES!
 ```
 
 ## Swords SubSkill CounterAttack Name
@@ -156,19 +156,19 @@ Rupture Chance
 ## Swords.SubSkill Rupture Stat Extra
 
 ```
-[[DARK_AQUA]]Rupture Duration: &e{0}s&a vs Players, &e{1}s&a vs Mobs.
+[[DARK_AQUA]]Rupture Duration: xs vs Players, xs vs Mobs.
 ```
 
 ## Swords.SubSkill Rupture Stat TickDamage
 
 ```
-[[DARK_AQUA]]Rupture Pure Tick Damage: &e{0}&a vs Players, &e{1}&a vs Mobs.
+[[DARK_AQUA]]Rupture Pure Tick Damage: x vs Players, x vs Mobs.
 ```
 
 ## Swords.SubSkill Rupture Stat ExplosionDamage
 
 ```
-[[DARK_AQUA]]Rupture Explosion Damage: &e{0}&a vs Players, &e{1}&a vs Mobs
+[[DARK_AQUA]]Rupture Explosion Damage: x vs Players, x vs Mobs
 ```
 
 ## Swords Effect 4
@@ -180,7 +180,7 @@ Serrated Strikes Rupture+
 ## Swords Effect 5
 
 ```
-{0} Tick Rupture
+x Tick Rupture
 ```
 
 ## Swords Listener
@@ -204,25 +204,25 @@ SWORDS
 ## Swords Skills SS On
 
 ```
-&a**SERRATED STRIKES ACTIVATED**
+**SERRATED STRIKES ACTIVATED**
 ```
 
 ## Swords Skills SS Refresh
 
 ```
-&aYour &eSerrated Strikes &aability is refreshed!
+Your Serrated Strikes ability is refreshed!
 ```
 
 ## Swords.Skills SS Other Off
 
 ```
-Serrated Strikes&a has worn off for &e{0}
+Serrated Strikes has worn off for x
 ```
 
 ## Swords.Skills SS Other On
 
 ```
-&a{0}&2 has used &cSerrated Strikes!
+x has used Serrated Strikes!
 ```
 
 
@@ -231,42 +231,42 @@ Serrated Strikes&a has worn off for &e{0}
 ## Guides Swords Section 0
 
 ```
-&3About Swords:
-&eThis skill awards combat bonuses to anyone fighting with a
-&esword.
+About Swords:
+This skill awards combat bonuses to anyone fighting with a
+sword.
 
-&3XP GAIN:
-&eXP is gained based on the amount of damage dealt to mobs or 
-&eother players when wielding a sword.
+XP GAIN:
+XP is gained based on the amount of damage dealt to mobs or 
+other players when wielding a sword.
 ```
 
 ## Guides Swords Section 1
 
 ```
-&3How does Serrated Strikes work?
-&eSerrated Strikes is an active ability, you can activate it by
-&eright-clicking with a sword. This ability allows you to deal 
-&ean AoE (Area of Effect) hit. This AoE will do a bonus 25%
-&edamage and may apply Rupture
+How does Serrated Strikes work?
+Serrated Strikes is an active ability, you can activate it by
+right-clicking with a sword. This ability allows you to deal 
+an AoE (Area of Effect) hit. This AoE will do a bonus 25%
+damage and may apply Rupture
 ```
 
 ## Guides Swords Section 2
 
 ```
-&3How does Counter Attack work?
-&eCounter Attack is an active ability. When blocking and taking
-&ehits from mobs, you will have a chance to reflect 50% of 
-&ethe damage that was taken.
+How does Counter Attack work?
+Counter Attack is an active ability. When blocking and taking
+hits from mobs, you will have a chance to reflect 50% of 
+the damage that was taken.
 ```
 
 ## Guides Swords Section 3
 
 ```
-&3How does Rupture work?
-&eRupture causes enemies to take damage every two seconds. The 
-&etarget will bleed until the effect wears off, or death, 
-&ewhichever comes first.
-&eThe duration of the bleed is increased by your sword skill.
+How does Rupture work?
+Rupture causes enemies to take damage every two seconds. The 
+target will bleed until the effect wears off, or death, 
+whichever comes first.
+The duration of the bleed is increased by your sword skill.
 ```
 
 

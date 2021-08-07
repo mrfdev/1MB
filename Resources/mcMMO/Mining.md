@@ -12,31 +12,31 @@ Mining Stone & Ore
 ## Mining Ability Locked 0
 
 ```
-LOCKED UNTIL {0}+ SKILL (BLAST MINING)
+LOCKED UNTIL x+ SKILL (BLAST MINING)
 ```
 
 ## Mining Ability Locked 1
 
 ```
-LOCKED UNTIL {0}+ SKILL (BIGGER BOMBS)
+LOCKED UNTIL x+ SKILL (BIGGER BOMBS)
 ```
 
 ## Mining Ability Locked 2
 
 ```
-LOCKED UNTIL {0}+ SKILL (DEMOLITIONS EXPERTISE)
+LOCKED UNTIL x+ SKILL (DEMOLITIONS EXPERTISE)
 ```
 
 ## Mining Ability Lower
 
 ```
-&7You lower your Pickaxe.
+You lower your Pickaxe.
 ```
 
 ## Mining Ability Ready
 
 ```
-&3You &6ready&3 your pickaxe.
+You ready your pickaxe.
 ```
 
 ## Mining SubSkill SuperBreaker Name
@@ -90,13 +90,13 @@ Bonuses to mining with TNT
 ## Mining SubSkill BlastMining Stat
 
 ```
-Blast Mining:&a Rank {0}/{1} &7({2})
+Blast Mining: Rank x/x (x)
 ```
 
 ## Mining.SubSkill BlastMining Stat Extra
 
 ```
-Blast Radius Increase: &a+{0}
+Blast Radius Increase: +x
 ```
 
 ## Mining SubSkill BiggerBombs Name
@@ -151,32 +151,32 @@ MINING
 ## Mining Skills SuperBreaker On
 
 ```
-&a**SUPER BREAKER ACTIVATED**
+**SUPER BREAKER ACTIVATED**
 ```
 
 ## Mining.Skills SuperBreaker Other Off
 
 ```
-Super Breaker&a has worn off for &e{0}
+Super Breaker has worn off for x
 ```
 
 ## Mining.Skills SuperBreaker Other On
 
 ```
-&a{0}&2 has used &cSuper Breaker!
+x has used Super Breaker!
 ```
 
 ## Mining Skills SuperBreaker Refresh
 
 ```
-&aYour &eSuper Breaker &aability is refreshed!
+Your Super Breaker ability is refreshed!
 ```
 
 #Blast Mining
 ## Mining Blast Boom
 
 ```
-&7**BOOM**
+**BOOM**
 ```
 
 ## Mining Blast Cooldown
@@ -188,19 +188,19 @@ x
 ## Mining Blast Effect
 
 ```
-+{0} ore yield,  {1}x drops
++x ore yield,  xx drops
 ```
 
 ## Mining Blast Other On
 
 ```
-&a{0}&2 has used &cBlast Mining!
+x has used Blast Mining!
 ```
 
 ## Mining Blast Refresh
 
 ```
-&aYour &eBlast Mining &aability is refreshed!
+Your Blast Mining ability is refreshed!
 ```
 
 
@@ -208,64 +208,64 @@ x
 ## Guides Mining Section 0
 
 ```
-&3About Mining:
-&eMining consists of mining stone and ores. It provides bonuses
-&eto the amount of materials dropped while mining.
+About Mining:
+Mining consists of mining stone and ores. It provides bonuses
+to the amount of materials dropped while mining.
 
-&3XP GAIN:
-&eTo gain XP in this skill, you must mine with a pickaxe in hand.
-&eOnly certain blocks award XP.
+XP GAIN:
+To gain XP in this skill, you must mine with a pickaxe in hand.
+Only certain blocks award XP.
 ```
 
 ## Guides Mining Section 1
 
 ```
-&3Compatible Materials:
-&eStone, Coal Ore, Iron Ore, Gold Ore, Diamond Ore, Redstone Ore,
-&eLapis Ore, Obsidian, Mossy Cobblestone, Ender Stone,
-&eGlowstone, and Netherrack.
+Compatible Materials:
+Stone, Coal Ore, Iron Ore, Gold Ore, Diamond Ore, Redstone Ore,
+Lapis Ore, Obsidian, Mossy Cobblestone, Ender Stone,
+Glowstone, and Netherrack.
 ```
 
 ## Guides Mining Section 2
 
 ```
-&3How to use Super Breaker:
-&eWith a pickaxe in your hand, right click to ready your tool.
-&eOnce in this state, you have about 4 seconds to make contact
-&ewith Mining compatible materials, which will activate Super
-&eBreaker.
+How to use Super Breaker:
+With a pickaxe in your hand, right click to ready your tool.
+Once in this state, you have about 4 seconds to make contact
+with Mining compatible materials, which will activate Super
+Breaker.
 ```
 
 ## Guides Mining Section 3
 
 ```
-&3What is Super Breaker?
-&eSuper Breaker is an ability with a cooldown tied to the Mining
-&eskill. It triples your chance of extra items dropping and
-&eenables instant break on Mining materials.
+What is Super Breaker?
+Super Breaker is an ability with a cooldown tied to the Mining
+skill. It triples your chance of extra items dropping and
+enables instant break on Mining materials.
 ```
 
 ## Guides Mining Section 4
 
 ```
-&3How to use Blast Mining:
-&eWith a pickaxe in hand,
-&ecrouch and right-click on TNT from a distance. This will cause the TNT
-&eto instantly explode.
+How to use Blast Mining:
+With a pickaxe in hand,
+crouch and right-click on TNT from a distance. This will cause the TNT
+to instantly explode.
 ```
 
 ## Guides Mining Section 5
 
 ```
-&3How does Blast Mining work?
-&eBlast Mining is an ability with a cooldown tied to the Mining
-&eskill. It gives bonuses when mining with TNT and allows you
-&eto remote detonate TNT. There are three parts to Blast Mining.
-&eThe first part is Bigger Bombs, which increases blast radius.
-&eThe second is Demolitions Expert, which decreases damage
-&efrom TNT explosions. The third part simply increases the
-&eamount of ores dropped from TNT and decreases the
-&edebris dropped.
+How does Blast Mining work?
+Blast Mining is an ability with a cooldown tied to the Mining
+skill. It gives bonuses when mining with TNT and allows you
+to remote detonate TNT. There are three parts to Blast Mining.
+The first part is Bigger Bombs, which increases blast radius.
+The second is Demolitions Expert, which decreases damage
+from TNT explosions. The third part simply increases the
+amount of ores dropped from TNT and decreases the
+debris dropped.
 ```
 
 

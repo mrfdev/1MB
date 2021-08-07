@@ -42,13 +42,13 @@ Brew potions with more ingredients
 ## Alchemy SubSkill Concoctions Stat
 
 ```
-Concoctions Rank: &a{0}&3/&a{1}
+Concoctions Rank: x/x
 ```
 
 ## Alchemy.SubSkill Concoctions Stat Extra
 
 ```
-Ingredients [&a{0}&3]: &a{1}
+Ingredients [x]: x
 ```
 
 ## Alchemy Listener
@@ -60,7 +60,7 @@ Alchemy:
 ## Alchemy Ability Locked 0
 
 ```
-LOCKED UNTIL {0}+ SKILL (CATALYSIS)
+LOCKED UNTIL x+ SKILL (CATALYSIS)
 ```
 
 ## Alchemy SkillName

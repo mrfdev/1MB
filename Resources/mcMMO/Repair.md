@@ -18,7 +18,7 @@ Repairing
 ## Anvil SingleItemStack
 
 ```
-&cYou cannot salvage or repair item stacks that have more than one item, split the stack first.
+You cannot salvage or repair item stacks that have more than one item, split the stack first.
 ```
 
 
@@ -38,7 +38,7 @@ Repair Tools & Armor
 ## Repair SubSkill GoldRepair Name
 
 ```
-Gold Repair ({0}+ SKILL)
+Gold Repair (x+ SKILL)
 ```
 
 ## Repair SubSkill GoldRepair Description
@@ -50,7 +50,7 @@ Repair Gold Tools & Armor
 ## Repair SubSkill IronRepair Name
 
 ```
-Iron Repair ({0}+ SKILL)
+Iron Repair (x+ SKILL)
 ```
 
 ## Repair SubSkill IronRepair Description
@@ -62,7 +62,7 @@ Repair Iron Tools & Armor
 ## Repair SubSkill StoneRepair Name
 
 ```
-Stone Repair ({0}+ SKILL)
+Stone Repair (x+ SKILL)
 ```
 
 ## Repair SubSkill StoneRepair Description
@@ -86,7 +86,7 @@ Increased repair amount
 ## Repair SubSkill RepairMastery Stat
 
 ```
-Repair Mastery: &aExtra {0} durability restored
+Repair Mastery: Extra x durability restored
 ```
 
 ## Repair SubSkill SuperRepair Name
@@ -110,7 +110,7 @@ Super Repair Chance
 ## Repair SubSkill DiamondRepair Name
 
 ```
-Diamond Repair ({0}+ SKILL)
+Diamond Repair (x+ SKILL)
 ```
 
 ## Repair SubSkill DiamondRepair Description
@@ -134,25 +134,25 @@ Repair magic items
 ## Repair SubSkill ArcaneForging Stat
 
 ```
-Arcane Forging: &eRank {0}/{1}
+Arcane Forging: Rank x/x
 ```
 
 ## Repair.SubSkill ArcaneForging Stat Extra
 
 ```
-&3Arcane Forging Odds:&7 Success &a{0}&7%, Failure &c{1}&7%
+Arcane Forging Odds: Success x%, Failure x%
 ```
 
 ## Repair Error
 
 ```
-&4mcMMO encountered an error attempting to repair this item!
+mcMMO encountered an error attempting to repair this item!
 ```
 
 ## Repair Listener Anvil
 
 ```
-&4You have placed an anvil, anvils can repair tools and armor.
+You have placed an anvil, anvils can repair tools and armor.
 ```
 
 ## Repair Listener
@@ -170,49 +170,49 @@ REPAIR
 ## Repair Skills AdeptDiamond
 
 ```
-&4You're not skilled enough to repair Diamond.
+You're not skilled enough to repair Diamond.
 ```
 
 ## Repair Skills AdeptGold
 
 ```
-&4You're not skilled enough to repair Gold.
+You're not skilled enough to repair Gold.
 ```
 
 ## Repair Skills AdeptIron
 
 ```
-&4You're not skilled enough to repair Iron.
+You're not skilled enough to repair Iron.
 ```
 
 ## Repair Skills AdeptStone
 
 ```
-&4You're not skilled enough to repair Stone.
+You're not skilled enough to repair Stone.
 ```
 
 ## Repair Skills Adept
 
 ```
-&cYou must be level &e{0}&c to repair &e{1}
+You must be level x to repair x
 ```
 
 ## Repair Skills FeltEasy
 
 ```
-&7That felt easy.
+That felt easy.
 ```
 
 ## Repair Skills FullDurability
 
 ```
-&7That is at full durability.
+That is at full durability.
 ```
 
 ## Repair Skills StackedItems
 
 ```
-&4You can't repair stacked items.
+You can't repair stacked items.
 ```
 
 ## Repair Pretty Name
@@ -243,7 +243,7 @@ You were not skilled enough to keep any enchantments.
 ## Repair Arcane Perfect
 
 ```
-&aYou have sustained the arcane energies in this item.
+You have sustained the arcane energies in this item.
 ```
 
 
@@ -260,49 +260,49 @@ This item is unbreakable!
 ## Guides Repair Section 0
 
 ```
-&3About Repair:
-&eRepair allows you to use an iron block to repair armor and
-&etools.
+About Repair:
+Repair allows you to use an iron block to repair armor and
+tools.
 
-&3XP GAIN:
-&eRepair tools or armor using the mcMMO Anvil. This is an
-&eiron block by default and should not be confused with
-&ethe Vanilla Minecraft Anvil.
+XP GAIN:
+Repair tools or armor using the mcMMO Anvil. This is an
+iron block by default and should not be confused with
+the Vanilla Minecraft Anvil.
 ```
 
 ## Guides Repair Section 1
 
 ```
-&3How can I use Repair?
-&ePlace down a mcMMO Anvil and right-click to repair the item 
-&eyou're currently holding. This consumes 1 item on every use.
+How can I use Repair?
+Place down a mcMMO Anvil and right-click to repair the item 
+you're currently holding. This consumes 1 item on every use.
 ```
 
 ## Guides Repair Section 2
 
 ```
-&3How does Repair Mastery work?
-&eRepair Mastery increases the repair amount. The extra amount
-&erepaired is influenced by your Repair skill level.
+How does Repair Mastery work?
+Repair Mastery increases the repair amount. The extra amount
+repaired is influenced by your Repair skill level.
 ```
 
 ## Guides Repair Section 3
 
 ```
-&3How does Super Repair work?
-&eSuper Repair is a passive ability. When repairing an item,
-&eit grants players a chance to repair an item with
-&edouble effectiveness.
+How does Super Repair work?
+Super Repair is a passive ability. When repairing an item,
+it grants players a chance to repair an item with
+double effectiveness.
 ```
 
 ## Guides Repair Section 4
 
 ```
-&3How does Arcane Forging work?
-&eThis passive ability allows you to repair items with a certain
-&echance of maintaining its enchantments. The enchants may be
-&ekept at their existing levels, downgraded to a lower level,
-&eor lost entirely.
+How does Arcane Forging work?
+This passive ability allows you to repair items with a certain
+chance of maintaining its enchantments. The enchants may be
+kept at their existing levels, downgraded to a lower level,
+or lost entirely.
 ```
 
 

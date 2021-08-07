@@ -33,19 +33,19 @@ Powers up various properties of Smelting.
 ## Smelting SubSkill UnderstandingTheArt Stat
 
 ```
-Vanilla XP Multiplier: &e{0}x
+Vanilla XP Multiplier: xx
 ```
 
 ## Smelting Ability Locked 0
 
 ```
-LOCKED UNTIL {0}+ SKILL (VANILLA XP BOOST)
+LOCKED UNTIL x+ SKILL (VANILLA XP BOOST)
 ```
 
 ## Smelting Ability Locked 1
 
 ```
-LOCKED UNTIL {0}+ SKILL (FLUX MINING)
+LOCKED UNTIL x+ SKILL (FLUX MINING)
 ```
 
 ## Smelting SubSkill FuelEfficiency Name
@@ -63,7 +63,7 @@ Increase the burn time of fuel used in furnaces when smelting
 ## Smelting SubSkill FuelEfficiency Stat
 
 ```
-Fuel Efficiency Multiplier: &e{0}x
+Fuel Efficiency Multiplier: xx
 ```
 
 ## Smelting SubSkill SecondSmelt Name

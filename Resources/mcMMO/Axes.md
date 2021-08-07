@@ -18,7 +18,7 @@ Axe Mastery
 ## Axes Ability Bonus 1
 
 ```
-Bonus {0} damage
+Bonus x damage
 ```
 
 ## Axes Ability Bonus 2
@@ -30,7 +30,7 @@ Armor Impact
 ## Axes Ability Bonus 3
 
 ```
-Deal {0} Bonus DMG to armor
+Deal x Bonus DMG to armor
 ```
 
 ## Axes Ability Bonus 4
@@ -42,31 +42,31 @@ Greater Impact
 ## Axes Ability Bonus 5
 
 ```
-Deal {0} Bonus DMG to unarmored foes
+Deal x Bonus DMG to unarmored foes
 ```
 
 ## Axes Ability Lower
 
 ```
-&7You lower your Axe.
+You lower your Axe.
 ```
 
 ## Axes Ability Ready
 
 ```
-&3You &6ready&3 your Axe.
+You ready your Axe.
 ```
 
 ## Axes Ability Ready Extra
 
 ```
-&3You &6ready&3 your Axe. &7({0} is on cooldown for {1}s)
+You ready your Axe. (x is on cooldown for xs)
 ```
 
 ## Axes Combat CritStruck
 
 ```
-&4You were CRITICALLY hit!
+You were CRITICALLY hit!
 ```
 
 ## Axes Combat CriticalHit
@@ -78,7 +78,7 @@ CRITICAL HIT!
 ## Axes Combat GI Proc
 
 ```
-&a**STRUCK WITH GREAT FORCE**
+**STRUCK WITH GREAT FORCE**
 ```
 
 ## Axes Combat GI Struck
@@ -90,7 +90,7 @@ CRITICAL HIT!
 ## Axes Combat SS Struck
 
 ```
-&4Struck by SKULL SPLITTER!
+Struck by SKULL SPLITTER!
 ```
 
 ## Axes SubSkill SkullSplitter Name
@@ -204,25 +204,25 @@ AXES
 ## Axes Skills SS On
 
 ```
-&a**Skull Splitter ACTIVATED**
+**Skull Splitter ACTIVATED**
 ```
 
 ## Axes Skills SS Refresh
 
 ```
-&aYour &eSkull Splitter &aability is refreshed!
+Your Skull Splitter ability is refreshed!
 ```
 
 ## Axes.Skills SS Other Off
 
 ```
-Skull Splitter&a has worn off for &e{0}
+Skull Splitter has worn off for x
 ```
 
 ## Axes.Skills SS Other On
 
 ```
-&a{0}&2 has used &cSkull Splitter!
+x has used Skull Splitter!
 ```
 
 

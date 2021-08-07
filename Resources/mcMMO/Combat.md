@@ -4,43 +4,43 @@
 ## Combat ArrowDeflect
 
 ```
-&f**ARROW DEFLECT**
+**ARROW DEFLECT**
 ```
 
 ## Combat BeastLore
 
 ```
-&a**BEAST LORE**
+**BEAST LORE**
 ```
 
 ## Combat BeastLoreHealth
 
 ```
-&3Health (&a{0}&3/{1})
+Health (x/x)
 ```
 
 ## Combat BeastLoreOwner
 
 ```
-&3Owner (&c{0}&3)
+Owner (x)
 ```
 
 ## Combat BeastLoreHorseSpeed
 
 ```
-&3Horse Movement Speed (&a{0} blocks/s&3)
+Horse Movement Speed (x blocks/s)
 ```
 
 ## Combat BeastLoreHorseJumpStrength
 
 ```
-&3Horse Jump Strength (&aMax {0} blocks&3)
+Horse Jump Strength (Max x blocks)
 ```
 
 ## Combat Gore
 
 ```
-&a**GORED**
+**GORED**
 ```
 
 ## Combat StruckByGore
@@ -52,13 +52,13 @@
 ## Combat TargetDazed
 
 ```
-Target was &4Dazed
+Target was Dazed
 ```
 
 ## Combat TouchedFuzzy
 
 ```
-&4Touched Fuzzy. Felt Dizzy.
+Touched Fuzzy. Felt Dizzy.
 ```
 
 

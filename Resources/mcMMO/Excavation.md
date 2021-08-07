@@ -12,13 +12,13 @@ Digging and finding treasures
 ## Excavation Ability Lower
 
 ```
-&7You lower your shovel.
+You lower your shovel.
 ```
 
 ## Excavation Ability Ready
 
 ```
-&3You &6ready&3 your Shovel.
+You ready your Shovel.
 ```
 
 ## Excavation SubSkill GigaDrillBreaker Name
@@ -84,25 +84,25 @@ EXCAVATION
 ## Excavation Skills GigaDrillBreaker On
 
 ```
-&a**GIGA DRILL BREAKER ACTIVATED**
+**GIGA DRILL BREAKER ACTIVATED**
 ```
 
 ## Excavation Skills GigaDrillBreaker Refresh
 
 ```
-&aYour &eGiga Drill Breaker &aability is refreshed!
+Your Giga Drill Breaker ability is refreshed!
 ```
 
 ## Excavation.Skills GigaDrillBreaker Other Off
 
 ```
-Giga Drill Breaker&a has worn off for &e{0}
+Giga Drill Breaker has worn off for x
 ```
 
 ## Excavation.Skills GigaDrillBreaker Other On
 
 ```
-&a{0}&2 has used &cGiga Drill Breaker!
+x has used Giga Drill Breaker!
 ```
 
 
@@ -111,64 +111,64 @@ Giga Drill Breaker&a has worn off for &e{0}
 ## Guides Excavation Section 0
 
 ```
-&3About Excavation:
-&eExcavation is the act of digging up dirt to find treasures.
-&eBy excavating the land you will find treasures.
-&eThe more you do this the more treasures you can find.
+About Excavation:
+Excavation is the act of digging up dirt to find treasures.
+By excavating the land you will find treasures.
+The more you do this the more treasures you can find.
 
-&3XP GAIN:
-&eTo gain XP in this skill you must dig with a shovel in hand.
-&eOnly certain materials can be dug up for treasures and XP.
+XP GAIN:
+To gain XP in this skill you must dig with a shovel in hand.
+Only certain materials can be dug up for treasures and XP.
 ```
 
 ## Guides Excavation Section 1
 
 ```
-&3Compatible Materials:
-&eGrass, Dirt, Sand, Clay, Gravel, Mycelium, Soul Sand, Snow
+Compatible Materials:
+Grass, Dirt, Sand, Clay, Gravel, Mycelium, Soul Sand, Snow
 ```
 
 ## Guides Excavation Section 2
 
 ```
-&3How to use Giga Drill Breaker:
-&eWith a shovel in hand right click to ready your tool.
-&eOnce in this state you have about 4 seconds to make
-&econtact with Excavation compatible materials this will
-&eactivate Giga Drill Breaker.
+How to use Giga Drill Breaker:
+With a shovel in hand right click to ready your tool.
+Once in this state you have about 4 seconds to make
+contact with Excavation compatible materials this will
+activate Giga Drill Breaker.
 ```
 
 ## Guides Excavation Section 3
 
 ```
-&3What is Giga Drill Breaker?
-&eGiga Drill Breaker is an ability with a cooldown
-&etied to Excavation skill. It triples your chance
-&eof finding treasures and enables instant break
-&eon Excavation materials.
+What is Giga Drill Breaker?
+Giga Drill Breaker is an ability with a cooldown
+tied to Excavation skill. It triples your chance
+of finding treasures and enables instant break
+on Excavation materials.
 ```
 
 ## Guides Excavation Section 4
 
 ```
-&3How does Archaeology work?
-&eEvery possible treasure for Excavation has its own
-&eskill level requirement for it to drop, as a result it's
-&edifficult to say how much it is helping you.
-&eJust keep in mind that the higher your Excavation skill
-&eis, the more treasures that can be found.
-&eAnd also keep in mind that each type of Excavation
-&ecompatible material has its own unique list of treasures.
-&eIn other words you will find different treasures in Dirt
-&ethan you would in Gravel.
+How does Archaeology work?
+Every possible treasure for Excavation has its own
+skill level requirement for it to drop, as a result it's
+difficult to say how much it is helping you.
+Just keep in mind that the higher your Excavation skill
+is, the more treasures that can be found.
+And also keep in mind that each type of Excavation
+compatible material has its own unique list of treasures.
+In other words you will find different treasures in Dirt
+than you would in Gravel.
 ```
 
 ## Guides Excavation Section 5
 
 ```
-&3Notes about Excavation:
-&eExcavation drops are completely customizeable
-&eSo results vary server to server.
+Notes about Excavation:
+Excavation drops are completely customizeable
+So results vary server to server.
 ```
 
 

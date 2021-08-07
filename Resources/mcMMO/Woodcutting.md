@@ -24,7 +24,7 @@ Blow away leaves
 ## Woodcutting Ability Locked 0
 
 ```
-LOCKED UNTIL {0}+ SKILL (LEAF BLOWER)
+LOCKED UNTIL x+ SKILL (LEAF BLOWER)
 ```
 
 ## Woodcutting SubSkill TreeFeller Name
@@ -162,25 +162,25 @@ WOODCUTTING
 ## Woodcutting Skills TreeFeller On
 
 ```
-&a**TREE FELLER ACTIVATED**
+**TREE FELLER ACTIVATED**
 ```
 
 ## Woodcutting Skills TreeFeller Refresh
 
 ```
-&aYour &eTree Feller &aability is refreshed!
+Your Tree Feller ability is refreshed!
 ```
 
 ## Woodcutting.Skills TreeFeller Other Off
 
 ```
-Tree Feller&a has worn off for &e{0}
+Tree Feller has worn off for x
 ```
 
 ## Woodcutting.Skills TreeFeller Other On
 
 ```
-&a{0}&2 has used &cTree Feller!
+x has used Tree Feller!
 ```
 
 ## Woodcutting Skills TreeFeller Splinter
@@ -202,36 +202,36 @@ That tree is too large!
 ## Guides Woodcutting Section 0
 
 ```
-&3About Woodcutting:
-&eWoodcutting is all about chopping down trees.
+About Woodcutting:
+Woodcutting is all about chopping down trees.
 
-&3XP GAIN:
-&eXP is gained whenever you break log blocks.
+XP GAIN:
+XP is gained whenever you break log blocks.
 ```
 
 ## Guides Woodcutting Section 1
 
 ```
-&3How does Tree Feller work?
-&eTree Feller is an active ability, you can right-click
-&ewhile holding an ax to activate Tree Feller. This will
-&ecause the entire tree to break instantly, dropping all
-&eof its logs at once.
+How does Tree Feller work?
+Tree Feller is an active ability, you can right-click
+while holding an ax to activate Tree Feller. This will
+cause the entire tree to break instantly, dropping all
+of its logs at once.
 ```
 
 ## Guides Woodcutting Section 2
 
 ```
-&3How does Leaf Blower work?
-&eLeaf Blower is a passive ability that will cause leaf
-&eblocks to break instantly when hit with an axe. By default,
-&ethis ability unlocks at level 100.
+How does Leaf Blower work?
+Leaf Blower is a passive ability that will cause leaf
+blocks to break instantly when hit with an axe. By default,
+this ability unlocks at level 100.
 ```
 
 ## Guides Woodcutting Section 3
 
 ```
-&3How do Double Drops work?
-&eThis passive ability gives you a chance to obtain an extra
-&eblock for every log you chop.
+How do Double Drops work?
+This passive ability gives you a chance to obtain an extra
+block for every log you chop.
 ```

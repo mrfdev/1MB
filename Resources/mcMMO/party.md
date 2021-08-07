@@ -3,319 +3,319 @@
 ## Commands Party Status
 
 ```
-&8NAME: &f{0} {1} &8LEVEL: &3{2}
+NAME: x x LEVEL: x
 ```
 
 ## Commands Party Status Alliance
 
 ```
-&8ALLY: &f{0}
+ALLY: x
 ```
 
 ## Commands Party UnlockedFeatures
 
 ```
-&8Unlocked Features: &7&o{0}
+Unlocked Features: x
 ```
 
 ## Commands Party ShareMode
 
 ```
-&8SHARE MODE:
+SHARE MODE:
 ```
 
 ## Commands Party ItemShare
 
 ```
-&7ITEM &3({0})
+ITEM (x)
 ```
 
 ## Commands Party ExpShare
 
 ```
-&7EXP &3({0})
+EXP (x)
 ```
 
 ## Commands Party ItemShareCategories
 
 ```
-&8Sharing Items: &7&o{0}
+Sharing Items: x
 ```
 
 ## Commands Party MembersNear
 
 ```
-&8NEAR YOU &3{0}&8/&3{1}
+NEAR YOU x/x
 ```
 
 ## Commands Party Accept
 
 ```
-&a- Accept party invite
+- Accept party invite
 ```
 
 ## Commands Party Chat Off
 
 ```
-Party Chat only &cOff
+Party Chat only Off
 ```
 
 ## Commands Party Chat On
 
 ```
-Party Chat only &aOn
+Party Chat only On
 ```
 
 ## Commands Party Commands
 
 ```
-&c---[]&aPARTY COMMANDS&c[]---
+---[]PARTY COMMANDS[]---
 ```
 
 ## Commands Party Invite 0
 
 ```
-&cALERT: &aYou have received a party invite for {0} from {1}
+ALERT: You have received a party invite for x from x
 ```
 
 ## Commands Party Invite 1
 
 ```
-&eType &a/party accept&e to accept the invite
+Type /party accept to accept the invite
 ```
 
 ## Commands Party Invite
 
 ```
-&a- Send party invite
+- Send party invite
 ```
 
 ## Commands Party Invite Accepted
 
 ```
-&aInvite Accepted. You have joined party {0}
+Invite Accepted. You have joined party x
 ```
 
 ## Commands Party Join
 
 ```
-&7Joined Party: {0}
+Joined Party: x
 ```
 
 ## Commands Party PartyFull
 
 ```
-&6{0}&c is full!
+x is full!
 ```
 
 ## Commands Party PartyFull Invite
 
 ```
-You cannot invite &e{0}&c to &a{1}&c because it already has &3{2}&c players in it!
+You cannot invite x to x because it already has x players in it!
 ```
 
 ## Commands Party PartyFull InviteAccept
 
 ```
-You cannot join &a{0}&c because it already has &3{1}&c players in it!
+You cannot join x because it already has x players in it!
 ```
 
 ## Commands Party Create
 
 ```
-&7Created Party: {0}
+Created Party: x
 ```
 
 ## Commands Party Rename
 
 ```
-&7Party name changed to: &f{0}
+Party name changed to: x
 ```
 
 ## Commands Party SetSharing
 
 ```
-&7Party {0} sharing set to: &3{1}
+Party x sharing set to: x
 ```
 
 ## Commands Party ToggleShareCategory
 
 ```
-&7Party item sharing for &6{0} &7has been &3{1}
+Party item sharing for x has been x
 ```
 
 ## Commands Party AlreadyExists
 
 ```
-&4Party {0} already exists!
+Party x already exists!
 ```
 
 ## Commands Party Kick
 
 ```
-&cYou were kicked from party &a{0}&c!
+You were kicked from party x!
 ```
 
 ## Commands Party Leave
 
 ```
-&eYou have left that party
+You have left that party
 ```
 
 ## Commands Party Members Header
 
 ```
-&c-----[]&aMEMBERS&c[]-----
+-----[]MEMBERS[]-----
 ```
 
 ## Commands Party None
 
 ```
-&cYou are not in a party.
+You are not in a party.
 ```
 
 ## Commands Party Quit
 
 ```
-&a- Leave your current party
+- Leave your current party
 ```
 
 ## Commands Party Teleport
 
 ```
-&a- Teleport to party member
+- Teleport to party member
 ```
 
 ## Commands Party Toggle
 
 ```
-&a- Toggle Party Chat
+- Toggle Party Chat
 ```
 
 ## Commands Party1
 
 ```
-&a- Create a new party
+- Create a new party
 ```
 
 ## Commands Party2
 
 ```
-&a- Join a players party
+- Join a players party
 ```
 
 ## Commands Party Alliance Header
 
 ```
-&c-----[]&aPARTY ALLIANCE&c[]-----
+-----[]PARTY ALLIANCE[]-----
 ```
 
 ## Commands Party Alliance Ally
 
 ```
-&f{0} &8IS ALLIED WITH: &f{1}
+x IS ALLIED WITH: x
 ```
 
 ## Commands.Party Alliance Members Header
 
 ```
-&c-----[]&aALLIANCE MEMBERS&c[]-----
+-----[]ALLIANCE MEMBERS[]-----
 ```
 
 ## Commands.Party Alliance Invite 0
 
 ```
-ALERT: &aYou have received a party alliance invite for {0} from {1}
+ALERT: You have received a party alliance invite for x from x
 ```
 
 ## Commands.Party Alliance Invite 1
 
 ```
-Type &a/party alliance accept&e to accept the invite
+Type /party alliance accept to accept the invite
 ```
 
 ## Commands.Party Alliance Invite Accepted
 
 ```
-&aAlliance invite Accepted.
+Alliance invite Accepted.
 ```
 
 ## Commands Party Alliance None
 
 ```
-&cYour party does not have an ally.
+Your party does not have an ally.
 ```
 
 ## Commands Party Alliance AlreadyAllies
 
 ```
-&cYour party already has an ally. Disband with &3/party alliance disband
+Your party already has an ally. Disband with /party alliance disband
 ```
 
 ## Commands.Party Alliance Help 0
 
 ```
-&cThis party hasn't formed an alliance. Invite a party leader
+This party hasn't formed an alliance. Invite a party leader
 ```
 
 ## Commands.Party Alliance Help 1
 
 ```
-&c to an alliance with &3/party alliance invite <player>&c.
+ to an alliance with /party alliance invite <player>.
 ```
 
 ## Commands ptp Enabled
 
 ```
-Party teleporting &aenabled
+Party teleporting enabled
 ```
 
 ## Commands ptp Disabled
 
 ```
-Party teleporting &cdisabled
+Party teleporting disabled
 ```
 
 ## Commands ptp NoRequests
 
 ```
-&cYou have no teleport requests at this time
+You have no teleport requests at this time
 ```
 
 ## Commands ptp NoWorldPermissions
 
 ```
-&c[mcMMO] You do not have permission to teleport to the world {0}.
+[mcMMO] You do not have permission to teleport to the world x.
 ```
 
 ## Commands ptp Request1
 
 ```
-&e{0} &ahas requested to teleport to you.
+x has requested to teleport to you.
 ```
 
 ## Commands ptp Request2
 
 ```
-&aTo teleport, type &e/ptp accept&a. Request expires in &c{0} &aseconds.
+To teleport, type /ptp accept. Request expires in x seconds.
 ```
 
 ## Commands ptp AcceptAny Enabled
 
 ```
-Party teleport request confirmation &aenabled
+Party teleport request confirmation enabled
 ```
 
 ## Commands ptp AcceptAny Disabled
 
 ```
-Party teleport request confirmation &cdisabled
+Party teleport request confirmation disabled
 ```
 
 ## Commands ptp RequestExpired
 
 ```
-&cParty teleport request has expired!
+Party teleport request has expired!
 ```
 
 
@@ -329,290 +329,290 @@ Party teleport request confirmation &cdisabled
 ## Party Help 0
 
 ```
-&cProper usage is &3{0} <player> [password].
+Proper usage is x <player> [password].
 ```
 
 ## Party Help 1
 
 ```
-&cTo create a party, use &3{0} <name> [password].
+To create a party, use x <name> [password].
 ```
 
 ## Party Help 2
 
 ```
-&cConsult &3{0} &cfor more information
+Consult x for more information
 ```
 
 ## Party Help 3
 
 ```
-&cUse &3{0} <player> [password] &cto join or &3{1} &cto quit
+Use x <player> [password] to join or x to quit
 ```
 
 ## Party Help 4
 
 ```
-&cTo lock or unlock your party, use &3{0}
+To lock or unlock your party, use x
 ```
 
 ## Party Help 5
 
 ```
-&cTo password protect your party, use &3{0} <password>
+To password protect your party, use x <password>
 ```
 
 ## Party Help 6
 
 ```
-&cTo kick a player from your party, use &3{0} <player>
+To kick a player from your party, use x <player>
 ```
 
 ## Party Help 7
 
 ```
-&cTo transfer ownership of your party, use &3{0} <player>
+To transfer ownership of your party, use x <player>
 ```
 
 ## Party Help 8
 
 ```
-&cTo disband your party, use &3{0}
+To disband your party, use x
 ```
 
 ## Party Help 9
 
 ```
-&cUse &3{0} &cto share items with party members
+Use x to share items with party members
 ```
 
 ## Party Help 10
 
 ```
-&cUse &3{0} &cto enable XP sharing with party members
+Use x to enable XP sharing with party members
 ```
 
 ## Party InformedOnJoin
 
 ```
-{0} &ahas joined your party
+x has joined your party
 ```
 
 ## Party InformedOnQuit
 
 ```
-{0} &ahas left your party
+x has left your party
 ```
 
 ## Party InformedOnNameChange
 
 ```
-&6{0} &ahas set the party name to &f{1}
+x has set the party name to x
 ```
 
 ## Party InvalidName
 
 ```
-&4That is not a valid party name.
+That is not a valid party name.
 ```
 
 ## Party Invite Self
 
 ```
-&cYou can't invite yourself!
+You can't invite yourself!
 ```
 
 ## Party IsLocked
 
 ```
-&cThis party is already locked!
+This party is already locked!
 ```
 
 ## Party IsntLocked
 
 ```
-&cThis party is not locked!
+This party is not locked!
 ```
 
 ## Party Locked
 
 ```
-&cParty is locked, only party leader may invite.
+Party is locked, only party leader may invite.
 ```
 
 ## Party NotInYourParty
 
 ```
-&4{0} is not in your party
+x is not in your party
 ```
 
 ## Party NotOwner
 
 ```
-&4You are not the party leader.
+You are not the party leader.
 ```
 
 ## Party Target NotOwner
 
 ```
-&4{0} is not the party leader.
+x is not the party leader.
 ```
 
 ## Party Owner New
 
 ```
-&a{0} is the new party leader.
+x is the new party leader.
 ```
 
 ## Party Owner NotLeader
 
 ```
-&4You are no longer the party leader.
+You are no longer the party leader.
 ```
 
-Party.Owner.Player =&aYou are now the party leader.
+Party.Owner.Player =You are now the party leader.
 ## Party Password None
 
 ```
-&cThis party is password protected. Please provide a password to join.
+This party is password protected. Please provide a password to join.
 ```
 
 ## Party Password Incorrect
 
 ```
-&cParty password is incorrect.
+Party password is incorrect.
 ```
 
 ## Party Password Set
 
 ```
-&aParty password set to {0}
+Party password set to x
 ```
 
 ## Party Password Removed
 
 ```
-&aParty password has been cleared.
+Party password has been cleared.
 ```
 
 ## Party Player Invalid
 
 ```
-&cThat is not a valid player.
+That is not a valid player.
 ```
 
 ## Party NotOnline
 
 ```
-&4{0} is not online!
+x is not online!
 ```
 
 ## Party Player InSameParty
 
 ```
-&c{0} already is in your party!
+x already is in your party!
 ```
 
 ## Party PlayerNotInParty
 
 ```
-&4{0} is not in a party
+x is not in a party
 ```
 
 ## Party Specify
 
 ```
-&cYou must specify a party.
+You must specify a party.
 ```
 
 ## Party Teleport Dead
 
 ```
-&cYou can't teleport to a dead player.
+You can't teleport to a dead player.
 ```
 
 ## Party Teleport Hurt
 
 ```
-&cYou have been hurt in the last {0} seconds and cannot teleport.
+You have been hurt in the last x seconds and cannot teleport.
 ```
 
 ## Party Teleport Player
 
 ```
-&aYou have teleported to {0}.
+You have teleported to x.
 ```
 
 ## Party Teleport Self
 
 ```
-&cYou can't teleport to yourself!
+You can't teleport to yourself!
 ```
 
 ## Party Teleport Target
 
 ```
-&a{0} has teleported to you.
+x has teleported to you.
 ```
 
 ## Party Teleport Disabled
 
 ```
-&c{0} doesn't allow party teleportation.
+x doesn't allow party teleportation.
 ```
 
 ## Party Rename Same
 
 ```
-&cThat is already the name of your party!
+That is already the name of your party!
 ```
 
 ## Party Join Self
 
 ```
-&cYou can't join yourself!
+You can't join yourself!
 ```
 
 ## Party Unlocked
 
 ```
-&7Party is unlocked
+Party is unlocked
 ```
 
 ## Party Disband
 
 ```
-&7The party has been disbanded
+The party has been disbanded
 ```
 
 ## Party Alliance Formed
 
 ```
-&7Your party is now allies with &a{0}
+Your party is now allies with x
 ```
 
 ## Party Alliance Disband
 
 ```
-&7Your party is no longer allies with &c{0}
+Your party is no longer allies with x
 ```
 
 ## Party Status Locked
 
 ```
-&4(INVITE-ONLY)
+(INVITE-ONLY)
 ```
 
 ## Party Status Unlocked
 
 ```
-&2(OPEN)
+(OPEN)
 ```
 
 ## Party LevelUp
 
 ```
-&eParty level increased by {0}. Total ({1})
+Party level increased by x. Total (x)
 ```
 
 ## Party Feature Chat
@@ -648,61 +648,61 @@ XP Sharing
 ## Party Feature Locked Chat
 
 ```
-LOCKED UNTIL {0}+ (PARTY CHAT)
+LOCKED UNTIL x+ (PARTY CHAT)
 ```
 
 ## Party Feature Locked Teleport
 
 ```
-LOCKED UNTIL {0}+ (PARTY TELEPORT)
+LOCKED UNTIL x+ (PARTY TELEPORT)
 ```
 
 ## Party Feature Locked Alliance
 
 ```
-LOCKED UNTIL {0}+ (ALLIANCES)
+LOCKED UNTIL x+ (ALLIANCES)
 ```
 
 ## Party Feature Locked ItemShare
 
 ```
-LOCKED UNTIL {0}+ (ITEM SHARING)
+LOCKED UNTIL x+ (ITEM SHARING)
 ```
 
 ## Party Feature Locked XpShare
 
 ```
-LOCKED UNTIL {0}+ (XP SHARING)
+LOCKED UNTIL x+ (XP SHARING)
 ```
 
 ## Party Feature Disabled 1
 
 ```
-&cParty chat is not unlocked yet.
+Party chat is not unlocked yet.
 ```
 
 ## Party Feature Disabled 2
 
 ```
-&cParty teleport is not unlocked yet.
+Party teleport is not unlocked yet.
 ```
 
 ## Party Feature Disabled 3
 
 ```
-&cParty alliances are not unlocked yet.
+Party alliances are not unlocked yet.
 ```
 
 ## Party Feature Disabled 4
 
 ```
-&cParty item sharing is not unlocked yet.
+Party item sharing is not unlocked yet.
 ```
 
 ## Party Feature Disabled 5
 
 ```
-&cParty XP sharing is not unlocked yet.
+Party XP sharing is not unlocked yet.
 ```
 
 ## Party ShareType Xp

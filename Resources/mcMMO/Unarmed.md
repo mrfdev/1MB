@@ -18,7 +18,7 @@ Steel Arm Style
 ## Unarmed Ability Bonus 1
 
 ```
-+{0} DMG Upgrade
++x DMG Upgrade
 ```
 
 ## Unarmed Ability IronGrip Attacker
@@ -30,19 +30,19 @@ Your opponent has an iron grip!
 ## Unarmed Ability IronGrip Defender
 
 ```
-&aYour iron grip kept you from being disarmed!
+Your iron grip kept you from being disarmed!
 ```
 
 ## Unarmed Ability Lower
 
 ```
-&7You lower your fists.
+You lower your fists.
 ```
 
 ## Unarmed Ability Ready
 
 ```
-&3You &6ready&3 your fists.
+You ready your fists.
 ```
 
 ## Unarmed SubSkill Berserk Name
@@ -180,25 +180,25 @@ UNARMED
 ## Unarmed Skills Berserk On
 
 ```
-&a**BERSERK ACTIVATED**
+**BERSERK ACTIVATED**
 ```
 
 ## Unarmed.Skills Berserk Other Off
 
 ```
-Berserk&a has worn off for &e{0}
+Berserk has worn off for x
 ```
 
 ## Unarmed.Skills Berserk Other On
 
 ```
-&a{0}&2 has used &cBerserk!
+x has used Berserk!
 ```
 
 ## Unarmed Skills Berserk Refresh
 
 ```
-&aYour &eBerserk &aability is refreshed!
+Your Berserk ability is refreshed!
 ```
 
 
@@ -207,54 +207,54 @@ Berserk&a has worn off for &e{0}
 ## Guides Unarmed Section 0
 
 ```
-&3About Unarmed:
-&eUnarmed will give players various combat bonuses when using
-&eyour fists as a weapon. 
+About Unarmed:
+Unarmed will give players various combat bonuses when using
+your fists as a weapon. 
 
-&3XP GAIN:
-&eXP is gained based on the amount of damage dealt to mobs 
-&eor other players when unarmed.
+XP GAIN:
+XP is gained based on the amount of damage dealt to mobs 
+or other players when unarmed.
 ```
 
 ## Guides Unarmed Section 1
 
 ```
-&3How does Berserk work?
-&eBeserk is an active ability that is activated by
-&eright-clicking. While in Beserk mode, you deal 50% more
-&edamage and you can break weak materials instantly, such as
-&eDirt and Grass.
+How does Berserk work?
+Beserk is an active ability that is activated by
+right-clicking. While in Beserk mode, you deal 50% more
+damage and you can break weak materials instantly, such as
+Dirt and Grass.
 ```
 
 ## Guides Unarmed Section 2
 
 ```
-&3How does Steel Arm Style work?
-&eSteel Arm Style increases the damage dealt when hitting mobs or
-&eplayers with your fists.
+How does Steel Arm Style work?
+Steel Arm Style increases the damage dealt when hitting mobs or
+players with your fists.
 ```
 
 ## Guides Unarmed Section 3
 
 ```
-&3How does Arrow Deflect work?
-&eArrow Deflect is a passive ability that gives you a chance
-&eto deflect arrows shot by Skeletons or other players.
-&eThe arrow will fall harmlessly to the ground.
+How does Arrow Deflect work?
+Arrow Deflect is a passive ability that gives you a chance
+to deflect arrows shot by Skeletons or other players.
+The arrow will fall harmlessly to the ground.
 ```
 
 ## Guides Unarmed Section 4
 
 ```
-&3How does Iron Grip work?
-&eIron Grip is a passive ability that counters disarm. As your
-&eunarmed level increases, the chance of preventing a disarm increases.
+How does Iron Grip work?
+Iron Grip is a passive ability that counters disarm. As your
+unarmed level increases, the chance of preventing a disarm increases.
 ```
 
 ## Guides Unarmed Section 5
 
 ```
-&3How does Disarm work?
-&eThis passive ability allows players to disarm other players,
-&ecausing the target's equipped item to fall to the ground.
+How does Disarm work?
+This passive ability allows players to disarm other players,
+causing the target's equipped item to fall to the ground.
 ```

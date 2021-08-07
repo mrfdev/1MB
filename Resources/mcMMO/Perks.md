@@ -2,25 +2,69 @@
 
 #PERKS
 ## Perks XP Name
-`Experience`
+
+```
+Experience
+```
+
 ## Perks XP Desc
-`Receive boosted XP in certain skills.`
+
+```
+Receive boosted XP in certain skills.
+```
+
 ## Perks Lucky Name
-`Luck`
+
+```
+Luck
+```
+
 ## Perks Lucky Desc
-`Gives {0} skills and abilities a 33.3% better chance to activate.`
+
+```
+Gives {0} skills and abilities a 33.3% better chance to activate.
+```
+
 ## Perks Lucky Desc Login
-`Gives certain skills and abilities a 33.3% better chance to activate.`
+
+```
+Gives certain skills and abilities a 33.3% better chance to activate.
+```
+
 ## Perks Lucky Bonus
-`&6 ({0} with Lucky Perk)`
+
+```
+&6 ({0} with Lucky Perk)
+```
+
 ## Perks Cooldowns Name
-`Fast Recovery`
+
+```
+Fast Recovery
+```
+
 ## Perks Cooldowns Desc
-`Cuts cooldown duration by {0}.`
+
+```
+Cuts cooldown duration by {0}.
+```
+
 ## Perks ActivationTime Name
-`Endurance`
+
+```
+Endurance
+```
+
 ## Perks ActivationTime Desc
-`Increases ability activation time by {0} seconds.`
+
+```
+Increases ability activation time by {0} seconds.
+```
+
 ## Perks ActivationTime Bonus
-`&6 ({0}s with Endurance Perk)`
+
+```
+&6 ({0}s with Endurance Perk)
+```
+
 

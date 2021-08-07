@@ -2,23 +2,63 @@
 
 #COMBAT
 ## Combat ArrowDeflect
-`&f**ARROW DEFLECT**`
+
+```
+&f**ARROW DEFLECT**
+```
+
 ## Combat BeastLore
-`&a**BEAST LORE**`
+
+```
+&a**BEAST LORE**
+```
+
 ## Combat BeastLoreHealth
-`&3Health (&a{0}&3/{1})`
+
+```
+&3Health (&a{0}&3/{1})
+```
+
 ## Combat BeastLoreOwner
-`&3Owner (&c{0}&3)`
+
+```
+&3Owner (&c{0}&3)
+```
+
 ## Combat BeastLoreHorseSpeed
-`&3Horse Movement Speed (&a{0} blocks/s&3)`
+
+```
+&3Horse Movement Speed (&a{0} blocks/s&3)
+```
+
 ## Combat BeastLoreHorseJumpStrength
-`&3Horse Jump Strength (&aMax {0} blocks&3)`
+
+```
+&3Horse Jump Strength (&aMax {0} blocks&3)
+```
+
 ## Combat Gore
-`&a**GORED**`
+
+```
+&a**GORED**
+```
+
 ## Combat StruckByGore
-`**YOU HAVE BEEN GORED**`
+
+```
+**YOU HAVE BEEN GORED**
+```
+
 ## Combat TargetDazed
-`Target was &4Dazed`
+
+```
+Target was &4Dazed
+```
+
 ## Combat TouchedFuzzy
-`&4Touched Fuzzy. Felt Dizzy.`
+
+```
+&4Touched Fuzzy. Felt Dizzy.
+```
+
 

@@ -270,3 +270,4 @@ The duration of the bleed is increased by your sword skill.
 ```
 
 
+https://mcmmo.org/wiki/Swords

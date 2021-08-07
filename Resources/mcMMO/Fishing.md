@@ -286,3 +286,4 @@ Fishing drops are completely customizable,
 so results vary server to server.
 ```
 
+https://mcmmo.org/wiki/Fishing

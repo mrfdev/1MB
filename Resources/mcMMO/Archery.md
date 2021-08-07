@@ -210,3 +210,4 @@ extreme knockback effect, similar to the Knockback II
 enchantment. In addition, it deals bonus damage to the target.
 ```
 
+https://mcmmo.org/wiki/Archery

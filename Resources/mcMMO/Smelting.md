@@ -127,3 +127,4 @@ SMELTING
 ```
 
 
+https://mcmmo.org/wiki/Smelting

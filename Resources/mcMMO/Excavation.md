@@ -171,4 +171,4 @@ Excavation drops are completely customizeable
 So results vary server to server.
 ```
 
-
+https://mcmmo.org/wiki/Excavation

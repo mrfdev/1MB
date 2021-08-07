@@ -149,3 +149,6 @@ ALCHEMY
 [[DARK_AQUA]]Concoctions tier 8 ingredients:
 [[YELLOW]]Regular Golden Apple (Potion of Resistance)
 ```
+
+
+https://mcmmo.org/wiki/Alchemy

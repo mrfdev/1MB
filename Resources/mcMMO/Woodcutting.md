@@ -235,3 +235,6 @@ How do Double Drops work?
 This passive ability gives you a chance to obtain an extra
 block for every log you chop.
 ```
+
+
+https://mcmmo.org/wiki/Woodcutting

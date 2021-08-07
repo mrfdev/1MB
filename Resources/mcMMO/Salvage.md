@@ -246,4 +246,4 @@ book will have a lower level enchantment compared to what
 it was on the item.
 ```
 
-
+https://mcmmo.org/wiki/Salvage

@@ -268,4 +268,4 @@ amount of ores dropped from TNT and decreases the
 debris dropped.
 ```
 
-
+https://mcmmo.org/wiki/Mining

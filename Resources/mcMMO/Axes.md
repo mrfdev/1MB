@@ -225,4 +225,4 @@ Skull Splitter has worn off for x
 x has used Skull Splitter!
 ```
 
-
+https://mcmmo.org/wiki/Axes

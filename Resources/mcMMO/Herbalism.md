@@ -1,0 +1,2 @@
+# mcMMO Party Information
+

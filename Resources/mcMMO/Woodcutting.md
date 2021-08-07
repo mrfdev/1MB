@@ -202,23 +202,36 @@ That tree is too large!
 ## Guides Woodcutting Section 0
 
 ```
-&3About Woodcutting:\n&eWoodcutting is all about chopping down trees.\n\n&3XP GAIN:\n&eXP is gained whenever you break log blocks.
+&3About Woodcutting:
+&eWoodcutting is all about chopping down trees.
+
+&3XP GAIN:
+&eXP is gained whenever you break log blocks.
 ```
 
 ## Guides Woodcutting Section 1
 
 ```
-&3How does Tree Feller work?\n&eTree Feller is an active ability, you can right-click\n&ewhile holding an ax to activate Tree Feller. This will\n&ecause the entire tree to break instantly, dropping all\n&eof its logs at once.
+&3How does Tree Feller work?
+&eTree Feller is an active ability, you can right-click
+&ewhile holding an ax to activate Tree Feller. This will
+&ecause the entire tree to break instantly, dropping all
+&eof its logs at once.
 ```
 
 ## Guides Woodcutting Section 2
 
 ```
-&3How does Leaf Blower work?\n&eLeaf Blower is a passive ability that will cause leaf\n&eblocks to break instantly when hit with an axe. By default,\n&ethis ability unlocks at level 100.
+&3How does Leaf Blower work?
+&eLeaf Blower is a passive ability that will cause leaf
+&eblocks to break instantly when hit with an axe. By default,
+&ethis ability unlocks at level 100.
 ```
 
 ## Guides Woodcutting Section 3
 
 ```
-&3How do Double Drops work?\n&eThis passive ability gives you a chance to obtain an extra\n&eblock for every log you chop.
+&3How do Double Drops work?
+&eThis passive ability gives you a chance to obtain an extra
+&eblock for every log you chop.
 ```

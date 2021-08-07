@@ -78,7 +78,8 @@ Treasure Hunter Rank: &a{0}&3/&a{1}
 ## Fishing.SubSkill TreasureHunter Stat Extra
 
 ```
-Drop Rate: &7Common: &e{0} &aUncommon: &e{1}\n&9Rare: &e{2} &dEpic: &e{3} &6Legendary: &e{4} &bMythic: &e{5}
+Drop Rate: &7Common: &e{0} &aUncommon: &e{1}
+&9Rare: &e{2} &dEpic: &e{3} &6Legendary: &e{4} &bMythic: &e{5}
 ```
 
 ## Fishing SubSkill MagicHunter Name
@@ -219,42 +220,69 @@ FISHING
 ## Guides Fishing Section 0
 
 ```
-&3About Fishing:\n&eWith the Fishing skill, Fishing is exciting again!\n&eFind hidden treasures, and shake items off mobs.\n\n&3XP GAIN:\n&eCatch fish.
+&3About Fishing:
+&eWith the Fishing skill, Fishing is exciting again!
+&eFind hidden treasures, and shake items off mobs.
+
+&3XP GAIN:
+&eCatch fish.
 ```
 
 ## Guides Fishing Section 1
 
 ```
-&3How does Treasure Hunter work?\n&eThis ability allows you to find treasure from fishing \n&ewith a small chance of the items being enchanted.\n&eEvery possible treasure for Fishing has a chance\n&eto drop on any level. It depends however\n&ewhat the rarity of the item is how often it will drop.\n&eThe higher your Fishing skill is, the better\n&eyour chances are to find better treasures.
+&3How does Treasure Hunter work?
+&eThis ability allows you to find treasure from fishing 
+&ewith a small chance of the items being enchanted.
+&eEvery possible treasure for Fishing has a chance
+&eto drop on any level. It depends however
+&ewhat the rarity of the item is how often it will drop.
+&eThe higher your Fishing skill is, the better
+&eyour chances are to find better treasures.
 ```
 
 ## Guides Fishing Section 2
 
 ```
-&3How does Ice Fishing work?\n&eThis passive skill allows you to fish in ice lakes!\n&eCast your fishing rod in an ice lake and the ability will\n&ecreate a small hole in the ice to fish in.
+&3How does Ice Fishing work?
+&eThis passive skill allows you to fish in ice lakes!
+&eCast your fishing rod in an ice lake and the ability will
+&ecreate a small hole in the ice to fish in.
 ```
 
 ## Guides Fishing Section 3
 
 ```
-&3How does Master Angler work?\n&eThis passive skill increases the bite chance while fishing.\n&eWhen you've unlocked this ability, fishing while in\n&ea boat improves odds of catching a fish.
+&3How does Master Angler work?
+&eThis passive skill increases the bite chance while fishing.
+&eWhen you've unlocked this ability, fishing while in
+&ea boat improves odds of catching a fish.
 ```
 
 ## Guides Fishing Section 4
 
 ```
-&3How does Shake work?\n&eThis active ability allows you to shake items loose from mobs\n&eby hooking them with the fishing rod. \n&eMobs will drop items they would normally drop on death.\n&eIt is also possible to acquire mob skulls, which are normally \n&eunobtainable in survival mode.
+&3How does Shake work?
+&eThis active ability allows you to shake items loose from mobs
+&eby hooking them with the fishing rod. 
+&eMobs will drop items they would normally drop on death.
+&eIt is also possible to acquire mob skulls, which are normally 
+&eunobtainable in survival mode.
 ```
 
 ## Guides Fishing Section 5
 
 ```
-&3How does Fisherman's Diet work?\n&eThis passive skill increases the amount of hunger restored \n&efrom eating fish.
+&3How does Fisherman's Diet work?
+&eThis passive skill increases the amount of hunger restored 
+&efrom eating fish.
 ```
 
 ## Guides Fishing Section 6
 
 ```
-&3Notes about Fishing:\n&eFishing drops are completely customizable,\n&eso results vary server to server.
+&3Notes about Fishing:
+&eFishing drops are completely customizable,
+&eso results vary server to server.
 ```
 

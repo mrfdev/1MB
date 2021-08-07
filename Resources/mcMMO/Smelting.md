@@ -26,7 +26,8 @@ Understanding The Art
 ## Smelting SubSkill UnderstandingTheArt Description
 
 ```
-Maybe you're spending a bit too much time smelting in the caves.\nPowers up various properties of Smelting.
+Maybe you're spending a bit too much time smelting in the caves.
+Powers up various properties of Smelting.
 ```
 
 ## Smelting SubSkill UnderstandingTheArt Stat

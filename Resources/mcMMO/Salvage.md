@@ -32,7 +32,8 @@ Understanding The Art
 ## Salvage SubSkill UnderstandingTheArt Description
 
 ```
-You're not just digging through your neighbors trash, you're taking care of the environment.\nPowers up various properties of Salvaging.
+You're not just digging through your neighbors trash, you're taking care of the environment.
+Powers up various properties of Salvaging.
 ```
 
 ## Salvage SubSkill ScrapCollector Name
@@ -187,31 +188,62 @@ This item is unbreakable!
 ## Guides Salvage Section 0
 
 ```
-&3About Salvage:\n&eSalvage allows you to use a gold block to salvage armor and\n&etools.\n\n&3XP GAIN:\n&eSalvage is a child skill of Repair and Fishing, your Salvage\n&eskill level is based on your Fishing and Repair skill levels.
+&3About Salvage:
+&eSalvage allows you to use a gold block to salvage armor and
+&etools.
+
+&3XP GAIN:
+&eSalvage is a child skill of Repair and Fishing, your Salvage
+&eskill level is based on your Fishing and Repair skill levels.
 ```
 
 ## Guides Salvage Section 1
 
 ```
-&3How can I use Salvage?\n&ePlace down a mcMMO Salvage Anvil and right-click to salvage\n&ethe item you're currently holding. This will break apart the item,\n&eand give back materials used to craft the item.\n\n&eFor example, salvaging an iron pickaxe will give you iron bars.
+&3How can I use Salvage?
+&ePlace down a mcMMO Salvage Anvil and right-click to salvage
+&ethe item you're currently holding. This will break apart the item,
+&eand give back materials used to craft the item.
+
+&eFor example, salvaging an iron pickaxe will give you iron bars.
 ```
 
 ## Guides Salvage Section 2
 
 ```
-&3How does Advanced Salvage work?\n&eWhen unlocked, this ability allows you to salvage damaged items.\n&eThe yield percentage increases as you level up. A higher yield\n&emeans that you can get more materials back.\n&eWith advanced salvage you will always get 1 material back,\n&eunless the item is too damaged. So you don't have to worry\n&eabout destroying items without getting anything in return.
+&3How does Advanced Salvage work?
+&eWhen unlocked, this ability allows you to salvage damaged items.
+&eThe yield percentage increases as you level up. A higher yield
+&emeans that you can get more materials back.
+&eWith advanced salvage you will always get 1 material back,
+&eunless the item is too damaged. So you don't have to worry
+&eabout destroying items without getting anything in return.
 ```
 
 ## Guides Salvage Section 3
 
 ```
-&3To illustrate how this works, here's an example:\n&eLet's say we salvage a gold pickaxe which is damaged for 20%,\n&ethis means that the maximum amount you could get is only 2\n&e(because the pick is crafted with 3 ingots - each worth\n&e33,33% durability) which is equal to 66%. If your yield\n&epercentage is below 66% you are not able to get 2 ingots.\n&eIf it is above this value you are able to gain the "full amount",\n&ewhich means that you will get 2 ingots.
+&3To illustrate how this works, here's an example:
+&eLet's say we salvage a gold pickaxe which is damaged for 20%,
+&ethis means that the maximum amount you could get is only 2
+&e(because the pick is crafted with 3 ingots - each worth
+&e33,33% durability) which is equal to 66%. If your yield
+&epercentage is below 66% you are not able to get 2 ingots.
+&eIf it is above this value you are able to gain the "full amount",
+&ewhich means that you will get 2 ingots.
 ```
 
 ## Guides Salvage Section 4
 
 ```
-&3How does Arcane Salvage work?\n&eThis ability allows you to get enchanted books when salvaging\n&eenchanted items. Depending on your level the chance of\n&esuccessfully extracting a full or partial enchantment varies.\n\n&eWhen an enchantment is partially extracted, the enchantment\n&ebook will have a lower level enchantment compared to what\n&eit was on the item.
+&3How does Arcane Salvage work?
+&eThis ability allows you to get enchanted books when salvaging
+&eenchanted items. Depending on your level the chance of
+&esuccessfully extracting a full or partial enchantment varies.
+
+&eWhen an enchantment is partially extracted, the enchantment
+&ebook will have a lower level enchantment compared to what
+&eit was on the item.
 ```
 
 

@@ -224,49 +224,76 @@ Green Terra&a has worn off for &e{0}
 ## Guides Herbalism Section 0
 
 ```
-&3About Herbalism:\n&eHerbalism is about collecting herbs and plants.\n\n\n&3XP GAIN:\n&eCollect plants and herbs.
+&3About Herbalism:
+&eHerbalism is about collecting herbs and plants.
+
+
+&3XP GAIN:
+&eCollect plants and herbs.
 ```
 
 ## Guides Herbalism Section 1
 
 ```
-&3Compatible Blocks\n&eWheat, Potatoes, Carrots, Melons, \n&ePumpkins, Sugar Canes, Cocoa Beans, Flowers, Cacti, Mushrooms,\n&eNether Wart, Lily Pads, and Vines.
+&3Compatible Blocks
+&eWheat, Potatoes, Carrots, Melons, 
+&ePumpkins, Sugar Canes, Cocoa Beans, Flowers, Cacti, Mushrooms,
+&eNether Wart, Lily Pads, and Vines.
 ```
 
 ## Guides Herbalism Section 2
 
 ```
-&3How does Green Terra work?\n&eGreen Terra is an active ability, you can right-click\n&ewhile holding a hoe to activate Green Terra.\n&eGreen Terra grants players a chance to get 3x drops from\n&eharvesting plants. It also gives players the ability to\n&espread life into blocks and transform them using seeds\n&efrom your inventory.
+&3How does Green Terra work?
+&eGreen Terra is an active ability, you can right-click
+&ewhile holding a hoe to activate Green Terra.
+&eGreen Terra grants players a chance to get 3x drops from
+&eharvesting plants. It also gives players the ability to
+&espread life into blocks and transform them using seeds
+&efrom your inventory.
 ```
 
 ## Guides Herbalism Section 3
 
 ```
-&3How does Green Thumb (Crops) work?\n&eThis passive ability will automatically replant crops when\n&eharvesting.\n&eYour chance of success depends on your Herbalism skill.
+&3How does Green Thumb (Crops) work?
+&eThis passive ability will automatically replant crops when
+&eharvesting.
+&eYour chance of success depends on your Herbalism skill.
 ```
 
 ## Guides Herbalism Section 4
 
 ```
-&3How does Green Thumb (Cobble/Stone Brick/Dirt) work?\n&eThis active ability allows you to turn blocks into their\n&e"plant-related" counterparts. You can do this by right-clicking\n&ea block, while holding seeds. This will consume 1 seed.
+&3How does Green Thumb (Cobble/Stone Brick/Dirt) work?
+&eThis active ability allows you to turn blocks into their
+&e"plant-related" counterparts. You can do this by right-clicking
+&ea block, while holding seeds. This will consume 1 seed.
 ```
 
 ## Guides Herbalism Section 5
 
 ```
-&3How does Farmer's Diet work?\n&eThis passive skill increases the amount of hunger restored \n&ewhen eating Bread, Cookies, Melons, Mushroom Soup, Carrots,\n&eand Potatoes.
+&3How does Farmer's Diet work?
+&eThis passive skill increases the amount of hunger restored 
+&ewhen eating Bread, Cookies, Melons, Mushroom Soup, Carrots,
+&eand Potatoes.
 ```
 
 ## Guides Herbalism Section 6
 
 ```
-&3How does Hylian Luck work?\n&eThis passive ability gives you a chance to find rare items\n&ewhen certain blocks are broken with a sword.
+&3How does Hylian Luck work?
+&eThis passive ability gives you a chance to find rare items
+&ewhen certain blocks are broken with a sword.
 ```
 
 ## Guides Herbalism Section 7
 
 ```
-&3How do Double Drops work?\n&eThis passive ability gives players more yield from their\n&eharvests.
+&3How do Double Drops work?
+&eThis passive ability gives players more yield from their
+&eharvests.
 ```
 
 

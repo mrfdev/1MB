@@ -231,25 +231,42 @@ Serrated Strikes&a has worn off for &e{0}
 ## Guides Swords Section 0
 
 ```
-&3About Swords:\n&eThis skill awards combat bonuses to anyone fighting with a\n&esword.\n\n&3XP GAIN:\n&eXP is gained based on the amount of damage dealt to mobs or \n&eother players when wielding a sword.
+&3About Swords:
+&eThis skill awards combat bonuses to anyone fighting with a
+&esword.
+
+&3XP GAIN:
+&eXP is gained based on the amount of damage dealt to mobs or 
+&eother players when wielding a sword.
 ```
 
 ## Guides Swords Section 1
 
 ```
-&3How does Serrated Strikes work?\n&eSerrated Strikes is an active ability, you can activate it by\n&eright-clicking with a sword. This ability allows you to deal \n&ean AoE (Area of Effect) hit. This AoE will do a bonus 25%\n&edamage and may apply Rupture
+&3How does Serrated Strikes work?
+&eSerrated Strikes is an active ability, you can activate it by
+&eright-clicking with a sword. This ability allows you to deal 
+&ean AoE (Area of Effect) hit. This AoE will do a bonus 25%
+&edamage and may apply Rupture
 ```
 
 ## Guides Swords Section 2
 
 ```
-&3How does Counter Attack work?\n&eCounter Attack is an active ability. When blocking and taking\n&ehits from mobs, you will have a chance to reflect 50% of \n&ethe damage that was taken.
+&3How does Counter Attack work?
+&eCounter Attack is an active ability. When blocking and taking
+&ehits from mobs, you will have a chance to reflect 50% of 
+&ethe damage that was taken.
 ```
 
 ## Guides Swords Section 3
 
 ```
-&3How does Rupture work?\n&eRupture causes enemies to take damage every two seconds. The \n&etarget will bleed until the effect wears off, or death, \n&ewhichever comes first.\n&eThe duration of the bleed is increased by your sword skill.
+&3How does Rupture work?
+&eRupture causes enemies to take damage every two seconds. The 
+&etarget will bleed until the effect wears off, or death, 
+&ewhichever comes first.
+&eThe duration of the bleed is increased by your sword skill.
 ```
 
 

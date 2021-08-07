@@ -207,35 +207,54 @@ Berserk&a has worn off for &e{0}
 ## Guides Unarmed Section 0
 
 ```
-&3About Unarmed:\n&eUnarmed will give players various combat bonuses when using\n&eyour fists as a weapon. \n\n&3XP GAIN:\n&eXP is gained based on the amount of damage dealt to mobs \n&eor other players when unarmed.
+&3About Unarmed:
+&eUnarmed will give players various combat bonuses when using
+&eyour fists as a weapon. 
+
+&3XP GAIN:
+&eXP is gained based on the amount of damage dealt to mobs 
+&eor other players when unarmed.
 ```
 
 ## Guides Unarmed Section 1
 
 ```
-&3How does Berserk work?\n&eBeserk is an active ability that is activated by\n&eright-clicking. While in Beserk mode, you deal 50% more\n&edamage and you can break weak materials instantly, such as\n&eDirt and Grass.
+&3How does Berserk work?
+&eBeserk is an active ability that is activated by
+&eright-clicking. While in Beserk mode, you deal 50% more
+&edamage and you can break weak materials instantly, such as
+&eDirt and Grass.
 ```
 
 ## Guides Unarmed Section 2
 
 ```
-&3How does Steel Arm Style work?\n&eSteel Arm Style increases the damage dealt when hitting mobs or\n&eplayers with your fists.
+&3How does Steel Arm Style work?
+&eSteel Arm Style increases the damage dealt when hitting mobs or
+&eplayers with your fists.
 ```
 
 ## Guides Unarmed Section 3
 
 ```
-&3How does Arrow Deflect work?\n&eArrow Deflect is a passive ability that gives you a chance\n&eto deflect arrows shot by Skeletons or other players.\n&eThe arrow will fall harmlessly to the ground.
+&3How does Arrow Deflect work?
+&eArrow Deflect is a passive ability that gives you a chance
+&eto deflect arrows shot by Skeletons or other players.
+&eThe arrow will fall harmlessly to the ground.
 ```
 
 ## Guides Unarmed Section 4
 
 ```
-&3How does Iron Grip work?\n&eIron Grip is a passive ability that counters disarm. As your\n&eunarmed level increases, the chance of preventing a disarm increases.
+&3How does Iron Grip work?
+&eIron Grip is a passive ability that counters disarm. As your
+&eunarmed level increases, the chance of preventing a disarm increases.
 ```
 
 ## Guides Unarmed Section 5
 
 ```
-&3How does Disarm work?\n&eThis passive ability allows players to disarm other players,\n&ecausing the target's equipped item to fall to the ground.
+&3How does Disarm work?
+&eThis passive ability allows players to disarm other players,
+&ecausing the target's equipped item to fall to the ground.
 ```

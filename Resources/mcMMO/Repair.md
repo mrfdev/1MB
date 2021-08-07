@@ -260,31 +260,49 @@ This item is unbreakable!
 ## Guides Repair Section 0
 
 ```
-&3About Repair:\n&eRepair allows you to use an iron block to repair armor and\n&etools.\n\n&3XP GAIN:\n&eRepair tools or armor using the mcMMO Anvil. This is an\n&eiron block by default and should not be confused with\n&ethe Vanilla Minecraft Anvil.
+&3About Repair:
+&eRepair allows you to use an iron block to repair armor and
+&etools.
+
+&3XP GAIN:
+&eRepair tools or armor using the mcMMO Anvil. This is an
+&eiron block by default and should not be confused with
+&ethe Vanilla Minecraft Anvil.
 ```
 
 ## Guides Repair Section 1
 
 ```
-&3How can I use Repair?\n&ePlace down a mcMMO Anvil and right-click to repair the item \n&eyou're currently holding. This consumes 1 item on every use.
+&3How can I use Repair?
+&ePlace down a mcMMO Anvil and right-click to repair the item 
+&eyou're currently holding. This consumes 1 item on every use.
 ```
 
 ## Guides Repair Section 2
 
 ```
-&3How does Repair Mastery work?\n&eRepair Mastery increases the repair amount. The extra amount\n&erepaired is influenced by your Repair skill level.
+&3How does Repair Mastery work?
+&eRepair Mastery increases the repair amount. The extra amount
+&erepaired is influenced by your Repair skill level.
 ```
 
 ## Guides Repair Section 3
 
 ```
-&3How does Super Repair work?\n&eSuper Repair is a passive ability. When repairing an item,\n&eit grants players a chance to repair an item with\n&edouble effectiveness.
+&3How does Super Repair work?
+&eSuper Repair is a passive ability. When repairing an item,
+&eit grants players a chance to repair an item with
+&edouble effectiveness.
 ```
 
 ## Guides Repair Section 4
 
 ```
-&3How does Arcane Forging work?\n&eThis passive ability allows you to repair items with a certain\n&echance of maintaining its enchantments. The enchants may be\n&ekept at their existing levels, downgraded to a lower level,\n&eor lost entirely.
+&3How does Arcane Forging work?
+&eThis passive ability allows you to repair items with a certain
+&echance of maintaining its enchantments. The enchants may be
+&ekept at their existing levels, downgraded to a lower level,
+&eor lost entirely.
 ```
 
 

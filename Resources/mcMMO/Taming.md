@@ -162,7 +162,8 @@ Summon an animal to your side
 ## Taming.SubSkill CallOfTheWild Description 2
 
 ```
-&7COTW: Crouch and left-click with\n  {0} {1} (Ocelot), {2} {3} (Wolf), {4} {5} (Horse)
+&7COTW: Crouch and left-click with
+  {0} {1} (Ocelot), {2} {3} (Wolf), {4} {5} (Horse)
 ```
 
 ## Taming SubSkill FastFoodService Name
@@ -327,55 +328,80 @@ TAMING
 ## Guides Taming Section 0
 
 ```
-&3About Taming:\n&eTaming will give players various combat bonuses when using\n&etamed wolves.\n\n&3XP GAIN:\n&eTo gain XP in this skill, you need to tame wolves/ocelots or\n&eget into combat with your wolves.
+&3About Taming:
+&eTaming will give players various combat bonuses when using
+&etamed wolves.
+
+&3XP GAIN:
+&eTo gain XP in this skill, you need to tame wolves/ocelots or
+&eget into combat with your wolves.
 ```
 
 ## Guides Taming Section 1
 
 ```
-&3How does Call of the Wild work?\n&eCall of the Wild is an active ability that will allow you to summon\n&ea wolf or an ocelot by your side. You can do this by\n&esneaking + left-clicking while holding bones or fish.
+&3How does Call of the Wild work?
+&eCall of the Wild is an active ability that will allow you to summon
+&ea wolf or an ocelot by your side. You can do this by
+&esneaking + left-clicking while holding bones or fish.
 ```
 
 ## Guides Taming Section 2
 
 ```
-&3How does Beast Lore work?\n&eBeast Lore allows players to inspect pets and to check the\n&estats of wolves and ocelots. Left-click a wolf or ocelot to use\n&eBeast Lore.
+&3How does Beast Lore work?
+&eBeast Lore allows players to inspect pets and to check the
+&estats of wolves and ocelots. Left-click a wolf or ocelot to use
+&eBeast Lore.
 ```
 
 ## Guides Taming Section 3
 
 ```
-&3How does Gore work?\n&eGore is a passive ability that has a chance of inflicting a\n&ebleeding effect on your wolves' targets.
+&3How does Gore work?
+&eGore is a passive ability that has a chance of inflicting a
+&ebleeding effect on your wolves' targets.
 ```
 
 ## Guides Taming Section 4
 
 ```
-&3How does Sharpened Claws work?\n&eSharpened Claws provides a damage bonus to damage dealt\n&eby wolves. The damage bonus depends on your Taming level.
+&3How does Sharpened Claws work?
+&eSharpened Claws provides a damage bonus to damage dealt
+&eby wolves. The damage bonus depends on your Taming level.
 ```
 
 ## Guides Taming Section 5
 
 ```
-&3How does Environmentally Aware work?\n&eThis passive ability will allow wolves to teleport to you when\n&ethey get near hazards, such as Cacti/Lava. It will also give\n&ewolves fall damage immunity.
+&3How does Environmentally Aware work?
+&eThis passive ability will allow wolves to teleport to you when
+&ethey get near hazards, such as Cacti/Lava. It will also give
+&ewolves fall damage immunity.
 ```
 
 ## Guides Taming Section 6
 
 ```
-&3How does Thick Fur work?\n&eThis passive ability will reduce damage and make wolves\n&efire resistant.
+&3How does Thick Fur work?
+&eThis passive ability will reduce damage and make wolves
+&efire resistant.
 ```
 
 ## Guides Taming Section 7
 
 ```
-&3How does Shock Proof work?\n&eThis passive ability reduces damage done to wolves\n&efrom explosions.
+&3How does Shock Proof work?
+&eThis passive ability reduces damage done to wolves
+&efrom explosions.
 ```
 
 ## Guides Taming Section 8
 
 ```
-&3How does Fast Food Service work?\n&eThis passive ability gives wolves a chance to heal whenever\n&ethey perform an attack.
+&3How does Fast Food Service work?
+&eThis passive ability gives wolves a chance to heal whenever
+&ethey perform an attack.
 ```
 
 

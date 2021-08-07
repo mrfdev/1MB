@@ -1,5 +1,49 @@
 # mcMMO Repair
 
+Repair allows you to use an mcMMO anvil to repair armor and tools. In the default configuration, the mcMMO anvil is the regular anvil. To access vanilla anvil activity, crouch and click the anvil. In older mcMMO installations, the default was an iron block.
+
+Note: /repair toggle (lets you temporarily remove the permission to prevent accidental repairs)
+
+## Experience gains
+
+unknown
+
+## Super ability
+
+This skill does not have a super ability
+
+## Active SubSkills
+
+Active subskills require you to do something in order to trigger the skill.
+
+This skill has no active SubSkills.
+
+
+## Passive SubSkills
+
+Passive subskills apply their effects as soon as they are learned.
+
+### Arcane Forging
+
+Level Requirement: 10 (100)
+
+Arcane Forging allows you to repair items with a certain change of maintaining its enchantments. The enchantments may be kept at their existing levels, downgraded to a lower level, or list entirely. The effectiveness of this skill depends on your rank/level 
+
+### Repair Mastery
+
+Level Requirement: 20 (200)
+
+Repair Mastery increases the repair amount. The extra amount repaired is influenced by your Repair skill level.
+
+### Super Repair
+
+Level Requirement: 40 (400)
+
+Super Repair is a passive ability. When repairing an item it grants players a chance to repair with double effectiveness. The likelihood of this happening starts at 40% at level 40 (400) and it increases by 1% every level (10 levels) to 100% at level 100 (1000).
+
+
+
+
 ## Commands XPGain Child
 
 ```

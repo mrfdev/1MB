@@ -1,5 +1,69 @@
 # mcMMO Fishing
 
+The fishing skill allows you to fish faster and catch more unique treasures while fishing.
+
+## Experience gain
+
+x
+
+## Super-ability
+
+This skill does not have a super ability
+
+## SubSkills
+
+Active subskills require you to do something in order to trigger the skill.
+
+### Ice Fishing
+
+Level Requirement: 5 (50)
+
+Allows you to fish in icy biomes.
+
+### Shake
+
+Level Requirement: 15 (150)
+
+Shake items off of mobs or players with your fishing pole.
+
+On mobs this will damage them for 1/4 of their total health. Starting in mcmmo 2.2 this has an upper limit of 10 damage. This means that a mob with over 40 health (20 hearts) will at most have 5 hearts removed every shake. This is only useful for servers with custom boss mobs and does not change anything for normal gameplay.
+
+Below: Passive subskills apply their effects as soon as they are learned.
+
+### Treasure Hunter
+
+Level Requirement: 10 (100)
+
+Treasure Hunter allows you find unique treasures while fishing. It is paired with Magic Hunter to also give enchanted items.
+
+Each treasure is organized into one of six categories:
+
+- Common
+- Uncommon
+- Rare
+- Epic
+- Legendary
+- Mythic
+
+### Master Angler
+
+Level Requirement: 15 (150)
+
+Improves your chance of getting a bite while fishing.
+
+### Fisherman's Diet
+
+Level Requirement: 20 (200)
+
+Improves the hunger restored from eating fish.
+
+### Magic Hunter
+
+Level Requirement: 20 (200)
+
+Find enchanted items while fishing.
+
+
 ## Commands XPGain Fishing
 
 ```

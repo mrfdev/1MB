@@ -1,5 +1,31 @@
 # mcMMO Alchemy
 
+A witchery skill that lets you brew potions.
+
+## Experience Gain
+
+Experience in Alchemy is gained by successfully crafting potions and by adding additional ingredients to existing potions.
+
+
+## Super Ability
+
+Alchemy does not currently have a super ability.
+
+## Active SubSkill
+
+Alchemy does not currently have an active sub-skill.
+
+## Passive SubSkill
+
+### Catalysis
+
+Speeds up potion brewing.
+
+### Concoctions
+
+Allows for more ingredients.
+
+
 ## Commands XPGain Alchemy
 
 ```

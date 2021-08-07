@@ -1,5 +1,46 @@
 # mcMMO Woodcutting
 
+Woodcutting is a skill centered around harvesting trees (and mushroom trees) with an axe.
+
+## Experience Gain
+
+Experience is gained by harvesting logs, stripped logs, wood blocks, mushroom blocks, and mushroom stems.
+
+## Super Ability
+
+### Tree Feller
+
+Activate the Tree Feller ability by right clicking on any non-log block while holding an axe. Right clicking on a log will strip the log.
+
+When activated, breaking a log block will automatically break all blocks related to that tree in the vicinity, up to a certain size (as denoted in advanced.yml).
+
+Higher levels provide larger harvestable tree sizes, as well as more storable charges of the Tree Feller ability (Default is 1, with 2 at Rank 3 and 3 at Rank 4).
+
+Tree Feller does not give full XP for each block cut down, instead giving diminishing returns on XP for each block removed. This can be disabled with the setting 'ExploitFix.TreeFellerReducedXP' in 'experience.yml'.
+
+## Passive SubSkill
+
+### Harvest Lumber
+
+Harvest Lumber gives a chance of harvesting an additional log, which by default starts at a 1% chance at level 1 (10 for retro) and increases by 1% every 1 (10) level(s) to a cap of 100% at max level.
+
+### Splinter
+
+Splinter
+
+### Bark Surgeon
+
+Bark Surgeon
+
+### Nature's Bounty
+
+Nature's Bounty
+
+### Leaf Blower
+
+Leaf Blower
+
+
 ## Commands XPGain Woodcutting
 
 ```

@@ -1,5 +1,35 @@
 # mcMMO Excavation
 
+The Excavation skill is the act of digging with a shovel. As the skill levels up, you get a higher chance of receiving treasures from what you dig.
+
+
+## Increasing skill level
+
+You level up by digging specific blocks with a shovel.
+
+If you really want a high level in Excavation, just go far from your home and dig everything in sight that's listed to the right.
+
+## Super Ability
+
+Giga Drill Breaker is an ability activated by right-clicking a shovel before immediately digging after.
+
+It adds 5 levels of Efficiency to the held shovel for a brief duration of time.
+
+The duration lasts two seconds, lasting an extra second for every 50 levels you have in Excavation.
+
+A drawback is that durability drains twice as fast during Giga Drill Breaker.
+
+## Active Ability
+
+Excavation only has one 'Active Ability' currently.
+
+That ability is Archaeology.
+
+
+
+
+
+
 ## Commands XPGain Excavation
 
 ```

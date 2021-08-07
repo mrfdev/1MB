@@ -1,5 +1,50 @@
 # mcMMO Herbalism
 
+The Herbalism skill offers extra drops and automatic crop planning, saving time and effort. It also has some interesting sub-skills, such as being able to add moss to cobblestone and stone bricks.
+
+## Experience gain
+
+Experience is gained by breaking blocks that are considered crops. For blocks that have several stages of growth before they can be properly harvested, those only give experience when they are fully ripe (not including pumpkin/melon stalks). Please note that these values are in the default configuration for the plugin and can be altered by editing the experience.yml file, so experience values may vary from server to server.
+
+
+## Super ability
+
+### Green Terra
+
+Is activated by right-clicking on anything (except dirt) with a hoe and then harvesting crops with it. It provides triple drops and crops will be automatically replanted at a very high growth level until the ability wears off. The appropriate seed type needs to be in your inventory for this replanting.
+
+Alternatively, right-clicking on anything except dirt with a hoe and then clicking on stonebrick, dirt, or cobble while having wheat seeds in the inventory will use the seeds to instantly convert the target blocks into mossy stonebrick, grass, or mossy cobble while the ability is active.
+
+## SubSkills
+
+### Green Thumb (Blocks)
+
+Provides the chance to apply moss to dirt, cobblestone or stone bricks by right-clicking on it with wheat seeds, which will be consumed in the process. The chance for a successful convert increases with the player's Herbalism level.
+
+### Shroom Thumb
+
+Provides the chance to turn dirt into mycelium by clicking on it with a mushroom. The player must have both red and brown mushrooms in their inventory, which will be consumed in the process. The chance for a successful convert increases with the player's Herbalism level.
+
+Below: Passive sub-skills
+
+### Green Thumb (Crops)
+
+Provides a chance to automatically replant crops upon harvesting them with a hoe. The chance increases with the player's Herbalism level.
+
+### Double Drops
+
+Increases harvesting precision, granting double drops upon harvesting crops. The chance increases with the player's Herbalism level.
+
+### Farmer's Diet
+
+Increases the amount of hunger restored by grown food (bread, carrots, potatoes, cookies, melons, mushroom soup and carrots) as the player's Herbalism level increases. The bonus hunger restoration is determined by a rank.
+
+### Hylian Luck
+
+Gives a small chance of finding rare items upon breaking specific materials with a sword. Dead bushes may yield melon seeds, pumpkin seeds and cocoa beans. Flowers may yield carrots, potatoes and apples. Smashing a naturally generated flower pot may yield an emerald, diamond or gold nugget. The chance for a drop increases with the player's Herbalism level.
+
+
+
 ## Commands XPGain Herbalism
 
 ```

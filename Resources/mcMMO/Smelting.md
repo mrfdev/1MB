@@ -1,5 +1,7 @@
 # mcMMO Smelting
 
+Ores in a furnace will smelts, giving you additional exp for repair and mining.
+
 ## Commands XPGain Child
 
 ```

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.5, build 037 for Spigot 1.17.1 (java 16, 64bit)
-# @Release: July 6th, 2021
-# @Description: Helps us start and fork a Minecraft 1.17.1 server session.
+# @Version: 2.6, build 038 for Paper 1.17.1 (Java 17, 64bit)
+# @Release: September 16th, 2021
+# @Description: Helps us start and fork a Minecraft Paper 1.17.1 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-start.sh

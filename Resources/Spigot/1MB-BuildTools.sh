@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.3, build 063
-# @Release: July 6th, 2021
-# @Description: Helps us get a Minecraft Spigot 1.17.1 server.
+# @Version: 2.4, build 064
+# @Release: Septepber 16th, 2021
+# @Description: Helps us make a Minecraft Spigot 1.17.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/KzTDhxv
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -21,11 +21,10 @@ _minecraftVersion="1.17.1"
 # Which version are we running?
 
 _minJavaVersion=16.0
-# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and (is required for) 1.17.1 and up.
-# use 16.0 for java 16 which can also be used for Minecraft 1.16.5
+# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and is required for 1.17.1 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
-# we do not support java 7, and support for 8 will soon be dropped.
+# we do not support java 7, and support for anything lower than 16 will soon be dropped.
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -53,10 +52,12 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
 _javaBin=""
-# Leave empty for auto-discovery of java path, and
-# if this fails, you could hard code the path, as below:
+# Leave empty for auto-discovery of java path, and 
+# if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
 
 _dirScript="" #leave empty for auto discovery
 # example: _dirScript="/Users/floris/MinecraftServer/_development"

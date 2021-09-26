@@ -5,7 +5,7 @@
 - - -
 
 | Plugin Name | Release Page | Alternative Download | Optional Comment |
-| ----------- | ------------ | -------------------- | ---------------- |
+| :---------- | :----------- | :------------------- | :--------------- |
 | AdvancedAchievements | https://www.spigotmc.org/resources/advanced-achievements.83466/ | x | Premium |
 | AsyncWorldEdit | https://www.spigotmc.org/resources/asyncworldedit-premium.9661/ | x | Premium |
 | AuctionHouse | https://www.spigotmc.org/resources/auctionhouse.61836/ | x | x |

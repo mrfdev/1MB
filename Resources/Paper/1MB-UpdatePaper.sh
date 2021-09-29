@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 1.0, build 010
-# @Release: November 3rd, 2020
-# @Description: Helps us get a Minecraft Paper 1.16.4 server.
+# @Version: 2.0, build 011
+# @Release: September 29th, 2021
+# @Description: Helps us get a Minecraft Paper 1.17.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-UpdatePaper.sh
 # @Syntax: ./1MB-UpdatePaper.sh
 # @URL: Latest source, info, & support: https://scripts.1moreblock.com/
@@ -17,13 +17,22 @@
 #
 ###
 
-MINECRAFT_VERSION="1.16.4"
+# Which version are we trying to specifically get a .jar for?
+# I recommend to always restrict it to the version you're using now.
+# Examples: 1.16.5, 1.12.2, 1.17.1, 1.13.2
+# Note: Leave this empty to always get the latest Minecraft version,
+#       meaning if Minecraft 1.18.9 came out, it will get not 1.17.1 but 1.18.9
+_minecraftVersion=""
 
-_minJavaVersion=11.0
-# use 11.0 for java 11 which can be used for Minecraft 1.13.x and up.
-# use 1.8 for java 8 which can be used for Minecraft 1.12.x and up.
+# Paper-1.17.1.jar will be downloaded in the directory the script runs in, 
+# even if there's a server.properties file. If you run this outside of the 
+# server directory (_targetDir) but you want to automatically move it there,
+# then set this to true, and define the full path to the server directory.
+_targetMove=false
+_targetDir="/Users/floris/MinecraftServer"
 
-DEBUG=true # Debug mode true means you get some output
+# Output some progress? (Set to false might be handy for crontabs)
+_debug=true
 
 ### INTERNAL CONFIGURATION
 #
@@ -31,55 +40,45 @@ DEBUG=true # Debug mode true means you get some output
 # leave alone, but can change if really needed.
 #
 ###
+[ -z "$_minecraftVersion" ] && _minecraftVersion="0"
 
-JAVA_JDK=""
-# Leave empty for auto-discovery of java path, if 
-# this fails, you could hard code the path, as below
-# 08 (if you want to make Paper for 1.12.2 or 1.13.2)
-# JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
-# 11 (if you want to make Paper for 1.13.2 - 1.16.4)
-# JAVA_JDK="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/bin/java"
+_backupFile="paper-$_minecraftVersion._jar"
+_currentFile="paper-$_minecraftVersion.jar"
+_serverPropertiesFile="server.properties"
+_cacheFile="cachepaper.txt"
+_apiUrl='https://papermc.io/api/v2/projects/paper'
 
-DIR_SCRIPT="" #leave empty for auto discovery
+#leave empty for auto discovery
+_dirScript=""
 
-BACKUPFILE="paper-$MINECRAFT_VERSION._jar"
-CURRENTFILE="paper-$MINECRAFT_VERSION.jar"
-
-CACHEFILE="cachepaper.txt"
-
-URL_BASE="https://papermc.io/api/v1/paper"
-URL_VERSION="$URL_BASE/$MINECRAFT_VERSION"
-URL_LATEST="$URL_VERSION/latest"
-URL_DOWNLOAD="$URL_LATEST/download"
-
-# STRING="paper-350.jar"
-# echo "${STRING//[!0-9]/}"
-# echo "${STRING//[^0-9]/}"
-
-# Stop configuring things beyond this point.
-
-# some code to help us
+### END OF CONFIGURATION
+#
+# Really stop configuring things
+# beyond this point. I mean it.
+#
+###
 
 # theme
 B="\\033[1m"; Y="\\033[33m"; C="\\033[36m"; X="\\033[91m"; R="\\033[0m"
 
-if [ -z "$DIR_SCRIPT" ]; then
-    SH_SOURCE="${BASH_SOURCE[0]}"
-    while [ -h "$SH_SOURCE" ]; do
-        SH_TARGET="$(readlink "$SH_SOURCE")"
-        if [[ $SH_TARGET == /* ]]; then
-            SH_SOURCE="$SH_TARGET"
+# working dir
+if [ -z "$_dirScript" ]; then
+    _shellSource="${BASH_SOURCE[0]}"
+    while [ -h "$_shellSource" ]; do
+        _shellTarget="$(readlink "$_shellSource")"
+        if [[ $_shellTarget == /* ]]; then
+            _shellSource="$_shellTarget"
         else
-            DIR_BASE="$( dirname "$SH_SOURCE" )"
-            SH_SOURCE="$DIR_BASE/$SH_TARGET"
+            _dirBase="$( dirname "$_shellSource" )"
+            _shellSource="$_dirBase/$_shellTarget"
         fi
     done
-    DIR_BASE="$( cd -P "$( dirname "$SH_SOURCE" )" && pwd )"
+    _dirBase="$( cd -P "$( dirname "$_shellSource" )" && pwd )"
 else
-    DIR_BASE="$DIR_SCRIPT"
+    _dirBase="$_dirScript"
 fi
 
-CACHEFILE="$DIR_BASE/$CACHEFILE"
+_cacheFile="$_dirBase/$_cacheFile"
 
 ### FUNCTIONS
 
@@ -98,19 +97,19 @@ function _output {
         _args="${*:2}"; _prefix="(Script Halted!)";
         echo -e "\\n$B$Y$_prefix$X $_args $R" >&2
         cache false "$_prefix $_args" # Updating cachefile
-        rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
+        rm -f "$_cacheFile.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
         echo -e "\\n$B$Y$_prefix$C $_args $R" >&2
         cache true "$_prefix $_args"
-        rm -f "$CACHEFILE.tmp" # Clean up; removing temp cachefile.
+        rm -f "$_cacheFile.tmp" # Clean up; removing temp cachefile.
         exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        if [ "$DEBUG" == true ]; then
+        if [ "$_debug" == true ]; then
             if [ "$2" != 1 ]; then
                 echo -e "\\n$Y$_prefix$C $_args $R"
                 cache true "$_prefix $_args"
@@ -128,174 +127,197 @@ function _output {
 
 function cache {
     # Write given msg true/false to cachefile
-    sed -i.tmp "4s#.*#${1}#" "$CACHEFILE"
-    sed -i.tmp "5s#.*#${2}#" "$CACHEFILE"
+    sed -i.tmp "4s#.*#${1}#" "$_cacheFile"
+    sed -i.tmp "5s#.*#${2}#" "$_cacheFile"
     # debug "cachefile: $1, msg: $2."
-    # debug 1 "cat $CACHEFILE"
+    # debug 1 "cat $_cacheFile"
 }
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.16.4)
-# line 2 : Paper build version (example: 128)
+# line 1 : Minecraft version (example: 1.17.1)
+# line 2 : Paper build version (example: 281)
 # line 3 : BuildTools build version (example: 108) (not used)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
 # At any time the cache file can be renamed, 
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Paper 1.16.4,
+# The 'default' values are for Paper 1.17.1,
 # but you can change this obviously. 
 # The other values are 'old' on purpose, so when you
 # delete the cache file, it also forces a redownload.
 #
 ###
 
-if [ -f "$CACHEFILE" ]; then
+if [ -f "$_cacheFile" ]; then
     # success
     # There's an existing cache
-    _output debug "Found an existing CACHEFILE '$CACHEFILE'."
-    _output debug 1 "cat $CACHEFILE"
+    _output debug "Found an existing _cacheFile '$_cacheFile'."
+    _output debug 1 "cat $_cacheFile"
 else
     # failure
-    # File was never made, or manually deleted. Let's create a new one. 
-cat <<- EOF > $CACHEFILE
-$MINECRAFT_VERSION
+    # File was never made, or manually deleted. Let's create a new one.
+cat <<- EOF > $_cacheFile
+$_minecraftVersion
 0
 0
 true
 Never
 EOF
-    _output debug "Found no existing cache: '$CACHEFILE', created with defaults:"
-    _output debug 1 "cat $CACHEFILE"
+    _output debug "Found no existing cache: '$_cacheFile', created with defaults:"
+    _output debug 1 "cat $_cacheFile"
 fi
 
 # At this point we have an old or a new cache file, adding them to variables
 # debug: https://stackoverflow.com/questions/6022384/bash-tool-to-get-nth-line-from-a-file
 # debug: sed 'NUMq;d' file // sed "${NUM}q;d" file
 
-CACHE_MC_BUILD=$(sed '1q;d' $CACHEFILE) #line1
-CACHE_PP_BUILD=$(sed '2q;d' $CACHEFILE) #line2
-CACHE_BT_BUILD=$(sed '3q;d' $CACHEFILE) #line3
-CACHE_SH_STATE=$(sed '4q;d' $CACHEFILE) #line4
-CACHE_SH_STMSG=$(sed '5q;d' $CACHEFILE) #line5
+_cacheMcBuild=$(sed '1q;d' $_cacheFile) #line1
+_cachePpBuild=$(sed '2q;d' $_cacheFile) #line2
+_cacheBtBuild=$(sed '3q;d' $_cacheFile) #line3
+_cacheShState=$(sed '4q;d' $_cacheFile) #line4
+_cacheShStMsg=$(sed '5q;d' $_cacheFile) #line5
 
-
+# functions to help find installed programs like curl / wget / etc
 function binExists() { type "$1" >/dev/null 2>&1; }
-
 function binDetails() { 
     _cmd="$_"; _cmd="$_cmd";
     _cmdpath=$(command -V "$_cmd" | awk '{print $3}')
     if [ "$_cmd" == "java" ]; then
         _cmdversion=$($_cmd -version 2>&1 | awk -F '"' '/version/ {print $2}')
     else
-    	_cmdversion=$($_cmd --version | perl -pe 'if(($v)=/([0-9]+([.][0-9]+)+)/){print"$v\n";exit}$_=""')
+        _cmdversion=$($_cmd --version | perl -pe 'if(($v)=/([0-9]+([.][0-9]+)+)/){print"$v\n";exit}$_=""')
     fi
     _output debug "cmd: $_cmd, path: $_cmdpath, version: $_cmdversion"
 }
-
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
 
 #prequisites
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 
+# prefer curl over wget, if we can't find curl, use wget, if that fails, exit script.
 if binExists "curl"; then
     binDetails "$_"
     _jsonGetter="curl -f -L -s"
-    _GETTER="curl --remote-name --remote-header-name --silent"
+    _jsonDownload="curl -f -L -s -o"
     _output debug "We can use curl, no need to check for wget"
 else
     _output debug "$_ Not found, .. maybe we can use wget?"
     if binExists "wget"; then
         binDetails "$_"
         _jsonGetter="wget -q -O -"
-        _GETTER="wget -q --content-disposition"
+        _jsonDownload="wget -q --content-disposition -O"
         _output debug "We can use wget, great."
     else
         _output oops "$_ also not found, .. we require either curl or wget \\n -> https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/ \\n -> https://www.cyberciti.biz/faq/how-to-install-wget-togetrid-of-error-bash-wget-command-not-found/"
     fi
 fi
 
-###
-#
-# What is the latest Paper build number?
-# https://papermc.io/api/v1/paper/1.16.4/latest
-# {"project":"paper","version":"1.16.4","build":"128"}
-#
-###
+# TODO : at some point we want to 'restart' if we once run 1.17.1 but now run 1.16.1, build numbers dont match of course.
 
-JSON_KEY="build"
+# Time to start doing something with the data that we have now.
 
-JSON_DATA=$($_jsonGetter $URL_LATEST)
-JSON_VALUE="\"($JSON_KEY)\":\"([^\"]*)\""
-while read -r l; do
-    if [[ $l =~ $JSON_VALUE ]]; then
-        JSON_RESULT="${BASH_REMATCH[2]}"
-    fi
-done <<< "$JSON_DATA"
+# Lets find out if we should auto discover the latest version,
+# or if we are going to find the latest build for a particular version.
+if [ -z "$_minecraftVersion" ] || [ "$_minecraftVersion" = "0" ]
+then
+    _apiMcVersion=$($_jsonGetter "$_apiUrl")
+    _apiMcVersion=${_apiMcVersion%\"*}
+    _apiMcVersion=${_apiMcVersion##*\"}
 
-if [ -z "$JSON_RESULT" ]; then
-    _output oops "Failed to get $JSON_KEY from $JSON_URL_PAPER, quitting script!"
+    # Update our cache file with the found version number
+    sed -i.tmp "1s#.*#${_apiMcVersion}#" "$_cacheFile"
 else
-    CURRENT_PAPER_BUILD="$JSON_RESULT"
-    unset JSON_RESULT
+    _apiMcVersion=$_minecraftVersion
 fi
-# ## What do we have?
-# TODO: Check against version 1.16.4 so we dont accidentally make a 1.17.2 in the future thinking it's 1.16.4
 
-_output debug "Found the current build (offline): $CACHE_PP_BUILD"
-_output debug "Found the current build (online): $CURRENT_PAPER_BUILD"
+_apiPaperBuild=$($_jsonGetter "$_apiUrl/versions/$_apiMcVersion")
+_apiPaperBuild=${_apiPaperBuild%]*}
+_apiPaperBuild=${_apiPaperBuild##*[,[]}
+
+_output debug "Latest Paper _apiPaperBuild found for $_apiMcVersion:  $_apiPaperBuild"
+
+_apiPaperFile=$($_jsonGetter "$_apiUrl/versions/$_apiMcVersion/builds/$_apiPaperBuild")
+_apiPaperFile=${_apiPaperFile##*\"name\":\"}
+_apiPaperFile=${_apiPaperFile%%\"*}
+_apiFinalFile="paper-$_apiMcVersion.jar"
+
+_output debug "Found the current build (offline): $_cachePpBuild"
+_output debug "Found the current build (online): $_apiPaperBuild"
 
 # if our cached number is less than our found online number, it's time to backup and upgrade.
-if [ "$CACHE_PP_BUILD" -lt "$CURRENT_PAPER_BUILD" ]; then
-    _output debug "Cache $CACHE_PP_BUILD is less than online $CURRENT_PAPER_BUILD (We can continue..)"
-    # Updating our cache file with the newer build number
-    sed -i.tmp "2s#.*#${CURRENT_PAPER_BUILD}#" "$CACHEFILE"
+if [ $_cachePpBuild -lt $_apiPaperBuild ]; then
+    _output debug "Cache $_cachePpBuild is less than online $_apiPaperBuild (We can continue..)"
+    # We need to update _currentFile
+    _backupFile="paper-$_apiMcVersion._jar"
+    _currentFile="$_apiFinalFile"
+    # Update our cache file with the newer build number
+    sed -i.tmp "2s#.*#${_apiPaperBuild}#" "$_cacheFile"
 else
-    _output oops "What we found online is not newer than what we already have, nothing to do."
+    _output oops "What we found online is not newer than what we already have, nothing to do.\\n If you really want to get a new .jar you can remove $_cacheFile and run this script again."
 fi
 
-BACKUPFILE="$DIR_BASE/$BACKUPFILE"
-CURRENTFILE="$DIR_BASE/$CURRENTFILE"
+_backupFile="$_dirBase/$_backupFile"
+_currentFile="$_dirBase/$_currentFile"
 
-cd "$DIR_BASE" || _output oops "Could not change to $DIR_BASE"
+cd "$_dirBase" || _output oops "Could not change to $_dirBase"
+
+# TODO: we probably want to check if we store in _targetDir or not.
+
+# should we actually get the new file, what if there's a server running?
+# _serverPropertiesFile="server.properties"
+_netfind() { _serverPropertiesTest=$(lsof -iTCP -sTCP:LISTEN -n -P | grep -i "$1");
+    if [ -z "$_serverPropertiesTest" ]; then
+        _output debug "Found '$_serverPropertiesFile' (good!), and found nothing listening on port '$_serverPropertiesPort' (good!).\\nAssuming there's no server running, we can make the server jar"
+    else
+        _output debug "$_serverPropertiesTest\\nPossible solutions: Stop the server first, or run this script in an empty directory"
+        _output oops "Found a server running, halting script, I don't want to replace that jar!"
+    fi
+}; [[ -f "$_serverPropertiesFile" ]] && _serverPropertiesPort=$(grep "^server-port=" $_serverPropertiesFile | awk -F= '{print $2}') && _netfind $_serverPropertiesPort || _output debug "Found no '$_serverPropertiesFile' (good!), we can replace the server jar"
 
 # is there an old paper jar backup?
-if [ -f "$BACKUPFILE" ]; then
-	_output debug "Found an existing jar backed up: '$BACKUPFILE', removing it.."
-	rm -f "$BACKUPFILE" # Clean up; removing backup
+if [ -f "$_backupFile" ]; then
+    _output debug "Found an existing jar backed up: '$_backupFile', removing it.."
+    rm -f "$_backupFile" # Clean up; removing backup
 else
-	_output debug "Found no existing jar backed up: '$BACKUPFILE', attempting to make one.."
+    _output debug "Found no existing jar backed up: '$_backupFile', attempting to make one.."
 fi
 
 # is there a current paper jar file to backup?
-if [ -f "$CURRENTFILE" ]; then
-	_output debug "Found an existing jar '$CURRENTFILE', backing it up.."
-	mv -f "$CURRENTFILE" "$BACKUPFILE" || _output oops "Backup move of $CURRENTFILE failed. "
+if [ -f "$_currentFile" ]; then
+    _output debug "Found an existing jar '$_currentFile', backing it up.."
+    mv -f "$_currentFile" "$_backupFile" || _output oops "Backup move of $_currentFile failed. "
 else
-	_output debug "Found no existing jar '$CURRENTFILE', guess we can download one.."
+    _output debug "Found no existing jar '$_currentFile', guess we can download one.."
 fi
 
 _output debug "Starting download.. (this could take a short bit)"
-$_GETTER $URL_DOWNLOAD || _output oops "Download of $DOWNLOADFILE failed."
 
-# we should now have paper-NUMBER.jar, 
-# we know with CURRENT_PAPER_BUILD what the build number is, 
-# let's rename it to paper-1.16.4.jar
-_downloadedJar="paper-$CURRENT_PAPER_BUILD.jar"
+$_jsonDownload "$_apiFinalFile" "$_apiUrl/versions/$_apiMcVersion/builds/$_apiPaperBuild/downloads/$_apiPaperFile"
 
-if [ -f "$_downloadedJar" ]; then
-    _output debug "Done. Next, isolating $_downloadedJar .."
-    mv -f "$_downloadedJar" "$CURRENTFILE" || _output oops "Was unable to rename $_downloadedJar to $CURRENTFILE"
-    _output debug "Renamed $_downloadedJar to $CURRENTFILE, printing list:"
-    ls -lh "$CURRENTFILE"
-    pwd
+_output debug "Done. Next, trying to isolate $_apiFinalFile .."
+
+if [ -f "$_serverPropertiesFile" ]; then
+    _output debug "It looks like we are in the same dir as server.properties, we do not have to move the jar to a target directory."
 else
-    _output oops "Could not find downloaded jar $_downloadedJar"
+    if [ "$_targetMove" = true ] ; then
+        _output debug "We are not in the same dir as server.properties, and _targetMove is true, so lets move the $_apiFinalFile to $_targetDir now.."
+        mv -f "$_apiFinalFile" "$_targetDir" || _output oops "Was unable to move $_apiFinalFile to $_targetDir"
+    else
+        _output debug "We are not in the same dir as server.properties, but _targetMove is false, so we are not going to move anything around."
+    fi
 fi
 
-# We are done, let's get outtah here
-_output okay "That's it, we're done!"
+if [ "$_targetMove" = true ] ; then
+    cd "$_targetDir" || _output oops "Could not change to target dir $_targetDir"
+fi
+ls -lh "$_apiFinalFile"
+pwd
+cd "$_dirBase" || _output oops "Could not change back to working dir $_dirBase"
 
-#EOF Copyright (c) 2011-2020 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+# We are done, let's get outtah here
+_output okay "That's it, we're really done!"
+
+#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

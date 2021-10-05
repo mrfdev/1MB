@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 1.2, build 007
+# @Version: 1.2, build 008
 # @Release: October 5th, 2021
 # @Description: Spits out if proc is running on port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -75,11 +75,10 @@ _netfind() {
 
 # Check if we have _file, if so, if we can find _port and show _proc, otherwise try to list all _proc
 if [[ -f "$_file" ]]; then
-    _checkFile=`grep "^server-port=" $_file`
+    _checkFile=$(grep "^server-port=" $_file)
     if [ -z "$_checkFile" ]
         then
-        _output debug "We found the '$_file' file, but it has no port defined (check the file!)"
-        _output debug "Defaulting to checking for all instances of '$_proc' instead:"
+        _output debug "We found the '$_file' file, but it has no port defined (check the file!) \n Defaulting to checking for all instances of '$_proc' instead:"
     else
         _port=$(grep "^server-port=" $_file | awk -F= '{print $2}')
         _output debug "We found the '$_file' file with a defined port \n lets find the running proc '$_proc' on port '$_port':"
@@ -90,6 +89,6 @@ else
 fi
 
 # And finally do the check
-_netfind $_check
+_netfind "$_check"
 
 #EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

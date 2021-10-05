@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 2.0, build 011
-# @Release: September 29th, 2021
+# @Version: 2.0, build 012
+# @Release: October 5th, 2021
 # @Description: Helps us get a Minecraft Paper 1.17.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -248,7 +248,7 @@ _output debug "Found the current build (offline): $_cachePpBuild"
 _output debug "Found the current build (online): $_apiPaperBuild"
 
 # if our cached number is less than our found online number, it's time to backup and upgrade.
-if [ $_cachePpBuild -lt $_apiPaperBuild ]; then
+if [ "$_cachePpBuild" -lt "$_apiPaperBuild" ]; then
     _output debug "Cache $_cachePpBuild is less than online $_apiPaperBuild (We can continue..)"
     # We need to update _currentFile
     _backupFile="paper-$_apiMcVersion._jar"
@@ -275,7 +275,7 @@ _netfind() { _serverPropertiesTest=$(lsof -iTCP -sTCP:LISTEN -n -P | grep -i "$1
         _output debug "$_serverPropertiesTest\\nPossible solutions: Stop the server first, or run this script in an empty directory"
         _output oops "Found a server running, halting script, I don't want to replace that jar!"
     fi
-}; [[ -f "$_serverPropertiesFile" ]] && _serverPropertiesPort=$(grep "^server-port=" $_serverPropertiesFile | awk -F= '{print $2}') && _netfind $_serverPropertiesPort || _output debug "Found no '$_serverPropertiesFile' (good!), we can replace the server jar"
+}; [[ -f "$_serverPropertiesFile" ]] && _serverPropertiesPort=$(grep "^server-port=" $_serverPropertiesFile | awk -F= '{print $2}') && _netfind "$_serverPropertiesPort" || _output debug "Found no '$_serverPropertiesFile' (good!), we can replace the server jar"
 
 # is there an old paper jar backup?
 if [ -f "$_backupFile" ]; then

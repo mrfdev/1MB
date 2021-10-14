@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.6, build 038 for Paper 1.17.1 (Java 17, 64bit)
-# @Release: September 16th, 2021
+# @Version: 2.6, build 039 for Paper 1.17.1 (Java 17, 64bit)
+# @Release: October 15th, 2021
 # @Description: Helps us start and fork a Minecraft Paper 1.17.1 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-start.sh
 # @Syntax: ./1MB-start.sh (name)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -22,9 +22,10 @@ _serverName="mcserver"
 # The name makes it easier to recognize the session in 'tmux ls', you can
 # re-attach to the forked sessions with 'tmux attach -t (name)'.
 
-### FUNCTIONS AND CODE
+### INTERNAL CONFIGURATION
 #
-# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+# Configuration variables you should probably
+# leave alone, but can change if really needed.
 #
 ###
 
@@ -32,6 +33,12 @@ _sibling="1MB-minecraft.sh"
 _debug=true # Set to false to minimize output.
 
 Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
+
+### FUNCTIONS AND CODE
+#
+# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+#
+###
 
 function _output {
     case "$1" in

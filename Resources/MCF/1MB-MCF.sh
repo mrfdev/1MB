@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-MCF.sh
-# @Version: 1.1, build 007
-# @Release: January 16th, 2021
-# @Description: Little shell script to process all the 1.16.5 .jars at once using MaliciousCodeFinder 1.1 and it puts the output in a MCF.log file.
+# @Version: 1.1, build 008
+# @Release: October 15th, 2021
+# @Description: Little shell script to process all the 1.17.1 .jars at once using MaliciousCodeFinder 1.1 and it puts the output in a MCF.log file.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: see below
 # @Syntax: ./1MB-MCF.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -36,15 +36,25 @@ params="-ecompact"
 # "-compact" for compact (shows only the most important stuff) (recommended)
 # "-ecompact" for extended-compact (shows only important stuff, with details)
 
-##### Script:
-# No editing needed beyond this point really
+### INTERNAL CONFIGURATION
 #
+# Configuration variables you should probably
+# leave alone, but can change if really needed.
+#
+###
 
 # Theme
 B="\\033[1m"; Y="\\033[33m"; C="\\033[36m"; X="\\033[91m"; R="\\033[0m"
 
 # Just a simple date/time stamp
 stamp=$(date "+%Y.%m.%d-%H.%M.%S")
+
+### END OF CONFIGURATION
+#
+# Really stop configuring things
+# beyond this point. I mean it.
+#
+###
 
 # Output function
 function msg {

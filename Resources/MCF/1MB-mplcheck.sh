@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-mplcheck.sh
-# @Version: 1.0, build 001
-# @Release: April 30th, 2021
+# @Version: 1.0, build 002
+# @Release: October 15th, 2021
 # @Description: Helps us check for infected Minecraft plugin/server jar files.
 # @Description: Note that this is for a specific malicious type and nothing more.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-mplcheck.sh
 # @Syntax: ./1MB-mplcheck.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/

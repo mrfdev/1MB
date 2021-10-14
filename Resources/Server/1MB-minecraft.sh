@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.6, build 038 for Paper 1.17.1 (Java 17, 64bit)
-# @Release: September 16th, 2021
+# @Version: 2.6, build 039 for Paper 1.17.1 (Java 17, 64bit)
+# @Release: October 15th, 2021
 # @Description: Helps us start a Minecraft Paper 1.17.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
 # @Syntax: ./1MB-minecraft.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -63,9 +63,10 @@ _eula=false
 # leave "" if you want the 1.17.1 server-gui
 _noGui="--nogui"
 
-### FUNCTIONS AND CODE
+### INTERNAL CONFIGURATION
 #
-# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+# Configuration variables you should probably
+# leave alone, but can change if really needed.
 #
 ###
 
@@ -79,6 +80,12 @@ _javaBin=""
 
 _debug=false
 # Debug mode off or on? Default: false (true means it spits out progress)
+
+### FUNCTIONS AND CODE
+#
+# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+#
+###
 
 function _output {
     case "$1" in

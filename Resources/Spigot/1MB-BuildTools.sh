@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.4, build 064
-# @Release: Septepber 16th, 2021
+# @Version: 2.4, build 066
+# @Release: October 15th, 2021
 # @Description: Helps us make a Minecraft Spigot 1.17.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
+# @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/

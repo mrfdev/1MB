@@ -19,13 +19,13 @@ If you require support, maybe these scripts aren't for you. But, you're always f
 
 If you wish to play, please understand we're a family friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Currently Java Edition: 1.17.1)
+`1moreblock.com:25565` (Currently Java Edition: 1.17.1, has basic crossplay Bedrock Edition support.)
 
 ## Information (Useful links)
 
 Our website [www.1moreblock.com](https://omgboards.com/)
-Our discord [discord.1moreblock.com](https://discord.gg/KzTDhxv)
+Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 1.7 build 016, October 5th, 2021.
+This is 1MB Github version 1.8 build 017, October 15th, 2021.

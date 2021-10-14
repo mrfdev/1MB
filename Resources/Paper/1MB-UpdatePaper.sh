@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 2.0, build 012
-# @Release: October 5th, 2021
+# @Version: 2.0, build 013
+# @Release: October 15th, 2021
 # @Description: Helps us get a Minecraft Paper 1.17.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -40,6 +40,7 @@ _debug=true
 # leave alone, but can change if really needed.
 #
 ###
+
 [ -z "$_minecraftVersion" ] && _minecraftVersion="0"
 
 _backupFile="paper-$_minecraftVersion._jar"

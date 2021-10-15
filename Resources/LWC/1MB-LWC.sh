@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-LWC.sh
-# @Version: 1.0, build 006
+# @Version: 1.2, build 008
 # @Release: October 15th, 2021
-# @Description: Shell script for Modern LWC 2.2.7 for Minecraft 1.16.5, help convert SQLite player names to UUID
+# @Description: Shell script for Modern LWC 2.2.8 for Minecraft 1.17.1, help convert SQLite player names to UUID using MSA API
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-LWC.sh
@@ -20,15 +20,19 @@
 # which file you want to use to store the playernames in that we found/changed
 LOG="result.log"
 
-# what is the .sqlite3 db filename that lwc is using (pro tip; use a copy first.. (no spaces))
-LWC="lwctest.db"
+# The .sqlite3 db filename that we are going to write to
+LWC="lwc-updated.db"
 
 # delay in seconds between query to mojang (and db update) to avoid rate limit
 DELAY=10
 
 # default trim UUID for when an invalid uuid gets returned by mojang when we query it with a name
-UUID="631e3896da2a4077974bd047859d76bc"
+UUID="00000000000000000000000000000000"
 
+# lets use the new MSA API
+_apiUrl="https://api.minecraftservices.com/minecraft/profile/lookup/name/"
+
+# lets not write to the actual db
 # DEBUGGGGGG (comment this out unless you want to do the same thing over and over again)
 if [ -f $LWC ];then rm -f $LWC;fi
 cp lwc.db $LWC
@@ -47,7 +51,7 @@ if [ -f $LOG ];then rm -f $LOG;fi
 # and output our results to a .log file we can use afterwards.
 sqlite3 $LWC "SELECT DISTINCT owner FROM lwc_protections WHERE LENGTH(owner)<=16;" | while read owner
 do
-	mojang="$(curl -s -H "Accept: application/json" https://api.mojang.com/users/profiles/minecraft/${owner})"
+	mojang="$(curl -s -H "Accept: application/json" ${_apiUrl}${owner})"
 	set -f
 
 	# ARRAY; starting fresh, then populating it
@@ -55,14 +59,13 @@ do
 	mojangarray=(${mojang//,/ })
 
 	# ARRAY; cleaning up	
-	if [[ ${mojangarray[i]} = *"id"* ]]; then
-		cleanup="${mojangarray[i]}"
+	if [[ ${mojangarray[*]} = *"id"* ]]; then
+		cleanup="${mojangarray[*]}"
 		cleanup="${cleanup//\"}"
 		cleanup="${cleanup//\}}"
 		cleanup="${cleanup//\{}"
-		cleanup="${cleanup//\[}"
-		cleanup="${cleanup//\]}"
-		cleanup="${cleanup//id\:}"
+		cleanup="${cleanup// name :*}"
+		cleanup="${cleanup// id \: }"
 		lwc_name=("$cleanup")
 		uuid_match="matched"
 	else
@@ -81,25 +84,11 @@ do
 	echo "Found UUID ($uuid_match): $lwc_uuid for player: $owner" >> $LOG
 	echo "Found UUID ($uuid_match): $lwc_uuid for player: $owner"
 
-	### lets clean up a few things
-	# unset lwc_uuid
-	# unset owner
-	# unset lwc_name
-	# unset cleanup
-	# unset mojang
-	# unset mojangarray
-	# unset i
-	# unset uuid_match
-
 	# lets show visually that we are waiting
 	echo ".. Waiting ${DELAY}s before querying Mojang for next UUID .."
 	sleep $DELAY
 done
 
 echo " ---- 1MB-lwc.sh script ended. ($LWC updated, log file: $LOG)"
-
-# NOTEPAD (you can ignore this.. just blah blah I don't want to forget)
-# POST https://api.mojang.com/users/profiles/minecraft/mrfloris
-# RESL {"id":"631e3896da2a4077974bd047859d76bc","name":"mrfloris"}
 
 #EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

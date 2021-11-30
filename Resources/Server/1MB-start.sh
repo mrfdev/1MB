@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.6, build 039 for Paper 1.17.1 (Java 17, 64bit)
-# @Release: October 15th, 2021
-# @Description: Helps us start and fork a Minecraft Paper 1.17.1 server session.
+# @Version: 2.7, build 040 for Minecraft 1.18 (Java 17, 64bit)
+# @Release: November 30th, 2021
+# @Description: Helps us start and fork a Minecraft 1.18 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-start.sh

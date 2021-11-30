@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Points.sh
-# @Version: 1.1, build 008
-# @Release: October 15th, 2021
-# @Description: Figures out UUID with most points from PyroWelcomes 2.4.x (1.16.5)
+# @Version: 1.2, build 010
+# @Release: October 23rd, 2021
+# @Description: Figures out UUID with most points from PyroWelcomes 2.4.1 (1.17.1)
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-Points.sh
@@ -17,8 +17,14 @@
 #
 ###
 
+# curl -s -H "Accept: application/json" https://api.minecraftservices.com/minecraft/profile/lookup/d669c8706d95430787a30c2eabb4ba3e
+
+
 EXT=yml
 LOG=points.log
+
+_apiURL="https://api.minecraftservices.com/minecraft/profile/lookup/"
+
 if [ -f $LOG ];then rm -f $LOG;fi
 
 # CODE
@@ -44,7 +50,7 @@ top_player=$(head -n 1 $LOG | cut -d ' ' -f3 $1)
 # uuid without hyphen (used by api call)
 top_player_api=${top_player//-}
 # api call to figure out player name
-string="$(curl -s -H "Accept: application/json" https://api.mojang.com/user/profiles/$top_player_api/names)"
+string="$(curl -s -H "Accept: application/json" ${_apiURL}$top_player_api/names)"
 
 set -f
 array=(${string//,/ })
@@ -53,14 +59,14 @@ array=(${string//,/ })
 newlist=()
 for i in "${!array[@]}"
 do
-    if [[ ${array[i]} = *"name"* ]]; then
-        cleanup="${array[i]}"
+    if [[ ${array[*]} = *"name"* ]]; then
+        cleanup="${array[*]}"
         cleanup="${cleanup//\"}"
         cleanup="${cleanup//\}}"
         cleanup="${cleanup//\{}"
         cleanup="${cleanup//\[}"
         cleanup="${cleanup//\]}"
-        cleanup="${cleanup//name\:}"
+        cleanup="${cleanup//* name \: }"
         top_player_name+=("$cleanup")
     fi
 done
@@ -70,6 +76,6 @@ top_player_names="${top_player_name[@]}"
 # output our findings
 echo "Top points: $top_points, by player: $top_player_names"
 echo "More information: /cmi info $top_player (API: $top_player_api)"
-echo "https://api.mojang.com/user/profiles/$top_player_api/names"
+echo "${_apiURL}${top_player_api}"
 
 #EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

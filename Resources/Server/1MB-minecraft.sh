@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.6, build 039 for Paper 1.17.1 (Java 17, 64bit)
-# @Release: October 15th, 2021
-# @Description: Helps us start a Minecraft Paper 1.17.1 server.
+# @Version: 2.7, build 040 for Minecraft 1.18 (Java 17, 64bit)
+# @Release: November 30th, 2021
+# @Description: Helps us start a Minecraft 1.18 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,10 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.17.1"
+_minecraftVersion="1.18"
 # Which version are we running?
 
 _minJavaVersion=16.0
+# use 16.0 for the time being for java 17. Miencraft 1.18.x requires Java 17.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and is required for 1.17.1 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
@@ -46,7 +47,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17.1)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="paper"
+_engine="spigot"
 # "" assumes auto detection for <engine>-1.17.1.jar 
 # "spigot" assumes to look for spigot-1.17.1.jar
 # "paper" assumes to look for paper-1.17.1.jar

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 2.0, build 013
-# @Release: October 15th, 2021
-# @Description: Helps us get a Minecraft Paper 1.17.1 server .jar
+# @Version: 2.0, build 014
+# @Release: December 10th, 2021
+# @Description: Helps us get a Minecraft Paper 1.18.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-UpdatePaper.sh
@@ -21,10 +21,10 @@
 # I recommend to always restrict it to the version you're using now.
 # Examples: 1.16.5, 1.12.2, 1.17.1, 1.13.2
 # Note: Leave this empty to always get the latest Minecraft version,
-#       meaning if Minecraft 1.18.9 came out, it will get not 1.17.1 but 1.18.9
+#       meaning if Minecraft 1.19 came out, it will get not 1.18.1 but 1.19
 _minecraftVersion=""
 
-# Paper-1.17.1.jar will be downloaded in the directory the script runs in, 
+# Paper-1.18.1.jar will be downloaded in the directory the script runs in, 
 # even if there's a server.properties file. If you run this outside of the 
 # server directory (_targetDir) but you want to automatically move it there,
 # then set this to true, and define the full path to the server directory.
@@ -136,15 +136,15 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.17.1)
-# line 2 : Paper build version (example: 281)
+# line 1 : Minecraft version (example: 1.18.1)
+# line 2 : Paper build version (example: 60)
 # line 3 : BuildTools build version (example: 108) (not used)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
 # At any time the cache file can be renamed, 
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Paper 1.17.1,
+# The 'default' values are for Paper 1.18.1,
 # but you can change this obviously. 
 # The other values are 'old' on purpose, so when you
 # delete the cache file, it also forces a redownload.
@@ -216,7 +216,7 @@ else
     fi
 fi
 
-# TODO : at some point we want to 'restart' if we once run 1.17.1 but now run 1.16.1, build numbers dont match of course.
+# TODO : at some point we want to 'restart' if we once run 1.18.1 but now run 1.17.1, build numbers dont match of course.
 
 # Time to start doing something with the data that we have now.
 

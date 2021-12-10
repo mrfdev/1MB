@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.5, build 067
-# @Release: November 30th, 2021
-# @Description: Helps us make a Minecraft Spigot 1.18 server.
+# @Version: 2.5, build 068
+# @Release: December 10th, 2021
+# @Description: Helps us make a Minecraft Spigot 1.18.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -17,15 +17,17 @@
 #
 ###
 
-_minecraftVersion="1.18"
+_minecraftVersion="1.18.1"
 # Which version are we running?
 
-_minJavaVersion=16.0
-# use 16.0 for java 17 for the moment, 1.18 requires Java 17. 
-# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and is required for 1.17.1 and up.
+_minJavaVersion=17.0
+# use 17.0 for java 17.0.1 or newer which is required for Minecraft 1.18.1.
+# use 17.0 for java 17.0.1 or newer which can be used for Minecraft 1.17.1.
+# use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
+# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
-# we do not support java 7, and support for anything lower than 16 will soon be dropped.
+# we do not support java 7, and support for anything lower than java 16 will soon be dropped.
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -48,14 +50,14 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to spigot-1.18.jar
+# 1MB-start.sh defaults to spigot-1.18.1.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
@@ -166,15 +168,15 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.18)
-# line 2 : Spigot nightly build version (example: 3332)
-# line 3 : BuildTools build version (example: 139)
+# line 1 : Minecraft version (example: 1.18.1)
+# line 2 : Spigot nightly build version (example: 3359)
+# line 3 : BuildTools build version (example: 141)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
 # At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.18,
+# The 'default' values are for Spigot 1.18.1,
 # but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
@@ -219,7 +221,7 @@ function binDetails() {
     if [ "$_cmd" == "java" ]; then
         _cmdversion=$($_cmd -version 2>&1 | awk -F '"' '/version/ {print $2}')
     else
-    	_cmdversion=$($_cmd --version | perl -pe 'if(($v)=/([0-9]+([.][0-9]+)+)/){print"$v\n";exit}$_=""')
+        _cmdversion=$($_cmd --version | perl -pe 'if(($v)=/([0-9]+([.][0-9]+)+)/){print"$v\n";exit}$_=""')
     fi
     _output debug "cmd: $_cmd, path: $_cmdpath, version: $_cmdversion"
 }
@@ -236,6 +238,7 @@ fi
 
 if binExists "java"; then
     binDetails "$_"
+    _output debug "version gt test $_cmdversion test2 $_minJavaVersion"
     if version_gt "$_cmdversion" "$_minJavaVersion"; then
         _output debug "Installed $_cmd version $_cmdversion is newer than $_minJavaVersion (this is great)!"
         if [ -z "$_javaBin" ]; then
@@ -391,12 +394,12 @@ if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
-    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we seem to want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.17.1 or whatever!"
+    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we seem to want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.18.1 or whatever!"
     read -p "Do you still want to build $_jarSpigot? [y/N]" -n 1 -r
-	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    	[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-	fi
-	sed -i.tmp "1s#.*#${_currentMcBuild}#" "$_cacheFile"
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+    fi
+    sed -i.tmp "1s#.*#${_currentMcBuild}#" "$_cacheFile"
 fi
 
 # Spigot is being build against the right Minecraft version, but do we want to build a new Spigot?
@@ -415,7 +418,7 @@ else
     sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
-# Ok, we know there's a new build out for Spigot for Minecraft 1.18,
+# Ok, we know there's a new build out for Spigot for Minecraft 1.18.1,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
@@ -440,7 +443,7 @@ else
 fi
 
 # Update: What happened?
-# If the script didn't quit here, that means we have a new spigot build for 1.18 of minecraft,
+# If the script didn't quit here, that means we have a new spigot build for 1.18.1 of minecraft,
 # and we know if we can upgrade spigot with the buildtools we have, or if we need to get a new jar.
 
 # do we just update spigot?

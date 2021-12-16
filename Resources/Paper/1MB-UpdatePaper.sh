@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 2.0, build 014
-# @Release: December 10th, 2021
+# @Version: 2.0, build 015
+# @Release: December 16th, 2021
 # @Description: Helps us get a Minecraft Paper 1.18.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -19,10 +19,10 @@
 
 # Which version are we trying to specifically get a .jar for?
 # I recommend to always restrict it to the version you're using now.
-# Examples: 1.16.5, 1.12.2, 1.17.1, 1.13.2
+# Examples: 1.16.5, 1.12.2, 1.17.1, 1.13.2, or 1.18.1
 # Note: Leave this empty to always get the latest Minecraft version,
 #       meaning if Minecraft 1.19 came out, it will get not 1.18.1 but 1.19
-_minecraftVersion=""
+_minecraftVersion="1.18.1"
 
 # Paper-1.18.1.jar will be downloaded in the directory the script runs in, 
 # even if there's a server.properties file. If you run this outside of the 

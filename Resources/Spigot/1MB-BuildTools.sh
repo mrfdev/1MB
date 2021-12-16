@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.5, build 068
-# @Release: December 10th, 2021
+# @Version: 2.5, build 069
+# @Release: December 16th, 2021
 # @Description: Helps us make a Minecraft Spigot 1.18.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -387,10 +387,10 @@ _output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_curr
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
-# We want builds for 1.7, so the cached version and the current version have to both be 1.7
+# We want builds for 1.18.1, so the cached version and the current version have to both be 1.18.1
 # PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
 if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
-    # success, 1.7 == 1.7
+    # success, 1.18.1 == 1.18.1
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer

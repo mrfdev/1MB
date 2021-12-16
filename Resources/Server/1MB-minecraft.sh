@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.7, build 041 for Minecraft 1.18.1 (Java 17, 64bit)
-# @Release: December 10th, 2021
+# @Version: 2.7, build 042 for Minecraft 1.18.1 (Java 17, 64bit)
+# @Release: December 16th, 2021
 # @Description: Helps us start a Minecraft 1.18.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -57,8 +57,8 @@ _engine=""
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
-# --forceUpgrade (One time converts world chunks to new engine version)
-# --eraseCache (Removes caches. Cached data is used to store the skylight, blocklight and biomes, alongside other stuff)
+# --forceUpgrade (One time converts world chunks to new engine version) (Note: Do not use Paper's forceUpgrade, it will ruin your worlds)
+# --eraseCache (Removes caches. Cached data is used to store the skylight, blocklight and biomes, alongside other stuff) (Note: Do not use Paper's eraseCache, it will ruin your worlds)
 
 # By changing the setting below to true you are indicating your agreement to Mojang's EULA 
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula

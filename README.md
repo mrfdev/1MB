@@ -1,4 +1,5 @@
 # 1MB
+
 Things for the 1MoreBlock.com Minecraft survival server
 
 ## What is this about?
@@ -19,7 +20,7 @@ If you require support, maybe these scripts aren't for you. But, you're always f
 
 If you wish to play, please understand we're a family friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Currently Java Edition: 1.17.1, has basic crossplay Bedrock Edition support.)
+`1moreblock.com:25565` (Currently Java Edition: 1.18.1, has basic crossplay Bedrock Edition support.)
 
 ## Information (Useful links)
 
@@ -28,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 1.8 build 019, October 25th, 2021.
+This is 1MB Github version 1.9 build 020, December 16th, 2021.

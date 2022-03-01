@@ -21,7 +21,7 @@ _minecraftVersion="1.18.2"
 # Which version are we running?
 
 _minJavaVersion=17.0
-# use 17.0 for java 17.0.1 or newer which is required for Minecraft 1.18.2.
+# use 17.0 for java 17.0.2 or newer which is required for Minecraft 1.18.2.
 # use 17.0 for java 17.0.1 or newer which can be used for Minecraft 1.17.1.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.

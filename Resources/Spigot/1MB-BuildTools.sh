@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.5, build 069
-# @Release: December 16th, 2021
-# @Description: Helps us make a Minecraft Spigot 1.18.1 server.
+# @Version: 2.6, build 070
+# @Release: March 1st, 2022
+# @Description: Helps us make a Minecraft Spigot 1.18.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.18.1"
+_minecraftVersion="1.18.2"
 # Which version are we running?
 
 _minJavaVersion=17.0
-# use 17.0 for java 17.0.1 or newer which is required for Minecraft 1.18.1.
+# use 17.0 for java 17.0.1 or newer which is required for Minecraft 1.18.2.
 # use 17.0 for java 17.0.1 or newer which can be used for Minecraft 1.17.1.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
@@ -50,14 +50,14 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to spigot-1.18.1.jar
+# 1MB-start.sh defaults to spigot-1.18.2.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
@@ -84,7 +84,11 @@ _jarBtUrl="$_urlBase/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/
 _debug=true
 # Debug mode off or on? Default: true (means it spits out progress)
 
-# Stop configuring things beyond this point.
+### FUNCTIONS AND CODE
+#
+# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+#
+###
 
 # some code to help us
 
@@ -168,7 +172,7 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.18.1)
+# line 1 : Minecraft version (example: 1.18.2)
 # line 2 : Spigot nightly build version (example: 3359)
 # line 3 : BuildTools build version (example: 141)
 # line 4 : Shell script last-run state (example: true|false)
@@ -176,7 +180,7 @@ function cache {
 #
 # At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.18.1,
+# The 'default' values are for Spigot 1.18.2,
 # but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
@@ -387,14 +391,14 @@ _output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_curr
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
-# We want builds for 1.18.1, so the cached version and the current version have to both be 1.18.1
+# We want builds for 1.18.2, so the cached version and the current version have to both be 1.18.2
 # PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
 if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
-    # success, 1.18.1 == 1.18.1
+    # success, 1.18.2 == 1.18.2
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
-    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we seem to want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.18.1 or whatever!"
+    _output "Comparing MC : Failure; Spigot $_currentMcBuild detected, we seem to want Minecraft $_cacheMcBuild builds. We are automatically pausing the script here to make sure you do not accidentally upgrade or downgrade $_currentMcBuild server to 1.12 or 1.18.2 or whatever!"
     read -p "Do you still want to build $_jarSpigot? [y/N]" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
@@ -418,7 +422,7 @@ else
     sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
-# Ok, we know there's a new build out for Spigot for Minecraft 1.18.1,
+# Ok, we know there's a new build out for Spigot for Minecraft 1.18.2,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
@@ -443,7 +447,7 @@ else
 fi
 
 # Update: What happened?
-# If the script didn't quit here, that means we have a new spigot build for 1.18.1 of minecraft,
+# If the script didn't quit here, that means we have a new spigot build for 1.18.2 of minecraft,
 # and we know if we can upgrade spigot with the buildtools we have, or if we need to get a new jar.
 
 # do we just update spigot?
@@ -514,4 +518,4 @@ pwd
 # We are done, let's get outtah here
 _output okay "That's it, we're done!"
 
-#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2022 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

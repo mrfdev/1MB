@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.7, build 042 for Minecraft 1.18.1 (Java 17, 64bit)
-# @Release: December 16th, 2021
-# @Description: Helps us start a Minecraft 1.18.1 server.
+# @Version: 2.8, build 043 for Minecraft 1.18.2 (Java 17.0.2, 64bit)
+# @Release: March 1st, 2022
+# @Description: Helps us start a Minecraft 1.18.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.18.1"
+_minecraftVersion="1.18.2"
 # Which version are we running?
 
 _minJavaVersion=17.0
-# use 17.0 for java 17.0.1 or newer which is required for Minecraft 1.18.1.
+# use 17.0 for java 17.0.2 or newer which is required for Minecraft 1.18.2.
 # use 17.0 for java 17.0.1 or newer which can be used for Minecraft 1.17.1.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
@@ -34,7 +34,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.18.1 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.18.2 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 
 # jvm startup parameters
@@ -47,13 +47,13 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # and --add-opens java.desktop/java.awt=ALL-UNNAMED
 # and --add-opens java.desktop/java.awt.color=ALL-UNNAMED
 # --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17.1)
-# -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.1 servers)
+# -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.2 servers)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.18.1.jar 
-# "spigot" assumes to look for spigot-1.18.1.jar
-# "paper" assumes to look for paper-1.18.1.jar
+# "" assumes auto detection for <engine>-1.18.2.jar 
+# "spigot" assumes to look for spigot-1.18.2.jar
+# "paper" assumes to look for paper-1.18.2.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -64,7 +64,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.18.1 server-gui
+# leave "" if you want the 1.18.2 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION
@@ -77,7 +77,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
@@ -179,4 +179,4 @@ fi
 _startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
 $_startJVM || _output oops "Failed to start the jvm for some reason."
 
-#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2022 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

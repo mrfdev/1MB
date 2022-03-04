@@ -1,0 +1,72 @@
+#==========================================================================
+#
+#  This file is used to edit the /fish shop GUI.
+#  Notes: This GUI has 54 slots. 
+#         Any empty slots will be used to sell fish.
+#
+#==========================================================================
+#
+#  Note: Items marked with #Default do not have the ability to edit
+#        their names and lores here. Edit them in the messages.yml.
+#        You can remove default items unless it says #Mandatory
+#
+#  Tags:
+#    #Default: Default item. Edit its name and lore in the messages.yml
+#    #Mandatory: Do not remove this item/line from the file unless it will cause errors.  
+#
+#  Every item requires the 'material' and 'slot' fields. 
+#  Amount is defaulted to 1 unless specified. 
+#  Glowing is defaulted to false unless specified.
+#
+#  Possible things you can add:
+# 
+#  -  material: BLACK_STAINED_GLASS_PANE
+#  -  amount: 1
+#  -  model_data: 0
+#  -  name: 'Example Name'
+#  -  lore:
+#       - 'example lore line'
+#  -  glowing: false
+#  -  slots: [1, 2, 3, 5, 6, 7]
+# 
+#  You can find an example item below that you can add. 
+# 
+#  example-item:
+#    material: LIME_STAINED_GLASS_PANE
+#    name: 'some name' #This can have a name since it is not marked as a #Default item.
+#    slots: 11
+#
+#==========================================================================
+
+items:
+
+  #Default
+  background-black:
+    material: BLACK_STAINED_GLASS_PANE
+    slots: [1, 2, 3, 5, 6, 7, 10, 19, 28, 37, 46, 47, 49, 16, 25, 34, 43, 51, 52]
+    
+  #Default
+  background-blue:
+    material: BLUE_STAINED_GLASS_PANE
+    slots: [0, 9, 18, 27, 36, 8, 17, 26, 35, 44, 53]
+  
+  #Default
+  information:
+    material: EMERALD
+    slots: 4
+  
+  #Default
+  special-fish:
+    material: COD
+    glowing: true
+    slots: 48
+    
+  #Default
+  prices:
+    material: MAP
+    slots: 50
+    
+  #Default
+  back-arrow:
+    material: ARROW
+    slots: 45

@@ -1,0 +1,1295 @@
+Items:
+  EntropyCrystal:
+    Lore:
+    - Cliquez pour racheter 10 000 entropies.
+    - Vous pouvez les créer à partir de l'interface graphique
+    - '&3/fish augment&7 GUI. Ils peuvent être'
+    - '&7échangées entre joueurs.'
+    Name: '&bCristal d''entropie &8(&310,000&8)'
+  CrabScales:
+    Name: '&e&lÉcaille de crabe'
+    Lore:
+    - '&7Récuperé en tuant des crabes.'
+    - '&7Peut être utilisé lors de la fabrication d''améliorations.'
+  DolphinTail:
+    Name: '&3&lQueue de dauphin'
+    Lore:
+    - '&7Récuperé en tuant des dauphins.'
+    - '&7Peut être utilisé lors de la fabrication d''améliorations.'
+  CrabClaw:
+    Name: '&9&lPince de crabe'
+    Lore:
+    - '&7Obtenue en tuant des crabes.'
+    - '&7Peut être utilisé lors de la fabrication d''améliorations.'
+  EtherealOrb:
+    Name: '&3&lOrbe Éthéré'
+    Lore:
+    - '&7Obtenu auprès des livraisons ou du marché.'
+    - '&7Réinitialise le temps de recharge de votre Totem de Pêche.'
+    - ''
+    - '&7Ne peut être utilisé que sur votre Totem de Pêche.'
+    - ''
+    - '&aClic droit &7pour utiliser.'
+  SquidTentacle:
+    Name: '&9&lTentacule de calamar'
+    Lore:
+    - '&7Obtenu en tuant des calamars.'
+    - '&7Utilisé dans la fabrication d''amélioration et'
+    - '&7l''amélioration des Totem de Pêche.'
+  EntropyBooster:
+    Lore:
+    - '&7Obtenu auprès des livraisons ou du marché.'
+    - '&7Augmente toute l''entropie que vous obtenez en'
+    - '&7attrapant des poissons. Cela n''affecte pas'
+    - '&al''éviscération&7 ou la &aperception&7.'
+    - ''
+    - '&7Ce booster durera &b30 minutes&7.'
+    - ''
+    - '&aClic droit &7pour utiliser.'
+    Name: '&b&lBooster d''Entropie &8(&3%multi%x&8)'
+  CrabLure:
+    Lore:
+    - '&7Obtenu auprès des livraisons ou du'
+    - '&bmarché de la Pêche&7. Cela augmentera vos'
+    - '&7chances de trouver &bCrabes par &d200%&7.'
+    - ''
+    - '&aClic droit &7pour utiliser.'
+    Name: '&b&lLeurre à Crabes'
+  MythicalLure:
+    Name: '&5&lLeurre à Mythique'
+    Lore:
+    - '&7Obtenu auprès des livraisons ou du'
+    - '&b/fish market&7. Cela augmentera vos'
+    - '&7chances de trouver des poissons &5Mythique &7de &d250%&7.'
+    - ''
+    - '&aClic droit &7pour utiliser.'
+  PlatinumLure:
+    Lore:
+    - '&7Obtenu auprès des livraisons ou du'
+    - '&bmarché de la Pêche&7. Cela augmentera vos'
+    - '&7chances de trouver &cPlatinum &7fish by &d250%&7.'
+    - ''
+    - '&aClic droit &7pour utiliser.'
+    Name: '&c&lLeurre à Platine'
+Biomes:
+  TAIGA_HILLS: Collines de taïga
+  SNOWY_MOUNTAINS: Montagnes enneigées
+  SWAMP: Marais
+  ERODED_BADLANDS: Badlands érodées
+  SHATTERED_SAVANNA: Savane accidentée
+  SAVANNA_PLATEAU: Plateau de savane
+  COLD_OCEAN: Océan froid
+  THE_END: End
+  WOODED_HILLS: Collines boisées
+  END_BARRENS: Terres stériles de l''End
+  SNOWY_TAIGA_MOUNTAINS: Montagnes de taïga enneigée
+  GIANT_SPRUCE_TAIGA: Taïga à grands sapins
+  STONE_SHORE: Côte rocheuse
+  BAMBOO_JUNGLE: Jungle de bambous
+  GIANT_SPRUCE_TAIGA_HILLS: Collines de taïga à grands sapins
+  JUNGLE_HILLS: Collines de la jungle
+  MUSHROOM_FIELD_SHORE: Rive de champ de champignons
+  GIANT_TREE_TAIGA_HILLS: Collines de taïga à grands arbres
+  DEEP_LUKEWARM_OCEAN: Océan tiède profond
+  TAIGA_MOUNTAINS: Montagnes de taïga
+  WOODED_MOUNTAINS: Montagnes boisées
+  MUSHROOM_FIELDS: Champs de champignons
+  TAIGA: Taiga
+  DESERT_HILLS: Collines désertiques
+  BADLANDS_PLATEAU: Plateau de badlands
+  JUNGLE: Jungle
+  MODIFIED_BADLANDS_PLATEAU: Plateau de badlands modifiées
+  FROZEN_RIVER: Rivière gelée
+  TALL_BIRCH_FOREST: Forêt de grands bouleaux
+  MOUNTAINS: Montagnes
+  BADLANDS: Badlands
+  GIANT_TREE_TAIGA: Taïga à grands arbres
+  RIVER: Rivière
+  GRAVELLY_MOUNTAINS: Montagnes graveleuses
+  MODIFIED_JUNGLE_EDGE: Orée de la jungle modifiée
+  DEEP_WARM_OCEAN: Océan chaud Profond
+  TALL_BIRCH_HILLS: Collines de grands bouleaux
+  SNOWY_TAIGA: Taïga enneigée
+  SWAMP_HILLS: Collines de marais
+  DESERT: Desert
+  WOODED_BADLANDS_PLATEAU: Plateau de badlands boisées
+  SNOWY_TUNDRA: Toundra enneigée
+  FOREST: Forêt
+  SUNFLOWER_PLAINS: Plaines de tournesols
+  THE_VOID: Le vide
+  BASALT_DELTAS: Deltas de basalte
+  MOUNTAIN_EDGE: Bord de montagne
+  DARK_FOREST_HILLS: Collines de forêt sombre
+  PLAINS: Plaines
+  SNOWY_BEACH: Plage enneigée
+  SOUL_SAND_VALLEY: Vallée des âmes
+  END_HIGHLANDS: Terres hautes de l''End
+  MODIFIED_GRAVELLY_MOUNTAINS: Montagnes graveleuses modifiées
+  BAMBOO_JUNGLE_HILLS: Colline jungle de bambous
+  SHATTERED_SAVANNA_PLATEAU: Plateau de savane accidentée
+  DEEP_FROZEN_OCEAN: Océan gelé profond
+  MODIFIED_WOODED_BADLANDS_PLATEAU: Plateau de badlands boisées modifiées
+  DEEP_COLD_OCEAN: Océan froid profond
+  DEEP_OCEAN: Océan profond
+  DARK_FOREST: Forêt sombre
+  WARM_OCEAN: Océan chaud
+  DESERT_LAKES: Lacs de désert
+  NETHER_WASTES: Terres désolées du Nether
+  SAVANNA: Savane
+  BEACH: Plage
+  SNOWY_TAIGA_HILLS: Collines de taïga enneigée
+  FROZEN_OCEAN: Océan gelé
+  BIRCH_FOREST: Forêt de bouleaux
+  ICE_SPIKES: Stalagmites de glace
+  END_MIDLANDS: Terres moyennes de l''End
+  CRIMSON_FOREST: Forêt carmin
+  MODIFIED_JUNGLE: Jungle modifiée
+  WARPED_FOREST: Forêt biscornue
+  SMALL_END_ISLANDS: Petites îles de l''End
+  OCEAN: Ocean
+  FLOWER_FOREST: Forêt fleurie
+  LUKEWARM_OCEAN: Océan tiède
+  BIRCH_FOREST_HILLS: Collines de bouleaux
+  JUNGLE_EDGE: Orée de la jungle
+  CUSTOM: Custom
+  DRIPSTONE_CAVES: Cavernes de spéléothème
+  LUSH_CAVES: Cavernes luxuriantes
+GUI:
+  Codex:
+    Misc:
+      Sun: Soleil
+      TotalCaught: '&7Total capturé : &a'
+      FoundDuring: '&7Trouvé pendant : &a'
+      Rain: Pluie
+      Night: Nuit
+      Day: Jour
+      FirstCaught: '&7Première prise par : &a'
+      FoundBetween: '&7Trouvé entre le niveau Y : &a'
+    InfoEmerald:
+      Lore:
+      - '&7Ce sont tous les poissons les plus importants !'
+      - '&7Survolez chaque poisson pour voir ses informations !'
+      Name: '&a&lInformation'
+    Main:
+      Platinum:
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons Platine'
+        Name: '&6&lPlatine'
+      Silver:
+        Name: '&6&lArgent'
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons D''argent!'
+      Info2:
+        Name: '&a&lInformation (2/2)'
+        Lore:
+        - '&7Vous pouvez également voir qui a été le premier joueur'
+        - '&7 à attraper un poisson spécifique et combien'
+        - '&7de ce poisson a été attrapé!'
+      Mythical:
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons Mythiques!'
+        Name: '&5&lMythique'
+      Bronze:
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons de Bronze!'
+        Name: '&6&lBronze'
+      Diamond:
+        Name: '&6&lDiamant'
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons de Diamant!'
+      Gold:
+        Lore:
+        - '&7Cliquez pour voir tous les Poissons d''Or!'
+        Name: '&6&lOr'
+      Info1:
+        Lore:
+        - '&7Cliquez sur chaque niveau pour voir quels poissons'
+        - '&7se trouvent dans ce niveau! Vous pouvez voir où'
+        - '&7ttraper tel ou tel poisson dans telles ou'
+        - '&7telles conditions.'
+        Name: '&a&lInformation (1/2)'
+  Scales:
+    ScaleFish:
+      Lore:
+      - '&7Cliquez pour mesurer tous les poissons'
+      - '&7présents dans l''inventaire.'
+      Name: '&a&lCliquez pour mesurer'
+    Misc:
+      Selected: '&aSELECTIONNE'
+    ExtremeRisk:
+      Name: '&b&lRisque Extrême'
+    Risk:
+      Lore:
+      - '&7Un défi à risque %risk% pour la mesure.'
+      - '&7'
+      - '&7Information:'
+      - '&8➤ &7Chance de faire du Profit: &3%profit%%'
+      - '&8➤ &7Montée: jusqu''à &3+-%%moneychange% &7du prix de base.'
+    LowRisk:
+      Name: '&7&lRisque Faible'
+    MediumRisk:
+      Name: '&f&lRisque Moyen'
+    HighRisk:
+      Name: '&6&lRisque Élevé'
+  Main:
+    NoRod:
+      Name: '&4&lPas de Canne à Pêche'
+      Lore:
+      - '&7Vous ne tenez pas une Canne à Pêche.'
+    Skills:
+      Name: '&9&lCompétences de Pêche'
+      Lore:
+      - '&7Cliquez pour gérer vos compétences en matière de Pêche.'
+      - '&7&oQu''allez-vous améliorer ?'
+    Deliveries:
+      Name: '&6&lLivraisons'
+      NewLore:
+      - '&7Cliquez pour voir les livraisons en cours.'
+      - '&7&oComplètes des livraisons pour obtenir de l''argent !'
+      - ''
+      - '&7Vous avez besoin de &3%amount% &7Poisson(s) spéciaux'
+      - '&7pour votre prochaine livraison de Pêche !'
+    ChristmasEvent:
+      Name: '&3&lÉvénement de Noël'
+      NewPlaceholderLore:
+      - '&7À partir de maintenant et jusqu''au 31 décembre.'
+      - '&7vous pouvez gagner des cadeaux pour chaque'
+      - '&3400 poissons&7 que tu attrapes !'
+      - ''
+      - '&7Vous avez besoin de &a%fish%&7 poissons '
+      - '&7pour obtenir votre prochain cadeau.'
+    Totem:
+      Lore:
+      - '&7Cliquez pour voir votre Totem.'
+      - '&7&oQu''allez-vous invoquer?'
+      Name: '&b&lTotem'
+    Shop:
+      Lore:
+      - '&7Cliquez pour ouvrir la Boutique de Vente de Poissons!'
+      - '&7&oVendez tous vos poissons!'
+      Name: '&3&lBoutique de Vente de Poissons'
+    Market:
+      Name: '&6&lMarché de la Pêche'
+      Lore:
+      - '&7Cliquez pour voir le Marché de la Pêche.'
+      - '&7&oQuels articles allez-vous acheter ??'
+    Bag:
+      Name: '&3&lSac à poissons'
+      Lore:
+      - '&7Cliquez pour voir votre sac à poisson!'
+      - '&7&oQuels poissons avez-vous pêchés?'
+    Scales:
+      Name: '&b&lPesée'
+      Lore:
+      - '&7Cliquez pour voir la pesée!'
+      - '&7&oPrenez le risque de le peser pour plus d''argent?!'
+    Codex:
+      Name: '&3&lCodex'
+      Lore:
+      - '&7Cliquez pour voir le codex!'
+      - '&7&oVoir quels poissons il y a!'
+    Augments:
+      Lore:
+      - '&7Cliquez pour gérer vos amélioration de la Canne à Pêche.'
+      - '&7&oCombien d''amélioration avez-vous?'
+      Name: '&2&lAmélioration'
+    Gut:
+      Lore:
+      - '&7Cliquez pour ouvrir le poste d''éviscération des poissons!'
+      - '&7&oGut fish for Entropy / Items!'
+      Name: '&2&lStation d''éviscération'
+    Stats:
+      Lore:
+      - '&7Cliquez pour voir vos statistiques!'
+      - '&7&oÊtes-vous le numéro un?'
+      Name: '&e&lStatistiques'
+  Stats:
+    GeneralStats: '&3&lStatistiques générales'
+    Stat:
+      FishKilled: '&7Poissons tués : &a'
+      CrabsKilled: '&7Crabes tués : &a'
+      CurrentXP: '&7XP Actuel : &a'
+      Entropy: '&7Entropie : &a'
+      RequiredXP: '&7XP nécessaire : &a'
+      DeliveriesMade: '&7Livraisons effectuées : &a'
+      BronzeFishCaught: '&7Bronze attrapés : &a'
+      SilverFishCaught: '&7Argent attrapés : &a'
+      TournamentsWon: '&7Tournois gagnés : &a'
+      MoneyMade: '&7Argent gagnés : &a'
+      PlatinumFishCaught: '&7Platine attrapés : &a'
+      DiamondFishCaught: '&7Diamant attrapés : &a'
+      TotalFishCaught: '&7Total des poissons attrapés : &a'
+      Level: '&7Niveau : &a'
+      LongestFish: '&7Le plus long poisson : &a'
+      SkillPoints: '&7Points de compétences : &a'
+      TotalCustomCaught: '&7Total de poissons attrapés : &a'
+      GoldFishCaught: '&7Or attrapés : &a'
+      MythicalFishCaught: '&7Mythique attrapés : &a'
+      AugmentsCrafted: '&7Améliorations fabriqué : &a'
+      FishGutted: '&7Poisson éviscéré &a'
+    SkillTree: '&b&lArbre des compétences'
+  Deliveries:
+    DeliveryFor: '&3Livraison pour : &b%name%'
+    Upgrades:
+      Misc:
+        LUCKY_CHARM_NEW: ' Moins de poisson'
+        LUCKY_CHARM: '% Possibilité d''obtenir de meilleures récompenses'
+        INCREASE_CAPACITY: Slots supplémentaires
+        MaxLevel: Niveau Maximum.
+        EXPERT_DELIVERER: ' Moins de poisson'
+        OVERCLOCKED: '%'
+        PAY_RISE: x d''Entropie
+      Upgraded: '&7Vous avez fait passer &e%name% &7au niveau &3%level%&7.'
+      NoEntropy: '&7Vous n''avez pas assez d''entropie pour cela. Vous avez besoin
+        de : &c%entropy% &7 de plus d''entropie pour cela.'
+    MiddleClick:
+      Failed: '&cVous ne pouvez pas rejeter cette livraison.'
+      Delete: '&9Cliquez sur le bouton central de la souris &7pour supprimer cette
+        livraison.'
+      NoLonger: '&9Vous ne pouvez plus ignorer ceci.'
+    TimeToDelivery:
+      Ready: '&7Délai de livraison : &aPrêt à réclamer!'
+      InProgress: '&7Délai de livraison: &9%time%'
+    Upgrade:
+      Lore:
+      - ''
+      - '§7Statistiques de mise à niveau :'
+      - '§7- Niveau actuel : §b%level%'
+      - '§7- Niveau suivant : §9%nextlevel%'
+      - '§7- Cout upgrade : §3%cost%'
+      - '§7- Niveau max : §3%maxlevel%'
+      - ''
+      - §7Clique pour upgrade.
+      LUCKY_CHARM_NEW:
+        Lore:
+        - '&7Réduit la quantité de poisson nécessaire'
+        - '&7pour obtenir une nouvelle livraison de Pêche !'
+      INCREASE_CAPACITY:
+        Name: '&7Amélioration: &eAugmentation de la Capacité'
+        Lore:
+        - '&7Augmente le nombre total de'
+        - '&7livraisons que vous pouvez effectuer.'
+      EXPERT_DELIVERER:
+        Lore:
+        - '&7Réduit la quantité de poisson nécessaire'
+        - '&7pour une livraison de Pêche. S''applique uniquement'
+        - '&7aux livraisons normales.'
+        Name: '&7Amélioration: &cExpert en livraison'
+      LUCKY_CHARM:
+        Lore:
+        - '&7Vous avez plus de chances d''obtenir'
+        - '&7un butin plus rare en récompense des livraisons!'
+        Name: '&7Amélioration: &dPorte-bonheur'
+      OVERCLOCKED:
+        Name: '&7Amélioration: &eOverclocker'
+        Lore:
+        - '&7Réduit le temps nécessaire pour effectuer'
+        - '&7toutes vos livraisons!'
+      PAY_RISE:
+        Name: '&7Amélioration: &3Hausse des salaires'
+        Lore:
+        - '&7Gagnez plus d''entropie en remettant'
+        - '&7vos livraisons de Pêche!'
+    Misc:
+      Entropy: '&7Récompense d''entropie &9'
+      Reward: '&7Récompense &9'
+      Fish: '&7Poisson requis :'
+    Status:
+      InProgress: '&6En cours'
+      NotStarted: '&cPas encore commencé'
+      Ready: '&aPrêt'
+    LockedSlot:
+      Name: '&4Emplacement vérouillé'
+      Lore:
+      - '&7Cet emplacement est verrouillé. Déverrouillez plus d''espace à'
+      - '&7l''aide de l''option Augmenter la capacité!'
+    EmptySlot:
+      Lore:
+      - '&7Cet emplacement est vide. Pêcher une'
+      - '&7nouvelle livraison ou en acheter une'
+      - '&7au Marché de la Pêche!'
+      Name: '&cEmplacement vide'
+    Info:
+      Lore:
+      - '&7Les livraisons sont l''un des principaux moyens de'
+      - '&7gagner de l''argent et de &fentropie&7!'
+      - '&7Vous pouvez trouver des livraisons tous les &6180'
+      - '&7poissons que vous pêchez ou aux'
+      - '&cMarché de la Pêche &7à l''occasion!'
+      - ''
+      - '&7Les livraisons nécessitent des poissons différents.'
+      - '&7Veillez donc à faire des échanges entre joueurs!'
+      - ''
+      - '&7Il y a des améliorations en bas qui'
+      - '&7vous aideront à effectuer des livraisons plus rapidement!'
+      - ''
+      - '&7Identifiants de livraison:'
+      - '&7- Commun &8(&e★&7☆☆&8)'
+      - '&7- Uncommun &8(&e★★&7☆&8)'
+      - '&7- Rare &8(&e★★★&8)'
+      - '&7- Marché Commun &8(&a★&7☆☆&8)'
+      - '&7- Marché Uncommun &8(&a★★&7☆&8)'
+      - '&7- Marché Rare &8(&a★★★&8)'
+      - '&7- Mythique &8(&5★&8)'
+      Name: '&a&lInformation:'
+  Totems:
+    TotemPassives:
+      LittleCritters:
+        Lore:
+        - '&7Ce passif vous donnera plus'
+        - '&7chance d''obtenir le butin lié au crabe'
+        - '&7quand vous les tuerais.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+        Name: '&9Petites pinces &7Abilité Passif'
+      TreasureHunter:
+        Lore:
+        - '&7Ce passif vous donnera une chance'
+        - '&7aléatoire lorsque vous Pêcher un poisson de'
+        - '&7trouver des objets rares.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+        Name: '&6Chasseur de trésors &7Abilité Passif'
+      ExperiencedFisherman:
+        Lore:
+        - '&7Ce passif augmentera la quantité.'
+        - '&7d''expérience que vous gagnerez'
+        - '&7en pêchant dans le totem.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+        Name: '&aPêcheur expérimenté &7Abilité Passif'
+      StarFall:
+        Name: '&dChute des étoiles &7Abilité Passif'
+        Lore:
+        - '&7Ce passif vous donnera une chance.'
+        - '&7lorsque vous Pêchez un poisson '
+        - '&7de faire tomber un éclair qui invoquera'
+        - '&7un poisson fort. Tuez-le pour être récompensé.'
+        - '&7avec du butin et beaucoup d''entropie.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+      MythicalWaters:
+        Name: '&5Eaux mythiques &7Abilité Passif'
+        Lore:
+        - '&7Ce passif vous donnera une chance.'
+        - '&7lorsque vous Pêchez un poisson,'
+        - '&7de le transformer en poisson de rang supérieur.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+      EntropyHorder:
+        Lore:
+        - '&7Ce passif vous donnera plus'
+        - '&7d''entropie lorsque vous Pêcher des poissons'
+        - '&7à l''intérieur du rayon des totems.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+        Name: '&bL''ordre de l''entropie &7Abilité Passif'
+      FishSchool:
+        Name: '&eBancs de poissons &7Abilité Passif'
+        Lore:
+        - '&7Ce passif fera apparaitre des'
+        - '&7"Hot Spot" plus fréquemment.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+      RandomDrops:
+        Name: '&2Objets aléatoires &7Abilité Passif'
+        Lore:
+        - '&7Ce passif vous donnera une chance'
+        - '&7lorsque vous tuez des crabes d''obtenir'
+        - '&7des butins aléatoires.'
+        - ''
+        - '&8➛  &7Nombre de slots passif requis : &3%slots%'
+        - '&8➛  &7Niveau de Pêche requis : &b%level%'
+        - '&8➛  &7Effect actuel : &b%buff%'
+    Activate:
+      Lore:
+      - '&7Cliquez pour activer votre &aTotem&7.'
+      - ''
+      - '&7Temps actif : &a%active_time%'
+      - '&7Temps de récupération : &c%cooldown_time%'
+      - '&7Rayon : &6%radius% blocks'
+      Name: '&aCliquez pour activer'
+    Upgrades:
+      COOLDOWN_REDUCTION:
+        Name: '&7Amélioration : &eRéduction du temps de récupération'
+        Lore:
+        - '&7Cette amélioration permet de réduire le temps'
+        - '&7de récupération entre les utilisations du Totem.'
+        - ''
+        - '&7Statistiques amélioration :'
+        - '&8➛ &7Niveau actuel : &b%level%'
+        - '&8➛ &7Durée actuel : &3%time%'
+        - '&8➛ &7Coût de l''amélioration : &9%upgrade_cost% Entropie'
+        - '&8➛ &7Durée du prochain niveau : &9%upgrade_time%'
+        - '&8➛ &7Niveau maximum : &9%max_level%'
+      ACTIVE_TIME:
+        Lore:
+        - '&7Cette amélioration permet d''augmenter'
+        - '&7le temps d''utilisation du Totem.'
+        - ''
+        - '&7Statistiques amélioration :'
+        - '&8➛ &7Niveau actuel : &b%level%'
+        - '&8➛ &7Durée actuel : &3%time%'
+        - '&8➛ &7Coût de l''amélioration : &9%upgrade_cost% Entropie'
+        - '&8➛ &7Durée du prochain niveau : &9%upgrade_time%'
+        - '&8➛ &7Max Level: &9%max_level%'
+        Name: '&7Amélioration &aDurée d''utilisation'
+      RANGE:
+        Lore:
+        - '&7Cette amélioration augmente la distance'
+        - '&7d''effet des Totems et des compétences.'
+        - ''
+        - '&7Statistiques amélioration:'
+        - '&8➛ &7Niveau actuel : &b%level%'
+        - '&8➛ &7Distance actuel : &3%range%'
+        - '&8➛ &7Coût de l''amélioration : &9%upgrade_cost% Entropie'
+        - '&8➛ &7Portée du niveau suivant : &9%upgrade_range%'
+        - '&8➛ &7Max Level: &9%max_level%'
+        Name: '&7Amélioration &cPortée du totem'
+    Misc:
+      BonusChance: bonus de chance
+      Times: chance
+      Chance: chance
+    Information:
+      Name: '&aInformation'
+      Lore:
+      - '&3Totem Passif &7ne sont actifs que si'
+      - '&7votre &eTotem &7est également actif.'
+      - ''
+      - '&7Les effets passifs seront &f&nnon'
+      - '&f&nfonctionnel &7quand le &eTotem&7 est en &ccooldown&7.'
+      - ''
+      - '&7Briser le &eTotem &7sauvegardera les informations'
+      - '&7et vous donnera un article spécial afin que'
+      - '&7vous puissiez l''enlever et le placer'
+      - '&7à nouveau sans avoir à payer à nouveau.'
+    Passives:
+      Misc:
+        Disabled: '&7Vous avez &cdésactivé le passif : &b%passive% &7.'
+        PurchasedSlot: '&7Vous avez acheté un autre &eemplacement passif &7et vous
+          avez maintenant &b%slots% &7emplacement&7.'
+        MaxSlots: '&7Vous avez déjà acheté le nombre maximum d''emplacement passifs.'
+        NotLevel: '&7Vous n''êtes pas d''un niveau suffisamment élevé pour activer
+          ceci.'
+        NoItemsForNewSlot: '&7Vous n''avez pas assez de &5Poissons mythiques &7ou
+          &cPoissons de Platine &7pour acheter un autre &emplacement passif&7'
+        AlreadyActive: '&7Ce passif est déjà activé.'
+        NoSlots: '&7Vous n''avez pas assez d''emplacements passifs libres pour cela.'
+        Activated: '&7Vous avez &aactivé &7le passif: &b%passive% &7.'
+        Active:
+        - ''
+        - '&a&lACTIF'
+    InUse:
+      Name: '&cTotem Actif &7| &c%time%'
+      Lore:
+      - '&Votre &cTotem &7sera actif pour'
+      - '&7une durée &c%time%&7.'
+    PassiveSlots:
+      Name: '&3Emplacements passifs - &7Augmenter le nombre d''emplacements'
+      NewLore:
+      - '&7L''amélioration de ce système permettra d''accroître le'
+      - '&7nombre d''emplacement passifs que vous puissiez'
+      - '&7y mettres vos &3passifs&7.'
+      - ''
+      - '&7Coût de l''amélioration :'
+      - '&7- &d%mythicalAmount%x Poissons Mythique &n(tous)&r&5 or'
+      - '&7- &d%platinumAmount%x Poissons de Platine &n(tous)'
+      - ''
+      - '&7Emplacements passives maximales actuelles: &3%slots% &7slots.'
+      - '&7Emplacements passifs actif : (&b%active_slots%&7/&3%slots%&7) &7slots.'
+      - ''
+      - '&3Clique pour améliorer.'
+    Cooldown:
+      Name: '&eDélai reactivation Totem &7| &e%time%'
+      Lore:
+      - '&7Votre &eTotem &7est en rechargement'
+      - '&7pour une durée de &e%time%&7.'
+  Skills:
+    Messages:
+      UpgradedSkill: '&7Vous avez amélioré la compétence &b%name% &7au niveau : &3%level%&7.'
+      Skill:
+        BETTER_GUTTING: '&7Vous avez éviscéré &3%fish% et gagné &3%entropy% &7entropy.
+          (&b+%bonus% &7bonus d''entropie des compétences).'
+        AUGMENT_INFUSION: '&7Votre compétence &Ibnfusion d''améliroation &7a remboursé
+          une partie des matériaux d''artisanat.'
+      PurchasedSkill: '&7Vous avez acheté la compétence &b%name%&7.'
+      NoPoints: '&7Vous n''avez pas assez de points pour améliorer/déverrouiller cette
+        compétence.'
+      NonUpgradableAlreadyOwned: '&7Cette compétence ne peut être achetée qu''une
+        seule fois et s''améliore par le biais de votre &cNiveau de Pêche&7.'
+    Skill:
+      DIVINE_JUDGEMENT:
+        Lore:
+        - '&7Cette compétence donne une chance d''invoquer'
+        - un coup divin qui provoque un &bTsunami&7.
+        - '&7Pêcher dans le tsunami double tous les poissons'
+        - '&7attrapé dans son rayon.'
+        - ''
+        - Statistiques
+        - '&8➵ &7Effet : &3%current%% Chance de se produire'
+        - ''
+        - '&7Cette compétence gagne &b%bonus%% &7par &9%niveauxnécessaires%&7 Niveaux
+          de Pêche.'
+        - ''
+        - '&7Plusieurs Tsunamis du même utilisateur ne peuvent pas coexister'
+        - '&7Les autres joueurs peuvent bénéficier de votre Tsunami.'
+        - '&6Hot Spot&7 et les effets similaires ne se cumulue pas avec ceci.'
+        - ''
+        - '%cost%'
+        Name: '&bJugement Divin &7| %unlocked%'
+      LUCK_OF_THE_CATCH:
+        Name: '&bChance de la prise &7| Level: &9%level%'
+        Lore:
+        - '&7Cette compétence vous donne plus'
+        - '&bd''Entropie &7quand vous attrapez des poissons.'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Points : &9%points%'
+        - '&8➵ &7Effet : &3%current%% Bonus Entropy'
+        - '&8➵ &7Prochain bonus de point : &b+%next%% Bonus Entropy'
+        - ''
+        - '&7Ce bonus est calculé indépendamment des autres sources'
+        - '&7qui donnent un bonus d''entropie pour la capture de poissons.'
+        - ''
+        - '&bCliquez pour améliorer cette compétence.'
+      BETTER_GUTTING:
+        Name: '&bMeilleur éviscération &7| Level: &9%level%'
+        Lore:
+        - '&7Cette compétence vous donne plus'
+        - '&0bd''Entropie &7lors de l''éviscération du poisson.'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Points : &9%points%'
+        - '&8➵ &7Effet : &3%current%% Bonus Entropy'
+        - '&8➵ &7Prochain Point Bonus: &b+%next%% Bonus Entropy'
+        - ''
+        - '&7Cette compétence ne se cumule pas avec la compétence'
+        - '&cCoupe de précision &7et est calculée indépendamment.'
+        - ''
+        - '&bCliquez pour améliorer cette compétence.'
+      TOTEM_LEADER:
+        Name: '&bChef Totem &7| Level: &9%level%'
+        Lore:
+        - '&7Cette compétence réduit le &bcooldown'
+        - '&7du Totem lorsque vous attrapez un poisson.'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Points  : &9%points%'
+        - '&8➵ &7Effet : &3%current% Reduced Seconds'
+        - '&8➵ &7Prochain Point Bonus : &b+%next% Secondes réduites'
+        - ''
+        - '&7Cette compétence n''est pas cumulable avec les améliorations'
+        - '&7qui vous donnent des poissons en plus. Par exemple, &6Hot Spot&7.'
+        - ''
+        - '&bCliquez pour améliorer cette compétence.'
+      COMBO_CATCHER:
+        Name: '&bAttrape-combos &7| %unlocked%'
+        Lore:
+        - '&7Cette compétence augmente un combo qui accroît'
+        - '&7vos chances d''attraper des poissons plus rares. '
+        - '&7Plus le niveau de compétence est élevé,'
+        - plus le combo peut être élevé.
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Combo Max : &3%current% prises'
+        - '&8➵ &7Combo Actuel : &b%combo% prises'
+        - ''
+        - '&7Cette compétence gagne &b%bonus%% &7par &9%levelsneeded%&7 Niveaux de
+          Pêche.'
+        - ''
+        - '&7Le combo maximum s''échelonne avec le niveau.'
+        - '&7Chaque &d20 captures&7 est à peu près égale à'
+        - '&d10 &7niveaux de &dMaître Pêcheur.'
+        - '&7Si vous n''attrapez pas de poisson pendant 30 secondes,'
+        - '&7vous remettez à zéro votre combo. Le &bCombo actuel&7 sera'
+        - '&7mise à jour pour que vous puissiez suivre votre combo.'
+        - ''
+        - '%cost%'
+      AUGMENT_INFUSION:
+        Lore:
+        - '&7Cette compétence a une chance de rembourser certains'
+        - '&7des objets utilisés dans l''artisanat de compétence.'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Effet: &3%current%% Chance de remboursement'
+        - ''
+        - '&7Cette compétence gagne &b%bonus%% &7par &9%levelsneeded%&7 Niveaux de
+          Pêche.'
+        - ''
+        - '&7Le pourcentage est calculé &3individuellement &7pour'
+        - '&7chaque élément utilisé dans la recette. Par exemple, un remboursement
+          de 5%'
+        - '&7aurait une chance de &b5% par article utilisé.'
+        - '&7Si un article est remboursé, 50 % de la matière utilisée'
+        - '&7utilisé est remboursé indépendamment de la chance.'
+        - ''
+        - '%cost%'
+        Name: '&bCompétence Infusion &7| %unlocked%'
+      TRIBAL_SHOUT:
+        Name: '&bCri tribal &7| %unlocked%'
+        Lore:
+        - '&7Cette compétence donne aux joueurs proches à l''intérieur de'
+        - '&7votre &6Totem de Pêche &7un pourcentage des'
+        - '&7effets totaux. (voir notes ci-dessous)'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Effet: &3%current%% of the bonus'
+        - ''
+        - '&7Cette compétence gagne &b%bonus% &7par &9%levelsneeded%&7 Niveaux de
+          Pêche.'
+        - ''
+        - '&7Cette compétence et les effets du totem ne peuvent pas s''empiler ou
+          se chevaucher.'
+        - '&7Votre propre totem prendra le dessus sur les autres. (si'
+        - '&7vous êtes dans proche de votre totem et de  celui d''un autre joueur).'
+        - '&7Le propriétaire ne perd pas le buff original.'
+        - ''
+        - '%cost%'
+      MASTER_AUGMENTER:
+        Name: '&bMaître des compétences &7| Level: &9%level%'
+        Lore:
+        - '&7Cette compétence réduit le coût'
+        - '&7 pour fabriquer &bAméliroation de Pêche&.7'
+        - ''
+        - '&7Stats:'
+        - '&8➵ &7Points : &9%points%'
+        - '&8➵ &7Effet : &3%current%% Cost Reduction'
+        - '&8➵ &7Prochain Point Bonus : &b+%next%% Cost Reduction'
+        - ''
+        - '&bCliquez pour améliorer cette compétence.'
+    Misc:
+      Unlocked: '&aDéverrouillé'
+      Locked: '&4Verrouillé'
+      Cost: '&7Coût de déverrouillage : &c%points% Points de compétence&7.'
+    Info:
+      Lore:
+      - '&7Les compétences sont réparties entre les catégories suivantes :'
+      - '&bupgradable &7et &bachat unique'
+      - ''
+      - '&bLes compétences améliorables &7coûtent'
+      - '&9des points de compétence &7pour être améliorées'
+      - '&7et elles ont des rendements décroissants'
+      - '&7par rapport aux points que vous y mettez'
+      - ''
+      - '&bLes compétences à usage unique &7coûtent un'
+      - '&7certain nombre de points de compétence,'
+      - '&7mais sont débloquées pour toujours.'
+      - '&7Ces compétences augmentent en fonction de'
+      - '&7votre niveau total de &9Pêche&7.'
+      - ''
+      - '&7Points de compétences : &a%points%'
+      - '&7Niveau de Pêche : &a%level%'
+      Name: '&a&lInfo compétences'
+  FishBag:
+    InfoEmerald:
+      Lore:
+      - '&7Cliquez pour vendre tous les poissons'
+      - '&7à l''intérieur du sac de poissons.'
+      Name: '&a&lSell Fishes'
+    Deliveries:
+      Name: '&3&lSac à poisson de livraison'
+      Status:
+        'false': '&CDésactivé'
+        'true': '&aActif'
+      Lore:
+      - '&7Cliquez pour modifier votre préférence'
+      - '&7pour l''utilisation du sac à poisson afin qu''il'
+      - '&7détecte les poissons nécessaires pour vos livraisons.'
+      - ''
+      - '&7Status: %status%'
+  Totem:
+    Unlock:
+      NotLevelNew: '&7Il s''agit d''un élément avancé que vous ne comprenez pas actuellement.
+        Revenez lorsque vous aurez atteint le niveau &c20&7.'
+      Unlocked: '&7Vous avez débloqué le totem. Revenez dans quelques instant pour
+        utiliser ses fonctions.'
+      NoItems: '&7Vous n''avez pas assez d''objets pour transformer ceci en un &6Totem
+        de Pêche&7.'
+      Required: '&7Un totem de l''ancienne guerre. Si tu lui apportes les objets suivants
+        tu pourras utiliser son pouvoir.'
+      NewItems:
+      - '&7Objets requis:'
+      - '&8- &c6x Poissons de Platine'
+      - '&8- &c16x Écailles de crabe'
+      - '&8- &c16x Pinces de crabe'
+      - '&8- &c16x Queues de dauphin'
+      - '&8- &c16x Tentacules de calamar'
+  TotemsStructure:
+    Info:
+      Lore:
+      - '&7Construis la structure illustrée à droite.'
+      - '&7Les blocs doivent être &f&nexact&r&7.'
+      - ''
+      - '&7Une fois construit, cliquez droit sur le &f&n1er'
+      - '&7observateur avec une &f&nCanne à Pêche&7.'
+      - ''
+      - '&7Vous devrez ensuite rassembler les objets'
+      - '&7pour activer le &eTotem&7. Une fois'
+      - '&7fait, vous aurez votre propre &eTotem&7.'
+      - ''
+      - '&7&oVous n''avez droit qu''à un seul par joueur.'
+      Name: '&a&lInformation'
+  Gutting:
+    GutForEntropy:
+      Lore:
+      - §7Cliquez ici pour vider le poissons
+      - §7 et en faire de l'entropie.
+      - ''
+      - '§7Taux de conversion:'
+      - '§8➤ §7Poisson catégorie Bronze : §3%bronze%'
+      - '§8➤ §7Poisson catégorie Argent : §3%silver%'
+      - '§8➤ §7Poisson catégorie Or : §3%gold%'
+      - '§8➤ §7Poisson catégorie Diamant : §3%diamond%'
+      - '§8➤ §7Poisson catégorie Platine : §3%platinum%'
+      Name: '&6&lVider pour obtenir l''entropie'
+  Deliveies:
+    Upgrades:
+      MaxLevel: '&7Cette amélioration à déjà atteint son niveau maximum.'
+  Shop:
+    SpecialFish:
+      Name: '&a&lPoisson spécial'
+      Lore:
+      - §8§m--------------------------
+      - '§7Poisson spécial:'
+      - '§8➤ §7Poisson: §3%name%'
+      - '§8➤ §7Tier: §3%tier%'
+      - '§8➤ §7Multiplicateur de vente: §3%multiplier%x'
+      - §8§m--------------------------
+      - §7Changement dans §3%minutes% §7minutes.
+      - §8§m--------------------------
+    Prices:
+      Name: '&2&lPrix'
+      Lore:
+      - '§7Voici les prix de tous les articles:'
+      - '§7Poisson cru: §3%RawFishMoney%'
+      - '§7Bronze: §3%BronzeMoney%'
+      - '§7Argent: §3%SilverMoney%'
+      - '§7Or: §3%GoldMoney%'
+      - '§7Diamant: §3%DiamondMoney%'
+      - '§7Platine: §3%PlatinumMoney%'
+      - '§7Mythique: §3%MythicalMoney%'
+    Info:
+      Name: '&a&lInformation'
+      Lore:
+      - '&7Mettez les articles ici puis fermez'
+      - '&7pour vendre le poisson.!'
+    Back:
+      Name: '&c&lRetour'
+      Lore:
+      - '&7Cliquez pour revenir au menu principal.'
+  Augments:
+    AcceptAugment:
+      Lore:
+      - '&7Cliquez sur le verre ci-dessous pour confirmer votre '
+      - '&7augmentation. Ceci consommera les améliorations.'
+      Name: '&a&lAccepter l''amélioration'
+    Withdraw:
+      Name: '&3Retirer 10,000 d''Entropies'
+      Lore:
+      - '&7Cela retirera &d10,000 d''Entropies'
+      - '&7de votre solde et vous donnera un'
+      - '&3Cristal d''Entropie&7. En échangeant'
+      - '&7le Cristal, vous obtiendrez &d10,000 d''Entropies&7.'
+    FishingRod:
+      Lore:
+      - '&7Placez votre canne à pêche dans l''emplacement auquel'
+      - '&7vous souhaitez ajouter l''augmentation.'
+      Name: '&b&lCanne à Pêche'
+    Help:
+      Name: '&2&lAide à l''Amélioration'
+      Lore:
+      - '&7Cliquez pour voir tous les augments et les recettes.'
+      - ''
+      - '&7Pour fabriquer des améliorations. Déposez tous les objets dans'
+      - '&7un &bChaudron &7et frappez-le avec une &2Canne à Pêche&7. Assurez-vous'
+      - '&7que le &bChaudron &7 contient de l''eau et que vous'
+      - '&7la quantité &7&oexact &7d''objets pour le fabriquer.'
+      - ''
+      - '&7Solde d''Entropies: &b%entropy%'
+      - '&7Niveau de Pêche: &b%level%'
+    Remove:
+      Lore:
+      - '&7ela vous permettra de récupérer toutes les &bAméliorations'
+      - '&7apportées à votre canne à pêche.'
+      - '&7Cela coûte &d25,000 d''Entropies&7.'
+      - ''
+      - '&7Assurez-vous que votre canne à pêche est à l''intérieur'
+      - '&7de l''interface lorsque vous faites cela!'
+      - ''
+      - '&c&oIl n''y a pas de bouton ''Êtes-vous sûr'''
+      - '&c&oaprès avoir cliqué sur ce bouton. Soyez prudent'
+      Name: '&4&lEnlever les Améliorations'
+    Cancel:
+      Name: '&c&lAnnuler l''Amélioration'
+    Augment:
+      Lore:
+      - '&7Placez l''amélioration de votre choix dans'
+      - '&7l''emplacement ci-dessous pour l''ajouter à votre Canne à Pêche.'
+      Name: '&b&lAméliorer'
+    Confirm:
+      Name: '&a&lConfirmer l''Amélioration'
+    CancelAugment:
+      Lore:
+      - '&7En cliquant sur le verre ci-dessous, vous annulerez'
+      - '&7l''amélioration et remettrez l''amélioration et'
+      - '&7la Canne à Pêche dans votre inventaire.'
+      Name: '&c&lAnnuler l''Amélioration'
+WithdrawnEntropy: '&7Vous avez retiré &d10.000 Entropie &7et vous avez reçu un &bCristal
+  d''Entropie &7.'
+Boosters:
+  End: '&7Votre %name% &7est épuisé!'
+  InUse: '&7Vous avez déjà un %name% &7booster actif pour encore &3%seconds% &7secondes.'
+  Use: '&7Vous avez utilisé un %name%&7 et il durera &330 &7minutes.'
+  Commands:
+    None: '&7Vous n''avez pas de leurres/boosters actifs.'
+    Entropy: '&8➤ &bBooster d''Entropie &3(%boost%x) &7avec &3%seconds% &7secondes
+      restantes.'
+    List:
+    - ''
+    - '&8]&m--------------+&r&8[&r &6&lBoosters &8]&m+--------------&r&8['
+    - ''
+    - '&6Boosters: %boosters%'
+    - ''
+    - '&8]&m------------------------------------------&r&8['
+    - ''
+    Mythical: '&8➤ &5Appât Mythique &7avec &3%seconds% &7secondes restantes.'
+    Crab: '&8➤ &bAppâts à crabes &7avec &3%seconds% &7secondes restantes.'
+    Platinum: '&8➤ &cAppâts de Platine &7avech &3%seconds% &7secondes restantes.'
+TierNames:
+  Platinum: Platine
+  Mythical: Mythique
+  Silver: Argent
+  Bronze: Bronze
+  Diamond: Diamant
+  Gold: Or
+GUINames:
+  PerCodex: '&9&lPoke-Fishx &8- &3%tier%'
+  Skills: '&9&lCompétence de Pêche'
+  TotemStructure: '&9Structure du Totem'
+  Stats: '&9&lStats: &3&l%player%'
+  FishingAugments: '&9&lCompétence de Pêche'
+  Codex: '&9&lCodex'
+  Main: '&9&lMenu Pêche'
+  Deliveries: '&9&lLivraisons'
+  Augments: '&9&lAméliorer'
+  Shop: '&9&lVendre du poisson'
+  Scales: '&9&lPesée'
+  GuttingStation: '&9&lStation d''Éviscération'
+  Totem: '&9&lTotem de Pêche'
+  FishBag: '&9&lSac à poissons'
+Augments:
+  Cooldown: '&7Vous devez attendre au moins &c1 seconde &7avant de recommencer.'
+  Lores:
+    sage:
+    - §2Sage §7vous donne plus d'xp de Pêche
+    - §7chaque fois que vous attrapez un poisson.
+    - §7Plus votre niveau est élevé, plus vous obtiendrez
+    - §7d''experience en pêchant du poisson !
+    masterfisherman:
+    - §dMaître Pêcheur §7vous donne une meilleure chance de
+    - §7prendre des poissons de niveau supérieur. Cette augmentation
+    - §7est un remarquable Prestige. Seulement pour
+    - §7les meilleurs et les plus dévoués des Pêcheurs!
+    perception:
+    - §6Perception §7vous donne plus d''entropie
+    - §7lors de la capture d'un poisson. Plus le niveau
+    - §7de perception est haut plus vous obtiendrez
+    - §7d''entropie en pêchant du poisson !
+    Misc:
+      Crafting: '&7Pre-requis d''artisanat: '
+      CraftingPermission: '&7Permission d''artisanat: '
+      UseAugment: '&7Utiliser l''autorisation d''amélioration: '
+      InfoLine: '&8&m-----------&r&8[%color% Information &8]&8&m-----------'
+    intellect:
+    - §aIntelligence §7vous donne plus d'XP pour attraper des poissons.
+    - §7plus le niveau est élevé, plus vous aurez d'XP
+    - §7en pêchant du poisson.
+    saturate:
+    - §3Saturation §7vous donne une chance aléatoire de recharger
+    - §7votre saturation lorsque vous attrapé un poisson.
+    - §7Plus le niveau est elevé, plus grande est la chance d'être nourri.
+    solarrage:
+    - §eFureur Solaire §7vous donne plus d''argent en vendant
+    - §7les poisson dans le magasin de poisson.
+    - §7Plus le niveau est élevé, plus la prime est importante.
+    callofthestorm:
+    - §9Appel de la Tempête §7vous donne une chance d''attraper
+    - §7plus de poissons pendant qu'il pleut. Plus le niveau
+    - §7est élevé, plus vous avez de chances d''obtenir un second poisson.
+    tornado:
+    - §cTornade §7vous donne une petite chance
+    - §7de provoquer une augmentation des bancs de poissons près de
+    - §7vous et vous donne une chance d''avoir plusieurs poissons au hasard.
+    hotspot:
+    - §6Hot Spot §7vous donnera une chance d''obtenir plus
+    - §7d'un poisson par prise. Plus le niveau est élevé,
+    - §7plus les chances d''attraper plusieurs poisson augmentes.
+    trophy:
+    - §eTrophée §7vous donne plus de chance lors
+    - §7de la pesée de vos poissons. Plus le niveau est elevé
+    - §7Plus les chances de réussir votre pesée sont grande !
+    precisioncutting:
+    - §cDécoupage de précision §7vous donne plus d''entropie lors de
+    - §7l'éviscération des poissons à l''aide de la station d'éviscération.
+    - §7Plus le niveau est elevée, plus l'entropie gagné est importante.
+    snowglobe:
+    - §fSBoule à Neige §7crée au hasard des globes de neige
+    - §7qui, lorsqu'il est pêché, donne au joueur plus
+    - §7d''entropie et d'xp de Pêche. Plus le niveau est élevé, plus le
+    - §7le bonus est elevé. Fonctionne pour tous ceux qui
+    - §7Pêches à l''intérieur du rayon.
+    crabbait:
+    - §bAppâts pour Crabes §7vous donne une meilleure chance
+    - §7d''attirer des crabes pendant la Pêche. Très utile pour broyer
+    - §7écailles de crabe et pinces de crabe pour d''autres améliorations.
+    biomedisruption:
+    - §2Perturbation du biome §7vous donne une chance d''attraper
+    - §7des poissons aléatoires provenant d''autres biomes.
+    - §7Plus le niveau est élevé, plus les chances sont grandes.
+  'True': 'true'
+  Lore:
+  - '&7Ajoute un niveau d''amélioration à votre Canne à Pêche.'
+  - '&7Ouvrez le menu Amélioration pour ajouter des améliorations.'
+  - '&8&m-----------&r&8[%color% Information &8]&8&m-----------'
+  - '%color%Niveau de Pêche requis :&8 ➤ &7%requiredlevel%'
+  - '%color%Coût en Entropie :&8 ➤ &7%cost%'
+  - '%color%Niveau d''amélioration max :&8 ➤ &7%maxlevel%'
+  - '%color%Peut être utilisé sur:&8 ➤ &7Canne à Pêche'
+  - '&8&m-----------&r&8[%color% Information &8]&8&m-----------'
+  - '%description%'
+  - '&8&m-----------&r&8[%color% Information &8]&8&m-----------'
+  Misc:
+    Entropy: '&7Vous ne pouvez pas fabriquer cet objet. Vous avez besoin de &c%entropie%&7
+      d''entropie.'
+    NoValidRecipe: '&7Les objets que vous avez déposés ne correspondent à aucune recette
+      d''amélioration valide.'
+    Crafted: '&7Vous avez fabriqué %name% &7et dépensé &3%cost% &7entropie.'
+    TooManyItems: '&7Vous avez laissé tomber trop d''objets. Ramassez-en quelques-uns
+      et réessayez.'
+    CreativeMode: '&7Vous ne pouvez pas fabriquer d''amélioration en &cmode créatif&7.'
+  'False': faux
+  SolarRage: '&7Vous avez obtenu un bonus de &e$%money% &7de votre amélioration &eFureur Solaire&7.'
+  CraftedAugment: '&7Vous avez améliorer %augment% &7au niveau &3%amount%.'
+  NoCraftingPermission: '&7Vous n''avez pas la &cpermission &7de fabriquer %augment%&7.'
+  AugmentDisabled: '&7Cette Amélioration a été désactivée et ne peut être fabriquée.'
+  CallOfTheStorm: '&7Votre &9Appel de la Tempête &7vous a donné une chance d''attraper un poisson supplémentaire.'
+  NoAugment: '&7Veuillez utiliser une Amélioration dans le deuxième emplacement à la place de votre objet actuel.'
+  NotValidAugment: '&7Ce n''est pas une Amélioration valide.'
+  NoFishingRod: '&7Veuillez utiliser une Canne à Pêche dans le premier emplacement au lieu de votre objet actuel.'
+  HotSpot: '&7Votre &6Hot Spot &7vous a donné une chance d''attraper un poisson supplémentaire.'
+  PrecisionCutting: '&7Votre amélioration &cDécoupage de précision &7vous a donné un bonus de %entropy% d''entropie à l''éviscération.'
+  AugmentMaxLevel: '&7Cette amélioration est déjà au niveau maximum.'
+  Saturate: '&7Votre &3Sataturation &7vous a donné de la saturation.'
+  NotHighEnoughLevel: '&7Vous n''êtes pas d''un niveau assez élevé pour fabriquer cette amélioration.'
+Totems:
+  AlreadyOwned: '&7Vous ne pouvez pas créer un autre &CTotem &7 si vous en possédez
+    déjà un ! Il est situé à &cX: %x%&7, &cY: %y%&7, &cZ: %z%&7.'
+  Break:
+    Lore:
+    - '&7Un Totem de Pêche qui contient'
+    - '&7une quantité énorme de pouvoir.'
+    - ''
+    - '&7Information Totem :'
+    - '&8➛ &7Propriétaire: &a%owner%'
+    - '&8➛ &7Rayon: &a%radius%'
+    - '&8➛ &7Temps actif: &a%active_time%'
+    - '&8➛ &7Temps de récupération: &a%cooldown_time%'
+    - '&8➛ &7Emplacements passif maximum : &a%max_passive_slots%'
+    - ''
+    - '&3Placez-moi pour restaurer les données.'
+  Placed: '&7Vous avez placé votre &eTotem &7ses données ont été chargées. Assurez-vous
+    que la structure multibloc existe pour qu''elle fonctionne.'
+  MythicalWaters: '&7Vous avez attrapé un %fish% &7dans les &5Eaux mythique&7 et il
+    s''est transformé en %newfish%&7.'
+  InvalidStructure: '&7Structure multibloc invalide détectée. Veuillez faire le bon
+    avant d''utiliser cette structure.'
+  NotEnoughEntropy: '&7Vous n''avez pas assez &cd''entropie&7 pour améliorer ceci.'
+  NotYours: '&7Ce &cTotem &7ne vous appartient pas. Il appartient à &c%name%&7.'
+  Broken: '&7Vous avez cassé votre &6Totem de Pêche &7!'
+  Upgraded: '&7Vous avez amélioré l''amélioration : &3%upgrade% &7!'
+  Unlocked: '&7Vous avez enregistré et débloqué le &6Totem de Pêche &7!'
+NotEnoughEntropy: '&7Vous n''avez pas assez d''entropie pour le faire.'
+Tournaments:
+  Misc:
+    With: '&7avec '
+  NoTournament: '&7Il n''y a pas de &ctournoi &7actuellement actif.'
+  AlreadyActive: '&7Il y a déjà un &3tournoi &7en cours!'
+RedeemEntropy: '&7Vous avez réclamé &d10,000 d''Entropies&7.'
+WithdrawingDisabled: '&7La récupération &bd''entropie &7à été désactivé par votre administrateurs.'
+ChristasEvent:
+  NotReady: '&7Vous ne pouvez pas encore réclamer vos cadeaux. Essayez entre le &b1er
+    &7et le &b325 &7Décembre.'
+ReturnToMainMenu: '&7Cliquez pour revenir au menu principal.'
+WithdrawEntropyNotEnough: '&7Vous n''avez pas assez d''entropie pour retirer un &cCristal
+  d''entropie&7.'
+Misc:
+  Time:
+    NoHours: '%minutes% minutes et %seconds% secondes'
+    Hours: '%hours% heures, %minutes% minutes et %seconds% secondes'
+FishShopLogging: '[PyroFishingPro] %player% a vendu %fish%fish à la poissonnerie pour
+  %money%.'
+RemovedAugments: '&7Tu as retiré tous les accessoires de ta Canne à Pêche !'
+FishLore:
+- '&a%description%'
+- ''
+- '&6&lInformation:'
+- '&e➤ &2Tier : &a%tier%'
+- '&e➤ &2Poid : &a%weight%'
+- '&e➤ &2Prix : &a$%price%'
+- '&e➤ &2Biomes : &a%allbiomes%'
+- '   &a★ &d%biome%'
+FishLoreExtra:
+  AllBiomes: Tous les biomes
+  Weight: '&7Ce poisson a été pesé !'
+PartyFishing:
+  Boost: '&3La Pêche en groupe &7vous a rapporté un bonus de &3%entropie% &7entropie
+    et de &3%xp% &7XP.'
+TotemsDisabled: '&3Les Totems de Pêche &7 ont été désactivés sur ce serveur.'
+MoneyCooldown:
+  Limit: '&7Vous avez gagné le maximum d''argent pour aujourd''hui. Vous pouvez gagner
+    de l''argent dans &b%time%&7.'
+CommandsList:
+- ''
+- '&8]&m-----------+&8[ &6&lPyroFishingPro &8]&m+-----------&8['
+- ''
+- '&e/fish help &7- Affiche une aide générale.'
+- '&e/fish menu &7- Ouvre le menu principal de pêche.'
+- '&e/fish codex &7- Accède au codex des poissons.'
+- '&e/fish shop &7- Ouvre le magasin de poissons.'
+- '&e/fish stats <joueur> &7- Affiche vos statistiques de pêche.'
+- '&e/fish scales &7- Ouvre la pesée de poisson.'
+- '&e/fish bag &7- Ouvre le sac à poissons.'
+- '&e/fish gut &7- Ouvre le menu d''éviscération.'
+- '&e/fish deliveries &7- Ouvre le menu des livraisons.'
+- '&e/fish augment &7- Ouvre le menu des améliorations.'
+- '&e/fish augments &7- Affiche tous les améliorations.'
+- '&e/fish entropy &7- Affiche le solde d''entropie.'
+- '&e/fish boosters &7- Affiche tes boosters actifs.'
+- '&e/fish skills &7- Affiche tes compétences de pêche.'
+- '&6/fish reload &7- Recharge le plug-in.'
+- '&6/fish give <nomPoisson> <joueur> <montant> &7- Donne des poissons aux joueurs.'
+- '&6/fish giveitem <objet> <joueur> <montant> &7- Donne un objet.'
+- '&6/fish version &7- Voir la version du plugin.'
+- '&6/fish giveaugment <amélioration> <joueur> <montant> &7- Vous donne une amélioration spécifique.'
+- '&6/fish addentropy <joueur> <montant> &7- Donne de l''entropie aux joueurs'
+- '&6/fish addxp <joueur> <montant> &7- Donne aux joueurs des xp de pêche.'
+- ''
+- '&8]&m------------------------------------------&8['
+- ''
+Commands:
+  GivenEntropy: '&7On vous a donné &b%entropy% &7d''entropies. Vous avez maintenant &b%total%&7
+    entropies.'
+  InvalidAugment: '&7Ce n''est pas une augmentation valide. N''utilisez pas d''espaces ou de majuscules.
+    Exemple: &chotspot&7.'
+  InvalidSubCommand: '&7Sous-commande non valide. Faites /fish pour obtenir la liste des sous-commandes.'
+  NoPermission: '&7Vous n''avez pas la permission d''exécuter cette commande.'
+  ReloadPlugin: '&3PyroFishingPro &7a été rechargé avec succès!'
+  AddedXP: '&b%player% &7a reçus &b%xp% &7d''XP. Il a maintenant &b%total%&7 d''XP.'
+  NotAnItem: '&7Vous avez saisi un élément non valide..'
+  InvalidArgument: '&7Amélioration non valides. Faites /fish pour obtenir une liste de sous-commandes.'
+  InvalidUsername: '&7Vous avez saisi un nom d''utilisateur invalide.'
+  GivenXP: '&7On vous a donné &b%xp% &7d''XP. Vous avez maintenant &b%total%&7 d''XP.'
+  InvalidNumber: '&7Vous avez saisi un montant non valide.'
+  AddedEntropy: '&b%player% &7a reçus &b%entropy% &7d''Entropies. Il a maintenant &b%total%&7
+    d''entropies.'
+  EntropyBoosterFailed: '&7Vous avez entré un nombre incorrect pour votre booster d''entropie.'
+  PlayerNotFound: '&7Ce joueur n''a pas été trouvé dans la base de données!'
+CaughtCrab: '&7Vous avez pêché un &cCrabe&7!'
+Prefix: '&3&lPyroFishing &8➤ '
+ShopTitleInformation: '&aVendre du poisson ici'
+FirstCaught: '&7Vous avez été la première personne à attraper un(e) %fish%&7!'
+ErrorPrefix: '&c&lPyroFishing &8➤ '
+MythicalCatchBroadcast: '&3%player% &7vient d''attraper un &7%fish% &5Mythique&7!'
+GUITitleColour: '&9&l'
+GutFish:
+  Entropy: '&7Vous avez éviscéré un(e) &3%fish% &7et vous avez reçus &3%entropy% &7d''entropies.'
+  NoFish: '&cIl n''y a pas de poisson à éviscérer!'
+Scales:
+  RiskSelected: '&7Ce risque est déjà sélectionné!'
+  ScaledFish: '&7Vous avez écaillé le poisson dans l''inventaire!'
+  SelectRisk: '&7Vous devez sélectionner un risque avant d''essayer de changer d''échelle.!'
+PlatinumCatchBroadcast: '&3%player% &7vient d''attraper un(e) &7%fish% &3Platine&7!'
+CaughtFirstFish: '&aVous avez attrapé votre premier poisson. Vous pouvez utiliser le &2/fish menu &apour
+  pour explorer davantage le monde de la pêche.'
+CaughtFish: '&7Vous avez attrapé un(e) &bFISHNAME&7!'
+tournyCmds:
+- ''
+- '&8]&8&m----------+&r&8[ &6&lFish Tournaments &8]&8&m+-----------&r&8['
+- ''
+- '&6/ft start <Typetournoi> [temps] &7-  Démarre le tournoi spécifié.'
+- '&6/ft stop [Récompense] &7- Arrête le tournoi. Donne des récompenses si vrai.'
+- '&6/ft remove <joueur> &7- Retirer un joueur du tournoi.'
+- '&e/ft types &7- Liste des types de tournois disponibles.'
+- '&e/ft info &7- Affiche les informations sur le tournoi en cours.'
+- '&e/ft time &7- Montre le temps restant jusqu''au prochain tournoi.'
+- ''
+- '&8]&m--------------------------------------------&r&8['
+- ''
+SellMessage: '&7Vous avez gagné &bMONEYEARNED&7$ en vendant le poisson &bFISHSOLD&7!'
+ShopLoreInformation: '&7Placez le poisson ici puis fermez pour vendre!'
+InvalidItem: '&7Canne à pêche non valide détectée: Aucune amélioration ou objet non valide.'
+Fish:
+  FishNameColour: '&b&l'
+KillFish: '&7Vous avez tuer un(e) &3FISHTYPE &7et il a laissé tomber un(e) &bFISHNAME&7.'
+EatFish: '&bVous avez manger le FISHNAME!'
+SellFish:
+  SpecialFishMoney: '&7Vous avez gagné un bonus &bMONEY&7$ en vendant des poissons spéciaux.!'
+CreativeMode: '&7Vous ne pouvez pas utiliser cette fonction en &cmode créatif&7.'
+NotRequiredLevel: '&4Vous n''avez pas un niveau assez élevé pour débloquer ceci. Vous devez être au
+  moins au niveau: &c'
+MainLevelUp: '&aVous avez augmenté votre niveau de Pêche au niveau &b%level%&7!'
+Deliveries:
+  NewDelivery: '&7Vous avez gagné une nouvelle livraison. Vérifier avec &b/fish deliveries&7.'
+  Dismissed: '&7Vous avez rejeté cette livraison.'
+  Started: '&7Vous avez lancé la livraison pour&b%name%&7 et il faudra &9%time%&7.'
+  Finished: '&7Vous avez terminé la livraison pour &b%name% &7et vous avez reçus %item%&7.'
+  CannotDismiss: '&7Cette livraison ne peut être rejetée.'
+  NotEnoughFish: '&7Vous n''avez pas assez de poissons pour cette livraison.'
+AntiAFKFisher: '&7Pêcheur-AFK détectée, veuillez pêcher dans un autre endroit.'
+NoPermission: '&cVous n''avez pas la permission d''utiliser cette!'
+Lores:
+  ScalesGUI:
+    Information:
+    - §7Placez les poissons ici et cliquez ensuite sur
+    - §7sur l''enclume pour peser tous les poissons
+    - §7dans l''interface. Sélectionnez un risque pour augmenter
+    - §7vos chances de gagner de l''argent !
+Tournament:
+  Length:
+    CaughtMessage: '&7Vous avez attrapé un &bFISHNAME&7 qui a une longueur de &bLENGTHcm&7.'
+    LongestFish: '&7Vous venez d''attraper votre plus long poisson ! Avant: &3%before%cm &7et
+      maintenant il fait: &b%new%cm&7!'
+HelpInChat:
+- '&7--------------------------------------------------'
+- '&7Pour démarrer le plugin. Shift-Clic droit'
+- '&7en tenant une canne à pêche pour ouvrir le menu principal.'
+- ''
+- '&7Vous pouvez vendre, écailler et vider les poissons en utilisant le'
+- '&7menu principal. Cela vous permettra de gagner des'
+- '&7articles spéciaux et de l''argent de vos session de pêche.'
+- ''
+- '&7Il existe également des &aaméliorations&7. Les améliorations sont en fait'
+- '&7des enchantements personnalisés qui ne peuvent être obtenus que par'
+- '&7l''artisanat en utilisant un chaudron. Pour voir toutes les'
+- '&7recettes. Ouvrez le menu de pêche et cliquez sur Améliorer.'
+- '&7Il y aura un livre de recettes à l''intérieur.'
+- ''
+- '&7Vous pouvez également gagner des points de compétence en augmentant'
+- '&7votre niveau de pêche. Ils peuvent être dépensés dans le'
+- '&7menu de la Canne à Pêche. (Voir ci-dessus pour savoir comment l''ouvrir)'
+- '&7--------------------------------------------------'
+- '&7--------------------------------------------------'

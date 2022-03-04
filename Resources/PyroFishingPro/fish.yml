@@ -5,11 +5,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, PLAINS, JUNGLE, RIVER, ICE_SPIKES, BADLANDS, STONE_SHORE, MOUNTAINS
       Description: Tuna? Who doesn't love tuna?
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -49,11 +48,10 @@ Fish:
       AllBiomes: false
       Biomes: FOREST, JUNGLE, OCEAN, RIVER, MUSHROOM_FIELDS
       Description: Ouch! Watch out, it bites!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -93,11 +91,10 @@ Fish:
       AllBiomes: false
       Biomes: SAVANNA, RIVER, JUNGLE, SNOWY_BEACH, SNOWY_MOUNTAINS
       Description: Want to make a pond for this one?
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -137,11 +134,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE, RIVER, ICE_SPIKES, DESERT
       Description: Someone turn that bass up!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -181,11 +177,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, JUNGLE
       Description: Quite random isn't it?
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -225,11 +220,10 @@ Fish:
       AllBiomes: false
       Biomes: JUNGLE, DESERT, PLAINS, FOREST
       Description: Just a basic fish.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -269,11 +263,10 @@ Fish:
       AllBiomes: true
       Biomes: JUNGLE, DESERT, PLAINS, FOREST
       Description: Blub blub :)
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -314,11 +307,10 @@ Fish:
       Biomes: DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, OCEAN
       Description: These fish can live for up to 25 years! Assuming you don't catch
         them!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -358,11 +350,10 @@ Fish:
       AllBiomes: false
       Biomes: RIVER, OCEAN, BIRCH_FOREST, DARK_FOREST
       Description: Anyway, like I was sayin', shrimp is the fruit of the sea!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -400,13 +391,12 @@ Fish:
     '10':
       Name: '&6&lChaos Fish'
       AllBiomes: false
-      Biomes: BADLANDS, SAVANNA
+      Biomes: CRIMSON_FOREST, BADLANDS, SAVANNA
       Description: Very aggressive, with little to no regard for itself or other fish.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -446,11 +436,10 @@ Fish:
       AllBiomes: false
       Biomes: GIANT_SPRUCE_TAIGA, GIANT_TREE_TAIGA, SNOWY_MOUNTAINS
       Description: A tropical fish with big flashy fins.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -490,11 +479,10 @@ Fish:
       AllBiomes: false
       Biomes: ICE_SPIKES, SWAMP, OCEAN, DEEP_OCEAN, JUNGLE, RIVER, BIRCH_FOREST
       Description: An uncommon fish found in streams.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -534,11 +522,10 @@ Fish:
       AllBiomes: false
       Biomes: THE_END, END_BARRENS, END_HIGHLANDS, END_MIDLANDS, ERODED_BADLANDS
       Description: A freshwater fish that's difficult to catch!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -578,11 +565,10 @@ Fish:
       AllBiomes: false
       Biomes: PLAINS, STONE_SHORE, SWAMP, LUKEWARM_OCEAN, FROZEN_RIVER, FLOWER_FOREST
       Description: The Nuptuna! lives in the ocean. Seeing one is good luck!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -622,11 +608,10 @@ Fish:
       AllBiomes: true
       Biomes: FOREST
       Description: Long ago these were kept as pets.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -664,13 +649,12 @@ Fish:
     '16':
       Name: '&6&lSardine'
       AllBiomes: false
-      Biomes: SHATTERED_SAVANNA, SMALL_END_ISLANDS, SNOWY_TUNDRA
+      Biomes: SHATTERED_SAVANNA, THE_END, SNOWY_TUNDRA
       Description: A common ocean fish.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -710,11 +694,10 @@ Fish:
       AllBiomes: false
       Biomes: PLAINS, TALL_BIRCH_HILLS, ICE_SPIKES, WARM_OCEAN
       Description: A fairy common river fish that becomes active at night.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -754,11 +737,10 @@ Fish:
       AllBiomes: false
       Biomes: RIVER
       Description: A very common river fish.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -798,11 +780,10 @@ Fish:
       AllBiomes: true
       Biomes: RIVER
       Description: A deep sea creature that can grow to enormous size.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -843,11 +824,10 @@ Fish:
       Biomes: MOUNTAINS, DARK_FOREST_HILLS, DEEP_FROZEN_OCEAN, GRAVELLY_MOUNTAINS,
         RIVER
       Description: A medium sized fish with a slight yellow tint.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -887,11 +867,10 @@ Fish:
       AllBiomes: false
       Biomes: ICE_SPIKES, RIVER, COLD_OCEAN
       Description: Builds a nest on the underside of glaciers.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -931,11 +910,10 @@ Fish:
       AllBiomes: false
       Biomes: MUSHROOM_FIELD_SHORE, STONE_SHORE, DARK_FOREST_HILLS, FOREST
       Description: He's coated in a very thick layer of slime.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -975,11 +953,10 @@ Fish:
       AllBiomes: false
       Biomes: MODIFIED_JUNGLE, JUNGLE, DESERT, WOODED_HILLS, TAIGA_MOUNTAINS, DEEP_OCEAN
       Description: A fearsome predator that will eat almost anything.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1019,11 +996,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: An ancient bottom-feeder with a dwindling population.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1063,11 +1039,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: A bizarre fish that's shaped like a brick.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1107,11 +1082,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, WARM_OCEAN, COLD_OCEAN
       Description: A common ocean fish.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1151,11 +1125,10 @@ Fish:
       AllBiomes: false
       Biomes: COLD_OCEAN, DEEP_COLD_OCEAN
       Description: A freshwater fish of the winter.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1195,11 +1168,10 @@ Fish:
       AllBiomes: false
       Biomes: ICE_SPIKES
       Description: A rare fish that thrives in extremely cold climates.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1239,11 +1211,10 @@ Fish:
       AllBiomes: true
       Biomes: GRAVELLY_MOUNTAINS
       Description: A common fish that is very flat.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1283,11 +1254,10 @@ Fish:
       AllBiomes: false
       Biomes: GIANT_SPRUCE_TAIGA_HILLS, COLD_OCEAN, RIVER, OCEAN
       Description: A very common type of shark.
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1327,11 +1297,10 @@ Fish:
       AllBiomes: false
       Biomes: FOREST, DARK_FOREST, SWAMP, BEACH
       Description: These small fries are everywhere!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1371,11 +1340,10 @@ Fish:
       AllBiomes: false
       Biomes: DARK_FOREST_HILLS, DARK_FOREST, FOREST, WOODED_MOUNTAINS
       Description: Be sure to release it after!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1415,11 +1383,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, RIVER, DEEP_OCEAN, WARM_OCEAN, COLD_OCEAN, JUNGLE, SAVANNA
       Description: A fish that travels the sea far and wide!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1459,56 +1426,10 @@ Fish:
       AllBiomes: false
       Biomes: PLAINS
       Description: Watch out, You might get wet!
-      DataValue: 0
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: false
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: false
-        SpawnDuringRain: false
-      Y-Level:
-        Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: COD
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '35':
-      Name: '&6&lBronze Pointy Fish'
-      AllBiomes: false
-      Biomes: JUNGLE
-      Description: Eat fish to get one point! (/points)
-      DataValue: 0
-      Glowing: true
-      EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate this fish! &3(&a+1 /points&3 received)&r
-      - welcomes add PLAYER 1
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1549,11 +1470,10 @@ Fish:
       AllBiomes: false
       Biomes: JUNGLE, RIVER
       Description: Absolutely shocking.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1593,11 +1513,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN, RIVER, BADLANDS
       Description: It's ray! No that's a fish.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1637,11 +1556,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, JUNGLE
       Description: I think this one is white?
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1681,11 +1599,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE, RIVER, SWAMP
       Description: Sardines anyone?
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1725,11 +1642,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, JUNGLE
       Description: No go back go back
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1769,11 +1685,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
       Description: My fin is not too small!
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1813,11 +1728,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
       Description: I'm sorry, what was suppose to go here?
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1857,11 +1771,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
       Description: Have you seen Nemo?
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1901,11 +1814,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN, FROZEN_OCEAN, LUKEWARM_OCEAN, MUSHROOM_FIELD_SHORE
       Description: A brightly coloured marine fish.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1946,11 +1858,10 @@ Fish:
       Biomes: SNOWY_BEACH, SNOWY_MOUNTAINS, SNOWY_TAIGA, SNOWY_TAIGA_HILLS, SNOWY_TAIGA_MOUNTAINS,
         SNOWY_TUNDRA, FROZEN_RIVER
       Description: A tiny fish that likes to hide in frozen rivers
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -1988,13 +1899,12 @@ Fish:
     '11':
       Name: '&f&lHemopiranha'
       AllBiomes: false
-      Biomes: FROZEN_RIVER, SNOWY_TAIGA_MOUNTAINS, TAIGA, GIANT_SPRUCE_TAIGA
+      Biomes: CRIMSON_FOREST, FROZEN_RIVER, SNOWY_TAIGA_MOUNTAINS, TAIGA, GIANT_SPRUCE_TAIGA
       Description: A fish with a thirst for blood.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2034,11 +1944,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: A tropical, freshwater fish that enjoys murky streams.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2078,11 +1987,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: A popular fish with a nice red colour.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2123,11 +2031,10 @@ Fish:
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, LUKEWARM_OCEAN, COLD_OCEAN,
         OCEAN
       Description: A mysterious and intelligent creature.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2167,11 +2074,10 @@ Fish:
       AllBiomes: false
       Biomes: SHATTERED_SAVANNA_PLATEAU, WARM_OCEAN, SNOWY_MOUNTAINS, ICE_SPIKES
       Description: A rare hybrid trout that cannot bear offspring of its own.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2211,11 +2117,10 @@ Fish:
       AllBiomes: false
       Biomes: RIVER, OCEAN, DEEP_OCEAN, JUNGLE, PLAINS, DESERT, BADLANDS
       Description: A strange and mysterious denizen of the ocean's twilight depths.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2255,11 +2160,10 @@ Fish:
       AllBiomes: false
       Biomes: BADLANDS_PLATEAU, BEACH, DEEP_OCEAN, SAVANNA_PLATEAU
       Description: A fish that appears almost pearlescent in the sunlight.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2299,11 +2203,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN
       Description: A sentient blob of jello, blue in colour.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2341,13 +2244,12 @@ Fish:
     '19':
       Name: '&f&lRed Jellyfish'
       AllBiomes: false
-      Biomes: ICE_SPIKES, BADLANDS, SMALL_END_ISLANDS, ERODED_BADLANDS, END_MIDLANDS
+      Biomes: ICE_SPIKES, BADLANDS, THE_END, ERODED_BADLANDS, END_MIDLANDS
       Description: A sentient blob of jello, red in colour.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2387,11 +2289,10 @@ Fish:
       AllBiomes: false
       Biomes: MODIFIED_WOODED_BADLANDS_PLATEAU, SNOWY_BEACH, SWAMP, RIVER
       Description: A sentient blob of jello, pink in colour.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2431,56 +2332,10 @@ Fish:
       AllBiomes: false
       Biomes: WOODED_MOUNTAINS, MOUNTAINS, DARK_FOREST, BADLANDS, DESERT
       Description: It's golden hue looks like it was dipped in honey.
-      DataValue: 1
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: false
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: false
-        SpawnDuringRain: false
-      Y-Level:
-        Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: SALMON
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '22':
-      Name: '&f&lSilver Pointy Fish'
-      AllBiomes: false
-      Biomes: WOODED_MOUNTAINS, MOUNTAINS, DARK_FOREST, BADLANDS, DESERT
-      Description: Eat fish to get two /points!
-      DataValue: 1
-      Glowing: true
-      EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate this fish! &3(&a+2 /points&3 received)&r
-      - welcomes add PLAYER 2
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2521,11 +2376,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, DEEP_OCEAN
       Description: JAWS!
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2565,11 +2419,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, DEEP_OCEAN, JUNGLE, RIVER
       Description: Glows in the dark! Spooky!
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2609,11 +2462,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE, DESERT, SAVANNA
       Description: RUN!
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2653,11 +2505,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS, DESERT
       Description: What about a lion?
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2697,11 +2548,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, JUNGLE
       Description: Rawr
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2741,11 +2591,10 @@ Fish:
       AllBiomes: false
       Biomes: FOREST, PLAINS, RIVER
       Description: Have you seen my padlock necklace?
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2785,11 +2634,10 @@ Fish:
       AllBiomes: false
       Biomes: BADLANDS, TAIGA, BEACH, SNOWY_BEACH, SWAMP
       Description: なにですか？
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2829,11 +2677,10 @@ Fish:
       AllBiomes: false
       Biomes: MUSHROOM_FIELDS, END_MIDLANDS, SNOWY_TUNDRA, DESERT_HILLS
       Description: A dark-coloured koi that resides deep underground.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2873,11 +2720,10 @@ Fish:
       AllBiomes: false
       Biomes: BIRCH_FOREST, TAIGA_MOUNTAINS, JUNGLE
       Description: A bright boi with lovely flame-point fins!
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2917,11 +2763,10 @@ Fish:
       AllBiomes: false
       Biomes: BADLANDS, SWAMP, BIRCH_FOREST_HILLS
       Description: Tough and territorial, large groups can be dangerous.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -2961,11 +2806,10 @@ Fish:
       AllBiomes: false
       Biomes: SWAMP
       Description: Lives in the swamp. Sensitive to earthquakes.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3005,11 +2849,10 @@ Fish:
       AllBiomes: true
       Biomes: SWAMP, RIVER
       Description: A brutal piranha dubbed the swampland cow killer.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3049,11 +2892,10 @@ Fish:
       AllBiomes: false
       Biomes: SHATTERED_SAVANNA_PLATEAU, GIANT_SPRUCE_TAIGA_HILLS, DEEP_WARM_OCEAN
       Description: A cowardly fish that hates attention.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3093,11 +2935,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: So pretty it could be mistaken for a fairy.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3135,13 +2976,12 @@ Fish:
     '15':
       Name: '&e&lLava Eel'
       AllBiomes: false
-      Biomes: DESERT_LAKES
-      Description: It can somehow survive in pools of sun boiling desert lakes.
-      DataValue: 2
-      Glowing: true
+      Biomes: CRIMSON_FOREST
+      Description: It can somehow survive in pools of red-hot lava.
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3181,11 +3021,10 @@ Fish:
       AllBiomes: false
       Biomes: FROZEN_OCEAN, FROZEN_RIVER
       Description: The fish that thinks it's a polar bear.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3226,10 +3065,9 @@ Fish:
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
         OCEAN
       Description: Some say if you eat this, you can hear its screams.
-      DataValue: 2
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}https://www.youtube.com/watch?v=SIaFtAKnqBU
+      - msg PLAYER https://www.youtube.com/watch?v=SIaFtAKnqBU
       CustomModelData:
         Use: false
         Number: 1
@@ -3265,17 +3103,14 @@ Fish:
         - ''
       CatchPermission: ''
     '18':
-      Name: '&e&lGold Pointy Fish'
-      AllBiomes: false
+      Name: '&e&lBlack Bean Fish'
+      AllBiomes: true
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
         OCEAN
-      Description: Eat fish to get three /points!
-      DataValue: 2
-      Glowing: true
+      Description: Malaysian-style Black Bean Fish
+      Glowing: false
       EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate this fish! &3(&a+3 /points&3 received)&r
-      - cmi feed PLAYER
+      - msg PLAYER https://www.youtube.com/watch?v=SIaFtAKnqBU
       CustomModelData:
         Use: false
         Number: 1
@@ -3314,13 +3149,12 @@ Fish:
     '1':
       Name: '&b&lPyro Fishy'
       AllBiomes: false
-      Biomes: SAVANNA, DESERT
+      Biomes: CRIMSON_FOREST, SAVANNA, DESERT
       Description: Hot to the touch! Careful!
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3360,11 +3194,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, JUNGLE
       Description: Assassins creed much?
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3404,11 +3237,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE
       Description: This fish loves purple!
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3446,13 +3278,12 @@ Fish:
     '4':
       Name: '&b&lNep Fish'
       AllBiomes: false
-      Biomes: PLAINS, FOREST, OCEAN, ICE_SPIKES
+      Biomes: PLAINS, FOREST, THE_END, OCEAN, ICE_SPIKES
       Description: Nep Nep
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3490,13 +3321,12 @@ Fish:
     '5':
       Name: '&b&lNeeko Fish'
       AllBiomes: true
-      Biomes: PLAINS, FOREST, OCEAN, ICE_SPIKES
+      Biomes: PLAINS, FOREST, THE_END, OCEAN, ICE_SPIKES
       Description: Neeko is best decision
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3536,11 +3366,10 @@ Fish:
       AllBiomes: false
       Biomes: LUKEWARM_OCEAN, GRAVELLY_MOUNTAINS, END_BARRENS, FOREST, TAIGA_MOUNTAINS
       Description: The royal heir to the watery throne.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3580,11 +3409,10 @@ Fish:
       AllBiomes: false
       Biomes: WOODED_HILLS, DESERT_LAKES, SNOWY_TUNDRA, FROZEN_RIVER
       Description: The fish was once thought extinct.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3622,13 +3450,12 @@ Fish:
     '8':
       Name: '&b&lGrand Swordfish'
       AllBiomes: false
-      Biomes: GIANT_TREE_TAIGA_HILLS, DESERT_LAKES, MODIFIED_BADLANDS_PLATEAU
+      Biomes: GIANT_TREE_TAIGA_HILLS, CRIMSON_FOREST, DESERT_LAKES, MODIFIED_BADLANDS_PLATEAU
       Description: Lives in the ocean. Very large, most often found in open water.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3667,12 +3494,11 @@ Fish:
       Name: '&b&lGreat Fairy Fish'
       AllBiomes: false
       Biomes: MOUNTAIN_EDGE, SWAMP_HILLS, GIANT_SPRUCE_TAIGA
-      Description: L large ocean dwelling fish that is rarely encountered by humans.
-      DataValue: 3
-      Glowing: true
+      Description: A large ocean dwelling fish that is rarely encountered by humans.
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3712,11 +3538,10 @@ Fish:
       AllBiomes: true
       Biomes: PLAINS
       Description: A marine meanie that eats other fish!
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3754,13 +3579,12 @@ Fish:
     '11':
       Name: '&b&lGhostfish'
       AllBiomes: false
-      Biomes: STONE_SHORE, WOODED_HILLS, WARM_OCEAN
+      Biomes: STONE_SHORE, WOODED_HILLS, THE_VOID, WARM_OCEAN
       Description: A pale, blind fish found in underground lakes.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3798,14 +3622,13 @@ Fish:
     '12':
       Name: '&b&lVoid Salmon'
       AllBiomes: false
-      Biomes: MOUNTAIN_EDGE, GIANT_SPRUCE_TAIGA, SNOWY_TAIGA_MOUNTAINS, STONE_SHORE,
-        TAIGA_HILLS
+      Biomes: THE_VOID, MOUNTAIN_EDGE, GIANT_SPRUCE_TAIGA, SNOWY_TAIGA_MOUNTAINS,
+        STONE_SHORE, TAIGA_HILLS
       Description: A salmon, twisted by void energy.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3845,11 +3668,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN
       Description: Rarest & tiniest fish. Be careful they’re fragile.
-      DataValue: 3
-      Glowing: true
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3885,62 +3707,15 @@ Fish:
         - ''
       CatchPermission: ''
     '14':
-      Name: '&b&lHow''s this new Sperm Whale'
+      Name: '&b&lSayori Fish'
       AllBiomes: false
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
         OCEAN
-      Description: Its favorite is the Screaming Goat fish.
-      DataValue: 3
-      Glowing: true
+      Description: I love hanging out.
+      Glowing: false
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: false
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: false
-        SpawnDuringRain: false
-      Y-Level:
-        Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: PUFFERFISH
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '15':
-      Name: '&b&lDiamond Pointy Fish'
-      AllBiomes: false
-      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
-        OCEAN
-      Description: Eat fish to get four /points!
-      DataValue: 3
-      Glowing: true
-      EatingCommands:
-      - welcomes add PLAYER 4
-      - cmi msg PLAYER ! &31MB Fish »&b You ate this fish! &3(&a+4 /points&3 received)&r
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -3979,13 +3754,12 @@ Fish:
     '1':
       Name: '&c&lMan o'' War'
       AllBiomes: false
-      Biomes: OCEAN, JUNGLE, RIVER, SMALL_END_ISLANDS, MOUNTAINS
+      Biomes: OCEAN, JUNGLE, RIVER, THE_END, MOUNTAINS
       Description: It's a man, of, war.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4025,11 +3799,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE, PLAINS, BADLANDS, DESERT
       Description: It's a bird! No it's a rainbow!
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4067,13 +3840,12 @@ Fish:
     '3':
       Name: '&c&lRouge Fish'
       AllBiomes: false
-      Biomes: SUNFLOWER_PLAINS
+      Biomes: CRIMSON_FOREST, THE_END
       Description: Actual bot.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4113,11 +3885,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, JUNGLE, BIRCH_FOREST, SAVANNA
       Description: The sky glows blue with this fish!
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4157,11 +3928,10 @@ Fish:
       AllBiomes: false
       Biomes: JUNGLE, TAIGA, RIVER, FOREST, BEACH
       Description: Delicious like my propel water
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4202,11 +3972,10 @@ Fish:
       Biomes: OCEAN, DESERT
       Description: Ah...Kami....I'll Slice you into tiny pieces and feed you to the
         pigs!
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4246,11 +4015,10 @@ Fish:
       AllBiomes: true
       Biomes: OCEAN, DESERT
       Description: Name, huh? I have... no such thing.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4288,13 +4056,12 @@ Fish:
     '8':
       Name: '&c&lGalaxy Rasbora'
       AllBiomes: false
-      Biomes: MUSHROOM_FIELDS, END_MIDLANDS, TAIGA_HILLS, MODIFIED_JUNGLE_EDGE
+      Biomes: THE_VOID, MUSHROOM_FIELDS, END_MIDLANDS, TAIGA_HILLS, MODIFIED_JUNGLE_EDGE
       Description: One Starry Boi
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4334,11 +4101,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, WOODED_HILLS, WOODED_BADLANDS_PLATEAU, DARK_FOREST, DEEP_WARM_OCEAN
       Description: A horn on a fish? What?
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4378,11 +4144,10 @@ Fish:
       AllBiomes: false
       Biomes: TAIGA, ERODED_BADLANDS, BIRCH_FOREST, MODIFIED_GRAVELLY_MOUNTAINS
       Description: Nice catch, partner.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4422,11 +4187,10 @@ Fish:
       AllBiomes: true
       Biomes: FROZEN_OCEAN, GIANT_SPRUCE_TAIGA, BADLANDS_PLATEAU
       Description: An exotic fish with bright strawberry like colours.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4466,11 +4230,10 @@ Fish:
       AllBiomes: false
       Biomes: JUNGLE_HILLS, RIVER, JUNGLE, PLAINS, SNOWY_TUNDRA
       Description: A small shark with a dark aura.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4510,11 +4273,10 @@ Fish:
       AllBiomes: false
       Biomes: DEEP_OCEAN
       Description: A squid, that's size dwarfs everything else in the ocean!
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4554,11 +4316,10 @@ Fish:
       AllBiomes: false
       Biomes: RIVER, JUNGLE, BADLANDS, DESERT
       Description: A fish so rare that humans rarely ever see this beauty.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4598,11 +4359,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, WARM_OCEAN, COLD_OCEAN
       Description: What a catch! An uncommon but deadly fish!
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4640,13 +4400,12 @@ Fish:
     '16':
       Name: '&c&lDeath Manta'
       AllBiomes: false
-      Biomes: DESERT_LAKES
-      Description: A beautiful monster that lives in the depths of boiling deserts.
-      DataValue: 3
+      Biomes: CRIMSON_FOREST
+      Description: A beautiful monster that lives in the depths of hell.
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4684,13 +4443,12 @@ Fish:
     '17':
       Name: '&c&lKiwi Fish'
       AllBiomes: false
-      Biomes: GIANT_SPRUCE_TAIGA, WARM_OCEAN, DEEP_WARM_OCEAN
+      Biomes: TAIGA, WARM_OCEAN, DEEP_WARM_OCEAN
       Description: A very sweet fish with beady little eyes.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4728,13 +4486,12 @@ Fish:
     '18':
       Name: '&c&lGlazula'
       AllBiomes: false
-      Biomes: BADLANDS
+      Biomes: CRIMSON_FOREST, BADLANDS
       Description: My Depths Flourished with Water... Until the fire nation attacked.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4775,11 +4532,10 @@ Fish:
       Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
         OCEAN
       Description: Often seen swimming with a crab and a flounder.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4819,11 +4575,10 @@ Fish:
       AllBiomes: false
       Biomes: OCEAN, SWAMP
       Description: An enchanting mermaid that lures lonely sailors.
-      DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4859,15 +4614,14 @@ Fish:
         - ''
       CatchPermission: ''
     '21':
-      Name: '&c&lTidal Fish'
-      AllBiomes: false
-      Biomes: SWAMP, JUNGLE
-      Description: Meows for some reason
-      DataValue: 2
+      Name: '&c&lElmo'
+      AllBiomes: true
+      Biomes: OCEAN, SWAMP
+      Description: He's a Funny Little Fish
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special Tidal fish!
-      - cmi tfly PLAYER +2000
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4903,15 +4657,14 @@ Fish:
         - ''
       CatchPermission: ''
     '22':
-      Name: '&c&lPlatinum Pointy Fish'
-      AllBiomes: false
-      Biomes: SWAMP, DEEP_OCEAN
-      Description: Eat fish to get five /points!
-      DataValue: 2
+      Name: '&c&lTrichloromethane '
+      AllBiomes: true
+      Biomes: OCEAN, SWAMP
+      Description: Chloroform was Taken
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 5
-      - cmi msg PLAYER ! &31MB Fish »&b You ate this fish! &3(&a+5 /points&3 received)&r
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
@@ -4947,174 +4700,23 @@ Fish:
         - ''
       CatchPermission: ''
     '23':
-      Name: '&c&lFlorange Fish'
-      AllBiomes: false
-      Biomes: BADLANDS, DEEP_OCEAN
-      Description: Smells like salt water and oranges?
-      DataValue: 2
+      Name: '&c&lChlorofish'
+      AllBiomes: true
+      Biomes: OCEAN, SWAMP
+      Description: Trichloromethane's Pet Fish
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 6
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a Floris fish??!?! &3(&a+6 /points&3
-        received)&r
-      - cmi give PLAYER orange_dye 2 n &6Cooked_Florange_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
       TimeCycle:
-        Enabled: true
+        Enabled: false
         SpawnDuringDay: false
       WeatherCycle:
-        Enabled: true
-        SpawnDuringRain: true
-      Y-Level:
         Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: PUFFERFISH
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '24':
-      Name: '&c&lHot Paprikaatje Fish'
-      AllBiomes: false
-      Biomes: GIANT_SPRUCE_TAIGA, WARM_OCEAN
-      Description: Eat this and get all spicy
-      DataValue: 2
-      Glowing: true
-      EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special spicy fish??!?! &3(&a+3
-        /points&3 received)&r
-      - cmi give PLAYER red_dye 2 n &6Cooked_Spicy_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER
-      - cmi burn PLAYER 8
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: true
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: true
-        SpawnDuringRain: true
-      Y-Level:
-        Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: PUFFERFISH
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '25':
-      Name: '&c&lCitebafla Fish'
-      AllBiomes: false
-      Biomes: SUNFLOWER_PLAINS, DESERT
-      Description: ALFABETIC FISH
-      DataValue: 2
-      Glowing: true
-      EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special a to z citebafla fish??!?!
-        &3(&a+3 /points&3 received)&r
-      - cmi give PLAYER brown_dye 2 n &6Cooked_Citebafla_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: true
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: true
-        SpawnDuringRain: true
-      Y-Level:
-        Enabled: false
-        Lower: 30
-        Upper: 80
-      CatchCommands:
-      - ''
-      Region:
-        Enabled: false
-        Regions:
-        - ''
-      Material: PUFFERFISH
-      SellPriceOverride:
-        Enabled: false
-        Price: 1000
-      DisableGivingFishItem: false
-      Enabled: true
-      Worlds:
-        Enabled: false
-        Worlds:
-        - ''
-      SellCommands:
-        Enabled: false
-        Commands:
-        - ''
-      CatchPermission: ''
-    '26':
-      Name: '&c&lEnderDip Fish'
-      AllBiomes: false
-      Biomes: JUNGLE, TAIGA
-      Description: Epic Dipper of Ender
-      DataValue: 2
-      Glowing: true
-      EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special ender fish??!?! &3(&a+3
-        /points&3 received)&r
-      - cmi give PLAYER yellow_dye 2 n &6Cooked_EnderDip_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER
-      - cmi warp end PLAYER
-      CustomModelData:
-        Use: false
-        Number: 1
-      TimeCycle:
-        Enabled: true
-        SpawnDuringDay: false
-      WeatherCycle:
-        Enabled: true
-        SpawnDuringRain: true
+        SpawnDuringRain: false
       Y-Level:
         Enabled: false
         Lower: 30
@@ -5149,11 +4751,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5177,11 +4795,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5205,11 +4839,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5233,11 +4883,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5261,11 +4927,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5289,11 +4971,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5317,11 +5015,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5345,11 +5059,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5373,11 +5103,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5401,11 +5147,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5429,11 +5191,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5457,11 +5235,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5485,11 +5279,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false
@@ -5513,11 +5323,27 @@ Fish:
       DataValue: 3
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER !{#orange}You ate this fish!
-      - cmi feed PLAYER
+      - msg PLAYER You ate this fish!
+      - feed PLAYER
       CustomModelData:
         Use: false
         Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
       Material: PUFFERFISH
       SellPriceOverride:
         Enabled: false

@@ -22,7 +22,7 @@ _purgeTime="1000"
 
 # This is used to only purge files older than x weeks, where `WelcomePoints: 0` (default is 0)
 # If this is set to 1 or 2, it will only purge from the results, if it is exactly 1 or exactly 2.
-_purgePoints="1"
+_purgePoints="0"
 
 ### FUNCTIONS AND CODE
 #

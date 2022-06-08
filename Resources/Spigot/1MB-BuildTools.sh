@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.6, build 070
-# @Release: March 1st, 2022
+# @Version: 2.6, build 071
+# @Release: April 29th, 2022
 # @Description: Helps us make a Minecraft Spigot 1.18.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -21,8 +21,8 @@ _minecraftVersion="1.18.2"
 # Which version are we running?
 
 _minJavaVersion=17.0
-# use 17.0 for java 17.0.2 or newer which is required for Minecraft 1.18.2.
-# use 17.0 for java 17.0.1 or newer which can be used for Minecraft 1.17.1.
+# use 17.0 for java 17.0.3 or newer which is required for Minecraft 1.18.2.
+# use 17.0 for java 17.0.3 or newer which can be used for Minecraft 1.17.1.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5

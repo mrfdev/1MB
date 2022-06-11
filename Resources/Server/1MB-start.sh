@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.9, build 043 for Minecraft 1.19 (Java 18.0.1.1, 64bit)
-# @Release: June 7th, 2022
+# @Version: 2.9, build 044 for Minecraft 1.19 (Java 18.0.1.1, 64bit)
+# @Release: June 11th, 2022
 # @Description: Helps us start and fork a Minecraft 1.19 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -52,7 +52,7 @@ function _output {
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        [[ "$_debug" == true ]] && echo -e "\\n$Y$_prefix$C $_args $R"
+        [[ "$_debug" == true ]] && echo -e "$Y$_prefix$C $_args $R"
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";

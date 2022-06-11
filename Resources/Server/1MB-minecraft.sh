@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.9, build 044 for Minecraft 1.19 (Java 18.0.1.1, 64bit)
-# @Release: June 7th, 2022
-# @Description: Helps us start a Minecraft 1.19 server.
+# @Version: 2.9, build 045 for Minecraft 1.19 (Java 18.0.1.1, 64bit)
+# @Release: June 11th, 2022
+# @Description: Helps us start a Spigot or Paper 1.19 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -20,9 +20,9 @@
 _minecraftVersion="1.19"
 # Which version are we running?
 
-_minJavaVersion=17.0
-# use 18.0 for java 18.0.1.1 or newer which is required for Minecraft 1.19
-# use 17.0 for java 17.0.3 or newer which can be used for Minecraft 1.17.1 and up.
+_minJavaVersion=17.0.3
+# use 18.0 for java 18.0.1.1 which can be used with Minecraft 1.19
+# use 17.0 for java 17.0.3.1 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
@@ -50,8 +50,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.2 servers)
 
 # Override auto engine jar detection; only use this if you have issues
-# TEMP FORCED SETTING - Paper 1.19 isn't out yet <-------------------------------------------------------
-_engine="spigot"
+_engine=""
 # "" assumes auto detection for <engine>-1.19.jar 
 # "spigot" assumes to look for spigot-1.19.jar
 # "paper" assumes to look for paper-1.19.jar
@@ -79,12 +78,12 @@ _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.3.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
 
-_debug=false
+_debug=true
 # Debug mode off or on? Default: false (true means it spits out progress)
 
 ### FUNCTIONS AND CODE
@@ -105,7 +104,7 @@ function _output {
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        [[ "$_debug" == true ]] && echo -e "\\n$Y$_prefix$C $_args $R"
+        [[ "$_debug" == true ]] && echo -e "$Y$_prefix$C $_args $R"
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.9, build 046 for Minecraft 1.19 (Java 18.0.1.1, 64bit)
-# @Release: June 12th, 2022
-# @Description: Helps us start a Spigot or Paper 1.19 server.
+# @Version: 2.10, build 047 for Minecraft 1.19.1 (Java 18.0.1.1, 64bit)
+# @Release: July 31st, 2022
+# @Description: Helps us start a Spigot or Paper 1.19.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,24 +17,24 @@
 #
 ###
 
-_minecraftVersion="1.19"
+_minecraftVersion="1.19.1"
 # Which version are we running?
 
 _minJavaVersion=17.0.3
-# use 18.0 for java 18.0.1.1 which can be used with Minecraft 1.19
+# use 18.0 for java 18.0.1.1 which can be used with Minecraft 1.19.1
 # use 17.0 for java 17.0.3.1 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
 # use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
 # use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
-# we do not support java 7, and support for anything lower than java 16 will soon be dropped.
+# we do not support java 7.
 
 _javaMemory="-Xms4G -Xmx4G"
 # "" = uses the default
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.19 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.19.1 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M --add-modules=jdk.incubator.vector -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -53,9 +53,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.19.jar 
-# "spigot" assumes to look for spigot-1.19.jar
-# "paper" assumes to look for paper-1.19.jar
+# "" assumes auto detection for <engine>-1.19.1.jar 
+# "spigot" assumes to look for spigot-1.19.1.jar
+# "paper" assumes to look for paper-1.19.1.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -66,7 +66,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.19 server-gui
+# leave "" if you want the 1.19.1 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION

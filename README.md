@@ -20,7 +20,7 @@ If you require support, maybe these scripts aren't for you. But, you're always f
 
 If you wish to play, please understand we're a family friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Currently Java Edition: 1.19, has basic crossplay Bedrock Edition support.)
+`1moreblock.com:25565` (Java Edition: 1.19.2)
 
 ## Information (Useful links)
 
@@ -29,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 2.1 build 024, July 31st, 2022.
+This is 1MB Github version 2.2 build 025, August 11th, 2022.

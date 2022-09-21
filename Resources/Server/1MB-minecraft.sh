@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.11, build 049 for Minecraft 1.19.2 (Java 18.0.2, 64bit)
-# @Release: August 11th, 2022
+# @Version: 2.13, build 051 for Minecraft 1.19.2 (Java 19, 64bit)
+# @Release: September 21st, 2022
 # @Description: Helps us start a Spigot or Paper 1.19.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.19.2"
 # Which version are we running?
 
 _minJavaVersion=17.0.3
-# use 18.0 for java 18.0.2 which can be used with Minecraft 1.19.2
+# use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2
 # use 17.0 for java 17.0.3.1 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
@@ -35,7 +35,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # More details here: https://stackoverflow.com/questions/14763079/
 # Example: (16GB host for dedicated Paper 1.19.2 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
-# _javaMemory="-Xms10240M -Xmx10240M --add-modules=jdk.incubator.vector -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
+# _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
 
 # jvm startup parameters
@@ -78,6 +78,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"

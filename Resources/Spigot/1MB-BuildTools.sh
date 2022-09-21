@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.9, build 076
-# @Release: August 11th, 2022
+# @Version: 2.10, build 077
+# @Release: September 21st, 2022
 # @Description: Helps us make a Minecraft Spigot 1.19.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -56,6 +56,7 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"

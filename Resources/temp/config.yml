@@ -1,0 +1,377 @@
+# -----------------------------------------------------------------------------
+#
+# Thanks for using PinataParty!
+# PinataParty was made for CursedCraft! Check it out at play.cursedcraft.com
+#
+# -----------------------------------------------------------------------------
+
+# !!! Some settings can ONLY be changed with a full server restart NOT reload !!!
+#
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+
+# Notifies players with the 'pinataparty.update-notify' permission node when
+# they join the server if a new update is available for download.
+# Requires /reload when changed.
+update-notify: false
+
+# Should we save the data.yml every so often to ensure no data loss on any crashes
+# RECOMMENDED
+save-task: true
+# Time in seconds (Default 900 / 15 mins)
+# Recommended at least 300+
+save-timer: 900
+
+# Should we send a message to all players online telling them to vote (ONLY if they haven't in the last 24 hours)
+# The edit-able message in further down in the config under "message"
+vote-reminder: false
+# Time in seconds (Default 10800 / 3 hours)
+# Recommended at least 3600+
+vote-reminder-timer: 10800
+# Sound to play to the player
+# NONE for no sound
+# SOUND:VOLUME:PITCH
+vote-reminder-sound: ENTITY_PLAYER_LEVELUP:1.15:1.35
+
+# Change this if you want to use the permissions for pinataparty.hitamount.(number)
+# When a player logs in and when the Pinata get summoned it will do a check for the player
+# to get their max hit amount from the permisions.
+#
+# If you don't want to use the permissions for max hit then leave this 1
+# else if you want to, put this number to be the max permission you will give to a player.
+max-player-hit-amount: 1
+
+# Enable/Disable PinataParty listening for votes!
+# Disable this if you are only interested in the commands/pinata
+# and use another plugin for registering votes.
+listen-for-votes: false
+
+# Only allow certain items to hit the Pinata.
+use-material-whitelist: false
+material-whitelist:
+- STICK
+- CARROT_ON_A_STICK
+
+# Change how offline voting works here.
+offline-voting:
+   
+   # Enable offline voting?
+   enabled: true
+
+   # If offline voting is enabled what should we do with offline votes?
+   # Should we still send the player-vote commands when the player comes online?
+   queue-commands: true
+   # Should we increase the certain counters?
+   increase-pinata-vote: false
+   increase-player-vote: true
+
+# Played at the players location each time when they vote (Good feedback when tabbed)
+# Will only play once on login for offline voting so it isn't ear destroying and laggy
+vote-effects:
+
+   # NONE to disable
+   # NAME:AMOUNT;XSPREAD;YSPREAD:ZSPREAD:SPEED
+   particle: VILLAGER_HAPPY:50:0.50:0.90:0.50:0.05
+   
+   # NONE to disable
+   # SOUND:VOLUME:PITCH
+   sound: ENTITY_PLAYER_LEVELUP:1:1.25
+   
+# Enable/Disable the /vote command - Requires restart.
+# Set the output messages below in the message section
+vote-command: false
+
+# In-game messages.
+# Messages are yellow by default.
+#
+# 1.16+ you can use hex colors by doing <#HEX> such
+# as "<#eb0578>Hello" will turn out to be a hot pink "Hello"
+#
+# Leave empty for no message!
+language:
+
+    no-permission: '&cYou don''t have enough permissions.'
+    spawn: '&eA pinata just spawned!'
+    die: '&eThe pinata was destroyed!'
+    
+    pinata:
+    
+        teleport: '&eCharlie has teleported !!!'
+        # Use <rainbow> to make it flashy!
+        name: '&7» <rainbow>&lCharlie the Pinata! &7«'
+        hits-left: '&c&l%hit% hit%s% left!'
+    
+    money-pool:
+    
+        check: '&3 1MB Voting »&eThe pinata pool is currently &6$%current% &e/ &6$%needed%'
+        not-enough: '&3 1MB Voting »&cYou don''t have enough money: you need $%more% more.'
+        put: '&3 1MB Voting »&eYou successfully put &6$%money%&e in the pool.'
+        cooldown:
+            pool: '&3 1MB Voting »&eThe pinata pool is &bregenerating&e, please wait &6%left%&e seconds!'
+            player: '&3 1MB Voting »&eThis command is on cooldown, please wait &6%left%&e seconds!'
+        invalid:
+            invalid: '&3 1MB Voting »&c%arg% is not a valid number.'
+            min-max: '&3 1MB Voting »&cMake sure you specify an amount between %min% and %max%.'
+
+    # The message for the reminder message send every x seconds
+    vote-reminder:
+    - "&2Hey &2&l%player%"
+    - "&aYou haven't voted recently! You can do &a&l/vote &aand get cool rewards for helping the server you play on!"
+    
+    # The message for when someone does the /vote command
+    vote-command:
+    - "&a&lVoting will you get special rewards!"
+    - " "
+    - "&2Link 1: https://www.example.com/my-server"
+    - "&aLink 2: https://www.example.com/my-server"
+    - "&2Link 3: https://www.example.com/my-server"
+    - "&aLink 4: https://www.example.com/my-server"
+
+# Messages for the placeholders in case you want to change them.
+# Reminder for the placeholder format: %pinataparty_<a_key_below>%
+# e.g %pinataparty_votes_total%
+#
+# This is also just a nice list instead of visting the plugin's page
+# Formatting allowed!
+placeholders:
+
+   # PinataParty placeholders
+   votes_left: "%amount%"
+   votes_needed: "%amount%"
+   current_votes: "%amount%"
+   
+   # PinataPool placeholders
+   money_left: "%amount%"
+   money_needed: "%amount%"
+   current_money: "%amount%"
+   
+   # Player placeholders
+   votes_total: "%amount%"
+   last_vote_time: "%time%"
+   next_vote_time: "%time%"
+   # Follows https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+   last_vote_time_formatted: "MM:dd:yyyy HH:mm:ss"
+   next_vote_time_formatted: "MM:dd:yyyy HH:mm:ss"
+   next_vote_time_countdown:
+      
+      # Only allows HH mm and ss
+      # When the player has voted and is now showing a countdown to the next time when they can (24 hours from last vote)
+      cooldown: "HH:mm:ss"
+      # When the player can vote or hasn't voted before
+      can-vote: "&a&lVote for rewards! /Vote"
+   
+
+# When enabled, the pinata will summon every X votes.
+# Supports Votifier. Set votes-needed to 0 to disable.
+auto-summon:
+
+    # Votes needed for the pinata to be summoned
+    votes-needed: 25
+    
+    # The locations for the pinata to spawn, random.
+    # Set at the custom-locations section of the config!
+    spawn-locations:
+    - spawn
+
+# Location used by /pinataparty spawn <location>
+# as well as by the auto summon feature.
+# You can add as many locations as you wish.
+custom-locations:
+    spawn:
+        world: general
+        x: 6413
+        y: 70
+        z: 10282
+
+# [Integration possibilities] Commands sent when ...
+commands:
+
+    # ... the pinata spawns
+    spawn: {}
+    
+    # ... the pinata is hit by a player
+    hit:
+        '1':
+            chance: 6
+            command:
+            - 'cmi kit dancewinner %player%'
+        '2':
+            chance: 6
+            command:
+            - 'cmi kit dancewinner %player%'
+            
+    # ... the pinata finally dies
+    die:
+        '1':
+            chance: 100
+            # When enabled, the command is only ran once.
+            console: true
+            command:
+            - 'cmi give %player% gold_ingot 16'
+            - 'cmi broadcast !&b&3 1MB Voting »&b Charlie was taken down omg!!'
+            - 'lc respawnall'
+        '2':
+            chance: 75
+            command:
+            - 'cmi give %player% diamond 12'
+            - 'cmi give %player% iron_ingot 16'
+        '3':
+            chance: 75
+            command:
+            - 'cmi give %player% emerald 4'
+        '4':
+            chance: 75
+            command:
+            - 'cmi give %player% golden_apple 1'
+            - 'cmi give %player% gold_ore 1'
+            
+    # ... a player votes (votifier)
+    player-vote:
+        '1':
+            chance: 0
+            command:
+            - 'say %player% has voted for the server!'
+            - 'cmi give %player% diamond 1'
+
+# Pinata characteristics.
+pinata:
+
+    # Makes <rainbow> in the Pinata's name use hex colors
+    # and makes it completely smooth was changing colors.
+    # Only works on 1.16+
+    smooth-rainbow: true
+
+    # Number of hits before the pinata explodes.
+    health: 5
+    # If true it will get the above health and add it self for each player online
+    # e.g if there is 4 players online and the above is 20 it'll do 20 + (20 x 4) = 100 total health!
+    multiply-health-per-player-online: true
+    
+    # Change the color of the Llama, vaild types are here BROWN, CREAMY, GRAY and WHITE
+    color: WHITE
+    
+    # Set to false for the Pinata to NOT have its glowing effects
+    glowing: true
+    
+    # Set to false for the Pinata to NOT have its fancy particles
+    particles: true
+    
+    # Set to false for the Pinata to NOT have its carpet
+    carpet: true
+    
+    # Set to false for the Pinata to NOT have its chest
+    chest: false
+    
+    # NONE to disable
+    # SOUND:VOLUME:PITCH
+    hit-sound: BLOCK_SAND_BREAK:1:1
+        
+    # Pinata's speed amplifier
+    # 1 is no difference.
+    speed-amplifier: 1.75
+    
+    # Should the Pinata use a better pathfinding method
+    # where it will actively move around instead of just
+    # standing there and moving once in a while like a 
+    # vanilla llama (Not possible in Spigot)
+    #
+    # !!! ONLY SET THIS TO TRUE IF YOU USE PAPERMC AND USING 1.13+ !!!
+    advanced-pathfinding:
+    
+        # Enabled or not
+        # Speed amplifier will not do anything if this is enabled due to the new speed below
+        enabled: false
+        
+        # Time in ticks to get a new path/location to move to
+        interval: 20
+        
+        # Max range it'll try to find a pathfind location to move to
+        range: 14
+        
+        # Max Y difference it'll do to find a location to move to
+        max-y: 4
+    
+    # Cooldown of when the pinata can be hit again in seconds
+    # If you want the cooldown to be PER player and not global
+    # then set the below setting to true
+    # set to 0 to disable
+    hit-cooldown: 0.85
+    hit-cooldown-per-player: true
+
+# Enable/disable/edit the pinata's abilities here.
+# Abilities make destroying the pinata more challenging!
+pinata-abilities:
+
+    # The pinata teleports a few blocks away.
+    teleport:
+        enabled: true
+        radius: 8
+        chance: 12
+        # 1.12 Sound: ENTITY_ENDERMEN_TELEPORT
+        # NONE to disable
+        # SOUND:VOLUME:PITCH
+        sound: ENTITY_ENDERMAN_TELEPORT:1:1
+        max-y: 6
+        # Keep empty to disable.
+        white-list:
+        - SEA_LANTERN
+        
+    # The pinata knocks nearby players back.
+    knockback:
+        enabled: true
+        chance: 12
+        radius: 6
+        force: 1.35
+        # 1.12 Sound: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD
+        # NONE to disable
+        # SOUND:VOLUME:PITCH
+        sound: ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR:1:1
+        
+    # The pinata will shoot up into the air.
+    shoot-up:
+        enabled: true
+        chance: 8
+        force: 1.5
+        # NONE to disable
+        # SOUND:VOLUME:PITCH
+        sound: ENTITY_ARROW_SHOOT:1:1
+        
+    # The pinata will transform into a baby.
+    baby-transform:
+        enabled: true
+        chance: 8
+        # Time in seconds.
+        length-minimum: 2
+        length-maximum: 8
+        # NONE to disable
+        # SOUND:VOLUME:PITCH
+        transform-in-sound: ENTITY_CHICKEN_EGG:1:1.10
+        transform-out-sound: ENTITY_LLAMA_SWAG:1:0.90
+
+# When enabled, the pinata will summon after players put
+# $X in the pinata money pool using /pinatapool <amount>.
+money-pool:
+
+    # Money needed to auto-summon a pinata.
+    # Set to 0 to disable.
+    # Whole numbers only
+    money-needed: 10000
+    
+    command:
+    
+        # /pinatapool command cooldown
+        cooldown: 240
+        
+        # Min and max values of the money
+        # you can put in the pool.
+        min: 10
+        max: 10000
+    
+    # The cooldown, in seconds, of two
+    # consecutive pinata pool auto summons.
+    cooldown: 600
+    
+    # The locations for the pinata to spawn, random.
+    # Set at the custom-locations section of the config!
+    spawn-locations:
+    - spawn

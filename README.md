@@ -10,15 +10,15 @@ Thank you for checking out this repository. I hope what I learn and share is use
 
 ## Can I contribute?
 
-Sure, I am still learning everything, feel free to show me how. Contribute through code suggestions, improvements, bug fixes, etc. Just please know the end result will be like: "I made this, most of it, and with contributions of others". 
+Sure, I am still learning everything, feel free to show me how. Contribute through code suggestions, improvements, bug fixes, etc. Just please know the result will be like: "I made this, most of it, and with contributions of others". 
 
 ## Support?
 
-If you require support, maybe these scripts aren't for you. But, you're always free to open a new issue and if I know the answer I will share it. Support is not for the 1MB server, but for the resources I share on this repository. 
+If you require support, maybe these scripts aren't for you. But, you're always free to open a new issue and if I know the answer I will share it. Support is not for the 1MB server, but for the resources, I share on this repository. 
 
 ## Server IP (Can I play?)
 
-If you wish to play, please understand we're a family friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
+If you wish to play, please understand we're a family-friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
 `1moreblock.com:25565` (Java Edition: 1.19.2)
 
@@ -29,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 2.3 build 026, September 21st, 2022.
+This is 1MB Github version 2.3 build 027, October 20th, 2022.

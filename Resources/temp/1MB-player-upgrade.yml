@@ -20,17 +20,21 @@ CustomAlias:
   _group:
     Cmds:
     - statement:check1! check:$1!=null! check:$2!=null! ifonline:$1!
+    - if:check1! asConsole! lp user $1 parent set $2
+    - if:check1! asConsole! cmi sound entity_firework_rocket_twinkle -all
     - if:check1! msg! [playerName] {#orient},--{#cerulean}❖ Account Update ❖{#orient}----------------
     - if:check1! msg! [playerName] {#orient}| {#cerulean}»{#kangaroo} Player $1 received
       an upgrade!
     - if:check1! msg! [playerName] {#orient}| {#cerulean}»{#kangaroo} Old group %parseother_{$1}_{luckperms_primary_group_name}%
     - if:check1! msg! [playerName] {#orient}| {#cerulean}»{#kangaroo} New group $2
+    - if:check1! asConsole! cmi ctellraw [playerName] <T>{#orient}| {#cerulean}»{#kangaroo}
+      Click to learn more about ranks</T><H>Click here for more information on ranks.</H><CCI>cmi
+      ctext groups [playerName]</CCI>
     - if:check1! msg! [playerName] {#orient}`----------------------------------\n&r
     - if:check1@! msg! [playerName] Syntax is /$0 <player> <newgroup>
     - if:check1@! check:$1==null! msg! [playerName] - missing username
     - if:check1@! check:$2==null! msg! [playerName] - missing newgroup
-    - if:check1@! ifoffline:$1! msg! [playerName] - please pick online username
+    - if:check1@! msg! [playerName] - please pick online username
     Perm: true
     CustomTabs:
-    - '[playername]'
-    - 1mb_player,1mb_member,1mb_boosted,1mb_builder,1mb_rogue,1mb_donator,1mb_mvp,1mb_epic
+    - '[playername] 1mb__player,1mb__member,1mb__boosted,1mb__builder,1mb__rogue,1mb__donator,1mb__mvp,1mb__epic'

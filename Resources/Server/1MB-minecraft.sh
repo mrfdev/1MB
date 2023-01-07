@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.15, build 053 for Minecraft 1.19.3 (Java 19.0.1, 64bit)
-# @Release: December 07th, 2022
+# @Version: 2.16, build 054 for Minecraft 1.19.3 (Java 19.0.1, 64bit)
+# @Release: January 7th, 2023
 # @Description: Helps us start a Spigot or Paper 1.19.3 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -183,4 +183,4 @@ fi
 _startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
 $_startJVM || _output oops "Failed to start the jvm for some reason."
 
-#EOF Copyright (c) 2011-2022 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-template.sh
-# @Version: 1.0.2, build 004
+# @Version: 1.0.2, build 005
 # @Release: January 7th, 2023
 # @Description: Helps us clone /template to /server
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -55,9 +55,6 @@ rm -rf $_workingDir/server/
 _output debug "Restoring /server/ from /templates/.."
 cp -R $_workingDir/templates/server/ $_workingDir/server/
 
-_output debug "Changing to /server/ dir.."
-cd $_workingDir/server/ || _output oops "Something is wrong, I could not change to this directory."
-
-_output okay "Done. You can start the server with ./1MB-start.sh, it will fork to the background."
+_output okay "Done. You can start the server if you want."
 
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

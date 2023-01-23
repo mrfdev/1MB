@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-template.sh
-# @Version: 1.0.2, build 005
-# @Release: January 7th, 2023
+# @Version: 1.0.2, build 006
+# @Release: January 23rd, 2023
 # @Description: Helps us clone /template to /server
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -51,6 +51,11 @@ tar -cpzf $_workingDir/archive/server-"$now".tar.gz -C $_workingDir server
 
 _output debug "Purging old /server/ dir.."
 rm -rf $_workingDir/server/
+
+_output debug "Attempting to update Paper jar"
+cd "/home/minecraft/templates/server/"
+bash "./1MB-UpdatePaper.sh"
+cd $_workingDir
 
 _output debug "Restoring /server/ from /templates/.."
 cp -R $_workingDir/templates/server/ $_workingDir/server/

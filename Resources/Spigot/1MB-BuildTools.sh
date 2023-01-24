@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.12, build 079
-# @Release: December 07th, 2022
+# @Version: 2.12, build 080
+# @Release: January 24th, 2023
 # @Description: Helps us make a Minecraft Spigot 1.19.3 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.19.3"
 # Which version are we running?
 
 _minJavaVersion=19.0
-# use 19.0 for java 19.0.1 which can be used with Minecraft 1.19.3
+# use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
@@ -57,7 +57,7 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"

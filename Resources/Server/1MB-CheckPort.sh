@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 2.0.1, build 015
+# @Version: 2.0.1, build 016
 # @Release: January 24th, 2023
 # @Description: Spits out if java proc (Minecraft server) is running on (provided) port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -96,7 +96,7 @@ if ! [[ $PORT =~ ^[0-9]+$ ]] ; then
 fi
 
 # Check if port $PORT number is in use
-if lsof -i :$PORT > /dev/null; then
+if lsof -i :"$PORT" > /dev/null; then
     # Check if $PORT number is the process we're looking for (as extra bit of info, also gives proc id)
     if lsof -iTCP -sTCP:LISTEN -n -P |grep "$_proc.*:$PORT"; then
       _output debug "A $_proc process is running on port $PORT"

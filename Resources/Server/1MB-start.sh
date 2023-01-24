@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-<<<<<<< HEAD
-# @Version: 2.13.0, build 050 for Minecraft 1.19.3 (Java 19.0.2, 64bit)
+# @Version: 2.13.1, build 051 for Minecraft 1.19.3 (Java 19.0.2, 64bit)
 # @Release: January 24th, 2023
-=======
-# @Version: 2.14, build 050 for Minecraft 1.19.3 (Java 19.0.1, 64bit)
-# @Release: January 7th, 2023
->>>>>>> origin/master
 # @Description: Helps us start and fork a Minecraft 1.19.3 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -97,8 +92,4 @@ fi
 
 _output debug "Done."
 
-<<<<<<< HEAD
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
-=======
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
->>>>>>> origin/master

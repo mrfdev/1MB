@@ -21,7 +21,7 @@ _minecraftVersion="1.19.3"
 # Which version are we running?
 
 _minJavaVersion=19.0
-# use 19.0 for java 19.0.1 which can be used with Minecraft 1.19.3
+# use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up.
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.

@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 1.2.1, build 013
-# @Release: January 7th, 2023
+# @Version: 2.0.1, build 015
+# @Release: January 24th, 2023
 # @Description: Spits out if java proc (Minecraft server) is running on (provided) port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -28,8 +28,9 @@ _proc="java" # default process to check for
 #
 ###
 
-_check="$_proc" # default for when all checks fail (lets just print all listening procs) 
-_debug=true # default spit out any output?
+_debug=true # Set to false to minimize output.
+
+Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
 
 ### END OF CONFIGURATION
 #
@@ -38,57 +39,77 @@ _debug=true # default spit out any output?
 #
 ###
 
+# Function that we use to handle the output to the screen
 function _output {
     case "$1" in
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
-        echo -e "\\n$B$Y$_prefix$X $_args $R" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix $X $_args $R" >&2; exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        echo -e "\\n$B$Y$_prefix$C $_args $R" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix $C $_args $R" >&2; exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        [[ "$_debug" == true ]] && echo -e "\\n$Y$_prefix$C $_args $R"
+        [[ "$_debug" == true ]] && printf "%b\n" "$Y$_prefix$C $_args $R" >&2
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";
-        echo -e "\\n$_prefix $_args"
+        printf "%b\n" "$Y$_prefix$C $_args $R"
     ;;
     esac
 }
 
-[ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
-Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
+[ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!" # You should only use this script as a regular user
 
-_netfind() {
-    if [ $# -eq 0 ]; then
-        lsof -iTCP -sTCP:LISTEN -n -P || _output debug "Nope, found nothing listening"
-    elif [ $# -eq 1 ]; then
-        lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color "$1" || _output debug "Nope, found nothing listening"
-    else
-        _output oops "Something went wrong."
-    fi
-}
-
-
-# Check if we have _file, if so, if we can find _port and show _proc, otherwise try to list all _proc
-if [[ -f "$_file" ]]; then
-    _checkFile=$(grep "^server-port=" $_file)
-    if [ -z "$_checkFile" ]
-        then
-        _output debug "We found the '$_file' file, but it has no port defined (check the file!) \n Defaulting to checking for all instances of '$_proc' instead:"
-    else
-        _port=$(grep "^server-port=" $_file | awk -F= '{print $2}')
-        _output debug "We found the '$_file' file with a defined port \n lets find the running proc '$_proc' on port '$_port':"
-        _check="$_port"
-    fi
-else
-    _output debug "Could not find the '$_file' file, checking for all instances of '$_proc' instead:"
+# check if the startup parameter --help is provided, and if so, display synopsis
+if [[ $1 == "--help" ]]; then
+    _output "This script checks if the provided port number is in use by a java process"
+    _output "If a port number is not provided, it will default to the one set for _proc,"
+    _output "but if then server.properties is found, it will extract the port number from there."
+    _output okay "Usage: ./1MB-CheckPort.sh [port_number] \\n"
 fi
 
-# And finally do the check
-_netfind "$_check"
+# Check if user provided a port number
+if [ -n "$1" ]; then
+    _port="$1"
+    _output debug "We found user input for port: '$_port', we are going to skip checking for server.properties, and try this port number right away"
+    PORT="$_port"
+else
+    # user did not provide a port number, for now, lets default to the config of _port, but since we're not looking for a user provided port, lets check if server.properties exists and if we can get its defined port number, otherwise fall back to the config's default 
+    # _port="$_port"
+    # check if the server.properties file is in this working directory, and if so, extract the port number from it, then we will use that, instead defaulting to one set at the start.
+    if [ -f "$_file" ]; then
+      PORT=$(grep "server-port" server.properties | cut -d'=' -f2)
+      _output debug "server-port value is $PORT"
+    else
+      _output debug "The file '$_file' not found in current directory, we will assume we need to check for the default server port, which is $_port"
+      PORT="$_port"
+    fi
+fi
+
+# We now know which port number we want to work with, but, is it really a number?
+# check if the provided input is a number
+if ! [[ $PORT =~ ^[0-9]+$ ]] ; then
+   _output oops "Error: Port should be a number."
+fi
+
+# Check if port $PORT number is in use
+if lsof -i :$PORT > /dev/null; then
+    # Check if $PORT number is the process we're looking for (as extra bit of info, also gives proc id)
+    if lsof -iTCP -sTCP:LISTEN -n -P |grep "$_proc.*:$PORT"; then
+      _output debug "A $_proc process is running on port $PORT"
+      # ps aux | grep "$_proc"
+    else
+      _output debug "No $_proc process found running on port $PORT"
+    fi
+    # report back and exit
+    _output oops "Port $PORT seems to be in use, we cannot continue."
+else
+  _output debug "Port $PORT does not seem to be in use, we can start a server"
+fi
+
+_output okay "Done checking for '$_proc/:$PORT.'"
 
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

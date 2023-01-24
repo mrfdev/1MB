@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-template.sh
-# @Version: 1.0.2, build 006
-# @Release: January 23rd, 2023
+# @Version: 1.1.0, build 006
+# @Release: January 24th, 2023
 # @Description: Helps us clone /template to /server
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -12,6 +12,12 @@
 
 _debug=true # Set to false to minimize output.
 _workingDir="/home/minecraft"
+
+# port checking variables
+_file="server.properties" # default server properties file
+_port="25565" # default port
+_proc="java" # default process to check for
+# end port checking variables
 
 Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
 
@@ -36,6 +42,11 @@ function _output {
     esac
 }
 
+# check if the startup parameter --help is provided, and if so, display synopsis
+if [[ $1 == "--help" ]]; then
+    _output okay "Usage: ./1MB-template.sh [port_number] \\n"
+fi
+
 _output debug "Okay, starting script.."
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
@@ -45,6 +56,39 @@ now=$(date +"%m_%d_%Y_%H%M%S")
 
 _output debug "Changing to working dir.."
 cd $_workingDir || _output oops "Something is wrong, I could not change to this directory."
+
+_output debug "Attempting to check if the live /server/ is still running..."
+
+PORT="$_port"
+# check if the provided input is a number
+if ! [[ $PORT =~ ^[0-9]+$ ]] ; then
+   _output oops "Error: Port should be a number."
+fi
+
+# Check if port $PORT number is in use
+if lsof -i :$PORT > /dev/null; then
+    # Check if $PORT number is the process we're looking for (as extra bit of info, also gives proc id)
+    if lsof -iTCP -sTCP:LISTEN -n -P |grep "$_proc.*:$PORT"; then
+      _output debug "A $_proc process is running on port $PORT"
+      # ps aux | grep "$_proc"
+    else
+      _output debug "No $_proc process found running on port $PORT"
+    fi
+    # report back and exit
+    _output oops "Port $PORT seems to be in use, we cannot continue."
+else
+  _output debug "Port $PORT does not seem to be in use, we can start a server"
+fi
+
+_output debug "Done checking for '$_proc/:$PORT.'"
+
+# Check for active tmux sessions
+active_sessions=$(tmux list-sessions)
+if [ -n "$active_sessions" ]; then
+  _output oops "Active tmux sessions:\\n $active_sessions \\n Please 'exit' those first."
+else
+  _output debug "No active tmux sessions, we can continue. It looks like the server was properly shut down."
+fi
 
 _output debug "Creating server-$now.tar.gz, this might take a moment.."
 tar -cpzf $_workingDir/archive/server-"$now".tar.gz -C $_workingDir server

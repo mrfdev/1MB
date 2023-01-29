@@ -1,0 +1,94 @@
+'0':
+  name: Plains
+  # Material (Eg. GRASS_BLOCK) or Base64 Head Texture for Icon in "phases" command. (Optional)
+  # If icon is not defined, then the first block of the phase will be used.
+  # See https://minecraft-heads.com/ for info on Base64 Head Textures
+  icon: GRASS_BLOCK
+  # List of blocks that will generate at these specific block counts.
+  # The numbers are relative to the phase and not the overall player's count.
+  # If you define 0 here, then firstBlock is not required and firstBlock will be replaced with this block.
+  fixedBlocks:
+    0: GRASS_BLOCK
+    1: GRASS_BLOCK
+    2: GRASS_BLOCK
+    3: OAK_LOG
+    4: OAK_LOG
+    5: OAK_LOG
+    50: SPONGE
+  # Hologram Lines to Display
+  # The First (Before Phase 1) Hologram is Located in your Locale.
+  holograms:
+    0: "&aGood Luck!"
+  biome: PLAINS
+  # Commands
+  # A list of commands can be run at the start and end of a phase. Commands are run as the Console
+  # unless the command is prefixed with [SUDO], then the command is run as the player
+  # triggering the commands.
+  # These placeholders in the command string will be replaced with the appropriate value:
+  # [island] - Island name
+  # [owner] - Island owner's name
+  # [player] - The name of the player who broke the block triggering the commands
+  # [phase] - the name of this phase
+  # [blocks] - the number of blocks broken
+  # [level] - your island level (Requires Levels Addon)
+  # [bank-balance] - your island bank balance (Requires Bank Addon)
+  # [eco-balance] - player's economy balance (Requires Vault and an economy plugin)
+  #
+  # Examples:
+  # start-commands:
+  # - 'give [player] WOODEN_AXE 1'
+  # - 'broadcast [player] just started OneBlock!'
+  # end-commands:
+  # - '[SUDO]summon minecraft:wither'
+  #
+  # Requirements
+  # You can stipulate a set of requirements to start the phase:
+  # 
+  # economy-balance - the minimum player's economy balance (Requires Vault and an economy plugin)
+  # bank-balance - the minimum island bank balance (requires Bank Addon)
+  # level - the island level (Requires Levels Addon)
+  # permission - a permission string
+  #
+  # Example:
+  # requirements:
+  #   bank-balance: 10000
+  #   level: 10
+  #   permission: ready.for.battle
+  
+  blocks:
+    PODZOL: 40
+    MYCELIUM: 40
+    BIRCH_LEAVES: 100
+    IRON_ORE: 300
+    CHEST: 200
+    BEE_NEST: 20
+    OAK_LOG: 2000
+    DIRT: 1000
+    ANDESITE: 100
+    INFESTED_STONE: 40
+    DARK_OAK_LOG: 300
+    OAK_LEAVES: 1000
+    BROWN_MUSHROOM_BLOCK: 100
+    DIORITE: 100
+    COAL_ORE: 700
+    GRAVEL: 100
+    DIAMOND_ORE: 30
+    GOLD_ORE: 30
+    GRASS_BLOCK: 2000
+    DARK_OAK_LEAVES: 100
+    BIRCH_LOG: 500
+    COBBLESTONE: 800
+    SAND: 200
+    GRANITE: 400
+    COARSE_DIRT: 100
+    STONE: 800
+    CLAY: 40
+    EMERALD_ORE: 10
+    DIRT_PATH: 100
+  mobs:
+    COW: 150
+    SPIDER: 75
+    SHEEP: 75
+    PIG: 150
+    VILLAGER: 15
+    CHICKEN: 200

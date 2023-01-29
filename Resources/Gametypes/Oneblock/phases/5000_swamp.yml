@@ -18,11 +18,6 @@
     CLAY: 100
     EMERALD_ORE: 5
     LAPIS_ORE: 10
-    MANGROVE_LOG: 4
-    MANGROVE_ROOTS: 3
-    MUDDY_MANGROVE_ROOTS: 3
-    MUD: 5
-    PACKED_MUD: 3
   mobs:
     WITCH: 50
     ZOMBIE: 100
@@ -33,4 +28,5 @@
     VILLAGER: 10
     EVOKER: 2
     CHICKEN: 20
-    FROG: 5
+    TADPOLE: 20
+    FROG: 40

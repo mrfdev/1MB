@@ -1,5 +1,20 @@
+# This is the main configuration file for Bukkit.
+# As you can see, there's actually not that much to configure without any plugins.
+# For a reference for any variable inside this file, check out the Bukkit Wiki at
+# https://www.spigotmc.org/go/bukkit-yml
+#
+# If you need help on this file, feel free to join us on irc or leave a message
+# on the forums asking for advice.
+#
+# IRC: #spigot @ irc.spi.gt
+#    (If this means nothing to you, just go to https://www.spigotmc.org/go/irc )
+# Forums: https://www.spigotmc.org/
+# Bug tracker: https://www.spigotmc.org/go/bugs
+
+
 settings:
-  allow-end: true
+  use-map-color-cache: true
+  allow-end: false
   warn-on-overload: true
   permissions-file: permissions.yml
   update-folder: update
@@ -7,26 +22,25 @@ settings:
   connection-throttle: 4000
   query-plugins: true
   deprecated-verbose: default
-  shutdown-message: Server closed
+  shutdown-message: Maintenance
   minimum-api: none
-  use-map-color-cache: true
 spawn-limits:
-  monsters: 70
-  animals: 10
-  water-animals: 5
-  water-ambient: 20
-  water-underground-creature: 5
   axolotls: 5
-  ambient: 15
+  water-underground-creature: 5
+  monsters: 40
+  animals: 7
+  water-animals: 7
+  water-ambient: 7
+  ambient: 7
 chunk-gc:
-  period-in-ticks: 600
+  period-in-ticks: 500
 ticks-per:
-  animal-spawns: 400
+  axolotl-spawns: 1
+  water-underground-creature-spawns: 1
+  animal-spawns: 500
   monster-spawns: 1
   water-spawns: 1
   water-ambient-spawns: 1
-  water-underground-creature-spawns: 1
-  axolotl-spawns: 1
   ambient-spawns: 1
   autosave: 6000
 aliases: now-in-commands.yml

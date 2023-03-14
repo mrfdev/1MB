@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.0.1, build 016
-# @Release: January 23rd, 2023
-# @Description: Helps us get a Minecraft Paper 1.19.3 server .jar
+# @Version: 3.0.2, build 017
+# @Release: March 14rd, 2023
+# @Description: Helps us get a Minecraft Paper 1.19.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-UpdatePaper.sh
@@ -116,7 +116,7 @@ latestVersion=$(echo "$responseProject" | jq -r '.versions[-1]')
 _output debug "latest version: $latestVersion"
 
 
-##### version-controller query (1.19.3)
+##### version-controller query (1.19.4)
 
 # lets get the json response from the papermc api for project $latestVersion
 responseBuilds=$(curl -f -L -s -X 'GET' "$_apiURL/$_apiProject/versions/$latestVersion" -H 'accept: application/json')
@@ -162,7 +162,7 @@ else
     _output oops "not sure it says default, halting script"
 fi
 
-# next, we want to specifically get the downloads > application > name (paper-1.19.3-383.jar)
+# next, we want to specifically get the downloads > application > name (paper-1.19.4-383.jar)
 appName=$(echo "$responseLatestBuild" | jq -r '.downloads.application.name')
 _output debug "appName $appName"
 

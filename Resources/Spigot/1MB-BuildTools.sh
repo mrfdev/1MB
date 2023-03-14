@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.12, build 081
-# @Release: January 24th, 2023
-# @Description: Helps us make a Minecraft Spigot 1.19.3 server.
+# @Version: 2.13.0, build 082
+# @Release: March 14th, 2023
+# @Description: Helps us make a Minecraft Spigot 1.19.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.19.3"
+_minecraftVersion="1.19.4"
 # Which version are we running?
 
 _minJavaVersion=19.0
-# use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3
+# use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.

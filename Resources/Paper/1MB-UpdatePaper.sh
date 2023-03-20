@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.0.2, build 017
-# @Release: March 14rd, 2023
+# @Version: 3.0.3, build 018
+# @Release: March 21st, 2023
 # @Description: Helps us get a Minecraft Paper 1.19.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
@@ -51,7 +51,7 @@ function _output {
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        printf "\n%b" "$B$Y$_prefix $C $_args $R" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix $C $_args $R\n" >&2; exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";

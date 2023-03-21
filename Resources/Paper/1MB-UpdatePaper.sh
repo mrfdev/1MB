@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.0.5, build 020
+# @Version: 3.0.6, build 021
 # @Release: March 21st, 2023
 # @Description: Helps us get a Minecraft Paper 1.19.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
 # @Install: chmod +x 1MB-UpdatePaper.sh
-# @Syntax: ./1MB-UpdatePaper.sh (-d /full/path/to/server)
+# @Syntax: ./1MB-UpdatePaper.sh (-h) (-d /full/path/to/server)
 # @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
@@ -73,23 +73,20 @@ function _output {
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!" # You should only use this script as a regular user
 
-# check if jq is installed, if not forcefully halt the script
-(command -v jq >/dev/null) && _output "Found 'jq', which is great ..." || _output oops "Oops, 'jq' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install jq, Ubuntu: apt install jq \\n"
-(command -v curl >/dev/null) && _output "Found 'curl', which is great ..." || _output oops "Oops, 'curl' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install curl, Ubuntu: apt install curl \\n"
-
 # parse command line options
-while getopts ":d:" opt; do
+while getopts ":d:h-:" opt; do
   case ${opt} in
     d )
       _saveDir=$OPTARG
       ;;
+    h )
+      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
+      ;;
     \? )
-      _output oops "Invalid option: -$OPTARG, try -h" 1>&2
-      exit 1
+      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
       ;;
     : )
-      _output oops "Option -$OPTARG requires /full/path/to/store/jars/in" 1>&2
-      exit 1
+      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
       ;;
   esac
 done
@@ -98,6 +95,10 @@ done
 if [ ! -d "$_saveDir" ]; then
   mkdir -p "$_saveDir"
 fi
+
+# check if jq is installed, if not forcefully halt the script
+(command -v jq >/dev/null) && _output "Found 'jq', which is great ..." || _output oops "Oops, 'jq' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install jq, Ubuntu: apt install jq \\n"
+(command -v curl >/dev/null) && _output "Found 'curl', which is great ..." || _output oops "Oops, 'curl' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install curl, Ubuntu: apt install curl \\n"
 
 # CURL params explained
 # -f : This option tells curl to fail silently if the HTTP status code returned by the server is >= 400. This means that if the request returns a status code indicating an error (such as 404 Not Found), curl will simply return an error code and not print any output.
@@ -214,7 +215,6 @@ _output okay "Done."
 
 # TODO
 # only download new jar if the latest version matches our cache, and latest build matches our cache
-# Consider adding a --help option that will print usage information, examples and command-line options available.
 # this also allows us to default to project paper, but lets ppl use .sh <projectname> as paramter
 # the script has a few todo items that aren't at the end, review those as well.
 # allow changing channel default to something else like experimental

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.0.3, build 018
+# @Version: 3.0.4, build 019
 # @Release: March 21st, 2023
 # @Description: Helps us get a Minecraft Paper 1.19.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -33,7 +33,7 @@ _apiURL="https://api.papermc.io/v2/projects"
 
 _debug=false # Set to false to minimize output.
 
-Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
+Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
 ### END OF CONFIGURATION
 #
@@ -47,11 +47,11 @@ function _output {
     case "$1" in
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
-        printf "\n%b" "$B$Y$_prefix $X $_args $R" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix$X $_args $R" >&2; exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        printf "\n%b" "$B$Y$_prefix $C $_args $R\n" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix$PB $_args $R\n" >&2; exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
@@ -59,7 +59,7 @@ function _output {
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";
-        printf "%b\n" "$Y$_prefix$C $_args $R"
+        printf "%b\n" "$Y$_prefix$PB $_args $R"
     ;;
     esac
 }

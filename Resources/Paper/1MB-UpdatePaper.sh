@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.0.4, build 019
+# @Version: 3.0.5, build 020
 # @Release: March 21st, 2023
 # @Description: Helps us get a Minecraft Paper 1.19.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: floris#0233 on https://discord.gg/floris
-# @Install: chmod a+x 1MB-UpdatePaper.sh
-# @Syntax: ./1MB-UpdatePaper.sh
+# @Install: chmod +x 1MB-UpdatePaper.sh
+# @Syntax: ./1MB-UpdatePaper.sh (-d /full/path/to/server)
 # @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
@@ -16,6 +16,13 @@
 # Generally only if you actually have to. Check Wiki for details.
 #
 ###
+
+# Save the Paper .jar to a default directory
+# Default is "." for saving it to current
+# Example 1 "./server"
+# Example 2 "/full/path/to/server" 
+# Startup param -d will override this
+_saveDir="."
 
 ##### projects-controller query
 
@@ -31,7 +38,7 @@ _apiURL="https://api.papermc.io/v2/projects"
 #
 ###
 
-_debug=false # Set to false to minimize output.
+_debug=true # Set to false to minimize output.
 
 Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
@@ -47,7 +54,7 @@ function _output {
     case "$1" in
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
-        printf "\n%b" "$B$Y$_prefix$X $_args $R" >&2; exit 1
+        printf "\n%b" "$B$Y$_prefix$X $_args $R\n" >&2; exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
@@ -69,13 +76,35 @@ function _output {
 # check if jq is installed, if not forcefully halt the script
 (command -v jq >/dev/null) && _output "Found 'jq', which is great ..." || _output oops "Oops, 'jq' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install jq, Ubuntu: apt install jq \\n"
 (command -v curl >/dev/null) && _output "Found 'curl', which is great ..." || _output oops "Oops, 'curl' seems to not be installed. This is required. Try installing either. \\n -> macOS: brew install curl, Ubuntu: apt install curl \\n"
+
+# parse command line options
+while getopts ":d:" opt; do
+  case ${opt} in
+    d )
+      _saveDir=$OPTARG
+      ;;
+    \? )
+      _output oops "Invalid option: -$OPTARG, try -h" 1>&2
+      exit 1
+      ;;
+    : )
+      _output oops "Option -$OPTARG requires /full/path/to/store/jars/in" 1>&2
+      exit 1
+      ;;
+  esac
+done
+
+# create directory if it doesn't exist
+if [ ! -d "$_saveDir" ]; then
+  mkdir -p "$_saveDir"
+fi
+
 # CURL params explained
 # -f : This option tells curl to fail silently if the HTTP status code returned by the server is >= 400. This means that if the request returns a status code indicating an error (such as 404 Not Found), curl will simply return an error code and not print any output.
 # -L : This option tells curl to follow any redirects that the server sends in the response. If the server returns a redirect status code (such as 301 Moved Permanently) and the Location header, curl will automatically make a new request to the URL specified in the Location header.
 # -s : This option tells curl to run in "silent" mode, which means that it will not print any progress information or error messages to the console.
 # -X 'GET' : This option tells curl to use the GET method for the request. This is the default method, so you could also leave this option out.
 # -H 'accept: application/json' : This option sets the value of the Accept header in the request to "application/json". This tells the server that the client is expecting a JSON response.
-
 
 # lets get the json response from the papermc api
 response=$(curl -f -L -s -X 'GET' "$_apiURL" -H 'accept: application/json')
@@ -171,12 +200,14 @@ _output debug "appName $appName"
 # lets get the jar finally
 ## TODO : if we have old jar, check if we have old back update, rm it, then rename latest jar to new backup jar, before storing downloaded jar
 _output debug "Downloading new .jar...."
-curl -f -L -s -X 'GET' -o "$_apiProject-$latestVersion.jar" "$_apiURL/$_apiProject/versions/$latestVersion/builds/$latestBuild/downloads/$appName" -H 'accept: application/java-archive'
+curl -f -L -s -X 'GET' -o "$_saveDir/$_apiProject-$latestVersion.jar" "$_apiURL/$_apiProject/versions/$latestVersion/builds/$latestBuild/downloads/$appName" -H 'accept: application/java-archive'
 
 # check the exit status of the curl command
 if [ $? -ne 0 ]; then
   _output oops "Error: Failed to get response from the API"
 fi
+
+_output debug "Saved to '$_saveDir/$_apiProject-$latestVersion.jar'"
 
 # We are at the end of the script, we're done.
 _output okay "Done."
@@ -186,3 +217,4 @@ _output okay "Done."
 # Consider adding a --help option that will print usage information, examples and command-line options available.
 # this also allows us to default to project paper, but lets ppl use .sh <projectname> as paramter
 # the script has a few todo items that aren't at the end, review those as well.
+# allow changing channel default to something else like experimental

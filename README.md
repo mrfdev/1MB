@@ -20,7 +20,7 @@ If you require support, maybe these scripts aren't for you. But, you're always f
 
 If you wish to play, please understand we're a family-friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Java Edition: 1.19.3)
+`1moreblock.com:25565` (Java Edition: 1.19.4)
 
 ## Information (Useful links)
 

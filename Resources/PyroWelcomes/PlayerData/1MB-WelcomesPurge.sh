@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-WelcomesPurge.sh
-# @Version: 1.0.0, build 001 for PyroWelcomes v2.5.0
-# @Release: April 15th, 2022
+# @Version: 1.0.1, build 002 for PyroWelcomes v2.5.0
+# @Release: June 7th, 2023
 # @Description: Helps us identify old files to purge for players with 0 points.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/floris
+# @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-WelcomesPurge.sh
 # @Syntax: ./1MB-WelcomesPurge.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -79,4 +79,4 @@ done
 
 _output okay "...Done!"
 
-#EOF Copyright (c) 2011-2022 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

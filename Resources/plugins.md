@@ -1,6 +1,8 @@
-# 1MB Plugins, 1.16.3
+# 1MB Plugins, 1.20
 
-**There isn't a week where someone asks me which version of what I am running on my Minecraft servers. And while I cannot share everything, here's what I don't mind sharing.  Please note that some plugins have an alternative download, assume this source is preferred. And please note that certain plugins are not free for download.**
+I frequently receive inquiries about the versions of Minecraft running on my servers. While I cannot disclose everything, here's some information that I'm willing to share. Please be aware that certain plugins may have alternative download options, but the provided source is generally recommended. Additionally, please note that specific plugins may not be available for free download.
+
+This list was made in 1.16, and is now grossly outdated in 1.20.
 
 - - -
 

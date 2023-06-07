@@ -1,26 +1,28 @@
 # Pre-generation of Worlds on Minecraft
 
-This page is a suggestion on managing your Minecraft worlds through chunk pre-generation (pregen) to help your server performance and give your players an improved gaming experience.
+## Efficient Minecraft World Management
 
-Every server (type) is different, what works for me might not work for you. The goal here is to realise your options, learn from it, and to apply it to your personal situation. 
+Welcome to this page, where we provide suggestions for managing your Minecraft worlds through chunk pre-generation (pregen). Our aim is to help improve server performance and enhance the gaming experience for your players.
 
-## Introduction to chunk pre-generation
+Please keep in mind that every server type is unique, and what works for me may not necessarily work for you. The primary goal here is to explore your options, gain knowledge from the suggestions, and apply them according to your specific situation.
 
-To pre-generate a world, or more specifically a chunk within your world map region file, is to take away the load 'now' so it doesn't have to do these calculations 'later'. 
+## An Introduction to Chunk Pre-Generation
 
-Normally when a player joined the server and starts exploring they will potentially load chunks that have never been visited before. As that happens it has to generate it (based on the world seed etc) and load it and present it to the player, who can then see it and interact with it. 
+Chunk pre-generation involves generating specific chunks within your world map's region files in advance, alleviating the computational load at the moment and avoiding the need for calculations later.
 
-Doing the pre-generation of that chunk ahead of time means we can skip that step and save stress on the server, remove the 'wait time' for the player. 
+Typically, when a player joins the server and begins exploring, they may encounter chunks that have never been visited before. In such cases, the server needs to generate and load those chunks based on the world seed, presenting them to the player for interaction.
 
-And while this might be just a tiny bit of server stress and a tiny bit of wait time that we're saving, with a multiplayer server it's realistic that more than one player is active, is moving, some are teleporting, or randomly teleporting, switching worlds, etc. It all adds up, and if that normally would cause the TPS to drop for your server, pre-generating a world could potentially help fix that as it takes the edge off.
+By pre-generating these chunks ahead of time, we can bypass this step, reducing stress on the server and eliminating the "wait time" for the player. Although the savings in server stress and wait time may seem small individually, in a multiplayer environment with multiple active players, constant movement, teleportation, world switching, and more, these factors accumulate. This cumulative impact can potentially lead to a drop in TPS (Ticks Per Second) on your server. 
+
+Pre-generating the world can help alleviate this strain, providing a smoother experience for players.
 
 ### Questions I always get
 
-Q: Can I pregen on 1.8 or only on 1.16 worlds?
+Q: Can I pregen on 1.8 or only on 1.20 worlds?
 A: There are plugins for almost every version.
 
 Q: But pregen drops the tps of the server!!
-A: Sometimes, this depends on your hosting solution. This is server-management, don't run it live if it impacts your server too much.
+A: Sometimes, this depends on your hosting solution and server-engine. This is server-management, don't run it live if it impacts your server too much. Chunky has proven to run well on Paper.
 
 Q: Do I need to have a big server to pregen?
 A: Not really, but yes, I do recommend having 4GB or more available, and you can offsite pregenerate most of the time (local system for example)
@@ -50,13 +52,13 @@ Q: Any tricks to speed things up?
 A: Yes, see further down this document, but the short answer is: cluster your tasks.
 
 Q: Do I still need to --forceUpgrade and everything?
-A: Well, I am sure people will say no, but my personal experience is that I have the Least amount of issues when I --forceUpgrade between bigger version updates, before running Chunky.
+A: Well, I am sure people will say no, but my personal experience is that I have the _least_ amount of issues when I --forceUpgrade between bigger version updates, before running Chunky. After the release of 1.19.x this isn't really needed anymore in my opinion. 
 
-Q: Okay, I have a 5k world pregenned, now 1.17 comes out, NOW WHAT
-A: Well, that's something you have to think about BEFORE doing any pregen, rather than realise after the fact. See further down this document 'World expansions'.
+Q: Okay, I have a 5k world pregenned, now 1.21 comes out, NOW WHAT
+A: Well, that's something you have to think about BEFORE doing any pregen, rather than realise after the fact. See further down this document 'World expansions'. You will have to think it through properly how you want to run your server.
 
 Q: What if I already have started pregen and want to stop it?
-A: I believe both worldborder and chunky support pause and/or stop/cancel task. 
+A: I believe both WorldBorder and Chunky support pause and/or stop/cancel task. 
 
 Q: What if I already have a pregen world and need to do it again?
 A: If you started with say 500x500 and want to make it 1000x1000, you can start pregen again. The plugins will check if the chunk has already been generated and finish really quickly on it. If it took an hour first, then that same amount of chunks will now take a few minutes maybe fifteen. But not another hour (just an example).
@@ -66,11 +68,11 @@ A: You can ask for server and plugin support on SpigotMC.org in the appropriate 
 
 ## Minecraft version Upgrades
 
-Personally I don't run --forceUpgrade going from 1.16.2 to 1.16.3, unless there's a world-generation tweak/bugfix or something world generation related.
+Personally I don't run --forceUpgrade going from 1.19.3 to 1.19.4, unless there's a world-generation tweak/bugfix or something world generation related.
 
-Personally I do run --forceUPgrade going from for example 1.12 to 1.13, or 1.13 to 1.15, or 1.15 to 1.16.5
+Personally I do run --forceUPgrade going from for example 1.12 to 1.13, or 1.13 to 1.15, or 1.17 to 1.19
 
-I recommend to run --forceUpgrade before running a world pre-generation. This way existing chunks are converted by Mojang's server engine to the version you're upgrading to. Before generating new chunks for it, which will then be made for that version. It feels like this would be common sense. 
+I recommend to run --forceUpgrade before running a world pre-generation. This way existing chunks are converted by Mojang's server engine to the version you're upgrading to. Before generating new chunks for it, which will then be made for that version. It feels like this would be common sense. You can also run --eraseCache alongside --forceUpgrade, to rebuild the light system, which can really help performance in some situations as well. 
 
 See the topic below this one as to how I recommend dealing with upgrading/expanding existing worlds.
 
@@ -156,7 +158,7 @@ Use Chunky, and if you can't use Chunky, use WorldBorder plugin. I've tried othe
 
 **Chunky:**
 - github (source code): https://github.com/pop4959/Chunky
-- download (1.13, 1.14, 1.15 and 1.16): https://www.spigotmc.org/resources/chunky.81534/
+- download (1.13, to 1.20): https://www.spigotmc.org/resources/chunky.81534/
 
 `Chunky commands I use PER world and from console:`
 ```
@@ -169,4 +171,4 @@ chunky start - Start a new chunk generation task
 
 ### Github document version
 
-This is the initial draft, created May 10th, 2021, version 1.0.2, by Floris Fiedeldij Dop - https://www.1moreblock.com/
+This is the second draft, updated June 7th, 2023, version 1.1.0 build 003, by Floris Fiedeldij Dop - https://www.1moreblock.com/

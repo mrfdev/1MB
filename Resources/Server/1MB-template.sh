@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-template.sh
-# @Version: 1.1.0, build 006
-# @Release: January 24th, 2023
+# @Version: 1.1.1, build 007
+# @Release: June 7th, 2023
 # @Description: Helps us clone /template to /server
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/floris
+# @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-template.sh
 # @Syntax: ./1MB-template.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/

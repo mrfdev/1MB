@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.15.1, build 055 for Minecraft 1.19.4 (Java 19.0.2, 64bit)
-# @Release: March 14th, 2023
-# @Description: Helps us start a Spigot or Paper 1.19.4 server.
+# @Version: 2.16.0, build 056 for Minecraft 1.20 (Java 20.0.1, 64bit)
+# @Release: June 7th, 2023
+# @Description: Helps us start a Spigot or Paper 1.20 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/floris
+# @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
 # @Syntax: ./1MB-minecraft.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -17,12 +17,13 @@
 #
 ###
 
-_minecraftVersion="1.19.4"
+_minecraftVersion="1.20"
 # Which version are we running?
 
 _minJavaVersion=19.0
+# use 20.0 for java 20.0.1 which can be used with Minecraft 1.19.x and 1.20.x
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
-# use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up.
+# use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
 # use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
@@ -34,7 +35,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.19.4 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.20 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -53,9 +54,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.19.4.jar 
-# "spigot" assumes to look for spigot-1.19.4.jar
-# "paper" assumes to look for paper-1.19.4.jar
+# "" assumes auto detection for <engine>-1.20.jar 
+# "spigot" assumes to look for spigot-1.20.jar
+# "paper" assumes to look for paper-1.20.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -66,7 +67,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.19.4 server-gui
+# leave "" if you want the 1.20 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION
@@ -79,7 +80,8 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"

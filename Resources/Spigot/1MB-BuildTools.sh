@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.13.0, build 083
-# @Release: March 14th, 2023
-# @Description: Helps us make a Minecraft Spigot 1.19.4 server.
+# @Version: 2.14.0, build 084
+# @Release: June 7th, 2023
+# @Description: Helps us make a Minecraft Spigot 1.20 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/floris
+# @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -17,10 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.19.4"
+_minecraftVersion="1.20"
 # Which version are we running?
 
 _minJavaVersion=19.0
+# use 20.0 for java 20.0.1 which can be used with Minecraft 1.19.x and 1.20.x
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
@@ -50,13 +51,14 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to spigot-1.19.4.jar
+# 1MB-start.sh defaults to spigot-1.20.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
@@ -174,7 +176,7 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.19.4)
+# line 1 : Minecraft version (example: 1.20)
 # line 2 : Spigot nightly build version (example: 3564)
 # line 3 : BuildTools build version (example: 148)
 # line 4 : Shell script last-run state (example: true|false)
@@ -182,7 +184,7 @@ function cache {
 #
 # At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.19.4,
+# The 'default' values are for Spigot 1.20,
 # but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
@@ -393,10 +395,10 @@ _output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_curr
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
-# We want builds for 1.19.4, so the cached version and the current version have to both be 1.19.4
+# We want builds for 1.20, so the cached version and the current version have to both be 1.20
 # PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
 if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
-    # success, 1.19.4 == 1.19.4
+    # success, 1.20 == 1.20
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
@@ -424,7 +426,7 @@ else
     sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
-# Ok, we know there's a new build out for Spigot for Minecraft 1.19.4,
+# Ok, we know there's a new build out for Spigot for Minecraft 1.20,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
@@ -449,7 +451,7 @@ else
 fi
 
 # Update: What happened?
-# If the script didn't quit here, that means we have a new spigot build for 1.19.4 of minecraft,
+# If the script didn't quit here, that means we have a new spigot build for 1.20 of minecraft,
 # and we know if we can upgrade spigot with the buildtools we have, or if we need to get a new jar.
 
 # do we just update spigot?

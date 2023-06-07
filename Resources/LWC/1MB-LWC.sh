@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-LWC.sh
-# @Version: 1.2, build 008
-# @Release: October 15th, 2021
-# @Description: Shell script for Modern LWC 2.2.8 for Minecraft 1.17.1, help convert SQLite player names to UUID using MSA API
+# @Version: 1.2.1, build 009
+# @Release: June 7th, 2023
+# @Description: Shell script for Modern LWC 2.2.8 for Minecraft 1.20, help convert SQLite player names to UUID using MSA API
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/floris
+# @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-LWC.sh
 # @Syntax: ./1MB-LWC.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
@@ -91,4 +91,4 @@ done
 
 echo " ---- 1MB-lwc.sh script ended. ($LWC updated, log file: $LOG)"
 
-#EOF Copyright (c) 2011-2021 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

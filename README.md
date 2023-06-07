@@ -4,23 +4,23 @@ Things for the 1MoreBlock.com Minecraft survival server
 
 ## What is this about?
 
-This repository is mainly for internal use. Some public scripts I don't mind sharing will end up here. But they might not work for you. They might still be in development, and progress is limited to "if it stops working for me, I will update it".
+This GitHub repository primarily serves internal purposes. However, you may find some publicly accessible scripts that I'm willing to share. Please note that these scripts may not be suitable for your specific needs as they could be still under development. My commitment to maintaining them is based on a personal approach: "If it stops working for me, I will update it."
 
-Thank you for checking out this repository. I hope what I learn and share is useful to you.
+Thank you for taking the time to explore this repository. My goal is to provide valuable knowledge and share useful resources that can benefit you in your endeavors.
 
 ## Can I contribute?
 
-Sure, I am still learning everything, feel free to show me how. Contribute through code suggestions, improvements, bug fixes, etc. Just please know the result will be like: "I made this, most of it, and with contributions of others". 
+Absolutely! As I continue to learn, I welcome your contributions to this repository. You can contribute by suggesting code improvements, providing bug fixes, or making any other valuable suggestions. Please keep in mind that any contributions will be acknowledged as a collaborative effort, resulting in a shared outcome: "I made this, with significant contributions from others."
 
 ## Support?
 
-If you require support, maybe these scripts aren't for you. But, you're always free to open a new issue and if I know the answer I will share it. Support is not for the 1MB server, but for the resources, I share on this repository. 
+While these scripts may not be intended for comprehensive support, I encourage you to open a new issue if you have any questions. If I have the knowledge to assist, I will gladly share it. Please note that support pertains to the resources shared within this repository, rather than the 1MB server.
 
 ## Server IP (Can I play?)
 
 If you wish to play, please understand we're a family-friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Java Edition: 1.19.4)
+`1moreblock.com:25565` (Java Edition: 1.20)
 
 ## Information (Useful links)
 
@@ -29,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 2.4 build 030, April 25th, 2023.
+This is 1MB Github version 2.5 build 031, June 7th, 2023.

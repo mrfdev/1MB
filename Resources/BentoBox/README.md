@@ -30,4 +30,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.0.1, (initial draft), build 001.
+Version 0.0.3, (updated the draft), build 004.

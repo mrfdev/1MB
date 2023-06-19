@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.4.2, build 015 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.3, build 016 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -21,8 +21,6 @@
 ## > theme?
 ## > dont run as root?
 ## > prerequisites
-## > +DONE code to process json file
-## > +DONE output
 
 ## Notes ##
 ## > The console command synopsis is: /<gametype>admin challenges complete <uuid> <challenge-id>
@@ -55,31 +53,20 @@ if [ ! -f "$log_file" ]; then
   touch "$log_file"
 fi
 
-
 ### FUNCTIONS AND CODE
 #
 # ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
 #
 ###
 
-## logic? ##
-## > +DONE Get content of the .json file,
-## > -50% Go through each line, finding the unique 'completed challenges'
-## > -50% And every time we find one, get the challenge-id, so we can complete it later.
-## > +DONE There's also a user-id, but the filename discloses that of course.
-## > +DONE Now we know how to make a command, put the result of this into the .log file.
-## > +DONE Unique the .log file content, I guess, so we don't run the same command over and over.
-## > +DONE Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
-## > +DONE And echo to the screen each time we've made progress in the script, so it doesn't look like it's not busy.
-## > +DONE (thought about it, we are doing .log files..) > We can do this without writing to a log file, but I have my reasons why I want a log of which commands we've run for what user. 
-## > Note, we might need to clean up the island names, so they're always the same/unique.
-
+# Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
 echo "Starting script!"
 echo "Gathering content of the '$uuid' json file..."
 
 # Before we can do anything, we should probably get the content of the JSON file for the provided UUID
 json=$(cat $uuid.json)
 
+# And now let them know we're done with that.
 echo "Gathering content: Completed."
 
 # Next, figure out a way that works and I understand how to do, to iterate through the json file, find the unique blocks, and use jq to find what I need and put that in a string for later.

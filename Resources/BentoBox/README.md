@@ -28,6 +28,9 @@ Bug Report / Suggestions
 (v0.4.0)
 <img src="https://i.imgur.com/5zxDDu8.png">
 
+(v0.4.9)
+<img src="https://i.imgur.com/aWSt2Ke.png">
+
 ## Filenames explained
 
 - The .sh file is what you have to run, it's the script.
@@ -40,4 +43,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.4.5, (early beta), build 019.
+Version 0.4.9, (early beta), build 023.

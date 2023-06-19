@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.3.0, build 011 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.3.1, build 012 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -15,6 +15,8 @@
 ## > check if the .log file exists, halt and request to start fresh or append.
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
+## > Make 'mcserver' a config option in case we use a mctest server
+## > Maybe make the script halt way sooner if we can't even find the active server. 
 ## > functions?
 ## > theme?
 ## > dont run as root?
@@ -143,22 +145,26 @@ echo "Removing duplicates: Completed."
 echo "Next, iterating through .log file, sending the commands to the Minecraft server..."
 
 while IFS= read -r line; do
-  # if
-  #   # do magic here, such as send to tmux, if it is running, else report back we cannot find it, and exit the script
-  # fi
-  # Send $line string as keys to tmux, where active session is mcserver, and "press enter". 
-  tmux send-keys -t mcserver "$line" Enter
 
-  # We don't want to flood the server, and maybe we want to run this live, 1s is a potential performance issue, 2s works, 3s is safe.
-  sleep 3
+  # Is there actually a forked Minecraft server running under tmux with session name 'mcserver'? (otherwise halt script)
+  if tmux has-session -t mcserver 2>/dev/null; then
+  
+    # Send $line string as keys to tmux, where active session is mcserver, and "press enter". 
+    tmux send-keys -t mcserver "$line" Enter
+    # We don't want to flood the server, and maybe we want to run this live, 1s is a potential performance issue, 2s works, 3s is safe.
+    sleep 3
+  else
+    # Halt the script, we could not find a server to send commands to.
+    echo "The 'mcserver' session was not found."
+    exit 1
+  fi
 done < "$log_file"
 #        ^--- use created log file to pull the commands, so we know what we are sending to tmux in a second.
-# Report that we're done with sending the queue of commands.
 
+# Report that we're done with sending the queue of commands.
 echo "Sending commands: Completed."
 
-# Report that we're really done with the script now. 
-
+# And finally, report that we're really done with the script now. 
 echo "Script has finished!"
 
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

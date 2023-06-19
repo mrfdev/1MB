@@ -10,15 +10,15 @@
 
 ## Installation
 
-- Get the `1MB-BentoBox-Complete-Challenges-Fix.sh` file, and put it in the directory `~/plugins/BentoBox/database/ChallengesPlayerData`.
-- `chmod a+x 1MB-BentoBox-Complete-Challenges-Fix.sh`
+- Get the `1MB-Challenges-Fix` file, and put it in the directory `~/plugins/BentoBox/database/ChallengesPlayerData`.
+- `chmod a+x 1MB-Challenges-Fix`
 - Make sure your server is running in tmux, with a session name, the default is `mcserver`
 - Edit the .sh script with the player's Minecraft UUID.
-- And run the .sh script with `./1MB-BentoBox-Complete-Challenges-Fix.sh`
+- And run the .sh script with `./1MB-Challenges-Fix`
 
 ## What does it do?
 
-Upon running it, it will go through the player file and find instances of completed challenges, then store those in a .log file, removing any duplicates. When that's done. It will go through the file line by line, with a 3 second delay. Feeding the lines as a bentobox console command to the `mcserver` tmux session, completing the challenges if they don't already have them.
+Upon running it, it will go through the player file and find instances of completed challenges, then store those in a .log file, removing any duplicates. When that's done. It will go through the file line by line, with a 3-second delay. Feeding the lines as a BentoBox console command to the `mcserver` tmux session, completing the challenges if they don't already have them.
 Bug Report / Suggestions
 
 - Feel free to open a ticket, if I can fix it, I will try to, if I can update the script I will try to. And then publish any releases.
@@ -31,7 +31,7 @@ Bug Report / Suggestions
 ## Filenames explained
 
 - The .sh file is what you have to run, it's the script.
-- The .json file is an example player file from bentobox's database (of what the .sh reads and parses)
+- The .json file is an example player file from BentoBox's database (of what the .sh reads and parses)
 - The .log file is an example output file (the result from the script.
 
 ## Author
@@ -40,4 +40,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.4.4, (early beta), build 018.
+Version 0.4.5, (early beta), build 019.

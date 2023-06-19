@@ -28,10 +28,16 @@ Bug Report / Suggestions
 (v0.4.0)
 <img src="https://i.imgur.com/5zxDDu8.png">
 
+## Filenames explained
+
+- The .sh file is what you have to run, it's the script.
+- The .json file is an example player file from bentobox's database (of what the .sh reads and parses)
+- The .log file is an example output file (the result from the script.
+
 ## Author
 
 - Floris, [.gg/floris](https://discord.gg/floris)
 
 ## Version
 
-Version 0.4.1, (working concept), build 014.
+Version 0.4.4, (early beta), build 018.

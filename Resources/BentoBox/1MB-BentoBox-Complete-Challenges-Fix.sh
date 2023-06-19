@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.4.1, build 014 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.2, build 015 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -92,12 +92,11 @@ counter=0
 echo "Going through the file to find our completed challenges..."
 
 while IFS= read -r data; do
-  # we can get the user-id, and the challenge-id (with jq)
-  user_id=$uuid
+  # we can get the challenge-id (with jq)
   challenge_id=$(echo "$data" | jq -r '.data."challenge-id"')
 
   # Check if there is something to do (are these empty?)
-  if [ -n "$challenge_id" ] && [ -n "$user_id" ]; then
+  if [ -n "$challenge_id" ] && [ -n "$uuid" ]; then
 		# increment the $counter if we found something 
 		((counter++))
     # clean up island type first..
@@ -134,7 +133,7 @@ while IFS= read -r data; do
     challenge=$(echo "$challenge_id" | cut -d'_' -f2-)
 
     # Make some sort of $output string (the console command!)
-    _output="$island challenges complete $user_id $challenge"
+    _output="$island challenges complete $uuid $challenge"
 
     # Now that we have some new results in the form of some strings, let's append it to the .log file
 

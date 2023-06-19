@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.4.7, build 021 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.8, build 022 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -12,7 +12,6 @@
 
 ## TODO ##
 ## > We're using jq, check if jq is installed
-## > Make 'mcserver' a config option in case we use a mctest server
 ## > Maybe make the script halt way sooner if we can't even find the active server. 
 ## > functions?
 ## > theme?
@@ -33,6 +32,9 @@
 # Set the Minecraft UUID of the player you're processing here. 
 # The directory this script runs in must have that <uuid>.json file.
 uuid="631e3896-da2a-4077-974b-d047859d76bc"
+
+# tmux "session" name, by default this is mcserver in my 1MB-start.sh script
+tmuxSession="mcserver"
 
 ### INTERNAL CONFIGURATION
 #
@@ -191,15 +193,15 @@ echo "Next, iterating through .log file, sending the commands to the Minecraft s
 while IFS= read -r line; do
 
   # Is there actually a forked Minecraft server running under tmux with session name 'mcserver'? (otherwise halt script)
-  if tmux has-session -t mcserver 2>/dev/null; then
+  if tmux has-session -t $tmuxSession 2>/dev/null; then
   
     # Send $line string as keys to tmux, where active session is mcserver, and "press enter". 
-    tmux send-keys -t mcserver "$line" Enter
+    tmux send-keys -t $tmuxSession "$line" Enter
     # We don't want to flood the server, and maybe we want to run this live, 1s is a potential performance issue, 2s works, 3s is safe.
     sleep 3
   else
     # Halt the script, we could not find a server to send commands to.
-    echo "The 'mcserver' session was not found."
+    echo "The '$tmuxSession' session was not found."
     exit 1
   fi
 done < "$log_file"

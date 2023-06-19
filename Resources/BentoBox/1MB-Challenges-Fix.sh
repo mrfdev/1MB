@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.4.9, build 023 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.5.0, build 024 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -11,7 +11,6 @@
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ## TODO ##
-## > We're using jq, check if jq is installed
 ## > functions?
 ## > theme?
 ## > dont run as root?
@@ -44,6 +43,16 @@ tmuxSession="mcserver"
 
 # Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
 echo "Starting script!"
+
+# Check if jq is installed, if not forcefully halt the script
+if ! command -v jq >/dev/null; then
+  echo "Oops, 'jq' seems to not be installed. This is required, so I am halting this script."
+  echo " -> macOS: brew install jq"
+  echo " -> Ubuntu: apt install jq"
+  exit 1
+else
+  echo "Okay, I found 'jq', which is great."
+fi
 
 # Check if there is even an active tmux session for mcserver running, otherwise this script is useless.
 if tmux has-session -t $tmuxSession 2>/dev/null; then

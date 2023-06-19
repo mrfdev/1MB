@@ -8,6 +8,11 @@
 - Using any gametype addon, with the add-on: Challenges, version 1.2.0.
 - I've made this for a personal edge-case situation, don't use this if you don't know what you're doing of course.
 
+## Prerequisites
+
+- You must have an active server running, forked to the background with tmux, or you will have to edit the script to fit your personal situation.
+- I am using jq, this might not be installed by default. If it fails to find it, it will give you a hint how to get it.
+
 ## Installation
 
 - Get the `1MB-Challenges-Fix` file, and put it in the directory `~/plugins/BentoBox/database/ChallengesPlayerData`.
@@ -24,7 +29,7 @@ Bug Report / Suggestions
 - Feel free to open a ticket, if I can fix it, I will try to, if I can update the script I will try to. And then publish any releases.
 - You're free to clone, make changes, and offer it back with a pull request on Github here, so I can review it and potentially merge it in.
 
-## Screenshot
+## Screenshots
 (v0.4.0)
 <img src="https://i.imgur.com/5zxDDu8.png">
 
@@ -43,4 +48,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.4.9, (early beta), build 023.
+Version 0.5.0, (public beta), build 024.

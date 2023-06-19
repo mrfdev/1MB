@@ -10,7 +10,7 @@
 
 ## Installation
 
-- Get the `1MB-BentoBox-Complete-Challenges-Fix.sh` file, and put it in the directory `/plugins/BentoBox/database/ChallengesPlayerData`.
+- Get the `1MB-BentoBox-Complete-Challenges-Fix.sh` file, and put it in the directory `~/plugins/BentoBox/database/ChallengesPlayerData`.
 - `chmod a+x 1MB-BentoBox-Complete-Challenges-Fix.sh`
 - Make sure your server is running in tmux, with a session name, the default is `mcserver`
 - Edit the .sh script with the player's Minecraft UUID.
@@ -30,4 +30,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.1.0, (prototyping/concept), build 006.
+Version 0.1.0, (prototyping/concept), build 007.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.1.0, build 006 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.1.0, build 007 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -14,7 +14,6 @@
 ## > take script param for uuid, so we don't have to edit the script (.sh <uuid>)
 ## > check if the .log file exists, halt and request to start fresh or append.
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
-## > update README.md with more clear installation instructions.
 ## > We're using jq, check if jq is installed
 
 ## Notes ##

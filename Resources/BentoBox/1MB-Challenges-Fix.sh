@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.5.0, build 024 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.5.1, build 025 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -13,8 +13,6 @@
 ## TODO ##
 ## > functions?
 ## > theme?
-## > dont run as root?
-## > prerequisites
 
 ## Notes ##
 ## > The console command synopsis is: /<gametype>admin challenges complete <uuid> <challenge-id>
@@ -32,6 +30,7 @@
 uuid="631e3896-da2a-4077-974b-d047859d76bc"
 
 # tmux "session" name, by default this is mcserver in my 1MB-start.sh script
+# To get a list of all active tmux sessions, type: tmux list-sessions
 tmuxSession="mcserver"
 
 ### INTERNAL CONFIGURATION
@@ -43,6 +42,10 @@ tmuxSession="mcserver"
 
 # Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
 echo "Starting script!"
+
+# You should only use this script as a regular user, there's no need to run this as a root user.
+[ "$EUID" -eq 0 ] && echo "*!* This script should not be run using sudo, or as the root user!"
+[ "$EUID" -eq 0 ] && exit 1
 
 # Check if jq is installed, if not forcefully halt the script
 if ! command -v jq >/dev/null; then

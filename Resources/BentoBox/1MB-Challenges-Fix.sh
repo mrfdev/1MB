@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.4.5, build 019 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.6, build 020 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod a+x1MB-Challenges-Fix, and move file to `~/plugins/BentoBox/database/ChallengesPlayerData/`
-# @Syntax: .1MB-Challenges-Fix
+# @Install: chmod a+x 1MB-Challenges-Fix, and move file to `~/plugins/BentoBox/database/ChallengesPlayerData/`
+# @Syntax: ./1MB-Challenges-Fix
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ## TODO ##
-## > take script param for uuid, so we don't have to edit the script (.sh <uuid>)
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
 ## > Make 'mcserver' a config option in case we use a mctest server
@@ -42,6 +41,14 @@ uuid="631e3896-da2a-4077-974b-d047859d76bc"
 # leave alone, but can change if really needed.
 #
 ###
+
+# The .sh can be run with UUID as argument.
+# Lets check if it's provided, if not, we will use the default.
+if [[ $# -eq 1 ]]; then
+    uuid="$1"
+else
+    uuid="$uuid"
+fi
 
 # We have the UUID, we can use that to create our unique .log file for the output (handy for potential debugging)
 log_file="$uuid.log"

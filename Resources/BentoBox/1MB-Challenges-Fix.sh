@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.4.8, build 022 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.9, build 023 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -12,7 +12,6 @@
 
 ## TODO ##
 ## > We're using jq, check if jq is installed
-## > Maybe make the script halt way sooner if we can't even find the active server. 
 ## > functions?
 ## > theme?
 ## > dont run as root?
@@ -45,6 +44,15 @@ tmuxSession="mcserver"
 
 # Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
 echo "Starting script!"
+
+# Check if there is even an active tmux session for mcserver running, otherwise this script is useless.
+if tmux has-session -t $tmuxSession 2>/dev/null; then
+    echo "Okay, I found a tmux session called '$tmuxSession'."
+  else
+    echo "Error, found no tmux session called '$tmuxSession', halting script."
+    echo "Please check your settings or installation instructions."
+    exit 1
+fi
 
 # The .sh can be run with UUID as argument.
 # Lets check if it's provided, if not, we will use the default.

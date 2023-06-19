@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.4.3, build 016 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.4, build 017 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -12,7 +12,6 @@
 
 ## TODO ##
 ## > take script param for uuid, so we don't have to edit the script (.sh <uuid>)
-## > + 35%check if the .log file exists, halt and request to start fresh or append.
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
 ## > Make 'mcserver' a config option in case we use a mctest server
@@ -48,9 +47,29 @@ uuid="631e3896-da2a-4077-974b-d047859d76bc"
 log_file="$uuid.log"
 
 # Does the log file even exist? If not, create it.
-# Known issue: If we have nothing to do, we end up with a touched file, no content. 
-if [ ! -f "$log_file" ]; then
+# But if the file exists, halt the script, so we don't accidentally overwrite it.
+
+# Check if the file exists
+if [ -f "$log_file" ]; then
+  # The file seems to exist, ask what to do next
+  echo "The file '$log_file' already exists!"
+  read -p "Press enter to exit, or type fresh to remove the file [fresh/enter]: " option
+  # based on the input, unless it's fresh, we're exiting the script.
+  if [ "$option" == "fresh" ]; then
+    # Remove the file, and creating a new one
+    rm "$log_file"
+    sleep 1
+    echo "File removed, and starting fresh..."
+    touch "$log_file"
+  else
+    # We probably do not wish to remove it, graceful exit.
+    echo "We are keeping it, and exiting the script."
+    exit 1
+  fi
+else
+  # If we cannot find the .log file, we can go ahead and create it.
   touch "$log_file"
+  echo "Created a new file '$log_file'."
 fi
 
 ### FUNCTIONS AND CODE
@@ -75,7 +94,6 @@ echo "Gathering content: Completed."
 counter=0
 
 # And we need the whileloop to go through the data.
-
 echo "Going through the file to find our completed challenges..."
 
 while IFS= read -r data; do

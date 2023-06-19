@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.2.1, build 010 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.3.0, build 011 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -15,6 +15,12 @@
 ## > check if the .log file exists, halt and request to start fresh or append.
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
+## > functions?
+## > theme?
+## > dont run as root?
+## > prerequisites
+## > code to process json file
+## > output
 
 ## Notes ##
 ## > The console command synopsis is: /<gametype>admin challenges complete <uuid> <challenge-id>
@@ -40,6 +46,13 @@ uuid="631e3896-da2a-4077-974b-d047859d76bc"
 
 # We have the UUID, we can use that to create our unique .log file for the output (handy for potential debugging)
 log_file="$uuid.log"
+
+# Does the log file even exist? If not, create it.
+# Known issue: If we have nothing to do, we end up with a touched file, no content. 
+if [ ! -f "$log_file" ]; then
+  touch "$log_file"
+fi
+
 
 ### FUNCTIONS AND CODE
 #
@@ -108,20 +121,16 @@ while IFS= read -r data; do
 
   fi
 done < <(echo "$json" | jq -c '.history[] | select(.type == "COMPLETE")')
-#            ^--- use js to pull from the history parent block, only the instances that have a value of COMPLETE for the key called type
+#        ^--- use js to pull from the history parent block, only the instances that have a value of COMPLETE for the key called type
 
 # Report back and exit the script, if we found nothing, and therefore have nothing to do
-
-## if conditional here, something like if $counter equals 0, echo & exit
 if [ "$counter" -eq 0 ]; then
   echo "No instances found. We can end the script now."
   exit 1
 fi
 
 # If we can continue, report back that we're done checking, and that we're on our way to the next step.
-
 echo "Going through the file: Completed."
-
 echo "Next, we are going (to sort) through our results and remove duplicates..."
 
 # Use `sort` on the newly created .log file, to remove any duplicates.
@@ -134,12 +143,16 @@ echo "Removing duplicates: Completed."
 echo "Next, iterating through .log file, sending the commands to the Minecraft server..."
 
 while IFS= read -r line; do
-  if
-    # do magic here, such as send to tmux, if it is running, else report back we cannot find it, and exit the script
-  fi
-  # now we can use that magic as a result?? <- prob not
-done
+  # if
+  #   # do magic here, such as send to tmux, if it is running, else report back we cannot find it, and exit the script
+  # fi
+  # Send $line string as keys to tmux, where active session is mcserver, and "press enter". 
+  tmux send-keys -t mcserver "$line" Enter
 
+  # We don't want to flood the server, and maybe we want to run this live, 1s is a potential performance issue, 2s works, 3s is safe.
+  sleep 3
+done < "$log_file"
+#        ^--- use created log file to pull the commands, so we know what we are sending to tmux in a second.
 # Report that we're done with sending the queue of commands.
 
 echo "Sending commands: Completed."
@@ -147,12 +160,5 @@ echo "Sending commands: Completed."
 # Report that we're really done with the script now. 
 
 echo "Script has finished!"
-
-# functions?
-# theme?
-# dont run as root?
-# prerequisites
-# code to process json file
-# output
 
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

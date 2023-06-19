@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.4.6, build 020 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.7, build 021 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -11,7 +11,6 @@
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ## TODO ##
-## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
 ## > Make 'mcserver' a config option in case we use a mctest server
 ## > Maybe make the script halt way sooner if we can't even find the active server. 
@@ -42,6 +41,9 @@ uuid="631e3896-da2a-4077-974b-d047859d76bc"
 #
 ###
 
+# Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
+echo "Starting script!"
+
 # The .sh can be run with UUID as argument.
 # Lets check if it's provided, if not, we will use the default.
 if [[ $# -eq 1 ]]; then
@@ -49,6 +51,22 @@ if [[ $# -eq 1 ]]; then
 else
     uuid="$uuid"
 fi
+
+# We need to make sure the UUID .json file that we want to use actually exists, otherwise halt the script.
+
+# Lets first figure out the working directory
+script_dir=$(dirname "$(realpath "$0")")
+
+# And then use that to check if the .json file is inside the same dir as this .sh script.
+if [ -e "$script_dir/$uuid.json" ]; then
+    echo "Great, I found '$uuid.json' in this same directory."
+else
+    # failed to find it, graceful exit of the script.
+    echo "Error, '$uuid.json' does not exist, double check that you're using a Minecraft UUID (and that the $uuid.json file exists)."
+    exit 1
+fi
+
+# Now that we've checked for a uuid, checked for the .json file, let's check the .log file next.
 
 # We have the UUID, we can use that to create our unique .log file for the output (handy for potential debugging)
 log_file="$uuid.log"
@@ -85,8 +103,7 @@ fi
 #
 ###
 
-# Print out to the screen that we're starting the script now, and that we're getting the data from the <uuid>.json file.
-echo "Starting script!"
+# Print out to the screen that we're getting the data from the <uuid>.json file.
 echo "Gathering content of the '$uuid' json file..."
 
 # Before we can do anything, we should probably get the content of the JSON file for the provided UUID
@@ -111,11 +128,8 @@ while IFS= read -r data; do
   if [ -n "$challenge_id" ] && [ -n "$uuid" ]; then
 		# increment the $counter if we found something 
 		((counter++))
-    # clean up island type first..
-    # The challenge-id looks like this "BSkyBlock_Challenge",
-    #    we need bskyblock to be lowercase, then clean it up to just skyblock, 
-    #    and then we pull the challenge in a bit out of the result too.
 
+    # The challenge-id looks like this "BSkyBlock_Challenge",
     # Cut out the part that discloses what island this challenge is for, (from the left to _)
     # and lowercase it, becuause I see we have both BSkyBlock and bskyblock, we want 'skyblock'
     island=$(echo "$challenge_id" | cut -d'_' -f1 | tr '[:upper:]' '[:lower:]')

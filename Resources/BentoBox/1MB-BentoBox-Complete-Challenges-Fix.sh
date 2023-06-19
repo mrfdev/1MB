@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.2.0, build 009 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.2.1, build 010 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -51,7 +51,7 @@ log_file="$uuid.log"
 ## > +DONE Get content of the .json file,
 ## > -50% Go through each line, finding the unique 'completed challenges'
 ## > -50% And every time we find one, get the challenge-id, so we can complete it later.
-## > There's also a user-id, but the filename discloses that of course.
+## > +DONE There's also a user-id, but the filename discloses that of course.
 ## > +DONE Now we know how to make a command, put the result of this into the .log file.
 ## > +DONE Unique the .log file content, I guess, so we don't run the same command over and over.
 ## > Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
@@ -78,18 +78,29 @@ echo "Going through the file to find our completed challenges..."
 
 while IFS= read -r data; do
   # we can get the user-id, and the challenge-id (with jq)
-  user_id=$(echo "$data" | jq -r '.data."user-id"')
   challenge_id=$(echo "$data" | jq -r '.data."challenge-id"')
-  if
-    # do magic here
+  user_id=$uuid
+
+  # Check if there is something to do (are these empty?)
+  if [ -n "$challenge_id" ] && [ -n "$user_id" ]; then
 		# increment the $counter if we found something 
 		((counter++))
     # clean up island type first..
-    # make string for island to use
-    # make string for challenge to use
+    # The challenge-id looks like this "BSkyBlock_Challenge",
+    #    we need bskyblock to be lowercase, then clean it up to just skyblock, 
+    #    and then we pull the challenge in a bit out of the result too.
+
+    # Cut out the part that discloses what island this challenge is for, (from the left to _)
+    # and lowercase it, becuause I see we have both BSkyBlock and bskyblock, we want 'skyblock'
+    island=$(echo "$challenge_id" | cut -d'_' -f1 | tr '[:upper:]' '[:lower:]')
+
+    ## if elseif or case switch here for each of the 5 types that i use.
+
+    # Cut out the part of the result that discloses the challenge id, so we can use it in the command. (from the right to _)
+    challenge=$(echo "$challenge_id" | cut -d'_' -f2-)
 
     # Make some sort of $output string (the console command!)
-    _output="ISLAND<admin> challenges complete user-id challenge-id"
+    _output="ISLAND<admin> challenges complete $user_id CLEAN_challenge-id"
 
     # Now that we have some new results in the form of some strings, let's append it to the .log file
 

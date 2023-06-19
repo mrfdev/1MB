@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.3.1, build 012 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.4.1, build 014 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -12,7 +12,7 @@
 
 ## TODO ##
 ## > take script param for uuid, so we don't have to edit the script (.sh <uuid>)
-## > check if the .log file exists, halt and request to start fresh or append.
+## > + 35%check if the .log file exists, halt and request to start fresh or append.
 ## > check if the <uuid>.json file is in the same dir as the .sh script.
 ## > We're using jq, check if jq is installed
 ## > Make 'mcserver' a config option in case we use a mctest server
@@ -21,8 +21,8 @@
 ## > theme?
 ## > dont run as root?
 ## > prerequisites
-## > code to process json file
-## > output
+## > +DONE code to process json file
+## > +DONE output
 
 ## Notes ##
 ## > The console command synopsis is: /<gametype>admin challenges complete <uuid> <challenge-id>
@@ -69,9 +69,9 @@ fi
 ## > +DONE There's also a user-id, but the filename discloses that of course.
 ## > +DONE Now we know how to make a command, put the result of this into the .log file.
 ## > +DONE Unique the .log file content, I guess, so we don't run the same command over and over.
-## > Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
+## > +DONE Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
 ## > +DONE And echo to the screen each time we've made progress in the script, so it doesn't look like it's not busy.
-## > Note, we can do this without writing to a log file, but I have my reasons why I want a log of which commands we've run for what user. 
+## > +DONE (thought about it, we are doing .log files..) > We can do this without writing to a log file, but I have my reasons why I want a log of which commands we've run for what user. 
 ## > Note, we might need to clean up the island names, so they're always the same/unique.
 
 echo "Starting script!"
@@ -93,8 +93,8 @@ echo "Going through the file to find our completed challenges..."
 
 while IFS= read -r data; do
   # we can get the user-id, and the challenge-id (with jq)
-  challenge_id=$(echo "$data" | jq -r '.data."challenge-id"')
   user_id=$uuid
+  challenge_id=$(echo "$data" | jq -r '.data."challenge-id"')
 
   # Check if there is something to do (are these empty?)
   if [ -n "$challenge_id" ] && [ -n "$user_id" ]; then
@@ -109,13 +109,32 @@ while IFS= read -r data; do
     # and lowercase it, becuause I see we have both BSkyBlock and bskyblock, we want 'skyblock'
     island=$(echo "$challenge_id" | cut -d'_' -f1 | tr '[:upper:]' '[:lower:]')
 
-    ## if elseif or case switch here for each of the 5 types that i use.
+    # Note: AOneBlock becomes aoneblock, and then we set island to oneblock, so we end up with /oneblockadmin
+
+    # Update the island (now that we have a lowercase version)
+    case $island in
+      "aoneblock")
+        island="oneblockadmin"
+        ;;
+      "bskyblock")
+        island="skyblockadmin"
+        ;;
+      "acidisland")
+        island="acidadmin"
+        ;;
+      "skygrid")
+        island="skygridadmin"
+        ;;
+      "caveblock")
+        island="caveadmin"
+        ;;
+    esac
 
     # Cut out the part of the result that discloses the challenge id, so we can use it in the command. (from the right to _)
     challenge=$(echo "$challenge_id" | cut -d'_' -f2-)
 
     # Make some sort of $output string (the console command!)
-    _output="ISLAND<admin> challenges complete $user_id CLEAN_challenge-id"
+    _output="$island challenges complete $user_id $challenge"
 
     # Now that we have some new results in the form of some strings, let's append it to the .log file
 

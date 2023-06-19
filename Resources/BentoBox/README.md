@@ -24,10 +24,14 @@ Bug Report / Suggestions
 - Feel free to open a ticket, if I can fix it, I will try to, if I can update the script I will try to. And then publish any releases.
 - You're free to clone, make changes, and offer it back with a pull request on Github here, so I can review it and potentially merge it in.
 
+## Screenshot
+(v0.4.0)
+<img src="https://i.imgur.com/5zxDDu8.png">
+
 ## Author
 
-- Floris, discord.gg/floris
+- Floris, [.gg/floris](https://discord.gg/floris)
 
 ## Version
 
-Version 0.3.0, (proof of concept), build 011.
+Version 0.4.1, (working concept), build 014.

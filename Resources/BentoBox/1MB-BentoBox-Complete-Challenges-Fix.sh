@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.1.1, build 008 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.2.0, build 009 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -49,10 +49,10 @@ log_file="$uuid.log"
 
 ## logic? ##
 ## > +DONE Get content of the .json file,
-## > Go through each line, finding the unique 'completed challenges'
-## > And every time we find one, get the challenge-id, so we can complete it later.
+## > -50% Go through each line, finding the unique 'completed challenges'
+## > -50% And every time we find one, get the challenge-id, so we can complete it later.
 ## > There's also a user-id, but the filename discloses that of course.
-## > Now we know how to make a command, put the result of this into the .log file.
+## > +DONE Now we know how to make a command, put the result of this into the .log file.
 ## > +DONE Unique the .log file content, I guess, so we don't run the same command over and over.
 ## > Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
 ## > +DONE And echo to the screen each time we've made progress in the script, so it doesn't look like it's not busy.
@@ -77,17 +77,35 @@ counter=0
 echo "Going through the file to find our completed challenges..."
 
 while IFS= read -r data; do
+  # we can get the user-id, and the challenge-id (with jq)
+  user_id=$(echo "$data" | jq -r '.data."user-id"')
+  challenge_id=$(echo "$data" | jq -r '.data."challenge-id"')
   if
     # do magic here
 		# increment the $counter if we found something 
 		((counter++))
+    # clean up island type first..
+    # make string for island to use
+    # make string for challenge to use
+
+    # Make some sort of $output string (the console command!)
+    _output="ISLAND<admin> challenges complete user-id challenge-id"
+
+    # Now that we have some new results in the form of some strings, let's append it to the .log file
+
+    echo "$_output" >> "$log_file"
+
   fi
-  # now we can use that magic as a result
-done
+done < <(echo "$json" | jq -c '.history[] | select(.type == "COMPLETE")')
+#            ^--- use js to pull from the history parent block, only the instances that have a value of COMPLETE for the key called type
 
 # Report back and exit the script, if we found nothing, and therefore have nothing to do
 
 ## if conditional here, something like if $counter equals 0, echo & exit
+if [ "$counter" -eq 0 ]; then
+  echo "No instances found. We can end the script now."
+  exit 1
+fi
 
 # If we can continue, report back that we're done checking, and that we're on our way to the next step.
 

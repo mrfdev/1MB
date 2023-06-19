@@ -30,4 +30,4 @@ Bug Report / Suggestions
 
 ## Version
 
-Version 0.1.0, (prototyping/concept), build 007.
+Version 0.2.0, (prototyping/concept), build 009.

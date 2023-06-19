@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BentoBox-Complete-Challenges-Fix.sh
-# @Version: 0.1.0, build 007 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Version: 0.1.1, build 008 for BentoBox+Challenges, on Minecraft 1.20.x
 # @Release: June 19th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -53,7 +53,7 @@ log_file="$uuid.log"
 ## > And every time we find one, get the challenge-id, so we can complete it later.
 ## > There's also a user-id, but the filename discloses that of course.
 ## > Now we know how to make a command, put the result of this into the .log file.
-## > Unique the .log file content, I guess, so we don't run the same command over and over.
+## > +DONE Unique the .log file content, I guess, so we don't run the same command over and over.
 ## > Now take each line of the .log file and send it over to the tmux session (with a few seconds delay)
 ## > +DONE And echo to the screen each time we've made progress in the script, so it doesn't look like it's not busy.
 ## > Note, we can do this without writing to a log file, but I have my reasons why I want a log of which commands we've run for what user. 
@@ -95,7 +95,8 @@ echo "Going through the file: Completed."
 
 echo "Next, we are going (to sort) through our results and remove duplicates..."
 
-## sort -u log file to log file
+# Use `sort` on the newly created .log file, to remove any duplicates.
+sort -u -o "$log_file" "$log_file"
 
 echo "Removing duplicates: Completed."
 
@@ -118,17 +119,11 @@ echo "Sending commands: Completed."
 
 echo "Script has finished!"
 
-# 
 # functions?
-
 # theme?
-
 # dont run as root?
-
 # prerequisites
-
 # code to process json file
-
 # output
 
 #EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

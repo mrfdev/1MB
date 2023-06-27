@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.2.0, build 017 for Minecraft 1.20.x /logs/
+# @Version: 0.2.1, build 018 for Minecraft 1.20.x /logs/
 # @Release: June 26th, 2023
 # @Description: Helps me parse /logs/ of Minecraft server scanners that should be firewalled.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -85,12 +85,12 @@ echo "$results_ipv4_list" > "$results_player_ipfile"
 
 ### output
 
-# count up the totals of occurances found in the grep and zgrep files
+# count up the totals of occurrences found in the grep and zgrep files
 results_counting=$(echo "$results_grep" | wc -l)
 results_counting=$((results_counting + $(echo "$results_zgrep" | wc -l)))
 
-# print to screen the amount øf times we found occurances of playername in the log files history
-echo "Occurances found for playername: '$find_playername': $results_counting"
+# print to screen the amount øf times we found occurrences of playername in the log files history
+echo "Occurrences found for playername: '$find_playername': $results_counting"
 
 # print list of sorted ips, handy for manual processing
 echo "Uniques found: (ip addresses)"

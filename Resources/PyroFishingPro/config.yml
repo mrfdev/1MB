@@ -157,7 +157,7 @@ Settings:
     DisableNormalAndCustomCatch: false
     
     #This will disable off-hand fishing.
-    DisableOffHandFishing: false
+    DisableOffHandFishing: true
     
     #This will disable fishing entirely. Both vanilla and custom.
     #You will not be able to catch any fish at all with this.
@@ -168,7 +168,7 @@ Settings:
     #You should not need to enable this unless it has not been fixed by paper yet.
     #Enabling this will kick any players that have a fish catch time of 0 milliseconds.
     #Note: This exploit is NOT related to PyroFishingPro, and appears to be a server-software issue.
-    FishExploitKicker: false
+    FishExploitKicker: true
     
     #This setting will give raw fish caught from fishing a special NBT tag, and make it so
     #raw fish without NBT tags cannot be sold to the /fish shop.

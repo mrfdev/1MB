@@ -7,8 +7,8 @@
 #           \/                       \/            \/     \/        \//_____/                          
 #=======================================================================================================
 #                             Created by: PyroTempus
-#                             Config Version: v4.6.6
-#                             API-Version: 1.14.X - 1.18.X
+#                             Config Version: v4.8.25
+#                             API-Version: 1.14.X - 1.20.X
 #========================================================================================================
 #
 #If you wish to use a language file inside of the /Language folder, replace the messages.yml with your
@@ -22,7 +22,7 @@ Settings:
 
   #General Settings that most server owners should look over when configuring.
   General:
-
+  
     #Allows players to shift click while holding their fishing rod to open the fish menu.
     ShiftClickMenu: true
     #The permission to use the shift-click menu. If empty, it will not use a permission.
@@ -58,11 +58,15 @@ Settings:
       Crabs:
         Enabled: true
         CatchChance: 4
-        Name: '&6&lCrab'
-        Health: 50  
+        Name: '&c&lCrab'
+        Health: 30
+        
+        #This will make crabs spawn at the players feet instead of in the water.
+        SpawnAtFeet: false
         
         #Enabling this will stop the crab from spawning and instead execute these commands.
         #%player% for the player. This also supports all PlaceholderAPI placeholders.
+        #Use %bobber_x/y/z% for the bobber location instead of the players location.
         CatchCommands:
           enabled: false
           commands:
@@ -152,6 +156,30 @@ Settings:
     #Catches a normal fish and a custom one at the same time.
     DisableNormalAndCustomCatch: false
     
+    #This will disable off-hand fishing.
+    DisableOffHandFishing: false
+    
+    #This will disable fishing entirely. Both vanilla and custom.
+    #You will not be able to catch any fish at all with this.
+    #This is only intended for times when major exploits are out.
+    DisableAllFishing: false
+    
+    #This is related to a exploit introduced with Minecraft 1.20.
+    #You should not need to enable this unless it has not been fixed by paper yet.
+    #Enabling this will kick any players that have a fish catch time of 0 milliseconds.
+    #Note: This exploit is NOT related to PyroFishingPro, and appears to be a server-software issue.
+    FishExploitKicker: false
+    
+    #This setting will give raw fish caught from fishing a special NBT tag, and make it so
+    #raw fish without NBT tags cannot be sold to the /fish shop.
+    #These special raw fish cannot be used to craft augments, and may not work with some plugins due to the added NBT.
+    #Suggested to keep as false unless you have a very specific use-case.
+    RawFishNBT: false
+    
+    #This will allow items with NBT to be used in augment crafting.
+    #Note: this will negate ALL nbt tag checks, meaning anything can be used.
+    IgnoreAugmentCraftingNBT: false
+    
     #This will not give the player any money from selling, but will however run a command
     #with the amount of money they would have gotten. E.g. for giving a physical currency
     #or using a currency that isn't supported by Vault.
@@ -161,14 +189,15 @@ Settings:
       #Supports multiple commands
       Commands:
         - 'eco give %player% %money%'
-        - 'msg %player% You got %money%$!'
-
+        - 'msg %player% You got $%money%!'
+        
     #This will limit how much money you can earn in a period of time.    
     MoneyLimit:
       Enabled: false
       Limit: 30000
       #This starts counting from the second they sell a fish. In seconds.
       ResetTime: 86400
+
 
 #========================================================================================================    
 #Everything to do with permissions and menus will be located here.
@@ -203,7 +232,16 @@ Permissions:
   Bait:
     enabled: false
     permission-node: 'pf.bait'
-
+  Codex:
+    enabled: false
+    permission-node: 'pf.codex'
+  Augment:
+    enabled: false
+    permission-node: 'pf.augment'
+  Augments:
+    enabled: false
+    permission-node: 'pf.augments'
+    
   #enabling this will make it so players cannot catch custom fish or crabs.
   CatchingCustomFish: 
     enabled: false
@@ -319,12 +357,22 @@ Augments:
   
     #If looting should affect drop rates. Looting will increase the drop rate, not the number you get up to Looting V.
     Looting: true
-
+    
     DropChances:
       CrabClaw: 20
       CrabScales: 20
       DolphinTail: 70
       SquidTentacle: 10
+  
+  #Misc settings related to augments.  
+  Settings:
+    
+    #Should adding augments check for the players level?
+    CheckForLevel: false
+    
+    #Should adding augments take entropy away?
+    #Requires 'DisableAugmentCrafting' to be 'true' to work.
+    RemoveEntropyOnApply: false
 
   #Gives more money from selling fish.
   SolarRage:
@@ -576,7 +624,7 @@ Augments:
   #Gives the player more entropy from gutting fish
   CrabBait:
     enabled: true
-    #This is a flat increase to the current crab catch chance.
+    #This isa multiplier based on the base crab catch chance.
     values:
       1: 1.05
       2: 1.1
@@ -807,134 +855,6 @@ GuttingStation:
     Diamond: 500
     Platinum: 1000
   
-#========================================================================================================      
-
-#Everything to do with Fishing Tournaments.
-Tournaments:
-
-  AutoStart:    
-    Enabled: false
-    #The tournaments will start every x time in minutes.
-    AutoStartInterval: 320
-   
-    #What tournament to start. 'Length', 'MostCatch', 'LuckyCatch', 'RandomCatch'
-    EnabledTournaments:
-    - 'Length'
-    - 'MostCatch'
-    - 'LuckyCatch'
-    - 'RandomCatch'
-
-    #Minimum of players required for a tournament to auto-start. 
-    MinimumPlayersToStart: 3
-  
-  #Settings for the tournaments    
-  TournamentSettings:
-    #This will broadcast a message every x seconds saying that the tournament is on going
-   
-    BroadcastTournamentStatus:
-      Enabled: true
-      #How often it will send a message in chat.
-      LoopTime: 240
-      
-    Length:
-      TournamentTime: 10
-    MostFish:
-      TournamentTime: 10 
-    LuckyCatch:
-      TournamentTime: 10 
-    RandomCatch:
-      TournamentTime: 10
-  
-  #These rewards will be given to the first three players in the contest. You can also give
-  #all players who participated in the tournament a reward at the bottom of the reward tab.  
-  #Few notes. Please note that the configuration is same as deliveries. The second number is the chance
-  #that you will recieve that reward. You can add as many as you like.
-  Rewards:
-    FirstPlace:
-      CommandsToExecute:
-        - 'cmi kit fishtournamentfirstplace %player%'
-    SecondPlace:
-      CommandsToExecute:
-        - 'cmi kit fishtournamentsecondplace %player%'
-    ThirdPlace:
-      CommandsToExecute:
-        - 'cmi kit fishtournamentthirdplace %player%'
-    ParticipatingReward:
-      Enabled: true
-      CommandsToExecute:
-        - 'cmi kit fishtournamentparticipated %player%'
-        
-        
-#These are the configurable messages for tournaments
-#The variables will be shown where applicable in each message
-TournamentMessages:
-  Start:
-    #Applicable variables: %time%
-    Length:
-      - '&7&m----------------------------------------------' 
-      - '                      &b&lFishing Tournament!'
-      - ''
-      - '&3Tournament Type: &7Highest Length'
-      - '&3How to Win: &7Fish up the longest fish!'
-      - '&3Tournament Time: &7%time%.'
-      - ''
-      - '&7&m----------------------------------------------' 
-    MostCatch:
-      - '&7&m----------------------------------------------' 
-      - '                      &b&lFishing Tournament!'
-      - ''
-      - '&3Tournament Type: &7Most Catch'
-      - '&3How to Win: &7Catch the most fish!'
-      - '&3Tournament Time: &7%time%.'
-      - ''
-      - '&7&m----------------------------------------------'     
-    LuckyCatch:
-      - '&7&m----------------------------------------------' 
-      - '                      &b&lFishing Tournament!'
-      - ''
-      - '&3Tournament Type: &7Lucky Catch'
-      - '&3How to Win: &7Catch a platinum fish!'
-      - '&3Tournament Time: &7%time%.'
-      - ''
-      - '&7&m----------------------------------------------'   
-    RandomCatch:
-      - '&7&m----------------------------------------------' 
-      - '                      &b&lFishing Tournament!'
-      - ''
-      - '&3Tournament Type: &7Random Catch'
-      - '&3How to Win: &7Catch a(n): %fish%!'
-      - '&3Tournament Time: &7%time%.'
-      - ''
-      - '&7&m----------------------------------------------'          
-  InProgress:
-    - '&7&m----------------------------------------------'  
-    - '              &b&lFishing Tournament Status: %type%'
-    - ''
-    - '&7Time Left: &3%time%&7.'
-    - ''
-    - '&6&l1st Place: &7%1stPlace%'
-    - '&f&l2nd Place: &7%2ndPlace%'
-    - '&3&l3rd Place: &7%3rdPlace%'
-    - ''
-    - '&7To take part. Simply catch a fish!'
-    - '&7Fish to catch: &3%fish%'
-    - '&7You are currently in position &3%pos% &3%value%'
-    - '&7You have not taken part in this tournament! %invalidscore%'
-    - ''
-    - '&7&m----------------------------------------------'  
-  Finish:
-    - '&7&m----------------------------------------------'  
-    - '              &b&lFishing Tournament Winners: %type%'
-    - ''
-    - '&6&l1st Place: &7%1stPlace%'
-    - '&f&l2nd Place: &7%2ndPlace%'
-    - '&3&l3rd Place: &7%3rdPlace%'
-    - ''
-    - '&7&m----------------------------------------------'     
-  Other:
-    NA: '&8N/A'
-    NoWinner: '&8No Winner'  
-  
 #========================================================================================================    
 
 #Everything to do with the fishing skill system /fish skills
@@ -953,10 +873,86 @@ Skills:
 
 #========================================================================================================      
 
+#Everything to do with the totem feature. /fish totem and the placeable one.
+Totems:
+  
+  #Misc settings related to the totems feature.
+  Settings:
+  
+    #This will make it so, when you activate your totem, it will have global range and work across worlds.
+    #Note: Doing this will make the 'Tribal Shout' skill and the 'Range' Upgrade useless.
+    #      It is not recommended to set this to true unless you rely on it for your specific setup.
+    global-range: false
+  
+  #All passives on the totem
+  #Only the first one is commented as it should be pretty self explanatory from there.
+  Passives:
+    
+    #The name of the passive
+    MYTHICAL_WATERS:
+      #If the passive should be enabled or not
+      enabled: true
+      
+      #The level the user can activate the passive
+      unlock_level: 60
+      
+      #The amount of passive slots needed to use this 
+      #Note: changing this will not disable/check totems that have it active.
+      #      this will only take effect when it is re-enabled on a totem.
+      slots_needed: 5
+      
+      #The percentage this skill has. In this case - 20 is 20%.
+      value: 20    
+
+    EXPERIENCED_FISHERMAN:
+      enabled: true
+      unlock_level: 20
+      slots_needed: 1
+      value: 1.5
+      
+    FISH_SCHOOL:
+      enabled: true
+      unlock_level: 40
+      slots_needed: 3
+      value: 35
+        
+    ENTROPY_HORDER:
+      enabled: true
+      unlock_level: 60
+      slots_needed: 6
+      value: 1.25
+      
+    LITTLE_CRITTERS:
+      enabled: true
+      unlock_level: 40
+      slots_needed: 2
+      value: 20
+
+    TREASURE_HUNTER:
+      enabled: true
+      unlock_level: 60
+      slots_needed: 3
+      value: 3
+      
+    STAR_FALL:
+      enabled: false
+      unlock_level: 100
+      slots_needed: 10
+      value: 0
+      
+    RANDOM_DROPS:
+      enabled: true
+      unlock_level: 55
+      slots_needed: 4
+      value: 15
+
+
+#========================================================================================================      
+
 #Deliveries
 
 Deliveries:
-
+  
   #If deliveries should be enabled or not.
   #This does not disable the GUI. This only disables the ability to
   #earn deliveries.
@@ -1007,7 +1003,7 @@ Deliveries:
       - 'fish giveitem entropybooster:1.5 %player% 1, &91x Entropy Booster (1.1x)'
       - 'fish giveitem entropybooster:1.75 %player% 1, &91x Entropy Booster (1.75x)'
       - 'fish giveitem entropybooster:3 %player% 1, &91x Entropy Booster (3x)'
-
+      
   #Names for the deliveries
   Names:
     - 'Ibuki'
@@ -1056,7 +1052,6 @@ Deliveries:
     
 #========================================================================================================
 
-
 CustomModelData:
 
   Augments:
@@ -1074,9 +1069,9 @@ CustomModelData:
       MASTERFISHERMAN: 0
       PERCEPTION: 0
       SAGE: 0
-      TSUNAMI: 0
-
-      
+      TROPHY: 0
+         
+  #These are various items. See in-game with '/fish giveitem' for the material.
   CustomItems:
     Enabled: false
     Items:
@@ -1085,5 +1080,9 @@ CustomModelData:
       DolphinTail: 0
       SquidTentacle: 0
       EntropyCrystal: 0
+      PlatinumLure: 0
+      MythicalLure: 0
+      CrabLure: 0
+      EntropyBooster: 0
     
 #========================================================================================================

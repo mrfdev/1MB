@@ -1,0 +1,157 @@
+PREFIX: '&b1MB Market » &f'
+LANG:
+  CONSOLE: Console
+MSG:
+  ERROR: Error occured, please contact the server owner.
+  INGAMEONLY: This command can be used only in the game.
+  NOACCESS: You don't have access to do this.
+  SHOPSNOTLOADED: Shops aren't loaded yet, please try again later.
+  NOTLOADED: Your data isn't loaded yet, please try again later.
+  WORLDBANNED: Player shops have been disabled in this world.
+  GAMEMODEBANNED: You can't access player shops when in the %gamemode% gamemode.
+  USAGE:
+    PLAYERSHOP: 'Invalid command usage. Correct usage: /playershop [reload]'
+    SUBCOMMAND: 'Invalid command usage. Correct usage: %usage%'
+  PLAYERSHOP:
+    RELOAD:
+      RELOADED: Configuration reloaded!
+    SELL:
+      QUANTITY: quantity
+      PRICE: price
+      VALUEINVALID: Invalid %setting% specified.
+      VALUETOOLOW: Too small %setting% specified. You have to specify at least %value%.
+      VALUETOOHIGH: Too high %setting% specified. You can't specify more than %value%.
+      TOOFEWITEM: You need at least %quantity% x %item%&f to sell it.
+      NOITEM: You must hold an item in your hand to sell it.
+      BANNEDITEM: You can't put up this item for sale.
+      LIMIT: You can't sell more than %limit% items at the same time.
+      UNCLAIMEDLIMIT: Please claim your expired/unclaimed items first.
+      CREATED: You put up %quantity% x %item%&f for sale for %price%.
+      BROADCAST: '%player% put up %quantity% x %item%&f for sale for %price%!'
+    SHOP:
+      NOSHOP: No shop found by that player name.
+  BUY:
+    BOUGHTBY: '%player% bought %quantity% x %item%&f from you for %price%.'
+  SHOPITEM:
+    EXPIRED: Your sale offer (%quantity% x %item%) has expired.
+  SEARCHSHOPS:
+    ENTER: Enter the name of the shop to search. Type "%cancel%" to abort.
+    CANCELLED: You've cancelled the shop search.
+  SEARCHITEMS:
+    ENTER: Enter the name of the item to search. Type "%cancel%" to abort.
+    CANCELLED: You've cancelled the item search.
+  EDITSHOPNAME:
+    ENTER: Enter the new name of the shop. Type "%cancel%" to abort.
+    CANCELLED: You've cancelled the shop name edit.
+  ITEMLOT:
+    CANCELLED: Your %quantity% x %item% sell lot was cancelled by %player%.
+SHOPITEM:
+  SELLER:
+    NONE: none
+  LISTORDER:
+    OLDESTTONEWEST: Oldest -> Newest
+    NEWESTTOOLDEST: Newest -> Oldest
+NOTIFICATION:
+  CONFIRM: '&a&lOK'
+  BUY:
+    CANNOTBUYOWN:
+      TITLE: Couldn't buy item
+      MESSAGE: '&c&lCan''t buy own item'
+      DESC: '&7You can''t buy your own item.'
+    CANNOTAFFORD:
+      TITLE: Couldn't buy item
+      MESSAGE: '&c&lCan''t afford to buy the item.'
+      DESC: '&7You need %price% to buy %quantity% x %item%&7.'
+    FULLINVENTORY:
+      TITLE: Couldn't buy item
+      MESSAGE: '&c&lYour inventory is full'
+      DESC: '&7You don''t have enough free space in your inventory.'
+    BOUGHT:
+      TITLE: Item purchased
+      MESSAGE: '&a&lItem purchased successfully.'
+      DESC: '&7You purchased %quantity% &7x %item%&7 from %owner% &7for %price%.'
+  CANCEL:
+    CANCELLED:
+      TITLE: Item lot cancelled
+      MESSAGE: '&a&lItem lot cancelled successfully.'
+      DESC: '&7You cancelled %owner%''s &7%quantity% x %item% &7item lot.'
+  CLAIM:
+    FULLINVENTORY:
+      TITLE: Couldn't claim item
+      MESSAGE: '&c&lYour inventory is full'
+      DESC: '&7You don''t have enough free space in your inventory.'
+    CLAIMED:
+      TITLE: Item claimed
+      MESSAGE: '&a&lItem claimed successfully.'
+      DESC: '&7You claimed %quantity% &7x %item%&7.'
+  SEARCHSHOPS:
+    NOTFOUND:
+      TITLE: No shops found
+      MESSAGE: '&c&lNo shops found'
+      DESC: |-
+        &7No shops with specified
+        &7name or owner found.
+  SEARCHITEMS:
+    NOTFOUND:
+      TITLE: No items found
+      MESSAGE: '&c&lNo items found'
+      DESC: |-
+        &7No items with specified
+        &7name or owner found.
+  EDITSHOPNAME:
+    BANNEDNAME:
+      TITLE: Couldn't rename the shop
+      MESSAGE: '&c&lCouldn''t rename the shop'
+      DESC: |-
+        &7You can't use this
+        &7shop name.
+    EDITED:
+      TITLE: Shop name changed
+      MESSAGE: '&a&lShop name changed'
+      DESC: |-
+        &7Shop name was changed
+        &7successfully to
+        &7%name%.
+  EXPIRED:
+    TITLE: Item expired
+    MESSAGE: '&c&lItem expired'
+    DESC: |-
+      &7This item is no longer
+      &7available.
+  NOACCESS:
+    TITLE: No access
+    MESSAGE: '&a&lYou don''t have access'
+    DESC: |-
+      &7You don't have access
+      &7to do this.
+TIME:
+  NOW: now
+  LESSTHAN: less than %time%
+  YEARS:
+    SINGULAR: year
+    PLURAL: years
+    SHORT: y
+  MONTHS:
+    SINGULAR: month
+    PLURAL: months
+    SHORT: mo
+  WEEKS:
+    SINGULAR: week
+    PLURAL: weeks
+    SHORT: w
+  DAYS:
+    SINGULAR: day
+    PLURAL: days
+    SHORT: d
+  HOURS:
+    SINGULAR: hour
+    PLURAL: hours
+    SHORT: h
+  MINUTES:
+    SINGULAR: minute
+    PLURAL: minutes
+    SHORT: m
+  SECONDS:
+    SINGULAR: second
+    PLURAL: seconds
+    SHORT: s

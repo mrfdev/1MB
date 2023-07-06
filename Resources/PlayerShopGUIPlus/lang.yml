@@ -1,50 +1,50 @@
-PREFIX: '&b1MB Market » &f'
+PREFIX: '#02a4d3 1#02a0d2M#029cd0B #0197cfM#0193cea#018fccr#018bcbk#0086cae#0082c8t#007ec7 »#9fdd8c '
 LANG:
   CONSOLE: Console
 MSG:
-  ERROR: Error occured, please contact the server owner.
+  ERROR: Error occurred, please contact the server owner.
   INGAMEONLY: This command can be used only in the game.
   NOACCESS: You don't have access to do this.
   SHOPSNOTLOADED: Shops aren't loaded yet, please try again later.
   NOTLOADED: Your data isn't loaded yet, please try again later.
   WORLDBANNED: Player shops have been disabled in this world.
-  GAMEMODEBANNED: You can't access player shops when in the %gamemode% gamemode.
+  GAMEMODEBANNED: "You can't access player shops when in the #d4dfe2%gamemode%#9fdd8c gamemode."
   USAGE:
-    PLAYERSHOP: 'Invalid command usage. Correct usage: /playershop [reload]'
-    SUBCOMMAND: 'Invalid command usage. Correct usage: %usage%'
+    PLAYERSHOP: 'Invalid command usage. Correct usage: #ff681f&l/playershop [reload]#9fdd8c.'
+    SUBCOMMAND: 'Invalid command usage. Correct usage: #ff681f&l%usage%#9fdd8c.'
   PLAYERSHOP:
     RELOAD:
       RELOADED: Configuration reloaded!
     SELL:
       QUANTITY: quantity
       PRICE: price
-      VALUEINVALID: Invalid %setting% specified.
-      VALUETOOLOW: Too small %setting% specified. You have to specify at least %value%.
-      VALUETOOHIGH: Too high %setting% specified. You can't specify more than %value%.
-      TOOFEWITEM: You need at least %quantity% x %item%&f to sell it.
+      VALUEINVALID: 'Invalid #d4dfe2%setting%#9fdd8c specified.'
+      VALUETOOLOW: 'Too small #d4dfe2%setting%#9fdd8c specified. You have to specify at least #d4dfe2%value%#9fdd8c.'
+      VALUETOOHIGH: "Too high #d4dfe2%setting%#9fdd8c specified. You can't specify more than #d4dfe2%value%#9fdd8c."
+      TOOFEWITEM: 'You need at least #d4dfe2%quantity% x %item%#9fdd8c to sell it.'
       NOITEM: You must hold an item in your hand to sell it.
       BANNEDITEM: You can't put up this item for sale.
-      LIMIT: You can't sell more than %limit% items at the same time.
+      LIMIT: "You can't sell more than #d4dfe2%limit%#9fdd8c items at the same time."
       UNCLAIMEDLIMIT: Please claim your expired/unclaimed items first.
-      CREATED: You put up %quantity% x %item%&f for sale for %price%.
-      BROADCAST: '%player% put up %quantity% x %item%&f for sale for %price%!'
+      CREATED: "You put up #d4dfe2%quantity% x %item%#9fdd8c for sale for #d4dfe2%price%#9fdd8c."
+      BROADCAST: '#d4dfe2%player%#9fdd8c put up #d4dfe2%quantity% x %item%#9fdd8c for sale for #d4dfe2%price%#9fdd8c!'
     SHOP:
       NOSHOP: No shop found by that player name.
   BUY:
-    BOUGHTBY: '%player% bought %quantity% x %item%&f from you for %price%.'
+    BOUGHTBY: '#d4dfe2%player%#9fdd8c bought #d4dfe2%quantity% x %item%#9fdd8c from you for #d4dfe2%price%#9fdd8c.'
   SHOPITEM:
-    EXPIRED: Your sale offer (%quantity% x %item%) has expired.
+    EXPIRED: Your sale offer (#d4dfe2%quantity% x %item%#9fdd8c) has expired.
   SEARCHSHOPS:
-    ENTER: Enter the name of the shop to search. Type "%cancel%" to abort.
+    ENTER: Enter the name of the shop to search. Type "#d4dfe2%cancel%#9fdd8c" to abort.
     CANCELLED: You've cancelled the shop search.
   SEARCHITEMS:
-    ENTER: Enter the name of the item to search. Type "%cancel%" to abort.
+    ENTER: Enter the name of the item to search. Type "#d4dfe2%cancel%#9fdd8c" to abort.
     CANCELLED: You've cancelled the item search.
   EDITSHOPNAME:
-    ENTER: Enter the new name of the shop. Type "%cancel%" to abort.
+    ENTER: Enter the new name of the shop. Type "#d4dfe2%cancel%#9fdd8c" to abort.
     CANCELLED: You've cancelled the shop name edit.
   ITEMLOT:
-    CANCELLED: Your %quantity% x %item% sell lot was cancelled by %player%.
+    CANCELLED: "Your #d4dfe2%quantity% x %item%#9fdd8c sell lot was cancelled by #d4dfe2%player%#9fdd8c."
 SHOPITEM:
   SELLER:
     NONE: none
@@ -69,7 +69,7 @@ NOTIFICATION:
     BOUGHT:
       TITLE: Item purchased
       MESSAGE: '&a&lItem purchased successfully.'
-      DESC: '&7You purchased %quantity% &7x %item%&7 from %owner% &7for %price%.'
+      DESC: '&7You purchased &7%quantity% x %item%&7 from %owner% &7for %price%.'
   CANCEL:
     CANCELLED:
       TITLE: Item lot cancelled

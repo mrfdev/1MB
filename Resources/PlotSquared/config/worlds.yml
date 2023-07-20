@@ -36,10 +36,10 @@ worlds:
       enabled: true
     economy:
       prices:
-        merge: 100
-        sell: 100
-        claim: 100
-      use: false
+        merge: 1000
+        sell: 0
+        claim: 5000
+      use: true
     world:
       max_gen_height: 319
       max_height: 320

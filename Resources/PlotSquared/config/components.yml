@@ -1,10 +1,9 @@
-title: '#Now in /lang/messages_%.json, preset.title'
 presets:
 - component: floor
   cost: 0.0
   pattern: '##wool'
-  name: '&6D&ai&cs&ec&bo &2F&3l&do&9o&4r'
+  name: <rainbow:2>Disco Floor</rainbow>
   icon: yellow_wool
   description:
-  - '&6Spice up your plot floor'
+  - <gold>Spice up your plot floor</gold>
   permission: ''

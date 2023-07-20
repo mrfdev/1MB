@@ -5,24 +5,24 @@ worlds:
       size: 96
       height: 62
       biome: minecraft:forest
-      filling: stone:100
-      auto_merge: true
+      sign_material: OAK_WALL_SIGN
+      filling: minecraft:stone
+      auto_merge: false
       bedrock: true
       create_signs: true
-      floor: grass_block:100
-      sign_material: OAK_WALL_SIGN
+      floor: minecraft:grass_block
     wall:
-      filling: stone:100
-      block_claimed: sandstone_slab:100
+      filling: minecraft:stone
+      block_claimed: minecraft:sandstone_slab
       height: 62
-      block: stone_slab:100
+      block: minecraft:stone_slab
       place_top_block: true
     misc_spawn_unowned: false
     road:
-      block: quartz_block:100
+      block: minecraft:quartz_block
+      flags: {}
       height: 62
       width: 7
-      flags: {}
     home:
       nonmembers: side
       default: side
@@ -31,29 +31,27 @@ worlds:
       on_claim: false
       file: 'null'
       schematics: []
+    chat:
+      forced: false
+      enabled: true
     economy:
       prices:
-        merge: 1000
-        sell: 0
-        claim: 5000
-      use: true
-    chat:
-      enabled: false
-      forced: false
-    limits:
-      max-members: 6
+        merge: 100
+        sell: 100
+        claim: 100
+      use: false
     world:
-      max_height: 256
-      gamemode: creative
-      min_height: 1
-      border: false
       max_gen_height: 319
+      max_height: 320
+      gamemode: creative
       min_gen_height: -64
+      min_height: -63
+      border: false
     event:
       spawn:
         egg: false
         breeding: false
-        custom: false
+        custom: true
     natural_mob_spawning: false
     mob_spawner_spawning: false
     flags: {}

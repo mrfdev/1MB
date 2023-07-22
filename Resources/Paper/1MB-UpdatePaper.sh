@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.1.2, build 024
+# @Version: 3.2.0, build 025
 # @Release: July 22nd, 2023
 # @Description: Helps us get a Minecraft Paper 1.20.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -39,6 +39,7 @@ _apiURL="https://api.papermc.io/v2/projects"
 ###
 
 _debug=true # Set to false to minimize output.
+_cacheFile="cachePaper.json" # Name of the temporary cache file (expected to be json format)
 
 Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
@@ -197,6 +198,61 @@ appName=$(echo "$responseLatestBuild" | jq -r '.downloads.application.name')
 _output debug "appName $appName"
 
 ##### download-controller
+
+# Now that we know what is online, lets write it to a cache file if it doesn't exist already, this way we can compare values and only download if there's a newer version for the same build. And otherwise gracefully halt the script.
+
+# Okay, let's check if the _cacheFile exists already
+if [ -f "$_cacheFile" ]; then
+    # Get the current value for key 'version' from _cacheFile (using jq)
+    # currentVersion=$(jq -r '.version' $_cacheFile) (integer error, using below tostring to fix)
+    currentVersion=$(jq -r '.version | tostring' "$_cacheFile")
+
+    # Get the current value for key 'build' from _cacheFile (using jq)
+    currentBuild=$(jq -r '.build' $_cacheFile)
+
+    # And before we check the build, we have to make sure we're still on the same version. 
+    # Compare the current version from _cacheFile against the latestVersion we just found:
+    if [ "$currentVersion" = "$latestVersion" ]; then
+        # Example: We made a 1.20.1 server jar before, we want to only continue if what we found is 1.20.1 as well.
+        _output debug "The 'version' value in $_cacheFile is the same as the found value ($latestVersion). (that is what we want)"
+    elif [ "$currentVersion" \< "$latestVersion" ]; then
+        # Note: Just in case a future version is released, we don't want to accidentally break the server with an unexpected upgrade.
+        # To upgrade anyway, remove the cache .json file and run this script again.
+        _output oops "The 'version' value in $_cacheFile is older than the found value ($latestVersion). (to avoid auto upgrades to newer versions, halting script ~ if you do want to upgrade, delete $_cacheFile and run this script again)"
+    else
+        # We have an unexpected value, halt gracefully and manually review the situation.
+        _output oops "The 'version' value in $_cacheFile is newer than the found value ($latestVersion). (this is weird, did not expect this, halting script - maybe manually check what the latest Minecraft version is."
+    fi
+
+    # And now we can check the build, lets compare the current build from _cacheFile against the latestBuild we just found:
+    if [ "$currentBuild" -eq "$latestBuild" ]; then
+        # If we already have downloaded a build number, we don't have to do it again. Gracefully halt script.
+        _output oops "The 'build' value in $_cacheFile ($currentBuild) is the same as the found value ($latestBuild). (we have no reason to upgrade, halting script - if you desire to re-download anyway, then delete $_cacheFile)"
+    elif [ "$currentBuild" -lt "$latestBuild" ]; then
+        # Example: 1 in cache is older than 2 just found, so we want to upgrade.
+        _output debug "The 'build' value in $_cacheFile ($currentBuild) is older than the found value ($latestBuild). (we want to upgrade, continue)"
+        # Update the new 'build' value in the cache file file
+        jq --arg latestBuild "$latestBuild" '.build = $latestBuild' cachePaper.json > temp.json && mv temp.json cachePaper.json
+        _output debug "cache file '$_cacheFile' key 'build' ($currentBuild) updated to '$latestBuild'."
+    else
+        # We have an unexpected value, halt gracefully and manually review the situation.
+        _output oops "The 'build' value in $_cacheFile ($currentBuild) is newer than the found value ($latestBuild). (this is weird, did not expect this, halting script - maybe manually check what the latest releases are."
+    fi
+
+else
+    # If the JSON cache file has not been found, we can create it for the first time.
+json_content=$(cat << EOF
+{
+  "project": "$_apiProject",
+  "version": "$latestVersion",
+  "build": "$latestBuild",
+  "channel": "$channel"
+}
+EOF
+)
+    echo "$json_content" > $_cacheFile
+    _output debug "The '$_cacheFile' file has been created successfully!"
+fi
 
 # Before we finally get the latest jar, we have to remove the oldest backup, and then backup the current jar. Just in case.
 

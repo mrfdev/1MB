@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.1.1, build 023
-# @Release: June 13th, 2023
+# @Version: 3.1.2, build 024
+# @Release: July 22nd, 2023
 # @Description: Helps us get a Minecraft Paper 1.20.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -198,8 +198,29 @@ _output debug "appName $appName"
 
 ##### download-controller
 
-# lets get the jar finally
-## TODO : if we have old jar, check if we have old back update, rm it, then rename latest jar to new backup jar, before storing downloaded jar
+# Before we finally get the latest jar, we have to remove the oldest backup, and then backup the current jar. Just in case.
+
+# Do we have a backup we have to delete?
+if [ -e "_$_apiProject-$latestVersion.jar" ]; then
+    # Yep, we found it, we can delete it
+    rm "_$_apiProject-$latestVersion.jar"
+    _output debug "Found the oldest backup file '_$_apiProject-$latestVersion.jar', and deleted it."
+else
+    # Nope, we did not find it, nothing to delete
+    _output debug "The file '_$_apiProject-$latestVersion.jar' was not found, nothing to delete."
+fi
+
+# Do we have a current version we should backup?
+if [ -e "$_apiProject-$latestVersion.jar" ]; then
+    # Yep, we found it, we can rename it to back it up
+    mv "$_apiProject-$latestVersion.jar" "_$_apiProject-$latestVersion.jar"
+    _output debug "The file '$_apiProject-$latestVersion.jar' was found, and has been renamed to '_$_apiProject-$latestVersion.jar'"
+else
+    # Nope, we did not find it, nothing to backup
+    _output debug "The file '$_apiProject-$latestVersion.jar' was not found, nothing to backup."
+fi
+
+# Okay, now lets get the jar finally
 _output debug "Downloading new .jar...."
 curl -f -L -s -X 'GET' -o "$_saveDir/$_apiProject-$latestVersion.jar" "$_apiURL/$_apiProject/versions/$latestVersion/builds/$latestBuild/downloads/$appName" -H 'accept: application/java-archive'
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.0, build 025
+# @Version: 3.2.1, build 026
 # @Release: July 22nd, 2023
 # @Description: Helps us get a Minecraft Paper 1.20.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -29,6 +29,7 @@ _saveDir="."
 # Hard set the projects-controller to check for, we're going for paper
 # There's currently no support for other projects.
 _apiProject="paper"
+_apiChannel="default"
 _apiURL="https://api.papermc.io/v2/projects"
 
 ### INTERNAL CONFIGURATION
@@ -74,25 +75,36 @@ function _output {
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!" # You should only use this script as a regular user
 
-# parse command line options
-while getopts ":d:h-:" opt; do
+# parse command line options:
+# Process -d and/or -c params, or use default values
+while getopts ":d:c:h-:" opt; do
   case ${opt} in
     d )
       _saveDir=$OPTARG
       ;;
+    c )
+      case "$OPTARG" in
+        default|experimental)
+          _apiChannel=$OPTARG
+          ;;
+        *)
+          _output oops "Invalid value for -c. Allowed values are 'default' or 'experimental'."
+          ;;
+      esac
+      ;;
     h )
-      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
+      _output oops "Syntax: '$0 -d /full/path/to/store/jars/in -c [default|experimental]'"
       ;;
     \? )
-      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
+      _output oops "Syntax: '$0 -d /full/path/to/store/jars/in -c [default|experimental]'"
       ;;
     : )
-      _output oops "Syntax: '$0 (-d /full/path/to/store/jars/in)'" 1>&2
+      _output oops "Syntax: '$0 -d /full/path/to/store/jars/in -c [default|experimental]'"
       ;;
   esac
 done
 
-# create directory if it doesn't exist
+# And then create directory if it doesn't exist
 if [ ! -d "$_saveDir" ]; then
   mkdir -p "$_saveDir"
 fi
@@ -124,8 +136,7 @@ _output debug "We found these projects: \\n$projects \\n but we want just _apiPr
 if [[ $projects == *"$_apiProject"* ]]; then
     _output debug "$_apiProject is in the list of projects | we can continue"
 else
-    _output debug "$_apiProject is not in the list of projects \\n halting script"
-    exit 1
+    _output oops "$_apiProject is not in the list of projects \\n halting script"
 fi
 
 ##### project-controller query (paper)
@@ -183,14 +194,13 @@ fi
 # and get the raw values of the key channel
 channel=$(echo "$responseLatestBuild" | jq -r '.channel')
 
-_output debug "We found this channel: \\n$channel \\n but we want to make sure it says default"
+_output debug "We found this channel: \\n$channel \\n but we want to make sure it says default (or _apiChannel)"
 
 # we are looking for the default channel, so let us know if it is a valid project
-## TODO : maybe in the future we can get a prompt asking if it's not default, if we still want it, in case there's a 1.21 experimental build we still want
-if [[ $channel == *"default"* ]]; then
-    _output debug "it seems to say default"
+if [[ $channel == *"$_apiChannel"* ]]; then
+    _output debug "it seems to say '$_apiChannel', that's great."
 else
-    _output oops "not sure it says default, halting script"
+    _output oops "It does not seem to say '$_apiChannel' for found channel $channel, halting script"
 fi
 
 # next, we want to specifically get the downloads > application > name (paper-1.20.1-18.jar)
@@ -290,8 +300,4 @@ _output debug "Saved to '$_saveDir/$_apiProject-$latestVersion.jar'"
 # We are at the end of the script, we're done.
 _output okay "Done."
 
-# TODO
-# only download new jar if the latest version matches our cache, and latest build matches our cache
-# this also allows us to default to project paper, but lets ppl use .sh <projectname> as paramter
-# the script has a few todo items that aren't at the end, review those as well.
-# allow changing channel default to something else like experimental
+#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

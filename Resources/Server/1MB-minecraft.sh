@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.16.1, build 057 for Minecraft 1.20.1 (Java 20.0.1, 64bit)
-# @Release: June 13th, 2023
+# @Version: 2.16.2, build 058 for Minecraft 1.20.1 (Java 20.0.2, 64bit)
+# @Release: July 23rd, 2023
 # @Description: Helps us start a Spigot or Paper 1.20.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.20.1"
 # Which version are we running?
 
 _minJavaVersion=20.0
-# use 20.0 for java 20.0.1 which can be used with Minecraft 1.19.x and 1.20.1
+# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
@@ -80,7 +80,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"

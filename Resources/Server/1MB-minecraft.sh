@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.16.2, build 058 for Minecraft 1.20.1 (Java 20.0.2, 64bit)
-# @Release: July 23rd, 2023
+# @Version: 2.16.3, build 059 for Minecraft 1.20.1 (Java 20.0.2, 64bit)
+# @Release: August 28th, 2023
 # @Description: Helps us start a Spigot or Paper 1.20.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -51,6 +51,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # and --add-opens java.desktop/java.awt.color=ALL-UNNAMED
 # --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17.1)
 # -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.2 servers)
+# -Dpaper.useLegacyPluginLoading=true (Temporary fix circular plugin loading issue)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""

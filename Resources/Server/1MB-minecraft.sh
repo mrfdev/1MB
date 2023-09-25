@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.16.3, build 059 for Minecraft 1.20.1 (Java 20.0.2, 64bit)
-# @Release: August 28th, 2023
-# @Description: Helps us start a Spigot or Paper 1.20.1 server.
+# @Version: 2.17.0, build 062 for Minecraft 1.20.2 (Java 21, 64bit)
+# @Release: September 25th, 2023
+# @Description: Helps us start a Spigot or Paper 1.20.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,10 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.20.1"
+_minecraftVersion="1.20.2"
 # Which version are we running?
 
-_minJavaVersion=20.0
+_minJavaVersion="21"
+# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.2
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
@@ -35,7 +36,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.20.1 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.20.2 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -55,9 +56,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 
 # Override auto engine jar detection; only use this if you have issues
 _engine=""
-# "" assumes auto detection for <engine>-1.20.1.jar 
-# "spigot" assumes to look for spigot-1.20.1.jar
-# "paper" assumes to look for paper-1.20.1.jar
+# "" assumes auto detection for <engine>-1.20.2.jar 
+# "spigot" assumes to look for spigot-1.20.2.jar
+# "paper" assumes to look for paper-1.20.2.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -68,7 +69,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.20.1 server-gui
+# leave "" if you want the 1.20.2 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION
@@ -81,6 +82,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
@@ -122,7 +124,33 @@ function _output {
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
 
-function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
+# 'better comparing' fix to replace: function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" -ge "$1"; }
+function version_gt() {
+    local result="$1"
+    local value="$2"
+
+    # When the versions (strings) has fewer components we need to properly split the version strings into arrays
+    IFS='.' read -ra result_parts <<< "$result"
+    IFS='.' read -ra value_parts <<< "$value"
+
+    # So we can then compare each part of the version (using 0 for missing parts).
+    for ((i = 0; i < ${#value_parts[@]}; i++)); do
+        result_part="${result_parts[i]:-0}"
+        value_part="${value_parts[i]}"
+        
+        if [[ "$result_part" -gt "$value_part" ]]; then
+            # true
+            return 0
+        elif [[ "$result_part" -lt "$value_part" ]]; then
+            # false
+            return 1
+        fi
+    done
+
+    # return true when they're equal or have fewer components.
+    return 0
+}
+
 function binExists() { type "$1">/dev/null 2>&1; }
 function binDetails() { 
     _cmd="$_"; _cmd="$_cmd";

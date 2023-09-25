@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.14.3, build 087
-# @Release: September 21st, 2023
+# @Version: 2.15.1, build 088
+# @Release: September 25th, 2023
 # @Description: Helps us make a Minecraft Spigot 1.20.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -20,8 +20,9 @@
 _minecraftVersion="1.20.2"
 # Which version are we running?
 
-_minJavaVersion=20.0
-# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.2
+_minJavaVersion=21
+# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.2
+# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
 # use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
@@ -58,6 +59,7 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
@@ -221,7 +223,33 @@ _cacheBtBuild=$(sed '3q;d' $_cacheFile) #line3
 _cacheShState=$(sed '4q;d' $_cacheFile) #line4
 _cacheShStMsg=$(sed '5q;d' $_cacheFile) #line5
 
-function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" != "$1"; }
+# 'better comparing' fix to replace: function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" -ge "$1"; }
+function version_gt() {
+    local result="$1"
+    local value="$2"
+
+    # When the versions (strings) has fewer components we need to properly split the version strings into arrays
+    IFS='.' read -ra result_parts <<< "$result"
+    IFS='.' read -ra value_parts <<< "$value"
+
+    # So we can then compare each part of the version (using 0 for missing parts).
+    for ((i = 0; i < ${#value_parts[@]}; i++)); do
+        result_part="${result_parts[i]:-0}"
+        value_part="${value_parts[i]}"
+        
+        if [[ "$result_part" -gt "$value_part" ]]; then
+            # true
+            return 0
+        elif [[ "$result_part" -lt "$value_part" ]]; then
+            # false
+            return 1
+        fi
+    done
+
+    # return true when they're equal or have fewer components.
+    return 0
+}
+
 function binExists() { type "$1">/dev/null 2>&1; }
 function binDetails() { 
     _cmd="$_"; _cmd="$_cmd";

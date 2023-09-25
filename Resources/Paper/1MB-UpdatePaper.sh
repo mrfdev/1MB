@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.1, build 026
-# @Release: July 22nd, 2023
-# @Description: Helps us get a Minecraft Paper 1.20.1 server .jar
+# @Version: 3.2.2, build 027
+# @Release: September 25th, 2023
+# @Description: Helps us get a Minecraft Paper 1.20.2 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-UpdatePaper.sh
@@ -158,7 +158,7 @@ latestVersion=$(echo "$responseProject" | jq -r '.versions[-1]')
 _output debug "latest version: $latestVersion"
 
 
-##### version-controller query (1.20.1)
+##### version-controller query (1.20.2)
 
 # lets get the json response from the papermc api for project $latestVersion
 responseBuilds=$(curl -f -L -s -X 'GET' "$_apiURL/$_apiProject/versions/$latestVersion" -H 'accept: application/json')
@@ -203,7 +203,7 @@ else
     _output oops "It does not seem to say '$_apiChannel' for found channel $channel, halting script"
 fi
 
-# next, we want to specifically get the downloads > application > name (paper-1.20.1-18.jar)
+# next, we want to specifically get the downloads > application > name (paper-1.20.2-18.jar)
 appName=$(echo "$responseLatestBuild" | jq -r '.downloads.application.name')
 _output debug "appName $appName"
 
@@ -223,7 +223,7 @@ if [ -f "$_cacheFile" ]; then
     # And before we check the build, we have to make sure we're still on the same version. 
     # Compare the current version from _cacheFile against the latestVersion we just found:
     if [ "$currentVersion" = "$latestVersion" ]; then
-        # Example: We made a 1.20.1 server jar before, we want to only continue if what we found is 1.20.1 as well.
+        # Example: We made a 1.20.2 server jar before, we want to only continue if what we found is 1.20.2 as well.
         _output debug "The 'version' value in $_cacheFile is the same as the found value ($latestVersion). (that is what we want)"
     elif [ "$currentVersion" \< "$latestVersion" ]; then
         # Note: Just in case a future version is released, we don't want to accidentally break the server with an unexpected upgrade.

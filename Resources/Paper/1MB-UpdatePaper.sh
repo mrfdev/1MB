@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.2, build 027
-# @Release: September 25th, 2023
+# @Version: 3.2.3, build 028
+# @Release: October 7th, 2023
 # @Description: Helps us get a Minecraft Paper 1.20.2 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris

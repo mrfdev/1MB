@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.17.0, build 062 for Minecraft 1.20.2 (Java 21, 64bit)
-# @Release: September 25th, 2023
+# @Version: 2.17.1, build 063 for Minecraft 1.20.2 (Java 21.0.1, 64bit)
+# @Release: October 27th, 2023
 # @Description: Helps us start a Spigot or Paper 1.20.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.20.2"
 # Which version are we running?
 
 _minJavaVersion="21"
-# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.2
+# use 21 for java 21.0.1 which can be used with Minecraft 1.19.x and 1.20.2
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up

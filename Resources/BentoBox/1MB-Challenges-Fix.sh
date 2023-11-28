@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.5.1, build 025 for BentoBox+Challenges, on Minecraft 1.20.x
-# @Release: June 19th, 2023
+# @Version: 0.5.2, build 026 for BentoBox+Challenges, on Minecraft 1.20.x
+# @Release: November 28th, 2023
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -17,6 +17,7 @@
 ## Notes ##
 ## > The console command synopsis is: /<gametype>admin challenges complete <uuid> <challenge-id>
 ## > For example: `oneblockadmin challenges complete 631e3896-da2a-4077-974b-d047859d76bc pumpkinfarm` (tested in console, works)
+## > Since I made this for my server, instead of /caveadmin we use /admincave, so i've now changed the script.
 
 ### CONFIGURATION
 #
@@ -161,19 +162,22 @@ while IFS= read -r data; do
     # Update the island (now that we have a lowercase version)
     case $island in
       "aoneblock")
-        island="oneblockadmin"
+        island="adminoneblock"
         ;;
       "bskyblock")
-        island="skyblockadmin"
+        island="adminskyblock"
         ;;
       "acidisland")
-        island="acidadmin"
+        island="adminacid"
         ;;
       "skygrid")
-        island="skygridadmin"
+        island="adminskygrid"
         ;;
       "caveblock")
-        island="caveadmin"
+        island="admincave"
+        ;;
+      "parkour")
+        island="adminparkour"
         ;;
     esac
 
@@ -189,7 +193,7 @@ while IFS= read -r data; do
 
   fi
 done < <(echo "$json" | jq -c '.history[] | select(.type == "COMPLETE")')
-#        ^--- use js to pull from the history parent block, only the instances that have a value of COMPLETE for the key called type
+#        ^--- use jq to pull from the history parent block, only the instances that have a value of COMPLETE for the key called type
 
 # Report back and exit the script, if we found nothing, and therefore have nothing to do
 if [ "$counter" -eq 0 ]; then
@@ -225,7 +229,7 @@ while IFS= read -r line; do
     exit 1
   fi
 done < "$log_file"
-#        ^--- use created log file to pull the commands, so we know what we are sending to tmux in a second.
+#        ^--- use the created log file to pull the commands, so we know what we are sending to tmux in a second.
 
 # Report that we're done with sending the queue of commands.
 echo "Sending commands: Completed."

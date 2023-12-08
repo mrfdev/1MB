@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.3, build 028
-# @Release: October 7th, 2023
-# @Description: Helps us get a Minecraft Paper 1.20.2 server .jar
+# @Version: 3.2.4, build 029
+# @Release: December 8th, 2023
+# @Description: Helps us get a Minecraft Paper 1.20.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-UpdatePaper.sh
@@ -35,7 +35,7 @@ _apiURL="https://api.papermc.io/v2/projects"
 ### INTERNAL CONFIGURATION
 #
 # Configuration variables you should probably
-# leave alone, but can change if really needed.
+# leave alone, but can change if needed.
 #
 ###
 
@@ -46,7 +46,7 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
 ### END OF CONFIGURATION
 #
-# Really stop configuring things
+# Stop configuring things
 # beyond this point. I mean it.
 #
 ###

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.15.1, build 088
-# @Release: September 25th, 2023
-# @Description: Helps us make a Minecraft Spigot 1.20.2 server.
+# @Version: 2.15.2, build 089
+# @Release: December 8th, 2023
+# @Description: Helps us make a Minecraft Spigot 1.20.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.20.2"
+_minecraftVersion="1.20.4"
 # Which version are we running?
 
 _minJavaVersion=21
-# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.2
+# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.4
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
@@ -59,7 +59,7 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"

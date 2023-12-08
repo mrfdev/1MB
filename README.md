@@ -20,7 +20,7 @@ While these scripts may not be intended for comprehensive support, I encourage y
 
 If you wish to play, please understand we're a family-friendly survival server, we do not tolerate abuse, /rules breaking, etc. 
 
-`1moreblock.com:25565` (Java Edition: 1.20.2)
+`1moreblock.com:25565` (Java Edition: 1.20.2) + Connection support for 1.20.3 / 1.20.4
 
 ## Information (Useful links)
 
@@ -29,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 2.5.14 build 046, October 27th, 2023.
+This is 1MB Github version 2.5.15 build 047, December 8th, 2023.

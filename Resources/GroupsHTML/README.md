@@ -1,6 +1,6 @@
 # Groups HTML
 
-https://omgboards.com/groups/beta/index.php
+https://omgboards.com/groups/
 
 ## Information
 

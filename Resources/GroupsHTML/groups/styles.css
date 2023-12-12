@@ -1,0 +1,34 @@
+/* basic stuff, (c)2023 1MoreBlock.com - Floris Fiedeldij Dop */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+/* flexbox stuff */
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header,
+.table-row {
+  display: flex;
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+.table-cell {
+  flex: 1;
+}

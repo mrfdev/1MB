@@ -19,6 +19,7 @@
 
     <label for="groupSelect">Select a Player Group:</label>
     <select id="groupSelect">
+      <option value="" disabled selected>Select a Player Group</option>
       <option value="group1">Group 1</option>
       <option value="group2">Group 2</option>
       <!-- Add options for all 20 player groups -->

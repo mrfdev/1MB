@@ -15,8 +15,7 @@
     </header>
 
     <main>
-      <!-- main content section -->
-      <p>groups table and selector</p>
+    <!-- main content section -->
 
     <label for="groupSelect">Select a Player Group:</label>
     <select id="groupSelect">

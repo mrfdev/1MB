@@ -15,6 +15,11 @@
   <main>
     <!-- main content section -->
     <p>groups table and selector</p>
+
+    <div id="featuresTable" class="table-container">
+      <!-- AJAX content will be loaded here -->
+    </div>
+    
   </main>
 
   <footer>
@@ -23,6 +28,7 @@
   </footer>
 
   <!-- scripts section -->
-  <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </body>
 </html>

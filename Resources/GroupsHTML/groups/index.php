@@ -38,7 +38,25 @@
 
   </div>
 
-    <!-- scripts section -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- scripts section -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#groupSelect').change(function() {
+        var selectedGroup = $(this).val();
+        $.ajax({
+          url: 'get_features.php', // Replace with your backend endpoint
+          type: 'POST',
+          data: { group: selectedGroup },
+          success: function(response) {
+            $('#featuresTable').html(response);
+          },
+          error: function(xhr, status, error) {
+            console.error(error);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

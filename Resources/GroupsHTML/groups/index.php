@@ -68,7 +68,7 @@
 ?>
       </select>
 
-      <p><h2 id="selectedGroup">You can type /groups in-game to find out which group you are in.</h2></p>
+      <p><h3 id="selectedGroup">You can type <strong>/groups</strong> in-game to find out what current your group is.</h3></p>
 
       <div id="featuresTable" class="table-container">
         <!-- AJAX content will be loaded here -->
@@ -83,6 +83,8 @@
             </div>
           </div>
       </div>
+
+      <p><small>Note: We refer to roles, ranks, groups all as one thing: groups.</small></p>
 
     </main>
 

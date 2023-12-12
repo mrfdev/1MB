@@ -139,7 +139,7 @@ if (isset($_POST['group'])) {
                 $html .= '    </div>';
             }
 
-            // closing container
+            // Closing container
             $html .= '</div>';
 
             // Escape output HTML to prevent injection

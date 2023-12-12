@@ -109,36 +109,48 @@ $playerGroups = array(
 if (isset($_POST['group'])) {
     $selectedGroup = $_POST['group'];
 
-    // Lets only deal with existing groups
-    if (array_key_exists($selectedGroup, $playerGroups)) {
-        // Retrieve features for the selected group
-        $features = $playerGroups[$selectedGroup];
+    // Validate input (e.g., alphanumeric group names)
+    if (preg_match('/^[a-zA-Z0-9]+$/', $selectedGroup)) {
+        // Sanitize input
+        $selectedGroup = htmlspecialchars($selectedGroup);
 
-        // Dirty bit of HTML to visualize things
+        // Lets only deal with existing groups
+        if (array_key_exists($selectedGroup, $playerGroups)) {
+            // Retrieve features for the selected group
+            $features = $playerGroups[$selectedGroup];
 
-        // Gotta have a top row
-        $html = '<div class="table">';
-        $html .= '    <div class="table-header">';
-        $html .= '    <div class="table-cell">Feature</div>';
-        $html .= '    <div class="table-cell">Value</div>';
-        $html .= '  </div>';
+            // Dirty bit of HTML to visualize things
 
-        // time to build it up
-        foreach ($features as $feature => $value) {
-            $html .= '    <div class="table-row">';
-            $html .= '      <div class="table-cell">' . $feature . '</div>';
-            $html .= '      <div class="table-cell">' . $value . '</div>';
-            $html .= '    </div>';
+            // Gotta have a top row
+            $html = '<div class="table">';
+            $html .= '    <div class="table-header">';
+            $html .= '    <div class="table-cell">Feature</div>';
+            $html .= '    <div class="table-cell">Value</div>';
+            $html .= '  </div>';
+
+            // time to build it up
+            foreach ($features as $feature => $value) {
+                // Escape output HTML to prevent injection
+                $escapedFeature = htmlspecialchars($feature);
+                $escapedValue = htmlspecialchars($value);
+                $html .= '    <div class="table-row">';
+                $html .= '      <div class="table-cell">' . $escapedFeature . '</div>';
+                $html .= '      <div class="table-cell">' . $escapedValue . '</div>';
+                $html .= '    </div>';
+            }
+
+            // closing container
+            $html .= '</div>';
+
+            // Escape output HTML to prevent injection
+            // $escapedHtml = htmlspecialchars($html);
+            // the magical response
+            // echo $escapedHtml;
+            echo $html;
+        } else {
+            // or a default oopsy response
+            echo 'Invalid group';
         }
-
-        // closing container
-        $html .= '</div>';
-
-        // the magical response
-        echo $html;
-    } else {
-        // or a default oopsy response
-        echo 'Invalid group';
     }
 } else {
     // or instruct what to do

@@ -8,4 +8,4 @@ An attempt to display features to groups (based on group selection) to make it a
 
 ## Version
 
-groups version 0.0.5, build 022, December 12th, 2023.
+groups version 0.0.6, build 024, December 12th, 2023.

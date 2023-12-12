@@ -17,17 +17,27 @@
     <main>
     <!-- main content section -->
 
-    <label for="groupSelect">Select a Player Group:</label>
-    <select id="groupSelect">
-      <option value="" disabled selected>Select a Player Group</option>
-      <option value="group1">Group 1</option>
-      <option value="group2">Group 2</option>
-      <!-- Add options for all 20 player groups -->
-    </select>
+      <label for="groupSelect">Select a Player Group:</label>
+      <select id="groupSelect">
+        <option value="" disabled selected>Select a Player Group</option>
+        <option value="group1">Group 1</option>
+        <option value="group2">Group 2</option>
+        <!-- Add options for all 20 player groups -->
+      </select>
 
-    <div id="featuresTable" class="table-container">
-      <!-- AJAX content will be loaded here -->
-    </div>
+      <div id="featuresTable" class="table-container">
+        <!-- AJAX content will be loaded here -->
+          <div class="table">
+            <div class="table-header">
+              <div class="table-cell">Feature</div>
+              <div class="table-cell">Value</div>
+            </div>
+          <div class="table-row">
+            <div class="table-cell">Players can join the server and type: /rules and /spawn at any time, as well as /wild, and /sethome.<br><br>Features include: mcMMO RPG, rewards for Achievements, a /market, Multiple worlds and game types, you can sit on a chair, participate in fun events, have Jobs, there is an Economy, and more.</div>
+            <div class="table-cell">Connect today, and join our never resetting Minecraft 1.20.x survival server, where we explore, mine, build, and survive together. <br><br>We are a family-friendly community, and open to all over the age of 13. Bring friends and make new ones!</div>
+            </div>
+          </div>
+      </div>
 
     </main>
 

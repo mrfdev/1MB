@@ -5,9 +5,13 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
+footer {
+  margin-top: 8px;
+}
 
+/* global content stuff */
 .container {
-  max-width: 800px;
+  max-width: 960px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -41,4 +45,10 @@ body {
   flex: 1;
   padding: 8px;
   border: 1px solid #ccc;
+}
+
+/* individual stuff */
+#selectedGroup {
+  font-weight: bold; /* Making the text bold */
+  padding: 1px; /* Adding padding of 10px */
 }

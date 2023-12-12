@@ -22,7 +22,29 @@
         <option value="" disabled selected>Select a Player Group</option>
         <option value="group1">Group 1</option>
         <option value="group2">Group 2</option>
-        <!-- Add options for all 20 player groups -->
+        <option value="group3">Group 3</option>
+        <option value="group4">Group 4</option>
+        <option value="group5">Group 5</option>
+        <option value="group6">Group 6</option>
+        <option value="group7">Group 7</option>
+        <option value="group8">Group 8</option>
+        <option value="group9">Group 9</option>
+        <option value="group10">Group 10</option>
+        <option value="group11">Group 11</option>
+        <option value="group12">Group 12</option>
+        <option value="group13">Group 13</option>
+        <option value="group14">Group 14</option>
+        <option value="group15">Group 15</option>
+        <option value="group16">Group 16</option>
+        <option value="group17">Group 17</option>
+        <option value="group18">Group 18</option>
+        <option value="group19">Group 19</option>
+        <option value="group20">Group 20</option>
+        <option value="group21">Group 21</option>
+        <option value="group22">Group 22</option>
+        <option value="group23">Group 23</option>
+        <option value="group24">Group 24</option>
+        <option value="group25">Group 25</option>
       </select>
 
       <div id="featuresTable" class="table-container">

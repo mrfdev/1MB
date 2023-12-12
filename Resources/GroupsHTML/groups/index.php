@@ -12,7 +12,7 @@
     <header>
       <!-- header section -->
       <h1>Player Groups - 1MoreBlock.com</h1>
-      <div>We have a three-tier hierarchy: free-, patron-, and special groups.</div>
+      <div>We have a four-tier group hierarchy: free survival-, free builders-, patron-, and special.</div>
       <hr>
     </header>
 
@@ -47,6 +47,7 @@
         <option value="group23">Group 23</option>
         <option value="group24">Group 24</option>
         <option value="group25">Group 25</option>
+        <option value="group26">Group 26</option>
       </select>
 
       <p><span id="selectedGroup">You can type /groups in-game to find out which group you are in.</span></p>
@@ -96,31 +97,33 @@
   </script>
   <script>
     const groupValues = {
-      'group1': 'Group 1',
-      'group2': 'Group 2',
-      'group3': 'Group 3',
-      'group4': 'Group 4',
-      'group5': 'Group 5',
-      'group6': 'Group 6',
-      'group7': 'Group 7',
-      'group8': 'Group 8',
-      'group9': 'Group 9',
-      'group10': 'Group 10',
-      'group11': 'Group 11',
-      'group12': 'Group 12',
-      'group13': 'Group 13',
-      'group14': 'Group 14',
-      'group15': 'Group 15',
-      'group16': 'Group 16',
-      'group17': 'Group 17',
-      'group18': 'Group 18',
-      'group19': 'Group 19',
-      'group20': 'Group 20',
-      'group21': 'Group 21',
-      'group22': 'Group 22',
-      'group23': 'Group 23',
-      'group24': 'Group 24',
-      'group25': 'Group 25'
+      'group1': 'Newbie',
+      'group2': 'Rookie',
+      'group3': 'Beginner',
+      'group4': 'Learner',
+      'group5': 'Novice',
+      'group6': 'Player',
+      'group7': 'Member',
+      'group8': 'Adept',
+      'group9': 'Skilled',
+      'group10': 'Champion',
+      'group11': 'Expert',
+      'group12': 'Elite',
+      'group13': 'Builder',
+      'group14': 'Rogue',
+      'group15': 'Prodigy',
+      'group16': 'Savant',
+      'group17': 'VIP',
+      'group18': 'Patron',
+      'group19': 'MVP',
+      'group20': 'EPIC',
+      'group21': 'Veteran',
+      'group22': 'Legendary',
+      'group23': 'Helper',
+      'group23': 'Mod',
+      'group24': 'Admin',
+      'group25': 'Unique',
+      'group26': 'Owner'
     };
 
     const groupSelect = document.getElementById('groupSelect');

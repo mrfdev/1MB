@@ -119,35 +119,7 @@
     });
   </script>
   <script>
-    const groupValues = {
-      'group1': 'Newbie',
-      'group2': 'Rookie',
-      'group3': 'Beginner',
-      'group4': 'Learner',
-      'group5': 'Novice',
-      'group6': 'Player',
-      'group7': 'Member',
-      'group8': 'Adept',
-      'group9': 'Skilled',
-      'group10': 'Champion',
-      'group11': 'Expert',
-      'group12': 'Elite',
-      'group13': 'Builder',
-      'group14': 'Rogue',
-      'group15': 'Prodigy',
-      'group16': 'Savant',
-      'group17': 'VIP',
-      'group18': 'Patron',
-      'group19': 'MVP',
-      'group20': 'EPIC',
-      'group21': 'Veteran',
-      'group22': 'Legendary',
-      'group23': 'Helper',
-      'group23': 'Mod',
-      'group24': 'Admin',
-      'group25': 'Unique',
-      'group26': 'Owner'
-    };
+    const groupValues = <?php echo json_encode($groupValues); ?>;
 
     const groupSelect = document.getElementById('groupSelect');
     const selectedGroup = document.getElementById('selectedGroup');

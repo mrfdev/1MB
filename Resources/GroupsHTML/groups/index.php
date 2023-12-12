@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+  <!-- key/value for groups -->
+  <?php include 'groups.php'; ?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -58,7 +60,7 @@
       <label for="groupSelect">Select a Player Group:</label>
       <select id="groupSelect">
         <option value="" disabled selected>Select a Player Group</option>
-        <option value="group1">Group 1</option>
+<!--        <option value="group1">Group 1</option>
         <option value="group2">Group 2</option>
         <option value="group3">Group 3</option>
         <option value="group4">Group 4</option>
@@ -83,7 +85,13 @@
         <option value="group23">Group 23</option>
         <option value="group24">Group 24</option>
         <option value="group25">Group 25</option>
-        <option value="group26">Group 26</option>
+        <option value="group26">Group 26</option> -->
+<?php
+// Loop $groupValues
+foreach ($groupValues as $key => $value) {
+  echo "<option value='$key'>$value</option>";
+}
+?>
       </select>
 
       <p><h2 id="selectedGroup">You can type /groups in-game to find out which group you are in.</h2></p>

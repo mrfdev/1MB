@@ -68,7 +68,7 @@
 ?>
       </select>
 
-      <p><h3 id="selectedGroup">You can type <strong>/groups</strong> in-game to find out what current your group is.</h3></p>
+      <p><h3 id="selectedGroup">You can type <strong>/groups</strong> in-game to find out what your current group is.</h3></p>
 
       <div id="featuresTable" class="table-container">
         <!-- AJAX content will be loaded here -->

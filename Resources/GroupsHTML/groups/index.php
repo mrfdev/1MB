@@ -49,7 +49,7 @@
         <option value="group25">Group 25</option>
       </select>
 
-      <p>Selected Group: <span id="selectedGroup"></span></p>
+      <p><span id="selectedGroup">You can type /groups in-game to find out which group you are in.</span></p>
 
       <div id="featuresTable" class="table-container">
         <!-- AJAX content will be loaded here -->
@@ -96,9 +96,31 @@
   </script>
   <script>
     const groupValues = {
-      'group1': 'test 1',
-      'group2': 'test 2',
-      // Add values for all 25 player groups
+      'group1': 'Group 1',
+      'group2': 'Group 2',
+      'group3': 'Group 3',
+      'group4': 'Group 4',
+      'group5': 'Group 5',
+      'group6': 'Group 6',
+      'group7': 'Group 7',
+      'group8': 'Group 8',
+      'group9': 'Group 9',
+      'group10': 'Group 10',
+      'group11': 'Group 11',
+      'group12': 'Group 12',
+      'group13': 'Group 13',
+      'group14': 'Group 14',
+      'group15': 'Group 15',
+      'group16': 'Group 16',
+      'group17': 'Group 17',
+      'group18': 'Group 18',
+      'group19': 'Group 19',
+      'group20': 'Group 20',
+      'group21': 'Group 21',
+      'group22': 'Group 22',
+      'group23': 'Group 23',
+      'group24': 'Group 24',
+      'group25': 'Group 25'
     };
 
     const groupSelect = document.getElementById('groupSelect');
@@ -107,6 +129,7 @@
     groupSelect.addEventListener('change', function() {
       const selectedValue = this.value;
       selectedGroup.textContent = groupValues[selectedValue] || '';
+      // selectedGroup.textContent = selectedValue ? groupValues[selectedValue] : 'You can type /groups in-game to find out which group you are in.';
     });
   </script>
 </body>

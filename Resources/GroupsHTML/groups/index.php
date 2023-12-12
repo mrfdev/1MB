@@ -12,6 +12,8 @@
     <header>
       <!-- header section -->
       <h1>Player Groups - 1MoreBlock.com</h1>
+      <div>We have a three-tier hierarchy: free-, patron-, and special groups.</div>
+      <hr>
     </header>
 
     <main>
@@ -46,6 +48,8 @@
         <option value="group24">Group 24</option>
         <option value="group25">Group 25</option>
       </select>
+
+      <p>Selected Group: <span id="selectedGroup"></span></p>
 
       <div id="featuresTable" class="table-container">
         <!-- AJAX content will be loaded here -->
@@ -88,6 +92,21 @@
           }
         });
       });
+    });
+  </script>
+  <script>
+    const groupValues = {
+      'group1': 'test 1',
+      'group2': 'test 2',
+      // Add values for all 25 player groups
+    };
+
+    const groupSelect = document.getElementById('groupSelect');
+    const selectedGroup = document.getElementById('selectedGroup');
+
+    groupSelect.addEventListener('change', function() {
+      const selectedValue = this.value;
+      selectedGroup.textContent = groupValues[selectedValue] || '';
     });
   </script>
 </body>

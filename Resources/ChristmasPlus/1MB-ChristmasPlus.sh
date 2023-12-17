@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.1.0, build 009
+# @Version: 0.1.1, build 010
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -94,7 +94,17 @@ if [ -n "$result" ]; then
     true_claimed=()
     false_unclaimed=()
     
-    # TODO figure out loop
+    # Loop through each key/value from each, based on true/false
+    for gift in "${gifts[@]}"; do
+        gift_number=$(echo "$gift" | tr -d '[:space:]') # Remove spaces fix
+        
+        # Check if 'true' or 'false' and append to new true/false arrays
+        if [ "$gift_number" = "true" ]; then
+            true_claimed+=("$gift_number")
+        elif [ "$gift_number" = "false" ]; then
+            false_unclaimed+=("$gift_number")
+        fi
+    done
     
     # spit out the sorted results:
     echo "Gifts claimed (true): ${true_claimed[@]}"

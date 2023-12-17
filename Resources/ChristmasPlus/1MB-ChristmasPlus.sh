@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.0.1, build 002
+# @Version: 0.0.1, build 003
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -19,7 +19,8 @@
 
 # SQLite3 ChristmasPlus 2.32.2 database.db file is expected,
 # if you have renamed it, change that here obviously.
-_databaseFile="database.db"
+# you can also set a full path like /full/path/to/database.db
+_databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
 # TODO: support UUID for obvious reasons
@@ -38,6 +39,7 @@ _logFile="christmasplus-results-$_userName-.log"
 
 _debug=true # Set to false to minimize output.
 
+# TODO at some point get my printf function stuff so i can hide debug and print results a little nicer
 Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
 ### END OF CONFIGURATION
@@ -46,4 +48,10 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 # beyond this point. I mean it.
 #
 ###
+
+# does expected .db file exist in the same directory?
+if [ ! -f "$_databaseFile" ]; then
+    echo "Error: '$_databaseFile' not found in the current directory."
+    exit 1
+fi
 

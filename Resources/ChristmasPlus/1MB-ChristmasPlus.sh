@@ -88,24 +88,28 @@ fi
 # Check if there is a result to work with
 if [ -n "$result" ]; then
     # Split result into array at the comma (delimiter)
-    IFS=',' read -ra gifts <<< "$result"
+    # below is no longer valid, i forgot we're dealing with json stored data field
+    # IFS=',' read -ra gifts <<< "$result"
     
     # Initialize arrays for true and false claims
-    true_claimed=()
-    false_unclaimed=()
+    # true_claimed=()
+    true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key'))
+    # false_unclaimed=()
+    false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key'))
     
-    # Loop through each key/value from each, based on true/false
-    for gift in "${gifts[@]}"; do
-        gift_number=$(echo "$gift" | tr -d '[:space:]') # Remove spaces fix
+    # below is no longer needed, the json thing, i can just use jq and speed this up
+    # # Loop through each key/value from each, based on true/false
+    # for gift in "${gifts[@]}"; do
+    #     gift_number=$(echo "$gift" | tr -d '[:space:]') # Remove spaces fix
         
-        # Check if 'true' or 'false' and append to new true/false arrays
-        if [ "$gift_number" = "true" ]; then
-            true_claimed+=("$gift_number")
-        elif [ "$gift_number" = "false" ]; then
-            false_unclaimed+=("$gift_number")
-        fi
-    done
-    
+    #     # Check if 'true' or 'false' and append to new true/false arrays
+    #     if [ "$gift_number" = "true" ]; then
+    #         true_claimed+=("$gift_number")
+    #     elif [ "$gift_number" = "false" ]; then
+    #         false_unclaimed+=("$gift_number")
+    #     fi
+    # done
+
     # spit out the sorted results:
     echo "Gifts claimed (true): ${true_claimed[@]}"
     echo "Gifts unclaimed (false): ${false_unclaimed[@]}"

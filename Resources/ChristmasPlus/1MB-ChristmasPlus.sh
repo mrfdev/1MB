@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.0.3, build 007
+# @Version: 0.0.3, build 008
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -23,7 +23,7 @@
 _databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
-# TODO: support UUID for obvious reasons
+# can be uuid
 _userName="FumbleHead"
 
 # output to a log file?
@@ -50,10 +50,19 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 ###
 
 # Check if a username is provided, if not, use the configured _userName
+# And based on length of username, assume uuid or username, and update query accordingly.
 if [ -n "$1" ]; then
     _userName="$1"
 else
     _userName="$_userName"
+fi
+
+# Check param length, 
+# if it is longer than 16 characters, use uuid column, else name column
+if [ ${#_userName} -gt 16 ]; then
+    _columnName="uuid"
+else
+    _columnName="name"
 fi
 
 # does expected .db file exist in the same directory?
@@ -63,7 +72,7 @@ if [ ! -f "$_databaseFile" ]; then
 fi
 
 # The query we need to retrieve the data from field claimedGifts (for given username)
-query="SELECT claimedGifts FROM players WHERE name='$_userName';"
+query="SELECT claimedGifts FROM players WHERE $_columnName='$_userName';"
 
 # Now that we know the database.db fle exists, and the query to run, 
 # lets connect and build a result

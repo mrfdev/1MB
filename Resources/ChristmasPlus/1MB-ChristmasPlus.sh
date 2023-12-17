@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.1, build 014
+# @Version: 0.2.1, build 015
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -77,9 +77,9 @@ if [ -n "$result" ]; then
     # Split result into array and use jq to figure it out for me
     true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key | @sh'))
     false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key | @sh'))
-    
+
     # Spit out the sorted results:
-    printf "%s:\n" "$_userName"
+    printf "\n%s:\n" "$_userName"
     printf "Gifts claimed (true): %s\n" "${true_claimed[*]}"
     printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}"
 else

@@ -46,7 +46,8 @@ Gifts unclaimed (false): '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14' '1
 - Well, on my server I give a voucher for when they've missed a day. So this allows them to give m the voucher, mention the day they say they've missed. I can quickly check and take their voucher, and give them the reward. 
 - Another reason is, that those who have collected all 24 days, can get a bonus advent box on day 25. This allows me to check if they have.
 - It's easier to read, and you don't need to clone the .db file, or download it, and open it in a sqlite3 viewer and stare at this for a bit to figure out what you're staring at:
-```json {"1":true,"2":true,"3":false,"4":true,"5":false,"6":false,"7":false,"8":false,"9":false,"10":true,"11":false,"12":false,"13":false,"14":false,"15":true,"16":true,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false}
+```json
+{"1":true,"2":true,"3":false,"4":true,"5":false,"6":false,"7":false,"8":false,"9":false,"10":true,"11":false,"12":false,"13":false,"14":false,"15":true,"16":true,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false}
 ```
 
 ### What's missing?

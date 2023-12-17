@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.0.2, build 006
+# @Version: 0.0.3, build 007
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -48,6 +48,13 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 # beyond this point. I mean it.
 #
 ###
+
+# Check if a username is provided, if not, use the configured _userName
+if [ -n "$1" ]; then
+    _userName="$1"
+else
+    _userName="$_userName"
+fi
 
 # does expected .db file exist in the same directory?
 if [ ! -f "$_databaseFile" ]; then

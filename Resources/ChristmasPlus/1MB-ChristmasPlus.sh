@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.1, build 012
+# @Version: 0.2.1, build 014
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -24,23 +24,11 @@ _databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
 # can be uuid
-_userName="FumbleHead"
+_user="FumbleHead"
 
 # output to a log file?
 _log="false"
 _logFile="christmasplus-results-$_userName-.log"
-
-### INTERNAL CONFIGURATION
-#
-# Configuration variables you should probably
-# leave alone, but can change if needed.
-#
-###
-
-_debug=true # Set to false to minimize output.
-
-# TODO at some point get my printf function stuff so i can hide debug and print results a little nicer
-Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
 ### END OF CONFIGURATION
 #
@@ -51,7 +39,7 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 
 # Lets exit if jq is not found, since we depend on it
 if ! command -v jq &> /dev/null; then
-    echo "Error: 'jq' is not installed. I cannot continue. Please install 'jq' to proceed ('brew install jq' on macOS)."
+    printf "Error: 'jq' is not installed. Please install 'jq' to proceed.\n"
     exit 1
 fi
 
@@ -60,7 +48,7 @@ fi
 if [ -n "$1" ]; then
     _userName="$1"
 else
-    _userName="$_userName"
+    _userName="$_user"
 fi
 
 # Check param length, 
@@ -84,23 +72,17 @@ query="SELECT claimedGifts FROM players WHERE $_columnName='$_userName';"
 # lets connect and build a result
 result=$(sqlite3 "$_databaseFile" "$query")
 
-# Before we do anything, some debug data to compare against
-# if [ -n "$result" ]; then
-#     echo "Claimed-gifts results for $_userName: $result"
-# else
-#     echo "No claimed gifts found for $_userName."
-# fi
-
 # Check if there is a result to work with
 if [ -n "$result" ]; then
     # Split result into array and use jq to figure it out for me
-    true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key'))
-    false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key'))
+    true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key | @sh'))
+    false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key | @sh'))
     
     # Spit out the sorted results:
-    echo "Gifts claimed (true): ${true_claimed[@]}"
-    echo "Gifts unclaimed (false): ${false_unclaimed[@]}"
+    printf "%s:\n" "$_userName"
+    printf "Gifts claimed (true): %s\n" "${true_claimed[*]}"
+    printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}"
 else
 	# worst case scenario we have no data
-    echo "Oops, no gifts found for $_userName."
+    printf "Oops, no gifts found for %s.\n" "$_userName"
 fi

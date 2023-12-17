@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.0.1, build 003
+# @Version: 0.0.1, build 004
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -55,3 +55,11 @@ if [ ! -f "$_databaseFile" ]; then
     exit 1
 fi
 
+# The query we need to retrieve the data from field claimedGifts (for given username)
+query="SELECT claimedGifts FROM players WHERE name='$_userName';"
+
+# Now that we know the database.db fle exists, and the query to run, 
+# lets connect and build a result
+result=$(sqlite3 "$_databaseFile" "$query")
+
+echo "Claimed-gifts results for $_userName: $result"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.1.1, build 010
+# @Version: 0.2.1, build 012
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -49,6 +49,12 @@ Y="\e[33m"; C="\e[36m"; PB="\e[38;5;153m"; B="\e[1m" R="\e[0m" # theme
 #
 ###
 
+# Lets exit if jq is not found, since we depend on it
+if ! command -v jq &> /dev/null; then
+    echo "Error: 'jq' is not installed. I cannot continue. Please install 'jq' to proceed ('brew install jq' on macOS)."
+    exit 1
+fi
+
 # Check if a username is provided, if not, use the configured _userName
 # And based on length of username, assume uuid or username, and update query accordingly.
 if [ -n "$1" ]; then
@@ -79,38 +85,19 @@ query="SELECT claimedGifts FROM players WHERE $_columnName='$_userName';"
 result=$(sqlite3 "$_databaseFile" "$query")
 
 # Before we do anything, some debug data to compare against
-if [ -n "$result" ]; then
-    echo "Claimed-gifts results for $_userName: $result"
-else
-    echo "No claimed gifts found for $_userName."
-fi
+# if [ -n "$result" ]; then
+#     echo "Claimed-gifts results for $_userName: $result"
+# else
+#     echo "No claimed gifts found for $_userName."
+# fi
 
 # Check if there is a result to work with
 if [ -n "$result" ]; then
-    # Split result into array at the comma (delimiter)
-    # below is no longer valid, i forgot we're dealing with json stored data field
-    # IFS=',' read -ra gifts <<< "$result"
-    
-    # Initialize arrays for true and false claims
-    # true_claimed=()
+    # Split result into array and use jq to figure it out for me
     true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key'))
-    # false_unclaimed=()
     false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key'))
     
-    # below is no longer needed, the json thing, i can just use jq and speed this up
-    # # Loop through each key/value from each, based on true/false
-    # for gift in "${gifts[@]}"; do
-    #     gift_number=$(echo "$gift" | tr -d '[:space:]') # Remove spaces fix
-        
-    #     # Check if 'true' or 'false' and append to new true/false arrays
-    #     if [ "$gift_number" = "true" ]; then
-    #         true_claimed+=("$gift_number")
-    #     elif [ "$gift_number" = "false" ]; then
-    #         false_unclaimed+=("$gift_number")
-    #     fi
-    # done
-
-    # spit out the sorted results:
+    # Spit out the sorted results:
     echo "Gifts claimed (true): ${true_claimed[@]}"
     echo "Gifts unclaimed (false): ${false_unclaimed[@]}"
 else

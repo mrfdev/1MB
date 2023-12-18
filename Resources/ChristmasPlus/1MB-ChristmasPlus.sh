@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.2, build 016
+# @Version: 0.2.2, build 017
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -88,7 +88,7 @@ else
 fi
 
 # Deal with writing results to .log file
-# Only if we want to
+# Only if we want to; create the file if it does not exist
 if $_log; then
     if [ -f "$_logFile" ]; then
         # The file exists, we can append to the end
@@ -106,4 +106,11 @@ if $_log; then
             exit 1
         fi
     fi
+    # Now that we know we have a file, we can append data to it.
+    currentDateTime=$(date +'%B %d, %Y @ %H:%M') # timestamp to prefix log entry with
+    printf "\n%s: (Logged at %s)\n" "$_userName" "$currentDateTime" >> "$_logFile"
+    printf "Gifts claimed (true): %s\n" "${true_claimed[*]}" >> "$_logFile"
+    printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}" >> "$_logFile"
+    printf ".. Done, results for '%s' written to '%s'.\n" "$_userName" "$_logFile"
+
 fi

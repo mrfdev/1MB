@@ -9,7 +9,7 @@ This requires `jq` but this should work on Ubuntu 16+ as well.
 ## Release
 <https://github.com/mrfdev/1MB/tree/master/Resources/ChristmasPlus>
 ```bash
-# @Version: 0.2.1, build 015
+# @Version: 0.3.0, build 021
 # @Release: December 18th, 2023
 ```
 - You can download it from here: [1MB-ChristmasPlus.sh](/Resources/ChristmasPlus/1MB-ChristmasPlus.sh)
@@ -42,7 +42,24 @@ Gifts claimed (true): '1' '2'
 Gifts unclaimed (false): '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14' '15' '16' '17' '18' '19' '20' '21' '22' '23' '24'
 ```
 
-### Why?
+## Configuration options
+You can edit the .sh file to point it to a different database file, set a different default uuid or user name, and you toggle logging to a file on/off, and you can define the filename.
+```
+# SQLite3 ChristmasPlus 2.32.2 database.db file is expected,
+# if you have renamed it, change that here obviously.
+# you can also set a full path like /full/path/to/database.db
+_databaseFile="./database.db"
+
+# If no param is provided, we fall back to a default username
+# can be uuid
+_user="FumbleHead"
+
+# output to a log file?
+_log=true
+_logFile="christmasplus-results.log"
+```
+
+## Why?
 - Well, on my server I give a voucher for when they've missed a day. So this allows them to give m the voucher, mention the day they say they've missed. I can quickly check and take their voucher, and give them the reward. 
 - Another reason is, that those who have collected all 24 days, can get a bonus advent box on day 25. This allows me to check if they have.
 - It's easier to read, and you don't need to clone the .db file, or download it, and open it in a sqlite3 viewer and stare at this for a bit to figure out what you're staring at:

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.3, build 019
+# @Version: 0.3.0, build 021
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -39,7 +39,7 @@ _logFile="christmasplus-results.log"
 
 # Lets exit if jq is not found, since we depend on it
 if ! command -v jq &> /dev/null; then
-    printf "Error: 'jq' is not installed. Please install 'jq' to proceed.\n"
+    printf "Could not find 'jq' installed. Install 'jq' to proceed. 'brew install jq' on macOS\n"
     exit 1
 fi
 
@@ -54,10 +54,10 @@ fi
 
 # Check param length, 
 # if it is longer than 16 characters, use uuid column, else name column
+# Set the column name based on the username input
+_columnName="name COLLATE NOCASE"
 if [ ${#_userName} -gt 16 ]; then
     _columnName="uuid"
-else
-    _columnName="name COLLATE NOCASE"
 fi
 
 # does expected .db file exist in the same directory?

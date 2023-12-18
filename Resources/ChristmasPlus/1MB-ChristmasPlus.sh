@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.0, build 021
+# @Version: 0.3.1, build 022
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -48,8 +48,13 @@ fi
 if [ -n "$1" ]; then
     _paramUserName="$1" # cli .sh param
     _userName="${_paramUserName//[^a-zA-Z0-9_\-]/}" # we better sanitize a little
+    printf "We are going to try and get the data for '%s $_userName' ... \n" "$0"
 else
     _userName="$_user"
+    printf "Syntax: %s <user|uuid>\n" "$0"
+    printf "Description: Helps us get some player data from ChristmasPlus database.db.\n"
+    printf "Description: You can use a Minecraft user name, or their uuid.\n"
+    printf "Example: We are going to try and get the data for '%s $_userName' as a default query ... \n" "$0"
 fi
 
 # Check param length, 
@@ -109,9 +114,10 @@ if $_log; then
     fi
     # Now that we know we have a file, we can append data to it.
     currentDateTime=$(date +'%B %d, %Y @ %H:%M') # timestamp to prefix log entry with
-    printf "\n%s: (Logged at %s)\n" "$_userName" "$currentDateTime" >> "$_logFile"
+    printf "\n%s (Logged at %s)\n" "$_userName" "$currentDateTime" >> "$_logFile"
     printf "Gifts claimed (true): %s\n" "${true_claimed[*]}" >> "$_logFile"
     printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}" >> "$_logFile"
     printf ".. Done, results for '%s' written to '%s'.\n" "$_userName" "$_logFile"
 
 fi
+#EOF

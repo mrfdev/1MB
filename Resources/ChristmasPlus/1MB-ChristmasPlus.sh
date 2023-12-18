@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.1, build 022
+# @Version: 0.3.1, build 023
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -36,6 +36,13 @@ _logFile="christmasplus-results.log"
 # beyond this point. I mean it.
 #
 ###
+
+# Function for handling errors
+handle_error() {
+    local message="$1"
+    echo "Error: $message"
+    exit 1
+}
 
 # Lets exit if jq is not found, since we depend on it
 if ! command -v jq &> /dev/null; then
@@ -103,7 +110,8 @@ if $_log; then
         # We could not find it, it does not seem to exist
         # Let's create it first before we write to it
         echo "Log file '$_logFile' does not exist."
-        touch "$_logFile"  # Create the log file since we want to use it
+        # Create the log file since we want to use it (or exit if we cannot)
+        touch "$_logFile" || handle_error "Failed to create log file '$_logFile'. Exiting."
         if [ $? -eq 0 ]; then
             echo "Log file '$_logFile' newly created successfully."
         else

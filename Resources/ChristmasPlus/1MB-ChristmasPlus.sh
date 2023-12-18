@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.1, build 023
+# @Version: 0.3.2, build 025
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -24,7 +24,7 @@ _databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
 # can be uuid
-_user="FumbleHead"
+_user="mrfloris"
 
 # output to a log file?
 _log=true
@@ -52,37 +52,40 @@ fi
 
 # Check if a username is provided, if not, use the configured _userName
 # And based on length of username, assume uuid or username, and update query accordingly.
-if [ -n "$1" ]; then
-    _paramUserName="$1" # cli .sh param
-    _userName="${_paramUserName//[^a-zA-Z0-9_\-]/}" # we better sanitize a little
-    printf "We are going to try and get the data for '%s $_userName' ... \n" "$0"
-else
-    _userName="$_user"
+_paramUserName="${1:-$1}"
+if [ -z "$_paramUserName" ]; then
+    _userName="${_user//[^a-zA-Z0-9_\-]/}" # sanitize input
     printf "Syntax: %s <user|uuid>\n" "$0"
-    printf "Description: Helps us get some player data from ChristmasPlus database.db.\n"
-    printf "Description: You can use a Minecraft user name, or their uuid.\n"
-    printf "Example: We are going to try and get the data for '%s $_userName' as a default query ... \n" "$0"
+    printf "Description: Get player gift data from the ChristmasPlus '$_databaseFile' database.\n"
+    printf "Description: You can use their Minecraft username or UUID.\n"
+    printf "Example: We are going to try and gather the data for (default) '%s $_userName' ... \n" "$0"
+else
+    _userName="${_paramUserName//[^a-zA-Z0-9_\-]/}" # sanitize input
+    printf "Attempting to find data for '%s $_userName' ... \n" "$0"
 fi
+
 
 # Check param length, 
 # if it is longer than 16 characters, use uuid column, else name column
 # Set the column name based on the username input
+# We want to check case insensitive
 _columnName="name COLLATE NOCASE"
+_columnQueryFor="name" # only used visually
 if [ ${#_userName} -gt 16 ]; then
     _columnName="uuid"
+    _columnQueryFor="uuid" # only used visually
 fi
 
-# does expected .db file exist in the same directory?
+# Does the expected database.db file exist in the same directory?
 if [ ! -f "$_databaseFile" ]; then
     echo "Error: '$_databaseFile' not found in the current directory."
     exit 1
 fi
 
-# The query we need to retrieve the data from field claimedGifts (for given username)
+# The query we need to retrieve the data from field claimedGifts (for given user or uuid)
 query="SELECT claimedGifts FROM players WHERE $_columnName='$_userName';"
 
-# Now that we know the database.db fle exists, and the query to run, 
-# lets connect and build a result
+# Now that we know the database.db fle exists, and the query to run, lets connect and build a result
 result=$(sqlite3 "$_databaseFile" "$query")
 
 # Check if there is a result to work with
@@ -93,39 +96,29 @@ if [ -n "$result" ]; then
 
     # Spit out the sorted results:
     printf "\n%s:\n" "$_userName"
-    printf "Gifts claimed (true): %s\n" "${true_claimed[*]}"
-    printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}"
+    printf "Gifts claimed: %s\n" "${true_claimed[*]}"
+    printf "Gifts unclaimed: %s\n\n" "${false_unclaimed[*]}"
 else
 	# worst case scenario we have no data
-    printf "Oops, no gifts found for %s.\n" "$_userName"
+    printf "Oops, no gifts found for %s, check if the %s is valid.\n" "$_userName" "$_columnQueryFor"
+    exit 1
 fi
 
 # Deal with writing results to .log file
 # Only if we want to; create the file if it does not exist
 if $_log; then
-    if [ -f "$_logFile" ]; then
-        # The file exists, we can append to the end
-        echo "Log file '$_logFile' already exists."
-    else
-        # We could not find it, it does not seem to exist
-        # Let's create it first before we write to it
-        echo "Log file '$_logFile' does not exist."
-        # Create the log file since we want to use it (or exit if we cannot)
+    if [ ! -f "$_logFile" ]; then
         touch "$_logFile" || handle_error "Failed to create log file '$_logFile'. Exiting."
-        if [ $? -eq 0 ]; then
-            echo "Log file '$_logFile' newly created successfully."
-        else
-            # report back if there's some sort of issue
-            echo "Failed to create log file '$_logFile'. Exiting."
-            exit 1
-        fi
+        echo "Log file '$_logFile' did not exist, created successfully."
     fi
-    # Now that we know we have a file, we can append data to it.
-    currentDateTime=$(date +'%B %d, %Y @ %H:%M') # timestamp to prefix log entry with
-    printf "\n%s (Logged at %s)\n" "$_userName" "$currentDateTime" >> "$_logFile"
-    printf "Gifts claimed (true): %s\n" "${true_claimed[*]}" >> "$_logFile"
-    printf "Gifts unclaimed (false): %s\n\n" "${false_unclaimed[*]}" >> "$_logFile"
-    printf ".. Done, results for '%s' written to '%s'.\n" "$_userName" "$_logFile"
 
+    # Append data to the log file
+    currentDateTime=$(date +'%B %d, %Y @ %H:%M') # timestamp for log entry
+    {
+        printf "\n%s (Logged at %s)\n" "$_userName" "$currentDateTime"
+        printf "Gifts claimed: %s\n" "${true_claimed[*]}"
+        printf "Gifts unclaimed: %s\n\n" "${false_unclaimed[*]}"
+    } >> "$_logFile" || handle_error "Failed to write to log file '$_logFile'. Exiting."
+    printf ".. Done, results for '%s' appended to '%s'.\n" "$_userName" "$_logFile"
 fi
 #EOF

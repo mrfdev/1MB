@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.1, build 015
+# @Version: 0.2.2, build 016
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -27,8 +27,8 @@ _databaseFile="./database.db"
 _user="FumbleHead"
 
 # output to a log file?
-_log="false"
-_logFile="christmasplus-results-$_userName-.log"
+_log=true
+_logFile="christmasplus-results.log"
 
 ### END OF CONFIGURATION
 #
@@ -85,4 +85,25 @@ if [ -n "$result" ]; then
 else
 	# worst case scenario we have no data
     printf "Oops, no gifts found for %s.\n" "$_userName"
+fi
+
+# Deal with writing results to .log file
+# Only if we want to
+if $_log; then
+    if [ -f "$_logFile" ]; then
+        # The file exists, we can append to the end
+        echo "Log file '$_logFile' already exists."
+    else
+        # We could not find it, it does not seem to exist
+        # Let's create it first before we write to it
+        echo "Log file '$_logFile' does not exist."
+        touch "$_logFile"  # Create the log file since we want to use it
+        if [ $? -eq 0 ]; then
+            echo "Log file '$_logFile' newly created successfully."
+        else
+            # report back if there's some sort of issue
+            echo "Failed to create log file '$_logFile'. Exiting."
+            exit 1
+        fi
+    fi
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.3, build 018
+# @Version: 0.2.3, build 019
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -57,7 +57,7 @@ fi
 if [ ${#_userName} -gt 16 ]; then
     _columnName="uuid"
 else
-    _columnName="name"
+    _columnName="name COLLATE NOCASE"
 fi
 
 # does expected .db file exist in the same directory?

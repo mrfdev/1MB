@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.2.2, build 017
+# @Version: 0.2.3, build 018
 # @Release: December 18th, 2023
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -46,7 +46,8 @@ fi
 # Check if a username is provided, if not, use the configured _userName
 # And based on length of username, assume uuid or username, and update query accordingly.
 if [ -n "$1" ]; then
-    _userName="$1"
+    _paramUserName="$1" # cli .sh param
+    _userName="${_paramUserName//[^a-zA-Z0-9_\-]/}" # we better sanitize a little
 else
     _userName="$_user"
 fi

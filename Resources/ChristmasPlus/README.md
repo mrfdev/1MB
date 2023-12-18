@@ -9,7 +9,7 @@ This requires `jq` but this should work on Ubuntu 16+ as well.
 ## Release
 <https://github.com/mrfdev/1MB/tree/master/Resources/ChristmasPlus>
 ```bash
-# @Version: 0.3.1, build 022
+# @Version: 0.3.2, build 025
 # @Release: December 18th, 2023
 ```
 - You can download it from here: [1MB-ChristmasPlus.sh](/Resources/ChristmasPlus/1MB-ChristmasPlus.sh)

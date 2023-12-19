@@ -1,4 +1,10 @@
 <?php
+if (!defined('INCLUDED')) {
+  header('HTTP/1.0 403 Forbidden');
+  exit('Direct access not allowed');
+}
+?>
+<?php
 $groupValues4 = array(
     'group23' => 'Helper',
     'group24' => 'Moderator',

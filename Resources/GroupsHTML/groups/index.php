@@ -1,4 +1,5 @@
-<?php include 'header.php'; ?>
+<?php define('INCLUDED', true); ?>
+<?php include 'includes/header.php'; ?>
 <main>
   <!-- main content section -->
 <div id="selectionTable" class="table-container">
@@ -95,4 +96,4 @@
   </p>
 </main> 
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

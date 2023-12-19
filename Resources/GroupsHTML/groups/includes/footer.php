@@ -1,3 +1,9 @@
+<?php
+if (!defined('INCLUDED')) {
+  header('HTTP/1.0 403 Forbidden');
+  exit('Direct access not allowed');
+}
+?>
   </div>
 
   <footer class="py-3 bg-dark">
@@ -16,7 +22,7 @@
       $('.groupSelect').change(function() {
         var selectedGroup = $(this).val();
         $.ajax({
-          url: 'get_features.php', // Replace with your backend endpoint
+          url: 'includes/get_features.php', // Replace with your backend endpoint
           type: 'POST',
           data: { group: selectedGroup },
           success: function(response) {

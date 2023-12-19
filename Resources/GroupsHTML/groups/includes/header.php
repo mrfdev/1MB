@@ -1,3 +1,9 @@
+<?php
+if (!defined('INCLUDED')) {
+  header('HTTP/1.0 403 Forbidden');
+  exit('Direct access not allowed');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +17,10 @@
 </head>
 <body>
   <!-- key/value for groups -->
-  <?php include 'groups_free_survival.php'; ?>
-  <?php include 'groups_free_builders.php'; ?>
-  <?php include 'groups_patrons.php'; ?>
-  <?php include 'groups_special.php'; ?>
+  <?php include 'includes/groups_free_survival.php'; ?>
+  <?php include 'includes/groups_free_builders.php'; ?>
+  <?php include 'includes/groups_patrons.php'; ?>
+  <?php include 'includes/groups_special.php'; ?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

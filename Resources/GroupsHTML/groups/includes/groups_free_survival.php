@@ -1,4 +1,10 @@
 <?php
+if (!defined('INCLUDED')) {
+  header('HTTP/1.0 403 Forbidden');
+  exit('Direct access not allowed');
+}
+?>
+<?php
 $groupValues1 = array(
     'group1' => 'Newbie',
     'group2' => 'Rookie',

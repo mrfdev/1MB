@@ -1,5 +1,10 @@
 <?php
-$groupValues = array(
+if (!defined('INCLUDED')) {
+  header('HTTP/1.0 403 Forbidden');
+  exit('Direct access not allowed');
+}
+
+$groupValues1 = array(
     'group1' => 'Newbie',
     'group2' => 'Rookie',
     'group3' => 'Beginner',
@@ -11,17 +16,21 @@ $groupValues = array(
     'group9' => 'Skilled',
     'group10' => 'Champion',
     'group11' => 'Expert',
-    'group12' => 'Elite',
+    'group12' => 'Elite'
+);
+$groupValues2 = array(
     'group13' => 'Builder',
     'group14' => 'Rogue',
     'group15' => 'Prodigy',
     'group16' => 'Savant',
-    'group17' => 'VIP',
+    'group17' => 'VIP'
+);
+$groupValues3 = array(
     'group18' => 'Patron',
     'group19' => 'MVP',
-    'group20' => 'EPIC',
-    'group21' => 'Veteran',
-    'group22' => 'Legendary',
+    'group20' => 'EPIC'
+);
+$groupValues4 = array(
     'group23' => 'Helper',
     'group24' => 'Moderator',
     'group25' => 'Admin',

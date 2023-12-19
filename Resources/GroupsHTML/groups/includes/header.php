@@ -11,16 +11,12 @@ if (!defined('INCLUDED')) {
   <meta name="description" content="1moreblock.com Groups for Minecraft server">
   <meta name="author" content="1moreblock.com - Floris Fiedeldij Dop">
   <title>Player Groups - 1MoreBlock.com</title>
-  <!-- resources section -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- key/value for groups -->
-  <?php include 'includes/groups_free_survival.php'; ?>
-  <?php include 'includes/groups_free_builders.php'; ?>
-  <?php include 'includes/groups_patrons.php'; ?>
-  <?php include 'includes/groups_special.php'; ?>
+  <!-- key/value for group-titles -->
+  <?php include 'includes/groups.php'; ?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

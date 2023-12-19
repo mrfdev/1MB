@@ -5,16 +5,16 @@
   <div class="table">
     <div class="table-header">
       <div class="table-cell">
-        <label for="groupSelect1">Free Survival</label>
+        <label class="groupLabel" for="groupSelect1">Free Survival</label>
       </div>
       <div class="table-cell">
-        <label for="groupSelect2">Free Builders</label>
+        <label class="groupLabel" for="groupSelect2">Free Builders</label>
       </div>
       <div class="table-cell">
-        <label for="groupSelect3">Patrons</label>
+        <label class="groupLabel" for="groupSelect3">Patrons</label>
       </div>
       <div class="table-cell">
-        <label for="groupSelect4">Special</label>
+        <label class="groupLabel" for="groupSelect4">Special</label>
       </div>
     </div>
     <div class="table-row">

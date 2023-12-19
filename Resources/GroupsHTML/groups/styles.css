@@ -10,6 +10,12 @@ footer {
   margin-top: 8px;
 }
 
+.groupLabel label {
+  display: unset;
+  line-height: 0.5;
+  margin-bottom: 0 !important;
+}
+
 /* global content stuff */
 .container {
   max-width: 960px;

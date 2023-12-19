@@ -10,12 +10,6 @@ footer {
   margin-top: 8px;
 }
 
-.groupLabel label {
-  display: unset;
-  line-height: 0.5;
-  margin-bottom: 0 !important;
-}
-
 /* global content stuff */
 .container {
   max-width: 960px;
@@ -58,4 +52,14 @@ footer {
 #selectedGroup {
   font-weight: bold; /* Making the text bold */
   padding: 1px; /* Adding padding of 10px */
+}
+
+.groupLabel label {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+label {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important; 
 }

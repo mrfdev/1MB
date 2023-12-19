@@ -6,8 +6,8 @@
   <meta name="author" content="1moreblock.com - Floris Fiedeldij Dop">
   <title>Player Groups - 1MoreBlock.com</title>
   <!-- resources section -->
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- key/value for groups -->

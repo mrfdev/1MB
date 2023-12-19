@@ -1,6 +1,37 @@
 <?php
 // Player groups and their features (c) 1MoreBlock.com - Floris Fiedeldij Dop
 // Surely in the future these values can be auto generated, I don't have the time to learn this right now. 
+
+/*
+    'group1' => 'Newbie',
+    'group2' => 'Rookie',
+    'group3' => 'Beginner',
+    'group4' => 'Learner',
+    'group5' => 'Novice',
+    'group6' => 'Player',
+    'group7' => 'Member',
+    'group8' => 'Adept',
+    'group9' => 'Skilled',
+    'group10' => 'Champion',
+    'group11' => 'Expert',
+    'group12' => 'Elite',
+    'group13' => 'Builder',
+    'group14' => 'Rogue',
+    'group15' => 'Prodigy',
+    'group16' => 'Savant',
+    'group17' => 'VIP',
+    'group18' => 'Patron',
+    'group19' => 'MVP',
+    'group20' => 'EPIC',
+    'group21' => 'Veteran',
+    'group22' => 'Legendary',
+    'group23' => 'Helper',
+    'group24' => 'Moderator',
+    'group25' => 'Admin',
+    'group26' => 'Unique',
+    'group27' => 'Owner'
+*/
+
 $playerGroups = array(
     "group1" => array(
         "Feature 1" => "Value 1",
@@ -99,6 +130,14 @@ $playerGroups = array(
         "Feature 2" => "Value 71",
     ),
     "group25" => array(
+        "Feature 1" => "Value 70",
+        "Feature 2" => "Value 71",
+    ),
+    "group26" => array(
+        "Feature 1" => "Value 70",
+        "Feature 2" => "Value 71",
+    ),
+    "group27" => array(
         "Feature 1" => "Value 73",
         "Feature 2" => "Value 74",
     )

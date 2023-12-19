@@ -23,8 +23,9 @@ $groupValues = array(
     'group21' => 'Veteran',
     'group22' => 'Legendary',
     'group23' => 'Helper',
-    'group24' => 'Admin',
-    'group25' => 'Unique',
-    'group26' => 'Owner'
+    'group24' => 'Moderator',
+    'group25' => 'Admin',
+    'group26' => 'Unique',
+    'group27' => 'Owner'
 );
 ?>

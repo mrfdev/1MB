@@ -8,10 +8,12 @@ if (!defined('INCLUDED')) {
 
   <footer class="py-3 bg-dark">
   <!-- footer section -->
-    <p class="m-0 text-center text-white">Player Groups &copy; 1977-<?php echo date("Y"); ?> 1MoreBlock.com - Floris Fiedeldij Dop
-    <br>
-    <small>Note please that Floris, the team members, OMGboards.com nor 1MoreBlock.com, claim or pretend to be-, nor are associated with-, and are not supported by Mojang or Microsoft, Discord, or any other brandname. Server owner mrfloris (mrfloris@gmail.com)</small>
-    </p>
+    <div class="container navbar-dark bg-dark headerFooterFix">
+      <p class="m-0 text-center text-white">Player Groups &copy; 1977-<?php echo date("Y"); ?> 1MoreBlock.com - Floris Fiedeldij Dop
+      <br>
+      <small>Note please that Floris, the team members, OMGboards.com nor 1MoreBlock.com, claim or pretend to be-, nor are associated with-, and are not supported by Mojang or Microsoft, Discord, or any other brandname. Server owner mrfloris (mrfloris@gmail.com)</small>
+      </p>
+    </div>
   </footer>
 
   <!-- scripts section -->

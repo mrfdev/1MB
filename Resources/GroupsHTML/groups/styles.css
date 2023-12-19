@@ -12,7 +12,7 @@ footer {
 
 /* global content stuff */
 .container {
-  max-width: 1280px;
+  max-width: 1140px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -62,4 +62,10 @@ footer {
 label {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important; 
+}
+
+.headerFooterFix {
+  margin: 0 auto;
+  padding:0;
+  border: 0;
 }

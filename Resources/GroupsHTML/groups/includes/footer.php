@@ -11,7 +11,7 @@ if (!defined('INCLUDED')) {
     <div class="container navbar-dark bg-dark headerFooterFix">
       <p class="m-0 text-center text-white">Player Groups &copy; 1977-<?php echo date("Y"); ?> 1MoreBlock.com - Floris Fiedeldij Dop
       <br>
-      <small>Note please that Floris, the team members, OMGboards.com nor 1MoreBlock.com, claim or pretend to be-, nor are associated with-, and are not supported by Mojang or Microsoft, Discord, or any other brandname. Server owner mrfloris (mrfloris@gmail.com)</small>
+      <small>Note please that Floris, the team members, OMGboards.com nor 1MoreBlock.com, claim or pretend to be-, nor are associated with-, <br>and are not supported by Mojang or Microsoft, Discord, or any other brandname. <br>Server owner mrfloris (<span id="serverowner"></span>)</small>
       </p>
     </div>
   </footer>
@@ -45,6 +45,13 @@ if (!defined('INCLUDED')) {
       });
     });
   </script>
+<script type="text/javascript">
+  var firstPart = "&#109;&#114;&#102;&#108;&#111;&#114;&#105;&#115;";
+  var atSymbol = "&#64;";
+  var secondPart = "&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;";
+  var email = firstPart + atSymbol + secondPart;
+  document.getElementById("serverowner").innerHTML = email;
+</script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

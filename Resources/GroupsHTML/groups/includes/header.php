@@ -56,6 +56,6 @@ if (!defined('INCLUDED')) {
 
     <header>
       <!-- header section -->
-      <h1><strong>Player Groups</strong> - 1MoreBlock.com</h1>
+      <h1><strong>Player Groups</strong> - What can you do?</h1>
       <hr>
     </header>

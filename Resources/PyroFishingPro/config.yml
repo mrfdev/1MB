@@ -100,6 +100,8 @@ Settings:
       - 'owo'
       - 'sushi'
       - 'sanctuary'
+      - 'builders'
+      - 'parkour'
   
   #Other random settings
   Other:
@@ -209,37 +211,37 @@ DisableBackArrows: false
 
 Permissions:
   MainMenu:
-    enabled: false
+    enabled: true
     permission-node: 'pf.menu'
   Shop:
-    enabled: false
+    enabled: true
     permission-node: 'pf.shop'
   Bag:
-    enabled: false
+    enabled: true
     permission-node: 'pf.bag'    
   Deliveries:
-    enabled: false
+    enabled: true
     permission-node: 'pf.deliveries'    
   Scales:
-    enabled: false
+    enabled: true
     permission-node: 'pf.scales'
   Gut:
-    enabled: false
+    enabled: true
     permission-node: 'pf.gut'
   Skills:
-    enabled: false
+    enabled: true
     permission-node: 'pf.skills'
   Bait:
-    enabled: false
+    enabled: true
     permission-node: 'pf.bait'
   Codex:
-    enabled: false
+    enabled: true
     permission-node: 'pf.codex'
   Augment:
-    enabled: false
+    enabled: true
     permission-node: 'pf.augment'
   Augments:
-    enabled: false
+    enabled: true
     permission-node: 'pf.augments'
     
   #enabling this will make it so players cannot catch custom fish or crabs.
@@ -249,7 +251,7 @@ Permissions:
     
   #This will require a permission to see the fish command list
   FishCommandList:
-    enabled: false
+    enabled: true
     permission-node: 'pf.commandslist'
     
 #Disables fishing, fish shop, fish gutting, fish deliveries, fish bag and augment crafting / augmentation while in creative mode.    

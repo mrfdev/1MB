@@ -1,0 +1,29 @@
+discordmsgchannel: "staffmsg"
+send-msg-in-channel: true
+slashcommand:
+  enabled: true
+  send-to-channel: true
+  command: "staffmsg"
+  command-description: "STAFF: send a message to ingame staffmsg. Not visible in current channel."
+  message-argument-description: "The message to send."
+name-options:
+  # The prefix added to the sender of all staffmsgs, unless use-ingame-name is true
+  discord-sender-prefix: "[D]"
+  # If the player has a Minecraft account linked, should we use their Minecraft in-game name as the sender of the staffmsg?
+  use-ingame-name: false
+
+  # What order should command senders be tried? The first one that works will be used.
+  # Must be one of "player", "spoofed", "console", or "nil"
+  # Currently only the player can "fall through" to the next one,
+  # So ensure that first and second choice are correctly selected.
+  command-sender:
+    # Makes a fake sender with the "sender" name. this might break stuff that uses the CMI event any more deeply than .getName()
+    # It does however allow not having the message being sent back to Discord, by checking the sender class
+    - spoofed
+    # If the player is currently online with their linked account, uses their player as the command sender
+    - player
+    # Uses the console command sender. better compatibility, worse usability
+    - console
+    # Uses a null command sender. supported (ish), as this is what a staffmsg from Bungeecord would send. not recommended, might break the event
+    - nil
+

@@ -3,7 +3,8 @@
 # 
 # Disabled Game Mode Addons
 # Level will NOT hook into these game mode addons.
-disabled-game-modes: []
+disabled-game-modes:
+- Parkour
 # 
 # When executing level command from console, should a report be shown?
 log-report-to-console: true
@@ -68,7 +69,7 @@ deathpenalty: 100
 # Sum team deaths - if true, all the teams deaths are summed
 # If false, only the leader's deaths counts
 # For other death related settings, see the GameModeAddon's config.yml settings.
-sumteamdeaths: false
+sumteamdeaths: true
 # Shorthand island level
 # Shows large level values rounded down, e.g., 10,345 -> 10k
 shorthand: false

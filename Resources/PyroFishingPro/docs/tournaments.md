@@ -1,0 +1,3 @@
+/fisht
+
+fishing tournaments

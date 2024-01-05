@@ -12,6 +12,7 @@ Mainly for internal use only.
 ## DOCS
 The content of all the individual files are within features.md:
 - [features.md](docs/features.md) - Overview of project features.
+
 Feel free to explore each file for more detailed information on the respective topic.
 - [augments.md](docs/augments.md) - Information about augments.
 - [bait.md](docs/bait.md) - Details regarding bait.

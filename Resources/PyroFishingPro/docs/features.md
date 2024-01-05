@@ -15,6 +15,9 @@ All the below information will try to go through these fishing features to help 
 
 This menu will give you an overview of the various features the custom fishing on 1MoreBlock.com offers. You can review your fishing rod, your personal stats, open the fish shop, check the deliveries, review the fish codex, take a chance in the scales menu, open and manage your fish bag, use the gutting station, manage your fishing skills, buy bait (when available) from the bait store, manage augments, and learn more about the totem.
 
+## Statistics
+When you open the `/fish stats` menu, you can review your general fish stats and your skill tree progress.
+
 ## Custom Fish
 In 2023, we have over a 100 custom fish from the plugin PyroFishingPro; they all have the same traits such as 'can be caught 24/7' and 'available in all biomes'. They also don't mind what weather it is or what depth they only spawn in.
 
@@ -73,6 +76,8 @@ You will encounter Crabs! They deter AFK-Fishing and drop items useful for craft
 
 The plugin discourages AFK-Fishing and checks for common fishing machines, promoting fair gameplay. And the staff will take action if they suspect a player from participating in unfair gameplay.
 
+Crab parts come from fishing up crabs, which is kind of rare. As such, I suggest the crab bait augment first.
+
 ## Unique Leveling and Currency System
 Progress through Fishing Levels and collect 'Entropy' (currency) to upgrade Deliveries and craft Augments, adding depth to your gameplay.
 
@@ -96,6 +101,10 @@ Craft Totems that offer distinctive effects, passives, and special occurrences.
 The Totem's passive effects work in the radius and 30 blocks above and 30 blocks below the particles.
 
 You can ask other fishers on the 1MB server to see their totem to learn how to build one.
+
+In `/fish menu` you can click on `Totem` item.
+
+TODO: more info about totem, maybe build instructions
 
 ## Tournaments
 Sometimes we have short or longer fishing tournaments. Some are announced ahead of time during special server events, others spontaneously happen throughout the month. We also have a weekly tournament on set days and times. Ask around in-game or on our Discord if other players have figured out yet which days and times.
@@ -123,6 +132,10 @@ Buying baits will cost money, and they have a limited number of uses. You can ch
 You can kill some aquatic animals to get special fishing items.
 - Dolphin tails come from dolphins; they look like enchanted rabbit feet. Killing a dolphin gives you a chance at getting one.
 - Crab parts come from fishing up crabs, which is kind of rare. As such, I suggest the crab bait augment first.
+- /fish codex shows tiered fish, displays first catch ever too
+- TODO: squid ?
+- TODO: boosters
+- TODO: booster items
 
 ## Unique Seasonal Events
 We have automatically scheduled seasonal events offering exclusive items and augments, adding excitement and anticipation to your Minecraft gameplay. Think Halloween and Christmas. If you participate in an event on the server, keep an eye on the Discord #announcements and #events channels; this is usually where we post the details.
@@ -149,6 +162,9 @@ Please note that we at any time might add, edit, remove any pointy fish.
 ## Lava / Nether fishing
 You currently cannot fish in lava.
 
+## Boosters
+TODO: I have no info about this topic at this point.
+
 ## Master Fisherman
 Let's say the total catch chance is out of 1000 (which it is by default internally).
 
@@ -174,6 +190,19 @@ Diamond = 40
 What this effectively does is increase the total pool to be 1200, but then scales up the other numbers to correspond to that. This then means that you are less likely to catch a bronze fish as before it was 600/1000, but now it is 600/1200; however, silver was 150/1000 but is now 250/1200.
 
 The same goes for the other tiers as well.
+
+## All the commands:
+TODO: write list of commands
+
+## Jack Table:
+TODO: Jack made a table (that Nebih updated)
+
+## Fishing Warp
+Some fisherman love to be left alone, others love to team up. Besides earning an mcMMO fishing exp bonus if you are in the same mcMMO /party (and close to eachother) you also enjoy PFP Party fishing bonus. Team up with a stranger or friends, you can do this anywhere of course, but you're free to invite others to join you for some fishing at `/warp fish`
+
+At `/warp fish` players can fish from docks, in various spots, explore and enjoy the fun environment on this island and everything in the sea. As well as go down a floor where there are enchantments and other things being sold related to fishing. 
+
+Warp fish is all about community!
 
 ## Fish guide!
 - Want even more info, or the inside scoop? Type `/fish guide`, or

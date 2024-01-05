@@ -39,19 +39,6 @@ Sell fish for in-game currency at the `/fish shop`, adding an economic aspect to
 
 Note that we mentioned earlier that we have a variety of custom fish, from a low to a higher tier, and even mythical fish. On top of that we have custom 1MB fish such as EPIC player fish with special commands, as well as Pointy fish. Be careful which fish you sell to the fish shop. You might want to keep certain fish for certain commands, deliveries, etc.
 
-## Tournaments
-Sometimes we have short or longer fishing tournaments. Some are announced ahead of time during special server events, others spontaniously happen throughout the month. We also have a weekly tournament on set days and times. Ask around in-game or on our Discord if other players have figured out yet which days and times. 
-
-Tournaments when activated announce themselves in the chat, you participate by just fishing! 
-
-In 2023 tournaments focus on the wilderness worlds (/general and /wild), in 2024 we will try to unlock this feature to other game types like /oneblock and /skyblock. 
-
-You can see a fishing tournament is active when there is a bossbar message on the top of the screen. You can also type `/fisht info` to see the progress.
-
-Rewards are paid to the top 3.
-
-There are a handful of types of fishing tournaments, we try to rotate between them. 
-
 ## Augments and Custom Enchantments
 We have custom enchantments for Fishing Rods using a Cauldron, enhancing your fishing abilities with effects like summoning tornadoes or increasing fish yield.
 
@@ -109,6 +96,19 @@ Craft Totems that offer distinctive effects, passives, and special occurrences.
 The Totem's passive effects work in the radius and 30 blocks above and 30 blocks below the particles.
 
 You can ask other fishers on the 1MB server to see their totem to learn how to build one.
+
+## Tournaments
+Sometimes we have short or longer fishing tournaments. Some are announced ahead of time during special server events, others spontaneously happen throughout the month. We also have a weekly tournament on set days and times. Ask around in-game or on our Discord if other players have figured out yet which days and times. 
+
+Tournaments when activated announce themselves in the chat, you participate by just fishing! 
+
+In 2023 tournaments focus on the wilderness worlds (/general and /wild), in 2024 we will try to unlock this feature to other game types like /oneblock and /skyblock. 
+
+You can see a fishing tournament is active when there is a bossbar message on the top of the screen. You can also type `/fisht info` to see the progress.
+
+Rewards are paid to the top 3.
+
+There are a handful of types of fishing tournaments, we try to rotate between them. 
 
 ## Bait System
 In 2023 we do not require bait to be obtained in order to catch certain fish.

@@ -1,0 +1,128 @@
+# 1MB Custom Fish Features
+
+This information relates to the plugin PyroFishingPro, and does not cover the also existing Jobs fisherman job, nor the mcMMO /fishing skill.
+
+The vanilla fishing can be quite boring, so we've changed that. Not only are there more fish in the game now, the custom fish can all do things. One might fix your hunger, the other might heal you, a third one might give you some /points.
+
+## How to get started?
+Well, the simplest thing is: Just fish! And explore the `/fish menu`
+
+All the below information will try to go through these fishing features to help you get introduced to a fun and custom fishing experience on 1MB. If at any time you have any questions feel free to reach out to a team member, I happen to know that JackPerByte, Tidala, and kgrim1 all are quite familiar with fishing.
+
+## Menu
+- If you hold your fishing rod you can sneak and right-click to open the fish menu. 
+- You can also type `/fish menu` to get to that same menu. 
+
+This menu will give you an overview of the various features the custom fishing on 1MoreBlock.com offers. You can review your fishing rod, your personal stats, open the fish shop, check the deliveries, review the fish codex, take a chance in the scales menu, open and manage your fish bag, use the gutting station, manage your fishing skills, buy bait (when available) from the bait store, manage augments, and learn more about the totem.
+
+## Custom Fish
+In 2023 we have over a 100 custom fish from the plugin PyroFishingPro, they all have the same traits such as 'can be caught 24/7', and 'available in all biomes'. They also don't mind what weather it is, or what depth they only spawn in. 
+
+In 2024 we're slowly going to customize a few of these fish to only appear under certain biome, weather, and/or other conditions. 
+
+Players can find out more about the available fish in the `/fish codex`
+
+## Enhanced Fish Appearance
+It's possible with a 1MB resource pack to see the fish visually differently. However, we currently do not have a resource pack available. 
+
+## Deliveries
+You can see `/fish deliveries` as mini-quests. Go catch custom fish (from different regions), earning  you rewards for your efforts.
+
+You have a `/fish bag` where you can temporarily store your fish. However, we recommend to create a separate storage system for deliveries and keep track of what you need. This turns fishing from catch and sell, to catch and collect, to yield a bigger payout.
+
+## Sell Shop and Economy
+You cannot sell fish of any type through the global `/sell` feature, only through the custom fish shop. You can however share, trade, and sell your fish between other players. Team up and level up faster!
+
+Sell fish for in-game currency at the `/fish shop`, adding an economic aspect to your Minecraft experience.
+
+Note that we mentioned earlier that we have a variety of custom fish, from a low to a higher tier, and even mythical fish. On top of that we have custom 1MB fish such as EPIC player fish with special commands, as well as Pointy fish. Be careful which fish you sell to the fish shop. You might want to keep certain fish for certain commands, deliveries, etc.
+
+## Tournaments
+Sometimes we have short or longer fishing tournaments. Some are announced ahead of time during special server events, others spontaniously happen throughout the month. We also have a weekly tournament on set days and times. Ask around in-game or on our Discord if other players have figured out yet which days and times. 
+
+Tournaments when activated announce themselves in the chat, you participate by just fishing! 
+
+In 2023 tournaments focus on the wilderness worlds (/general and /wild), in 2024 we will try to unlock this feature to other game types like /oneblock and /skyblock. 
+
+You can see a fishing tournament is active when there is a bossbar message on the top of the screen. You can also type `/fisht info` to see the progress.
+
+Rewards are paid to the top 3.
+
+There are a handful of types of fishing tournaments, we try to rotate between them. 
+
+## Augments and Custom Enchantments
+We have custom enchantments for Fishing Rods using a Cauldron, enhancing your fishing abilities with effects like summoning tornadoes or increasing fish yield.
+
+These are realised by creating augments.
+
+Augments are custom enchantments that are specific to fishing rods only. You can view a list of augments in game by typing `/fish augments`. To apply a fish augment, you type `/fish augment` and put the fishing rod and the augment into the GUI, click the Confirm button and that's it!
+
+Each augment has a unique purpose, crafting recipe, and max enhancement level. Each augment will require a certain fishing level (the plugin's level, NOT MCMMO) and a certain amount of entropy.
+
+### To create an augment:
+- Find the augment you want to make. Maybe note down the recipe somewhere.
+- Place a cauldron and fill it with water.
+- Toss the EXACT ingredients of the augment you want. Make sure they all went IN the cauldron.
+YOU CAN ONLY MAKE ONE AUGMENT AT A TIME. Even of the same type.
+- Strike the cauldron while holding a fishing rod. It will explode out an augment.
+
+### To apply the augment:
+- Open `/fish augment`
+- Put your rod in the left slot and the augment in the slot next to it.
+- Click the green pane on the middle right
+- It will make a sound and the augment will be applied to the rod.
+
+### First, explore the `/fish augment` command. On this screen it will:
+- Show you where to place your rod and augment and how to apply it. (middle left)
+- Show you how to withdraw entropy (the paper)
+- Show you how to go back to the fish menu (the arrow)
+- Show you how to remove augments (the TNT)
+- Show you where the list of augments are (the book and quill)
+
+## Crabs and Anti-AFK Mechanisms
+You will encounter Crabs! Which deter AFK-Fishing and drop items useful for crafting augments. Yes, on our 1MoreBlock.com server we do not allow automation. This include anti-afking, as well as auto-fishing. We do not allow it. You have to earn what you want.
+
+The plugin discourages AFK-Fishing and checks for common fishing machines, promoting fair gameplay. And the staff will take action if the suspect a player from participating in unfair-gameplay.
+
+## Unique Leveling and Currency System
+Progress through Fishing Levels and collect 'Entropy' (currency) to upgrade Deliveries and craft Augments, adding depth to your gameplay.
+
+## Scales, Gutting, and Entropy Bonuses
+- Gamble your fish for potential profit or loss by gutting the fish.
+- Gut your fish to gain bonus Entropy for crafting and upgrading Augments.
+- You can open the `/fish scales` menu to take a chance to increase the weight of your fish.
+
+## Entropy
+- Entropy is the 'currency' of the 1MB Fisherman!
+- There's a command: `/fish entropy`
+- You can get entrophy with `/fish gut`
+
+You can get entropy by fishing, completing deliveries or just gutteng the special fish. The Entropy also required for crafting and augment or improving deliveries.
+
+You can store your entropy in an item just do `/fish augment`, then click in the `paper icon`, you will get one entropy crystal for every click that you do. That store 10k of entropy in each crystal. You can sell, trade or just store those. 50k will get you access to the hotspot.
+
+## Totems and Unique Effects
+Craft Totems that offer distinctive effects, passives, and special occurrences.
+
+The Totem's passive effects work in the radius and 30 blocks above and 30 blocks below the particles.
+
+You can ask other fishers on the 1MB server to see their totem to learn how to build one.
+
+## Bait System
+In 2023 we do not require bait to be obtained in order to catch certain fish.
+
+In 2024 we're going to gradually introduce the bait system for certain fish.
+
+You can acquire custom baits from an in-game shop to attract rare and unique fish that you can only catch if you have fish bait.
+
+Buying baits will cost money and they have a limited uses. You can check the `/fish codex` to see which fish require what bait.
+
+## Plugin: Extensive Customization Options
+The PFP plugin offers a dynamic and flexible set of configuration tools for a custom server experience. We have been (so far) running on basically the vanilla configuration set up until 2024. In 2024 we're going to gradually try and make further customizations. For example, certain fish might run certain commands when you eat them. In 2023 it would fully feed you or cure your hunger when you eat a custom fish. And the exceptions were the EPIC and Pointy fish (running custom commands). In 2024 we want to expand the unique experience of fishing by carefully going through the configuration files and checking out what is possible to customize in a way that we want to run the server to give a specific 1MB experience. 
+
+## Unique Seasonal Events
+We have automatically scheduled seasonal events offering exclusive items and augments, adding excitement and anticipation to your Minecraft gameplay. Think Halloween and Christmas. If you participate in an event on the server keep an eye on the Discord #announcements and #events channels, this is usually where we post the details. 
+
+## Fish guide!
+- Want even more info, or the inside scoop? Type `/fish guide`, or
+- we also have some additional information here: <https://omgboards.com/threads/261874/>

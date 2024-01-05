@@ -121,7 +121,7 @@ world:
     DRAGON_EGG: false
     ISLAND_RESPAWN: true
     REDSTONE: false
-    CREEPER_GRIEFING: true
+    CREEPER_GRIEFING: false
     VISITOR_KEEP_INVENTORY: true
     BUCKET: false
     PETS_STAY_AT_HOME: true
@@ -197,13 +197,13 @@ world:
     GATE: true
     CHEST_DAMAGE: false
     EXPERIENCE_PICKUP: false
-    PREVENT_TELEPORT_WHEN_FALLING: false
+    PREVENT_TELEPORT_WHEN_FALLING: true
     WORLD_TNT_DAMAGE: false
     HOPPER: false
     LEASH: false
     BREAK_BLOCKS: false
     MOUNT_INVENTORY: false
-    OFFLINE_REDSTONE: true
+    OFFLINE_REDSTONE: false
     CHORUS_FRUIT: false
     CONTAINER: false
     ITEM_FRAME_DAMAGE: false
@@ -373,7 +373,7 @@ area:
     # How many resets a player is allowed (manage with /bsbadmin reset add/remove/reset/set command)
     # Value of -1 means unlimited, 0 means hardcore - no resets.
     # Example, 2 resets means they get 2 resets or 3 areas lifetime
-    reset-limit: -1
+    reset-limit: 100
     # Kicked or leaving players lose resets
     # Players who leave a team will lose an area reset chance
     # If a player has zero resets left and leaves a team, they cannot make a new
@@ -418,7 +418,7 @@ area:
       # Reset experience - if true, the player's experience will be reset.
       exp: false
       # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
-      ender-chest: false
+      ender-chest: true
   create-area-on-first-login:
     # Toggles the automatic area creation upon the player's first login on your server.
     # If set to true,
@@ -487,17 +487,17 @@ area:
   sethome:
     nether:
       # Allow setting home in the nether. Only available on nether areas, not vanilla nether.
-      allow: true
+      allow: false
       require-confirmation: true
     the-end:
       # Allow setting home in the end. Only available on end areas, not vanilla end.
-      allow: true
+      allow: false
       require-confirmation: true
   deaths:
     # Whether deaths are counted or not.
     counted: true
     # Maximum number of deaths to count. The death count can be used by add-ons.
-    max: 10
+    max: 100
     # When a player joins a team, reset their death count
     team-join-reset: true
     # Reset player death count when they start a new area or reset an area

@@ -15,4 +15,4 @@ extra:
 - If you hold your fishing rod, you can sneak and right-click to open the fish menu.
 - You can also type `/fish menu` to get to that same menu.
 
-This menu will give you an overview of the various features the custom fishing on 1MoreBlock.com offers. You can review your fishing rod, your personal stats, open the fish shop, check the deliveries, review the fish codex, take a chance in the scales menu, open and manage your fish bag, use the gutting station, manage your fishing skills, buy bait (when available) from the bait store, manage augments, and learn more about the totem.
+This menu will give you an overview of the various features the custom fishing on 1MoreBlock.com offers. You can review your fishing rod, your personal stats, open the fish shop, check the deliveries, review the fish codex, take a chance in the scales menu, open and manage your fish bag, use the gutting station, manage your fishing skills, buy bait (when available) from the bait shop, manage augments, and learn more about the totem.

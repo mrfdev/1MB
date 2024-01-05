@@ -149,6 +149,32 @@ Please note that we at any time might add, edit, remove any pointy fish
 ## Lava / Nether fishing
 You currently cannot fish in lava.
 
+## Master Fisherman
+Lets say the total catch chance is out of 1000 (which it is by default internally).
+
+Then lets set our catch rates: (all rates are 10x since the internal randomiser is out of 1000)
+Bronze: 60
+Silver: 15
+Gold: 5
+Diamond: 1
+
+Platinum and Mythical are omitted from this list as those are internally scaled automatically.
+
+Now, what master fisherman does is increase this "1000" by the number set in the config. Lets say you have max master fisherman, so level 20.
+
+This total number would then be (1000 + (20 * 10)) which is 1200.
+
+Now, Silver, Gold and Diamond fish tiers are then automatically scaled, and this 200 extra is equally divided amongst these tiers.
+
+If it's 200, I believe it's as follows:
+Silver = 100
+Gold = 60
+Diamond = 40
+
+What this effectively does, is increase the total pool to be 1200, but then scales up the other numbers to correspond to that. This then means that you are less likely to catch a bronze fish as before it was 600/1000, but now it is 600/1200, however, silver was 150/1000 but is now 250/1200.
+
+The same goes for the other tiers as well.
+
 ## Fish guide!
 - Want even more info, or the inside scoop? Type `/fish guide`, or
 - we also have some additional information here: <https://omgboards.com/threads/261874/>

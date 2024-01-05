@@ -901,7 +901,7 @@ world:
     PETS_STAY_AT_HOME: true
     NATURAL_SPAWNING_OUTSIDE_RANGE: true
     ANVIL: true
-    TRAPPED_CHEST: true
+    TRAPPED_CHEST: false
     TREES_GROWING_OUTSIDE_RANGE: false
     BOOKSHELF: true
     HARVEST: true
@@ -943,12 +943,12 @@ world:
     SCULK_SHRIEKER: true
     SMITHING: true
     EXPERIENCE_PICKUP: true
-    PREVENT_TELEPORT_WHEN_FALLING: false
+    PREVENT_TELEPORT_WHEN_FALLING: true
     HOPPER: true
     LEASH: true
     BREAK_BLOCKS: true
     MOUNT_INVENTORY: true
-    OFFLINE_REDSTONE: true
+    OFFLINE_REDSTONE: false
     JUKEBOX: true
     POTION_THROWING: true
     HURT_ANIMALS: true
@@ -963,7 +963,7 @@ world:
     LIQUIDS_FLOWING_OUT: false
     MINECART: true
     FISH_SCOOPING: true
-    END_PORTAL: true
+    END_PORTAL: false
     BREEDING: true
     HURT_VILLAGERS: true
     TURTLE_EGGS: true
@@ -974,11 +974,11 @@ world:
     NAME_TAG: true
     ITEM_DROP: true
     NOTE_BLOCK: true
-    NETHER_PORTAL: true
+    NETHER_PORTAL: false
     REMOVE_END_EXIT_ISLAND: true
     LECTERN: true
     SHULKER_BOX: true
-    OFFLINE_GROWTH: true
+    OFFLINE_GROWTH: false
     GRINDSTONE: true
     ITEM_PICKUP: true
     BREWING: true
@@ -1102,14 +1102,14 @@ world:
     ANIMAL_NATURAL_SPAWN: true
     MONSTER_NATURAL_SPAWN: true
     SHULKER_TELEPORT: true
-    FIRE_SPREAD: true
+    FIRE_SPREAD: false
     FIRE_BURNING: true
     PVP_OVERWORLD: false
     MONSTER_SPAWNERS_SPAWN: true
-    TNT_DAMAGE: true
+    TNT_DAMAGE: false
     FIRE_IGNITE: true
     ANIMAL_SPAWNERS_SPAWN: true
-    BLOCK_EXPLODE_DAMAGE: true
+    BLOCK_EXPLODE_DAMAGE: false
   # These settings/flags are hidden from users
   # Ops can toggle hiding in-game using SHIFT-LEFT-CLICK on flags in settings
   hidden-flags: []
@@ -1120,6 +1120,11 @@ world:
   falling-banned-commands:
   - warp
   - spawn
+  - ec
+  - enderchest
+  - cmi enderchest
+  - back
+  - trade
 area:
   # Default max team size
   # Permission size cannot be less than the default below. 
@@ -1160,7 +1165,7 @@ area:
       # Reset inventory - if true, the player's inventory will be cleared.
       # Note: if you have MultiInv running or a similar inventory control plugin, that
       # plugin may still reset the inventory when the world changes.
-      inventory: false
+      inventory: true
       # Reset health - if true, the player's health will be reset.
       health: true
       # Reset hunger - if true, the player's hunger will be reset.
@@ -1168,7 +1173,7 @@ area:
       # Reset experience points - if true, the player's experience will be reset.
       exp: false
       # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
-      ender-chest: false
+      ender-chest: true
     on-leave:
       # What should reset when the player leaves or is kicked
       # Reset Money - if this is true, will reset the player's money to the starting money
@@ -1178,7 +1183,7 @@ area:
       # Reset inventory - if true, the player's inventory will be cleared.
       # Note: if you have MultiInv running or a similar inventory control plugin, that
       # plugin may still reset the inventory when the world changes.
-      inventory: false
+      inventory: true
       # Reset health - if true, the player's health will be reset.
       health: false
       # Reset hunger - if true, the player's hunger will be reset.
@@ -1186,7 +1191,7 @@ area:
       # Reset experience - if true, the player's experience will be reset.
       exp: false
       # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
-      ender-chest: false
+      ender-chest: true
   create-area-on-first-login:
     # Toggles the automatic area creation upon the player's first login on your server.
     # If set to true,

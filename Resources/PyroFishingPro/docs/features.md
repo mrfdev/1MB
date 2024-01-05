@@ -30,6 +30,8 @@ You can see `/fish deliveries` as mini-quests. Go catch custom fish (from differ
 
 You have a `/fish bag` where you can temporarily store your fish. However, we recommend to create a separate storage system for deliveries and keep track of what you need. This turns fishing from catch and sell, to catch and collect, to yield a bigger payout.
 
+Deliveries are earned from every 180 custom fish that you catch. Please note this is ONLY Custom Fish. Regular fish do not count towards this amount.
+
 ## Sell Shop and Economy
 You cannot sell fish of any type through the global `/sell` feature, only through the custom fish shop. You can however share, trade, and sell your fish between other players. Team up and level up faster!
 
@@ -117,11 +119,35 @@ You can acquire custom baits from an in-game shop to attract rare and unique fis
 
 Buying baits will cost money and they have a limited uses. You can check the `/fish codex` to see which fish require what bait.
 
-## Plugin: Extensive Customization Options
-The PFP plugin offers a dynamic and flexible set of configuration tools for a custom server experience. We have been (so far) running on basically the vanilla configuration set up until 2024. In 2024 we're going to gradually try and make further customizations. For example, certain fish might run certain commands when you eat them. In 2023 it would fully feed you or cure your hunger when you eat a custom fish. And the exceptions were the EPIC and Pointy fish (running custom commands). In 2024 we want to expand the unique experience of fishing by carefully going through the configuration files and checking out what is possible to customize in a way that we want to run the server to give a specific 1MB experience. 
+## Custom Items
+You can kill some aquatic animals to get special fishing items.
+- Dolphin tails come from dolphins, they look like enchanted rabbit feet. Killing a dolphin gives you a chance at getting one.
+- Crab parts come from fishing up crabs, which is kind of rare. As such I suggest the crab bait augment first.
 
 ## Unique Seasonal Events
 We have automatically scheduled seasonal events offering exclusive items and augments, adding excitement and anticipation to your Minecraft gameplay. Think Halloween and Christmas. If you participate in an event on the server keep an eye on the Discord #announcements and #events channels, this is usually where we post the details. 
+
+## Plugin: Extensive Customization Options
+The PFP plugin offers a dynamic and flexible set of configuration tools for a custom server experience. We have been (so far) running on basically the vanilla configuration set up until 2024. In 2024 we're going to gradually try and make further customizations. For example, certain fish might run certain commands when you eat them. In 2023 it would fully feed you or cure your hunger when you eat a custom fish. And the exceptions were the EPIC and Pointy fish (running custom commands). In 2024 we want to expand the unique experience of fishing by carefully going through the configuration files and checking out what is possible to customize in a way that we want to run the server to give a specific 1MB experience.
+
+## EPIC Player Fish
+Please note that we at any time might add, edit, remove any epic player fish
+- Tidala - Tidal fish, gives you temp fly and 6 points
+- Globug100 - Floranges fish, gives you 6 points
+- Paprikaatje - Spicy Paprikaatje fish, gives 3 points and sets you on fire for a little bit
+- Citebafla - Alfabetic fish, gives 3 points
+- EnderDip - epic ender fish, gives 3 points and you might end up in the end dimension
+
+## Pointy Fish
+Please note that we at any time might add, edit, remove any pointy fish
+- Bronze - gives 3 /points
+- Silver - gives 2 /points
+- Gold - gives 3 /points
+- Diamond - gives 4 /points
+- Platinum - gives 5 /points
+
+## Lava / Nether fishing
+You currently cannot fish in lava.
 
 ## Fish guide!
 - Want even more info, or the inside scoop? Type `/fish guide`, or

@@ -1,0 +1,607 @@
+# CaveBlock Configuration 1.19.0-SNAPSHOT-b444
+caveblock:
+  command:
+    # Cave Command. What command users will run to access their cave.
+    # To define alias, just separate commands with white space.
+    cave: cave
+    # The Cave admin command.
+    # To define alias, just separate commands with white space.
+    admin: admincave
+    # The default action for new player command call.
+    # Sub-command of main player command that will be run on first player command call.
+    # By default it is sub-command 'create'.
+    # Added since 1.13.0.
+    new-player-action: create
+    # The default action for player command.
+    # Sub-command of main player command that will be run on each player command call.
+    # By default it is sub-command 'go'.
+    # Added since 1.13.0.
+    default-action: go
+world:
+  # Friendly name for this world. Used in admin commands. Must be a single word
+  friendly-name: cave
+  # Name of the world - if it does not exist then it will be generated.
+  # It acts like a prefix for nether and end (e.g. CaveBlock-world, CaveBlock-world_nether, CaveBlock-world_end)
+  world-name: cave
+  # World difficulty setting - PEACEFUL, EASY, NORMAL, HARD
+  # Other plugins may override this setting
+  difficulty: HARD
+  spawn-limits:
+    # Spawn limits. These override the limits set in bukkit.yml
+    # If set to a negative number, the server defaults will be used
+    # Added since 1.15.1.
+    monsters: -1
+    # Added since 1.15.1.
+    animals: -1
+    # Added since 1.15.1.
+    water-animals: -1
+    # Added since 1.15.1.
+    ambient: -1
+    # Setting to 0 will disable animal spawns, but this is not recommended. Minecraft default is 400.
+    # A negative value uses the server default
+    # Added since 1.15.1.
+    ticks-per-animal-spawns: -1
+    # Setting to 0 will disable monster spawns, but this is not recommended. Minecraft default is 400.
+    # A negative value uses the server default
+    # Added since 1.15.1.
+    ticks-per-monster-spawns: -1
+  # Radius of cave in blocks. (So distance between caves is twice this)
+  # Will be rounded up to the nearest 16 blocks.
+  # It is the same for every dimension : Overworld, Nether and End.
+  # This value cannot be changed mid-game and the plugin will not start if it is different.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  distance-between-caves: 64
+  # Default protection range radius in blocks. Cannot be larger than distance.
+  # Admins can change protection sizes for players individually using /cbadmin range set <player> <new range>
+  # or set this permission: caveblock.island.range.<number>
+  protection-range: 50
+  # Start caves at these coordinates. This is where new caves will start in the
+  # world. These must be a factor of your cave distance, but the plugin will auto
+  # calculate the closest location on the grid. Caves develop around this location
+  # both positively and negatively in a square grid.
+  # If none of this makes sense, leave it at 0,0.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  start-x: 0
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  start-z: 0
+  offset-x: 0
+  offset-z: 0
+  # Cave height - Lowest is 5.
+  # It is the y coordinate of the bedrock block in the schem.
+  cave-height: 60
+  # Maximum number of caves in the world. Set to -1 or 0 for unlimited.
+  # If the number of caves is greater than this number, it will stop players from creating caves.
+  max-caves: -1
+  # The default game mode for this world. Players will be set to this mode when they create
+  # a new cave for example. Options are SURVIVAL, CREATIVE, ADVENTURE, SPECTATOR
+  default-game-mode: SURVIVAL
+  # The default biome for the overworld
+  default-biome: WINDSWEPT_HILLS
+  # The maximum number of players a player can ban at any one time in this game mode.
+  # The permission caveblock.ban.maxlimit.X where X is a number can also be used per player
+  # -1 = unlimited
+  ban-limit: -1
+  # 
+  # This is cave.. no height... only depth. If depth is set smaller than maximal world height, then area above will be empty.
+  # Should not be less than cave height.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  world-depth: 256
+  # This indicate how many times block should be tried to generate.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  generation-tries: 2
+  # Should we use the new material generator ?
+  # This will generate ores and blocks similar to how vanilla does,
+  # but it will override the blocks settings of each world.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  use-new-material-generator: false
+  normal:
+    # 
+    # Make over world roof of bedrock, if false, it will be made from stone.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    roof: true
+    # 
+    # Option allows to toggle if world generator should generate natural(-ish) looking surface with dirt and grass blocks.
+    # Enabling this option will ignore roof setting.
+    # Default value is false.
+    # /!\ This feature is experimental and might not work as expected or might not work at all.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    natural-surface: false
+    # 
+    # Option allows to toggle if world generator should generate natural looking caves.
+    # Default value is false.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    natural-caves: false
+    # Make over world floor of bedrock, if false, it will be made from stone.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    floor: true
+    # 
+    # Option allows to toggle if world generator should generate natural looking bedrock block patterns.
+    # Enabling this option will ignore floor setting.
+    # Default value is false.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    natural-bedrock: false
+    # Main block of which world will be generated.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    main-block: STONE
+    # Blocks that will occasionally replace main block by random chance.
+    # Blocks will replace only main-block and will try to create packs that
+    # are set in their strings. Chance of spawning also is required.
+    # For materials first string must be MATERIAL, for entity: ENTITY.
+    # Entities spawned via generator are not protected from despawing.
+    # Working only with 2 high mobs currently.
+    # Example:
+    # MATERIAL:DIAMOND_ORE:100:5 - means there is 100% chace of spawing diamonds
+    # where max amount in pack are 5 per each subchunk!
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    blocks:
+    - MATERIAL:DIAMOND_ORE:1:5
+    - MATERIAL:GOLD_ORE:1:4
+    - MATERIAL:IRON_ORE:5:4
+    - MATERIAL:COAL_ORE:10:6
+    - MATERIAL:EMERALD_ORE:1:1
+    - MATERIAL:CLAY:10:6
+    - MATERIAL:DIRT:10:10
+    - MATERIAL:GRAVEL:20:6
+    - MATERIAL:GRANITE:20:10
+    - MATERIAL:ANDESITE:20:10
+    - MATERIAL:DIORITE:30:8
+    - ENTITY:ZOMBIE:1:1
+    - ENTITY:DOLPHIN:0.1:1
+    - ENTITY:CAVE_SPIDER:1:1
+  nether:
+    # Generate Nether - if this is false, the nether world will not be made and access to
+    # the nether will not occur. Other plugins may still enable portal usage.
+    # Note: Some default challenges will not be possible if there is no nether.
+    # Note that with a standard nether all players arrive at the same portal and entering a
+    # portal will return them back to their caves.
+    generate: false
+    # Caves in Nether. Change to false for standard vanilla nether.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    caves: true
+    # The default biome for the nether world (this may affect what mobs can spawn)
+    # Added since 1.14.0.
+    biome: NETHER_WASTES
+    # Nether spawn protection radius - this is the distance around the nether spawn
+    # that will be protected from player interaction (breaking blocks, pouring lava etc.)
+    # Minimum is 0 (not recommended), maximum is 100. Default is 25.
+    # Only applies to vanilla nether
+    spawn-radius: 25
+    # Make over world roof of bedrock, if false, it will be made from stone
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    roof: true
+    # Make over world floor of bedrock, if false, it will be made from stone
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    floor: true
+    # Main block of which world will be generated.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    main-block: NETHERRACK
+    # Blocks that will occasionally replace main block by random chance.
+    # Blocks will replace only main-block and will try to create packs that
+    # are set in their strings. Chance of spawning also is required.
+    # For materials first string must be MATERIAL, for entity: ENTITY.
+    # Entities spawned via generator are not protected from despawing.
+    # Working only with 2 high mobs currently.
+    # Example:
+    # MATERIAL:DIAMOND_ORE:100:5 - means there is 100% chace of spawing diamonds
+    # where max amount in pack are 5 per each subchunk!
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    blocks:
+    - MATERIAL:NETHER_QUARTZ_ORE:30:5
+    - MATERIAL:SOUL_SAND:40:10
+    - MATERIAL:MAGMA_BLOCK:10:3
+    - MATERIAL:GLOWSTONE:20:8
+    - MATERIAL:NETHER_BRICKS:10:5
+    - MATERIAL:LAVA:10:1
+    - ENTITY:MAGMA_CUBE:0.5:1
+    - ENTITY:GHAST:0.1:1
+    - ENTITY:WITHER_SKELETON:0.1:1
+    - MATERIAL:FIRE:10:1
+    # This option indicates if nether portals should be linked via dimensions.
+    # Option will simulate vanilla portal mechanics that links portals together
+    # or creates a new portal, if there is not a portal in that dimension.
+    create-and-link-portals: false
+  end:
+    generate: false
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    caves: true
+    # The default biome for the end world (this may affect what mobs can spawn)
+    # Added since 1.14.0.
+    biome: THE_END
+    # /!\ This feature is experimental and might not work as expected or might not work at all.
+    dragon-spawn: false
+    # Make over world roof of bedrock, if false, it will be made from stone
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    roof: true
+    # Make over world floor of bedrock, if false, it will be made from stone
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    floor: true
+    # Main block of which world will be generated.
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    main-block: END_STONE
+    # Blocks that will occasionally replace main block by random chance.
+    # Blocks will replace only main-block and will try to create packs that
+    # are set in their strings. Chance of spawning also is required.
+    # For materials first string must be MATERIAL, for entity: ENTITY.
+    # Entities spawned via generator are not protected from despawing.
+    # Working only with 2 high mobs currently.
+    # Example:
+    # MATERIAL:DIAMOND_ORE:100:5 - means there is 100% chace of spawing diamonds
+    # where max amount in pack are 5 per each subchunk!
+    # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+    blocks:
+    - ENTITY:SHULKER:0.2:1
+    - MATERIAL:OBSIDIAN:1:1
+    - MATERIAL:CHORUS_PLANT:1:3
+    # This option indicates if obsidian platform in the end should be generated
+    # when player enters the end world.
+    create-obsidian-platform: false
+  # Mob white list - these mobs will NOT be removed when logging in or doing /cave
+  remove-mobs-whitelist:
+  - WITHER
+  - ZOMBIFIED_PIGLIN
+  - ZOMBIE_VILLAGER
+  - ENDERMAN
+  # World flags. These are boolean settings for various flags for this world
+  flags:
+    SKY_WALKER_FLAG: false
+    DRAGON_EGG: false
+    ISLAND_RESPAWN: true
+    CREEPER_GRIEFING: false
+    PETS_STAY_AT_HOME: true
+    MAGIC_COBBLESTONE_GENERATOR_PERMISSION: false
+    NATURAL_SPAWNING_OUTSIDE_RANGE: true
+    ANVIL: false
+    VISITOR_TRIGGER_RAID: true
+    TRAPPED_CHEST: false
+    ENDER_CHEST: true
+    TREES_GROWING_OUTSIDE_RANGE: false
+    FROST_WALKER: false
+    PISTON_PUSH: false
+    COLLECT_LAVA: false
+    LEVER: false
+    MAGIC_SUMMON_ENABLE_FLAG: true
+    CAKE: false
+    HURT_MONSTERS: false
+    CLEAN_SUPER_FLAT: false
+    TRADING: false
+    EGGS: false
+    CHEST: false
+    ENTER_EXIT_MESSAGES: true
+    ENDERMAN_DEATH_DROP: true
+    FLINT_AND_STEEL: false
+    SCULK_SENSOR: true
+    CROP_TRAMPLE: false
+    DROPPER: false
+    OBSIDIAN_SCOOPING: true
+    TNT_PRIMING: false
+    COLLECT_WATER: false
+    AXOLOTL_SCOOPING: false
+    WORLD_BLOCK_EXPLODE_DAMAGE: false
+    BUTTON: false
+    COMPOSTER: false
+    COMMAND_RANKS: false
+    TRAPDOOR: true
+    EXPERIENCE_BOTTLE_THROWING: false
+    DYE: false
+    HIVE: false
+    ITEM_FRAME: false
+    CRAFTING: true
+    ENCHANTING: true
+    SHEARING: false
+    BOAT: false
+    BED: false
+    SPAWN_EGGS: false
+    BIOMES_WORLD_PROTECTION: true
+    CAULDRON_WITCHERY_ISLAND_PROTECTION: false
+    SCULK_SHRIEKER: true
+    CHEST_DAMAGE: false
+    EXPERIENCE_PICKUP: false
+    PREVENT_TELEPORT_WHEN_FALLING: false
+    WORLD_TNT_DAMAGE: false
+    HOPPER: false
+    LEASH: false
+    BREAK_BLOCKS: false
+    MOUNT_INVENTORY: false
+    OFFLINE_REDSTONE: true
+    JUKEBOX: false
+    POTION_THROWING: false
+    SPAWNER_SPAWN_EGGS: true
+    HURT_ANIMALS: false
+    REDSTONE: false
+    VISITOR_KEEP_INVENTORY: false
+    BUCKET: false
+    ENDER_PEARL: false
+    DOOR: true
+    BREAK_HOPPERS: false
+    FURNACE: false
+    LIQUIDS_FLOWING_OUT: false
+    MINECART: false
+    FISH_SCOOPING: false
+    END_PORTAL: false
+    BREEDING: false
+    HURT_VILLAGERS: false
+    WITHER_DAMAGE: false
+    CHALLENGES_ISLAND_PROTECTION: false
+    TURTLE_EGGS: false
+    BIOMES_ISLAND_PROTECTION: false
+    BREAK_SPAWNERS: false
+    ELYTRA: false
+    COARSE_DIRT_TILLING: true
+    RIDING: false
+    ARMOR_STAND: false
+    NAME_TAG: false
+    ENDERMAN_GRIEFING: false
+    ITEM_DROP: true
+    NOTE_BLOCK: false
+    CREATE_SHOPS: false
+    NETHER_PORTAL: false
+    REMOVE_END_EXIT_ISLAND: true
+    LECTERN: false
+    OFFLINE_GROWTH: true
+    SHULKER_BOX: false
+    ITEM_PICKUP: false
+    BREWING: false
+    CREEPER_DAMAGE: true
+    GREENHOUSE: false
+    FIRE_EXTINGUISH: false
+    ALLAY: false
+    BEACON: false
+    PRESSURE_PLATE: false
+    PLACE_BLOCKS: false
+    REMOVE_MOBS: true
+    FLOWER_POT: false
+    MILKING: false
+    DISPENSER: false
+    GATE: true
+    CHALLENGES_WORLD_PROTECTION: true
+    CHORUS_FRUIT: false
+    CONTAINER: false
+    ITEM_FRAME_DAMAGE: false
+    BARREL: false
+    COLLECT_POWDERED_SNOW: false
+  # These are the default protection settings for new caves.
+  # The value is the minimum cave rank required allowed to do the action.
+  # Ranks are the following:
+  #   VISITOR   = 0
+  #   COOP      = 200
+  #   TRUSTED   = 400
+  #   MEMBER    = 500
+  #   SUB-OWNER = 900
+  #   OWNER     = 1000
+  default-cave-flags: {}
+  # These are the default settings for new caves
+  default-cave-settings: {}
+  # These settings/flags are hidden from users
+  # Ops can toggle hiding in-game using SHIFT-LEFT-CLICK on flags in settings
+  hidden-flags:
+  - ANIMAL_NATURAL_SPAWN
+  - ANIMAL_SPAWNERS_SPAWN
+  - PVP_END
+  - FIRE_BURNING
+  - FIRE_SPREAD
+  - MONSTER_NATURAL_SPAWN
+  - TNT_DAMAGE
+  - PVP_NETHER
+  - MONSTER_SPAWNERS_SPAWN
+  # Visitor banned commands - Visitors to caves cannot use these commands in this world
+  visitor-banned-commands:
+  - spawner
+  - spawnmob
+  - ah
+  - market
+  - gift
+  # Falling banned commands - players cannot use these commands when falling
+  # if the PREVENT_TELEPORT_WHEN_FALLING world setting flag is active
+  falling-banned-commands: []
+cave:
+  # Default max team size
+  # Permission size cannot be less than the default below. 
+  max-team-size: 4
+  # Default maximum number of coop rank members per cave
+  # Players can have the caveblock.coop.maxsize.<number> permission to be bigger but
+  # permission size cannot be less than the default below. 
+  # Added since 1.13.0.
+  max-coop-size: 4
+  # Default maximum number of trusted rank members per cave
+  # Players can have the caveblock.trust.maxsize.<number> permission to be bigger but
+  # permission size cannot be less than the default below. 
+  # Added since 1.13.0.
+  max-trusted-size: 4
+  # Default maximum number of homes a player can have. Min = 1
+  # Accessed via /cave sethome <number> or /cave go <number>
+  max-homes: 5
+  reset:
+    # How many resets a player is allowed (override with /cbadmin clearresets <player>)
+    # Value of -1 means unlimited, 0 means hardcore - no resets.
+    # Example, 2 resets means they get 2 resets or 3 caves lifetime
+    reset-limit: 25
+    # Kicked or leaving players lose resets
+    # Players who leave a team will lose a cave reset chance
+    # If a player has zero resets left and leaves a team, they cannot make a new
+    # cave by themselves and can only join a team.
+    # Leave this true to avoid players exploiting free caves
+    leavers-lose-reset: false
+    # Allow kicked players to keep their inventory.
+    # Overrides the on-leave inventory reset for kicked players.
+    kicked-keep-inventory: false
+    on-join:
+      # What the plugin should reset when the player joins or creates a cave
+      # Reset Money - if this is true, will reset the player's money to the starting money
+      # Recommendation is that this is set to true, but if you run multi-worlds
+      # make sure your economy handles multi-worlds too.
+      money: false
+      # Reset inventory - if true, the player's inventory will be cleared.
+      # Note: if you have MultiInv running or a similar inventory control plugin, that
+      # plugin may still reset the inventory when the world changes.
+      inventory: false
+      # Reset health - if true, the player's health will be reset.
+      health: true
+      # Reset hunger - if true, the player's hunger will be reset.
+      hunger: true
+      # Reset experience points - if true, the player's experience will be reset.
+      exp: false
+      # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
+      ender-chest: false
+    on-leave:
+      # What the plugin should reset when the player leaves or is kicked from a cave
+      # Reset Money - if this is true, will reset the player's money to the starting money
+      # Recommendation is that this is set to true, but if you run multi-worlds
+      # make sure your economy handles multi-worlds too.
+      money: false
+      # Reset inventory - if true, the player's inventory will be cleared.
+      # Note: if you have MultiInv running or a similar inventory control plugin, that
+      # plugin may still reset the inventory when the world changes.
+      inventory: false
+      # Reset health - if true, the player's health will be reset.
+      health: false
+      # Reset hunger - if true, the player's hunger will be reset.
+      hunger: false
+      # Reset experience - if true, the player's experience will be reset.
+      exp: false
+      # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
+      ender-chest: false
+  create-cave-on-first-login:
+    # Toggles the automatic cave creation upon the player's first login on your server.
+    # If set to true,
+    #    * Upon connecting to your server for the first time, the player will be told that
+    #     a cave will be created for him.
+    #   * Make sure you have a Blueprint Bundle called "default": this is the one that will
+    #     be used to create the cave.
+    #   * A cave will be created for the player without needing him to run the create command.
+    # If set to false, this will disable this feature entirely.
+    # Warning:
+    #   * If you are running multiple gamemodes on your server, and all of them have
+    #     this feature enabled, a cave in all the gamemodes will be created simultaneously.
+    #     However, it is impossible to know on which cave the player will be teleported to afterwards.
+    #   * Cave creation can be resource-intensive, please consider the options below to help mitigate
+    #     the potential issues, especially if you expect a lot of players to connect to your server
+    #     in a limited period of time.
+    enable: false
+    # Time in seconds after the player logged in, before his cave gets created.
+    # If set to 0 or less, the cave will be created directly upon the player's login.
+    # It is recommended to keep this value under a minute's time.
+    delay: 5
+    # Toggles whether the cave creation should be aborted if the player logged off while the
+    # delay (see the option above) has not worn off yet.
+    # If set to true,
+    #   * If the player has logged off the server while the delay (see the option above) has not
+    #     worn off yet, this will cancel the cave creation.
+    #   * If the player relogs afterward, since he will not be recognized as a new player, no cave
+    #     would be created for him.
+    #   * If the cave creation started before the player logged off, it will continue.
+    # If set to false, the player's cave will be created even if he went offline in the meantime.
+    # Note this option has no effect if the delay (see the option above) is set to 0 or less.
+    abort-on-logout: true
+  # Toggles whether the player should be teleported automatically to his cave when it is created.
+  # If set to false, the player will be told his cave is ready but will have to teleport to his cave using the command.
+  # Added since 1.10.0.
+  teleport-player-to-cave-when-created: true
+  # Create Nether or End cave if they are missing when a player goes through a portal.
+  # Nether and End cave are usually pasted when a player makes their cave, but if they are
+  # missing for some reason, you can switch this on.
+  # Note that bedrock removal glitches can exploit this option.
+  # Added since 1.10.0.
+  create-missing-nether-end-caves: false
+  commands:
+    # List of commands to run when a player joins an cave or creates one.
+    # These commands are run by the console, unless otherwise stated using the [SUDO] prefix,
+    # in which case they are executed by the player.
+    # 
+    # Available placeholders for the commands are the following:
+    #    * [name]: name of the player
+    # 
+    # Here are some examples of valid commands to execute:
+    #    * '[SUDO] bbox version'
+    #    * 'bsbadmin deaths set [player] 0'
+    # 
+    # Note that player-executed commands might not work, as these commands can be run with said player being offline.
+    # Added since 1.8.0.
+    on-join: []
+    # List of commands to run when a player leaves a cave, resets his cave or gets kicked from it.
+    # These commands are run by the console, unless otherwise stated using the [SUDO] prefix,
+    # in which case they are executed by the player.
+    # 
+    # Available placeholders for the commands are the following:
+    #    * [name]: name of the player
+    # 
+    # Here are some examples of valid commands to execute:
+    #    * '[SUDO] bbox version'
+    #    * 'bsbadmin deaths set [player] 0'
+    # 
+    # Note that player-executed commands might not work, as these commands can be run with said player being offline.
+    # Added since 1.8.0.
+    on-leave: []
+    # List of commands that should be executed when the player respawns after death if Flags.ISLAND_RESPAWN is true.
+    # These commands are run by the console, unless otherwise stated using the [SUDO] prefix,
+    # in which case they are executed by the player.
+    # 
+    # Available placeholders for the commands are the following:
+    #    * [name]: name of the player
+    # 
+    # Here are some examples of valid commands to execute:
+    #    * '[SUDO] bbox version'
+    #    * 'bsbadmin deaths set [player] 0'
+    # 
+    # Note that player-executed commands might not work, as these commands can be run with said player being offline.
+    # Added since 1.14.0.
+    on-respawn: []
+  sethome:
+    nether:
+      # Allow setting home in the nether. Only available on nether islands, not vanilla nether.
+      allow: true
+      require-confirmation: true
+    the-end:
+      # Allow setting home in the end. Only available on end islands, not vanilla end.
+      allow: true
+      require-confirmation: true
+  deaths:
+    # Whether deaths are counted or not.
+    counted: true
+    # Maximum number of deaths to count. The death count can be used by add-ons.
+    max: 10
+    # Reset player death count when they start a new cave or reset a cave
+    reset-on-new: true
+    # When a player joins a team, reset their death count
+    team-join-reset: true
+protection:
+  # Geo restrict mobs.
+  # Mobs that exit the cave space where they were spawned will be removed.
+  geo-limit-settings:
+  - GHAST
+  - BAT
+  - BLAZE
+  # CaveBlock blocked mobs.
+  # List of mobs that should not spawn in the CaveBlock.
+  # Added since 1.13.0.
+  block-mobs: []
+  # Invincible visitors. List of damages that will not affect visitors.
+  # Make list blank if visitors should receive all damages
+  invincible-visitors:
+  - BLOCK_EXPLOSION
+  - CONTACT
+  - CUSTOM
+  - DROWNING
+  - ENTITY_ATTACK
+  - ENTITY_EXPLOSION
+  - FALL
+  - FALLING_BLOCK
+  - FIRE
+  - FIRE_TICK
+  - LAVA
+  - LIGHTNING
+  - MAGIC
+  - POISON
+  - PROJECTILE
+  - STARVATION
+  - SUFFOCATION
+  - THORNS
+  - WITHER
+  - DRAGON_BREATH
+  - FLY_INTO_WALL
+  - HOT_FLOOR
+  - CRAMMING
+  - VOID
+do-not-edit-these-settings:
+  # These settings should not be edited
+  reset-epoch: 0
+debug: false

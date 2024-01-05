@@ -1,0 +1,87 @@
+# Game Modes covered by limits
+gamemodes:
+- AcidIsland
+- BSkyBlock
+- CaveBlock
+- SkyGrid
+- AOneBlock
+
+# Permissions
+# Island owners can be given permissions that override all general settings
+# Format is GAME-MODE-NAME.island.limit.MATERIAL.LIMIT
+# example: bskyblock.island.limit.hopper.10
+# permission activates when player logs in.
+#
+# General block limiting
+# Use this section to limit how many blocks can be added to an island.
+# 0 means the item will be blocked from placement completely.
+# These limits apply to every game mode world
+blocklimits:
+  HOPPER: 36
+  DROPPER: 18
+  DISPENSER: 18
+  FURNACE: 10
+  BLAST_FURNACE: 10
+  SMOKER: 10
+  OBSERVER: 18
+  PISTON: 30
+  STICKY_PISTON: 30
+  BEACON: 6
+  SPAWNER: 4
+  REPEATER: 36
+# This section is for world-specific limits and overrides the general limit
+# Specify each world you want to limit individually (including nether and end worlds)
+# If these worlds are not covered by the game modes above, nothing will happen
+worlds:
+  acid:
+    HOPPER: 24
+
+# Default entity limits within a player's island space (protected area and to island limit).
+# A limit of 5 will allow up to 5 entites in over world, 5 in nether and 5 in the end.
+# Affects all types of creature spawning. Also includes entities like MINECARTS.
+# Note: Only the first 49 limited blocks and entities are shown in the limits GUI.
+entitylimits:
+  ENDERMAN: 6
+  CHICKEN: 10
+  COW: 10
+  PIG: 10
+  SHEEP: 10
+  RABBIT: 10
+  OCELOT: 8
+  HORSE: 8
+  MULE: 8
+  DONKEY: 8
+  MUSHROOM_COW: 10
+  POLAR_BEAR: 10
+  PARROT: 10
+  TURTLE: 8
+  DOLPHIN: 8
+  SQUID: 6
+  GLOW_SQUID: 6
+  AXOLOTL: 8
+  SALMON: 6
+  COD: 6
+  VILLAGER: 18
+  ZOMBIE_VILLAGER: 10
+  ZOMBIE: 8
+  CREEPER: 8
+  SKELETON: 8
+  CAVE_SPIDER: 6
+  SPIDER: 6
+  SLIME: 8
+  HUSK: 6
+  STRAY: 6
+  WITCH: 4
+  ZOMBIFIED_PIGLIN: 6
+  BLAZE: 6
+  GHAST: 3
+  MAGMA_CUBE: 6
+  FROG: 10
+  WARDEN: 1
+  CAT: 6
+  BEE: 10
+  PANDA: 10
+  SHULKER: 8
+  DROWNED: 6
+  FOX: 10
+  IRON_GOLEM: 8

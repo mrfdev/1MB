@@ -1,0 +1,43 @@
+# Greenhouses Configuration 1.7.4-SNAPSHOT-b364
+# 
+greenhouses:
+  # BentoBox GameModes that will use Greenhouses
+  game-modes:
+  - BSkyBlock
+  - AcidIsland
+  - SkyGrid
+  # 
+  # Show loaded recipe details during startup of server
+  startup-log: true
+  # 
+  # Weather and ecosystem settings
+  # How often it should snow in the g/h when the weather is raining, in seconds
+  snowspeed: 30.0
+  # Chance of any snow falling in a greenhouse when the snow tick occurs
+  # (1.0 = always, 0.0 = never)
+  snowchance: 1.0
+  # How many blocks should get snow 1 = all of them, 0 = none, 0.1 = 1 in 10
+  snowdensity: 0.1
+  # 
+  # Biome activity
+  # How often should greenhouse biomes be checked to make sure they are still valid
+  ecotick: 5
+  # How often should plants potentially grow in minutes if bonemeal is in the hopper
+  planttick: 1
+  # How often should blocks potentially convert, in minutes 
+  # Example: dirt-> sand in desert greenhouse
+  blocktick: 2
+  # How often should mobs be potentially spawned in a greenhouse, in minutes
+  mobtick: 5
+  # 
+  # Default settings for greenhouse actions
+  # Allow lava or water to flow out of a greenhouse, e.g. through the door, floor
+  allowflowout: false
+  # Allow lava or water to flow into a greenhouse, e.g., through the door
+  allowflowin: false
+  # 
+  # Allow glowstone to be used as well as glass in roof and walls
+  allowglowstone: false
+  # 
+  # Allow glass panes to be used to build greenhouses
+  allowpanes: false

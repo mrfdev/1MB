@@ -1,0 +1,93 @@
+# Biomes Configuration 2.2.0-SNAPSHOT-b241
+# 
+# For advanced menu this indicate which mode will be active.
+# If advanced menu is disabled or in biome set command update mode is not passed
+# then update algorithm will use this value as update mode.
+# Valid values are:
+#     'ISLAND' - updates biome on whole island
+#     'CHUNK' - updates biome on whole chunks around player
+#     'RANGE' - updates biome by block in given range
+default-mode: ISLAND
+# 
+# For advanced menu this indicate how large range will be set on GUI opening.
+# If advanced menu is disabled or in biome set command update range is not set
+# then update algorithm will use this value as update range.
+default-size: 3
+# 
+# This indicates if changing biome will affect whole island or just protection range.
+# Allows to fix issues when biome is changed in space between islands.
+use-protection-range: false
+# 
+# This indicates if all monetary payments should be done via Bank Addon Account.
+use-bank-account: false
+# 
+# This indicates that players will be notified about new unlocked biomes.
+notify-on-unlock: false
+# 
+# This indicates if biome on island must be restored to default biome, if
+# island changes owner and it does not have biome set ability.
+# 'true' means that biome will be reset.
+reset-biomes: false
+# 
+# This indicates cool down in seconds between users can change biomes on their island.
+cooldown: 60
+# 
+# Number of minutes in which biome change will be cancelled. It may happen in busy server or
+# huge island areas.
+# Default value = 5
+biome-change-timeout: 5
+# 
+# Number of biome changes at the same time. Setting it to 0 or lower will disable biome change
+# completely.
+# Default value = 1
+parallel-biome-changes: 1
+# 
+# Allows toggling if Biomes Addon should refresh chunks, so players could get biome instantly.
+# Otherwise, biome will be updated after chunk is unloaded (player leaves the area).
+# Be aware, not all plugins and clients supports this feature. If you get error after biome
+# updates, please disable this feature.
+# Default value = true
+use-chunk-refresh: true
+# Use single GUI. This will allow to disable buy panel, and use main panel to buy biomes.
+# BUY action need to be added to the main panel biome button.
+# Default value = false
+use-single-menu: false
+commands:
+  player:
+    # Player main sub-command to access the addon.
+    # This command label will be required to write after gamemode player command label, f.e. /[label] biomes
+    # Each alias must be separated with an empty space.
+    # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+    main: biomes
+    # Player set sub-command that allows to set biome with a command.
+    # This command label will be required to write after player main command, f.e. /[label] biomes set
+    # Each alias must be separated with an empty space.
+    # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+    set: set
+    # Player buy sub-command that allows to buy biomes with a command.
+    # This command label will be required to write after player main command, f.e. /[label] biomes buy
+    # Each alias must be separated with an empty space.
+    # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+    buy: buy
+    # Player info sub-command that allows to see info about biome with a command.
+    # This command label will be required to write after player main command, f.e. /[label] biomes info
+    # Each alias must be separated with an empty space.
+    # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+    info: info
+  admin:
+    # Admin main sub-command to access the addon.
+    # This command label will be required to write after gamemode admin command label, f.e. /[label] biomes
+    # Each alias must be separated with an empty space.
+    # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+    main: biomes
+# 
+# This list stores GameModes in which Biomes addon should not work.
+# To disable addon it is necessary to write its name in new line that starts with -. Example:
+# disabled-gamemodes:
+#  - BSkyBlock
+disabled-gamemodes:
+  - AOneBlock
+  - SkyGrid
+  - AcidIsland
+  - CaveBlock
+  - Parkour

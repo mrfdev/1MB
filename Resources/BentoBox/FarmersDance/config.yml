@@ -1,0 +1,107 @@
+# FarmersDance Configuration 1.0.0
+# This config file is dynamic and saved when the server is shutdown.
+#
+dance:
+  #
+  # Allows to toggle between lazy dancing and active dancing.
+  # Lazy dancing means that players just need to hold shift, while active dancing
+  # requires repeating shift pressing.
+  # Default value = false.
+  # /!\ In order to apply the changes made to this option, you must restart your server. Reloading BentoBox or the server won't work.
+  lazy-dancing: false
+  #
+  # Allows to set how many dance moves player must perform until plants starts to
+  # grow. This does not affect lazy dancing.
+  # Default value = 3.
+  minimal-dance-moves: 3
+  #
+  # Allows to set how many dance moves player can perform until they are capped.
+  # Every 1 second player looses 1 dance move. So fast hands can accumulate a lot
+  # of dance moves and then be still until stored dance moves are cleared.
+  # This does not affect lazy dancing.
+  # Default value = 8.
+  maximal-dance-moves: 8
+area:
+  #
+  # Allows to set the square radius of blocks from player location where plants will
+  # be affected. This is just in X and Z coordinate.
+  # Default value = 3.
+  affected-radius: 3
+  #
+  # Allows to set the height of affected area in blocks.
+  # 0 means that effect will be only at player level. 1 means that effect will be
+  # 1 block above and bellow
+  # Default value = 0.
+  affected-height: 0
+  #
+  # Allows to set how many blocks in affected area will be triggered in every game
+  # tick. If multiple are allowed, then there is a chance that it can be the same
+  # block. This is per player.
+  # Default value = 1.
+  affected-block-count: 1
+groups:
+  #
+  # Toggles if dancing will affect saplings. This includes:
+  #  oak_sapling, spruce_sapling, birch_sapling, jungle_sapling, acacia_sapling,
+  #  dark_oak_sapling, mangrove_propagule, azalea, flowering_azalea, bamboo.
+  # Default value = true.
+  grow-saplings: true
+  #
+  # Toggles if dancing will affect crops. This includes:
+  #  wheat, carrots, potatoes, beetroots.
+  # Default value = true.
+  grow-crops: true
+  #
+  # Toggles if dancing will affect pumpkins and melons.
+  # Dancing near sapling will force-grow pumpkin/melon near stem.
+  # Default value = true.
+  grow-pumpkin-melon: true
+  #
+  # Toggles if dancing will affect cactus and sugarcane.
+  # Dancing near cactus/sugarcane will grow it by 1 level. Max level is still 3.
+  # Default value = true.
+  grow-cactus-sugarcane: true
+  #
+  # Toggles if dancing will affect mushrooms.
+  # Dancing near brown and red mushroom will allow it to grow.
+  # Huge mushroom requirements still must be met.
+  # Default value = true.
+  grow-mushrooms: true
+  #
+  # Toggles if dancing will affect fungus.
+  # Dancing near warped and crimson fungus will allow it to grow.
+  # Large fungus requirements still must be met.
+  # Default value = true.
+  grow-fungus: true
+  #
+  # Toggles if dancing will affect warped and twisted wines.
+  # Default value = true.
+  grow-nether-vines: true
+  #
+  # Toggles if dancing will affect vines and glow lichen.
+  # Default value = true.
+  grow-vines: true
+  #
+  # Toggles if dancing will affect tall flowers.
+  # It means that tall flowers will drop their item, like using bone meal.
+  # Default value = true.
+  grow-tall-flowers: true
+  #
+  # Toggles if dancing will affect sea pickles.
+  # Sea pickles requirements still must be met.
+  # Default value = true.
+  grow-sea-pickles: true
+  #
+  # Toggles if dancing will affect kelp and large drip leaf.
+  # Default value = true.
+  grow-kelp-drip-leaf: true
+  #
+  # Toggles if dancing will affect chorus flower.
+  # Dancing near chorus flower will force it to grow in full chorus tree.
+  # Default value = true.
+  grow-chorus-flower: true
+  #
+  # Toggles if dancing will affect sweet berries and glow berries.
+  # Dancing near berries will produce berries.
+  # Default value = true.
+  grow-berries: true

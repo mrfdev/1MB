@@ -1,0 +1,388 @@
+##########################################################################################
+# Example biomesTemplate.yml file. This format is not compatible with ASkyBlock format.
+# Use the biomes import command to import the biomes to your world.
+# For example: /bsbadmin biomes import <file_name>
+# Once biomes are imported, you can edit them directly via admin menu.
+##########################################################################################
+# File format.
+# biomes:                                     # Internal Data Structure. DO NOT CHANGE!
+#  <unique_name>:                             # Unique name for the biome. Required!
+#    biome: <BIOME>                           # Spigot BIOME TYPE. Valid values can be found in link below. Required!
+#    environment: <ENVIRONMENT>               # Spigot WORLD ENVIRONMENT TYPE. World environment value. Default Normal.
+#    name: <String>                           # String. Custom name for biome. Default <unique_name>.
+#    description: <String>                    # String. Some extra description in icon lore. Default empty.
+#    icon: <Item>                             # BentoBox ItemParser type. Write format can be found in: https://docs.bentobox.world/en/latest/BentoBox/ItemParser/. Default Paper.
+#    order: <Integer>                         # Integer. Order of current biome. Default -1.
+#    unlock:                                  # Section that configures biomes unlock/buy options. Not required.
+#      level: <Long>                          # Minimal island level for biome to be unlockable. Requires Level addon. Default 0.
+#      permissions: [<String>]                # Set of permissions for biome to be unlockable. Default empty.
+#      cost: 10000
+#      items: [<Item>]                        # Set of items for purchasing biome (once). Write format for each item can be found in: https://docs.bentobox.world/en/latest/BentoBox/ItemParser/. Default empty.
+#    change:                                  # Section that configures cost for each biome usage. Not required.
+#      mode: <Mode>                           # Mode how cost is applied. Supported values: STATIC - price never changes, PER_BLOCK - cost is applied for each block in area, PER_USAGE - cost increases by [increment] after each usage. Default STATIC.
+#      cost: 10000
+#      items: [<Item>]                        # Set of items for changing biome. Write format for each item can be found in: https://docs.bentobox.world/en/latest/BentoBox/ItemParser/. Default empty.
+#      increment: <Double>                    # Increment for all costs (money and items) if usage is set to PER_USAGE. Default 0. (works as static)
+#
+# bundles:                                    # Internal Data Structure.
+#  <unique_name>:                             # Unique name for the bundle. Required!
+#    name: <String>                           # String. Custom name for bundle. Default <unique_name>.
+#    description: <String>                    # String. Some extra description in icon lore. Default empty.
+#    icon: <Item>                             # BentoBox ItemParser type. Write format can be found in: https://docs.bentobox.world/en/latest/BentoBox/ItemParser/. Default Paper.
+#    biomes: [<String>]                       # Set of <unique_names> that you used in biomes section. Default empty.
+##########################################################################################
+# There exists a lot of biomes in Minecraft. The list of the latest supported biome types
+# can be found here:
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html#enum.constant.summary
+# All these biomes are valid for adding in BiomesList. By default only meaningful for
+# skyblock will be added.
+##########################################################################################
+# Icon supports any viewable item from inventory. However, it does not support enchantments
+# and amount.
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+##########################################################################################
+# Environment supports 3 default Minecraft environments:
+#   - `normal` - for overworld
+#   - `nether` - for the nether
+#   - `the_end` - for the end
+# If value is not specified or is not one of these three, normal will be used.
+##########################################################################################
+# Change Mode supports 3 values:
+#   - `STATIC` - cost never changes. Always requires the same amount of money and items.
+#   - `PER_BLOCK` - cost is calculated by number of blocks in selected area. Be aware, players can only hold as many items as there are space in inventory.
+#   - `PER_USAGE` - cost is increased after each time that biome is used. Increment value can be specified.
+# If value is not specified or is not one of these three, static will be used.
+##########################################################################################
+#
+# Set of biomes that can be used anywhere. This set contains all useful biomes that provides extra content. Comment above each biome shows what unique each biome brings.
+biomes:
+  # Dolphins, Cod, Squid
+  simple_ocean:
+    biome: DEEP_OCEAN
+    environment: NORMAL
+    name: '&f&l Deep Ocean'
+    description: |-
+      &7 A deep dark ocean may
+      &7 provide some cod,
+      &7 but squids may wander
+      &7 in its depth.
+    icon: COD
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - COD_BUCKET:1
+  # Tropical Fish, Puffer fish
+  warm_ocean:
+    biome: WARM_OCEAN
+    environment: NORMAL
+    name: '&f&l Warm Ocean'
+    description: |-
+      &7 A warm ocean is
+      &7 ideal for swimming,
+      &7 and catching some
+      &7 colorfull fish.
+    icon: TROPICAL_FISH
+    unlock:
+      level: 10
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - TROPICAL_FISH_BUCKET:1
+  # Salmon, Polar Bears
+  frozen_water:
+    biome: FROZEN_OCEAN
+    environment: NORMAL
+    name: '&f&l Cold Ocean'
+    description: |-
+      &7 A coldness of this
+      &7 ocean is matched
+      &7 only by its size.
+    icon: ICE
+    unlock:
+      level: 20
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - ICE:20
+  # Axolotl, Glow squid
+  pretty_caves:
+    biome: LUSH_CAVES
+    environment: NORMAL
+    name: '&f&l Lush Caves'
+    description: |-
+      &7 Deep underground are sill
+      &7 some places with greenery.
+    icon: FLOWERING_AZALEA
+    unlock:
+      level: 50
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - MOSS_BLOCK:64
+  # Sheep, Pig, Chicken, Cow, Donkey, Horse
+  fields:
+    biome: PLAINS
+    environment: NORMAL
+    name: '&f&l Plains'
+    description: |-
+      &7 Flat but green, the best
+      &7 starting biome.
+    icon: GRASS_BLOCK
+    change:
+      mode: STATIC
+      cost: 10000
+  # Red fox, other rabbit colors
+  taiga:
+    biome: TAIGA
+    environment: NORMAL
+    name: '&f&l Taiga'
+    description: |-
+      &7 Cold but not snowy
+      &7 forest. Rabbits and
+      &7 foxes love this
+      &7 weather.
+    icon: FERN
+    change:
+      mode: STATIC
+      cost: 10000
+  # Wolf, White Rabbit, White Fox
+  cold_fields:
+    biome: SNOWY_TAIGA
+    environment: NORMAL
+    name: '&f&l Snowy Taiga'
+    description: |-
+      &7 Cold and snowy place
+      &7 is not for everyone.
+      &7 But white foxes and
+      &7 rabbits has places
+      &7 where hide.
+    icon: SNOW_BLOCK
+    unlock:
+      level: 50
+    change:
+      mode: STATIC
+      cost: 10000
+  # Goats
+  mountain:
+    biome: SNOWY_SLOPES
+    environment: NORMAL
+    name: '&f&l Mountain Slopes'
+    description: |-
+      &7 Dangerous place where
+      &7 only crazy goats can
+      &7 survive.
+    icon: SNOW_BLOCK
+    unlock:
+      level: 75
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - SNOW_BLOCK:64
+  # Llama
+  savanna:
+    biome: SAVANNA_PLATEAU
+    environment: NORMAL
+    name: '&f&l Savanna'
+    description: |-
+      &7 Warm and almost dry
+      &7 place with rapid rains.
+      &7 Only chach trees can
+      &7 survive there.
+    icon: ACACIA_SAPLING
+    unlock:
+      level: 50
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - ACACIA_SAPLING:12
+  # Mushroom Cow
+  mooshroom:
+    biome: MUSHROOM_FIELDS
+    environment: NORMAL
+    name: '&f&l Infested Land'
+    description: |-
+      &7 Mycelium infested blocks
+      &7 that spreads faster then
+      &7 grass and infests everything
+      &7 in their way. Almost nothing
+      &7 can survive here.
+    icon: MYCELIUM
+    unlock:
+      level: 150
+      items:
+        - BROWN_MUSHROOM:21
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - RED_MUSHROOM:100
+  # Parrots, Ocelot, Panda
+  jungle:
+    biome: JUNGLE
+    environment: NORMAL
+    name: '&f&l Jungle'
+    description: |-
+      &7 Hard to navigate and
+      &7 and rainy place.
+      &7 Ideal for ocelots.
+    icon: JUNGLE_SAPLING
+    unlock:
+      level: 50
+    change:
+      mode: STATIC
+      cost: 10000
+  # Turtle
+  beach:
+    biome: BEACH
+    environment: NORMAL
+    name: '&f&l Beach'
+    description: |-
+      &7 The best place for vacation.
+      &7 Get some suncream and a
+      &7 good mood.
+    icon: WATER_BUCKET
+    unlock:
+      level: 25
+    change:
+      mode: STATIC
+      cost: 10000
+  # No Rain
+  desert:
+    biome: DESERT
+    environment: NORMAL
+    name: '&f&l Desert'
+    description: |-
+      &7 Hot wasteland with no
+      &7 water. Even rain does
+      &7 not fall here.
+    icon: SAND
+    unlock:
+      level: 25
+    change:
+      mode: STATIC
+      cost: 10000
+  # Flowers
+  forest:
+    biome: FLOWER_FOREST
+    environment: NORMAL
+    name: '&f&l Flower Forest'
+    description: |-
+      &7 A place where every
+      &7 bee would love to live.
+      &7 All flowers that you
+      &7 wished are here.
+    icon: ORANGE_TULIP
+    unlock:
+      level: 75
+    change:
+      mode: STATIC
+      cost: 10000
+  # Slime and blue orchid
+  swamp:
+    biome: SWAMP
+    environment: NORMAL
+    name: '&f&l Swamp'
+    description: |-
+      &7 A sticky place where
+      &7 you should not want
+      &7 to stay.
+    icon: BLUE_ORCHID
+    unlock:
+      level: 75
+    change:
+      mode: STATIC
+      cost: 10000
+  # Nether related Biomes
+  # Default Nether Biome
+  hell:
+    biome: NETHER_WASTES
+    environment: NETHER
+    name: '&f&l Hell'
+    description: |-
+      &7 Not a place where
+      &7 living should wander.
+    icon: NETHERRACK
+    unlock:
+      level: 250
+    change:
+      mode: STATIC
+      cost: 10000
+  # Magma Cube
+  basalt:
+    biome: BASALT_DELTAS
+    environment: NETHER
+    name: '&f&l Basalt Deltas'
+    description: |-
+      &7 A bit cooler place in
+      &7 hell where magma cubes
+      &7 wander and search
+      &7 for food.
+    icon: BASALT
+    unlock:
+      level: 250
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - BASALT:128
+  # Skeletons and Ghasts
+  lost_souls:
+    biome: SOUL_SAND_VALLEY
+    environment: NETHER
+    name: '&f&l Lost Soul Valley'
+    description: |-
+      &7 Who stays here too long
+      &7 may stuck and never be
+      &7 able to leave.
+    icon: SOUL_SAND
+    unlock:
+      level: 250
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - SOUL_SAND:128
+  # Piglins and Hoglins
+  red_forest:
+    biome: CRIMSON_FOREST
+    environment: NETHER
+    name: '&f&l Red Forest'
+    description: |-
+      &7 Even in the hell you
+      &7 can fins some places
+      &7 where livings survive.
+      &7 Be aware of angry pigs.
+    icon: CRIMSON_FUNGUS
+    unlock:
+      level: 250
+      items:
+        - NETHERRACK:64
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - CRIMSON_FUNGUS:3
+  # Technically, no hostile mobs spawns here.
+  cyan_forest:
+    biome: WARPED_FOREST
+    environment: NETHER
+    name: '&f&l Cyan Forest'
+    description: |-
+      &7 Safe place in unsafe
+      &7 world.
+    icon: WARPED_FUNGUS
+    unlock:
+      level: 250
+      items:
+        - NETHERRACK:64
+    change:
+      mode: STATIC
+      cost: 10000
+      items:
+        - WARPED_FUNGUS:3

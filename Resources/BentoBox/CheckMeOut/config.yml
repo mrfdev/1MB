@@ -1,0 +1,25 @@
+# CheckMeOut Configuration 1.0.2
+# 
+# 
+# Icon that will be displayed in submission list. SIGN counts for any kind of sign and the type of
+# wood used will be reflected in the panel if the server supports it.
+# It uses native Minecraft material strings, but using string 'PLAYER_HEAD', it is possible to
+# use player heads instead. Beware that Mojang API rate limiting may prevent heads from loading.
+icon: GRASS_BLOCK
+# 
+# This list stores GameModes in which Level addon should not work.
+# To disable addon it is necessary to write its name in new line that starts with -. Example:
+# disabled-gamemodes:
+#  - BSkyBlock
+disabled-gamemodes: []
+# 
+# CheckMeOut panel name formatting.
+# Example: &c will make names red. &f is white
+name-format: '&f'
+# 
+# Allow random checking - adds a button to the panel that goes to a random island
+random-allowed: true
+# 
+# User and admin commands. You can change them if they clash with other addons or plugins.
+user-command: checkmeout
+admin-command: cmo

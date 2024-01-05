@@ -117,58 +117,84 @@ world:
   remove-mobs-whitelist: []
   # World flags. These are boolean settings for various flags for this world
   flags:
+    HURT_ANIMALS: false
     DRAGON_EGG: false
     ISLAND_RESPAWN: true
+    REDSTONE: false
     CREEPER_GRIEFING: true
+    VISITOR_KEEP_INVENTORY: true
+    BUCKET: false
     PETS_STAY_AT_HOME: true
+    ENDER_PEARL: false
+    DOOR: true
     NATURAL_SPAWNING_OUTSIDE_RANGE: false
+    BREAK_HOPPERS: false
+    FURNACE: false
+    LIQUIDS_FLOWING_OUT: true
     ANVIL: false
-    VISITOR_TRIGGER_RAID: true
-    TRAPPED_CHEST: false
+    MINECART: false
+    FISH_SCOOPING: false
+    END_PORTAL: false
+    BREEDING: false
     ENDER_CHEST: true
+    HURT_VILLAGERS: false
     TREES_GROWING_OUTSIDE_RANGE: true
-    BOOKSHELF: false
-    HARVEST: false
+    WITHER_DAMAGE: false
     FROST_WALKER: false
+    TURTLE_EGGS: false
     PISTON_PUSH: true
     COLLECT_LAVA: false
+    BREAK_SPAWNERS: false
     LEVER: false
+    ELYTRA: true
+    COARSE_DIRT_TILLING: true
+    RIDING: false
     CAKE: false
     HURT_MONSTERS: false
+    ARMOR_STAND: false
+    NAME_TAG: false
+    ENDERMAN_GRIEFING: false
     CLEAN_SUPER_FLAT: false
-    SIGN_EDITING: false
     TRADING: true
     EGGS: false
-    CHEST: false
+    ITEM_DROP: true
+    NOTE_BLOCK: false
     ENTER_EXIT_MESSAGES: true
-    PLACE_WARP: false
     FLINT_AND_STEEL: false
-    SCULK_SENSOR: true
+    NETHER_PORTAL: false
+    REMOVE_END_EXIT_ISLAND: true
+    LECTERN: false
+    OFFLINE_GROWTH: true
+    ITEM_PICKUP: false
     CROP_TRAMPLE: false
+    BREWING: false
     DROPPER: false
-    ENTITY_PORTAL_TELEPORT: false
     OBSIDIAN_SCOOPING: true
+    CREEPER_DAMAGE: true
     TNT_PRIMING: false
     COLLECT_WATER: false
-    AXOLOTL_SCOOPING: false
-    WORLD_BLOCK_EXPLODE_DAMAGE: false
+    GREENHOUSE: false
     BUTTON: false
-    COMPOSTER: false
+    FIRE_EXTINGUISH: false
     COMMAND_RANKS: false
+    BEACON: false
     TRAPDOOR: true
     EXPERIENCE_BOTTLE_THROWING: false
+    PRESSURE_PLATE: true
     DYE: false
-    HIVE: false
     ITEM_FRAME: false
-    CROP_PLANTING: false
+    PLACE_BLOCKS: false
     CRAFTING: true
+    REMOVE_MOBS: false
     ENCHANTING: true
     SHEARING: false
-    BOAT: true
+    BOAT: false
     BANK_ACCESS: false
     BED: false
     SPAWN_EGGS: false
-    SCULK_SHRIEKER: true
+    MILKING: false
+    DISPENSER: false
+    GATE: true
     CHEST_DAMAGE: false
     EXPERIENCE_PICKUP: false
     PREVENT_TELEPORT_WHEN_FALLING: false
@@ -177,61 +203,13 @@ world:
     LEASH: false
     BREAK_BLOCKS: false
     MOUNT_INVENTORY: false
-    OFFLINE_REDSTONE: false
-    JUKEBOX: false
-    POTION_THROWING: false
-    SPAWNER_SPAWN_EGGS: true
-    HURT_ANIMALS: false
-    REDSTONE: false
-    VISITOR_KEEP_INVENTORY: true
-    BUCKET: false
-    ENDER_PEARL: false
-    DOOR: true
-    BREAK_HOPPERS: false
-    FURNACE: false
-    LIQUIDS_FLOWING_OUT: true
-    MINECART: false
-    FISH_SCOOPING: false
-    END_PORTAL: false
-    BREEDING: false
-    HURT_VILLAGERS: false
-    WITHER_DAMAGE: false
-    TURTLE_EGGS: false
-    BREAK_SPAWNERS: false
-    ELYTRA: true
-    COARSE_DIRT_TILLING: true
-    RIDING: false
-    ARMOR_STAND: false
-    NAME_TAG: false
-    ENDERMAN_GRIEFING: false
-    ITEM_DROP: true
-    NOTE_BLOCK: false
-    CREATE_SHOPS: false
-    NETHER_PORTAL: false
-    REMOVE_END_EXIT_ISLAND: true
-    LECTERN: false
-    OFFLINE_GROWTH: false
-    SHULKER_BOX: false
-    ITEM_PICKUP: false
-    BREWING: false
-    CREEPER_DAMAGE: true
-    PARKOUR_CREATIVE: false
-    GREENHOUSE: false
-    FIRE_EXTINGUISH: false
-    BEACON: false
-    ALLAY: false
-    PRESSURE_PLATE: true
-    PLACE_BLOCKS: false
-    REMOVE_MOBS: false
-    FLOWER_POT: false
-    MILKING: false
-    DISPENSER: false
-    GATE: true
+    OFFLINE_REDSTONE: true
     CHORUS_FRUIT: false
     CONTAINER: false
     ITEM_FRAME_DAMAGE: false
-    BARREL: false
-    COLLECT_POWDERED_SNOW: false
+    JUKEBOX: false
+    POTION_THROWING: false
+    SPAWNER_SPAWN_EGGS: true
   # These are the default protection settings for new areas.
   # The value is the minimum area rank required allowed to do the action
   # Ranks are the following:
@@ -253,13 +231,13 @@ world:
     MONSTER_SPAWNERS_SPAWN: 500
     ANVIL: 500
     MINECART: 500
-    FISH_SCOOPING: 500
     FIRE_IGNITE: 500
+    FISH_SCOOPING: 500
     END_PORTAL: 500
     BREEDING: 500
     HURT_VILLAGERS: 500
-    TURTLE_EGGS: 500
     FROST_WALKER: 500
+    TURTLE_EGGS: 500
     COLLECT_LAVA: 500
     BREAK_SPAWNERS: 500
     LEVER: 0
@@ -294,8 +272,8 @@ world:
     ITEM_FRAME: 500
     CRAFTING: 0
     ENCHANTING: 500
-    ANIMAL_SPAWNERS_SPAWN: 500
     SHEARING: 500
+    ANIMAL_SPAWNERS_SPAWN: 500
     BOAT: 0
     BED: 500
     SPAWN_EGGS: 500
@@ -309,8 +287,8 @@ world:
     BREAK_BLOCKS: 500
     CHORUS_FRUIT: 500
     CONTAINER: 500
-    POTION_THROWING: 500
     JUKEBOX: 500
+    POTION_THROWING: 500
   # These are the default settings for new areas
   default-area-settings:
     PVP_END: false

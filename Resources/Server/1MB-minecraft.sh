@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.17.2, build 064 for Minecraft 1.20.4 (Java 21.0.1, 64bit)
-# @Release: December 8th, 2023
+# @Version: 2.17.2, build 065 for Minecraft 1.20.4 (Java 21.0.2, 64bit)
+# @Release: January 19th, 2024
 # @Description: Helps us start a Spigot or Paper 1.20.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.20.4"
 # Which version are we running?
 
 _minJavaVersion="21"
-# use 21 for java 21.0.1 which can be used with Minecraft 1.19.x and 1.20.4
+# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.4
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
@@ -55,7 +55,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dpaper.useLegacyPluginLoading=true (Temporary fix circular plugin loading issue)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="spigot"
+_engine=""
 # spigot until paper jar is out
 # "" assumes auto detection for <engine>-1.20.4.jar 
 # "spigot" assumes to look for spigot-1.20.4.jar
@@ -83,7 +83,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
@@ -215,4 +215,4 @@ fi
 _startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
 $_startJVM || _output oops "Failed to start the jvm for some reason."
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

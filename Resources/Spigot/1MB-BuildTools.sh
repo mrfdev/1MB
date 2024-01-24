@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.15.2, build 089
-# @Release: December 8th, 2023
+# @Version: 2.15.2, build 090
+# @Release: January 19th, 2024
 # @Description: Helps us make a Minecraft Spigot 1.20.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.20.4"
 # Which version are we running?
 
 _minJavaVersion=21
-# use 21 for java 21 which can be used with Minecraft 1.19.x and 1.20.4
+# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.4
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
@@ -550,4 +550,4 @@ pwd
 # We are done, let's get outtah here
 _output okay "That's it, we're done!"
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

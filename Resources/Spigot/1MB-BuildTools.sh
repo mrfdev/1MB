@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.15.3, build 091
+# @Version: 2.15.3, build 092
 # @Release: April 23rd, 2024
 # @Description: Helps us make a Minecraft Spigot 1.20.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -21,7 +21,7 @@ _minecraftVersion="1.20.5"
 # Which version are we running?
 
 _minJavaVersion=21
-# use 21 for java 21.0.2 or 22.0.2 which can be used with Minecraft 1.19.x and 1.20.5
+# use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.5
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up

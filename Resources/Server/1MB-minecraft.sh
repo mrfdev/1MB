@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.17.2, build 065 for Minecraft 1.20.4 (Java 21.0.2, 64bit)
-# @Release: January 19th, 2024
-# @Description: Helps us start a Spigot or Paper 1.20.4 server.
+# @Version: 2.17.3, build 066 for Minecraft 1.20.5 (Java 22.0.2, 64bit)
+# @Release: April 23rd, 2024
+# @Description: Helps us start a Spigot or Paper 1.20.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,7 +17,7 @@
 #
 ###
 
-_minecraftVersion="1.20.4"
+_minecraftVersion="1.20.5"
 # Which version are we running?
 
 _minJavaVersion="21"
@@ -83,6 +83,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-22.0.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"

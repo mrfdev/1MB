@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.17.3, build 067 for Minecraft 1.20.5 (Java 22.0.1, 64bit)
-# @Release: April 23rd, 2024
-# @Description: Helps us start a Spigot or Paper 1.20.5 server.
+# @Version: 2.17.4, build 068 for Minecraft 1.20.6 (Java 22.0.1, 64bit)
+# @Release: April 30th, 2024
+# @Description: Helps us start a Spigot or Paper 1.20.6 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.20.5"
+_minecraftVersion="1.20.6"
 # Which version are we running?
 
 _minJavaVersion="21"
-# use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.5
+# use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.6
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
 # use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
 # use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
@@ -57,9 +57,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # Override auto engine jar detection; only use this if you have issues
 _engine="spigot"
 # spigot until paper jar is out
-# "" assumes auto detection for <engine>-1.20.5.jar 
-# "spigot" assumes to look for spigot-1.20.5.jar
-# "paper" assumes to look for paper-1.20.5.jar
+# "" assumes auto detection for <engine>-1.20.6.jar 
+# "spigot" assumes to look for spigot-1.20.6.jar
+# "paper" assumes to look for paper-1.20.6.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -71,7 +71,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.20.5 server-gui
+# leave "" if you want the 1.20.6 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION

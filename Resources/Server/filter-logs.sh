@@ -17,4 +17,11 @@ shift
 for username in "$@"
 do
   output_file="${current_date}-${username}.log"
+  grep "$username" "$log_file" > "$output_file"
+  if [ $? -eq 0 ]; then
+    echo "Results for '$username' written to '$output_file'"
+  else
+    echo "No results found for '$username' in '$log_file'"
+    rm "$output_file"
+  fi
 done

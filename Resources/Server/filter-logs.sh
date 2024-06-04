@@ -10,3 +10,11 @@ if [ ! -f "$log_file" ]; then
   echo "Log file '$log_file' not found!"
   exit 1
 fi
+
+current_date=$(date +"%Y-%m-%d")
+
+shift
+for username in "$@"
+do
+  output_file="${current_date}-${username}.log"
+done

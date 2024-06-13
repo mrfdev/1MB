@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.15.5, build 094
+# @Version: 2.16.0, build 095
 # @Release: June 13th, 2024
 # @Description: Helps us make a Minecraft Spigot 1.21 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -9,6 +9,7 @@
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+# @News: Support for < Java 17 and < Minecraft 1.17.x has been dropped.
 
 ### CONFIGURATION
 #
@@ -23,14 +24,9 @@ _minecraftVersion="1.21"
 _minJavaVersion=22
 # use 22 for java 22.0.1 which can be used with Minecraft 1.20.6 and 1.21
 # use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.6
-# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20.1
-# use 19.0 for java 19.0.2 which can be used with Minecraft 1.19.3 and 1.19.4
-# use 18.0 for java 18.0.2.1 which can be used with Minecraft 1.19.2 and up
-# use 17.0 for java 17.0.5 or newer which can be used for Minecraft 1.17.1 and up.
-# use 16.0 for java 16 which is required for Minecraft 1.17.1 and up.
-# use 16.0 for java 16 which can be used for Minecraft 1.16.5 and up.
-# use 11.0 for java 11 which can be used for Minecraft 1.13.x and up to 1.16.5
-# use 1.8 for java 8 which can be used for Minecraft 1.12.x and up to 1.16.5
+# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20+
+# use 18.0, 19.0 for java 18.0.2.1+ which can be used with Minecraft 1.19+
+# use 17.0 for java 17.0.5 which can be used for Minecraft 1.17.x
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -53,7 +49,7 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to spigot-1.21.jar
+# 1MB-start.sh defaults to, for example: spigot-1.21.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
@@ -66,9 +62,6 @@ _javaBin=""
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-16.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java"
 
 _dirScript="" #leave empty for auto discovery
 # example: _dirScript="/Users/floris/MinecraftServer/_development"
@@ -174,8 +167,6 @@ function cache {
     # Write given msg true/false to _cacheFile
     sed -i.tmp "4s#.*#${1}#" "$_cacheFile"
     sed -i.tmp "5s#.*#${2}#" "$_cacheFile"
-    # debug "_cacheFile: $1, msg: $2."
-    # debug 1 "cat $_cacheFile"
 }
 
 ### CACHE LEGEND / HANDLER
@@ -197,13 +188,11 @@ function cache {
 ###
 
 if [ -f "$_cacheFile" ]; then
-    # success
-    # There's an existing cache
+    # success // There's an existing cache
     _output debug "Found an existing _cacheFile '$_cacheFile'."
     _output debug 1 "cat $_cacheFile"
 else
-    # failure
-    # File was never made, or manually deleted. Let's create a new one.
+    # failure // File was never made, or manually deleted. Let's create a new one.
 cat <<- EOF > $_cacheFile
 $_minecraftVersion
 0
@@ -216,9 +205,6 @@ EOF
 fi
 
 # At this point we have an old or a new cache file, adding them to variables
-# debug: https://stackoverflow.com/questions/6022384/bash-tool-to-get-nth-line-from-a-file
-# debug: sed 'NUMq;d' file // sed "${NUM}q;d" file
-
 _cacheMcBuild=$(sed '1q;d' $_cacheFile) #line1
 _cacheSpBuild=$(sed '2q;d' $_cacheFile) #line2
 _cacheBtBuild=$(sed '3q;d' $_cacheFile) #line3
@@ -342,8 +328,6 @@ fi
 #
 # # What is the latest Minecraft build they're making Spigot for?
 # https://hub.spigotmc.org/stash/projects/SPIGOT/repos/builddata/raw/info.json
-# debug: JSON minecraftVersion NUM
-# You can change _jsonUrls and _jsonKey
 #
 ###
 _latest=false
@@ -367,7 +351,6 @@ fi
 #
 # What is the latest Spigot nightly build number?
 # https://hub.spigotmc.org/versions/latest.json
-# debug: JSON name NUM
 #
 ###
 _jsonKey="name"
@@ -407,7 +390,6 @@ fi
 #
 # What is the latest BuildTools build number?
 # https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/buildNumber
-# debug: spits out just NUM
 #
 ###
 
@@ -512,7 +494,6 @@ _jarSpigotExisting="$_dirBase/$_jarSpigot"
 _jarSpigotBackup="$_dirBase/$_jarSpigotBackup"
 
 # is there an old spigot jar backup?
-# TODO only make a backup if there is actually a jar to backup as well.
 if [ -f "$_jarSpigotBackup" ]; then
     _output debug "Found an existing jar backed up: '$_jarSpigotBackup', removing it.."
     rm -f "$_jarSpigotBackup" # Clean up; removing backup
@@ -537,9 +518,7 @@ if [ "$_verboseOutput" == true ]; then
     # _output debug "pretending to build.."
 else
     # do not display JVE output during compile (assuming value false)
-    # todo: should else if and failover else
     $_javaBin $_javaMemory $_javaParams -jar $_jarBuildtools $_rev > /dev/null 2>&1 || _output oops "Failed; Could not build '$_jarBuildtools'. Quitting!"
-    # _output debug "pretending to build.."
 fi
 
 _output debug "Done. Next, isolating $_jarSpigot .."

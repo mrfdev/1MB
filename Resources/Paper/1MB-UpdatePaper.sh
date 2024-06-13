@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.7, build 032
-# @Release: May 31st, 2024
-# @Description: Helps us get a Minecraft Paper 1.20.6 server .jar
+# @Version: 3.2.8, build 033
+# @Release: June 13th, 2024
+# @Description: Helps us get a Minecraft Paper 1.21 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-UpdatePaper.sh
@@ -29,7 +29,7 @@ _saveDir="."
 # Hard set the projects-controller to check for, we're going for paper
 # There's currently no support for other projects.
 _apiProject="paper"
-_apiChannel="default"
+_apiChannel="experimental"
 _apiURL="https://api.papermc.io/v2/projects"
 
 ### INTERNAL CONFIGURATION

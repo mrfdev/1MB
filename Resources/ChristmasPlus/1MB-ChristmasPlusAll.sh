@@ -1,41 +1,29 @@
 #!/bin/bash
 
-# @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.3, build 026
-# @Release: December 18th, 2023
-# @Description: Helps us get some player data from ChristmasPlus database.db
-# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod +x 1MB-ChristmasPlus.sh
-# @Syntax: ./1MB-ChristmasPlus.sh username
+# @Filename: 1MB-ChristmasPlusAll.sh
+# @Version: 0.0.1, build 001
+# @Release: June 23, 2024
+# @Description: Runs 1MB-ChristmasPlus.sh in a loop to get some player data from ChristmasPlus database.db
+# @Contact: I am #momshroom on Discord, and Momshroom in MineCraft.
+# @Discord: @momshroom on https://discord.gg/ySRPTYTtKf
+# @Install: chmod u+x 1MB-ChristmasPlusAll.sh
+# @Syntax: ./1MB-ChristmasPlusAll.sh 
 # @URL: Latest source, info, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
 #
-# Declarations here you can customize to your preferred setup.
-# Generally only if you actually have to. Check Wiki for details.
+# All other configuration should be done in the 1MB-ChristmasPlus.sh file from floris
+# All this file does is run floris' script in a loop.
 #
-###
 
 # SQLite3 ChristmasPlus 2.32.2 database.db file is expected,
 # if you have renamed it, change that here obviously.
 # you can also set a full path like /full/path/to/database.db
 _databaseFile="./database.db"
 
-# If no param is provided, we fall back to a default username
-# can be uuid
-_user="mrfloris"
-
-# output to a log file?
-_log=true
-_logFile="christmasplus-results.log"
-
-### END OF CONFIGURATION
-#
-# Stop configuring things
-# beyond this point. I mean it.
-#
 ###
+
+
 
 # Function for handling errors
 handle_error() {
@@ -46,9 +34,16 @@ handle_error() {
 
 # Lets exit if jq is not found, since we depend on it
 if ! command -v jq &> /dev/null; then
-    printf "Could not find 'jq' installed. Install 'jq' to proceed. 'brew install jq' on macOS\n"
+    printf "Could not find 'jq' installed. Install 'jq' to proceed. 'brew install jq' on macOS or 'apt install jq' on Ubuntu\n"
     exit 1
 fi
+
+# Does the expected database.db file exist in the same directory?
+if [ ! -f "$_databaseFile" ]; then
+    echo "Error: '$_databaseFile' not found in the current directory."
+    exit 1
+fi
+
 
 # Check if a username is provided, if not, use the configured _userName
 # And based on length of username, assume uuid or username, and update query accordingly.
@@ -71,33 +66,18 @@ fi
 # We want to check case insensitive
 _columnName="name COLLATE NOCASE"
 _columnQueryFor="name" # only used visually
-if [ ${#_userName} -gt 16 ]; then
-    _columnName="uuid"
-    _columnQueryFor="uuid" # only used visually
-fi
 
-# Does the expected database.db file exist in the same directory?
-if [ ! -f "$_databaseFile" ]; then
-    echo "Error: '$_databaseFile' not found in the current directory."
-    exit 1
-fi
 
-# The query we need to retrieve the data from field claimedGifts (for given user or uuid)
-query="SELECT claimedGifts FROM players WHERE $_columnName='$_userName';"
+# The query we need to retrieve the list of players who have claimed at least one gift
+query="select name from players where claimedGifts LIKE '%true%';"
 
 # Now that we know the database.db fle exists, and the query to run, lets connect and build a result
 result=$(sqlite3 "$_databaseFile" "$query")
 
 # Check if there is a result to work with
 if [ -n "$result" ]; then
-    # Split result into array and use jq to figure it out for me
-    true_claimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == true) | .key | @sh'))
-    false_unclaimed=($(echo "$result" | jq -r 'to_entries[] | select(.value == false) | .key | @sh'))
+    for name [ [in ["$result"] ] ; ] do echo name; done
 
-    # Spit out the sorted results:
-    printf "\n%s:\n" "$_userName"
-    printf "Gifts claimed: %s\n" "${true_claimed[*]}"
-    printf "Gifts unclaimed: %s\n\n" "${false_unclaimed[*]}"
 else
 	# worst case scenario we have no data
     printf "Oops, no gifts found for %s, check if the %s is valid.\n" "$_userName" "$_columnQueryFor"

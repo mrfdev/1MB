@@ -24,7 +24,7 @@ _databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
 # can be uuid
-_user="floris"
+_user="mrfloris"
 
 # output to a log file?
 _log=true

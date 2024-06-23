@@ -24,10 +24,10 @@ _databaseFile="./database.db"
 
 # If no param is provided, we fall back to a default username
 # can be uuid
-_user="Momshroom"
+_user="floris"
 
 # output to a log file?
-_log=false
+_log=true
 _logFile="christmasplus-results.log"
 
 ### END OF CONFIGURATION

@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlusAll.sh
-# @Version: 0.0.1, build 001
+# @Version: 0.0.2, build 001
 # @Release: June 23, 2024
 # @Description: Runs 1MB-ChristmasPlus.sh in a loop to get some player data from ChristmasPlus database.db
 # @Contact: I am #momshroom on Discord, and Momshroom in MineCraft.
 # @Discord: @momshroom on https://discord.gg/ySRPTYTtKf
 # @Install: chmod u+x 1MB-ChristmasPlusAll.sh
-# @Syntax: ./1MB-ChristmasPlusAll.sh 
-# @URL: Latest source, info, & support: https://scripts.1moreblock.com/
+# @Syntax: ./1MB-ChristmasPlusAll.sh []
+# Much copied from @floris 1MB-ChristmasPlus.sh which is also required to run this.
+# @URL: Latest source, info, & support: https://github.com/Momshroom/1MB/tree/master/Resources/ChristmasPlus/1MB-ChristmasPlusAll.sh
 
 ### CONFIGURATION
 #
@@ -45,55 +46,42 @@ if [ ! -f "$_databaseFile" ]; then
 fi
 
 
-# Check if a username is provided, if not, use the configured _userName
+# Check parameter for "complete" or "any"
 # And based on length of username, assume uuid or username, and update query accordingly.
-_paramUserName="${1:-$1}"
-if [ -z "$_paramUserName" ]; then
-    _userName="${_user//[^a-zA-Z0-9_\-]/}" # sanitize input
-    printf "Syntax: %s <user|uuid>\n" "$0"
+_paramParticpationLevel="${1:-$1}"
+if [ -z "$_paramParticpationLevel" ]; then
+# The query we need to retrieve the list of players who have claimed at least one gift
+    query="SELECT name FROM players WHERE claimedGifts LIKE '%true%' ORDER BY upper(name);"
+    printf "Syntax: %s <any|complete>\n" "$0"
     printf "Description: Get player gift data from the ChristmasPlus '$_databaseFile' database.\n"
-    printf "Description: You can use their Minecraft username or UUID.\n"
-    printf "Example: We are going to try and gather the data for (default) '%s $_userName' ... \n" "$0"
-else
-    _userName="${_paramUserName//[^a-zA-Z0-9_\-]/}" # sanitize input
-    printf "Attempting to find data for '%s $_userName' ... \n" "$0"
+    printf "Description: For either any participate or only those who missed no gifts.\n"
+    printf "Example: We are going to gather output for those that collected any gifts."
+
+elif [ "$_paramParticpationLevel" == "complete" ]; then
+# The query we need to retrieve the list of players who have claimed at least one gift
+    query="SELECT name FROM players WHERE claimedGifts NOT LIKE '%false%' ORDER BY upper(name);"
+    printf "Processing only players that collected all gifts"
 fi
 
 
-# Check param length, 
-# if it is longer than 16 characters, use uuid column, else name column
-# Set the column name based on the username input
 # We want to check case insensitive
 _columnName="name COLLATE NOCASE"
 _columnQueryFor="name" # only used visually
 
 
-# The query we need to retrieve the list of players who have claimed at least one gift
-query="select name from players where claimedGifts LIKE '%true%';"
+
 
 # Now that we know the database.db fle exists, and the query to run, lets connect and build a result
 result=$(sqlite3 "$_databaseFile" "$query")
 
-# Check if there is a result to work with
+# Check if there is a result to work with and, if so, run the script once per name found
 if [ -n "$result" ]; then
-    for name [ [in ["$result"] ] ; ] do echo name; done
+    for name in $result ;  do ./1MB-ChristmasPlus.sh $name; done
 
 else
 	# worst case scenario we have no data
-    printf "Oops, no gifts found for %s, check if the %s is valid.\n" "$_userName" "$_columnQueryFor"
+    printf "Oops, no players found that matched in that database."
     exit 1
 fi
 
-# Deal with writing results to .log file
-# Only if we want to log (default is true)
-if $_log; then
-    # Append data to the log file
-    currentDateTime=$(date +'%B %d, %Y @ %H:%M') # timestamp for log entry
-    {
-        printf "\n%s (Logged at %s)\n" "$_userName" "$currentDateTime"
-        printf "Gifts claimed: %s\n" "${true_claimed[*]}"
-        printf "Gifts unclaimed: %s\n\n" "${false_unclaimed[*]}"
-    } >> "$_logFile" || handle_error "Failed to write to log file '$_logFile'. Exiting."
-    printf ".. Done! The results for '%s' have been appended to '%s'.\n" "$_userName" "$_logFile"
-fi
 #EOF

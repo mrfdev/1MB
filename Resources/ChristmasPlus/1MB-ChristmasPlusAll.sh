@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlusAll.sh
-# @Version: 0.0.1, build 001
+# @Version: 0.0.2, build 001
 # @Release: June 23, 2024
 # @Description: Runs 1MB-ChristmasPlus.sh in a loop to get some player data from ChristmasPlus database.db
 # @Contact: I am #momshroom on Discord, and Momshroom in MineCraft.
 # @Discord: @momshroom on https://discord.gg/ySRPTYTtKf
 # @Install: chmod u+x 1MB-ChristmasPlusAll.sh
-# @Syntax: ./1MB-ChristmasPlusAll.sh 
+# @Syntax: ./1MB-ChristmasPlusAll.sh []
 # Much copied from @floris 1MB-ChristmasPlus.sh which is also required to run this.
 # @URL: Latest source, info, & support: https://github.com/Momshroom/1MB/tree/master/Resources/ChristmasPlus/1MB-ChristmasPlusAll.sh
 
@@ -46,13 +46,30 @@ if [ ! -f "$_databaseFile" ]; then
 fi
 
 
+# Check parameter for "complete" or "any"
+# And based on length of username, assume uuid or username, and update query accordingly.
+_paramParticpationLevel="${1:-$1}"
+if [ -z "$_paramParticpationLevel" ]; then
+# The query we need to retrieve the list of players who have claimed at least one gift
+    query="SELECT name FROM players WHERE claimedGifts LIKE '%true%' ORDER BY upper(name);"
+    printf "Syntax: %s <any|complete>\n" "$0"
+    printf "Description: Get player gift data from the ChristmasPlus '$_databaseFile' database.\n"
+    printf "Description: For either any participate or only those who missed no gifts.\n"
+    printf "Example: We are going to gather output for those that collected any gifts."
+
+elif [ "$_paramParticpationLevel" == "complete" ]; then
+# The query we need to retrieve the list of players who have claimed at least one gift
+    query="SELECT name FROM players WHERE claimedGifts NOT LIKE '%false%' ORDER BY upper(name);"
+    printf "Processing only players that collected all gifts"
+fi
+
+
 # We want to check case insensitive
 _columnName="name COLLATE NOCASE"
 _columnQueryFor="name" # only used visually
 
 
-# The query we need to retrieve the list of players who have claimed at least one gift
-query="SELECT name FROM players WHERE claimedGifts LIKE '%true%' ORDER BY upper(name);"
+
 
 # Now that we know the database.db fle exists, and the query to run, lets connect and build a result
 result=$(sqlite3 "$_databaseFile" "$query")
@@ -63,7 +80,7 @@ if [ -n "$result" ]; then
 
 else
 	# worst case scenario we have no data
-    printf "Oops, no gifts were collected by any players in that database"
+    printf "Oops, no players found that matched in that database."
     exit 1
 fi
 

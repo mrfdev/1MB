@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.0, build 069 for Minecraft 1.21 (Java 22.0.1, 64bit)
-# @Release: June 13th, 2024
+# @Version: 2.18.1, build 070 for Minecraft 1.21 (Java 22.0.2, 64bit)
+# @Release: August 7th, 2024
 # @Description: Helps us start a Spigot or Paper 1.21 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -21,7 +21,7 @@ _minecraftVersion="1.21"
 # Which version are we running?
 
 _minJavaVersion=22
-# use 22 for java 22.0.1 which can be used with Minecraft 1.20.6 and 1.21
+# use 22 for java 22.0.2 which can be used with Minecraft 1.20.6 and 1.21
 # use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.6
 # use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20+
 # use 18.0, 19.0 for java 18.0.2.1+ which can be used with Minecraft 1.19+
@@ -51,7 +51,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dpaper.useLegacyPluginLoading=true (Temporary fix circular plugin loading issue)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="spigot"
+_engine="paper"
 # spigot until paper jar is out
 # "" assumes auto detection for <engine>-1.21.jar 
 # "spigot" assumes to look for spigot-1.21.jar

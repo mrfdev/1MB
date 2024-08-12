@@ -1,0 +1,199 @@
+#============================================================================================
+#__________                     ___________                    .__                
+#\______   \___.__._______  ____\_   _____/____ _______  _____ |__| ____    ____  
+# |     ___<   |  |\_  __ \/  _ \|    __) \__  \\_  __ \/     \|  |/    \  / ___\ 
+# |    |    \___  | |  | \(  <_> )     \   / __ \|  | \/  Y Y  \  |   |  \/ /_/  >
+# |____|    / ____| |__|   \____/\___  /  (____  /__|  |__|_|  /__|___|  /\___  / 
+#           \/                       \/        \/            \/        \//_____/  
+#============================================================================================
+#
+#                            Config Version: 1.0.8
+#                              Author: PyroTempus
+#
+#============================================================================================
+#
+#                                ! DISCLAIMER !
+#  This plugin has been balanced and configured to work out of the box.
+#  You can modify, add or remove your own plants, as you wish, but you may run into
+#  issues with crafting recipes. It is advised to NOT modify the base plants if you do not know
+#  what you are doing. I will not provide support if you decide to re-do everything.
+#
+#  Disturbing the base plants, bushes, etc, may ruin the experience for your players.
+#  You can modify the plant names and items if you wish without causing issues.
+#
+#  The plugin should do its best to put issues into console upon startup, so you can
+#  check to see if anything pops up in order to see if your new plants, or setup works.
+#
+#  It is HIGHLY suggested to spend a few minutes going around the various configs and
+#  modifying the prices to your servers economy. There are no price settings in this config file.
+#
+#============================================================================================
+
+#Random and misc settings. Most of the settings for plants, species and traits can
+#be found in their own specific files.
+Settings:
+
+  #Should shift-right clicking hoes open the /farm menu?
+  ShiftClickMenu: true
+
+  #Should new farmables - plants, bushes etc. created by myself be added to the plugin?
+  #Note: Prices will need to be adjusted for these plants.
+  #      This will make these files regenerate if they are deleted at all.
+  AllowNewDefaultFiles: true
+
+  #Should a console log get sent whenever a player sells items to the farm shop?
+  FarmShopConsoleLogging: true
+
+  #Should the plugin assume default permissions for players?
+  #i.e. farming menu, shop, codex etc.
+  AssumeDefaultPermissions: false
+
+  #Default custom recipes within the plugin.
+  #Note: if you've changed the default plants, these may not work and will need to be changed.
+  Recipes:
+  
+    #This is what people use to grow plants in.
+    Growstation:
+      Items:
+        A: 'WHEAT_SEEDS'
+        B: 'FLOWER_POT'
+      Format:
+        - 'AAA'
+        - 'ABA'
+        - 'AAA'
+      
+    #This is required to start the players skill tree.
+    SkillArchive:
+      Items:
+        A: 'lettuce:lettuce' #This is a custom item from the 'lettuce' plant.
+        B: 'tomato:tomato'
+        C: 'LECTERN'
+      Format:
+        - 'ABA'
+        - 'BCB'
+        - 'ABA'
+        
+  #Changes the main plugin command. Default: /farm
+  #Do not include a forward slash in the command.
+  PluginCommand: farm
+
+#============================================================================================
+
+#Settings to do with Growstations
+Growstations:
+
+  #Setting this to true will drop the growstation if it blows up.
+  AllowExplode: false
+
+  #Setting this to true will drop the growstation if pushed by a piston.
+  AllowPistonPush: false
+  
+  #Should the player need to be sneaking to break a Growstation?
+  GrowstationBreakSneak: true
+  
+  #Should Growstations allow players to automatically plant a seed if they shift click on it?
+  AllowGrowstationSneakPlant: true
+
+#============================================================================================
+
+#Everything to do with Plants.
+Plants:
+  
+  #Should plants grow and make items when the owner is offline?
+  #This has very minimal impact on performance.
+  OfflinePlantGrowth: false
+  
+  #Should any seeds drop from breaking grass/tall grass?
+  #Format is '<PlantID:Chance>' i.e. 'LETTUCE:10' for a 10% chance.
+  GrassSeedDrops: [] #Not implemented, will come in v1.1
+  
+#============================================================================================
+
+#Everything to do with traits and their configuration
+Traits:
+
+  #Settings and configuration options for traits.
+  Settings:
+  
+    #Should Growstations emit particles based on the traits?
+    #Disabling this may help with performance if you experience issues.
+    UseParticles: true
+  
+    #What traits should be disabled?
+    DisabledTraits: []
+  
+    #What entities should be ignored when it comes to Functional Traits?
+    IgnoredEntityTypes:
+      - 'ENDER_DRAGON'
+
+
+#============================================================================================
+
+#Settings to do with Bushes
+Bushes:
+
+  #Should bushes grow and make items when the owner is offline?
+  OfflineBushGrowth: false
+
+
+#============================================================================================
+
+#Settings to do with the /farm market
+Market:
+
+  #The rotating store
+  Rotating:
+    
+    #What level should be required to access the rotating store?
+    RequiredLevel: 15
+    
+    #How often should the rotating shop refresh its stock? (in seconds)
+    #Set this to 0 to use the specific times below.
+    #This resets on server restarts, or plugin reloads and causes the shop to rotate.
+    RefreshTime: 0
+    
+    #How big should the discount be in the rotating stock if it is not an exclusive item?
+    NonExclusiveDiscount: 15
+    
+    #Putting times here will force the plugin to refresh the rotating market
+    #at these specific times. 'RefreshTime' must be 0 for this to work.
+    #
+    #This is related to the server time - which varies by region - check with your
+    #host to find this out. If you experience issues, try to invert the time by 12h. i.e. 04:00 -> 16:00
+    SpecificTimes:
+      - '00:00'
+      - '08:00'
+      - '16:00'
+
+#============================================================================================
+
+#Everything to do with the Skill Archive and Tree
+SkillTree:
+  
+  #The cost to upgrade between the various skill tree levels.
+  UpgradeCosts:
+    2:
+      RequiredLevel: 25
+      Elysium: 50000
+      Items:
+      - 'lettuce:lettuce,16' #8 lettuce plants
+      - 'chilli_pepper:jalapeno,5'
+    
+    3:
+      RequiredLevel: 60
+      Elysium: 120000
+      Items:
+      - 'hellbloom:hellbloom_rose,16'
+      - 'lavaplume:plume_anion,4'
+    
+    4:      
+      RequiredLevel: 95
+      Elysium: 200000
+      Items:
+      - 'gloomspud:radiant_gloomspud,2'
+      - 'abyssal_orchid:abyssal_dreamweaver,2'
+      
+#============================================================================================
+
+
+

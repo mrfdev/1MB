@@ -7,7 +7,7 @@
 #           \/                       \/        \/            \/        \//_____/  
 #============================================================================================
 #
-#                            Config Version: 1.0.8
+#                            Config Version: 1.1.6
 #                              Author: PyroTempus
 #
 #============================================================================================
@@ -47,6 +47,9 @@ Settings:
   #Should the plugin assume default permissions for players?
   #i.e. farming menu, shop, codex etc.
   AssumeDefaultPermissions: false
+  
+  #Should the custom items require players to be the required level to place?
+  RequireLevelToPlaceCustomItems: true
 
   #Default custom recipes within the plugin.
   #Note: if you've changed the default plants, these may not work and will need to be changed.
@@ -76,6 +79,10 @@ Settings:
   #Changes the main plugin command. Default: /farm
   #Do not include a forward slash in the command.
   PluginCommand: farm
+  
+  #Should players who own GriefPrevention claims be able to destroy
+  #bushes and growstations of all users inside of the claim?
+  GriefPreventionOwnerDestroy: false
 
 #============================================================================================
 
@@ -93,6 +100,10 @@ Growstations:
   
   #Should Growstations allow players to automatically plant a seed if they shift click on it?
   AllowGrowstationSneakPlant: true
+  
+  #Should Water Buckets used on a Growstation check for ONLY vanilla items?
+  #Shouldn't be an issue unless you're using plugins that don't check for event priority correctly.
+  BucketVanillaCheck: false
 
 #============================================================================================
 
@@ -102,10 +113,6 @@ Plants:
   #Should plants grow and make items when the owner is offline?
   #This has very minimal impact on performance.
   OfflinePlantGrowth: false
-  
-  #Should any seeds drop from breaking grass/tall grass?
-  #Format is '<PlantID:Chance>' i.e. 'LETTUCE:10' for a 10% chance.
-  GrassSeedDrops: [] #Not implemented, will come in v1.1
   
 #============================================================================================
 
@@ -134,7 +141,9 @@ Bushes:
 
   #Should bushes grow and make items when the owner is offline?
   OfflineBushGrowth: false
-
+  
+  #Should the player need to be sneaking to break a Bush Block?
+  BushBreakSneak: true
 
 #============================================================================================
 
@@ -155,6 +164,17 @@ Market:
     #How big should the discount be in the rotating stock if it is not an exclusive item?
     NonExclusiveDiscount: 15
     
+    #How much stock should there be in the rotating shop?
+    #These settings are per-item in the rotating shop.
+    #Will be added in v1.1.X
+    Stock:
+      
+      #How much 'total' stock should there be?
+      TotalStock: 15
+      
+      #Is there a limit on how many a single player can buy from the total?
+      PersonalAllowance: 5
+    
     #Putting times here will force the plugin to refresh the rotating market
     #at these specific times. 'RefreshTime' must be 0 for this to work.
     #
@@ -169,7 +189,7 @@ Market:
 
 #Everything to do with the Skill Archive and Tree
 SkillTree:
-  
+
   #The cost to upgrade between the various skill tree levels.
   UpgradeCosts:
     2:

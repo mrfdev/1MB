@@ -34,7 +34,8 @@ biomes:
     # Format:
     # Entity name: % chance:Block on which the mob will spawn
     mobs:
-      SQUID: 10:WATER
+      SQUID: 8:WATER
+      TURTLE: 3:SAND
     # The minimum number of blocks each mob requires.
     # Mobs will not spawn if there is more than 1 per this number of
     # blocks in the greenhouse. e.g., in this case only 2 mobs will spawn if the

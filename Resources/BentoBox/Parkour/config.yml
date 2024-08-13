@@ -117,99 +117,121 @@ world:
   remove-mobs-whitelist: []
   # World flags. These are boolean settings for various flags for this world
   flags:
-    HURT_ANIMALS: false
     DRAGON_EGG: false
     ISLAND_RESPAWN: true
-    REDSTONE: false
-    CREEPER_GRIEFING: false
-    VISITOR_KEEP_INVENTORY: true
-    BUCKET: false
+    CREEPER_GRIEFING: true
     PETS_STAY_AT_HOME: true
-    ENDER_PEARL: false
-    DOOR: true
     NATURAL_SPAWNING_OUTSIDE_RANGE: false
-    BREAK_HOPPERS: false
-    FURNACE: false
-    LIQUIDS_FLOWING_OUT: true
     ANVIL: false
-    MINECART: false
-    FISH_SCOOPING: false
-    END_PORTAL: false
-    BREEDING: false
+    VISITOR_TRIGGER_RAID: true
+    TRAPPED_CHEST: false
     ENDER_CHEST: true
-    HURT_VILLAGERS: false
     TREES_GROWING_OUTSIDE_RANGE: true
-    WITHER_DAMAGE: false
+    BOOKSHELF: false
+    HARVEST: false
     FROST_WALKER: false
-    TURTLE_EGGS: false
     PISTON_PUSH: true
     COLLECT_LAVA: false
-    BREAK_SPAWNERS: false
     LEVER: false
-    ELYTRA: true
-    COARSE_DIRT_TILLING: true
-    RIDING: false
     CAKE: false
     HURT_MONSTERS: false
-    ARMOR_STAND: false
-    NAME_TAG: false
-    ENDERMAN_GRIEFING: false
     CLEAN_SUPER_FLAT: false
+    SIGN_EDITING: false
     TRADING: true
     EGGS: false
-    ITEM_DROP: true
-    NOTE_BLOCK: false
+    CHEST: false
     ENTER_EXIT_MESSAGES: true
+    PLACE_WARP: false
     FLINT_AND_STEEL: false
-    NETHER_PORTAL: false
-    REMOVE_END_EXIT_ISLAND: true
-    LECTERN: false
-    OFFLINE_GROWTH: true
-    ITEM_PICKUP: false
+    SCULK_SENSOR: true
     CROP_TRAMPLE: false
-    BREWING: false
     DROPPER: false
+    ENTITY_PORTAL_TELEPORT: false
     OBSIDIAN_SCOOPING: true
-    CREEPER_DAMAGE: true
     TNT_PRIMING: false
     COLLECT_WATER: false
-    GREENHOUSE: false
+    AXOLOTL_SCOOPING: false
+    WORLD_BLOCK_EXPLODE_DAMAGE: false
     BUTTON: false
-    FIRE_EXTINGUISH: false
+    COMPOSTER: false
     COMMAND_RANKS: false
-    BEACON: false
     TRAPDOOR: true
     EXPERIENCE_BOTTLE_THROWING: false
-    PRESSURE_PLATE: true
     DYE: false
+    HIVE: false
     ITEM_FRAME: false
-    PLACE_BLOCKS: false
+    CROP_PLANTING: false
     CRAFTING: true
-    REMOVE_MOBS: false
     ENCHANTING: true
     SHEARING: false
-    BOAT: false
+    BOAT: true
     BANK_ACCESS: false
     BED: false
     SPAWN_EGGS: false
-    MILKING: false
-    DISPENSER: false
-    GATE: true
+    SCULK_SHRIEKER: true
     CHEST_DAMAGE: false
     EXPERIENCE_PICKUP: false
-    PREVENT_TELEPORT_WHEN_FALLING: true
+    PREVENT_TELEPORT_WHEN_FALLING: false
     WORLD_TNT_DAMAGE: false
     HOPPER: false
     LEASH: false
     BREAK_BLOCKS: false
     MOUNT_INVENTORY: false
     OFFLINE_REDSTONE: false
-    CHORUS_FRUIT: false
-    CONTAINER: false
-    ITEM_FRAME_DAMAGE: false
     JUKEBOX: false
     POTION_THROWING: false
     SPAWNER_SPAWN_EGGS: true
+    HURT_ANIMALS: false
+    REDSTONE: false
+    VISITOR_KEEP_INVENTORY: true
+    BUCKET: false
+    ENDER_PEARL: false
+    DOOR: true
+    BREAK_HOPPERS: false
+    FURNACE: false
+    LIQUIDS_FLOWING_OUT: true
+    MINECART: false
+    FISH_SCOOPING: false
+    END_PORTAL: false
+    BREEDING: false
+    HURT_VILLAGERS: false
+    WITHER_DAMAGE: false
+    TURTLE_EGGS: false
+    BREAK_SPAWNERS: false
+    ELYTRA: true
+    COARSE_DIRT_TILLING: true
+    RIDING: false
+    ARMOR_STAND: false
+    NAME_TAG: false
+    ENDERMAN_GRIEFING: false
+    ITEM_DROP: true
+    NOTE_BLOCK: false
+    CREATE_SHOPS: false
+    NETHER_PORTAL: false
+    REMOVE_END_EXIT_ISLAND: true
+    LECTERN: false
+    OFFLINE_GROWTH: false
+    SHULKER_BOX: false
+    ITEM_PICKUP: false
+    BREWING: false
+    CREEPER_DAMAGE: true
+    PARKOUR_CREATIVE: false
+    GREENHOUSE: false
+    FIRE_EXTINGUISH: false
+    BEACON: false
+    ALLAY: false
+    PRESSURE_PLATE: true
+    PLACE_BLOCKS: false
+    REMOVE_MOBS: false
+    FLOWER_POT: false
+    MILKING: false
+    DISPENSER: false
+    GATE: true
+    CHORUS_FRUIT: false
+    CONTAINER: false
+    ITEM_FRAME_DAMAGE: false
+    BARREL: false
+    COLLECT_POWDERED_SNOW: false
   # These are the default protection settings for new areas.
   # The value is the minimum area rank required allowed to do the action
   # Ranks are the following:
@@ -231,20 +253,20 @@ world:
     MONSTER_SPAWNERS_SPAWN: 500
     ANVIL: 500
     MINECART: 500
-    FIRE_IGNITE: 500
     FISH_SCOOPING: 500
+    FIRE_IGNITE: 500
     END_PORTAL: 500
     BREEDING: 500
     HURT_VILLAGERS: 500
-    FROST_WALKER: 500
     TURTLE_EGGS: 500
+    FROST_WALKER: 500
     COLLECT_LAVA: 500
     BREAK_SPAWNERS: 500
     LEVER: 0
     ELYTRA: 0
+    CAKE: 500
     RIDING: 500
     HURT_MONSTERS: 0
-    CAKE: 500
     ARMOR_STAND: 500
     NAME_TAG: 500
     TRADING: 0
@@ -254,8 +276,8 @@ world:
     FLINT_AND_STEEL: 500
     NETHER_PORTAL: 0
     LECTERN: 500
-    ITEM_PICKUP: 0
     CROP_TRAMPLE: 500
+    ITEM_PICKUP: 0
     DROPPER: 500
     BREWING: 500
     TNT_PRIMING: 500
@@ -265,26 +287,26 @@ world:
     COMMAND_RANKS: 500
     BEACON: 500
     TRAPDOOR: 500
-    EXPERIENCE_BOTTLE_THROWING: 500
     PRESSURE_PLATE: 0
+    EXPERIENCE_BOTTLE_THROWING: 500
     DYE: 500
-    PLACE_BLOCKS: 500
     ITEM_FRAME: 500
+    PLACE_BLOCKS: 500
     CRAFTING: 0
+    ANIMAL_SPAWNERS_SPAWN: 500
     ENCHANTING: 500
     SHEARING: 500
-    ANIMAL_SPAWNERS_SPAWN: 500
     BOAT: 0
-    BED: 500
     SPAWN_EGGS: 500
+    BED: 500
     MILKING: 500
     DISPENSER: 500
     GATE: 0
     EXPERIENCE_PICKUP: 500
     HOPPER: 500
     LEASH: 500
-    MOUNT_INVENTORY: 500
     BREAK_BLOCKS: 500
+    MOUNT_INVENTORY: 500
     CHORUS_FRUIT: 500
     CONTAINER: 500
     JUKEBOX: 500
@@ -373,7 +395,7 @@ area:
     # How many resets a player is allowed (manage with /bsbadmin reset add/remove/reset/set command)
     # Value of -1 means unlimited, 0 means hardcore - no resets.
     # Example, 2 resets means they get 2 resets or 3 areas lifetime
-    reset-limit: 100
+    reset-limit: -1
     # Kicked or leaving players lose resets
     # Players who leave a team will lose an area reset chance
     # If a player has zero resets left and leaves a team, they cannot make a new
@@ -418,7 +440,7 @@ area:
       # Reset experience - if true, the player's experience will be reset.
       exp: false
       # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
-      ender-chest: true
+      ender-chest: false
   create-area-on-first-login:
     # Toggles the automatic area creation upon the player's first login on your server.
     # If set to true,
@@ -487,17 +509,17 @@ area:
   sethome:
     nether:
       # Allow setting home in the nether. Only available on nether areas, not vanilla nether.
-      allow: false
+      allow: true
       require-confirmation: true
     the-end:
       # Allow setting home in the end. Only available on end areas, not vanilla end.
-      allow: false
+      allow: true
       require-confirmation: true
   deaths:
     # Whether deaths are counted or not.
     counted: true
     # Maximum number of deaths to count. The death count can be used by add-ons.
-    max: 100
+    max: 10
     # When a player joins a team, reset their death count
     team-join-reset: true
     # Reset player death count when they start a new area or reset an area

@@ -1,4 +1,4 @@
-# AcidIsland Configuration 1.18.1-SNAPSHOT-b1008
+# AcidIsland Configuration 1.19.0-SNAPSHOT-b1016
 acid:
   command:
     # Island Command. What command users will run to access their island
@@ -125,6 +125,8 @@ world:
   # Island height - Lowest is 5.
   # It is the y coordinate of the bedrock block in the schem.
   island-height: 50
+  # Disallow team members from having their own islands.
+  disallow-team-member-islands: false
   # Use your own world generator for this world.
   # In this case, the plugin will not generate anything.
   # /!\ This feature is experimental and might not work as expected or might not work at all.
@@ -139,6 +141,18 @@ world:
   # This creates an ocean floor environment, with vanilla elements.
   # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
   ocean-floor: true
+  # Structures
+  # This creates an vanilla structures in the worlds.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  make-structures: false
+  # Caves
+  # This creates an vanilla caves in the worlds.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  make-caves: false
+  # Decorations
+  # This creates an vanilla decorations in the worlds.
+  # /!\ BentoBox currently does not support changing this value mid-game. If you do need to change it, do a full reset of your databases and worlds.
+  make-decorations: true
   # Maximum number of islands in the world. Set to -1 or 0 for unlimited. 
   # If the number of islands is greater than this number, no new island will be created.
   max-islands: 0
@@ -211,10 +225,10 @@ world:
   # This setting is toggled in world flags and set by the settings GUI.
   # Mob white list - these mobs will NOT be removed when logging in or doing /island
   remove-mobs-whitelist:
+  - ENDERMAN
+  - ZOMBIE_VILLAGER
   - WITHER
   - ZOMBIFIED_PIGLIN
-  - ZOMBIE_VILLAGER
-  - ENDERMAN
   # World flags. These are boolean settings for various flags for this world
   flags:
     DRAGON_EGG: false
@@ -228,6 +242,8 @@ world:
     TRAPPED_CHEST: false
     ENDER_CHEST: false
     TREES_GROWING_OUTSIDE_RANGE: false
+    BOOKSHELF: false
+    HARVEST: false
     FROST_WALKER: false
     PISTON_PUSH: false
     COLLECT_LAVA: false
@@ -235,15 +251,18 @@ world:
     HURT_MONSTERS: false
     CAKE: false
     CLEAN_SUPER_FLAT: false
+    SIGN_EDITING: false
     TRADING: false
     EGGS: false
     CHEST: false
     ENTER_EXIT_MESSAGES: true
+    PLACE_WARP: false
     ENDERMAN_DEATH_DROP: true
     FLINT_AND_STEEL: false
     SCULK_SENSOR: true
     CROP_TRAMPLE: false
     DROPPER: false
+    ENTITY_PORTAL_TELEPORT: false
     OBSIDIAN_SCOOPING: true
     TNT_PRIMING: false
     COLLECT_WATER: false
@@ -257,6 +276,7 @@ world:
     DYE: false
     HIVE: false
     ITEM_FRAME: false
+    CROP_PLANTING: false
     CRAFTING: true
     ENCHANTING: true
     SHEARING: false
@@ -266,6 +286,7 @@ world:
     BIOMES_WORLD_PROTECTION: true
     CAULDRON_WITCHERY_ISLAND_PROTECTION: false
     SCULK_SHRIEKER: true
+    SMITHING: false
     CHEST_DAMAGE: false
     EXPERIENCE_PICKUP: false
     PREVENT_TELEPORT_WHEN_FALLING: false
@@ -279,6 +300,7 @@ world:
     POTION_THROWING: false
     SPAWNER_SPAWN_EGGS: true
     HURT_ANIMALS: false
+    LOOM: false
     REDSTONE: false
     VISITOR_KEEP_INVENTORY: false
     BUCKET: false
@@ -293,6 +315,7 @@ world:
     BREEDING: false
     HURT_VILLAGERS: false
     WITHER_DAMAGE: false
+    FARMER_DANCE: false
     TURTLE_EGGS: false
     CHALLENGES_ISLAND_PROTECTION: false
     BIOMES_ISLAND_PROTECTION: false
@@ -311,10 +334,12 @@ world:
     LECTERN: false
     OFFLINE_GROWTH: true
     SHULKER_BOX: false
+    GRINDSTONE: false
     ITEM_PICKUP: false
     BREWING: false
     CREEPER_DAMAGE: true
     GREENHOUSE: false
+    STONECUTTING: false
     FIRE_EXTINGUISH: false
     BEACON: false
     ALLAY: false
@@ -331,6 +356,7 @@ world:
     ITEM_FRAME_DAMAGE: false
     BARREL: false
     COLLECT_POWDERED_SNOW: false
+    CARTOGRAPHY: false
   # These are the default protection settings for new islands.
   # The value is the minimum island rank required allowed to do the action
   # Ranks are: Visitor = 0, Member = 900, Owner = 1000
@@ -464,22 +490,44 @@ world:
   - gift
   # Falling banned commands - players cannot use these commands when falling
   # if the PREVENT_TELEPORT_WHEN_FALLING world setting flag is active
-  falling-banned-commands: []
+  falling-banned-commands:
+  - warp
+  - spawn
+  - cmi warp
+  - cmi tpa
+  - cmi home
+  - cmi homes
+  - homes
+  - home
+  - tpa
+  - jumpto
+  - j
+  - cmi jumpto
+  - cmi spawn
+  - general
+  - wild
+  - tpa
+  - skyblock
+  - oneblock
+  - skygrid
+  - cave
+  - acid
+  - parkour
 island:
   # Default max team size
   # Use this permission to set for specific user groups: acidisland.team.maxsize.<number>
   # Permission size cannot be less than the default below.
-  max-team-size: 4
+  max-team-size: 6
   # Default maximum number of coop rank members per island
   # Players can have the acidisland.coop.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-coop-size: 4
+  max-coop-size: 6
   # Default maximum number of trusted rank members per island
   # Players can have the acidisland.trust.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-trusted-size: 4
+  max-trusted-size: 6
   # Default maximum number of homes a player can have. Min = 1
   # Accessed via /ai sethome <number> or /ai go <number>
   # Use this permission to set for specific user groups: acidisland.island.maxhomes.<number>
@@ -525,7 +573,7 @@ island:
       # Reset inventory - if true, the player's inventory will be cleared.
       # Note: if you have MultiInv running or a similar inventory control plugin, that
       # plugin may still reset the inventory when the world changes.
-      inventory: false
+      inventory: true
       # Reset health - if true, the player's health will be reset.
       health: false
       # Reset hunger - if true, the player's hunger will be reset.
@@ -533,7 +581,7 @@ island:
       # Reset experience - if true, the player's experience will be reset.
       exp: false
       # Reset Ender Chest - if true, the player's Ender Chest will be cleared.
-      ender-chest: false
+      ender-chest: true
   create-island-on-first-login:
     # Toggles the automatic island creation upon the player's first login on your server.
     # If set to true,

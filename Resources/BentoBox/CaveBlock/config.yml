@@ -237,10 +237,10 @@ world:
     create-obsidian-platform: false
   # Mob white list - these mobs will NOT be removed when logging in or doing /cave
   remove-mobs-whitelist:
+  - ENDERMAN
+  - ZOMBIE_VILLAGER
   - WITHER
   - ZOMBIFIED_PIGLIN
-  - ZOMBIE_VILLAGER
-  - ENDERMAN
   # World flags. These are boolean settings for various flags for this world
   flags:
     SKY_WALKER_FLAG: false
@@ -255,6 +255,8 @@ world:
     TRAPPED_CHEST: false
     ENDER_CHEST: true
     TREES_GROWING_OUTSIDE_RANGE: false
+    BOOKSHELF: false
+    HARVEST: false
     FROST_WALKER: false
     PISTON_PUSH: false
     COLLECT_LAVA: false
@@ -263,15 +265,18 @@ world:
     CAKE: false
     HURT_MONSTERS: false
     CLEAN_SUPER_FLAT: false
+    SIGN_EDITING: false
     TRADING: false
     EGGS: false
     CHEST: false
     ENTER_EXIT_MESSAGES: true
+    PLACE_WARP: false
     ENDERMAN_DEATH_DROP: true
     FLINT_AND_STEEL: false
     SCULK_SENSOR: true
     CROP_TRAMPLE: false
     DROPPER: false
+    ENTITY_PORTAL_TELEPORT: false
     OBSIDIAN_SCOOPING: true
     TNT_PRIMING: false
     COLLECT_WATER: false
@@ -285,6 +290,7 @@ world:
     DYE: false
     HIVE: false
     ITEM_FRAME: false
+    CROP_PLANTING: false
     CRAFTING: true
     ENCHANTING: true
     SHEARING: false
@@ -294,6 +300,7 @@ world:
     BIOMES_WORLD_PROTECTION: true
     CAULDRON_WITCHERY_ISLAND_PROTECTION: false
     SCULK_SHRIEKER: true
+    SMITHING: false
     CHEST_DAMAGE: false
     EXPERIENCE_PICKUP: false
     PREVENT_TELEPORT_WHEN_FALLING: false
@@ -307,6 +314,7 @@ world:
     POTION_THROWING: false
     SPAWNER_SPAWN_EGGS: true
     HURT_ANIMALS: false
+    LOOM: false
     REDSTONE: false
     VISITOR_KEEP_INVENTORY: false
     BUCKET: false
@@ -339,10 +347,12 @@ world:
     LECTERN: false
     OFFLINE_GROWTH: true
     SHULKER_BOX: false
-    ITEM_PICKUP: false
+    GRINDSTONE: false
+    ITEM_PICKUP: true
     BREWING: false
     CREEPER_DAMAGE: true
     GREENHOUSE: false
+    STONECUTTING: false
     FIRE_EXTINGUISH: false
     ALLAY: false
     BEACON: false
@@ -359,6 +369,7 @@ world:
     ITEM_FRAME_DAMAGE: false
     BARREL: false
     COLLECT_POWDERED_SNOW: false
+    CARTOGRAPHY: false
   # These are the default protection settings for new caves.
   # The value is the minimum cave rank required allowed to do the action.
   # Ranks are the following:
@@ -396,20 +407,20 @@ world:
 cave:
   # Default max team size
   # Permission size cannot be less than the default below. 
-  max-team-size: 4
+  max-team-size: 6
   # Default maximum number of coop rank members per cave
   # Players can have the caveblock.coop.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-coop-size: 4
+  max-coop-size: 6
   # Default maximum number of trusted rank members per cave
   # Players can have the caveblock.trust.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-trusted-size: 4
+  max-trusted-size: 6
   # Default maximum number of homes a player can have. Min = 1
   # Accessed via /cave sethome <number> or /cave go <number>
-  max-homes: 5
+  max-homes: 1
   reset:
     # How many resets a player is allowed (override with /cbadmin clearresets <player>)
     # Value of -1 means unlimited, 0 means hardcore - no resets.

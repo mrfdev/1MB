@@ -1,4 +1,4 @@
-# BSkyBlock Configuration 1.17.0-SNAPSHOT-b751
+# BSkyBlock Configuration 1.18.0-SNAPSHOT-b761
 bskyblock:
   command:
     # Island Command. What command users will run to access their island.
@@ -70,6 +70,8 @@ world:
   # Island height - Lowest is 5.
   # It is the y coordinate of the bedrock block in the schem.
   island-height: 120
+  # Disallow team members from having their own islands.
+  disallow-team-member-islands: false
   # Use your own world generator for this world.
   # In this case, the plugin will not generate anything.
   # If used, you must specify the world name and generator in the bukkit.yml file.
@@ -138,10 +140,10 @@ world:
     dragon-spawn: false
   # Mob white list - these mobs will NOT be removed when logging in or doing /island
   remove-mobs-whitelist:
+  - ENDERMAN
+  - ZOMBIE_VILLAGER
   - WITHER
   - ZOMBIFIED_PIGLIN
-  - ZOMBIE_VILLAGER
-  - ENDERMAN
   # World flags. These are boolean settings for various flags for this world
   flags:
     DRAGON_EGG: false
@@ -223,6 +225,7 @@ world:
     BREEDING: false
     HURT_VILLAGERS: false
     WITHER_DAMAGE: false
+    FARMER_DANCE: false
     CHALLENGES_ISLAND_PROTECTION: false
     TURTLE_EGGS: false
     BIOMES_ISLAND_PROTECTION: false
@@ -422,10 +425,21 @@ world:
   - j
   - cmi jumpto
   - cmi spawn
+  - general
+  - wild
+  - tpa
+  - skyblock
+  - oneblock
+  - skygrid
+  - cave
+  - acid
+  - parkour
+  - back
+  - dback
 island:
   # Default max team size
   # Permission size cannot be less than the default below. 
-  max-team-size: 9
+  max-team-size: 6
   # Default maximum number of coop rank members per island
   # Players can have the bskyblock.coop.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 

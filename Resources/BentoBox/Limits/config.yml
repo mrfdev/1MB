@@ -28,6 +28,9 @@ blocklimits:
   STICKY_PISTON: 30
   BEACON: 6
   SPAWNER: 4
+  CHEST: 175
+  TRAPPED_CHEST: 25
+  BARREL: 100
   REPEATER: 36
 # This section is for world-specific limits and overrides the general limit
 # Specify each world you want to limit individually (including nether and end worlds)

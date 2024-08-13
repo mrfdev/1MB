@@ -1,0 +1,8 @@
+# TopBlock Configuration 1.0.2-SNAPSHOT-b25
+# 
+# How often the Top Ten should be refreshed in minutes. Minimum is 1 minute, default is 5.
+# Each refresh requires reading every island from the database, so this should not be done too often.
+refresh-time: 5
+# Shorthand island counts
+# Shows large values using units, e.g., 10,345 -> 10k
+shorthand: false

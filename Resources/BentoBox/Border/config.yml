@@ -17,6 +17,9 @@ type: VANILLA
 # This will teleport players back inside if they toggle the border with a command.
 return-teleport: true
 # 
+# Place a safety block under the player if they get teleported back into a non-safe spot.
+return-teleport-safety-block: true
+# 
 # Barrier blocks on/off. Only applies if the border type is BARRIER.
 # If false, the border is indicated by particles only.
 use-barrier-blocks: true

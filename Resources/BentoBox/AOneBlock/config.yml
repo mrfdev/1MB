@@ -1,4 +1,4 @@
-# AOneBlock Configuration 1.15.0-SNAPSHOT-b384
+# AOneBlock Configuration 1.17.0-SNAPSHOT-b400
 aoneblock:
   command:
     # Player command. What command users will run to access their island.
@@ -55,9 +55,30 @@ world:
   difficulty: NORMAL
   # Display holograms
   holograms: true
+  # Hologram position - the offset to the magic block where holograms will appear
+  hologram-offset: 0.5, 1.1, 0.5
   # Duration in seconds that phase holograms will exist after being displayed, if used.
   # If set to 0, then holograms will persist until cleared some other way.
   hologram-duration: 10
+  # Duration in seconds that players cannot move when they start a new one block.
+  # Used only if the Starting Safety world setting is active.
+  starting-safety-duration: 10
+  block-id:
+    # Block identification appearance.
+    # Click type that will make particles appear. Options are:
+    # LEFT (default), RIGHT, or NONE
+    click-type: LEFT
+    # Size of particles. Default is 0.5. Must be greater than 0.
+    particle-size: 0.5
+    # Density of particles - Value from 0.1 to 1. Default is 0.65. Smaller values are more dense, higher are less.
+    particle-density: 0.8
+    # Color of particles
+    particle-color:
+      ==: Color
+      ALPHA: 235
+      RED: 0
+      BLUE: 0
+      GREEN: 128
   # Clear blocks when spawning mobs.
   # Mobs break blocks when they spawn is to prevent players from building a box around the magic block,
   # having the mob spawn, and then die by suffocation, i.e., it's a cheat prevention.
@@ -104,6 +125,8 @@ world:
   # Island height - Lowest is 5.
   # It is the y coordinate of the bedrock block in the schem.
   island-height: 80
+  # Disallow team members from having their own islands.
+  disallow-team-member-islands: false
   # Use your own world generator for this world.
   # In this case, the plugin will not generate anything.
   # If used, you must specify the world name and generator in the bukkit.yml file.
@@ -172,10 +195,10 @@ world:
     create-obsidian-platform: false
   # Mob white list - these mobs will NOT be removed when logging in or doing /island
   remove-mobs-whitelist:
+  - ENDERMAN
+  - ZOMBIE_VILLAGER
   - WITHER
   - ZOMBIFIED_PIGLIN
-  - ZOMBIE_VILLAGER
-  - ENDERMAN
   # World flags. These are boolean settings for various flags for this world
   flags:
     DRAGON_EGG: false
@@ -272,6 +295,7 @@ world:
     ITEM_DROP: true
     NOTE_BLOCK: false
     CREATE_SHOPS: false
+    START_SAFETY: false
     NETHER_PORTAL: false
     REMOVE_END_EXIT_ISLAND: true
     LECTERN: false
@@ -451,6 +475,17 @@ world:
   - j
   - cmi jumpto
   - cmi spawn
+  - general
+  - wild
+  - tpa
+  - skyblock
+  - oneblock
+  - skygrid
+  - cave
+  - acid
+  - parkour
+  - dback
+  - back
 island:
   # Drop broken blocks on top of magic block
   # If you want Jobs or other plugins to recognize magic block breaking this must be false
@@ -464,17 +499,17 @@ island:
   water-mob-protection: true
   # Default max team size
   # Permission size cannot be less than the default below. 
-  max-team-size: 4
+  max-team-size: 6
   # Default maximum number of coop rank members per island
   # Players can have the aoneblock.coop.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-coop-size: 4
+  max-coop-size: 6
   # Default maximum number of trusted rank members per island
   # Players can have the aoneblock.trust.maxsize.<number> permission to be bigger but
   # permission size cannot be less than the default below. 
   # Added since 1.13.0.
-  max-trusted-size: 4
+  max-trusted-size: 6
   # Default maximum number of homes a player can have. Min = 1
   # Accessed via /is sethome <number> or /is go <number>
   max-homes: 1

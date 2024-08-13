@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
+######## DEPRECATED
+### We've moved to BOLT
+######## DEPRECATED
+### We've moved to BOLT
+######## DEPRECATED
+### We've moved to BOLT
+######## DEPRECATED
+### We've moved to BOLT
+######## DEPRECATED
+
 # @Filename: 1MB-LWC.sh
-# @Version: 1.2.1, build 009
-# @Release: June 7th, 2023
+# @Version: 1.2.1, build 010
+# @Release: August 13th, 2024
 # @Description: Shell script for Modern LWC 2.2.8 for Minecraft 1.20, help convert SQLite player names to UUID using MSA API
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris

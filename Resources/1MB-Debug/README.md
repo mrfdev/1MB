@@ -1,7 +1,7 @@
 # 1MB-Debug: A Minecraft Debug World on MultiPlayer servers
 ```
 @Package: 1MB-Debug
-@Version: 2.0, build 003
+@Version: 2.1, build 004
 @Release: August 13th, 2024
 @Description: Quickly add a 1.21.1 debug world to your multiplayer server.
 @Contact: I am @floris on Twitter, and mrfloris in MineCraft.

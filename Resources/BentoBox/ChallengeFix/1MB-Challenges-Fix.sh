@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.5.2, build 026 for BentoBox+Challenges, on Minecraft 1.20.x
-# @Release: November 28th, 2023
+# @Version: 0.5.3, build 027 for BentoBox+Challenges, on Minecraft 1.20.4+
+# @Release: August 13th, 2024
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -237,4 +237,4 @@ echo "Sending commands: Completed."
 # And finally, report that we're really done with the script now. 
 echo "Script has finished!"
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 2011-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

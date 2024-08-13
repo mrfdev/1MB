@@ -38,7 +38,7 @@ worlds:
       z: 3.750628507942084
       pitch: 30.349983
       yaw: -35.066387
-    autoLoad: 'true'
+    autoLoad: 'false'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL

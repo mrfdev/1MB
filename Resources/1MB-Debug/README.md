@@ -1,37 +1,68 @@
-# 1MB-Debug
-
+# 1MB-Debug: A Minecraft Debug World on MultiPlayer servers
 ```
-# @Package: 1MB-Debug
-# @Version: 1.0, build 002
-# @Release: September 6th, 2020
-# @Description: This helps you quickly add a 1.16.1 debug world to your multiplayer server.
-# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
-# @Discord: floris#0233 on https://discord.gg/KzTDhxv
-# @URL: Latest update, wiki, & support: https://scripts.1moreblock.com/
+@Package: 1MB-Debug
+@Version: 2.0, build 003
+@Release: August 13th, 2024
+@Description: Quickly add a 1.21.1 debug world to your multiplayer server.
+@Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+@Discord: mrfloris on https://discord.gg/floris
+@URL: Latest update, wiki, & support: https://scripts.1moreblock.com/
 ```
 
-## Information:
+## Overview
 
-You can manage the your server how you want, basically you just want to import the world into your existing setup.
+The 1MB-Debug package allows you to easily integrate a pre-configured debug world into your multiplayer server running Paper 1.21.1. This world is designed as a "view-only" environment, where game mechanics should not be altered. However, note that interacting with the world may cause chunks to update, triggering in-game mechanics.
 
-This is made for Paper 1.16.1, not for any other version. Once my own server goes to 1.16.2, I will update this package.
+This package is specifically tailored for Paper 1.21.1 and may not be compatible with other versions. Once my server updates to 1.22, I plan to release an updated version of this package.
 
-The world is a singleplayer world that's been created, chunks loaded, states saved, etc. And converted to work with Paper 1.16.1 specifically. Though it should be fine loading this in Spigot or Tuinity. 
+## Installation Guide
 
-### Important to understand: Touch anything, and chunks update, meaning game mechanics come into play. Things will 'pop off', etc. This is meant as a 'view only' world.
+### Step 1: Import the Debug World
+1. Place the `/debug/` world folder into the directory containing your server’s other worlds.
+2. In-game, run the following command:  
+   ```
+   /mvimport debug normal
+   ```
 
+### Step 2: Configure the World (Optional)
+- Ensure players are in spectator mode, and set your spawn point correctly. An example `worlds.yml` file is included as a guide.
+- The `worlds.yml` is not set to auto-load. To load the world manually on your next server start, use:  
+  ```
+  /mvload debug
+  ```
 
-## Installation:
+### Step 3: Set Up the World
+1. Teleport to the debug world:  
+   ```
+   /mvtp debug
+   ```
+2. Switch to creative mode, position yourself, then set the spawn point:  
+   ```
+   /mvsetspawn
+   ```
+3. Switch back to spectator mode and set the default game mode:  
+   ```
+   /mvm set gamemode spectator
+   ```
+4. Save your settings:  
+   ```
+   /save-all flush
+   ```
 
-- Put the /debug/ world folder in the same directory as your other worlds.
+### Step 4: Manage Permissions
+- Grant access to the debug world for the appropriate group using LuckPerms:  
+  ```
+  /lp group GROUPNAME permission set multiverse.access.debug true
+  ```
 
-- Then in-game, type: /mvimport debug normal
-
-- Optionally, make sure players are in spectator mode, and that your spawnpoint is set properly. I've included my worlds.yml file as an example guilde.
-
-- To manually do this, you can go to the world: /mvtp debug, once you're in the right spot, change to creative mode, and land on a block. Then type: /mvsetspawn, and go back into spectator mode. Then /mvm set gamemode spectator. And /save-all
-
-- Don't forget to add the permission to the group for those who should have access to this world: /lp group GROUPNAME permission set multiverse.access.debug true
-
-- Optionally, you can set a worldborder (note that in spectator mode players can go past the Mojang worldborder, I use worldborder plugin to prevent this) Worldborder plugin: /wb set 200 200 135 135, Mojang worldborder: /minecraft:worldborder center 135 135, and then /minecraft:worldborder set 400
-
+### Step 5: Set a World Border (Optional)
+- To prevent players in spectator mode from bypassing the world border, you can set a custom world border using the WorldBorder plugin:
+  ```
+  /wb set 200 200 135 135
+  ```
+- Set the Mojang world border:
+  ```
+  /minecraft:worldborder center 135 135
+  /minecraft:worldborder set 400
+  ```
+  *(Adjust the values based on your server’s requirements for version 1.21.1, as the world size may vary with each release.)*

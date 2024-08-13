@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Challenges-Fix
-# @Version: 0.5.3, build 027 for BentoBox+Challenges, on Minecraft 1.20.4+
+# @Version: 0.5.3, build 028 for BentoBox+Challenges, on Minecraft 1.20.4+
 # @Release: August 13th, 2024
 # @Description: Helps me re-sync completed challenges for a player.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-Challenges-Fix, and move file to `~/plugins/BentoBox/database/ChallengesPlayerData/`
-# @Syntax: ./1MB-Challenges-Fix
+# @Syntax: ./1MB-Challenges-Fix.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ## TODO ##

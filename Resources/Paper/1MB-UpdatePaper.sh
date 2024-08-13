@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.9, build 034
-# @Release: August 7th, 2024
-# @Description: Helps us get a Minecraft Paper 1.21 server .jar
+# @Version: 3.2.10, build 035
+# @Release: August 13th, 2024
+# @Description: Helps us get a Minecraft Paper 1.21.1 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-UpdatePaper.sh

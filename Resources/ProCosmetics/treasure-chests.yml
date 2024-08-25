@@ -6,122 +6,120 @@ treasure-chests:
     rows: 3
 
   settings:
-    prevent-duplicates: false
-    station-hologram: "&bOpen Treasure"
+    station-hologram:
+      - "Purchase treasures at &ewww.example.com&r!"
+      - ""
+      - "&bOpen Treasure"
 
-    default-block-layout:
-      center:
-        material: OAK_LEAVES
-      body:
-        material: STONE_BRICKS
-      stair:
-        material: STONE_BRICK_STAIRS
+    # This setting allows you to configure who receives the message "File14 is opening a Normal Treasure!".
+    # You can choose to broadcast the message to just the player who found the item, to nearby players
+    # within a 32-block radius, world players, or to all online players.
+    # NOTE: opening-broadcast must be set to true for the specific treasure you are opening for this to take effect!
+    #
+    # Modes: SELF, NEARBY, WORLD, ALL
+    broadcast-opening-treasure:
+      mode: ALL
+
+    broadcast-loot:
+      # This setting allows you to configure who receives the message "File14 has found Rare TNT (Gadget)!".
+      # You can choose to broadcast the message to just the player who found the item, to nearby players
+      # within a 32-block radius, world players, or to all online players.
+      #
+      # Modes: SELF, NEARBY, WORLD, ALL
+      mode: ALL
+      # You can exclude certain rarities from being broadcasted!
+      excludes:
+        - COMMON
 
     category-names:
       money: "Money"
-      ammo: "Ammo"
-      arrow-effect: "Arrow Effect"
-      balloon: "Balloon"
-      banner: "Banner"
-      death-effect: "Death Effect"
-      emote: "Emote"
-      gadget: "Gadget"
-      miniature: "Miniature"
-      morph: "Morph"
-      mount: "Mount"
+      ammo: "Gadget Ammo"
+      arrow-effects: "Arrow Effect"
+      balloons: "Balloon"
+      banners: "Banner"
+      death-effects: "Death Effect"
+      emotes: "Emote"
+      gadgets: "Gadget"
+      miniatures: "Miniature"
+      morphs: "Morph"
+      mounts: "Mount"
       music: "Music"
-      particle-effect: "Particle Effect"
-      pet: "Pet"
-      status: "Status"
+      particle-effects: "Particle Effect"
+      pets: "Pet"
+      statuses: "Status"
       custom: ""
-
-    rarities:
-      common:
-        name: "&lCOMMON&r&b"
-        color: "&b"
-      rare:
-        name: "&lRARE&r&d"
-        color: "&d"
-      legendary:
-        name: "&lLEGENDARY&r&a"
-        color: "&a"
 
   treasures:
     normal:
       enable: true
-      purchasable: false
+      name: "Normal"
+      purchasable: true
       cost: 1000
       chests-to-open: 4
-      animation: NORMAL
-      on-open:
-        chat:
-          enable: false
-          message: "&b%player% &7is opening a &dNormal Treasure Chest&7!"
-      block-layout:
-        center:
-          material: GLOWSTONE
-        body:
-          material: STONE_BRICKS
-        stair:
-          material: COBBLESTONE_STAIRS
-      material: CHEST
-      amount: 1
-      slot: 10
-      page: 1
-      custom-model-data: 0
-      displayname: "&bNormal Treasure"
-      lore:
-        - ""
-        - "&7We found some abandoned villagers"
-        - "&7and managed to find these chests."
-        - "&7The contents are unknown, but we"
-        - "&7were told they appear to contain"
-        - "&7many kinds of loot!"
-        - ""
-        - "&bYou own &3%current% &bnormal treasures!"
-        - ""
-        - "&9Craftable for &e%cost% coins&9!"
-        - "&7Right-click to purchase!"
+      chest-animation: NORMAL
+      animation-layouts:
+        - "normal-1"
+        - "normal-2"
+        - "normal-3"
+      opening-broadcast: true
+      item:
+        material: CHEST
+        amount: 1
+        slot: 10
+        page: 1
+        custom-model-data: 0
+        displayname: "&b%name% Treasure"
+        lore:
+          - ""
+          - "&7All cosmetics within the same category have equal"
+          - "&7chances of being obtained. Current category chances:"
+          - "%chances%"
+          - ""
+          - "&bYou own &3%current% &b%name% treasures!"
+          - ""
+          - "&9Right-click to purchase for &e%cost% coins&9!"
       rewards:
         money:
           minimum-amount: 200
           maximum-amount: 500
-          chance: 4
+          weight: 5
         ammo:
           minimum-amount: 20
           maximum-amount: 50
-          chance: 95
+          weight: 95
         arrow-effects:
-          chance: 1
+          weight: 1
         balloons:
-          chance: 3
+          weight: 1
         banners:
-          chance: 3
+          weight: 3
         death-effects:
-          chance: 2
+          weight: 3
         emotes:
-          chance: 1
+          weight: 1
         gadgets:
-          chance: 7
+          weight: 7
         miniatures:
-          chance: 0
+          weight: 0
         morphs:
-          chance: 0
+          weight: 0
         mounts:
-          chance: 0
+          weight: 0
         music:
-          chance: 2
+          weight: 2
         particle-effects:
-          chance: 0
+          weight: 0
         pets:
-          chance: 5
+          weight: 5
         statuses:
-          chance: 0
+          weight: 0
         custom:
           coin-bag:
+            enable: true
             name: "&eSmall Coin Bag"
             material: SUNFLOWER
-            chance: 30
+            custom-model-data: 0
+            weight: 30
             rarity: COMMON
             message: "&e%player% &7has found a small bag of &ecoins&7!"
             commands:
@@ -129,81 +127,74 @@ treasure-chests:
 
     mythical:
       enable: true
-      purchasable: false
+      name: "Mythical"
+      purchasable: true
       cost: 5000
       chests-to-open: 4
-      animation: MYTHICAL
-      on-open:
-        chat:
-          enable: true
-          message: "&b%player% &7is opening a &dMythical Treasure Chest&7!"
-      block-layout:
-        center:
-          material: SEA_LANTERN
-          data: 0
-        body:
-          material: PRISMARINE_BRICKS
-          data: 1
-        stair:
-          material: QUARTZ_STAIRS
-          data: 0
-      material: CHEST
-      amount: 1
-      slot: 13
-      page: 1
-      custom-model-data: 0
-      displayname: "&bMythical Treasure"
-      lore:
-        - ""
-        - "&7These chests have been some of our hardest"
-        - "&7chests to find. Only the bravest adventures"
-        - "&7managed to find these deep down hidden in"
-        - "&7mysterious caves!"
-        - ""
-        - "&bYou own &3%current% &bmythical treasures!"
-        - ""
-        - "&9Craftable for &e%cost% coins&9!"
-        - "&7Right-click to purchase!"
+      chest-animation: MYTHICAL
+      animation-layouts:
+        - "mythical-1"
+        - "mythical-2"
+        - "mythical-3"
+      opening-broadcast: true
+      item:
+        material: ENDER_CHEST
+        amount: 1
+        slot: 13
+        page: 1
+        custom-model-data: 0
+        displayname: "&b%name% Treasure"
+        lore:
+          - ""
+          - "&7All cosmetics within the same category have equal"
+          - "&7chances of being obtained. Current category chances:"
+          - "%chances%"
+          - ""
+          - "&bYou own &3%current% &b%name% treasures!"
+          - ""
+          - "&9Right-click to purchase for &e%cost% coins&9!"
       rewards:
         money:
           minimum-amount: 500
           maximum-amount: 2000
-          chance: 15
+          weight: 10
         ammo:
           minimum-amount: 30
           maximum-amount: 80
-          chance: 85
+          weight: 40
         arrow-effects:
-          chance: 20
+          weight: 10
         balloons:
-          chance: 20
+          weight: 10
         banners:
-          chance: 20
+          weight: 10
         death-effects:
-          chance: 20
+          weight: 10
         emotes:
-          chance: 15
+          weight: 8
         gadgets:
-          chance: 18
+          weight: 6
         miniatures:
-          chance: 14
+          weight: 7
         morphs:
-          chance: 5
+          weight: 2
         mounts:
-          chance: 10
+          weight: 2
         music:
-          chance: 10
+          weight: 4
         particle-effects:
-          chance: 2
+          weight: 1
         pets:
-          chance: 25
+          weight: 15
         statuses:
-          chance: 10
+          weight: 10
         custom:
           coin-bag:
+            enable: true
             name: "&eMedium Coin Bag"
             material: SUNFLOWER
-            chance: 10
+            custom-model-data: 0
+            weight: 10
             rarity: COMMON
             message: "&e%player% &7has found a medium bag of &ecoins&7!"
             commands:
@@ -211,87 +202,75 @@ treasure-chests:
 
     legendary:
       enable: true
-      purchasable: false
+      name: "Legendary"
+      purchasable: true
       cost: 10000
       chests-to-open: 4
-      animation: LEGENDARY
-      on-open:
-        chat:
-          enable: true
-          message: "&b%player% &7is opening a &dLegendary Treasure Chest&7!"
-      block-layout:
-        center:
-          material: GLOWSTONE
-        body:
-          material: QUARTZ_BLOCK
-        stair:
-          material: QUARTZ_STAIRS
-      material: ENDER_CHEST
-      data: 0
-      amount: 1
-      slot: 16
-      page: 1
-      custom-model-data: 0
-      displayname: "&bLegendary Treasure"
-      lore:
-        - ""
-        - "&7The most powerful of all other chests."
-        - "&7The loot has been found from dead"
-        - "&7legendary players a long time ago."
-        - ""
-        - "&bYou own &3%current% &blegendary treasures!"
-        - ""
-        - "&9Craftable for &e%cost% coins&9!"
-        - "&7Right-click to purchase!"
+      chest-animation: LEGENDARY
+      animation-layouts:
+        - "legendary-1"
+        - "legendary-2"
+        - "legendary-3"
+      opening-broadcast: true
+      item:
+        material: ENDER_CHEST
+        data: 0
+        amount: 1
+        slot: 16
+        page: 1
+        custom-model-data: 0
+        displayname: "&b%name% Treasure"
+        lore:
+          - ""
+          - "&7All cosmetics within the same category have equal"
+          - "&7chances of being obtained. Current category chances:"
+          - "%chances%"
+          - ""
+          - "&bYou own &3%current% &b%name% treasures!"
+          - ""
+          - "&9Right-click to purchase for &e%cost% coins&9!"
       rewards:
         money:
           minimum-amount: 1000
           maximum-amount: 2500
-          chance: 15
+          weight: 15
         ammo:
           minimum-amount: 80
           maximum-amount: 150
-          chance: 80
+          weight: 80
         arrow-effects:
-          chance: 20
+          weight: 20
         balloons:
-          chance: 22
+          weight: 22
         banners:
-          chance: 22
+          weight: 22
         death-effects:
-          chance: 20
+          weight: 20
         emotes:
-          chance: 16
+          weight: 16
         gadgets:
-          chance: 18
+          weight: 18
         miniatures:
-          chance: 15
+          weight: 15
         morphs:
-          chance: 10
+          weight: 10
         mounts:
-          chance: 12
+          weight: 12
         music:
-          chance: 15
+          weight: 15
         particle-effects:
-          chance: 10
+          weight: 10
         pets:
-          chance: 25
+          weight: 25
         statuses:
-          chance: 14
+          weight: 14
         custom:
-          vip:
-            name: "&d&lVIP Rank"
-            material: NETHER_STAR
-            data: 0
-            chance: 1
-            rarity: LEGENDARY
-            message: "&e%player% &7has found &aLEGENDARY &dVIP Rank&7!"
-            commands:
-              - "pex user %player% set group VIP"
           coin-bag:
+            enable: true
             name: "&eHuge Coin Bag"
             material: SUNFLOWER
-            chance: 3
+            custom-model-data: 0
+            weight: 3
             rarity: LEGENDARY
             message: "&e%player% &7has found a huge bag of &ecoins&7!"
             commands:

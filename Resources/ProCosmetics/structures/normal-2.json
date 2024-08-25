@@ -1,0 +1,148 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_LEFT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_LEFT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    }
+  ]
+}

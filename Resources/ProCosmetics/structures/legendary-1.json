@@ -1,0 +1,92 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "PURPUR_BLOCK"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "PURPUR_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "SEA_LANTERN"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "PURPUR_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "PURPUR_BLOCK"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "PURPUR_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "PURPUR_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "PURPUR_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "PURPUR_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    }
+  ]
+}

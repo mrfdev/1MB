@@ -1,3 +1,7 @@
+#
+# If you want to disable a specific message, just set it to ""
+#
+
 messages:
   chat:
     cosmetic:
@@ -42,40 +46,37 @@ messages:
         unequip: "&7You unequipped &e%cosmetic%&7."
 
     treasure-chest:
+      opening-broadcast: "&e%player% &7is opening a &b%treasure% Treasure&7!"
       rewards:
-        money: "&b%player% &7has found &e%money% coins&7!"
-        ammo: ""
-        arrow-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic%&7!"
-        balloons: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Balloon&7!"
-        banners: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Banner&7!"
-        death-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic%&7!"
-        emotes: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Emote&7!"
-        gadgets: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Gadget&7!"
-        miniatures: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Miniature&7!"
-        morphs: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Morph&7!"
-        mounts: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Mount&7!"
-        music: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Music&7!"
-        particle-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Particle Effect&7!"
-        pets: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Pet&7!"
-        statuses: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Status&7!"
-      already-in-use: "&7This station is already in use."
-
-    anti-lag:
-      unequip: "&cYour cosmetics has been unequipped to prevent server lag!"
-      cosmetics-disabled: "&cYou cannot use cosmetics at this time. Please try again later!"
+        money: "&e%player% &7found &e%amount% coins&7!"
+        ammo: "&e%player% &7found %rarity_main_color%%rarity%%amount% %cosmetic%!"
+        arrow-effects: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        balloons: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        banners: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        death-effects: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        emotes: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        gadgets: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        miniatures: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        morphs: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        mounts: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        music: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        particle-effects: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        pets: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+        statuses: "&e%player% &7found a %rarity_main_color%%rarity% %cosmetic%&7 (&b%category%&7)!"
+      already-in-use: "&cThis station is already in use!"
 
     world-guard:
       entered-blacklisted-region: "&cYou entered a region where some cosmetics are not allowed!"
       equip-denied-blacklisted-region: "&cYou cannot equip that cosmetic in this region!"
 
-    remove-item: "&cPlease remove your current item from the %slot%th slot in order to equip this gadget!"
-    must-stand-on-ground: "&cYou must stand on the ground to use this cosmetic."
-    cosmetics-not-allowed: "&cCosmetics are not allowed in this world."
+    remove-item: "&cPlease remove your current item from the %slot%th slot to equip this gadget!"
+    must-stand-on-ground: "&cYou must stand on the ground to use this cosmetic!"
+    cosmetics-not-allowed: "&cCosmetics are not allowed in this world!"
     not-your-mount: "&cThis is not your mount!"
-    not-enough-space: "&cThere is not enough space to use this cosmetic here."
+    not-enough-space: "&cThere is not enough space to use this cosmetic here!"
     not-enough-money: "&cYou don't have enough coins!"
     not-permission: "&cYou don't have permission to do this!"
-    music-box-nearby: "&cYou are too close to another Music Box. Go further away."
+    music-box-nearby: "&cYou are too close to another Music Box. Please go further away!"
 
   actionbar:
     gadget:
@@ -83,6 +84,12 @@ messages:
       recharged: "&e%gadget% &7is now recharged!"
     morph:
       recharged: "&eYou can now use the ability again!"
+
+  title:
+    treasure-chest:
+      opening:
+        main: "&b%treasure% Treasure"
+        sub: "Choose &e%amount%&r to open!"
 
 # Do not edit this!
 config-version: 1

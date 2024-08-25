@@ -5,7 +5,7 @@ mounts:
     title: "Mounts"
     rows: 5
     fill-empty-slots: true
-    material: IRON_HORSE_ARMOR
+    material: SADDLE
     amount: 1
     slot: 34
     custom-model-data: 0
@@ -26,15 +26,15 @@ mounts:
       enable: true
       material: RED_BED
       amount: 1
-      slot: 4
+      slot: 40
       custom-model-data: 0
-      displayname: "&aGo back"
+      displayname: "&cGo back"
       lore: [ ]
 
     previous-page:
       material: ARROW
       amount: 1
-      slot: 45
+      slot: 38
       custom-model-data: 0
       displayname: "&aPrevious Page"
       lore: [ ]
@@ -42,7 +42,7 @@ mounts:
     next-page:
       material: ARROW
       amount: 1
-      slot: 53
+      slot: 42
       custom-model-data: 0
       displayname: "&aNext Page"
       lore: [ ]

@@ -1,0 +1,438 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": -3.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "SEA_LANTERN"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_LEFT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "INNER_LEFT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": -3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": -1.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "material": "OAK_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "CHEST",
+      "facing": "SOUTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": 2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": -1.0,
+        "z": -2.0
+      },
+      "material": "OAK_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": -1.0,
+        "z": 1.0
+      },
+      "material": "OAK_PLANKS"
+    }
+  ]
+}

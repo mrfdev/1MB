@@ -1,0 +1,59 @@
+#
+# Rarities are markers that identify the rarity of a cosmetic item, such as common or super rare.
+# They DO NOT affect the odds of obtaining items in the treasure chest.
+# Their purpose is to enhance the player's experience by creating a sense of excitement when receiving a rare item.
+# For example, receiving gadget ammo is not as exciting as receiving a cool particle effect.
+#
+# Rarities are mainly used and displayed when receiving cosmetics in treasure chests.
+# For example, when you receive a cosmetic it says:
+# %rarity_secondary_color% Gadget
+# %rarity_main_color% TNT
+#
+# You can customize existing rarities and add new ones as needed.
+# The default color scheme works as follows: the main color should be brighter than the secondary color and should be within the same color range.
+# PLEASE NOTE: If you rename a default rarity (e.g., "common" and not name: "common"), remember to update all references to it in the cosmetics config files. Use the replace-all function to simplify this process.
+# PLEASE NOTE: Money & Gadget ammo will always fall back to the FIRST rarity listed below. It is defined as the most common rarity.
+#
+# FIREWORK TYPES: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html
+# FIREWORK COLORS: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Color.html
+
+rarities:
+  common:
+    name: "Common"
+    colors:
+      main: "&b"
+      secondary: "&3"
+    firework:
+      detonations: 0
+      interval: 3
+      type: BURST
+      color: 65535
+      fade: 65535
+      flicker: false
+      trail: false
+  rare:
+    name: "Rare"
+    colors:
+      main: "&d"
+      secondary: "&5"
+    firework:
+      detonations: 4
+      interval: 3
+      type: BURST
+      color: 16711935
+      fade: 16711935
+      flicker: false
+      trail: false
+  legendary:
+    name: "Legendary"
+    colors:
+      main: "&a"
+      secondary: "&2"
+    firework:
+      detonations: 10
+      interval: 10
+      type: BALL_LARGE
+      color: 65280
+      fade: 65280
+      flicker: false
+      trail: false

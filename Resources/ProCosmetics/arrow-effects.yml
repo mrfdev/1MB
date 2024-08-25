@@ -5,7 +5,7 @@ arrow-effects:
     title: "Arrow Effects"
     rows: 4
     fill-empty-slots: true
-    material: ARROW
+    material: TIPPED_ARROW
     amount: 1
     slot: 12
     custom-model-data: 0
@@ -25,15 +25,15 @@ arrow-effects:
       enable: true
       material: RED_BED
       amount: 1
-      slot: 4
+      slot: 31
       custom-model-data: 0
-      displayname: "&aGo back"
+      displayname: "&cGo back"
       lore: [ ]
 
     previous-page:
       material: ARROW
       amount: 1
-      slot: 45
+      slot: 29
       custom-model-data: 0
       displayname: "&aPrevious Page"
       lore: [ ]
@@ -41,7 +41,7 @@ arrow-effects:
     next-page:
       material: ARROW
       amount: 1
-      slot: 53
+      slot: 33
       custom-model-data: 0
       displayname: "&aNext Page"
       lore: [ ]

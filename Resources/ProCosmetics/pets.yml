@@ -3,7 +3,7 @@ pets:
 
   menu:
     title: "Pets"
-    rows: 4
+    rows: 6
     fill-empty-slots: true
     material: BONE
     amount: 1
@@ -27,15 +27,15 @@ pets:
       enable: true
       material: RED_BED
       amount: 1
-      slot: 4
+      slot: 49
       custom-model-data: 0
-      displayname: "&aGo back"
+      displayname: "&cGo back"
       lore: [ ]
 
     previous-page:
       material: ARROW
       amount: 1
-      slot: 45
+      slot: 47
       custom-model-data: 0
       displayname: "&aPrevious Page"
       lore: [ ]
@@ -43,7 +43,7 @@ pets:
     next-page:
       material: ARROW
       amount: 1
-      slot: 53
+      slot: 51
       custom-model-data: 0
       displayname: "&aNext Page"
       lore: [ ]
@@ -51,7 +51,7 @@ pets:
     name-tag:
       material: NAME_TAG
       amount: 1
-      slot: 31
+      slot: 53
       custom-model-data: 0
       displayname: "&eName Tag"
       lore:
@@ -70,14 +70,14 @@ pets:
     tossing-items: true
 
   cosmetics:
-    piggy:
+    allay:
       enable: true
-      name: "&bPig"
+      name: "&bAllay"
       can-be-found: true
       purchasable: false
       cost: 2000
       rarity: COMMON
-      material: PORKCHOP
+      material: GHAST_TEAR
       amount: 1
       slot: 10
       page: 1
@@ -85,8 +85,60 @@ pets:
       displayname: "%name%"
       lore:
         - ""
-        - "&7Christmas ham?"
-        - "&7No!"
+        - "&7A friendly spirit that"
+        - "&7follows you around."
+
+    axolotl:
+      enable: true
+      name: "&bAxolotl"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: AXOLOTL_BUCKET
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A cute water creature."
+
+    bee:
+      enable: true
+      name: "&bBee"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: HONEYCOMB
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A buzzing companion."
+
+    body-guard:
+      enable: true
+      name: "&bBody Guard"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: POPPY
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Follows you around with a"
+        - "&7rose in his hand."
 
     calf:
       enable: true
@@ -97,7 +149,7 @@ pets:
       rarity: COMMON
       material: MILK_BUCKET
       amount: 1
-      slot: 11
+      slot: 14
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -106,40 +158,57 @@ pets:
         - "&7He wants a lot of grass"
         - "&7to eat."
 
-    puppy:
+    camel:
       enable: true
-      name: "&bPuppy"
+      name: "&bCamel"
       can-be-found: true
       purchasable: false
       cost: 2000
       rarity: COMMON
-      material: BONE
+      material: SAND
       amount: 1
-      slot: 12
+      slot: 15
       page: 1
       custom-model-data: 0
       displayname: "%name%"
       lore:
         - ""
-        - "&7Voff..."
+        - "&7A desert companion."
 
-    kitten:
+    cave-spider:
       enable: true
-      name: "&bKitten"
+      name: "&bCave Spider"
       can-be-found: true
       purchasable: false
       cost: 2000
       rarity: COMMON
-      material: COD
+      material: SPIDER_EYE
       amount: 1
-      slot: 13
+      slot: 16
       page: 1
       custom-model-data: 0
       displayname: "%name%"
       lore:
         - ""
-        - "&7Who wouldn't want a kitten"
-        - "&7following them around?"
+        - "&7It may look like the spider"
+        - "&7is interested in you."
+
+    chicken:
+      enable: true
+      name: "&bChicken"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: FEATHER
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A clucking companion."
 
     colorful-lamb:
       enable: true
@@ -150,7 +219,7 @@ pets:
       rarity: COMMON
       material: WHITE_WOOL
       amount: 1
-      slot: 14
+      slot: 20
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -168,7 +237,7 @@ pets:
       rarity: COMMON
       material: CARROT
       amount: 1
-      slot: 15
+      slot: 21
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -176,42 +245,6 @@ pets:
         - ""
         - "&7A cute bunny following"
         - "&7you around!"
-
-    mushroom-calf:
-      enable: true
-      name: "&bMushroom Calf"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: COMMON
-      material: RED_MUSHROOM
-      amount: 1
-      slot: 16
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It grows mushrooms on"
-        - "&7their back."
-
-    santa-claus:
-      enable: true
-      name: "&bSanta Claus"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: LEGENDARY
-      material: REDSTONE
-      amount: 1
-      slot: 19
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7I hope you've"
-        - "&7been nice."
 
     elf:
       enable: true
@@ -222,7 +255,7 @@ pets:
       rarity: LEGENDARY
       material: EMERALD
       amount: 1
-      slot: 20
+      slot: 22
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -230,41 +263,266 @@ pets:
         - ""
         - "&7I'm Santa's helper."
 
-    body-guard:
+    endermite:
       enable: true
-      name: "&bBody Guard"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: LEGENDARY
-      material: POPPY
-      amount: 1
-      slot: 21
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Follows you around with a"
-        - "&7rose in his hand."
-
-    cave-spider:
-      enable: true
-      name: "&bCave Spider"
+      name: "&bEndermite"
       can-be-found: true
       purchasable: false
       cost: 2000
       rarity: COMMON
-      material: SPIDER_EYE
+      material: ENDER_PEARL
       amount: 1
-      slot: 22
+      slot: 23
       page: 1
       custom-model-data: 0
       displayname: "%name%"
       lore:
         - ""
-        - "&7It may look like the spider"
-        - "&7is interested in you."
+        - "&7A mysterious ender creature."
+
+    fox:
+      enable: true
+      name: "&bFox"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: ORANGE_DYE
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A clever and sly friend."
+
+    frog:
+      enable: true
+      name: "&bFrog"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: SLIME_BALL
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Hop, hop! Ribbit, ribbit!"
+
+    goat:
+      enable: true
+      name: "&bGoat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: MILK_BUCKET
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A furry friend with horns."
+
+    hoglin:
+      enable: true
+      name: "&bHoglin"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: RAW_GOLD
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A tough and fierce companion."
+
+    kitten:
+      enable: true
+      name: "&bKitten"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: COD
+      amount: 1
+      slot: 30
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Who wouldn't want a kitten"
+        - "&7following them around?"
+
+    llama:
+      enable: true
+      name: "&bLlama"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: LEAD
+      amount: 1
+      slot: 31
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Carries your items in style."
+
+    mushroom-calf:
+      enable: true
+      name: "&bMushroom Calf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: RED_MUSHROOM
+      amount: 1
+      slot: 32
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It grows mushrooms on"
+        - "&7their back."
+
+    panda:
+      enable: true
+      name: "&bPanda"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: BAMBOO
+      amount: 1
+      slot: 33
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A cute panda to keep you company."
+
+    parrot:
+      enable: true
+      name: "&bParrot"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: FEATHER
+      amount: 1
+      slot: 34
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A colorful feathered companion."
+
+    piggy:
+      enable: true
+      name: "&bPig"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PORKCHOP
+      amount: 1
+      slot: 37
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Christmas ham?"
+        - "&7No!"
+
+    piglin:
+      enable: true
+      name: "&bPiglin"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: GOLD_INGOT
+      amount: 1
+      slot: 38
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A pig-like creature from the"
+        - "&7Nether with a golden touch."
+
+    polar-bear:
+      enable: true
+      name: "&bPolar Bear"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PACKED_ICE
+      amount: 1
+      slot: 39
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A furry companion from"
+        - "&7the icy wilderness."
+
+    puppy:
+      enable: true
+      name: "&bPuppy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: BONE
+      amount: 1
+      slot: 40
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Voff..."
+
+    santa-claus:
+      enable: true
+      name: "&bSanta Claus"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: REDSTONE
+      amount: 1
+      slot: 41
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7I hope you've"
+        - "&7been nice."
 
     silverfish:
       enable: true
@@ -275,7 +533,7 @@ pets:
       rarity: COMMON
       material: STONE_BUTTON
       amount: 1
-      slot: 23
+      slot: 42
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -283,6 +541,40 @@ pets:
         - ""
         - "&7You may not even notice"
         - "&7him."
+
+    sniffer:
+      enable: true
+      name: "&bSniffer"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: SNIFFER_EGG
+      amount: 1
+      slot: 43
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Has a keen sense of smell."
+
+    turtle:
+      enable: true
+      name: "&bTurtle"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: TURTLE_HELMET
+      amount: 1
+      slot: 10
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A slow but steady companion."
 
     villager:
       enable: true
@@ -293,8 +585,8 @@ pets:
       rarity: COMMON
       material: EMERALD
       amount: 1
-      slot: 24
-      page: 1
+      slot: 11
+      page: 2
       custom-model-data: 0
       displayname: "%name%"
       lore:
@@ -310,8 +602,8 @@ pets:
       rarity: COMMON
       material: ROTTEN_FLESH
       amount: 1
-      slot: 25
-      page: 1
+      slot: 12
+      page: 2
       custom-model-data: 0
       displayname: "%name%"
       lore:

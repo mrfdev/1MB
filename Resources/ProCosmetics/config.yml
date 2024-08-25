@@ -1,149 +1,147 @@
-#  _____            _____                         _   _          
+#  _____            _____                         _   _
 # |  __ \          / ____|                       | | (_)
 # | |__) | __ ___ | |     ___  ___ _ __ ___   ___| |_ _  ___ ___
 # |  ___/ '__/ _ \| |    / _ \/ __| '_ ` _ \ / _ \ __| |/ __/ __|
 # | |   | | | (_) | |___| (_) \__ \ | | | | |  __/ |_| | (__\__ \
 # |_|   |_|  \___/ \_____\___/|___/_| |_| |_|\___|\__|_|\___|___/ COPYRIGHT ©
+#
+# Please read our wiki for further explanations: https://github.com/File14/ProCosmetics/wiki
+
 multi-world:
+  # Setting this to false will invert the feature to whitelisted-worlds.
   blacklisted-worlds: true
   worlds:
-  - uwu
-  - owo
-  - sushi
-  - run
-  - builders
-  - pvp
-  - spawn
-  - sanctuary
-  - parkour
+    - uwu
+    - owo
+    - sushi
+    - run
+    - builders
+    - pvp
+    - spawn
+    - sanctuary
+    - parkour
+
+# World Guard Support
 world-guard:
-  enable: false
-  blacklisted-regions: true
-  restore-cosmetics: true
-  unequip:
-    arrow-effects: false
-    balloons: true
-    banners: true
-    death-effects: false
-    emotes: true
-    gadgets: true
-    miniatures: true
-    morphs: true
-    mounts: true
-    music: true
-    particle-effects: false
-    pets: true
-    statuses: false
-  regions:
-  - Region1
-  - Region2
-3d-menu:
   enable: true
-  display-item:
-    unequip-all-cosmetics: true
-    coins: true
+  # This feature allows you to automatically re-equip players' cosmetics when they can use them again.
+  restore-cosmetics: true
+
 storage:
+  # Types: SQLITE or MYSQL.
   type: SQLITE
+
   mysql:
     host: localhost
     port: 3306
     database: ProCosmetics
     table: procosmetics
     user: root
-    password: password
-    properties: autoReconnect=true&useSSL=false
+    password: "password"
+    properties: "autoReconnect=true&useSSL=false&characterEncoding=UTF-8"
+
   sqlite:
     database: procosmetics
     table: procosmetics
-  database-updated-do-not-touch: 1
+
 economy:
-  type: VAULT
-  coin-party-bomb-amount: 150
-anti-lag:
-  enable: true
-  minimum-tps: 17.0
-  unequip-cosmetics: true
-  prevent-equipment: true
+  # Types: VAULT, PLAYER_POINTS, BUILT_IN or CUSTOM (hooked via plugin API)
+  type: BUILT_IN
+
+  # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
+  coin-party-bomb-amount: 10
+
 settings:
-  check-updates: false
-  locked-cosmetic: false
-  enable-metrics: false
-  restore-cosmetics: false
-  permission-add-command: lp user %player% permission set %permission% true
+  # Enables checking for plugin updates at startup. Update notifications are only displayed in the console.
+  check-updates: true
+
+  # Allows enabling or disabling the sending of statistics (https://bstats.org/plugin/bukkit/ProCosmetics/6408)
+  enable-metrics: true
+
+  # Saves players' last equipped cosmetics to automatically re-equip them upon their next login.
+  restore-cosmetics: true
+
+  # Executes this command when a player unlocks a cosmetic. Adapt the command for your specific permission plugin.
+  permission-add-command: "lp user %player% permission set %permission% true"
+
   cosmetic-menu:
-    title: 1MB /perk menu
+    title: "Cosmetic Menu"
     rows: 6
-    fill-empty-slots: false
-    able-to-move: false
+    fill-empty-slots: true
     give-on:
-      join: false
-      world-change: false
+      join: true
+      world-change: true
+
     material: CHEST
     amount: 1
     slot: 0
-    displayname: '&a1MB /perk menu &7(Right-click)'
+    custom-model-data: 0
+    displayname: "&aCosmetic Menu &7(Right-click)"
     lore:
-    - §7Right-click to open the menu.
+      - "&7Right-click to open the Cosmetic menu."
+
   fill-empty-slots:
     material: GRAY_STAINED_GLASS_PANE
     amount: 1
+    displayname: "&f"
+    custom-model-data: 0
+    lore: [ ]
+
   unequip-all-cosmetics:
     material: BARRIER
     amount: 1
     slot: 4
-    displayname: '&cUnequip All Perks'
+    custom-model-data: 0
+    displayname: "&cUnequip All Cosmetics"
     lore:
-    - ''
-    - §7Right-click to unequip your current perks!
+      - ""
+      - "&7Right-click to unequip your current cosmetics!"
+
   coins:
     enable: true
     material: SUNFLOWER
     amount: 1
     slot: 22
-    displayname: '&bYou have &e%coins% coins&b!'
+    custom-model-data: 0
+    displayname: "&bYou have &e%coins% coins&b!"
     lore:
-    - ''
-    - §7Coins can only be obtained
-    - §7through special server events!
-  go-back:
-    material: RED_BED
-    amount: 1
-    slot: 4
-    displayname: '&aGo back'
-    lore: []
-  previous-page:
-    material: ARROW
-    amount: 1
-    slot: 45
-    displayname: '&aPrevious Page'
-    lore: []
-  next-page:
-    material: ARROW
-    amount: 1
-    slot: 53
-    displayname: '&aNext Page'
-    lore: []
+      - ""
+      - "&7Purchase more coins at our"
+      - "&7store: &9www.example.com"
+
   purchase:
-    title: Confirm Purchase
+    title: "Confirm Purchase"
     rows: 3
     fill-empty-slots: true
+
     accept:
       material: LIME_TERRACOTTA
       amount: 1
       slot: 16
-      displayname: '&aAccept Purchase'
+      custom-model-data: 0
+      displayname: "&aAccept Purchase"
       lore:
-      - ''
-      - §7Click to purchase!
+        - ""
+        - "&7Click to accept!"
+
     deny:
       material: RED_TERRACOTTA
       amount: 1
       slot: 10
-      displayname: '&cDeny Purchase'
+      custom-model-data: 0
+      displayname: "&cDeny Purchase"
       lore:
-      - ''
-      - §7Click to cancel!
-  cosmetic-locked-description:
-  - '%cosmetic_description%'
-  - '&7Right-click to purchase for &b%cost% &7coins!'
+        - ""
+        - "&7Click to cancel!"
+
+  locked-cosmetic:
+    material: GRAY_DYE
+    amount: 1
+    custom-model-data: 0
+    lore:
+      - "%cosmetic_lore%"
+      - ""
+      - "&aClick to purchase for &e%cost% coins&a!"
+
+# Do not edit this!
 config-version: 1

@@ -23,7 +23,7 @@ multi-world:
 
 # World Guard Support
 world-guard:
-  enable: true
+  enable: false
   # This feature allows you to automatically re-equip players' cosmetics when they can use them again.
   restore-cosmetics: true
 
@@ -49,28 +49,28 @@ economy:
   type: BUILT_IN
 
   # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
-  coin-party-bomb-amount: 10
+  coin-party-bomb-amount: 250
 
 settings:
   # Enables checking for plugin updates at startup. Update notifications are only displayed in the console.
-  check-updates: true
+  check-updates: false
 
   # Allows enabling or disabling the sending of statistics (https://bstats.org/plugin/bukkit/ProCosmetics/6408)
-  enable-metrics: true
+  enable-metrics: false
 
   # Saves players' last equipped cosmetics to automatically re-equip them upon their next login.
-  restore-cosmetics: true
+  restore-cosmetics: false
 
   # Executes this command when a player unlocks a cosmetic. Adapt the command for your specific permission plugin.
   permission-add-command: "lp user %player% permission set %permission% true"
 
   cosmetic-menu:
-    title: "Cosmetic Menu"
+    title: "1MB /perk"
     rows: 6
     fill-empty-slots: true
     give-on:
-      join: true
-      world-change: true
+      join: false
+      world-change: false
 
     material: CHEST
     amount: 1

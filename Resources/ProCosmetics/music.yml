@@ -1,0 +1,717 @@
+music:
+  enable: true
+
+  menu:
+    title: "Music"
+    rows: 6
+    fill-empty-slots: true
+    material: MUSIC_DISC_MALL
+    amount: 1
+    slot: 28
+    custom-model-data: 0
+    displayname: "&bMusic"
+    lore:
+      - ""
+      - "&7Start a party at the place"
+      - "&7you are at!"
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  settings:
+    hologram:
+      dj: "&a%player%'s DJ"
+      song: "&bSong: &7%song%"
+    disco-floor: true
+
+  cosmetics:
+    africa:
+      enable: true
+      name: "&bAfrica"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Old one, but good!"
+
+    all-i-want-for-christmas-is-you:
+      enable: true
+      name: "&bAll I Want For Christmas Is You"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Lovely Christmas song! Find someone"
+        - "&7on the server to sing this one to."
+
+    all-star:
+      enable: true
+      name: "&bAll Star"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song is in the Shrek movie."
+        - ""
+        - "&7The original song is made by Smash Mouth."
+
+    another-one-bites-the-dust:
+      enable: true
+      name: "&bAnother One Bites The Dust"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song is a classic one."
+        - ""
+        - "&7Sing along if you know the lyrics!"
+
+    barbie-girl:
+      enable: true
+      name: "&bBarbie Girl"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- Hi Barbie!"
+        - "&7- Hi Kent!"
+
+    billie-jean:
+      enable: true
+      name: "&bBillie Jean"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Great song!"
+
+    bohemian-rhapsody:
+      enable: true
+      name: "&bBohemian Rhapsody"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Old but good!"
+
+    call-me-maybe:
+      enable: true
+      name: "&bCall Me Maybe"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- Hey, I just met you and this is crazy"
+        - "&7- But here's my number, so call me maybe."
+
+    dancing-queen:
+      enable: true
+      name: "&bDancing Queen"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Some good Swedish content!"
+
+    despacito:
+      enable: true
+      name: "&bDespacito"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Do you like Spanish?"
+
+    dj-got-us-falling-in-love:
+      enable: true
+      name: "&bDJ Got Us Fallin' In Love"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Sing along if you know the lyrics!"
+
+    do-not-stop-me-now:
+      enable: true
+      name: "&bDon't Stop Me Now"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- Don't stop me, don't stop me..."
+        - ""
+        - "&7The original song is made by Queen."
+
+    faded:
+      enable: true
+      name: "&bFaded"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- You were the shadow to my light."
+
+    fireflies:
+      enable: true
+      name: "&bFireflies"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Sing along if you know the lyrics!"
+
+    frosty-the-snowman:
+      enable: true
+      name: "&bFrosty The Snowman"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Sing along if you know the lyrics!"
+
+    gangnam-style:
+      enable: true
+      name: "&bGangnam Style"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Whoppaaa gangnam styleeeeee."
+        - ""
+        - "&7The original song is made by PSY!"
+
+    ghostbusters:
+      enable: true
+      name: "&bGhostbusters"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 30
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Catch those ghosts!"
+
+    happier:
+      enable: true
+      name: "&bHappier"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 31
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- I want you to be happier."
+
+    he-is-a-pirate:
+      enable: true
+      name: "&bHe Is A Pirate"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 32
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song is from a famous movie."
+
+    in-the-hall-of-the-mountain-king:
+      enable: true
+      name: "&bIn The Hall Of The Mountain King"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 33
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Old but good!"
+
+    indiana-jones-theme:
+      enable: true
+      name: "&bIndiana Jones Theme"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 34
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song is from a well known movie."
+
+    james-bond-theme:
+      enable: true
+      name: "&bJames Bond Theme"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 37
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Agent 007!"
+
+    jingle-bells:
+      enable: true
+      name: "&bJingle Bells"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 38
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Who doesn't like Christmas songs?"
+
+    let-it-go:
+      enable: true
+      name: "&bLet It Go"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 39
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song is from the famous"
+        - "&7movie called Frozen."
+
+    levels:
+      enable: true
+      name: "&bLevels"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 40
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This person will always"
+        - "&7stay in our hearts!"
+
+    nyan-cat:
+      enable: true
+      name: "&bNyan Cat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 41
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7RAINBOW CAT!"
+
+    popcorn:
+      enable: true
+      name: "&bPopcorn"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 42
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Epic song! Dance with me."
+
+    roar:
+      enable: true
+      name: "&bRoar"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 43
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Roar!"
+
+    rudolf-the-red-nosed-reindeer:
+      enable: true
+      name: "&bRudolf The Red Nosed Reindeer"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 10
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Have you seen rudolf?"
+
+    sandstorm:
+      enable: true
+      name: "&bSandstorm"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 11
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Is it really a sandstorm?"
+
+    shape-of-you:
+      enable: true
+      name: "&bShape Of You"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 12
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This song was released in"
+        - "&72017 by Ed Sheeran."
+
+    shooting-stars:
+      enable: true
+      name: "&bShooting Stars"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 13
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Such a great song!"
+
+    sponge-bob-theme:
+      enable: true
+      name: "&bSponge Bob Theme"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 14
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7124 Conch Street"
+
+    star-wars-theme:
+      enable: true
+      name: "&bStar Wars Theme"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 15
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7March!"
+
+    take-on-me:
+      enable: true
+      name: "&bTake On Me"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 16
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Old but good!"
+
+    tetris-theme:
+      enable: true
+      name: "&bTetris Theme"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 19
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Great game!"
+
+    the-fox:
+      enable: true
+      name: "&bThe Fox"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 20
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- What does the fox say?"
+
+    viva-la-vida:
+      enable: true
+      name: "&bViva La Vida"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PAPER
+      amount: 1
+      slot: 21
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7- I used to rule the world..."
+
+# Do not edit this!
+config-version: 1

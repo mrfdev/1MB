@@ -1,0 +1,208 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "PRISMARINE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": [
+        "EAST"
+      ]
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "PRISMARINE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": [
+        "WEST"
+      ]
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "PRISMARINE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "PRISMARINE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "PRISMARINE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_PRESSURE_PLATE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_FENCE",
+      "water_logged": false,
+      "multiple_facing": []
+    }
+  ]
+}

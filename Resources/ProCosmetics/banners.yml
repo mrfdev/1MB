@@ -1,0 +1,527 @@
+banners:
+  enable: true
+
+  menu:
+    title: "Banners"
+    rows: 6
+    fill-empty-slots: true
+    material: WHITE_BANNER
+    amount: 1
+    slot: 50
+    custom-model-data: 0
+    displayname: "&bBanners"
+    lore:
+      - ""
+      - "&7Show off yourself with an epic banner"
+      - "&7on top of your head."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  cosmetics:
+    pug:
+      enable: true
+      name: "&bPug"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Who doesn't love pugs?"
+
+    happy-sheep:
+      enable: true
+      name: "&bHappy Sheep"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Cute fluffy sheep!"
+
+    rabbit:
+      enable: true
+      name: "&bRabbit"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It likes carrots!"
+
+    goose:
+      enable: true
+      name: "&bGoose"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Honk honk!"
+
+    panda:
+      enable: true
+      name: "&bPanda"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Loves bamboo and cake."
+
+    fox:
+      enable: true
+      name: "&bFox"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Orange thieves."
+
+    octopus:
+      enable: true
+      name: "&bOctopus"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Can easily be confused with squid."
+
+    crown:
+      enable: true
+      name: "&bCrown"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Become a ruler."
+
+    sun-flower:
+      enable: true
+      name: "&bSunflower"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7We're all golden sunflowers inside."
+
+    rose:
+      enable: true
+      name: "&bRose"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Be careful around its thorns."
+
+    pineapple:
+      enable: true
+      name: "&bPineapple"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Pen Pineapple Apple Pen"
+
+    taco:
+      enable: true
+      name: "&bTaco"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Often served gluten-free."
+
+    heart:
+      enable: true
+      name: "&bHeart"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7How deep is your love?"
+
+    speech-bubble:
+      enable: true
+      name: "&bSpeech Bubble"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Express yourself."
+
+    disco:
+      enable: true
+      name: "&bDisco"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: WHITE_BANNER
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Show me those dance moves."
+
+    the-united-states-of-america:
+      enable: true
+      name: "&bThe United States Of America"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7How many stars are there on the flag?"
+
+    sweden:
+      enable: true
+      name: "&bSweden"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 30
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Notch's favorite banner!"
+
+    sword:
+      enable: true
+      name: "&bSword"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 31
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It's Excalibur!"
+
+    pirate-skull:
+      enable: true
+      name: "&bPirate Skull"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 32
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7YaRrr!"
+
+    ender-dragon:
+      enable: true
+      name: "&bEnder Dragon"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 33
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7You made it all the way here?"
+
+    wither:
+      enable: true
+      name: "&bWither"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 34
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Watch out for those skulls!"
+
+    fire:
+      enable: true
+      name: "&bFire"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 37
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Keep yourself warm!"
+
+    snowflake:
+      enable: true
+      name: "&bSnowflake"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 38
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A snowflake is winter's butterfly."
+
+    present:
+      enable: true
+      name: "&bPresent"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 39
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Happy Holidays!"
+
+    wreath:
+      enable: true
+      name: "&bWreath"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 40
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Not as pretty as a Christmas tree."
+
+    santa-hat:
+      enable: true
+      name: "&bSanta Hat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 41
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7I believe in Santa!"
+
+    candy-cane:
+      enable: true
+      name: "&bCandy Cane"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 42
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Mmm, yummy!"
+
+    snowy-tree:
+      enable: true
+      name: "&bSnowy Tree"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_BANNER
+      amount: 1
+      slot: 43
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It's a tree, but white."
+
+# Do not edit this!
+config-version: 1

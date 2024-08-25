@@ -1,0 +1,298 @@
+arrow-effects:
+  enable: true
+
+  menu:
+    title: "Arrow Effects"
+    rows: 4
+    fill-empty-slots: true
+    material: ARROW
+    amount: 1
+    slot: 12
+    custom-model-data: 0
+    displayname: "&bArrow Effects"
+    lore:
+      - ""
+      - "&7Your arrows will now leave particle"
+      - "&7trails as they soar through the air."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  cosmetics:
+    bloody-arrows:
+      enable: true
+      name: "&bBloody Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: REDSTONE
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Arrows soaked in poisoned blood"
+        - "&7might bring your enemies a more"
+        - "&7painful death!"
+
+    candy-cane-arrows:
+      enable: true
+      name: "&bCandy Cane Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: SUGAR
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Had enough of candy? Let us"
+        - "&7give some to your enemy."
+
+    confetti-arrows:
+      enable: true
+      name: "&bConfetti Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: MELON_SEEDS
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Can't stop those wonderful colors"
+        - "&7hovering through the air!"
+
+    enchanted-arrows:
+      enable: true
+      name: "&bEnchanted Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: BOOK
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7These arrows comes from a"
+        - "&7talented archer!"
+
+    flame-arrows:
+      enable: true
+      name: "&bFlame Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: BLAZE_POWDER
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Surprise someone with a burning"
+        - "&7arrow through their heart."
+
+    frost-lord-arrows:
+      enable: true
+      name: "&bFrost Lord Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: SNOWBALL
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Brings a blast of winter in"
+        - "&7the wind of their passing."
+
+    green-arrows:
+      enable: true
+      name: "&bGreen Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: EMERALD
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Red equals stop. Green equals go?"
+
+    lava-arrows:
+      enable: true
+      name: "&bLava Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: LAVA_BUCKET
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7ARH, so hot!"
+
+    love-arrows:
+      enable: true
+      name: "&bLove Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: POPPY
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Spread some love with your"
+        - "&7enemies!"
+
+    magical-arrows:
+      enable: true
+      name: "&bMagical Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PURPLE_DYE
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Maybe you're the magician here?"
+
+    music-arrows:
+      enable: true
+      name: "&bMusic Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: NOTE_BLOCK
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Soaring vibes through the air."
+
+    rain-arrows:
+      enable: true
+      name: "&bRain Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WATER_BUCKET
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Arrows that bless the rain"
+        - "&7down in Africa."
+
+    shadow-arrows:
+      enable: true
+      name: "&bShadow Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: COAL
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let your shadow follow the arrow."
+
+    sparkly-arrows:
+      enable: true
+      name: "&bSparkly Arrows"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: FIREWORK_ROCKET
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7An arrow just like a firework."
+
+# Do not edit this!
+config-version: 1

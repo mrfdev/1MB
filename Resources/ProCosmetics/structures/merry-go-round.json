@@ -1,0 +1,3060 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": -5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": 5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": -5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": 5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 6.0,
+        "z": -4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 6.0,
+        "z": 4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 6.0,
+        "z": -4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 6.0,
+        "z": 4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": -5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": 5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": -5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": 5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 6.0,
+        "z": -5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 6.0,
+        "z": 5.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 6.0,
+        "z": -3.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 6.0,
+        "z": 3.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 6.0,
+        "z": -3.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 6.0,
+        "z": 3.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 4.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 4.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": -4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 8.0,
+        "z": 4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": -4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 8.0,
+        "z": 4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 6.0,
+        "z": -1.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": -1.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 6.0,
+        "z": -2.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 6.0,
+        "z": 2.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": -2.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": 0.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 6.0,
+        "z": 2.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 3.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 3.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 3.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 3.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 9.0,
+        "z": -1.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 9.0,
+        "z": 1.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 9.0,
+        "z": -1.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 9.0,
+        "z": 1.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 9.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 9.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 9.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 9.0,
+        "z": 0.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 9.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 6.0,
+        "z": -4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 6.0,
+        "z": 4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 6.0,
+        "z": -4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 6.0,
+        "z": 4.0
+      },
+      "material": "OAK_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": -5.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": 5.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": -5.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": 5.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": -5.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": 5.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": -5.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 5.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": -5.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": 5.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": -4.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": 4.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": -3.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 7.0,
+        "z": 3.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": -1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 1.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": -5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 8.0,
+        "z": 5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": -5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 8.0,
+        "z": 5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "MANGROVE_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "RED_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 2.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": -2.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": -5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 5.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 8.0,
+        "z": -3.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": -5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 8.0,
+        "z": -4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 8.0,
+        "z": 4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "EAST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 8.0,
+        "z": -4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "WEST",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_STAIRS",
+      "facing": "NORTH",
+      "water_logged": false,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 8.0,
+        "z": 4.0
+      },
+      "material": "BIRCH_SLAB",
+      "water_logged": false,
+      "slab": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 5.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 5.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 5.0,
+        "z": -1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 5.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "SPRUCE_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 7.0,
+        "z": -1.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 7.0,
+        "z": 1.0
+      },
+      "material": "YELLOW_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 5.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 5.0,
+        "z": -1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 5.0,
+        "z": 1.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 5.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": -4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "STRIPPED_SPRUCE_WOOD"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": -5.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 7.0,
+        "z": -2.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 7.0,
+        "z": 0.0
+      },
+      "material": "GOLD_BLOCK"
+    },
+    {
+      "vector": {
+        "x": 5.0,
+        "y": 7.0,
+        "z": 2.0
+      },
+      "material": "BIRCH_PLANKS"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 5.0,
+        "z": 0.0
+      },
+      "material": "RED_CONCRETE"
+    }
+  ]
+}

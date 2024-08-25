@@ -1,0 +1,88 @@
+messages:
+  chat:
+    cosmetic:
+      arrow-effects:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+      balloons:
+        equip: "&7You spawned &e%cosmetic%&7."
+        unequip: "&7You despawned &e%cosmetic%&7."
+      banners:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+      death-effects:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+      emotes:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+      gadgets:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+      miniatures:
+        equip: "&7You spawned &e%cosmetic%&7."
+        unequip: "&7You despawned &e%cosmetic%&7."
+      morphs:
+        equip: "&7You morphed into &e%cosmetic%&7."
+        unequip: "&7You unmorphed from &e%cosmetic%&7."
+      mounts:
+        equip: "&7You spawned &e%cosmetic%&7."
+        unequip: "&7You despawned &e%cosmetic%&7."
+      music:
+        equip: "&7You spawned &e%cosmetic%&7."
+        unequip: "&7You despawned &e%cosmetic%&7."
+      particle-effects:
+        equip: "&7You summoned &e%cosmetic%&7."
+        unequip: "&7You unsummoned &e%cosmetic%&7."
+      pets:
+        equip: "&7You spawned &e%cosmetic%&7."
+        unequip: "&7You despawned &e%cosmetic%&7."
+      statuses:
+        equip: "&7You equipped &e%cosmetic%&7."
+        unequip: "&7You unequipped &e%cosmetic%&7."
+
+    treasure-chest:
+      rewards:
+        money: "&b%player% &7has found &e%money% coins&7!"
+        ammo: ""
+        arrow-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic%&7!"
+        balloons: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Balloon&7!"
+        banners: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Banner&7!"
+        death-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic%&7!"
+        emotes: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Emote&7!"
+        gadgets: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Gadget&7!"
+        miniatures: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Miniature&7!"
+        morphs: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Morph&7!"
+        mounts: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Mount&7!"
+        music: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Music&7!"
+        particle-effects: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Particle Effect&7!"
+        pets: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Pet&7!"
+        statuses: "&b%player% &7has found %rarity_color%%rarity% &e%cosmetic% Status&7!"
+      already-in-use: "&7This station is already in use."
+
+    anti-lag:
+      unequip: "&cYour cosmetics has been unequipped to prevent server lag!"
+      cosmetics-disabled: "&cYou cannot use cosmetics at this time. Please try again later!"
+
+    world-guard:
+      entered-blacklisted-region: "&cYou entered a region where some cosmetics are not allowed!"
+      equip-denied-blacklisted-region: "&cYou cannot equip that cosmetic in this region!"
+
+    remove-item: "&cPlease remove your current item from the %slot%th slot in order to equip this gadget!"
+    must-stand-on-ground: "&cYou must stand on the ground to use this cosmetic."
+    cosmetics-not-allowed: "&cCosmetics are not allowed in this world."
+    not-your-mount: "&cThis is not your mount!"
+    not-enough-space: "&cThere is not enough space to use this cosmetic here."
+    not-enough-money: "&cYou don't have enough coins!"
+    not-permission: "&cYou don't have permission to do this!"
+    music-box-nearby: "&cYou are too close to another Music Box. Go further away."
+
+  actionbar:
+    gadget:
+      cooldown: "%gadget% &f%cooldown_bar% &f%cooldown_seconds%s"
+      recharged: "&e%gadget% &7is now recharged!"
+    morph:
+      recharged: "&eYou can now use the ability again!"
+
+# Do not edit this!
+config-version: 1

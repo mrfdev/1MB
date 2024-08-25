@@ -1,0 +1,292 @@
+emotes:
+  enable: true
+
+  menu:
+    title: "Emotes"
+    rows: 4
+    fill-empty-slots: true
+    material: PLAYER_HEAD
+    amount: 1
+    slot: 32
+    custom-model-data: 0
+    displayname: "&bEmotes"
+    lore:
+      - ""
+      - "&7Let the others know what mood"
+      - "&7you are at!"
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  cosmetics:
+    happy:
+      enable: true
+      name: "&bHappy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Show everyone how happy"
+        - "&7you're."
+
+    cheeky:
+      enable: true
+      name: "&bCheeky"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Are you up to some mischief?"
+
+    cool:
+      enable: true
+      name: "&bCool"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Hm, cool!"
+
+    wink:
+      enable: true
+      name: "&bWink"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Gotcha!"
+
+    in-love:
+      enable: true
+      name: "&bIn Love"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Butterflies in your stomach?"
+
+    surprised:
+      enable: true
+      name: "&bSurprised"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7I don't know what to say!"
+
+    dizzy:
+      enable: true
+      name: "&bDizzy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Maybe roller coasters are not for you?"
+
+    sleepy:
+      enable: true
+      name: "&bSleepy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Zzz..."
+
+    sad:
+      enable: true
+      name: "&bSad"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Did something make you sad?"
+
+    deal-with-it:
+      enable: true
+      name: "&bDeal With It"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Some are better than others!"
+
+    rage:
+      enable: true
+      name: "&bRage"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Did anyone make you angry?"
+        - "&7Show them with this emote."
+
+    rip:
+      enable: true
+      name: "&bRIP"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Will I be missed?"
+
+    spicy:
+      enable: true
+      name: "&bSpicy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7That pepper was way too hot!"
+
+    sun-tan:
+      enable: true
+      name: "&bSun-Tan"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Looks like you stayed too"
+        - "&7long in the sun."
+
+# Do not edit this!
+config-version: 1

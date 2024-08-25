@@ -1,0 +1,748 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": -1.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": -1.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": -2.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": -3.0
+      },
+      "material": "STONE_BRICK_WALL",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": 3.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "LADDER",
+      "facing": "WEST",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "LADDER",
+      "facing": "EAST",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "LADDER",
+      "facing": "WEST",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 1.0,
+        "z": -1.0
+      },
+      "material": "LADDER",
+      "facing": "EAST",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 1.0,
+        "z": 2.0
+      },
+      "material": "BLUE_CONCRETE"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": -4.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 4.0
+      },
+      "material": "LADDER",
+      "facing": "SOUTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 1.0,
+        "z": 4.0
+      },
+      "material": "LADDER",
+      "facing": "SOUTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": -4.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -2.0
+      },
+      "material": "BLACK_WOOL"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "WHITE_WOOL"
+    },
+    {
+      "vector": {
+        "x": -4.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "WEST",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": -4.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 4.0
+      },
+      "material": "LADDER",
+      "facing": "SOUTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 4.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "EAST",
+      "water_logged": false
+    }
+  ]
+}

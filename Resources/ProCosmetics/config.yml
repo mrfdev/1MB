@@ -1,0 +1,149 @@
+#  _____            _____                         _   _          
+# |  __ \          / ____|                       | | (_)
+# | |__) | __ ___ | |     ___  ___ _ __ ___   ___| |_ _  ___ ___
+# |  ___/ '__/ _ \| |    / _ \/ __| '_ ` _ \ / _ \ __| |/ __/ __|
+# | |   | | | (_) | |___| (_) \__ \ | | | | |  __/ |_| | (__\__ \
+# |_|   |_|  \___/ \_____\___/|___/_| |_| |_|\___|\__|_|\___|___/ COPYRIGHT ©
+multi-world:
+  blacklisted-worlds: true
+  worlds:
+  - uwu
+  - owo
+  - sushi
+  - run
+  - builders
+  - pvp
+  - spawn
+  - sanctuary
+  - parkour
+world-guard:
+  enable: false
+  blacklisted-regions: true
+  restore-cosmetics: true
+  unequip:
+    arrow-effects: false
+    balloons: true
+    banners: true
+    death-effects: false
+    emotes: true
+    gadgets: true
+    miniatures: true
+    morphs: true
+    mounts: true
+    music: true
+    particle-effects: false
+    pets: true
+    statuses: false
+  regions:
+  - Region1
+  - Region2
+3d-menu:
+  enable: true
+  display-item:
+    unequip-all-cosmetics: true
+    coins: true
+storage:
+  type: SQLITE
+  mysql:
+    host: localhost
+    port: 3306
+    database: ProCosmetics
+    table: procosmetics
+    user: root
+    password: password
+    properties: autoReconnect=true&useSSL=false
+  sqlite:
+    database: procosmetics
+    table: procosmetics
+  database-updated-do-not-touch: 1
+economy:
+  type: VAULT
+  coin-party-bomb-amount: 150
+anti-lag:
+  enable: true
+  minimum-tps: 17.0
+  unequip-cosmetics: true
+  prevent-equipment: true
+settings:
+  check-updates: false
+  locked-cosmetic: false
+  enable-metrics: false
+  restore-cosmetics: false
+  permission-add-command: lp user %player% permission set %permission% true
+  cosmetic-menu:
+    title: 1MB /perk menu
+    rows: 6
+    fill-empty-slots: false
+    able-to-move: false
+    give-on:
+      join: false
+      world-change: false
+    material: CHEST
+    amount: 1
+    slot: 0
+    displayname: '&a1MB /perk menu &7(Right-click)'
+    lore:
+    - §7Right-click to open the menu.
+  fill-empty-slots:
+    material: GRAY_STAINED_GLASS_PANE
+    amount: 1
+  unequip-all-cosmetics:
+    material: BARRIER
+    amount: 1
+    slot: 4
+    displayname: '&cUnequip All Perks'
+    lore:
+    - ''
+    - §7Right-click to unequip your current perks!
+  coins:
+    enable: true
+    material: SUNFLOWER
+    amount: 1
+    slot: 22
+    displayname: '&bYou have &e%coins% coins&b!'
+    lore:
+    - ''
+    - §7Coins can only be obtained
+    - §7through special server events!
+  go-back:
+    material: RED_BED
+    amount: 1
+    slot: 4
+    displayname: '&aGo back'
+    lore: []
+  previous-page:
+    material: ARROW
+    amount: 1
+    slot: 45
+    displayname: '&aPrevious Page'
+    lore: []
+  next-page:
+    material: ARROW
+    amount: 1
+    slot: 53
+    displayname: '&aNext Page'
+    lore: []
+  purchase:
+    title: Confirm Purchase
+    rows: 3
+    fill-empty-slots: true
+    accept:
+      material: LIME_TERRACOTTA
+      amount: 1
+      slot: 16
+      displayname: '&aAccept Purchase'
+      lore:
+      - ''
+      - §7Click to purchase!
+    deny:
+      material: RED_TERRACOTTA
+      amount: 1
+      slot: 10
+      displayname: '&cDeny Purchase'
+      lore:
+      - ''
+      - §7Click to cancel!
+  cosmetic-locked-description:
+  - '%cosmetic_description%'
+  - '&7Right-click to purchase for &b%cost% &7coins!'
+config-version: 1

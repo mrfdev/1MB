@@ -1,0 +1,301 @@
+treasure-chests:
+  enable: true
+
+  menu:
+    title: "Treasure Chest"
+    rows: 3
+
+  settings:
+    prevent-duplicates: false
+    station-hologram: "&bOpen Treasure"
+
+    default-block-layout:
+      center:
+        material: OAK_LEAVES
+      body:
+        material: STONE_BRICKS
+      stair:
+        material: STONE_BRICK_STAIRS
+
+    category-names:
+      money: "Money"
+      ammo: "Ammo"
+      arrow-effect: "Arrow Effect"
+      balloon: "Balloon"
+      banner: "Banner"
+      death-effect: "Death Effect"
+      emote: "Emote"
+      gadget: "Gadget"
+      miniature: "Miniature"
+      morph: "Morph"
+      mount: "Mount"
+      music: "Music"
+      particle-effect: "Particle Effect"
+      pet: "Pet"
+      status: "Status"
+      custom: ""
+
+    rarities:
+      common:
+        name: "&lCOMMON&r&b"
+        color: "&b"
+      rare:
+        name: "&lRARE&r&d"
+        color: "&d"
+      legendary:
+        name: "&lLEGENDARY&r&a"
+        color: "&a"
+
+  treasures:
+    normal:
+      enable: true
+      purchasable: false
+      cost: 1000
+      chests-to-open: 4
+      animation: NORMAL
+      on-open:
+        chat:
+          enable: false
+          message: "&b%player% &7is opening a &dNormal Treasure Chest&7!"
+      block-layout:
+        center:
+          material: GLOWSTONE
+        body:
+          material: STONE_BRICKS
+        stair:
+          material: COBBLESTONE_STAIRS
+      material: CHEST
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "&bNormal Treasure"
+      lore:
+        - ""
+        - "&7We found some abandoned villagers"
+        - "&7and managed to find these chests."
+        - "&7The contents are unknown, but we"
+        - "&7were told they appear to contain"
+        - "&7many kinds of loot!"
+        - ""
+        - "&bYou own &3%current% &bnormal treasures!"
+        - ""
+        - "&9Craftable for &e%cost% coins&9!"
+        - "&7Right-click to purchase!"
+      rewards:
+        money:
+          minimum-amount: 200
+          maximum-amount: 500
+          chance: 4
+        ammo:
+          minimum-amount: 20
+          maximum-amount: 50
+          chance: 95
+        arrow-effects:
+          chance: 1
+        balloons:
+          chance: 3
+        banners:
+          chance: 3
+        death-effects:
+          chance: 2
+        emotes:
+          chance: 1
+        gadgets:
+          chance: 7
+        miniatures:
+          chance: 0
+        morphs:
+          chance: 0
+        mounts:
+          chance: 0
+        music:
+          chance: 2
+        particle-effects:
+          chance: 0
+        pets:
+          chance: 5
+        statuses:
+          chance: 0
+        custom:
+          coin-bag:
+            name: "&eSmall Coin Bag"
+            material: SUNFLOWER
+            chance: 30
+            rarity: COMMON
+            message: "&e%player% &7has found a small bag of &ecoins&7!"
+            commands:
+              - "pc give coins %player% 100"
+
+    mythical:
+      enable: true
+      purchasable: false
+      cost: 5000
+      chests-to-open: 4
+      animation: MYTHICAL
+      on-open:
+        chat:
+          enable: true
+          message: "&b%player% &7is opening a &dMythical Treasure Chest&7!"
+      block-layout:
+        center:
+          material: SEA_LANTERN
+          data: 0
+        body:
+          material: PRISMARINE_BRICKS
+          data: 1
+        stair:
+          material: QUARTZ_STAIRS
+          data: 0
+      material: CHEST
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "&bMythical Treasure"
+      lore:
+        - ""
+        - "&7These chests have been some of our hardest"
+        - "&7chests to find. Only the bravest adventures"
+        - "&7managed to find these deep down hidden in"
+        - "&7mysterious caves!"
+        - ""
+        - "&bYou own &3%current% &bmythical treasures!"
+        - ""
+        - "&9Craftable for &e%cost% coins&9!"
+        - "&7Right-click to purchase!"
+      rewards:
+        money:
+          minimum-amount: 500
+          maximum-amount: 2000
+          chance: 15
+        ammo:
+          minimum-amount: 30
+          maximum-amount: 80
+          chance: 85
+        arrow-effects:
+          chance: 20
+        balloons:
+          chance: 20
+        banners:
+          chance: 20
+        death-effects:
+          chance: 20
+        emotes:
+          chance: 15
+        gadgets:
+          chance: 18
+        miniatures:
+          chance: 14
+        morphs:
+          chance: 5
+        mounts:
+          chance: 10
+        music:
+          chance: 10
+        particle-effects:
+          chance: 2
+        pets:
+          chance: 25
+        statuses:
+          chance: 10
+        custom:
+          coin-bag:
+            name: "&eMedium Coin Bag"
+            material: SUNFLOWER
+            chance: 10
+            rarity: COMMON
+            message: "&e%player% &7has found a medium bag of &ecoins&7!"
+            commands:
+              - "pc give coins %player% 500"
+
+    legendary:
+      enable: true
+      purchasable: false
+      cost: 10000
+      chests-to-open: 4
+      animation: LEGENDARY
+      on-open:
+        chat:
+          enable: true
+          message: "&b%player% &7is opening a &dLegendary Treasure Chest&7!"
+      block-layout:
+        center:
+          material: GLOWSTONE
+        body:
+          material: QUARTZ_BLOCK
+        stair:
+          material: QUARTZ_STAIRS
+      material: ENDER_CHEST
+      data: 0
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "&bLegendary Treasure"
+      lore:
+        - ""
+        - "&7The most powerful of all other chests."
+        - "&7The loot has been found from dead"
+        - "&7legendary players a long time ago."
+        - ""
+        - "&bYou own &3%current% &blegendary treasures!"
+        - ""
+        - "&9Craftable for &e%cost% coins&9!"
+        - "&7Right-click to purchase!"
+      rewards:
+        money:
+          minimum-amount: 1000
+          maximum-amount: 2500
+          chance: 15
+        ammo:
+          minimum-amount: 80
+          maximum-amount: 150
+          chance: 80
+        arrow-effects:
+          chance: 20
+        balloons:
+          chance: 22
+        banners:
+          chance: 22
+        death-effects:
+          chance: 20
+        emotes:
+          chance: 16
+        gadgets:
+          chance: 18
+        miniatures:
+          chance: 15
+        morphs:
+          chance: 10
+        mounts:
+          chance: 12
+        music:
+          chance: 15
+        particle-effects:
+          chance: 10
+        pets:
+          chance: 25
+        statuses:
+          chance: 14
+        custom:
+          vip:
+            name: "&d&lVIP Rank"
+            material: NETHER_STAR
+            data: 0
+            chance: 1
+            rarity: LEGENDARY
+            message: "&e%player% &7has found &aLEGENDARY &dVIP Rank&7!"
+            commands:
+              - "pex user %player% set group VIP"
+          coin-bag:
+            name: "&eHuge Coin Bag"
+            material: SUNFLOWER
+            chance: 3
+            rarity: LEGENDARY
+            message: "&e%player% &7has found a huge bag of &ecoins&7!"
+            commands:
+              - "pc give coins %player% 5000"
+
+# Do not edit this!
+config-version: 1

@@ -1,0 +1,198 @@
+statuses:
+  enable: true
+
+  menu:
+    title: "Statuses"
+    rows: 3
+    fill-empty-slots: true
+    material: NAME_TAG
+    amount: 1
+    slot: 40
+    custom-model-data: 0
+    displayname: "&bStatuses"
+    lore:
+      - ""
+      - "&7Set a status to be displayed"
+      - "&7above your head."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+    toggle-self-view:
+      material: BOOK
+      amount: 1
+      slot: 22
+      custom-model-data: 0
+      displayname: "&eToggle Self-View"
+      lore:
+        - ""
+        - "&7Click here to toggle self-view"
+        - "&7of your status!"
+
+  settings:
+    # This feature allows you to set if the status tag should be above or below a player's name-tag.
+    status-above-player-name-tag: false
+    self-view:
+      enable: true
+      default-enabled: false
+
+  cosmetics:
+    just-chilling:
+      enable: true
+      name: "&aJust Chilling"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      tag-text: "&aJust Chilling"
+      material: NAME_TAG
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know you're chilling."
+
+    looking-to-chat:
+      enable: true
+      name: "&bLooking To Chat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      tag-text: "&bLooking To Chat"
+      material: NAME_TAG
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know you want to"
+        - "&7get into contact with them."
+
+    looking-to-team-up:
+      enable: true
+      name: "&eLooking To Team Up"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      tag-text: "&eLooking To Team Up"
+      material: NAME_TAG
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know you want to"
+        - "&7team up with them."
+
+    afk:
+      enable: true
+      name: "&6AFK"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      tag-text: "&6AFK"
+      material: NAME_TAG
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know you're AFK."
+
+    do-not-disturb:
+      enable: true
+      name: "&cDo Not Disturb"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      tag-text: "&cDo Not Disturb"
+      material: NAME_TAG
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know you're AFK."
+
+    ping:
+      enable: true
+      name: "&aPing"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      tag-text: "&a%ping% ms"
+      material: NAME_TAG
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Let someone know your ping."
+
+    coins:
+      enable: true
+      name: "&eCoins"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      tag-text: "&e%coins% coins"
+      material: NAME_TAG
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Show others how many coins"
+        - "&7you have."
+
+# Do not edit this!
+config-version: 1

@@ -1,0 +1,667 @@
+morphs:
+  enable: true
+
+  menu:
+    title: "Morphs"
+    rows: 6
+    fill-empty-slots: true
+    material: LEATHER
+    amount: 1
+    slot: 52
+    custom-model-data: 0
+    displayname: "&bMorphs"
+    lore:
+      - ""
+      - "&7Have you ever wanted to be an"
+      - "&7animal? Well, now you can!"
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+    toggle-self-view:
+      material: SADDLE
+      amount: 1
+      slot: 49
+      custom-model-data: 0
+      displayname: "&eToggle Self-View"
+      lore:
+        - ""
+        - "&7Click here to toggle self-view"
+        - "&7of your morph!"
+
+  settings:
+    flyable: true
+
+    self-view:
+      enable: true
+      default-enabled: false
+      show-name-tag: true
+
+  cosmetics:
+    bat:
+      enable: true
+      name: "&bBat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: BAT_SPAWN_EGG
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Fly around to annoy people by screeching"
+        - "&7loudly and dropping poop in their faces."
+        - ""
+        - "&bDouble tap spacebar &7to fly in a short period."
+        - "&bLeft-click &7to make a loud screeching sound."
+        - "&bSneak &7to drop poop."
+
+    enderman:
+      enable: true
+      name: "&bEnderman"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: ENDER_PEARL
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7No need of enderpearls anymore."
+        - ""
+        - "&bDouble tap spacebar twice &7to teleport"
+        - "&7to the direction you're facing."
+
+    witch:
+      enable: true
+      name: "&bWitch"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: POTION
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Ever wanted to curse someone? You"
+        - "&7can choose to become the nicest or"
+        - "&7the most evil witch in the world."
+        - ""
+        - "&bLeft-click §7to throw a speed potion."
+        - "&bSneak while left-clicking &7to throw a"
+        - "&7blindness potion."
+
+    wither:
+      enable: true
+      name: "&bWither"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: WITHER_SKELETON_SKULL
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into the most powerful"
+        - "&7wither in the world."
+        - ""
+        - "&bLeft-click &7to shoot a skull causing"
+        - "&7an explosion on impact."
+
+    elder-guardian:
+      enable: true
+      name: "&bElder Guardian"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: PRISMARINE_SHARD
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7You rule the world!"
+        - ""
+        - "&bLeft-click &7to charge a laser that creates"
+        - "&7a massive explosion once charged."
+
+    cave-spider:
+      enable: true
+      name: "&bCave Spider"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: SPIDER_EYE
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A single bite is very poisonous."
+        - ""
+        - "&bLeft-click &7someone to bite,"
+        - "&7causing them to get dizzy."
+
+    spider:
+      enable: true
+      name: "&bSpider"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: COBWEB
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Some may be afraid of spiders."
+        - ""
+        - "&bLeft-click &7to spit web on someone."
+
+    creeper:
+      enable: true
+      name: "&bCreeper"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: CREEPER_HEAD
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into an explosive Creeper"
+        - "&7to blow people up!"
+        - ""
+        - "&bHold sneak &7to charge up. Once fully"
+        - "&7charged, release the button to create"
+        - "&7a massive explosion."
+
+    zombie:
+      enable: true
+      name: "&bZombie"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: ZOMBIE_HEAD
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a scary zombie!"
+        - ""
+        - "&bLeft-click &7to summon a baby zombie"
+        - "&7to target someone."
+
+    skeleton:
+      enable: true
+      name: "&bSkeleton"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      ability: true
+      material: ARROW
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a spooky"
+        - "&7scary skeleton."
+        - ""
+        - "&bTap sneak &7to create"
+        - "&7an explosion of your"
+        - "&7last bones."
+
+    blaze:
+      enable: true
+      name: "&bBlaze"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: BLAZE_POWDER
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a fiery Blaze!"
+        - ""
+        - "&bHold sneak &7to fly in the direction"
+        - "&7you're facing."
+
+    pigman:
+      enable: true
+      name: "&bPigman"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: GOLDEN_SWORD
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7If you hit me, I'll defeat you!"
+        - ""
+        - "&bLeft-click &7to make a terrifying"
+        - "&7noise."
+
+    magma-cube:
+      enable: true
+      name: "&bMagma Cube"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: NETHERRACK
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Don't touch me! I am hot!"
+        - ""
+        - "&bHold sneak &7to jump."
+        - "&7Look up to jump higher."
+
+    slime:
+      enable: true
+      name: "&bSlime"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: SLIME_BLOCK
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Jumping around as a Slime"
+        - "&7can be very exciting."
+        - ""
+        - "&bLeft-click &7to throw a slime block."
+        - "&bHold sneak &7to jump."
+
+    olaf:
+      enable: true
+      name: "&bOlaf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: SNOWBALL
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Everyone loves Olaf!"
+        - ""
+        - "&bLeft-click &7to throw a"
+        - "&7snowball at somone."
+
+    chicken:
+      enable: true
+      name: "&bChicken"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: FEATHER
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Pop, ah an egg!"
+        - ""
+        - "&bLeft-click &7to cackle."
+        - "&bTap sneak &7to pop an egg."
+
+    pig:
+      enable: true
+      name: "&bPig"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: PORKCHOP
+      amount: 1
+      slot: 30
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Run into others to punch them. Such"
+        - "&7annoying pig running around."
+        - ""
+        - "&bLeft-click &7to oink."
+
+    cow:
+      enable: true
+      name: "&bCow"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      ability: true
+      material: LEATHER
+      amount: 1
+      slot: 31
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Moo at your friends."
+        - ""
+        - "&bLeft-click &7to moo."
+
+    sheep:
+      enable: true
+      name: "&bSheep"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: WHITE_WOOL
+      amount: 1
+      slot: 32
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Change color quickly to blend in with the"
+        - "&7surrounding environment."
+        - ""
+        - "&bTap sneak &7to change color of the wool."
+
+    cat:
+      enable: true
+      name: "&bCat"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: TROPICAL_FISH
+      amount: 1
+      slot: 33
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Finally you get to sleep all day just like a cat!"
+        - ""
+        - "&bLeft-click &7to miaow."
+
+    dog:
+      enable: true
+      name: "&bDog"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: BONE
+      amount: 1
+      slot: 34
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Voff, voff!"
+        - ""
+        - "&bLeft-click to bark!"
+
+    bunny:
+      enable: true
+      name: "&bBunny"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      ability: true
+      rarity: LEGENDARY
+      material: EGG
+      amount: 1
+      slot: 37
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a cute little"
+        - "&7 bunny jumping around."
+        - ""
+        - "&bHold sneak &7to jump."
+
+    mushroom-cow:
+      enable: true
+      name: "&bMushroom Cow"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: RED_MUSHROOM
+      amount: 1
+      slot: 38
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a rare variant"
+        - "&7of a cow."
+        - ""
+        - "&bLeft-click &7to moo."
+
+    donkey:
+      enable: true
+      name: "&bDonkey"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      ability: true
+      material: LEAD
+      amount: 1
+      slot: 39
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Become the fastest donkey"
+        - "&7ever existed."
+        - ""
+        - "&bLeft-click &7to bray."
+
+    villager:
+      enable: true
+      name: "&bVillager"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: EMERALD
+      amount: 1
+      slot: 40
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into the best dealer"
+        - "&7in the world."
+        - ""
+        - "&bLeft-click &7to agree."
+        - "&bRight-click &7to disagree."
+
+    iron-golem:
+      enable: true
+      name: "&bIron Golem"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: IRON_BLOCK
+      amount: 1
+      slot: 41
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Transform into a beast!"
+        - ""
+        - "&bLeft-click &7to punch attack."
+
+    squid:
+      enable: true
+      name: "&bSquid"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: INK_SAC
+      amount: 1
+      slot: 42
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It's funnier to be a squid than"
+        - "&7to eat one!"
+        - ""
+        - "&bLeft-click &7to squirt ink."
+        - "&bHold sneak &7to fly in the direction"
+        - "&7you're facing."
+
+    block:
+      enable: true
+      name: "&bBlock"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      ability: true
+      material: EMERALD_BLOCK
+      amount: 1
+      slot: 43
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7You can transform into any block you"
+        - "&7ever wanted."
+        - ""
+        - "&bRight-click &7a block to transform into it."
+
+# Do not edit this!
+config-version: 1

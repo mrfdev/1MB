@@ -1,0 +1,738 @@
+{
+  "blocks": [
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 1.0
+      },
+      "material": "LIGHT_GRAY_CARPET"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "NORTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "NORTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 2.0
+      },
+      "material": "LIGHT_GRAY_CARPET"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "NORTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "NORTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "NORTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "NORTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "NORTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "material": "QUARTZ_PILLAR"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "NORTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "material": "QUARTZ_SLAB",
+      "water_logged": false,
+      "slab": "TOP"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 3.0
+      },
+      "material": "LIGHT_GRAY_CARPET"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "material": "LADDER",
+      "facing": "NORTH",
+      "water_logged": false
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 4.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 9.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "SOUTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 9.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "SOUTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "WATER"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 7.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -3.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "WEST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "WEST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "INNER_LEFT"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "SOUTH",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "STRAIGHT"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 8.0
+      },
+      "material": "QUARTZ_STAIRS",
+      "facing": "EAST",
+      "water_logged": true,
+      "bisected": "BOTTOM",
+      "shape": "INNER_RIGHT"
+    },
+    {
+      "vector": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 6.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "EAST",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 9.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "SOUTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 9.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "SOUTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    },
+    {
+      "vector": {
+        "x": 2.0,
+        "y": 0.0,
+        "z": 9.0
+      },
+      "material": "IRON_TRAPDOOR",
+      "facing": "SOUTH",
+      "open": true,
+      "water_logged": false,
+      "bisected": "BOTTOM"
+    }
+  ]
+}

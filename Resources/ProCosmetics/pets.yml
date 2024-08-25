@@ -1,0 +1,323 @@
+pets:
+  enable: true
+
+  menu:
+    title: "Pets"
+    rows: 4
+    fill-empty-slots: true
+    material: BONE
+    amount: 1
+    slot: 46
+    custom-model-data: 0
+    displayname: "&bPets"
+    lore:
+      - ""
+      - "&7Life on a server can get"
+      - "&7lonely sometimes. Summon an"
+      - "&7adorable pet to follow you"
+      - "&7around."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+    name-tag:
+      material: NAME_TAG
+      amount: 1
+      slot: 31
+      custom-model-data: 0
+      displayname: "&eName Tag"
+      lore:
+        - ""
+        - "&7Rename your current pet"
+        - "&7for &e%nametag_cost% coins&7."
+
+  settings:
+    default-name-tag: "&b%player%'s &7%cosmetic%"
+    change-name-tag:
+      enable: true
+      maximum-characters: 15
+      cost: 500
+
+    # This feature makes the entity toss items in different directions.
+    tossing-items: true
+
+  cosmetics:
+    piggy:
+      enable: true
+      name: "&bPig"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: PORKCHOP
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Christmas ham?"
+        - "&7No!"
+
+    calf:
+      enable: true
+      name: "&bCalf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: MILK_BUCKET
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7He wants a lot of grass"
+        - "&7to eat."
+
+    puppy:
+      enable: true
+      name: "&bPuppy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: BONE
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Voff..."
+
+    kitten:
+      enable: true
+      name: "&bKitten"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: COD
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Who wouldn't want a kitten"
+        - "&7following them around?"
+
+    colorful-lamb:
+      enable: true
+      name: "&bColorful Lamb"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: WHITE_WOOL
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Who said sheep cannot change"
+        - "&7their wool color?"
+
+    easter-bunny:
+      enable: true
+      name: "&bEaster Bunny"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: CARROT
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A cute bunny following"
+        - "&7you around!"
+
+    mushroom-calf:
+      enable: true
+      name: "&bMushroom Calf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: RED_MUSHROOM
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It grows mushrooms on"
+        - "&7their back."
+
+    santa-claus:
+      enable: true
+      name: "&bSanta Claus"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: REDSTONE
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7I hope you've"
+        - "&7been nice."
+
+    elf:
+      enable: true
+      name: "&bElf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: EMERALD
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7I'm Santa's helper."
+
+    body-guard:
+      enable: true
+      name: "&bBody Guard"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: POPPY
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Follows you around with a"
+        - "&7rose in his hand."
+
+    cave-spider:
+      enable: true
+      name: "&bCave Spider"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: SPIDER_EYE
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It may look like the spider"
+        - "&7is interested in you."
+
+    silverfish:
+      enable: true
+      name: "&bSilverfish"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: STONE_BUTTON
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7You may not even notice"
+        - "&7him."
+
+    villager:
+      enable: true
+      name: "&bVillager"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: EMERALD
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Your smallest trader ever."
+
+    zombie-villager:
+      enable: true
+      name: "&bZombie Villager"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      material: ROTTEN_FLESH
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A young villager has been infected."
+        - "&7They seem to be okay..."
+
+# Do not edit this!
+config-version: 1

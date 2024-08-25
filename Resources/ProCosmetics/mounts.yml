@@ -1,0 +1,351 @@
+mounts:
+  enable: true
+
+  menu:
+    title: "Mounts"
+    rows: 5
+    fill-empty-slots: true
+    material: IRON_HORSE_ARMOR
+    amount: 1
+    slot: 34
+    custom-model-data: 0
+    displayname: "&bMounts"
+    lore:
+      - ""
+      - "&7Why walk when you can ride?"
+      - "&7Summon fancy mounts to help"
+      - "&7you move in style."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to despawn your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  settings:
+    default-name-tag: "&b%player%'s &7%cosmetic%"
+    # This feature makes some entities toss items in different directions.
+    tossing-items: true
+    # This feature makes some entities spawn blocks underneath them.
+    block-trail: true
+    # This feature forces the player to ride the mount when it spawns.
+    ride-on-spawn: false
+    # This feature despawns the mount once a player stops riding it.
+    despawn-on-dismount: false
+  
+  cosmetics:
+    infernal-horror:
+      enable: true
+      name: "&bInfernal Horror"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: BONE
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This spooky horse is from the undead!"
+        - "&7Only the best ones can handle"
+        - "&7such a horror!"
+
+    glacial-steed:
+      enable: true
+      name: "&bGlacial Steed"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PACKED_ICE
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Elsa's horse from Frozen?"
+        - "&7Let's take a frozen ride."
+
+    lovely-sheep:
+      enable: true
+      name: "&bLovely Sheep"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: PINK_STAINED_GLASS
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7The world needs more love!"
+        - "&7Show your friends this beauty."
+
+    frosty-snowman:
+      enable: true
+      name: "&bFrosty Snowman"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: SNOWBALL
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7It's me! Olaf! Don't you remember"
+        - "&7me? I'm from the movie Frozen."
+
+    slime:
+      enable: true
+      name: "&bSlime"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: SLIME_BLOCK
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Annoy your friends with this"
+        - "&7huge slime jumping around!"
+
+    molten-snake:
+      enable: true
+      name: "&bMolten Snake"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: NETHERRACK
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7The molten snake still wanders"
+        - "&7around people!"
+
+    ethereal-dragon:
+      enable: true
+      name: "&bEthereal Dragon"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: DRAGON_EGG
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7The dragon only obey the"
+        - "&7legendary ones! Take a ride"
+        - "&7around the map."
+
+    hype-train:
+      enable: true
+      name: "&bHype Train"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: MINECART
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Jump onboard! Let's go for"
+        - "&7a ride everyone."
+
+    pirate-ship:
+      enable: true
+      name: "&bPirate Ship"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: OAK_BOAT
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Jump onboard and let's fire"
+        - "&7the cannons! Arrhhh..."
+
+    baby-reindeer:
+      enable: true
+      name: "&bBaby Reindeer"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: SNOW_BLOCK
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Maybe this reindeer will be"
+        - "&7used for Santa's sleigh?"
+
+    cave-spider:
+      enable: true
+      name: "&bCave Spider"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: SPIDER_EYE
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This will be your first time"
+        - "&7riding on a poisoned spider."
+
+    clumsy-mule:
+      enable: true
+      name: "&bClumsy Mule"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: CHEST
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Carry lots of package with you."
+
+    decrepit-warhorse:
+      enable: true
+      name: "&bDecrepit Warhorse"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: ROTTEN_FLESH
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7This beast has survived in many wars!"
+        - "&7Let him help you hunt your enemies."
+
+    rudolf:
+      enable: true
+      name: "&bRudolf"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: DEAD_BUSH
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Rudolph the red nosed reindeer."
+
+    unicorn:
+      enable: true
+      name: "&bUnicorn"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: BLAZE_ROD
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Pink, fluffy unicorns dancing"
+        - "&7on rainbows!"
+
+    crazy-chicken:
+      enable: true
+      name: "&bCrazy Chicken"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      material: EGG
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7The crazy chicken has"
+        - "&7escaped!"
+
+# Do not edit this!
+config-version: 1

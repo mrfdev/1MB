@@ -1,0 +1,703 @@
+gadgets:
+  enable: true
+
+  menu:
+    title: "Gadgets"
+    rows: 6
+    fill-empty-slots: true
+    material: PISTON
+    amount: 1
+    slot: 30
+    custom-model-data: 0
+    displayname: "&bGadgets"
+    lore:
+      - ""
+      - "&7All sorts of zany contraptions"
+      - "&7to use on your friends and"
+      - "&7foes."
+      - ""
+      - "&3You own &b%current%&7/&b%maximum%&3!"
+      - ""
+      - "&7Left-click to open the menu!"
+      - "&7Right-click to unequip your current!"
+
+  items:
+    go-back:
+      enable: true
+      material: RED_BED
+      amount: 1
+      slot: 4
+      custom-model-data: 0
+      displayname: "&aGo back"
+      lore: [ ]
+
+    previous-page:
+      material: ARROW
+      amount: 1
+      slot: 45
+      custom-model-data: 0
+      displayname: "&aPrevious Page"
+      lore: [ ]
+
+    next-page:
+      material: ARROW
+      amount: 1
+      slot: 53
+      custom-model-data: 0
+      displayname: "&aNext Page"
+      lore: [ ]
+
+  settings:
+    # This feature allows you to set the slot for the gadget item in your inventory.
+    slot: 6
+
+  cosmetics:
+    ethereal-pearl:
+      enable: true
+      name: "&bEthereal Pearl"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 5.0
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 250
+        infinity: false
+      material: ENDER_PEARL
+      amount: 1
+      slot: 10
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7The endermen won't be happy"
+        - "&7once they find out we stole"
+        - "&7these enderpearls!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    fireworks:
+      enable: true
+      name: "&bFireworks"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 1.0
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 150
+        infinity: false
+      material: FIREWORK_ROCKET
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Do you need to celebrate"
+        - "&7someone? These fireworks"
+        - "&7should do the trick!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    tnt:
+      enable: true
+      name: "&bTNT"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 3.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 250
+        infinity: false
+      material: TNT
+      amount: 1
+      slot: 12
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Throw these TNT at the person"
+        - "&7you want to get rid off!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    paintball:
+      enable: true
+      name: "&bPaintball"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 0.3
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 100
+        infinity: false
+      material: GOLDEN_HORSE_ARMOR
+      amount: 1
+      slot: 13
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Why is it looking so boring here?"
+        - "&7Spread the world with colors!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    bat-blaster:
+      enable: true
+      name: "&bBat Blaster"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 5.0
+      duration: 4.0
+      ammo:
+        purchasable: false
+        purchase-amount: 15
+        cost: 250
+        infinity: false
+      material: IRON_HORSE_ARMOR
+      amount: 1
+      slot: 14
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Unleash waves of terrifyng"
+        - "&7bats at people you don't like!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    confetti:
+      enable: true
+      name: "&bConfetti"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 0.3
+      ammo:
+        purchasable: false
+        purchase-amount: 50
+        cost: 100
+        infinity: false
+      material: BLAZE_ROD
+      amount: 1
+      slot: 15
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Suprise someone with some"
+        - "&7wonderful colors!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    party-popper:
+      enable: true
+      name: "&bParty Popper"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 20.0
+      duration: 12.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 300
+        infinity: false
+      material: CAKE
+      amount: 1
+      slot: 16
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Party like no other!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    coin-party-bomb:
+      enable: true
+      name: "&bCoin Party Bomb"
+      can-be-found: true
+      purchasable: false
+      cost: 20000
+      rarity: RARE
+      cooldown: 50.0
+      duration: 30.0
+      ammo:
+        purchasable: false
+        purchase-amount: 1
+        cost: 500
+        infinity: false
+      material: SUNFLOWER
+      amount: 1
+      slot: 19
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7You'll be everyone's favorite player"
+        - "&7once you have thrown once of these!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    merry-go-round:
+      enable: true
+      name: "&bMerry-Go-Round"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      cooldown: 80.0
+      duration: 60.0
+      ammo:
+        purchasable: false
+        purchase-amount: 5
+        cost: 600
+        infinity: false
+      material: MINECART
+      amount: 1
+      slot: 20
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Weeee, I have never had"
+        - "&7funnierrrrr!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    rocket:
+      enable: true
+      name: "&bRocket"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      cooldown: 30.0
+      ammo:
+        purchasable: false
+        purchase-amount: 5
+        cost: 500
+        infinity: false
+      material: IRON_BLOCK
+      amount: 1
+      slot: 21
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Get ready for your biggest"
+        - "&7adventure ever!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    trampoline:
+      enable: true
+      name: "&bTrampoline"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 40.0
+      duration: 35.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 500
+        infinity: false
+      material: BLACK_WOOL
+      amount: 1
+      slot: 22
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Come and bounce with me!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    disco-ball:
+      enable: true
+      name: "&bDisco Ball"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 50.0
+      duration: 15.0
+      ammo:
+        purchasable: false
+        purchase-amount: 5
+        cost: 250
+        infinity: false
+      material: BLUE_STAINED_GLASS
+      amount: 1
+      slot: 23
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Shut up and dance with me!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    melon-launcher:
+      enable: true
+      name: "&bMelon Launcher"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 4.0
+      ammo:
+        purchasable: false
+        purchase-amount: 20
+        cost: 150
+        infinity: false
+      material: MELON
+      amount: 1
+      slot: 24
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Shoot melons and pick them up for some speed!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    grappling-hook:
+      enable: true
+      name: "&bGrappling Hook"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 1.0
+      ammo:
+        purchasable: false
+        purchase-amount: 50
+        cost: 300
+        infinity: false
+      material: FISHING_ROD
+      amount: 1
+      slot: 25
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Throw and pull!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    bombman:
+      enable: true
+      name: "&bBombman"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      cooldown: 8.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 300
+        infinity: false
+      material: LEVER
+      amount: 1
+      slot: 28
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Detonate up to 3 TNTs!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    explosive-sheep:
+      enable: true
+      name: "&bExplosive Sheep"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 18.0
+      duration: 6.0
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 450
+        infinity: false
+      material: RED_WOOL
+      amount: 1
+      slot: 29
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7A sheep explodes and numerous"
+        - "&7sheeps gets released."
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    flesh-hook:
+      enable: true
+      name: "&bFlesh Hook"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 2.0
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 350
+        infinity: false
+      material: TRIPWIRE_HOOK
+      amount: 1
+      slot: 30
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Make friends by pulling them"
+        - "&7towards you!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    wither-missile:
+      enable: true
+      name: "&bWither Missile"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 15.0
+      duration: 10.0
+      ammo:
+        purchasable: false
+        purchase-amount: 15
+        cost: 300
+        infinity: false
+      material: WITHER_SKELETON_SKULL
+      amount: 1
+      slot: 31
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Enjoy a ride on a wither skull!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    chicken-parachute:
+      enable: true
+      name: "&bChicken Parachute"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 20.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 250
+        infinity: false
+      material: FEATHER
+      amount: 1
+      slot: 32
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Who said chickens can't be used"
+        - "&7as a parachute?"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    cowboy:
+      enable: true
+      name: "&bCowboy"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      cooldown: 15.0
+      ammo:
+        purchasable: false
+        purchase-amount: 30
+        cost: 100
+        infinity: false
+      material: SADDLE
+      amount: 1
+      slot: 33
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Right-click someone to ride on them."
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    soccerball:
+      enable: true
+      name: "&bSoccerball"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 70.0
+      duration: 60.0
+      ammo:
+        purchasable: false
+        purchase-amount: 20
+        cost: 200
+        infinity: false
+      material: SLIME_BLOCK
+      amount: 1
+      slot: 34
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Would you like to play some soccer?"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    swing:
+      enable: true
+      name: "&bSwing"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 80.0
+      duration: 60.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 200
+        infinity: false
+      material: STRING
+      amount: 1
+      slot: 37
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7The best swing ever!
+        "
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+    slide:
+      enable: true
+      name: "&bSlide"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      cooldown: 80.0
+      duration: 60.0
+      ammo:
+        purchasable: false
+        purchase-amount: 10
+        cost: 200
+        infinity: false
+      material: WARPED_STAIRS
+      amount: 1
+      slot: 38
+      page: 1
+      custom-model-data: 0
+      displayname: "&b%ammo% %name%"
+      lore:
+        - ""
+        - "&7Slide with your friends!"
+        - ""
+        - "&bYou currently own &7%ammo%&b."
+        - ""
+        - "&9Ammo craftable for &e%ammo_cost% coins&9!"
+
+# Do not edit this!
+config-version: 1

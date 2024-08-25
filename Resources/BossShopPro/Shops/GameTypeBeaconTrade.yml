@@ -1,6 +1,6 @@
-ShopName: AcidBeacon
-DisplayName: 'Acid Beacon Trade'
-Command: AcidBeacon
+ShopName: GameTypeBeaconTrade
+DisplayName: '1MB Nether Star Trade'
+Command: GameTypeBeaconTrade
 Sound:
   Shop:
     Open: ENTITY_EVOKER_CAST_SPELL:2:0.5
@@ -29,7 +29,7 @@ shop:
     - lore3:&8&m]------[&r&7 Trade Information &8&m]------[
     - lore4:&e By clicking once, I will take the required
     - lore5:&e blocks from your inventory, and in return
-    - lore6:&e I will give a netherstar, great deal!
+    - lore6:&e I will give a nether star, great deal!
     - lore7:&8&m]------------------------------[
     - amount:1
     - type:BEACON
@@ -48,6 +48,6 @@ shop:
       - amount:4
     - - type:NETHERITE_BLOCK
       - amount:1
-    Message: 'Thank you for trading that stuff.'
+    Message: 'Thank you for trading your awesome stuff for a nether_star'
     ExtraPermission: ''
     InventoryLocation: 14

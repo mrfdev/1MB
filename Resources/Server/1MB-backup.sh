@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.0.3, build 006 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Version: 0.0.4, build 007 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
 # @Release: August 26th, 2024
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only.
@@ -29,6 +29,7 @@ backup_dir="_backups"
 ###
 
 backup_file="${backup_dir}/${dir}-$(date +%d-%m-%Y).tar.gz"
+tmux_session_name="mcserver"
 
 ### FUNCTIONS AND CODE
 #
@@ -41,8 +42,13 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-# Code to check if tar and gzip exist on the system
+# Code to check if tmux, tar and gzip exist on the system
 # If not, error, otherwise let's go check if the directories that we need exist
+
+if ! command_exists tmux; then
+    echo "Error: 'tmux' is not installed on this system. Please install it and try again."
+    exit 1
+fi
 
 if ! command_exists tar; then
     echo "Error: 'tar' is not installed on this system. Please install it and try again."
@@ -51,6 +57,16 @@ fi
 
 if ! command_exists gzip; then
     echo "Error: 'gzip' is not installed on this system. Please install it and try again."
+    exit 1
+fi
+
+# We should not run the script while the server is running
+
+# note: By default my scripts use mcserver as tmux session name
+# note: You can change the variable if needed under internal configuration
+if tmux has-session -t "$tmux_session_name" 2>/dev/null; then
+    echo "Warning: A tmux session named '$tmux_session_name' is currently running. Backup cannot proceed."
+    echo "What to do: You can 'tmux a' and 'stop' the server, then 'exit' the tmux session and try again."
     exit 1
 fi
 

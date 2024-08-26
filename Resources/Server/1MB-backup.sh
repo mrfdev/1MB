@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.0.4, build 007 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Version: 0.1.1, build 009 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
 # @Release: August 26th, 2024
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only.
@@ -10,6 +10,9 @@
 # @Install: chmod a+x 1MB-backup.sh
 # @Syntax: ./1MB-backup.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+
+## Todo:
+## - ./1MB-backup.sh purge (to forcefully remove the _backup directory if it exists)
 
 ### CONFIGURATION
 #
@@ -28,7 +31,7 @@ backup_dir="_backups"
 #
 ###
 
-backup_file="${backup_dir}/${dir}-$(date +%d-%m-%Y).tar.gz"
+backup_file="${backup_dir}/${dir}-$(date +%d-%m-%Y-%s).tar.gz"
 tmux_session_name="mcserver"
 
 ### FUNCTIONS AND CODE

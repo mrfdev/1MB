@@ -50,5 +50,12 @@ if [ ! -d "$backup_dir" ]; then
     mkdir -p "$backup_dir"
 fi
 
+# We can continue, so let's start the backing up process, we're using tar and gzip
+# Start the backup process
+# todo: maybe check if tar and gzip are available on the system
+echo "Starting the backup of $dir directory to $backup_file..."
+tar -czf "$backup_file" "$dir"
+
+
 
 #EOF Copyright (c) 2011-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

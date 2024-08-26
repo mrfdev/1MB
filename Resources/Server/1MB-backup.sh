@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.0.2, build 005 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Version: 0.0.3, build 006 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
 # @Release: August 26th, 2024
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only.
@@ -36,7 +36,25 @@ backup_file="${backup_dir}/${dir}-$(date +%d-%m-%Y).tar.gz"
 #
 ###
 
-# Check if the desired directories exist, if not, exit script and report back.
+# Function: does this command exist?
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Code to check if tar and gzip exist on the system
+# If not, error, otherwise let's go check if the directories that we need exist
+
+if ! command_exists tar; then
+    echo "Error: 'tar' is not installed on this system. Please install it and try again."
+    exit 1
+fi
+
+if ! command_exists gzip; then
+    echo "Error: 'gzip' is not installed on this system. Please install it and try again."
+    exit 1
+fi
+
+# Check if the expected directories exist, if not, exit script and report back.
 
 # Note, this is the directory from within the server(s) run, it SHOULD exist, we will not create it if it doesn't: properly configure the path if it fails
 if [ ! -d "$dir" ]; then
@@ -52,7 +70,6 @@ fi
 
 # We can continue, so let's start the backing up process, we're using tar and gzip
 # Start the backup process
-# todo: maybe check if tar and gzip are available on the system
 echo "Starting the backup of $dir directory to $backup_file..."
 tar -czf "$backup_file" "$dir"
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.0.2, build 004 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Version: 0.0.2, build 005 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
 # @Release: August 26th, 2024
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only.
@@ -56,6 +56,12 @@ fi
 echo "Starting the backup of $dir directory to $backup_file..."
 tar -czf "$backup_file" "$dir"
 
-
+# We should have a file, let's check if we were successful
+if [ $? -eq 0 ]; then
+    echo "Backup completed. File created: $backup_file"
+else
+    echo "Error: Backup failed for some reason, please review manually."
+    exit 1
+fi
 
 #EOF Copyright (c) 2011-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

@@ -1,4 +1,7 @@
-ConfigPatchVersion: 2
+#
+#  Settings for Fishing Treasures / Shake Treasures
+#  Last updated on 12/28/2020
+# ##
 Fishing:
     LEATHER_BOOTS:
         Amount: 1
@@ -244,10 +247,18 @@ Fishing:
         Amount: 1
         XP: 400
         Rarity: LEGENDARY
+    # Uncomment the below 3 lines to use the Whitelist, Alternatively rename it Enchantments_Blacklist to use the blacklist
+    # NOTE: Enchantments_Whitelist and Enchantments_Blacklist only do anything for Enchanted_Books at the moment, you can't use it with any other treasure definition
+    #        Enchantments_Whitelist:
+    #            - Fortune
+    #            - Protection
     NETHERITE_SCRAP:
         Amount: 1
         XP: 400
         Rarity: LEGENDARY
+#
+# 	Fishing drop rates
+# ##
 Item_Drop_Rates:
     Tier_1:
         COMMON: 7.5
@@ -305,6 +316,9 @@ Item_Drop_Rates:
         EPIC: 7.5
         LEGENDARY: 5.0
         MYTHIC: 0.25
+#
+# 	Fishing enchantment drop rates
+# ##
 Enchantments_Rarity:
     COMMON:
         EFFICIENCY: 1
@@ -461,6 +475,10 @@ Enchantment_Drop_Rates:
         EPIC: 1.5
         LEGENDARY: 0.75
         MYTHIC: 0.75
+#
+#  Settings for Shake
+#  If you are in retro mode, Drop_Level is multiplied by 10.
+# ##
 Shake:
     BLAZE:
         BLAZE_ROD:

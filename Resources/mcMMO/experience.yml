@@ -1,3 +1,17 @@
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html
+# These are the only valid colors for Experience Bars, use the exact name found here
+# BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW (As of the time of this update these are the only Bar colors available, this could change in the future so check the BarColor enum to see if it has)
+# BarStyle Settings (USE THE EXACT NAME) :
+# SEGMENTED_10
+#   Splits the boss bar into 10 segments
+# SEGMENTED_12
+#   Splits the boss bar into 12 segments
+# SEGMENTED_20
+#   Splits the boss bar into 20 segments
+# SEGMENTED_6
+#   Splits the boss bar into 6 segments
+# SOLID
+#   The bar is one solid piece
 EarlyGameBoost:
     Enabled: true
 ExploitFix:
@@ -20,6 +34,8 @@ ExploitFix:
     # mcMMO normally doesn't process attacks against an Entity if it is an NPC from another plugin
     # Of course, mcMMO doesn't know for sure whether something is an NPC, it checks a few known things, see our source code to see how
     PreventPluginNPCInteraction: true
+    # This will limit XP gained from unnaturally tall plants, like those created by Bone Meal
+    LimitTallPlantFarming: true
 Fishing_ExploitFix_Options:
     MoveRange: 3
     OverFishLimit: 10
@@ -110,6 +126,9 @@ Experience_Bars:
         Enable: true
         Color: GREEN
         BarStyle: SEGMENTED_6
+#
+#  Settings for XP formula
+# ##
 Experience_Formula:
     # Valid values are: LINEAR and EXPONENTIAL
     # If an invalid value is entered, this will reset to the default setting, which is LINEAR
@@ -168,6 +187,10 @@ Experience_Formula:
     # with 1.25 by default, resulting in a 25% XP boost
     Custom_XP_Perk:
         Boost: 1.25
+
+#
+# Settings for Diminished Returns
+# ##
 Diminished_Returns:
     # This is the minimum amount of XP a player will earn after reaching the timed threshold (this is to prevent punishing a player too hard for earning XP)
     # # A value of 1 would mean that a player gets FULL XP, which defeats the purpose of diminished returns, the default value is 0.05 (5% minimum XP)
@@ -196,9 +219,17 @@ Diminished_Returns:
         Maces: 20000
     
     Time_Interval: 10
+
+#
+#  Settings for XP conversion with '/mcconvert experience'
+# ##
 Conversion:
     # Old experience will get divided by this modifier
     Exp_Modifier: 1
+
+#
+#  Settings for XP distribution
+# ##
 Experience_Values:
     PVP:
         Rewards: true

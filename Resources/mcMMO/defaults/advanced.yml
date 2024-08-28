@@ -1,6 +1,6 @@
 #
 #  Advanced configuration
-#  Last updated on 2.2.017-b${BUILD_NUMBER}
+#  Last updated on 2.2.019-SNAPSHOT-b${BUILD_NUMBER}
 #
 #  For advanced users only! There is no need to change anything here.
 #
@@ -15,7 +15,7 @@
 ###
 # Enables anonymous statistics
 Metrics:
-    bstats: true
+    bstats: false
 Feedback:
     PlayerTips: true
     SkillCommand:

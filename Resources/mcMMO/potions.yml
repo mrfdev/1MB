@@ -1,6 +1,6 @@
 #
 #  Settings for Concoctions
-#  Last updated on 2.1.114-b${BUILD_NUMBER}
+#  Last updated on 2.2.019-SNAPSHOT-b${BUILD_NUMBER}
 ###
 Concoctions:
     Tier_One_Ingredients:
@@ -25,7 +25,7 @@ Concoctions:
         - PHANTOM_MEMBRANE
     Tier_Three_Ingredients:
         - QUARTZ
-        - RED_MUSHROOM
+        - RABBIT_FOOT
     Tier_Four_Ingredients:
         - APPLE
         - ROTTEN_FLESH

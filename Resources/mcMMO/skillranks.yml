@@ -14,21 +14,21 @@ Alchemy:
     Concoctions:
         Standard:
             Rank_1: 0
-            Rank_2: 1
-            Rank_3: 35
-            Rank_4: 50
-            Rank_5: 65
+            Rank_2: 10
+            Rank_3: 20
+            Rank_4: 35
+            Rank_5: 50
             Rank_6: 75
-            Rank_7: 85
+            Rank_7: 90
             Rank_8: 100
         RetroMode:
             Rank_1: 0
-            Rank_2: 1
-            Rank_3: 350
-            Rank_4: 500
-            Rank_5: 650
+            Rank_2: 100
+            Rank_3: 200
+            Rank_4: 350
+            Rank_5: 500
             Rank_6: 750
-            Rank_7: 850
+            Rank_7: 900
             Rank_8: 1000
 Archery:
     ArcheryLimitBreak:
@@ -102,11 +102,6 @@ Archery:
             Rank_18: 900
             Rank_19: 950
             Rank_20: 1000
-    ExplosiveShot:
-        Standard:
-            Rank_1: 5
-        RetroMode:
-            Rank_1: 50
 Acrobatics:
     Dodge:
         Standard:
@@ -206,6 +201,129 @@ Axes:
             Rank_2: 100
             Rank_3: 150
             Rank_4: 200
+Crossbows:
+    TrickShot:
+        Standard:
+            Rank_1: 5
+            Rank_2: 20
+            Rank_3: 40
+        RetroMode:
+            Rank_1: 50
+            Rank_2: 200
+            Rank_3: 400
+    PoweredShot:
+        Standard:
+            Rank_1: 1
+            Rank_2: 10
+            Rank_3: 15
+            Rank_4: 20
+            Rank_5: 25
+            Rank_6: 30
+            Rank_7: 35
+            Rank_8: 40
+            Rank_9: 45
+            Rank_10: 50
+            Rank_11: 55
+            Rank_12: 60
+            Rank_13: 65
+            Rank_14: 70
+            Rank_15: 75
+            Rank_16: 80
+            Rank_17: 85
+            Rank_18: 90
+            Rank_19: 95
+            Rank_20: 100
+        RetroMode:
+            Rank_1: 1
+            Rank_2: 100
+            Rank_3: 150
+            Rank_4: 200
+            Rank_5: 250
+            Rank_6: 300
+            Rank_7: 350
+            Rank_8: 400
+            Rank_9: 450
+            Rank_10: 500
+            Rank_11: 550
+            Rank_12: 600
+            Rank_13: 650
+            Rank_14: 700
+            Rank_15: 750
+            Rank_16: 800
+            Rank_17: 850
+            Rank_18: 900
+            Rank_19: 950
+            Rank_20: 1000
+    CrossbowsLimitBreak:
+        Standard:
+            Rank_1: 10
+            Rank_2: 20
+            Rank_3: 30
+            Rank_4: 40
+            Rank_5: 50
+            Rank_6: 60
+            Rank_7: 70
+            Rank_8: 80
+            Rank_9: 90
+            Rank_10: 100
+        RetroMode:
+            Rank_1: 100
+            Rank_2: 200
+            Rank_3: 300
+            Rank_4: 400
+            Rank_5: 500
+            Rank_6: 600
+            Rank_7: 700
+            Rank_8: 800
+            Rank_9: 900
+            Rank_10: 1000
+Tridents:
+    TridentsLimitBreak:
+        Standard:
+            Rank_1: 10
+            Rank_2: 20
+            Rank_3: 30
+            Rank_4: 40
+            Rank_5: 50
+            Rank_6: 60
+            Rank_7: 70
+            Rank_8: 80
+            Rank_9: 90
+            Rank_10: 100
+        RetroMode:
+            Rank_1: 100
+            Rank_2: 200
+            Rank_3: 300
+            Rank_4: 400
+            Rank_5: 500
+            Rank_6: 600
+            Rank_7: 700
+            Rank_8: 800
+            Rank_9: 900
+            Rank_10: 1000
+    Impale:
+        Standard:
+            Rank_1: 5
+            Rank_2: 15
+            Rank_3: 25
+            Rank_4: 35
+            Rank_5: 45
+            Rank_6: 55
+            Rank_7: 65
+            Rank_8: 75
+            Rank_9: 85
+            Rank_10: 100
+        RetroMode:
+            Rank_1: 50
+            Rank_2: 150
+            Rank_3: 250
+            Rank_4: 350
+            Rank_5: 450
+            Rank_6: 550
+            Rank_7: 650
+            Rank_8: 750
+            Rank_9: 850
+            Rank_10: 1000
 Taming:
     BeastLore:
         Standard:
@@ -325,7 +443,58 @@ Salvage:
             Rank_6: 750
             Rank_7: 850
             Rank_8: 1000
+Maces:
+    MacesLimitBreak:
+        Standard:
+            Rank_1: 10
+            Rank_2: 20
+            Rank_3: 30
+            Rank_4: 40
+            Rank_5: 50
+            Rank_6: 60
+            Rank_7: 70
+            Rank_8: 80
+            Rank_9: 90
+            Rank_10: 100
+        RetroMode:
+            Rank_1: 100
+            Rank_2: 200
+            Rank_3: 300
+            Rank_4: 400
+            Rank_5: 500
+            Rank_6: 600
+            Rank_7: 700
+            Rank_8: 800
+            Rank_9: 900
+            Rank_10: 1000
+    Cripple:
+        Standard:
+            Rank_1: 5
+            Rank_2: 20
+            Rank_3: 40
+            Rank_4: 80
+        RetroMode:
+            Rank_1: 50
+            Rank_2: 200
+            Rank_3: 400
+            Rank_4: 800
+    Crush:
+        Standard:
+            Rank_1: 10
+            Rank_2: 25
+            Rank_3: 75
+            Rank_4: 90
+        RetroMode:
+            Rank_1: 100
+            Rank_2: 250
+            Rank_3: 750
+            Rank_4: 900
 Mining:
+    MotherLode:
+        Standard:
+            Rank_1: 100
+        RetroMode:
+            Rank_1: 1000
     DoubleDrops:
         Standard:
             Rank_1: 1
@@ -337,55 +506,11 @@ Mining:
         RetroMode:
             Rank_1: 50
     # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
     BiggerBombs:
         Standard:
             Rank_1: 10
         RetroMode:
             Rank_1: 100
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
-    # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
     # For now make sure rank 1 is the same as blast mining rank 1, it's a bit hacky, I'll fix it later
     DemolitionsExpertise:
         Standard:
@@ -411,17 +536,17 @@ Mining:
             Rank_6: 750
             Rank_7: 850
             Rank_8: 1000
-    MotherLode:
-        Standard:
-            Rank_1: 100
-        RetroMode:
-            Rank_1: 1000
 Herbalism:
     DoubleDrops:
         Standard:
             Rank_1: 1
         RetroMode:
             Rank_1: 1
+    VerdantBounty:
+        Standard:
+            Rank_1: 100
+        RetroMode:
+            Rank_1: 1000
     GreenTerra:
         Standard:
             Rank_1: 5
@@ -451,12 +576,12 @@ Herbalism:
             Rank_3: 600
             Rank_4: 800
             Rank_5: 1000
-    VerdantBounty:
+Fishing:
+    Mastery:
         Standard:
             Rank_1: 100
         RetroMode:
             Rank_1: 1000
-Fishing:
     MagicHunter:
         Standard:
             Rank_1: 20
@@ -484,22 +609,22 @@ Fishing:
     MasterAngler:
         Standard:
             Rank_1: 1
-            Rank_8: 90
-            Rank_7: 80
-            Rank_4: 40
-            Rank_3: 30
-            Rank_6: 70
-            Rank_5: 60
             Rank_2: 20
+            Rank_3: 30
+            Rank_4: 40
+            Rank_5: 60
+            Rank_6: 70
+            Rank_7: 80
+            Rank_8: 90
         RetroMode:
             Rank_1: 1
+            Rank_2: 200
             Rank_3: 300
             Rank_4: 400
-            Rank_2: 200
-            Rank_7: 800
-            Rank_8: 900
             Rank_5: 600
             Rank_6: 700
+            Rank_7: 800
+            Rank_8: 900
     IceFishing:
         Standard:
             Rank_1: 5
@@ -537,11 +662,6 @@ Fishing:
             Rank_6: 750
             Rank_7: 850
             Rank_8: 1000
-    Mastery:
-        Standard:
-            Rank_1: 100
-        RetroMode:
-            Rank_1: 1000
 Swords:
     SwordsLimitBreak:
         Standard:
@@ -638,19 +758,6 @@ Unarmed:
             Rank_1: 60
         RetroMode:
             Rank_1: 600
-    IronArmStyle:
-        Standard:
-            Rank_1: 1
-            Rank_2: 25
-            Rank_3: 50
-            Rank_4: 75
-            Rank_5: 100
-        RetroMode:
-            Rank_1: 1
-            Rank_2: 250
-            Rank_3: 500
-            Rank_4: 750
-            Rank_5: 1000
     SteelArmStyle:
         Standard:
             Rank_1: 1
@@ -694,16 +801,8 @@ Unarmed:
             Rank_18: 900
             Rank_19: 950
             Rank_20: 1000
+
 Woodcutting:
-    Splinter:
-        Standard:
-            Rank_1: 5
-            Rank_2: 30
-            Rank_3: 55
-        RetroMode:
-            Rank_1: 50
-            Rank_2: 300
-            Rank_3: 550
     TreeFeller:
         Standard:
             Rank_1: 5
@@ -717,29 +816,23 @@ Woodcutting:
             Rank_3: 500
             Rank_4: 750
             Rank_5: 1000
-    BarkSurgeon:
-        Standard:
-            Rank_1: 70
-            Rank_2: 80
-            Rank_3: 95
-        RetroMode:
-            Rank_1: 700
-            Rank_2: 800
-            Rank_3: 950
-    NaturesBounty:
-        Standard:
-            Rank_1: 40
-            Rank_2: 60
-            Rank_3: 90
-        RetroMode:
-            Rank_1: 400
-            Rank_2: 600
-            Rank_3: 900
     HarvestLumber:
         Standard:
             Rank_1: 1
         RetroMode:
             Rank_1: 1
+    CleanCuts:
+        Standard:
+            Rank_1: 100
+        RetroMode:
+            Rank_1: 1000
+    KnockOnWood:
+        Standard:
+            Rank_1: 30
+            Rank_2: 60
+        RetroMode:
+            Rank_1: 300
+            Rank_2: 600
     LeafBlower:
         Standard:
             Rank_1: 15
@@ -749,18 +842,6 @@ Woodcutting:
             Rank_1: 150
             Rank_2: 350
             Rank_3: 650
-    KnockOnWood:
-        Standard:
-            Rank_1: 30
-            Rank_2: 60
-        RetroMode:
-            Rank_1: 300
-            Rank_2: 600
-    CleanCuts:
-        Standard:
-            Rank_1: 100
-        RetroMode:
-            Rank_1: 1000
 Excavation:
     GigaDrillBreaker:
         Standard:
@@ -816,204 +897,3 @@ Repair:
             Rank_6: 750
             Rank_7: 850
             Rank_8: 1000
-Crossbows:
-    TrickShot:
-        Standard:
-            Rank_1: 5
-            Rank_2: 20
-            Rank_3: 40
-        RetroMode:
-            Rank_1: 50
-            Rank_2: 200
-            Rank_3: 400
-    PoweredShot:
-        Standard:
-            Rank_1: 1
-            Rank_2: 10
-            Rank_3: 15
-            Rank_4: 20
-            Rank_5: 25
-            Rank_6: 30
-            Rank_7: 35
-            Rank_8: 40
-            Rank_9: 45
-            Rank_10: 50
-            Rank_11: 55
-            Rank_12: 60
-            Rank_13: 65
-            Rank_14: 70
-            Rank_15: 75
-            Rank_16: 80
-            Rank_17: 85
-            Rank_18: 90
-            Rank_19: 95
-            Rank_20: 100
-        RetroMode:
-            Rank_1: 1
-            Rank_2: 100
-            Rank_3: 150
-            Rank_4: 200
-            Rank_5: 250
-            Rank_6: 300
-            Rank_7: 350
-            Rank_8: 400
-            Rank_9: 450
-            Rank_10: 500
-            Rank_11: 550
-            Rank_12: 600
-            Rank_13: 650
-            Rank_14: 700
-            Rank_15: 750
-            Rank_16: 800
-            Rank_17: 850
-            Rank_18: 900
-            Rank_19: 950
-            Rank_20: 1000
-    CrossbowsLimitBreak:
-        Standard:
-            Rank_1: 10
-            Rank_2: 20
-            Rank_3: 30
-            Rank_4: 40
-            Rank_5: 50
-            Rank_6: 60
-            Rank_7: 70
-            Rank_8: 80
-            Rank_9: 90
-            Rank_10: 100
-        RetroMode:
-            Rank_1: 100
-            Rank_2: 200
-            Rank_3: 300
-            Rank_4: 400
-            Rank_5: 500
-            Rank_6: 600
-            Rank_7: 700
-            Rank_8: 800
-            Rank_9: 900
-            Rank_10: 1000
-    SuperShotgun:
-        Standard:
-            Rank_1: 5
-        RetroMode:
-            Rank_1: 50
-Tridents:
-    TridentsLimitBreak:
-        Standard:
-            Rank_1: 10
-            Rank_2: 20
-            Rank_3: 30
-            Rank_4: 40
-            Rank_5: 50
-            Rank_6: 60
-            Rank_7: 70
-            Rank_8: 80
-            Rank_9: 90
-            Rank_10: 100
-        RetroMode:
-            Rank_1: 100
-            Rank_2: 200
-            Rank_3: 300
-            Rank_4: 400
-            Rank_5: 500
-            Rank_6: 600
-            Rank_7: 700
-            Rank_8: 800
-            Rank_9: 900
-            Rank_10: 1000
-    TridentsSuperAbility:
-        Standard:
-            Rank_1: 5
-        RetroMode:
-            Rank_1: 50
-    Impale:
-        Standard:
-            Rank_1: 5
-            Rank_2: 15
-            Rank_3: 25
-            Rank_4: 35
-            Rank_5: 45
-            Rank_6: 55
-            Rank_7: 65
-            Rank_8: 75
-            Rank_9: 85
-            Rank_10: 100
-        RetroMode:
-            Rank_1: 50
-            Rank_2: 150
-            Rank_3: 250
-            Rank_4: 350
-            Rank_5: 450
-            Rank_6: 550
-            Rank_7: 650
-            Rank_8: 750
-            Rank_9: 850
-            Rank_10: 1000
-Maces:
-    Standard:
-        Rank_1: 10
-        Rank_2: 20
-        Rank_3: 30
-        Rank_4: 40
-        Rank_5: 50
-        Rank_6: 60
-        Rank_7: 70
-        Rank_8: 80
-        Rank_9: 90
-        Rank_10: 100
-    RetroMode:
-        Rank_1: 100
-        Rank_2: 200
-        Rank_3: 300
-        Rank_4: 400
-        Rank_5: 500
-        Rank_6: 600
-        Rank_7: 700
-        Rank_8: 800
-        Rank_9: 900
-        Rank_10: 1000
-    MacesLimitBreak:
-        Standard:
-            Rank_1: 10
-            Rank_2: 20
-            Rank_3: 30
-            Rank_4: 40
-            Rank_5: 50
-            Rank_6: 60
-            Rank_7: 70
-            Rank_8: 80
-            Rank_9: 90
-            Rank_10: 100
-        RetroMode:
-            Rank_1: 100
-            Rank_2: 200
-            Rank_3: 300
-            Rank_4: 400
-            Rank_5: 500
-            Rank_6: 600
-            Rank_7: 700
-            Rank_8: 800
-            Rank_9: 900
-            Rank_10: 1000
-    Cripple:
-        Standard:
-            Rank_1: 5
-            Rank_2: 20
-            Rank_3: 40
-            Rank_4: 80
-        RetroMode:
-            Rank_1: 50
-            Rank_2: 200
-            Rank_3: 400
-            Rank_4: 800
-    Crush:
-        Standard:
-            Rank_1: 10
-            Rank_2: 25
-            Rank_3: 75
-            Rank_4: 90
-        RetroMode:
-            Rank_1: 100
-            Rank_2: 250
-            Rank_3: 750
-            Rank_4: 900

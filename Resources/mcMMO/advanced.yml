@@ -1,11 +1,11 @@
 #
 #  Advanced configuration
-#  Last updated on 2.2.000-BETA-06-SNAPSHOT-b${BUILD_NUMBER}
+#  Last updated on 2.2.019-SNAPSHOT-b${BUILD_NUMBER}
 #
 #  For advanced users only! There is no need to change anything here.
 #
 #  You can customize almost every aspect of every skill here.
-#  Its mainly here if you've customized the experience formula.
+#  It's mainly here if you've customized the experience formula.
 #  Configure at what level you get better with certain abilities.
 #
 # ####
@@ -20,7 +20,7 @@ Feedback:
     PlayerTips: true
     SkillCommand:
         BlankLinesAboveHeader: true
-    # If sendtitles is true messages will be sent using the title api (BIG TEXT ON SCREEN)
+    # If sendtitles is true, messages will be sent using the title api (BIG TEXT ON SCREEN)
     Events:
         XP:
             SendTitles: true
@@ -83,6 +83,11 @@ Feedback:
             SendCopyOfMessageToChat: false
 Skills:
     General:
+        # Attack Cooldown refers to the strength of attacks in Minecraft.
+        # If an attack is spammed, it will have less bonus damage and RNG for skills to activate from mcMMO.
+        # If you want, you can turn this behavior off by setting it to false.
+        Attack_Cooldown:
+            Adjust_Skills_For_Attack_Cooldown: true
         LimitBreak:
             AllowPVE: false
         StartingLevel: 0
@@ -95,8 +100,6 @@ Skills:
                     CapLevel: 1000
                     IncreaseLevel: 50
             EnchantBuff: 5
-        Attack_Cooldown:
-            Adjust_Skills_For_Attack_Cooldown: true
     # IncreaseLevel: This setting will determine when the length of every ability gets longer with 1 second
     # EnchantBuff: This setting determines how many enchant levels to use when buffing Super Breaker & Giga Drill Breaker
 

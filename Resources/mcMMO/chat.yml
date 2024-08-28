@@ -1,0 +1,14 @@
+ConfigPatchVersion: 2
+Chat:
+    Enable: true
+    Channels:
+        Party:
+            Enable: true
+            Use_Display_Names: true
+            Spies:
+                Automatically_Enable_Spying: true
+            Send_To_Console: true
+        Admin:
+            Enable: false
+            Use_Display_Names: false
+            Send_To_Console: true

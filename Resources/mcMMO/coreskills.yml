@@ -1,0 +1,5 @@
+ConfigPatchVersion: 2
+Acrobatics:
+    Enabled: true
+    Roll:
+        Enabled: true

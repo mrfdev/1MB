@@ -1,0 +1,217 @@
+ConfigPatchVersion: 2
+Salvageables:
+    WOODEN_SWORD:
+        MinimumLevel: 0
+        XpMultiplier: 0.25
+        MaximumQuantity: 2
+    WOODEN_SHOVEL:
+        MinimumLevel: 0
+        XpMultiplier: 0.16
+        MaximumQuantity: 1
+    WOODEN_PICKAXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 3
+    WOODEN_AXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 3
+    WOODEN_HOE:
+        MinimumLevel: 0
+        XpMultiplier: 0.25
+        MaximumQuantity: 2
+    STONE_SWORD:
+        MinimumLevel: 0
+        XpMultiplier: 0.25
+        MaximumQuantity: 2
+    STONE_SHOVEL:
+        MinimumLevel: 0
+        XpMultiplier: 0.16
+        MaximumQuantity: 1
+    STONE_PICKAXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 3
+    STONE_AXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 3
+    STONE_HOE:
+        MinimumLevel: 0
+        XpMultiplier: 0.25
+        MaximumQuantity: 2
+    IRON_SWORD:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    IRON_SHOVEL:
+        MinimumLevel: 0
+        XpMultiplier: 0.3
+        MaximumQuantity: 1
+    IRON_PICKAXE:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    IRON_AXE:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    IRON_HOE:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    SHEARS:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+    FLINT_AND_STEEL:
+        MinimumLevel: 0
+        XpMultiplier: 0.3
+    IRON_HELMET:
+        MinimumLevel: 0
+        XpMultiplier: 2
+        MaximumQuantity: 5
+    IRON_CHESTPLATE:
+        MinimumLevel: 0
+        XpMultiplier: 2
+        MaximumQuantity: 8
+    IRON_LEGGINGS:
+        MinimumLevel: 0
+        XpMultiplier: 2
+        MaximumQuantity: 7
+    IRON_BOOTS:
+        MinimumLevel: 0
+        XpMultiplier: 2
+        MaximumQuantity: 4
+    GOLDEN_SWORD:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 2
+    GOLDEN_SHOVEL:
+        MinimumLevel: 0
+        XpMultiplier: 2.6
+        MaximumQuantity: 1
+    GOLDEN_PICKAXE:
+        MinimumLevel: 0
+        XpMultiplier: 8
+        MaximumQuantity: 3
+    GOLDEN_AXE:
+        MinimumLevel: 0
+        XpMultiplier: 8
+        MaximumQuantity: 3
+    GOLDEN_HOE:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 2
+    GOLDEN_HELMET:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 5
+    GOLDEN_CHESTPLATE:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 8
+    GOLDEN_LEGGINGS:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 7
+    GOLDEN_BOOTS:
+        MinimumLevel: 0
+        XpMultiplier: 4
+        MaximumQuantity: 4
+    DIAMOND_SWORD:
+        MinimumLevel: 50
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    DIAMOND_SHOVEL:
+        MinimumLevel: 50
+        XpMultiplier: 0.3
+        MaximumQuantity: 1
+    DIAMOND_PICKAXE:
+        MinimumLevel: 50
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    DIAMOND_AXE:
+        MinimumLevel: 50
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    DIAMOND_HOE:
+        MinimumLevel: 50
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    DIAMOND_HELMET:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 5
+    DIAMOND_CHESTPLATE:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 8
+    DIAMOND_LEGGINGS:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 7
+    DIAMOND_BOOTS:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 4
+    NETHERITE_SWORD:
+        MinimumLevel: 50
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    NETHERITE_SHOVEL:
+        MinimumLevel: 50
+        XpMultiplier: 0.3
+        MaximumQuantity: 1
+    NETHERITE_PICKAXE:
+        MinimumLevel: 50
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    NETHERITE_AXE:
+        MinimumLevel: 50
+        XpMultiplier: 1
+        MaximumQuantity: 3
+    NETHERITE_HOE:
+        MinimumLevel: 50
+        XpMultiplier: 0.5
+        MaximumQuantity: 2
+    NETHERITE_HELMET:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 4
+    NETHERITE_CHESTPLATE:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 4
+    NETHERITE_LEGGINGS:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 4
+    NETHERITE_BOOTS:
+        MinimumLevel: 50
+        XpMultiplier: 6
+        MaximumQuantity: 4
+    LEATHER_HELMET:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 5
+    LEATHER_CHESTPLATE:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 8
+    LEATHER_LEGGINGS:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 7
+    LEATHER_BOOTS:
+        MinimumLevel: 0
+        XpMultiplier: 1
+        MaximumQuantity: 4
+    FISHING_ROD:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+    BOW:
+        MinimumLevel: 0
+        XpMultiplier: 0.5
+    CARROT_ON_A_STICK:
+        MinimumLevel: 0
+        XpMultiplier: 0.5

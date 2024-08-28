@@ -1,0 +1,14 @@
+ConfigPatchVersion: 2
+Upgrades_Finished:
+    ADD_FISHING: true
+    ADD_BLAST_MINING_COOLDOWN: true
+    ADD_SQL_INDEXES: true
+    ADD_MOB_HEALTHBARS: true
+    DROP_SQL_PARTY_NAMES: true
+    DROP_SPOUT: true
+    ADD_ALCHEMY: true
+    FIX_SPELLING_NETHERITE_SALVAGE: true
+    FIX_SPELLING_NETHERITE_REPAIR: true
+    FIX_NETHERITE_SALVAGE_QUANTITIES: true
+    ADD_UUIDS: false
+    SQL_CHARSET_UTF8MB4: false

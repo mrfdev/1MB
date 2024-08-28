@@ -1,0 +1,10 @@
+ConfigPatchVersion: 2
+Repairables:
+    TRIDENT:
+        MinimumLevel: 0
+        XpMultiplier: 0.25
+        ItemType: OTHER
+        ItemMaterialCategory: OTHER
+        RepairMaterial: prismarine_crystals
+        MinimumQuantity: 48
+        MaximumDurability: 250

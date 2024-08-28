@@ -1,0 +1,69 @@
+ConfigPatchVersion: 2
+Sounds:
+    MasterVolume: 0.2
+    GLASS:
+        Enable: true
+        Volume: 1.0
+        Pitch: 1.0
+    ANVIL:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.3
+    FIZZ:
+        Enable: true
+        Volume: 0.5
+    LEVEL_UP:
+        Enable: true
+        Volume: 0.75
+        Pitch: 0.5
+    ITEM_BREAK:
+        Enable: true
+        Volume: 1.0
+        Pitch: 1.0
+    POP:
+        Enable: true
+        Volume: 0.2
+    CHIMAERA_WING:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.6
+    ROLL_ACTIVATED:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.7
+    SKILL_UNLOCKED:
+        Enable: true
+        Volume: 1.0
+        Pitch: 1.4
+    DEFLECT_ARROWS:
+        Enable: true
+        Volume: 1.0
+        Pitch: 2.0
+    TOOL_READY:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.4
+    ABILITY_ACTIVATED_GENERIC:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.1
+    ABILITY_ACTIVATED_BERSERK:
+        Enable: true
+        Volume: 0.5
+        Pitch: 1.7
+    TIRED:
+        Enable: true
+        Volume: 1.0
+        Pitch: 1.7
+    BLEED:
+        Enable: true
+        Volume: 2.0
+        Pitch: 2.0
+    ITEM_CONSUMED:
+        Enable: true
+        Volume: 1.0
+        Pitch: 1.0
+    CRIPPLE:
+        Enable: true
+        Volume: 1.0
+        Pitch: 0.5

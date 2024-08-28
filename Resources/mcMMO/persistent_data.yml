@@ -1,0 +1,20 @@
+ConfigPatchVersion: 2
+Persistent_Data:
+    Mobs:
+        Flags:
+            MOB_SPAWNER_MOB:
+                Saved_To_Disk: false
+            EGG_MOB:
+                Saved_To_Disk: false
+            NETHER_PORTAL_MOB:
+                Saved_To_Disk: false
+            COTW_SUMMONED_MOB:
+                Saved_To_Disk: true
+            PLAYER_BRED_MOB:
+                Saved_To_Disk: false
+            EXPLOITED_ENDERMEN:
+                Saved_To_Disk: false
+            PLAYER_TAMED_MOB:
+                Saved_To_Disk: false
+mcMMO_Region_System:
+    Enabled: true

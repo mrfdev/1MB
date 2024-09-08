@@ -51,78 +51,156 @@ sources:
 blocks:
   chest:
     autoProtect: private
+    autoProtectPermission: true
   trapped_chest:
     autoProtect: private
+    autoProtectPermission: true
   furnace:
     autoProtect: private
+    autoProtectPermission: true
   blast_furnace:
     autoProtect: private
+    autoProtectPermission: true
   smoker:
     autoProtect: private
+    autoProtectPermission: true
   dispenser:
     autoProtect: private
+    autoProtectPermission: true
   dropper:
     autoProtect: private
+    autoProtectPermission: true
   barrel:
     autoProtect: private
+    autoProtectPermission: true
   brewing_stand:
     autoProtect: private
+    autoProtectPermission: true
   composter:
     autoProtect: private
+    autoProtectPermission: true
   beacon:
     autoProtect: private
+    autoProtectPermission: true
   jukebox:
     autoProtect: private
+    autoProtectPermission: true
   note_block:
     autoProtect: private
+    autoProtectPermission: true
   lectern:
     autoProtect: private
+    autoProtectPermission: true
   chiseled_bookshelf:
     autoProtect: private
+    autoProtectPermission: true
   hopper:
     autoProtect: private
+    autoProtectPermission: true
   decorated_pot:
     autoProtect: private
+    autoProtectPermission: true
   crafter:
     autoProtect: private
+    autoProtectPermission: true
   '#shulker_boxes':
     autoProtect: private
+    autoProtectPermission: true
   '#anvil':
     autoProtect: private
+    autoProtectPermission: true
   '#cauldrons':
     autoProtect: private
+    autoProtectPermission: true
   ender_chest:
     autoProtect: public
+    autoProtectPermission: true
   '#standing_signs':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#wall_signs':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#all_hanging_signs':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#doors':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#trapdoors':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#fence_gates':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
   '#banners':
-    autoProtect: false
+    autoProtect: private
+    autoProtectPermission: true
+  enchanting_table:
+    autoProtect: private
+    autoProtectPermission: true
+  loom:
+    autoProtect: private
+    autoProtectPermission: true
+  cartography_table:
+    autoProtect: private
+    autoProtectPermission: true
+  fletching_table:
+    autoProtect: private
+    autoProtectPermission: true
+  grindstone:
+    autoProtect: private
+    autoProtectPermission: true
+  smithing_table:
+    autoProtect: private
+    autoProtectPermission: true
+  stonecutter:
+    autoProtect: private
+    autoProtectPermission: true
+  bell:
+    autoProtect: private
+    autoProtectPermission: true
+  campfire:
+    autoProtect: private
+    autoProtectPermission: true
+  soul_campfire:
+    autoProtect: private
+    autoProtectPermission: true
+  bee_nest:
+    autoProtect: private
+    autoProtectPermission: true
+  beehive:
+    autoProtect: private
+    autoProtectPermission: true
 entities:
   armor_stand:
     autoProtect: private
+    autoProtectPermission: true
   item_frame:
     autoProtect: private
+    autoProtectPermission: true
   glow_item_frame:
     autoProtect: private
+    autoProtectPermission: true
   painting:
     autoProtect: private
+    autoProtectPermission: true
   leash_knot:
     autoProtect: private
+    autoProtectPermission: true
   chest_boat:
     autoProtect: private
+    autoProtectPermission: true
   chest_minecart:
     autoProtect: private
+    autoProtectPermission: true
   furnace_minecart:
     autoProtect: private
+    autoProtectPermission: true
   hopper_minecart:
     autoProtect: private
+    autoProtectPermission: true
+doors:
+  open-iron: true
+  open-double: true
+  close-after: 3

@@ -1,0 +1,5823 @@
+Fish:
+  Bronze:
+    '1':
+      Name: '&6&lTuna'
+      AllBiomes: true
+      Biomes: OCEAN, PLAINS, JUNGLE, RIVER, ICE_SPIKES, BADLANDS, STONE_SHORE, MOUNTAINS
+      Description: Tuna? Who doesn't love tuna?
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&6&lPiranha'
+      AllBiomes: true
+      Biomes: FOREST, JUNGLE, OCEAN, RIVER, MUSHROOM_FIELDS
+      Description: Ouch! Watch out, it bites!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&6&lKoi'
+      AllBiomes: true
+      Biomes: SAVANNA, RIVER, JUNGLE, SNOWY_BEACH, SNOWY_MOUNTAINS
+      Description: Want to make a pond for this one?
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&6&lBass'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, RIVER, ICE_SPIKES, DESERT
+      Description: Someone turn that bass up!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&6&lRandom Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: Quite random isn't it?
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&6&lBasic Fish'
+      AllBiomes: true
+      Biomes: JUNGLE, DESERT, PLAINS, FOREST
+      Description: Just a basic fish.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&6&lBubbly Fish'
+      AllBiomes: true
+      Biomes: JUNGLE, DESERT, PLAINS, FOREST
+      Description: Blub blub :)
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&6&lAtlantic Cod'
+      AllBiomes: true
+      Biomes: DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, OCEAN
+      Description: These fish can live for up to 25 years! Assuming you don't catch
+        them!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&6&lShrimp'
+      AllBiomes: true
+      Biomes: RIVER, OCEAN, BIRCH_FOREST, DARK_FOREST
+      Description: Anyway, like I was sayin', shrimp is the fruit of the sea!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&6&lChaos Fish'
+      AllBiomes: true
+      Biomes: BADLANDS, SAVANNA
+      Description: Very aggressive, with little to no regard for itself or other fish.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&6&lAngelfish'
+      AllBiomes: true
+      Biomes: GIANT_SPRUCE_TAIGA, GIANT_TREE_TAIGA, SNOWY_MOUNTAINS
+      Description: A tropical fish with big flashy fins.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&6&lCatfish'
+      AllBiomes: true
+      Biomes: ICE_SPIKES, SWAMP, OCEAN, DEEP_OCEAN, JUNGLE, RIVER, BIRCH_FOREST
+      Description: An uncommon fish found in streams.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&6&lPike'
+      AllBiomes: true
+      Biomes: THE_END, END_BARRENS, END_HIGHLANDS, END_MIDLANDS, ERODED_BADLANDS
+      Description: A freshwater fish that's difficult to catch!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&6&lNuptuna'
+      AllBiomes: true
+      Biomes: PLAINS, STONE_SHORE, SWAMP, LUKEWARM_OCEAN, FROZEN_RIVER, FLOWER_FOREST
+      Description: The Nuptuna! lives in the ocean. Seeing one is good luck!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&6&lRed Mullet'
+      AllBiomes: true
+      Biomes: FOREST
+      Description: Long ago these were kept as pets.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '16':
+      Name: '&6&lSardine'
+      AllBiomes: true
+      Biomes: SHATTERED_SAVANNA, SMALL_END_ISLANDS, SNOWY_TUNDRA
+      Description: A common ocean fish.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '17':
+      Name: '&6&lBream'
+      AllBiomes: true
+      Biomes: PLAINS, TALL_BIRCH_HILLS, ICE_SPIKES, WARM_OCEAN
+      Description: A fairy common river fish that becomes active at night.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '18':
+      Name: '&6&lSunfish'
+      AllBiomes: true
+      Biomes: RIVER
+      Description: A very common river fish.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '19':
+      Name: '&6&lSquid'
+      AllBiomes: true
+      Biomes: RIVER
+      Description: A deep sea creature that can grow to enormous size.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '20':
+      Name: '&6&lBlackfin Tuna'
+      AllBiomes: true
+      Biomes: MOUNTAINS, DARK_FOREST_HILLS, DEEP_FROZEN_OCEAN, GRAVELLY_MOUNTAINS,
+        RIVER
+      Description: A medium sized fish with a slight yellow tint.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '21':
+      Name: '&6&lGlacierfish'
+      AllBiomes: true
+      Biomes: ICE_SPIKES, RIVER, COLD_OCEAN
+      Description: Builds a nest on the underside of glaciers.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '22':
+      Name: '&6&lSlimejack'
+      AllBiomes: true
+      Biomes: MUSHROOM_FIELD_SHORE, STONE_SHORE, DARK_FOREST_HILLS, FOREST
+      Description: He's coated in a very thick layer of slime.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '23':
+      Name: '&6&lLingcod'
+      AllBiomes: true
+      Biomes: MODIFIED_JUNGLE, JUNGLE, DESERT, WOODED_HILLS, TAIGA_MOUNTAINS, DEEP_OCEAN
+      Description: A fearsome predator that will eat almost anything.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '24':
+      Name: '&6&lSturgeon'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: An ancient bottom-feeder with a dwindling population.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '25':
+      Name: '&6&lStonefish'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: A bizarre fish that's shaped like a brick.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '26':
+      Name: '&6&lHerring'
+      AllBiomes: true
+      Biomes: OCEAN, DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, WARM_OCEAN, COLD_OCEAN
+      Description: A common ocean fish.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '27':
+      Name: '&6&lPerch'
+      AllBiomes: true
+      Biomes: COLD_OCEAN, DEEP_COLD_OCEAN
+      Description: A freshwater fish of the winter.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '28':
+      Name: '&6&lIce Pip'
+      AllBiomes: true
+      Biomes: ICE_SPIKES
+      Description: A rare fish that thrives in extremely cold climates.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '29':
+      Name: '&6&lHalibut'
+      AllBiomes: true
+      Biomes: GRAVELLY_MOUNTAINS
+      Description: A common fish that is very flat.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '30':
+      Name: '&6&lMud Shark'
+      AllBiomes: true
+      Biomes: GIANT_SPRUCE_TAIGA_HILLS, COLD_OCEAN, RIVER, OCEAN
+      Description: A very common type of shark.
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '31':
+      Name: '&6&lGreengill'
+      AllBiomes: true
+      Biomes: FOREST, DARK_FOREST, SWAMP, BEACH
+      Description: These small fries are everywhere!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '32':
+      Name: '&6&lOrdon Catfish'
+      AllBiomes: true
+      Biomes: DARK_FOREST_HILLS, DARK_FOREST, FOREST, WOODED_MOUNTAINS
+      Description: Be sure to release it after!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '33':
+      Name: '&6&lSeabass'
+      AllBiomes: true
+      Biomes: OCEAN, RIVER, DEEP_OCEAN, WARM_OCEAN, COLD_OCEAN, JUNGLE, SAVANNA
+      Description: A fish that travels the sea far and wide!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '34':
+      Name: '&6&lTrogdor the Hydrogenator'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: Watch out, You might get wet!
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '35':
+      Name: '&9🐟 &6&lBronze Pointy Fish'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_1_3% Bronze
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: COD
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+  Silver:
+    '1':
+      Name: '&f&lEel'
+      AllBiomes: true
+      Biomes: JUNGLE, RIVER
+      Description: Absolutely shocking.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&f&lManta Ray'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, RIVER, BADLANDS
+      Description: It's ray! No that's a fish.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&f&lWhite Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: I think this one is white?
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&f&lMackerel'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, RIVER, SWAMP
+      Description: Sardines anyone?
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&f&lCity Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: No go back go back
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&f&lNemo Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
+      Description: My fin is not too small!
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&f&lDory Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
+      Description: I'm sorry, what was suppose to go here?
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&f&lMarlin Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN
+      Description: Have you seen Nemo?
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&f&lDamselfish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, FROZEN_OCEAN, LUKEWARM_OCEAN, MUSHROOM_FIELD_SHORE
+      Description: A brightly coloured marine fish.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&f&lFrost Minnow'
+      AllBiomes: true
+      Biomes: SNOWY_BEACH, SNOWY_MOUNTAINS, SNOWY_TAIGA, SNOWY_TAIGA_HILLS, SNOWY_TAIGA_MOUNTAINS,
+        SNOWY_TUNDRA, FROZEN_RIVER
+      Description: A tiny fish that likes to hide in frozen rivers
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&f&lHemopiranha'
+      AllBiomes: true
+      Biomes: FROZEN_RIVER, SNOWY_TAIGA_MOUNTAINS, TAIGA, GIANT_SPRUCE_TAIGA
+      Description: A fish with a thirst for blood.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&f&lNeon Tetra'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: A tropical, freshwater fish that enjoys murky streams.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&f&lRed Snapper'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: A popular fish with a nice red colour.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&f&lOctopus'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, LUKEWARM_OCEAN, COLD_OCEAN,
+        OCEAN
+      Description: A mysterious and intelligent creature.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&f&lTiger Trout'
+      AllBiomes: true
+      Biomes: SHATTERED_SAVANNA_PLATEAU, WARM_OCEAN, SNOWY_MOUNTAINS, ICE_SPIKES
+      Description: A rare hybrid trout that cannot bear offspring of its own.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '16':
+      Name: '&f&lMidnight Squid'
+      AllBiomes: true
+      Biomes: RIVER, OCEAN, DEEP_OCEAN, JUNGLE, PLAINS, DESERT, BADLANDS
+      Description: A strange and mysterious denizen of the ocean's twilight depths.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '17':
+      Name: '&f&lPrismite'
+      AllBiomes: true
+      Biomes: BADLANDS_PLATEAU, BEACH, DEEP_OCEAN, SAVANNA_PLATEAU
+      Description: A fish that appears almost pearlescent in the sunlight.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '18':
+      Name: '&f&lBlue Jellyfish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: A sentient blob of jello, blue in colour.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '19':
+      Name: '&f&lRed Jellyfish'
+      AllBiomes: true
+      Biomes: ICE_SPIKES, BADLANDS, SMALL_END_ISLANDS, ERODED_BADLANDS, END_MIDLANDS
+      Description: A sentient blob of jello, red in colour.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '20':
+      Name: '&f&lPink Jellyfish'
+      AllBiomes: true
+      Biomes: MODIFIED_WOODED_BADLANDS_PLATEAU, SNOWY_BEACH, SWAMP, RIVER
+      Description: A sentient blob of jello, pink in colour.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '21':
+      Name: '&f&lHoneyfin'
+      AllBiomes: true
+      Biomes: WOODED_MOUNTAINS, MOUNTAINS, DARK_FOREST, BADLANDS, DESERT
+      Description: It's golden hue looks like it was dipped in honey.
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '22':
+      Name: '&9🐟 &f&lSilver Pointy Fish'
+      AllBiomes: true
+      Biomes: WOODED_MOUNTAINS, MOUNTAINS, DARK_FOREST, BADLANDS, DESERT
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 1
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_2_4% Silver
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: SALMON
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+  Gold:
+    '1':
+      Name: '&e&lShark'
+      AllBiomes: true
+      Biomes: OCEAN, DEEP_OCEAN
+      Description: JAWS!
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&e&lAngler Fish'
+      AllBiomes: true
+      Biomes: OCEAN, DEEP_OCEAN, JUNGLE, RIVER
+      Description: Glows in the dark! Spooky!
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&e&lViper Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, DESERT, SAVANNA
+      Description: RUN!
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&e&lTiger Fish'
+      AllBiomes: true
+      Biomes: PLAINS, DESERT
+      Description: What about a lion?
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&e&lDinomite Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: Rawr
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&e&lE-Boy Fish'
+      AllBiomes: true
+      Biomes: FOREST, PLAINS, RIVER
+      Description: Have you seen my padlock necklace?
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&e&lWeeb Fish'
+      AllBiomes: true
+      Biomes: BADLANDS, TAIGA, BEACH, SNOWY_BEACH, SWAMP
+      Description: なにですか？
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&e&lEbonkoi'
+      AllBiomes: true
+      Biomes: MUSHROOM_FIELDS, END_MIDLANDS, SNOWY_TUNDRA, DESERT_HILLS
+      Description: A dark-coloured koi that resides deep underground.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&e&lFlarefin Koi'
+      AllBiomes: true
+      Biomes: BIRCH_FOREST, TAIGA_MOUNTAINS, JUNGLE
+      Description: A bright boi with lovely flame-point fins!
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&e&lMudcrab'
+      AllBiomes: true
+      Biomes: BADLANDS, SWAMP, BIRCH_FOREST_HILLS
+      Description: Tough and territorial, large groups can be dangerous.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&e&lColossal Catfish'
+      AllBiomes: true
+      Biomes: SWAMP
+      Description: Lives in the swamp. Sensitive to earthquakes.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&e&lMooranha'
+      AllBiomes: true
+      Biomes: SWAMP, RIVER
+      Description: A brutal piranha dubbed the swampland cow killer.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&e&lBashful Angler'
+      AllBiomes: true
+      Biomes: SHATTERED_SAVANNA_PLATEAU, GIANT_SPRUCE_TAIGA_HILLS, DEEP_WARM_OCEAN
+      Description: A cowardly fish that hates attention.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&e&lFairy Fish'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: So pretty it could be mistaken for a fairy.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&e&lLava Eel'
+      AllBiomes: true
+      Biomes: DESERT_LAKES
+      Description: It can somehow survive in pools of sun boiling desert lakes.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '16':
+      Name: '&e&lSir Reginald'
+      AllBiomes: true
+      Biomes: FROZEN_OCEAN, FROZEN_RIVER
+      Description: The fish that thinks it's a polar bear.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '17':
+      Name: '&e&lScreaming Goat Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
+        OCEAN
+      Description: Some say if you eat this, you can hear its screams.
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#orange}https://www.youtube.com/watch?v=SIaFtAKnqBU
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '18':
+      Name: '&9🐠 &e&lGold Pointy Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
+        OCEAN
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_3_6% Gold
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: TROPICAL_FISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+  Diamond:
+    '1':
+      Name: '&b&lPyro Fishy'
+      AllBiomes: true
+      Biomes: SAVANNA, DESERT
+      Description: Hot to the touch! Careful!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&b&lAltair'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: Assassins creed much?
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&b&lPurple Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE
+      Description: This fish loves purple!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&b&lNep Fish'
+      AllBiomes: true
+      Biomes: PLAINS, FOREST, OCEAN, ICE_SPIKES
+      Description: Nep Nep
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&b&lNeeko Fish'
+      AllBiomes: true
+      Biomes: PLAINS, FOREST, OCEAN, ICE_SPIKES
+      Description: Neeko is best decision
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&b&lPrincess Fish'
+      AllBiomes: true
+      Biomes: LUKEWARM_OCEAN, GRAVELLY_MOUNTAINS, END_BARRENS, FOREST, TAIGA_MOUNTAINS
+      Description: The royal heir to the watery throne.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&b&lAncient Fish'
+      AllBiomes: true
+      Biomes: WOODED_HILLS, DESERT_LAKES, SNOWY_TUNDRA, FROZEN_RIVER
+      Description: The fish was once thought extinct.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&b&lGrand Swordfish'
+      AllBiomes: true
+      Biomes: GIANT_TREE_TAIGA_HILLS, DESERT_LAKES, MODIFIED_BADLANDS_PLATEAU
+      Description: Lives in the ocean. Very large, most often found in open water.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&b&lGreat Fairy Fish'
+      AllBiomes: true
+      Biomes: MOUNTAIN_EDGE, SWAMP_HILLS, GIANT_SPRUCE_TAIGA
+      Description: Large ocean dwelling fish that is rarely encountered by humans.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&b&lSavage Shark'
+      AllBiomes: true
+      Biomes: PLAINS
+      Description: A marine meanie that eats other fish!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&b&lGhostfish'
+      AllBiomes: true
+      Biomes: STONE_SHORE, WOODED_HILLS, WARM_OCEAN
+      Description: A pale, blind fish found in underground lakes.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&b&lVoid Salmon'
+      AllBiomes: true
+      Biomes: MOUNTAIN_EDGE, GIANT_SPRUCE_TAIGA, SNOWY_TAIGA_MOUNTAINS, STONE_SHORE,
+        TAIGA_HILLS
+      Description: A salmon, twisted by void energy.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&b&lTiny Kitten'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN
+      Description: Rarest & tiniest fish. Be careful they’re fragile.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&b&lHow''s this new Orca Whale'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
+        OCEAN
+      Description: Its favorite is the Screaming Goat fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&9🐡 &b&lDiamond Pointy Fish'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
+        OCEAN
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_4_7% Diamond
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: true
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+  Platinum:
+    '1':
+      Name: '&c&lMan o'' War'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, RIVER, SMALL_END_ISLANDS, MOUNTAINS
+      Description: It's a man, of, war.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&c&lRainbow Trout'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, PLAINS, BADLANDS, DESERT
+      Description: It's a bird! No it's a rainbow!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&c&lRouge Fish'
+      AllBiomes: true
+      Biomes: SUNFLOWER_PLAINS
+      Description: Actual bot.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&c&lSkylar Fish'
+      AllBiomes: true
+      Biomes: OCEAN, JUNGLE, BIRCH_FOREST, SAVANNA
+      Description: The sky glows blue with this fish!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&c&lBerry Fishy'
+      AllBiomes: true
+      Biomes: JUNGLE, TAIGA, RIVER, FOREST, BEACH
+      Description: Delicious like my propel water
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&c&lTanya the Evil'
+      AllBiomes: true
+      Biomes: OCEAN, DESERT
+      Description: Ah...Kami....I'll Slice you into tiny pieces and feed you to the
+        pigs!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&c&lTohka Fish'
+      AllBiomes: true
+      Biomes: OCEAN, DESERT
+      Description: Name, huh? I have... no such thing.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&c&lGalaxy Rasbora'
+      AllBiomes: true
+      Biomes: MUSHROOM_FIELDS, END_MIDLANDS, TAIGA_HILLS, MODIFIED_JUNGLE_EDGE
+      Description: One Starry Boi
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&c&lUnicorn Fish'
+      AllBiomes: true
+      Biomes: OCEAN, WOODED_HILLS, WOODED_BADLANDS_PLATEAU, DARK_FOREST, DEEP_WARM_OCEAN
+      Description: A horn on a fish? What?
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&c&lThe Yeehaw'
+      AllBiomes: true
+      Biomes: TAIGA, ERODED_BADLANDS, BIRCH_FOREST, MODIFIED_GRAVELLY_MOUNTAINS
+      Description: Nice catch, partner.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&c&lStrawberry Tiger Barb'
+      AllBiomes: true
+      Biomes: FROZEN_OCEAN, GIANT_SPRUCE_TAIGA, BADLANDS_PLATEAU
+      Description: An exotic fish with bright strawberry like colours.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&c&lIridescent Shark'
+      AllBiomes: true
+      Biomes: JUNGLE_HILLS, RIVER, JUNGLE, PLAINS, SNOWY_TUNDRA
+      Description: A small shark with a dark aura.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&c&lColossal Squid'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN
+      Description: A squid, that's size dwarfs everything else in the ocean!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&c&lDevils Hole Pupfish'
+      AllBiomes: true
+      Biomes: RIVER, JUNGLE, BADLANDS, DESERT
+      Description: A fish so rare that humans rarely ever see this beauty.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&c&lGreat White Shark'
+      AllBiomes: true
+      Biomes: OCEAN, DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, WARM_OCEAN, COLD_OCEAN
+      Description: What a catch! An uncommon but deadly fish!
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '16':
+      Name: '&c&lDeath Manta'
+      AllBiomes: true
+      Biomes: DESERT_LAKES
+      Description: A beautiful monster that lives in the depths of boiling deserts.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '17':
+      Name: '&c&lKiwi Fish'
+      AllBiomes: true
+      Biomes: GIANT_SPRUCE_TAIGA, WARM_OCEAN, DEEP_WARM_OCEAN
+      Description: A very sweet fish with beady little eyes.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '18':
+      Name: '&c&lGlazula'
+      AllBiomes: true
+      Biomes: BADLANDS
+      Description: My Depths Flourished with Water... Until the fire nation attacked.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '19':
+      Name: '&c&lAriel, the Mermaid'
+      AllBiomes: true
+      Biomes: DEEP_OCEAN, DEEP_COLD_OCEAN, DEEP_WARM_OCEAN, COLD_OCEAN, WARM_OCEAN,
+        OCEAN
+      Description: Often seen swimming with a crab and a flounder.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '20':
+      Name: '&c&lSiren'
+      AllBiomes: true
+      Biomes: OCEAN, SWAMP
+      Description: An enchanting mermaid that lures lonely sailors.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '21':
+      Name: '&c&lTidal Fish'
+      AllBiomes: true
+      Biomes: SWAMP, JUNGLE
+      Description: Meows for some reason
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special Tidal fish!
+      - cmi tfly PLAYER +2000
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '22':
+      Name: '&9🐡 &c&lPlatinum Pointy Fish'
+      AllBiomes: true
+      Biomes: SWAMP
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_5_9% Platinum
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '23':
+      Name: '&c&lFlorange Fish'
+      AllBiomes: true
+      Biomes: BADLANDS, DEEP_OCEAN
+      Description: Smells like salt water and oranges?
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - welcomes add PLAYER 6
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a Floris fish??!?! &3(&a+6 /points&3
+        received)&r
+      - cmi give PLAYER orange_dye 2 n &6Cooked_Florange_Fish
+      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '24':
+      Name: '&c&lHot Paprikaatje Fish'
+      AllBiomes: true
+      Biomes: GIANT_SPRUCE_TAIGA, WARM_OCEAN
+      Description: Eat this and get all spicy
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - welcomes add PLAYER 3
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a special spicy fish??!?! &3(&a+3
+        /points&3 received)&r
+      - cmi give PLAYER red_dye 2 n &6Cooked_Spicy_Fish
+      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
+      - cmi feed PLAYER -s
+      - cmi burn PLAYER 8
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '25':
+      Name: '&c&lCitebafla Fish'
+      AllBiomes: true
+      Biomes: SUNFLOWER_PLAINS, DESERT
+      Description: ALFABETIC FISH
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - welcomes add PLAYER 3
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a special a to z citebafla fish??!?!
+        &3(&a+3 /points&3 received)&r
+      - cmi give PLAYER brown_dye 2 n &6Cooked_Citebafla_Fish
+      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '26':
+      Name: '&c&lEnderDip Fish'
+      AllBiomes: true
+      Biomes: JUNGLE, TAIGA
+      Description: Epic Dipper of Ender
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - welcomes add PLAYER 3
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a special ender fish??!?! &3(&a+3
+        /points&3 received)&r
+      - cmi give PLAYER yellow_dye 2 n &6Cooked_EnderDip_Fish
+      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
+      - cmi feed PLAYER -s
+      - cmi warp end PLAYER
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '27':
+      Name: '&c&lJaCkper Fish'
+      AllBiomes: true
+      Biomes: SWAMP, JUNGLE
+      Description: Land of origin MEXICO! So spicy it gives a little bit of God Mode when eaten
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special JaCkperByte fish!
+      - cmi tgod PLAYER +300
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '28':
+      Name: '&c&lPixel Starfish'
+      AllBiomes: true
+      Biomes: SWAMP, JUNGLE
+      Description: Land of origin Pixelasia! So cozy it turns the ground into flowers when eaten
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special NikkiPixel fish!
+      - mcperks Florist PLAYER
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '29':
+      Name: '&c&lVubbo Fish'
+      AllBiomes: true
+      Biomes: SWAMP, JUNGLE
+      Description: Swims in crystal rich water, so it gives you quartz when eaten
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special Vubbo fish!
+      - cmi give PLAYER nether_quartz_ore
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '30':
+      Name: '&c&lLazy Fish'
+      AllBiomes: true
+      Biomes: SWAMP, JUNGLE
+      Description: Floats in still water and slows you down when eaten
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special yakirarage fish!
+      - cmi effect PLAYER slow 60 5
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '31':
+      Name: '&9🎣 &c&lEPIC Pointy Fish'
+      AllBiomes: false
+      Biomes: CHERRY_GROVE
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_7_11% EPIC
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+  Mythical:
+    '1':
+      Name: '&5&lAyanami Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 1st Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '2':
+      Name: '&5&lShimakaze Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 2nd Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '3':
+      Name: '&5&lKurumi Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 3rd Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '4':
+      Name: '&5&lZero Two Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 4th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '5':
+      Name: '&5&lNatsumi Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 5th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '6':
+      Name: '&5&lShinoa Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 6th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '7':
+      Name: '&5&lInori Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 7th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '8':
+      Name: '&5&lHibiki Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 8th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '9':
+      Name: '&5&lXayah Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 9th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '10':
+      Name: '&5&lRyuko Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 10th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '11':
+      Name: '&5&lAmaterasu Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 11th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '12':
+      Name: '&5&lIchigo Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 12th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '13':
+      Name: '&5&lKotori Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 13th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '14':
+      Name: '&5&lNami Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 14th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l You ate this fish and it fed you fully!
+      - cmi feed PLAYER -s
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '15':
+      Name: '&5&lSpecial Mythical 1MoreBlock Fish'
+      AllBiomes: true
+      Biomes: OCEAN
+      Description: The 15th Mythical Fish.
+      DataValue: 3
+      Glowing: true
+      EatingCommands:
+      - cmi msg PLAYER !{#Cerulean>} 1MB Fish »{#Lochmara<}{#Feijoa}&l Only through /trade with mrfloris, this exchanges for a netherite block!
+      CustomModelData:
+        Use: false
+        Number: 1
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '16':
+      Name: '&9🦈 &c&lMythical Pointy Fish'
+      AllBiomes: false
+      Biomes: MANGROVE_SWAMP
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_7_10% Mythical
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: true
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '17':
+      Name: '&9🍥 &c&lBonus Pointy Fish'
+      AllBiomes: false
+      Biomes: DEEP_DARK
+      Description: '&cAttention! &eSpecial fish. Eat it for /points'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _pointyfishes PLAYER %cmi_random_8_12% Bonus
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: true
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: true
+        SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''

@@ -1,0 +1,55 @@
+#==========================================================================
+#
+#  This is the default bait.yml file
+#  I would suggest editing this if you want a more unique experience.
+# 
+#==========================================================================
+
+#How it will look in the lore.
+#If you change this after letting players apply bait, it may cause issues if you have dynamic or lore that changes. 
+#This is ALWAYS stored as the last lore line. 
+BaitLoreFormat: '&b%bait% &7has &3%uses% &7uses left.'
+
+Baits:
+
+  #This can be anything, but this will be used to spawn it in. i.e /fish givebait example_bait <player> <amount>
+  example_bait:
+    #If this bait should be enabled
+    enabled: false
+    
+    #Everything to do with the actual item
+    item:
+      name: '&aExample Bait'
+      material: IRON_NUGGET
+      model_data: 0
+      glowing: false
+      lore:
+      - '&7Use this &aExample Bait &7to catch'
+      - '&7new types of fish!'
+      - ''
+      - '&7This bait has &a%uses%&7 uses.'
+      - ''
+      - '&7Drag and drop onto your fishing rod to use.'
+   
+    #How many uses this bait has
+    uses: 50
+
+    #Everything to do with the bait being in the shop.
+    shop:
+      #If the item should appear in the shop.
+      isShopItem: false
+      
+      #The permission to buy this bait. Leave empty for no permission.
+      permission: ''
+
+      #The cost to purchase this bait in money.
+      cost: 10000
+      
+      #If buying should require a minimum fishing level
+      minimumFishingLevel: 10
+
+    #What fish should this bait allow you to catch?
+    #The format here is the '<TIER:FISH_NUMBER>
+    #You can find the fish number by looking in the fish.yml
+    fish:
+    - 'BRONZE:4'

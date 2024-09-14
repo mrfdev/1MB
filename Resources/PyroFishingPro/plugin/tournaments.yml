@@ -1,0 +1,212 @@
+#==========================================================================
+#
+#  This is the tournaments.yml file
+#
+#  This is used to configure tournaments. If you have previously used
+#  the plugin - the old configuration for tournaments in the config.yml
+#  will no longer work as of this update. 
+#
+#  Each section will be commented to help you configure this feature.
+# 
+#==========================================================================
+
+#General settings for tournaments in general.
+#For individual configuration - see the specific section.
+Settings:
+
+  #If players can only take part in a specific region during a tournament.
+  #Leave blank for no region. (Requires WorldGuard)
+  RegionSpecific: ''
+
+  #Configuration to do with automatic broadcast messages with progress.
+  #You can configure the actual broadcast message in the 'Message' section below.
+  ProgressBroadcasts:
+  
+    #Should these broadcasts be enabled?
+    Enabled: true
+  
+    #How often in seconds should the broadcasts be sent?
+    Duration: 900
+
+  #If the tournament should use the boss-bar to tell players how long is
+  #left for the tournament.
+  BossBar:
+    #If this should be enabled or not.
+    enabled: true
+    
+    #If the boss bar should only be shown after catching a fish
+    show-after-catch: false
+    
+    #What the boss bar should say
+    # %time% = simple time placeholder - i.e. 1h, 15m, 21s
+    # %type% = tournament name as set in the messages.yml
+    text: '/fisht info: &b&l%type% Tournament: &f%time% left.'
+  
+  #Everything to do with rewards for winning or taking part in tournaments
+  Rewards:
+    
+    #First place prize
+    First:
+    - 'cmi kit fishtournamentfirstplace %player%'
+
+    #Second place prize
+    Second:
+    - 'cmi kit fishtournamentsecondplace %player%'
+
+    #Third place prize
+    Third:
+    - 'cmi kit fishtournamentthirdplace %player%'
+
+    #Participation reward for taking part in a tournament
+    #Everyone will get this - including the winners.
+    Participation:
+    - 'cmi kit fishtournamentparticipated %player%'
+    
+    #Will make it so winners of the tournament do not get participation rewards.
+    ExcludeWinnersFromParticipation: true
+    
+  #When the tournament ends, should fireworks be sent out at the players position
+  #depending if they are the winner or not?
+  EndingFireworks: true
+
+#==========================================================================  
+  
+#Settings to do with auto-starting tournaments.  
+AutoStart:  
+  
+  #If tournament auto-starting should be enabled or not.
+  Enabled: false
+  
+  #If the tournament should only start if there is a minimum
+  #number of players online.
+  MinimumPlayers: 4
+  
+  #How long should the tournaments last normally in seconds?
+  Duration: 600
+  
+  #What tournament types should be in the auto-start rotation pool?
+  Types:
+  - 'LONGEST_LENGTH'
+  - 'SHORTEST_LENGTH'
+  - 'CRAB_KILLING'
+  - 'RANDOM_CATCH'
+  - 'MOST_CATCH'
+  - 'BASE_ENTROPY_EARNED'
+  - 'LONGEST_CAST'
+  - 'MOST_BIOMES'
+  
+  #When and how often tournaments should start.
+  Schedule:
+  
+    #Having this above '0' will start a tournament every x seconds.
+    #Must be '0' if you intend to use specific times.
+    FlatDuration: 3600
+  
+    #Putting times here will force the plugin to start a tournament 
+    #at these specific times. 'FlatDuration' must be 0 for this to work.
+    #
+    #This is related to the server time - varies by region - check with your
+    #host to find this out.
+    SpecificTimes:
+      - '00:00'
+      - '04:00'
+      - '08:00'
+      - '12:00'
+      - '16:00'
+      - '20:00'
+  
+#==========================================================================
+
+#These are the individual settings for tournaments.
+TournamentSettings:
+
+  RANDOM_CATCH:
+  
+    #What fish can this tournament pick from for players to try and catch.
+    #This tournament type requires players to catch as many of this fish as possible.
+    #So it is suggested to keep these as easy fishes to catch.
+    fish:
+    - 'BRONZE:1'
+    - 'BRONZE:2'
+    - 'BRONZE:3'
+    - 'BRONZE:4'
+    - 'BRONZE:5'
+    - 'BRONZE:6'
+    - 'SILVER:1'
+    - 'SILVER:2'
+    - 'SILVER:3'
+    
+  LONGEST_LENGTH:
+
+    #What value should be used to generate lengths?
+    #HIGHLY advised to keep this very small and close to 1.
+    value: 1.01
+    
+  SHORTEST_LENGTH:
+
+    #What value should be used to generate lengths?
+    #HIGHLY advised to keep this very small and close to 1.
+    value: 1.01
+
+#==========================================================================
+
+#Various tournament messages that are used throughout the events.
+#Use the %center% tag to center text on screen.
+Messages:
+
+  #The message that will be used when a tournament starts
+  Start:
+      - ''
+      - '%center%&6&lTournaments: %name%'
+      - ''
+      - '%center%&7Tournament Type: &b%name%'
+      - '%center%&7Tournament Duration: &e%time%'
+      - '%center%&7Catch a fish to take part! %info%'
+      - ''
+      - ''
+
+  #The message that will be used when a tournament finishes
+  Stop:
+    - ''  
+    - '%center%&6&lTournament Winners:'
+    - ''
+    - '%center%&6&l1st Place: &b%first% &7with &b%firstscore%'
+    - '%center%&f&l2nd Place: &b%second% &7with &b%secondscore%'
+    - '%center% &3&l3rd Place: &b%third% &7with &b%thirdscore%'
+    - ''
+    - ''
+
+  #The message that will be broadcasted periodically while a tournament is on-going.
+  #Note: Some placeholders such as '%info%' and '%invalidscore%' do not add anything. 
+  #      They are there to tell the plugin to replace information on a specific line.
+  #      I would suggest to leave them in.
+  InProgress:
+    - ''  
+    - '%center%&6&lTournament Status %type%'
+    - ''
+    - '%center%&7Time Left: &3%time%&7.'
+    - ''
+    - '%center%&6&l1st Place: &b%first% &7with &b%firstscore%'
+    - '%center%&f&l2nd Place: &b%second% &7with &b%secondscore%'
+    - '%center%&3&l3rd Place: &b%third% &7with &b%thirdscore%'
+    - ''
+    - '%center%&7To take part. Simply catch a fish! %info%'
+    - '%center%&7You are currently in position &3%pos% with &3%value%'
+    - '%center%&7You have not taken part in this tournament! %invalidscore%'
+    - ''
+    - ''
+    
+  #Misc messages that the plugin uses in specific tournaments
+  Misc:
+    
+    #This is used to tell the user what fish to catch during the 'RANDOM_CATCH' tournament
+    RandomCatchFish: '%center%&7Fish to Catch: &b%fish%'
+    CrabKilling: '%center%&7Kill as many crabs as you can!'
+    LongestCast: '%center%&7Fish from as far as possible!'
+    BaseEntropyEarned: '%center%&7Earn as much entropy as possible!'
+    LongestLength: '%center%&7Catch a fish to take part!'
+    ShortestLength: '%center%&7Catch a fish to take part!'
+    MostCatch: '%center%&7Catch a fish to take part!'
+    MostBiomes: '%center%&7Fish in the most biomes!'
+
+#==========================================================================

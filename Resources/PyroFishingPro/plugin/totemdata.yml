@@ -1,0 +1,255 @@
+f3d2c8fe-0789-4fdc-9164-ec193bd11cbb:
+  OwnerUUID: f3d2c8fe-0789-4fdc-9164-ec193bd11cbb
+  Location:
+    World: general
+    x: 7380.0
+    y: 66.0
+    z: 6018.0
+  PassiveSlots: 10
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - FISH_SCHOOL
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 1
+    ACTIVE_TIME: 9
+    COOLDOWN_REDUCTION: 1
+ae0d1ed3-3a3e-48f8-8a01-92ca8eaddafc:
+  OwnerUUID: ae0d1ed3-3a3e-48f8-8a01-92ca8eaddafc
+  Location:
+    World: general
+    x: -13253.0
+    y: 69.0
+    z: 17701.0
+  PassiveSlots: 1
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 0
+    ACTIVE_TIME: 0
+    COOLDOWN_REDUCTION: 0
+1c70f726-9c43-4a55-9d59-f64a73c4d9b5:
+  OwnerUUID: 1c70f726-9c43-4a55-9d59-f64a73c4d9b5
+  Location:
+    World: general
+    x: -6408.0
+    y: 65.0
+    z: 1232.0
+  PassiveSlots: 1
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 0
+    ACTIVE_TIME: 1
+    COOLDOWN_REDUCTION: 0
+5321de5d-fa33-4427-b605-b56fb8d1dd70:
+  OwnerUUID: 5321de5d-fa33-4427-b605-b56fb8d1dd70
+  Location:
+    World: wild
+    x: 4466.0
+    y: 65.0
+    z: -3798.0
+  PassiveSlots: 1
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 1
+    ACTIVE_TIME: 1
+    COOLDOWN_REDUCTION: 0
+013f2305-77b8-4a29-a999-7097a606a59c:
+  OwnerUUID: 013f2305-77b8-4a29-a999-7097a606a59c
+  Location:
+    World: wild
+    x: 2512.0
+    y: 65.0
+    z: 2290.0
+  PassiveSlots: 1
+  ActivePassives: []
+  Upgrade:
+    RANGE: 0
+    ACTIVE_TIME: 1
+    COOLDOWN_REDUCTION: 0
+26ac30aa-7641-4a3c-a98a-81def3a5c5fa:
+  OwnerUUID: 26ac30aa-7641-4a3c-a98a-81def3a5c5fa
+  Location:
+    World: general
+    x: 18038.0
+    y: 65.0
+    z: 19561.0
+  PassiveSlots: 5
+  ActivePassives:
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 2
+    ACTIVE_TIME: 2
+    COOLDOWN_REDUCTION: 1
+55b34f0f-4c84-4aec-acd4-ca5351c4e792:
+  OwnerUUID: 55b34f0f-4c84-4aec-acd4-ca5351c4e792
+  Location:
+    World: general
+    x: -14168.0
+    y: 65.0
+    z: -14787.0
+  PassiveSlots: 5
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - FISH_SCHOOL
+  Upgrade:
+    RANGE: 1
+    ACTIVE_TIME: 1
+    COOLDOWN_REDUCTION: 1
+de5b43ec-7253-4490-a26b-1e45eeb747a7:
+  OwnerUUID: de5b43ec-7253-4490-a26b-1e45eeb747a7
+  Location:
+    World: wild
+    x: 3561.0
+    y: 65.0
+    z: 3343.0
+  PassiveSlots: 18
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - ENTROPY_HORDER
+  - TREASURE_HUNTER
+  - FISH_SCHOOL
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 20
+    COOLDOWN_REDUCTION: 0
+12b491ad-6eca-43fc-941f-0c9b9988e81b:
+  OwnerUUID: 12b491ad-6eca-43fc-941f-0c9b9988e81b
+  Location:
+    World: general
+    x: -13854.0
+    y: 65.0
+    z: -17626.0
+  PassiveSlots: 15
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - TREASURE_HUNTER
+  - FISH_SCHOOL
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 12
+    COOLDOWN_REDUCTION: 3
+0e3a512d-32fe-4bc6-90e3-01d09ff4bc25:
+  OwnerUUID: 0e3a512d-32fe-4bc6-90e3-01d09ff4bc25
+  Location:
+    World: general
+    x: -13854.0
+    y: 65.0
+    z: -17629.0
+  PassiveSlots: 11
+  ActivePassives:
+  - TREASURE_HUNTER
+  - FISH_SCHOOL
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 10
+    COOLDOWN_REDUCTION: 3
+a80bc626-7789-405a-a33d-e47771547129:
+  OwnerUUID: a80bc626-7789-405a-a33d-e47771547129
+  Location:
+    World: general
+    x: -13854.0
+    y: 65.0
+    z: -17632.0
+  PassiveSlots: 15
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - TREASURE_HUNTER
+  - FISH_SCHOOL
+  - LITTLE_CRITTERS
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 11
+    COOLDOWN_REDUCTION: 7
+7ca6a5be-63fd-46d1-bee0-3bd16ac8bb0f:
+  OwnerUUID: 7ca6a5be-63fd-46d1-bee0-3bd16ac8bb0f
+  Location:
+    World: general
+    x: -13851.0
+    y: 65.0
+    z: -17629.0
+  PassiveSlots: 10
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - TREASURE_HUNTER
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 9
+    COOLDOWN_REDUCTION: 5
+5d060319-edb7-4045-924c-10200ca76548:
+  OwnerUUID: 5d060319-edb7-4045-924c-10200ca76548
+  Location:
+    World: wild
+    x: 2232.0
+    y: 65.0
+    z: 1705.0
+  PassiveSlots: 1
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 0
+    ACTIVE_TIME: 0
+    COOLDOWN_REDUCTION: 0
+5b411087-058b-492e-9669-1b95fcb1ac17:
+  OwnerUUID: 5b411087-058b-492e-9669-1b95fcb1ac17
+  Location:
+    World: wild
+    x: -8951.0
+    y: 65.0
+    z: 2890.0
+  PassiveSlots: 1
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 0
+    ACTIVE_TIME: 0
+    COOLDOWN_REDUCTION: 0
+ff2b54a7-30f7-4a0b-bef3-d256f7ae410e:
+  OwnerUUID: ff2b54a7-30f7-4a0b-bef3-d256f7ae410e
+  Location:
+    World: general
+    x: -13851.0
+    y: 65.0
+    z: -17632.0
+  PassiveSlots: 8
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  - MYTHICAL_WATERS
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 5
+    COOLDOWN_REDUCTION: 1
+8d825ff1-26cc-46ca-9e95-83bf0df566af:
+  OwnerUUID: 8d825ff1-26cc-46ca-9e95-83bf0df566af
+  Location:
+    World: wild
+    x: 4139.0
+    y: 66.0
+    z: 9189.0
+  PassiveSlots: 3
+  ActivePassives:
+  - EXPERIENCED_FISHERMAN
+  Upgrade:
+    RANGE: 1
+    ACTIVE_TIME: 1
+    COOLDOWN_REDUCTION: 0
+03527e17-7814-40d5-8b19-d490c59d5c2f:
+  OwnerUUID: 03527e17-7814-40d5-8b19-d490c59d5c2f
+  Location:
+    World: general
+    x: -13851.0
+    y: 65.0
+    z: -17626.0
+  PassiveSlots: 9
+  ActivePassives: []
+  Upgrade:
+    RANGE: 5
+    ACTIVE_TIME: 2
+    COOLDOWN_REDUCTION: 2

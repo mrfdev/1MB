@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Points.sh
-# @Version: 1.3.1, build 012
-# @Release: June 7th, 2023
-# @Description: Figures out UUID with most points from PyroWelcomes 2.5.0 (1.18.1)
+# @Version: 1.3.2, build 013
+# @Release: September 26th, 2024
+# @Description: Figures out UUID with most points from PyroWelcomesPro 0.4.2 (1.21.1)
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-Points.sh
@@ -78,4 +78,4 @@ echo "Top points: $top_points, by player: $top_player_names"
 echo "More information: /cmi info $top_player (API: $top_player_api)"
 echo "${_apiURL}${top_player_api}"
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

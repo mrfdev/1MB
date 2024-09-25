@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.1.1, build 009 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
-# @Release: August 26th, 2024
+# @Version: 0.1.2, build 010 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Release: September 26th, 2024
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -100,4 +100,4 @@ else
     exit 1
 fi
 
-#EOF Copyright (c) 2011-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

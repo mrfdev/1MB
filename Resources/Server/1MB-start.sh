@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.15.2, build 062 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
-# @Release: August 13th, 2024
+# @Version: 2.15.3, build 063 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Release: September 26th, 2024
 # @Description: Helps us start and fork a Minecraft 1.21.1 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -92,4 +92,4 @@ fi
 
 _output debug "Done."
 
-#EOF Copyright (c) 2011-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

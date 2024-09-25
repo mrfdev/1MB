@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Doors.sh
-# @Version: 1.0.1, build 004
-# @Release: June 7th, 2023
+# @Version: 1.0.2, build 005
+# @Release: September 26th, 2024
 # @Description: Shell script for Trick or Treat v 2.4, count doors players have found
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -51,4 +51,4 @@ fi
 # spit out what we found
 echo "$_output"
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

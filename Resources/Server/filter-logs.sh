@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# version 0.0.2, build 003
 
 if [ "$#" -lt 2 ]; then
   echo "Usage: $0 <log_file> <username1> [<username2> ... <usernameN>]"
@@ -25,3 +26,5 @@ do
     rm "$output_file"
   fi
 done
+
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

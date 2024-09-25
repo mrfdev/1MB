@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.2.1, build 018 for Minecraft 1.20.x /logs/
-# @Release: June 26th, 2023
+# @Version: 0.2.2, build 019 for Minecraft 1.21.x /logs/
+# @Release: September 26th, 2024
 # @Description: Helps me parse /logs/ of Minecraft server scanners that should be firewalled.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -96,4 +96,4 @@ echo "Occurrences found for playername: '$find_playername': $results_counting"
 echo "Uniques found: (ip addresses)"
 cat "$results_player_ipfile"
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

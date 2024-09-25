@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.16.2, build 097
-# @Release: August 13th, 2024
+# @Version: 2.16.3, build 098
+# @Release: September 26th, 2024
 # @Description: Helps us make a Minecraft Spigot 1.21.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
-# @News: Support for < Java 17 and < Minecraft 1.17.x has been dropped.
+# @News: I am aware that Java v23 is LTS, I do not recommend using it at this point.
 
 ### CONFIGURATION
 #
@@ -172,8 +172,8 @@ function cache {
 ### CACHE LEGEND / HANDLER
 #
 # line 1 : Minecraft version (example: 1.21.1)
-# line 2 : Spigot nightly build version (example: 4196)
-# line 3 : BuildTools build version (example: 185)
+# line 2 : Spigot nightly build version (example: 4324)
+# line 3 : BuildTools build version (example: 186)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #

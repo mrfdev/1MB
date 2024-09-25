@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.2, build 071 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
-# @Release: August 13th, 2024
+# @Version: 2.18.3, build 072 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Release: September 26th, 2024
 # @Description: Helps us start a Paper (or Spigot) 1.21.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-minecraft.sh
 # @Syntax: ./1MB-minecraft.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+# @News: I am aware that Java v23 is LTS, I do not recommend using it at this point.
 
 ### CONFIGURATION
 #

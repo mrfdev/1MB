@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-mplcheck.sh
-# @Version: 1.0.1, build 003
-# @Release: June 7th, 2023
+# @Version: 1.0.2, build 004
+# @Release: September 26th, 2024
 # @Description: Helps us check for infected Minecraft plugin/server jar files.
 # @Description: Note that this is for a specific malicious type and nothing more.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -61,4 +61,4 @@ fi
 echo -e "\\nDone checking... (If the list has entries with 'Binary file matches', then you are in trouble.\\n"
 
 
-#EOF Copyright (c) 2011-2023 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

@@ -1,6 +1,6 @@
 # Handy links, sites, snippets, tips, resources..
 
-A collection of things that I keep using every once in a while and rather have collected in one spot.
+It is a collection of things that I use occasionally and would rather have collected in one spot.
 
 ## Do you need these?
 
@@ -8,7 +8,7 @@ Not really, but if you glance over this and go 'oh that is handy', then.. yes.
 
 ## Contribute?
 
-Sure, feel free to correct urls, submit suggestions, etc.
+Sure, please make sure to correct urls, submit suggestions, etc.
 
 ## Handy stuff
 
@@ -16,10 +16,10 @@ Sure, feel free to correct urls, submit suggestions, etc.
 - [YAML Formatter](https://yamline.com/formatter/)
 
 - [sqlite cli](https://www.sqlite.org/cli.html)
-- [sqlite online](https://extendsclass.com/sqlite-browser.html)
+- [sqlite browser](https://sqlitebrowser.org/dl/)
 
 - [Spigot YML Wiki: rate-limit](https://www.spigotmc.org/wiki/rate-limit/)
-- [BuildTools Wiki:](https://www.spigotmc.org/wiki/buildtools/#latest)
+- [BuildTools Wiki](https://www.spigotmc.org/wiki/buildtools/#latest)
 
 - [tldp: comparisons](http://tldp.org/LDP/abs/html/comparison-ops.html)
 - [tldr helper](https://tldr.ostera.io)

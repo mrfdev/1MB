@@ -13,8 +13,10 @@ Sure, feel free to correct urls, submit suggestions, etc.
 ## Handy stuff
 
 - [YAML Validator](http://www.yamllint.com/)
+- [YAML Formatter](https://yamline.com/formatter/)
 
 - [sqlite cli](https://www.sqlite.org/cli.html)
+- [sqlite online](https://extendsclass.com/sqlite-browser.html)
 
 - [Spigot YML Wiki: rate-limit](https://www.spigotmc.org/wiki/rate-limit/)
 - [BuildTools Wiki:](https://www.spigotmc.org/wiki/buildtools/#latest)

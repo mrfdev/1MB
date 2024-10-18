@@ -79,3 +79,42 @@ In the nether you can also mine nether quartz ore
 you can silk touch deepslate ore, and place it later, and then mine it without silk touch .. 
 if you want instant /mine stats 'exp' then dont use silk touch, or make sure to place the ores down later
 
+
+
+
+
+
+`/mine menu`
+
+## How to get started?
+Using a **fortune** pickaxe just mine any deepslate ore and you will gain pyro mining xp, zeta and items.
+
+### Fluxes
+Fluxes can be found from mining ores
+- basic fluxes will drop from overworld ores.
+- blazed fluxes will drop from nether ores.
+
+Fluxes can be sold to `/mine shop` for `/balance` money.
+
+### Gemstones
+Gemstones drop from each ore apart from Gold and Iron ore. You can either sell them using `/mine shop` or right click them to identify their quality which can either increase or decrease the overall sell price of the gemstone.
+
+Gemstones have a 5 different qualities to them which can increase or decrease the price you can sell them for. To check their quality right click the gemstone in your hand and it will show you its quality. The qualities that are possible are listed below.
+
+- Ruined
+- Badly damaged
+- Damaged
+- Worn
+- Pristine
+
+### Refinery
+A refinery is needed to process `Mysterious Dust`. To create a refinery place a Dropper facing upwards and a fence post ontop of it.
+
+Place the `Mysterious Dust` inside the refinery and punch the fence post to process the `Mysterious Dust` into the following components.
+
+- Rune dust (used to spawn rune guardians)
+- Orcalite (used to spawn oracles)
+- Ancient relic (used to upgrade sealed artifacts)
+- Shattered requium orb (can be crafted into requium orbs)
+
+Alternatively, you can place all 8 pieces of a vessel in it and punch the fence post to craft a vessel!

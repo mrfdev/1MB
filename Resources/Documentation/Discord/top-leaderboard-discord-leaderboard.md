@@ -1,0 +1,1 @@
+When you chat on our discord server in almost any channel, you get exp for that.  With enough exp gained you level up. Which gives you some fun role names. You can view the Discord Leaderboard here: https://mee6.xyz/en/floris

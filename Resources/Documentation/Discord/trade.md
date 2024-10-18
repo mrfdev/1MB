@@ -1,0 +1,1 @@
+Tired of losing items to other players in our shop? This is for you! Simply use the command /trade {player-name} to enter direct trading mode. No risk involved!

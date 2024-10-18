@@ -1,0 +1,1 @@
+https://omgboards.com/threads/afk-away-from-keyboard-information.263947/

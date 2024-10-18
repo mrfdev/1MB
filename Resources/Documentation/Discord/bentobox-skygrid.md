@@ -1,0 +1,1 @@
+Like skyblock, but every blocks is scattered around, know how to jump !

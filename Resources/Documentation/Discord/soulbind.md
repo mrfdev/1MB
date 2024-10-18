@@ -1,0 +1,1 @@
+Don't let death steal your hard-earned loot! Join our seasonal events for a chance to soulbind your gear. With soulbinding, your items will stay with you, no matter what (Restrictions may apply).

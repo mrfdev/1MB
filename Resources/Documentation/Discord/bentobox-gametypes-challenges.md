@@ -1,0 +1,1 @@
+Do certain things, like make a farm, hold x amount of ice, collect certain mobs, .. and in return you get some items. A great way to find resources you would otherwise not be able to get in certain islands.

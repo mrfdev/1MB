@@ -1,40 +1,6 @@
 Introduction announcement with some info !
 https://discord.com/channels/487398800353263616/661226825434923009/1287826757717856319
 
-But basically: mine deepslate ores to see what they sometimes drop, and you can use that in /mine
-
-# Vessels
-Custom Enchantments for pickaxes
-
-A complex system that allows players to craft and use custom enchantments on their pickaxes only. This system is used in conjunction with the new Artifacts and Fossils system. This alone will give your players 300 to 400 hours worth of content to just max their pickaxes. These come with boss fights, thralls and requiums!
-
-# pro tip
-
-If you are mining, keep an eye on the items that drop, they might be special pyro mining items. Which as per the info above, you can use to benefit your gameplay.
-
-There is official documentation, but it's very unclear if this is for version 4.5 or 5 or 3.1 .. it might be incomplete, outdated, or stuff for the future, i really can't tell. https://pyrotempus.gitbook.io/pyro-plugins/pyromining/features/vessels
-
-# Game Types
-Custom worlds are disabled
-Game types are disabled
-Earned-worlds worlds are disabled
-
-It's enabled in 
-/end
-/nether
-/general
-/wild
-
-In the nether you can also mine nether quartz ore
-
-# SILK TOUCH
-you can silk touch deepslate ore, and place it later, and then mine it without silk touch .. 
-if you want instant /mine stats 'exp' then dont use silk touch, or make sure to place the ores down later
-
-
-
-
-
 
 # How to get started?
 Using a **fortune** pickaxe just mine any deepslate ore and you will gain pyro mining xp, zeta and items. All PyroMining commands can be used via `/mine menu`
@@ -117,3 +83,25 @@ Three of these are needed in the correct order to defeat and damage the vessel b
 
 # Thralls
 Thralls are little creatures that spawn when mining certain ores. Killing these will give you anger progress and progress towards unlocking the correct requiums. There is a 2 minute cooldown between finding thralls.
+
+# pro tip
+If you are mining, keep an eye on the items that drop, they might be special pyro mining items. Which as per the info above, you can use to benefit your gameplay.
+
+There is official documentation, but it's very unclear if this is for version 4.5 or 5 or 3.1 .. it might be incomplete, outdated, or stuff for the future, i really can't tell. https://pyrotempus.gitbook.io/pyro-plugins/pyromining/features/vessels
+
+# Game Types
+Custom worlds are disabled
+Game types are disabled
+Earned-worlds worlds are disabled
+
+It's enabled in 
+/end
+/nether
+/general
+/wild
+
+In the nether you can also mine nether quartz ore
+
+# SILK TOUCH
+you can silk touch deepslate ore, and place it later, and then mine it without silk touch .. 
+if you want instant /mine stats 'exp' then dont use silk touch, or make sure to place the ores down later

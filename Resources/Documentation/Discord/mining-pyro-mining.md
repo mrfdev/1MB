@@ -24,7 +24,7 @@ Gemstones have a 5 different qualities to them which can increase or decrease th
 - Pristine
 
 # Refinery
-A refinery is needed to process `Mysterious Dust`. To create a refinery place a Dropper facing upwards and a fence post ontop of it.
+A refinery is needed to process `Mysterious Dust`.(`Mysterious Dust` is found from just mining deepslate ores.) To create a refinery place a Dropper facing upwards and a fence post ontop of it.
 
 Place the `Mysterious Dust` inside the refinery and punch the fence post to process the `Mysterious Dust` into the following components.
 

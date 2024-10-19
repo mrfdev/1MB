@@ -13,4 +13,4 @@ Repair mastery increases the repair amount. The extra amount repaired is influen
 Super repair is a passive ability. When repairing an item, it grants players a chance to repair an item with double effectiveness.
 
 # Arcane Foraging
-This passive ability allows you to repair items with a certain chance of maintaining ites enchantments. The enchants may be kept at their existing levels, deowngraded to a lower level ot lost entirely.
+This passive ability allows you to repair items with a certain chance of maintaining ites enchantments. The enchants may be kept at their existing levels, downgraded to a lower level or lost entirely.

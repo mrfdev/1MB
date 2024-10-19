@@ -1,7 +1,7 @@
 ### in game guide can be found with `/crossbows`.
 
 # How to level up?
-Corssbows is all about shooting with your crossbow. XP is gained whenever you shoot mobs with a crossbow.
+Crossbows is all about shooting with your crossbow. XP is gained whenever you shoot mobs with a crossbow.
 
 **(This is a WIP skill and more information will be added soon)**
 

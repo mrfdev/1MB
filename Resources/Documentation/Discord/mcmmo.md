@@ -1,0 +1,21 @@
+# What are mcmmo skills?
+
+You will be able to level up the follow skills:
+- [Excavation](https://discord.com/channels/487398800353263616/1296998385064214598)
+- [Fishing](https://discord.com/channels/487398800353263616/1296998427594588192)
+- [Herbalism](https://discord.com/channels/487398800353263616/1296998517000114241)
+- [Mining](https://discord.com/channels/487398800353263616/1296998624965824594)
+- [Woodcutting](https://discord.com/channels/487398800353263616/1296998673003184199)
+- [Archery](https://discord.com/channels/487398800353263616/1296998710563176469)
+- [Axes](https://discord.com/channels/487398800353263616/1296998790733107331)
+- [Crossbows](https://discord.com/channels/487398800353263616/1296998837436813383)
+- [Maces](https://discord.com/channels/487398800353263616/1296998878771544136)
+- [Swords](https://discord.com/channels/487398800353263616/1296998921347924059)
+- [Taming](https://discord.com/channels/487398800353263616/1296998985608728597)
+- [Tridents](https://discord.com/channels/487398800353263616/1296999049869922415)
+- [Unarmed](https://discord.com/channels/487398800353263616/1296999129456840804)
+- [Acrobatics](https://discord.com/channels/487398800353263616/1296999194271285258)
+- [Alchemy](https://discord.com/channels/487398800353263616/1296999299053256756)
+- [Repair](https://discord.com/channels/487398800353263616/1296999361250594847)
+- [Salvage](https://discord.com/channels/487398800353263616/1296999416133193770)
+- [Smelting](https://discord.com/channels/487398800353263616/1296999559117017109)

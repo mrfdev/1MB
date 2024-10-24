@@ -6,4 +6,4 @@ Crossbows is all about shooting with your crossbow. XP is gained whenever you sh
 **(This is a WIP skill and more information will be added soon)**
 
 # Trickshot
-Trickshot is an passive ability, you shoot your bolts at a shallow angle with a crossbow to attempt a trickshot. This will Cause the arrow to ricochet off of block and potentially hit a target. The number of potential bounces from a ricochet depend on the rank of trickshot
+Trickshot is a passive ability, you shoot your bolts at a shallow angle with a crossbow to attempt a trickshot. This will cause the arrow to ricochet off block and potentially hit a target. The number of potential bounces from a ricochet depends on the rank of trickshot.

@@ -1,7 +1,7 @@
 ### in game guide can be found with `/taming`.
 
 # How to level up?
-Taming will give players various combat bonuses when using tamed wolves. To gain XP in this skill you need to take wolves/ocelots or get into combat with your wolves.
+Taming will give players various combat bonuses when using tamed wolves. To gain XP in this skill you need to tame wolves/ocelots or get into combat with your wolves.
 
 # Call of the Wild
 Call of the wild is an active ability that will allow you to summon a wolf or an ocelot by your side. You can do this by sneaking + left clicking while holding bones or fish

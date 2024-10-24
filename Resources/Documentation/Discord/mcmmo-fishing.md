@@ -4,7 +4,7 @@
 Grab your best fishing rod cast it in the water and fish the first couple fish you catch you will see a bossbar appear that says "learning new skill" after you have learned the fishing skill it will automatically level up while you are fishing
 
 # Treasure Hunter
-This ability allows you to find treasure from fishing with a small chance of the items being enchanted. Every possible treasure for fishing has a chance to drop on any level. It depends however with the rarity of the item is how often it will drop. The higher your fishing skill is, the better your chances are to find better treasures
+This ability allows you to find treasure from fishing with a small chance of the items being enchanted. Every possible treasure from fishing has a chance to drop at any level. However, the rarity of the item determines how often it will drop. The higher your fishing skill is, the better your chances are to find better treasures
 
 # Ice Fishing
 This passive skill allows you to fish in ice lakes! Cast your fishing rod in an ice lake and the ability will create a small hole in the ice to fish in

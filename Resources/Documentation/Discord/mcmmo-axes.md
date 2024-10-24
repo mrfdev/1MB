@@ -1,7 +1,7 @@
 ### in game guide can be found with `/axes`.
 
 # How to level up?
-With the axes skill you can use your axe for much more then just deforesting! You can hack and chop away at mobs and players to gain XP, hitting mobs with the effect of knockback and inflicting deadly criticals on mobs and players. Your axe also becomes a hand help woodchipper, breaking down the enemy's armor with ease as your level increases.
+With the axes skill you can use your axe for much more then just deforesting! You can hack and chop away at mobs and players to gain XP, hitting mobs with the effect of knockback and inflicting deadly criticals on mobs and players. Your axe also becomes a hand held woodchipper, breaking down the enemy's armor with ease as your level increases.
 
 To gain XP in this skill you need to hit other mobs or players with an axe.
 

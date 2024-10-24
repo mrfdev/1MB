@@ -8,7 +8,7 @@ Only specific blocks like for example stone, deepslate and ores give you mining 
 # Super Breaker
 With a pickaxe in your hand, right click to ready your tool. Once in this state, you have about 4 seconds to make contact with mining compatible blocks, this will activate super breaker.
 
-super breaker is an ability with a cooldown tied to the mining skill. It triples your chance of extra items dropping and enabled instant break on mining materials
+super breaker is an ability with a cooldown tied to the mining skill. It triples your chance of extra items dropping and enables instant break on mining materials
 
 # Blast Mining
 We do not offer this feature.

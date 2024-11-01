@@ -35,8 +35,20 @@ The markdown.py script needs import json btw, dont forget..
 open the json file, read content, parse it.. export.
 
 
+## Worries
+
+Discord rate limits, eh i might want to batch request and add a sleep() or something. Another thing to look into, and just like with website design, can i gracefully pause when error msgs happen? 429 web service response, sleep .. repeat ??? i need to learn this too. 
+
+- Reminder: probably dont put oauth or at least don't put the bot token on github. 
+
+## TODO
+
+- Create the basics of changelog.py and markdown.py
+- Do the instally thingy for discord.py
+- Figure out the url again to the dev portal and create another bot, grab those details
+
 ## More info
 
-Version 0.0.1, build 001, November 1st, 2024
+Version 0.0.1, build 002, November 1st, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

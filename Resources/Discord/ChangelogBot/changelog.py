@@ -1,7 +1,7 @@
 # changelog.py
 # 1MoreBlock.com Discord Bot Script to fetch messages from a internal changelog channel to save results to a JSON database file.
 # We are not using discord.py but Disnake to poke the Discord API.
-# Build 005, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
+# Build 006, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
 
 # Imports
 
@@ -51,13 +51,15 @@ async def on_ready():
 			# figure out msgs elements 
 			for message in batch:
 				messages.append({
-					# key 1
-					# key 2
-					# key 3
+					"content": message.content, # content of msg fetched
+					"author": message.author.name, # author of content
+					"timestamp": message.created_at.isoformat() # timestamp of fetched content
 				})
 
 					# open file and append to json
 						# json.dump(whatever) # do i need to think about indentation?
+            with open(OUTPUT_JSON_FILENAME, "w") as file:
+                json.dump(messages, file, indent=2)
 
 					# update last.msg.id=[from batch result]
 
@@ -68,8 +70,6 @@ async def on_ready():
 		except disnake.errors.HTTPException as e:
 			print(f"rate limit hit, pausing and trying again")
 			#chatgpt this, it's too complex await asyncio.sleep(try.again.after x seconds)
-
-
 
 # we're done, spit out that we got nothing to do
 print("All messages fetched from discord and saved to {OUTPUT_JSON_FILENAME}.")

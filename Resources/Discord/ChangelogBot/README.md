@@ -53,23 +53,28 @@ brew upgrade
 python3.12 -m pip install --upgrade pip
 brew install pipx
 ```
-More macos..
+More macOS stuff..
 ```
+# create virtual environment to run as user on macOS
 python3 -m venv changelog-env
+# start it
 source changelog-env/bin/activate
+# do the magic
 pip install disnake
+# run the script
 python changelog.py
+# and we're done
 deactivate
 
 ```
 ## TODO
 
-- Create the basics of changelog.py and markdown.py
-- Do the instally thingy for discord.py
+- Create the basics of changelog.py and markdown.py (edit: done, thought about the logic)
+- Do the instally thingy for discord.py (edit: done)
 - Figure out the url again to the dev portal and create another bot, grab those details
 
 ## More info
 
-Version 0.0.3, build 004, November 2nd, 2024
+Version 0.0.5, build 005, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

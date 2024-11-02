@@ -1,7 +1,7 @@
 # changelog.py
 # 1MoreBlock.com Discord Bot Script to fetch messages from a internal changelog channel to save results to a JSON database file.
 # We are not using discord.py but Disnake to poke the Discord API.
-# Build 001, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
+# Build 002, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
 
 # Imports
 
@@ -10,7 +10,11 @@ from disnake.ext import commands  # cmd ext to create bot commands
 import json  # we want to write to json later
 import asyncio  # handy later for rate limiting and managing asynchronous tasks
 
-# Tokens
+# Constants
+
+OUTPUT_JSON_FILENAME = "changelog-msgs.json"
+
+# Discord related Tokens
 
 #discordtoken
 #channelid
@@ -41,7 +45,7 @@ async def on_ready():
 	# async sleep() for a while, seconds or tens of seconds?
 
 # we're done, spit out that we got nothing to do
-print("All messages fetched and saved.")
+print("All messages fetched from discord and saved to {OUTPUT_JSON_FILENAME}.")
 
 # since we're done, we can continue to markdown.py when ready, so let's close the bot
 await bot.close()  # poof

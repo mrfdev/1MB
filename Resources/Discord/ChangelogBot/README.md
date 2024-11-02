@@ -69,12 +69,10 @@ deactivate
 ```
 ## TODO
 
-- Create the basics of changelog.py and markdown.py (edit: done, thought about the logic)
-- Do the instally thingy for discord.py (edit: done)
 - Figure out the url again to the dev portal and create another bot, grab those details
 
 ## More info
 
-Version 0.0.6, build 006, November 2nd, 2024
+Version 0.1.0, build 007, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

@@ -75,6 +75,6 @@ deactivate
 
 ## More info
 
-Version 0.0.5, build 005, November 2nd, 2024
+Version 0.0.6, build 006, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

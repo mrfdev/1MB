@@ -1,7 +1,7 @@
 # changelog.py
 # 1MoreBlock.com Discord Bot Script to fetch messages from a internal changelog channel to save results to a JSON database file.
 # We are not using discord.py but Disnake to poke the Discord API.
-# Build 004, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
+# Build 005, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
 
 # Imports
 
@@ -36,31 +36,19 @@ async def on_ready():
 	print(f"Okay, {bot.user} reporting in..")
 
 	# init stuff, i assume i need channel id, messages from the channel, and start a loop with last id number since we're batching it up
-	channel = something[CHANNEL_ID] # <- figure out synopsis
+	channel = bot.get_channel(CHANNEL_ID) # <- figure out synopsis
 	messages = [] # <- init array for the fetched msgs
 	last_message_id = None # <- Let's start empty, append later after each batch
 
-	# loop here, probably a while loop
-	# while true, try this .. except that..
-	# dont forgeto to try and batch fetch msgs
-	# then break if we got nothing to fetch
-
-	# for loop, to go through each msg (from batch)
-	# get the batched msg, append to json array
-
-	# save results to json file, python uses write or open() as file, ill have to google again
-
-	# async sleep() for a while, seconds or tens of seconds?
-	await asyncio.sleep(5)
-
-	### temp
+	# while loop to start array and batch-fetch some msgs, parse them in for loop and store in json file, sleep between batches
     while True:
         try:
-					# bunch of stuff
+			# init batch stuff
 			batch = await (dunno this part yet)
             if not batch:
                 break # halt if we find no more msgs to batch
 
+			# figure out msgs elements 
 			for message in batch:
 				messages.append({
 					# key 1
@@ -73,13 +61,15 @@ async def on_ready():
 
 					# update last.msg.id=[from batch result]
 
-					# sleep async 5s
+			# sleep some seconds between batches
+			await asyncio.sleep(5)
 
+		# something must be wrong, probably exception error, catch it, deal with it
 		except disnake.errors.HTTPException as e:
 			print(f"rate limit hit, pausing and trying again")
-					# await asyncio.sleep(try.again.after x seconds)
+			#chatgpt this, it's too complex await asyncio.sleep(try.again.after x seconds)
 
-				# and that's it
+
 
 # we're done, spit out that we got nothing to do
 print("All messages fetched from discord and saved to {OUTPUT_JSON_FILENAME}.")

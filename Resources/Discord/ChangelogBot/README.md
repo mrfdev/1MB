@@ -53,7 +53,15 @@ brew upgrade
 python3.12 -m pip install --upgrade pip
 brew install pipx
 ```
+More macos..
+```
+python3 -m venv changelog-env
+source changelog-env/bin/activate
+pip install disnake
+python changelog.py
+deactivate
 
+```
 ## TODO
 
 - Create the basics of changelog.py and markdown.py
@@ -62,6 +70,6 @@ brew install pipx
 
 ## More info
 
-Version 0.0.2, build 003, November 1st, 2024
+Version 0.0.3, build 004, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

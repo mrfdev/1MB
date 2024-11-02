@@ -34,12 +34,25 @@ The markdown.py script needs import json btw, dont forget..
 
 open the json file, read content, parse it.. export.
 
-
 ## Worries
 
 Discord rate limits, eh i might want to batch request and add a sleep() or something. Another thing to look into, and just like with website design, can i gracefully pause when error msgs happen? 429 web service response, sleep .. repeat ??? i need to learn this too. 
 
 - Reminder: probably dont put oauth or at least don't put the bot token on github. 
+
+## Handy stuff
+```
+brew install python
+```
+on macOS python's installed, `python3 --version` will show 3.12.x or whatever, otherwise brew it!
+Also, on macOS when you brew it, it might be pip3, not pip. I always forget.. `python3.12 -m pip install --upgrade pip` might also be needed. 
+Can also try to:
+```
+brew update
+brew upgrade
+python3.12 -m pip install --upgrade pip
+brew install pipx
+```
 
 ## TODO
 
@@ -49,6 +62,6 @@ Discord rate limits, eh i might want to batch request and add a sleep() or somet
 
 ## More info
 
-Version 0.0.1, build 002, November 1st, 2024
+Version 0.0.2, build 003, November 1st, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

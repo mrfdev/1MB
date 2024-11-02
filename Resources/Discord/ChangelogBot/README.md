@@ -46,14 +46,8 @@ brew install python
 ```
 on macOS python's installed, `python3 --version` will show 3.12.x or whatever, otherwise brew it!
 Also, on macOS when you brew it, it might be pip3, not pip. I always forget.. `python3.12 -m pip install --upgrade pip` might also be needed. 
-Can also try to:
-```
-brew update
-brew upgrade
-python3.12 -m pip install --upgrade pip
-brew install pipx
-```
-More macOS stuff..
+
+Try macOS stuff..
 ```
 # create virtual environment to run as user on macOS
 python3 -m venv changelog-env
@@ -61,6 +55,8 @@ python3 -m venv changelog-env
 source changelog-env/bin/activate
 # do the magic
 pip install disnake
+# probably a little update pending usually
+python3.12 -m pip install --upgrade pip
 # macos has missing audio crap
 pip install audioop-lts
 # set the token if you havent yet
@@ -72,10 +68,10 @@ deactivate
 ```
 ## TODO
 
-- Figure out the url again to the dev portal and create another bot, grab those details
+- fix not so graceful closing of changelog.py (but it works!)
 
 ## More info
 
-Version 0.1.1, build 008, November 2nd, 2024
+Version 0.1.2, build 009, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

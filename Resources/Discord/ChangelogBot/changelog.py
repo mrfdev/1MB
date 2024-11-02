@@ -1,7 +1,7 @@
 # changelog.py
 # 1MoreBlock.com Discord Bot Script to fetch messages from a internal changelog channel to save results to a JSON database file.
 # We are not using discord.py but Disnake to poke the Discord API.
-# Build 003, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
+# Build 004, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
 
 # Imports
 
@@ -54,18 +54,19 @@ async def on_ready():
 	await asyncio.sleep(5)
 
 	### temp
-			# while True ..
-				# try:
+    while True:
+        try:
 					# bunch of stuff
-					# batch = whatever
-						# if not batch, then break
+			batch = await (dunno this part yet)
+            if not batch:
+                break # halt if we find no more msgs to batch
 
-					# for each msg in msgs:
-						# msg.append etc ...
-							# key 1
-							# key 2
-							# key 3
-					# end for something
+			for message in batch:
+				messages.append({
+					# key 1
+					# key 2
+					# key 3
+				})
 
 					# open file and append to json
 						# json.dump(whatever) # do i need to think about indentation?
@@ -74,8 +75,8 @@ async def on_ready():
 
 					# sleep async 5s
 
-				# except HTTP exception error (google this)
-					# print(f"rate limit hit, pause & try again")
+		except disnake.errors.HTTPException as e:
+			print(f"rate limit hit, pausing and trying again")
 					# await asyncio.sleep(try.again.after x seconds)
 
 				# and that's it

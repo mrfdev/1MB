@@ -1,7 +1,7 @@
 # changelog.py
 # 1MoreBlock.com Discord Bot Script to fetch messages from an internal changelog channel to save results to a JSON database file.
 # We are not using discord.py but Disnake to poke the Discord API.
-# Build 007, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
+# Build 008, https://github.com/mrfdev/1MB/tree/master/Resources/Discord/ChangelogBot
 
 # Imports
 import disnake
@@ -33,13 +33,17 @@ async def on_ready():
     # Init stuff, I assume I need channel id, messages from the channel, and start a loop with last id number since we're batching it up
     channel = bot.get_channel(CHANNEL_ID)  # Get the specified channel by ID
     messages = []  # Init array for the fetched msgs
-    last_message_id = None  # Let's start empty, append later after each batch
+    last_message = None  # Start with no last message
 
     # While loop to start array and batch-fetch some msgs, parse them in for loop and store in json file, sleep between batches
     while True:
         try:
             # Init batch fetching
-            batch = await channel.history(limit=100, before=last_message_id).flatten()
+            if last_message:
+                batch = await channel.history(after=last_message, limit=100).flatten()  # Fetch messages after the last message
+            else:
+                batch = await channel.history(limit=100).flatten()  # Fetch the initial batch of messages
+
             if not batch:
                 break  # Halt if we find no more msgs to batch
 
@@ -51,12 +55,12 @@ async def on_ready():
                     "timestamp": message.created_at.isoformat()  # Timestamp of fetched content
                 })
 
-            # Open file and append to json
+            # Open file and write to json
             with open(OUTPUT_JSON_FILENAME, "w") as file:
                 json.dump(messages, file, indent=2)
 
-            # Update last.message.id = [from batch result]
-            last_message_id = batch[-1].id
+            # Update last_message to be the last message object fetched
+            last_message = batch[-1]  # Keep the last message object
 
             # Sleep some seconds between batches
             await asyncio.sleep(5)

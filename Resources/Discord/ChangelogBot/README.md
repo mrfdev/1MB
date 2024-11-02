@@ -61,6 +61,9 @@ python3 -m venv changelog-env
 source changelog-env/bin/activate
 # do the magic
 pip install disnake
+# macos has missing audio crap
+pip install audioop-lts
+# set the token if you havent yet
 # run the script
 python changelog.py
 # and we're done
@@ -73,6 +76,6 @@ deactivate
 
 ## More info
 
-Version 0.1.0, build 007, November 2nd, 2024
+Version 0.1.1, build 008, November 2nd, 2024
 Author: Floris Fiedeldij Dop
 Contributions: Learning, so probably friends and gpt, lol

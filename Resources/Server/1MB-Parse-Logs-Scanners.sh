@@ -1,99 +1,100 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.2.3, build 020 for Minecraft 1.21.x /logs/
+# @Version: 0.1.0, build 006
 # @Release: November 23rd, 2024
-# @Description: Helps me parse /logs/ of Minecraft server scanners that should be firewalled.
+# @Description: filter logs/ directory for username(s).
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod +x 1MB-Parse-Logs-Scanners.sh, and move file to `~/serverdir/`
-# @Syntax: .1MB-Parse-Logs-Scanners.sh (playername)
+# @Install: chmod +x 1MB-Parse-Logs-Scanners.sh
+# @Syntax: ./1MB-Parse-Logs-Scanners.sh -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
-## Notes ##
-# We are all getting hit quite a bit by these rather intrusive people that scan the IPv4 ranges to find Minecraft servers and surely do fantastic things with the results for whatever reason. 
-# This little script is just a quick handy tool I use to point to the /logs/ directory's .log and .gz files, and help generate a separate .log file to hand over to abuse departments who request it.
-# Secondly, to help yourself, filter out the intrusive poking, this will pull out the IPv4 addresses they've used, sort them uniqieuly and put them in a separate .txt file. You can then review that manually, or automatically add it to your firewall rules with a crontab.
-# You do not have to have a (running) server, just the /logs/ directory. 
+# Initialize log directory and usernames array
+log_dir=""
+usernames=()
 
-## TODO ##
-# figure out what to do with the .log and .txt file if we run it again on the same username. 
-# * solve issue of false positives, limit to this type of null disconnect msg: (failed disconnects are id=<null>)
-# com.mojang.authlib.GameProfile@<random>[id=<null>,name=<playername>,properties={},legacy=false] (/<ip>:<port>) lost connection: Disconnected
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -logdir)
+      log_dir="$2"
+      shift 2
+      ;;
+    -usernames)
+      shift
+      while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+        usernames+=("$1")
+        shift
+      done
+      ;;
+    *)
+      echo "Unknown option: $1"
+      exit 1
+      ;;
+  esac
+done
 
-### CONFIGURATION
-#
-# Declarations here you can customize to your preferred setup.
-# Generally only if you actually have to. Check Wiki for details.
-#
-###
-
-# who are we looking for: (playername) that we expect to find in the log files
-# In case no ./sh playername was provided, we default to which one?
-default_playername="cuute"
-
-# what directory do we expect these files to reside in (~serverdirectory/logs/, but can be fullpath instead of ./logs/)
-# Where are the expected /logs/ files? (can be full path)
-path_logs_folder="./logs/"
-
-### INTERNAL CONFIGURATION
-#
-# Configuration variables you should probably
-# leave alone, but can change if really needed.
-#
-###
-
-# process default username, unless one is provided
-# Check if a command-line argument is provided
-if [[ $# -gt 0 ]]; then
-  find_playername=$1
-else
-  find_playername=$default_playername
+# Ensure at least one username is provided
+if [ "${#usernames[@]}" -eq 0 ]; then
+  echo "Usage: $0 -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]"
+  exit 1
 fi
 
-# what files are we outputting to? (playername.log) and (playername-iplist.txt)
-# Output: What are the filenames we're trying to store the output into?
-# .log is for the full parsed log
-# .txt is for the uniquely sorted ip list based on parsed log results
-results_player_logfile="results-$find_playername.log"
-results_player_ipfile="results-$find_playername.txt"
+# If log directory is not provided, check if current directory contains 'logs' directory
+if [ -z "$log_dir" ]; then
+  if [[ "$(basename $(pwd))" != "logs" ]]; then
+    echo "Log directory not specified and current directory is not a 'logs' directory. Exiting."
+    exit 1
+  else
+    log_dir="$(pwd)"
+  fi
+fi
 
-### FUNCTIONS AND CODE
-#
-# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
-#
-###
+# Check if the provided log directory exists
+if [ ! -d "$log_dir" ]; then
+  echo "Log directory '$log_dir' not found!"
+  exit 1
+fi
 
-# use grep on any .log files, so we dont forget about latest.log or any unpacked ones or old backups we dumped in here
-# Find occurrences of playername (case-insensitive) in any .log files where the sentence contains "id=<null>" and ends with "lost connection: Disconnected"
-results_log_files=$(find "$path_logs_folder" -type f -name "*.log" -exec grep -Ei "id=<null>.*lost connection: Disconnected$" {} \;)
-results_grep=$(echo "$results_log_files" | grep -i "$find_playername")
+# Define the date format and output directory suffix
+DATE_FORMAT="%Y-%m-%d"
+OUTPUT_DIR_SUFFIX="_logs"
+# Get the current date, ensuring compatibility with both GNU and BSD date versions
+current_date=$(date +"$DATE_FORMAT" 2>/dev/null || gdate +"$DATE_FORMAT")
 
-# Do the same for .gz (gzipped log files), using zgrep
-results_gz_files=$(find "$path_logs_folder" -type f -name "*.gz" -exec zgrep -Ei "id=<null>.*lost connection: Disconnected$" {} \;)
-results_zgrep=$(echo "$results_gz_files" | grep -i "$find_playername")
+# Create an output directory named with the current date
+output_dir="${current_date}${OUTPUT_DIR_SUFFIX}"
+mkdir -p "$output_dir"
 
-# echo results to output files .log and .txt for playername
-echo "$results_grep" > "$results_player_logfile"
-echo "$results_zgrep" >> "$results_player_logfile"
+# Loop through each username and perform search
+for username in "${usernames[@]}"
+do
+  # Define the output file name for the current username
+  output_file="${output_dir}/${username}.log"
+  touch "$output_file"
 
-# Pull the IP addresses from the new .log file, and sort to uniques
-results_ipv4_list=$(grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" "$results_player_logfile" | sort -u)
-# And save the results to the .txt file (handy for crontab parsing later)
-echo "$results_ipv4_list" > "$results_player_ipfile"
+  # Search through all .log files and .tar.gz archives in the log directory
+  for log_file in "$log_dir"/*.log "$log_dir"/*.tar.gz
+  do
+    if [[ -f "$log_file" ]]; then
+      if [[ "$log_file" == *.tar.gz ]]; then
+        # Use zgrep for .tar.gz files, including filename and line number
+        zgrep -Hin "$username" "$log_file" | sed 's|$log_dir/||' | sed 's|$log_dir/||' >> "$output_file"
+      else
+        # Use grep for .log files, including filename and line number
+        grep -Hin "$username" "$log_file" >> "$output_file"
+      fi
+    fi
+  done
 
-
-### output
-
-# count up the totals of occurrences found in the grep and zgrep files
-results_counting=$(echo "$results_grep" | wc -l)
-results_counting=$((results_counting + $(echo "$results_zgrep" | wc -l)))
-
-# print to screen the amount øf times we found occurrences of playername in the log files history
-echo "Occurrences found for playername: '$find_playername': $results_counting"
-
-# print list of sorted ips, handy for manual processing
-echo "Uniques found: (ip addresses)"
-cat "$results_player_ipfile"
+  # Check if the output file has content
+  if [ -s "$output_file" ]; then
+    echo "Results for '$username' written to '$output_file'"
+  else
+    echo "No results found for '$username' in any log files"
+    rm "$output_file"
+  fi
+done
 
 #EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

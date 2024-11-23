@@ -1,28 +1,98 @@
 #!/usr/bin/env bash
-# version 0.0.2, build 003
 
-if [ "$#" -lt 2 ]; then
-  echo "Usage: $0 <log_file> <username1> [<username2> ... <usernameN>]"
+# @Filename: filter-logs.sh
+# @Version: 0.0.4, build 005
+# @Release: November 23rd, 2024
+# @Description: filter logs file for username(s).
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: @mrfloris on https://discord.gg/floris
+# @Install: chmod +x filter-logs.sh
+# @Syntax: ./filter-logs.sh -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+
+# Initialize log directory and usernames array
+log_dir=""
+usernames=()
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -logdir)
+      log_dir="$2"
+      shift 2
+      ;;
+    -usernames)
+      shift
+      while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+        usernames+=("$1")
+        shift
+      done
+      ;;
+    *)
+      echo "Unknown option: $1"
+      exit 1
+      ;;
+  esac
+done
+
+# Ensure at least one username is provided
+if [ "${#usernames[@]}" -eq 0 ]; then
+  echo "Usage: $0 -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]"
   exit 1
 fi
 
-log_file=$1
-if [ ! -f "$log_file" ]; then
-  echo "Log file '$log_file' not found!"
+# If log directory is not provided, check if current directory contains 'logs' directory
+if [ -z "$log_dir" ]; then
+  if [[ "$(basename $(pwd))" != "logs" ]]; then
+    echo "Log directory not specified and current directory is not a 'logs' directory. Exiting."
+    exit 1
+  else
+    log_dir="$(pwd)"
+  fi
+fi
+
+# Check if the provided log directory exists
+if [ ! -d "$log_dir" ]; then
+  echo "Log directory '$log_dir' not found!"
   exit 1
 fi
 
-current_date=$(date +"%Y-%m-%d")
+# Define the date format and output directory suffix
+DATE_FORMAT="%Y-%m-%d"
+OUTPUT_DIR_SUFFIX="_logs"
+# Get the current date, ensuring compatibility with both GNU and BSD date versions
+current_date=$(date +"$DATE_FORMAT" 2>/dev/null || gdate +"$DATE_FORMAT")
 
-shift
-for username in "$@"
+# Create an output directory named with the current date
+output_dir="${current_date}${OUTPUT_DIR_SUFFIX}"
+mkdir -p "$output_dir"
+
+# Loop through each username and perform search
+for username in "${usernames[@]}"
 do
-  output_file="${current_date}-${username}.log"
-  grep "$username" "$log_file" > "$output_file"
-  if [ $? -eq 0 ]; then
+  # Define the output file name for the current username
+  output_file="${output_dir}/${username}.log"
+  touch "$output_file"
+
+  # Search through all .log files and .tar.gz archives in the log directory
+  for log_file in "$log_dir"/*.log "$log_dir"/*.tar.gz
+  do
+    if [[ -f "$log_file" ]]; then
+      if [[ "$log_file" == *.tar.gz ]]; then
+        # Use zgrep for .tar.gz files, including filename and line number
+        zgrep -Hn "$username" "$log_file" | sed 's|$log_dir/||' | sed 's|$log_dir/||' >> "$output_file"
+      else
+        # Use grep for .log files, including filename and line number
+        grep -Hn "$username" "$log_file" >> "$output_file"
+      fi
+    fi
+  done
+
+  # Check if the output file has content
+  if [ -s "$output_file" ]; then
     echo "Results for '$username' written to '$output_file'"
   else
-    echo "No results found for '$username' in '$log_file'"
+    echo "No results found for '$username' in any log files"
     rm "$output_file"
   fi
 done

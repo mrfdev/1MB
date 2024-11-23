@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.1.0, build 006
+# @Version: 0.1.1, build 007
 # @Release: November 23rd, 2024
-# @Description: filter logs/ directory for username(s).
+# @Description: filter logs/ directory for username(s). (-ips will make a separate file)
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-Parse-Logs-Scanners.sh
-# @Syntax: ./1MB-Parse-Logs-Scanners.sh -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]
+# @Syntax: ./1MB-Parse-Logs-Scanners.sh -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>] -ips
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
-# Initialize log directory and usernames array
+# Initialize log directory, usernames array, and flag for IP extraction
 log_dir=""
 usernames=()
+extract_ips=false
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -28,6 +29,10 @@ while [[ $# -gt 0 ]]; do
         shift
       done
       ;;
+    -ips)
+      extract_ips=true
+      shift
+      ;;
     *)
       echo "Unknown option: $1"
       exit 1
@@ -37,7 +42,7 @@ done
 
 # Ensure at least one username is provided
 if [ "${#usernames[@]}" -eq 0 ]; then
-  echo "Usage: $0 -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>]"
+  echo "Usage: $0 -logdir <log_directory> -usernames <username1> [<username2> ... <usernameN>] [-ips]"
   exit 1
 fi
 
@@ -87,6 +92,14 @@ do
       fi
     fi
   done
+
+  # If -ips flag is set, extract unique IP addresses
+  if $extract_ips; then
+    ip_output_file="${output_dir}/${username}_ips.log"
+    grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' "$output_file" | sort -u > "$ip_output_file"
+    echo "Unique IPs for '$username' written to '$ip_output_file'"
+  fi
+
 
   # Check if the output file has content
   if [ -s "$output_file" ]; then

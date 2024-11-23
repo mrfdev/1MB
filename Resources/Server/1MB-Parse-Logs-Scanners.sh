@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.2.2, build 019 for Minecraft 1.21.x /logs/
-# @Release: September 26th, 2024
+# @Version: 0.2.3, build 020 for Minecraft 1.21.x /logs/
+# @Release: November 23rd, 2024
 # @Description: Helps me parse /logs/ of Minecraft server scanners that should be firewalled.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod a+x 1MB-Parse-Logs-Scanners.sh, and move file to `~/serverdir/`
+# @Install: chmod +x 1MB-Parse-Logs-Scanners.sh, and move file to `~/serverdir/`
 # @Syntax: .1MB-Parse-Logs-Scanners.sh (playername)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 

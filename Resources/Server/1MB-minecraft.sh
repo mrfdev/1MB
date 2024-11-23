@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.3, build 072 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
-# @Release: September 26th, 2024
-# @Description: Helps us start a Paper (or Spigot) 1.21.1 server.
+# @Version: 2.18.4, build 073 for Minecraft 1.21.3 (Java 23.0.1, 64bit)
+# @Release: November 23rd, 2024
+# @Description: Helps us start a Paper (or Spigot) 1.21.3 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod a+x 1MB-minecraft.sh
+# @Install: chmod +x 1MB-minecraft.sh
 # @Syntax: ./1MB-minecraft.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
-# @News: I am aware that Java v23 is LTS, I do not recommend using it at this point.
 
 ### CONFIGURATION
 #
@@ -18,22 +17,20 @@
 #
 ###
 
-_minecraftVersion="1.21.1"
+_minecraftVersion="1.21.3"
 # Which version are we running?
 
-_minJavaVersion=22
+_minJavaVersion=23
+# use 23 for java 23.0.1 which can be used with Minecraft 1.21.3
 # use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1
-# use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.4
-# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20+
-# use 18.0, 19.0 for java 18.0.2.1+ which can be used with Minecraft 1.19+
-# use 17.0 for java 17.0.5 which can be used for Minecraft 1.17.x
+# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.6
 
 _javaMemory="-Xms4G -Xmx4G"
 # "" = uses the default
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.21.1 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.21.3 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -54,9 +51,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # Override auto engine jar detection; only use this if you have issues
 _engine="paper"
 # spigot until paper jar is out
-# "" assumes auto detection for <engine>-1.21.1.jar 
-# "spigot" assumes to look for spigot-1.21.1.jar
-# "paper" assumes to look for paper-1.21.1.jar
+# "" assumes auto detection for <engine>-1.21.3.jar 
+# "spigot" assumes to look for spigot-1.21.3.jar
+# "paper" assumes to look for paper-1.21.3.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -68,7 +65,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.21.1 server-gui
+# leave "" if you want the 1.21.3 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION
@@ -81,12 +78,8 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-22.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
 
 _debug=true
 # Debug mode off or on? Default: false (true means it spits out progress)

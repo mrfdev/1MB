@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.16.5, build 100
-# @Release: October 22nd, 2024
+# @Version: 2.16.6, build 101
+# @Release: November 23rd, 2024
 # @Description: Helps us make a Minecraft Spigot 1.21.3 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod a+x 1MB-BuildTools.sh
+# @Install: chmod +x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 # @News: I am aware that Java v23 is LTS, I do not recommend using it at this point.
@@ -21,12 +21,10 @@
 _minecraftVersion="1.21.3"
 # Which version are we running?
 
-_minJavaVersion=22
-# use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1 and 1.21.2/3
-# use 21 for java 21.0.2 or 22.0.1 which can be used with Minecraft 1.19.x and 1.20.6
-# use 20.0 for java 20.0.2 which can be used with Minecraft 1.19.x and 1.20+
-# use 18.0, 19.0 for java 18.0.2.1+ which can be used with Minecraft 1.19+
-# use 17.0 for java 17.0.5 which can be used for Minecraft 1.17.x
+_minJavaVersion=23
+# use 23 for java 23.0.1 which can be used with Minecraft 1.21.3
+# use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1
+# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.6
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -56,12 +54,8 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-22.0.2.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-20.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-19.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-17.0.5.jdk/Contents/Home/bin/java"
 
 _dirScript="" #leave empty for auto discovery
 # example: _dirScript="/Users/floris/MinecraftServer/_development"

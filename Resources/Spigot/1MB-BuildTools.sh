@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.16.6, build 101
-# @Release: November 23rd, 2024
-# @Description: Helps us make a Minecraft Spigot 1.21.3 server.
+# @Version: 2.16.7, build 102
+# @Release: December 2nd, 2024
+# @Description: Helps us make a Minecraft Spigot 1.21.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-BuildTools.sh
@@ -18,7 +18,7 @@
 #
 ###
 
-_minecraftVersion="1.21.3"
+_minecraftVersion="1.21.4"
 # Which version are we running?
 
 _minJavaVersion=23

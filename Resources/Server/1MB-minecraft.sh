@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.4, build 073 for Minecraft 1.21.3 (Java 23.0.1, 64bit)
-# @Release: November 23rd, 2024
-# @Description: Helps us start a Paper (or Spigot) 1.21.3 server.
+# @Version: 2.18.5, build 074 for Minecraft 1.21.4 (Java 23.0.1, 64bit)
+# @Release: December 2nd, 2024
+# @Description: Helps us start a Paper (or Spigot) 1.21.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.21.3"
+_minecraftVersion="1.21.4"
 # Which version are we running?
 
 _minJavaVersion=23
-# use 23 for java 23.0.1 which can be used with Minecraft 1.21.3
+# use 23 for java 23.0.1 which can be used with Minecraft 1.21.3 and 1.21.4
 # use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1
 # use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.6
 
@@ -30,7 +30,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (16GB host for dedicated Paper 1.21.3 server with custom flags, using 10GB ram, etc.)
+# Example: (16GB host for dedicated Paper 1.21.4 server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -51,9 +51,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # Override auto engine jar detection; only use this if you have issues
 _engine="paper"
 # spigot until paper jar is out
-# "" assumes auto detection for <engine>-1.21.3.jar 
-# "spigot" assumes to look for spigot-1.21.3.jar
-# "paper" assumes to look for paper-1.21.3.jar
+# "" assumes auto detection for <engine>-1.21.4.jar 
+# "spigot" assumes to look for spigot-1.21.4.jar
+# "paper" assumes to look for paper-1.21.4.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -65,7 +65,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.21.3 server-gui
+# leave "" if you want the 1.21.4 server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION

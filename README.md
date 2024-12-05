@@ -29,4 +29,4 @@ Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
 
-This is 1MB Github version 2.13.1 build 086, December 2nd, 2024.
+This is 1MB Github version 2.13.2 build 087, December 5th, 2024.

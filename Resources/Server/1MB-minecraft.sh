@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.5, build 074 for Minecraft 1.21.4 (Java 23.0.1, 64bit)
-# @Release: December 2nd, 2024
+# @Version: 2.18.6, build 075 for Minecraft 1.21.4 (Java 23.0.1, 64bit)
+# @Release: December 12th, 2024
 # @Description: Helps us start a Paper (or Spigot) 1.21.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -59,7 +59,10 @@ _engineParams=""
 # Leave empty for every day running, only edit when you need this!
 # --forceUpgrade (One time converts world chunks to new engine version) (Note: Do not use Paper's forceUpgrade, it will ruin your worlds)
 # --eraseCache (Removes caches. Cached data is used to store the skylight, blocklight and biomes, alongside other stuff) (Note: Do not use Paper's eraseCache, it will ruin your worlds)
-# --recreateRegionFiles (trigger world optimization similar to forceUpgrade, but will also rewrite all the chunks independentlyof whether they have been upgraded) (change region-file-compression first)
+# --recreateRegionFiles: Triggers world optimization similar to --forceUpgrade, 
+# but also rewrites all chunks regardless of whether they have already been upgraded.
+# Note: Be sure to adjust the region-file-compression setting before using this option.
+
 
 # By changing the setting below to true you are indicating your agreement to Mojang's EULA 
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula

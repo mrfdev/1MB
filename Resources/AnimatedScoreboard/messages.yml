@@ -1,0 +1,38 @@
+prefix: '&7[&cASB&7] '
+nopermission: '%prefix&cYou don''t have the right permission!'
+toggle:
+  'on': '%prefix&aYou toggled the scoreboard &2on&a!'
+  'off': '%prefix&aYou toggled the scoreboard &coff&a!'
+  on_other_target: '%prefix&aYour scoreboard was toggled &2on&a by %sender%!'
+  on_other_sender: '%prefix&aYou toggle the scoreboard &2on&a for %target%!'
+  off_other_target: '%prefix&aYour scoreboard was toggled &coff&a by %sender%!'
+  off_other_sender: '%prefix&aYou toggle the scoreboard &coff&a for %target%!'
+reload:
+  start: '%prefix&aReloading of the plugin started!'
+  completed: '%prefix&aReload completed! Done in %MS%ms!'
+switch:
+  error: '%prefix&cPlease provide a valid scoreboard!'
+  success: '%prefix&aSwitched to scoreboard &2%scoreboard%&a!'
+  nopermission: '%prefix&cYou don''t have the right permission to switch to %scoreboard%!'
+  world: '%prefix&cYou cannot activate this scoreboard in this world!'
+  already_activated: '%prefix&cYou already have this scoreboard active!'
+  already_active_other: '%prefix&c%target% already has %scoreboard% active!'
+  success_other: '%prefix&aSuccessfully switched the scoreboard of %target% to %scoreboard%!'
+  success_by_other: '%prefix&aYour scoreboard was switched by %sender%!'
+  world_other: '%prefix&c%target% cannot activate %scoreboard% in their world!'
+  nopermission_other: '%prefix&c%target% doesn''t have the permission to view %scoreboard%!'
+trigger:
+  insert: '%prefix&cFailed to insert the trigger listener, triggers will not work!'
+  register:
+    invalid: '%prefix&cFailed to activate trigger for class: %class_name%, Invalid
+      class name!'
+    second: '%prefix&cFailed to activate trigger for class: %class_name%, Trigger
+      already active!'
+    invalid-method: '%prefix&cFailed to activate trigger for class: %class_name%,
+      Invalid method name!'
+plugin:
+  information: '%prefix&aThis server is running animated scoreboard version &2%version%&a!'
+invalid_player: '%prefix&c%value% is not a valid player name or not online!'
+invalid_command: '%prefix&c''/%command%'' is not a valid command. Try ''/asb help''
+  for commands!'
+invalid_sender: '%prefix&cThis command can only be executed by a player!'

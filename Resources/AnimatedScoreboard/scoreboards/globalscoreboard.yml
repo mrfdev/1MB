@@ -1,0 +1,165 @@
+scores:
+  # Whether scores (red numbers) on server versions 1.20.3 or newer should be hidden
+  hidden: true
+
+#This is where you create the scoreboard, the first section will always be the title. 
+#Every section after that will be a line displayed on the scoreboard. You can have a max
+#of 15 lines display due to the limitations of minecraft.
+display:
+    #This is the first section, it will always be the title of the scoreboard. 
+    #You can also use placeholders here if you want.
+    title:
+      #This is the text that will be display as the title, it can have as many lines as you want and it will automatically rotate through them or
+      #choose a random one, depending on what you set random to.
+      text:
+      - "&lA"
+      - "&lAn"
+      - "&lAni"
+      - "&lAnim"
+      - "&lAnima"
+      - "&lAnimat"
+      - "&lAnimate"
+      - "&lAnimated"
+      - "&lAnimated "
+      - "&lAnimated S"
+      - "&lAnimated Sc" 
+      - "&lAnimated Sco"
+      - "&lAnimated Scor"
+      - "&lAnimated Score"
+      - "&lAnimated Scoreb"
+      - "&lAnimated Scorebo"
+      - "&lAnimated Scoreboa"
+      - "&lAnimated Scoreboar"
+      - "&lAnimated Scoreboard"
+      - "&c&lAnimated Scoreboard"     
+      - "&lAnimated Scoreboard"
+      - "&c&lAnimated Scoreboard"
+      - "&lAnimated Scoreboard"
+      - "&c&lAnimated Scoreboard"
+      - "<stay ticks=100>&lAnimated Scoreboard</stay>"
+      #If this is true there will be a random line every time it updates. 
+      #If it is false than it will rotate through them and you can make some animations with it.
+      random: false
+      #The time between updates, 20 ticks is 1 second.
+      #Every x ticks it will go to the next line, if random is false, once all lines are displayed it will go to the first line.
+      interval: 2
+    #This section is the first line, here you set the data of that line. It doesn't matter what the name of the section is, as long
+    # as there is no other section with the exact same name 
+    line-1:
+      #Same as with the title, no limit on text. If you just put " " here it will display a blank line on the scoreboard.
+      text:
+      - " "
+      #If it should be random or not.
+      random: false
+      #The time between updates, 20 ticks is 1 second.
+      #Every x ticks it will go to the next line, if random is false, once all lines are displayed it will go to the first line.
+      interval: 200
+      #The score display next to the text, this can only be a number and not removed.
+      # If the score of the other lines are higher than this one, they will be displayed above this one.
+      score: 99   
+    line-2:
+      text:
+      - "&a&lWelcome %player_name%"
+      - "&b&lWelcome %player_name%"
+      - "&c&lWelcome %player_name%"   
+      random: false
+      interval: 5
+      score: 98
+    line-3:
+      text:
+      - " "
+      random: false
+      interval: 20
+      score: 97
+    #This animation works together with the line below it. The interval is the same so it displays the data at the same time.     
+    line-4:
+      text:
+      - "&aYour gamemode:"
+      - "&aYour location:"
+      - "&aYour world:"    
+      random: false
+      interval: 60
+      score: 96
+    #This animation shows the actual data of the player  
+    line-5:
+      text:
+      - "  &b%player_gamemode%"
+      - "  <update ticks=1>&bX:%player_x% Y:%player_y% Z:%player_z%</update>"
+      - "  &b%player_world%"    
+      random: false
+      interval: 60
+      score: 95
+    #This is another blank line to split up the scoreboard in multiple parts, you can have multiple lines with the same text displayed on the scoreboard.  
+    line-7:
+      text:
+      - " "
+      random: false
+      interval: 200
+      score: 95
+    #In this animation random is set to true so it will go randomly through all the text and display it on the scoreboard. 
+    #In this case it will just change the color of the text but it could be anything and you are also able to use placeholders here.  
+    line-8:
+      text:
+      - "&1Random Rotation"
+      - "&2Random Rotation"
+      - "&3Random Rotation"
+      - "&4Random Rotation"
+      - "&5Random Rotation"
+      - "&6Random Rotation"
+      - "&7Random Rotation"
+      - "&8Random Rotation"
+      - "&9Random Rotation"
+      - "&aRandom Rotation"
+      - "&bRandom Rotation"
+      - "&cRandom Rotation"
+      - "&dRandom Rotation"
+      - "&eRandom Rotation"
+      - "&kRandom Rotation" 
+      - "&lRandom Rotation" 
+      - "&mRandom Rotation" 
+      - "&nRandom Rotation"
+      - "&oRandom Rotation"
+      - "&rRandom Rotation"       
+      random: true
+      interval: 1
+      score: 94
+    line-9:
+      text:
+      - " "       
+      random: true
+      interval: 1
+      score: 93
+    #It will display the player's health here with hearts, you can also use score=%placeholder% if you have PlaceholderAPI installed
+    line-10:
+      text:
+      - "<health full=&4 half=&c empty=&f update=5>❤</health>"       
+      random: false
+      interval: 10
+      score: "0"
+    #Here we will repeat | 10 times, you can also use times=%placeholder% if you have PlaceholderAPI installed
+    line-11:
+      text:
+      - "<repeat times=10>|</repeat>"       
+      random: false
+      interval: 10
+      score: 0
+    line-12:
+      text:
+      - ""       
+      random: false
+      interval: 10
+      score: "-1"
+    line-13:
+      text:
+      - "<scroll space=5 width=16 update=10>&6Don't forget to leave a 5 star rating</scroll>"
+      random: true
+      interval: 1
+      score: "-2"
+    #1.13+ supports up to 128 characters per scoreboard line!
+    line-14:
+      text:
+      - "&aIf you're using 1.13 or higher you will see a really long line of text here!"
+      random: true
+      interval: 1
+      score: "-2"
+#You are able to add more lines to the scoreboard if you want, this scoreboard is just to explain all the possibilities of this plugin.   

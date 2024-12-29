@@ -1,0 +1,39 @@
+#Here you can set per world scoreboards <worldname>:<filename>
+#If you don't add a world here in will not have a scoreboard in that world!
+#World has 2 scoreboards, it will activate them based on how the are
+#listed, in this example it will first look if players can have adminboard and if
+#not switch to defaultscoreboard
+worlds:
+  #The global scoreboard is not required and can be removed without causing any issues. The plugin will just hide the scoreboard in that case.
+  global:
+  - adminboard
+  - globalscoreboard
+  world:
+  - adminboard
+  - defaultscoreboard
+  world_the_end: endscoreboard
+  world_nether: netherscoreboard
+#Now only players with the permission animatedscoreboard.test will get the scoreboard
+permissions:
+  adminboard: animatedscoreboard.test
+
+
+#If this is set to true it will try to use PlaceholderAPI placeholders
+placeholderapi: true
+#If this is set to true it will check on SpigotMC if there is a new version available for the plugin and notify you!
+check_updates: true
+#When this is true it will send info messages to the console, this is more usefull if something is going wrong
+debug_mode: false
+#This will enable the event triggers, if this is set to false the event triggers won't work
+enable-triggers: false
+
+# What data storage should we use:
+# - YAML 	: stores the player data in human readable form in playerdata.yml
+# - SQLITE	: stores the player data in a local SQLite database called playerdata-sqlite.db
+player-storage: SQLITE
+
+# Only enable this if you're running a 1.13+ server.jar but still accept clients below 1.13
+force-legacy: false
+
+# Attempt to parse colors inside of placeholders.
+hex-in-placeholders: true

@@ -1,0 +1,79 @@
+Fisherman:
+  fullname: Fisherman
+  shortname: Fi
+  FullDescription:
+  - "Earns money from fishing."
+  ChatColour: AQUA
+  chat-display: full
+  max-level: 200
+  leveling-progression-equation: 10*(joblevel)+(joblevel*joblevel*4)
+  income-progression-equation: baseincome+(baseincome*(joblevel-1)*0.01)-((baseincome+(baseincome*(joblevel-1)*0.01))
+    * ((numjobs-1)*0.05))
+  points-progression-equation: basepoints+(basepoints*(joblevel-1)*0.01)-((basepoints+(basepoints*(joblevel-1)*0.01))
+    * ((numjobs-1)*0.05))
+  experience-progression-equation: baseexperience-(baseexperience*((numjobs-1) *0.01))
+  rejoinCooldown: 10
+  maxDailyQuests: 1
+  Quests:
+    '1':
+      Name: Catcher
+      Objectives:
+      - Fish;cod;2
+      - Fish;salmon;2
+      - Fish;tropical_fish;2
+      RewardCommands:
+      - cmi money give [playerName] 1000 -s
+      - 'cmi actionbarmsg [playerName] {#4d0049}&lCompleted quest!{#680099}&r {#orange}Reward: $1000'
+      RewardDesc:
+      - Catch fish and get money
+      - Get 100 for this!
+  Gui:
+    Item: fishing_rod
+  Fish:
+    cod:
+      income: 15.0
+      points: 15.0
+      experience: 15.0
+    salmon:
+      income: 20.0
+      points: 20.0
+      experience: 25.0
+    tropical_fish:
+      income: 25.0
+      points: 25.0
+      experience: 25.0
+    pufferfish:
+      income: 25.0
+      points: 25.0
+      experience: 25.0
+  # Catching CUSTOM fish of the PyroFishingPro plugin
+  PyroFishingPro:
+    CustomTier:
+      income: 1.0
+      points: 1.0
+      experience: 1.0
+    Bronze:
+      income: 2.0
+      points: 2.0
+      experience: 3.0
+    Gold:
+      income: 5.0
+      points: 5.0
+      experience: 7.0
+    Silver:
+      income: 9.0
+      points: 9.0
+      experience: 12.0
+    Diamond:
+      income: 15.0
+      points: 15.0
+      experience: 15.0
+    Platinum:
+      income: 20.0
+      points: 20.0
+      experience: 25.0
+    Mythical:
+      income: 30.0
+      points: 30.0
+      experience: 30.0
+

@@ -34,6 +34,10 @@ Builder:
       income: 1.3
       points: 1.3
       experience: 2
+    smooth_stone:
+      income: 1.3
+      points: 1.3
+      experience: 2
     andesite:
       income: 1.3
       points: 1.3

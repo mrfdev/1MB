@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.3, build 026
-# @Release: December 18th, 2023
+# @Version: 0.3.3, build 027
+# @Release: February 2nd, 2025
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -116,4 +116,5 @@ if $_log; then
     } >> "$_logFile" || handle_error "Failed to write to log file '$_logFile'. Exiting."
     printf ".. Done! The results for '%s' have been appended to '%s'.\n" "$_userName" "$_logFile"
 fi
+
 #EOF

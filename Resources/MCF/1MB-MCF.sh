@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-MCF.sh
-# @Version: 1.1.2, build 010
-# @Release: September 26th, 2024
+# @Version: 1.1.2, build 011
+# @Release: February 2nd, 2025
 # @Description: Little shell script to process all the 1.21.x .jars at once using MaliciousCodeFinder 1.1 and it puts the output in a MCF.log file.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -85,4 +85,4 @@ done
 # And tell the user running this script we are done with everything.
 msg "Finished checking all the $jarfiles files. $B Results are in MCF.log."
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

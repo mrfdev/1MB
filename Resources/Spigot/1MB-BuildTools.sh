@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.16.7, build 102
-# @Release: December 2nd, 2024
+# @Version: 2.16.7, build 103
+# @Release: February 2nd, 2025
 # @Description: Helps us make a Minecraft Spigot 1.21.4 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -525,4 +525,4 @@ pwd
 # We are done, let's get outtah here
 _output okay "That's it, we're done!"
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

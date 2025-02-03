@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-UpdatePaper.sh
-# @Version: 3.2.15, build 040
-# @Release: January 31st, 2024
+# @Version: 3.2.15, build 041
+# @Release: February 2nd, 2025
 # @Description: Helps us get a Minecraft Paper 1.21.4 server .jar
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -300,4 +300,4 @@ _output debug "Saved to '$_saveDir/$_apiProject-$latestVersion.jar'"
 # We are at the end of the script, we're done.
 _output okay "Done."
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

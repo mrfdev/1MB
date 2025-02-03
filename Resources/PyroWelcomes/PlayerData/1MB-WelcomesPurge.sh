@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-WelcomesPurge.sh
-# @Version: 1.0.2, build 003 for PyroWelcomesPro v0.4.2
-# @Release: September 26th, 2024
+# @Version: 1.0.2, build 004 for PyroWelcomesPro v0.4.2
+# @Release: February 2nd, 2025
 # @Description: Helps us identify old files to purge for players with 0 points.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -79,4 +79,4 @@ done
 
 _output okay "...Done!"
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

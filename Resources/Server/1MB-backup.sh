@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.1.2, build 010 for Minecraft 1.21.1 (Java 22.0.2, 64bit)
+# @Version: 0.1.3, build 011 for Minecraft 1.21.4 (Java 23.0.2, 64bit)
 # @Release: September 26th, 2024
-# @Description: Helps us make a compressed tarball of a Minecraft 1.21.1 server. 
-# @Description: Note: Does not use rsync, this is meant for small servers only.
+# @Description: Helps us make a compressed tarball of a Minecraft 1.21.x server. 
+# @Description: Note: Does not use rsync, this is meant for small servers only. | Now leaves out web /bluemap/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod a+x 1MB-backup.sh
@@ -90,7 +90,11 @@ fi
 # We can continue, so let's start the backing up process, we're using tar and gzip
 # Start the backup process
 echo "Starting the backup of $dir directory to $backup_file..."
-tar -czf "$backup_file" "$dir"
+# old, but works: tar -czf "$backup_file" "$dir"
+tar -czf "$backup_file" \
+    --exclude="$dir/*/bluemap" \
+    --exclude="$dir/*/bluemap/*" \
+    "$dir"
 
 # We should have a file, let's check if we were successful
 if [ $? -eq 0 ]; then
@@ -100,4 +104,4 @@ else
     exit 1
 fi
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

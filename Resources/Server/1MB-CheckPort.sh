@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-CheckPort.sh
-# @Version: 2.0.4, build 019
-# @Release: November 23rd, 2024
+# @Version: 2.0.4, build 020
+# @Release: February 2nd, 2025
 # @Description: Spits out if java proc (Minecraft server) is running on (provided) port or not.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -112,4 +112,4 @@ fi
 
 _output okay "Done checking for '$_proc/:$PORT.'"
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

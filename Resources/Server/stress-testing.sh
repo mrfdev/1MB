@@ -1,5 +1,5 @@
 #!/bin/bash
-# version 0.0.2, build 001
+# version 0.0.2, build 002
 
 # generate some valid mc usernames with prefix user_
 generate_username() {
@@ -37,4 +37,4 @@ done
 # we are done
 echo "All commands sent to the Minecraft server."
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

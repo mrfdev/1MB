@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-Parse-Logs-Scanners.sh
-# @Version: 0.1.1, build 007
-# @Release: November 23rd, 2024
+# @Version: 0.1.1, build 008
+# @Release: February 2nd, 2025
 # @Description: filter logs/ directory for username(s). (-ips will make a separate file)
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -110,4 +110,4 @@ do
   fi
 done
 
-#EOF Copyright (c) 1977-2024 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

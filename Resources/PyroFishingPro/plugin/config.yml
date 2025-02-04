@@ -981,7 +981,6 @@ Deliveries:
       - 'fish giveitem squidtentacle %player% 3, &93x Squid Tentacle'
       - 'fish giveitem entropycrystal %player% 1, &91x Entropy Crystal'
       - 'fish giveitem entropycrystal %player% 2, &92x Entropy Crystal'
-      - 'fish giveitem entropybooster:1.2 %player% 1, &91x Entropy Booster (1.2x)'
     3:
       - 'fish giveitem crabclaw %player% 8, &98x Crab Claw'
       - 'fish giveitem crabscale %player% 8, &98x Crab Scale'
@@ -990,16 +989,11 @@ Deliveries:
       - 'fish giveitem entropycrystal %player% 3, &93x Entropy Crystal'
       - 'fish giveitem platinumlure %player% 1, &91x Platinum Lure'
       - 'fish giveitem crablure %player% 1, &91x Crab Lure'
-      - 'fish giveitem entropybooster:1.3 %player% 1, &91x Entropy Booster (1.3x)'
-      - 'fish giveitem entropybooster:1.35 %player% 1, &91x Entropy Booster (1.35x)'
     7:
       - 'fish giveitem entropycrystal %player% 5, &95x Entropy Crystal'
       - 'fish giveitem platinumlure %player% 1, &91x Platinum Lure'
       - 'fish giveitem crablure %player% 1, &91x Crab Lure'
       - 'fish giveitem mythicallure %player% 1, &91x Mythical Lure'
-      - 'fish giveitem entropybooster:1.5 %player% 1, &91x Entropy Booster (1.1x)'
-      - 'fish giveitem entropybooster:1.75 %player% 1, &91x Entropy Booster (1.75x)'
-      - 'fish giveitem entropybooster:3 %player% 1, &91x Entropy Booster (3x)'
       
   #Names for the deliveries
   Names:

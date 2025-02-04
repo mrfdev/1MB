@@ -4816,15 +4816,14 @@ Fish:
         - ''
       CatchPermission: ''
     '21':
-      Name: '&c&lTidal Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - Tidala'
       AllBiomes: true
-      Biomes: SWAMP, JUNGLE
-      Description: Meows for some reason
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special Tidal fish!
-      - cmi tfly PLAYER +2000
+      - _epicfishes PLAYER Tidala
       CustomModelData:
         Use: false
         Number: 1
@@ -4903,19 +4902,14 @@ Fish:
         - ''
       CatchPermission: ''
     '23':
-      Name: '&c&lFlorange Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - Globug100'
       AllBiomes: true
-      Biomes: BADLANDS, DEEP_OCEAN
-      Description: Smells like salt water and oranges?
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 6
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a Floris fish??!?! &3(&a+6 /points&3
-        received)&r
-      - cmi give PLAYER orange_dye 2 n &6Cooked_Florange_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER -s
+      - _epicfishes PLAYER Globug100
       CustomModelData:
         Use: false
         Number: 1
@@ -4951,20 +4945,14 @@ Fish:
         - ''
       CatchPermission: ''
     '24':
-      Name: '&c&lHot Paprikaatje Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - Paprikaatje'
       AllBiomes: true
-      Biomes: GIANT_SPRUCE_TAIGA, WARM_OCEAN
-      Description: Eat this and get all spicy
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special spicy fish??!?! &3(&a+3
-        /points&3 received)&r
-      - cmi give PLAYER red_dye 2 n &6Cooked_Spicy_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER -s
-      - cmi burn PLAYER 8
+      - _epicfishes PLAYER Paprikaatje
       CustomModelData:
         Use: false
         Number: 1
@@ -5000,19 +4988,14 @@ Fish:
         - ''
       CatchPermission: ''
     '25':
-      Name: '&c&lCitebafla Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - Citebafla'
       AllBiomes: true
-      Biomes: SUNFLOWER_PLAINS, DESERT
-      Description: ALFABETIC FISH
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special a to z citebafla fish??!?!
-        &3(&a+3 /points&3 received)&r
-      - cmi give PLAYER brown_dye 2 n &6Cooked_Citebafla_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER -s
+      - _epicfishes PLAYER Citebafla
       CustomModelData:
         Use: false
         Number: 1
@@ -5048,20 +5031,14 @@ Fish:
         - ''
       CatchPermission: ''
     '26':
-      Name: '&c&lEnderDip Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - EnderDip'
       AllBiomes: true
-      Biomes: JUNGLE, TAIGA
-      Description: Epic Dipper of Ender
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - welcomes add PLAYER 3
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a special ender fish??!?! &3(&a+3
-        /points&3 received)&r
-      - cmi give PLAYER yellow_dye 2 n &6Cooked_EnderDip_Fish
-      - cmi give PLAYER bell 1 n &6Reward_for_Admin_Fish
-      - cmi feed PLAYER -s
-      - cmi warp end PLAYER
+      - _epicfishes PLAYER EnderDip
       CustomModelData:
         Use: false
         Number: 1
@@ -5097,15 +5074,14 @@ Fish:
         - ''
       CatchPermission: ''
     '27':
-      Name: '&c&lJaCkper Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - JaCkperByte'
       AllBiomes: true
-      Biomes: SWAMP, JUNGLE
-      Description: Land of origin MEXICO! So spicy it gives a little bit of God Mode when eaten
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special JaCkperByte fish!
-      - cmi tgod PLAYER +300
+      - _epicfishes PLAYER JaCkperByte
       CustomModelData:
         Use: false
         Number: 1
@@ -5141,15 +5117,14 @@ Fish:
         - ''
       CatchPermission: ''
     '28':
-      Name: '&c&lPixel Starfish'
+      Name: '&9🐟 &6&lEpic Player Fish - NikkiPixel'
       AllBiomes: true
-      Biomes: SWAMP, JUNGLE
-      Description: Land of origin Pixelasia! So cozy it turns the ground into flowers when eaten
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special NikkiPixel fish!
-      - mcperks Florist PLAYER
+      - _epicfishes PLAYER NikkiPixel
       CustomModelData:
         Use: false
         Number: 1
@@ -5185,15 +5160,14 @@ Fish:
         - ''
       CatchPermission: ''
     '29':
-      Name: '&c&lVubbo Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - Vubbo'
       AllBiomes: true
-      Biomes: SWAMP, JUNGLE
-      Description: Swims in crystal rich water, so it gives you quartz when eaten
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special Vubbo fish!
-      - cmi give PLAYER nether_quartz_ore
+      - _epicfishes PLAYER Vubbo
       CustomModelData:
         Use: false
         Number: 1
@@ -5229,15 +5203,14 @@ Fish:
         - ''
       CatchPermission: ''
     '30':
-      Name: '&c&lLazy Fish'
+      Name: '&9🐟 &6&lEpic Player Fish - yakirarage'
       AllBiomes: true
-      Biomes: SWAMP, JUNGLE
-      Description: Floats in still water and slows you down when eaten
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
       DataValue: 2
       Glowing: true
       EatingCommands:
-      - cmi msg PLAYER ! &31MB Fish »&b You ate a very special yakirarage fish!
-      - cmi effect PLAYER slow 60 5
+      - _epicfishes PLAYER yakirarage
       CustomModelData:
         Use: false
         Number: 1
@@ -5290,6 +5263,307 @@ Fish:
       WeatherCycle:
         Enabled: true
         SpawnDuringRain: true
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '32':
+      Name: '&9🐟 &6&lEpic Player Fish - RattlesYT'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER RattlesYT
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '33':
+      Name: '&9🐟 &6&lEpic Player Fish - Danb135'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER Danb135
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '34':
+      Name: '&9🐟 &6&lEpic Player Fish - AiboPals'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER AiboPals
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '35':
+      Name: '&9🐟 &6&lEpic Player Fish - AtariMaster'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER AtariMaster
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '36':
+      Name: '&9🐟 &6&lEpic Player Fish - BeardedAdventur'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER BeardedAdventur
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '37':
+      Name: '&9🐟 &6&lEpic Player Fish - mikefelixxg'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER mikefelixxg
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
+      Y-Level:
+        Enabled: false
+        Lower: 30
+        Upper: 80
+      CatchCommands:
+      - ''
+      Region:
+        Enabled: false
+        Regions:
+        - ''
+      Material: PUFFERFISH
+      SellPriceOverride:
+        Enabled: false
+        Price: 1000
+      DisableGivingFishItem: false
+      Enabled: true
+      Worlds:
+        Enabled: false
+        Worlds:
+        - ''
+      SellCommands:
+        Enabled: false
+        Commands:
+        - ''
+      CatchPermission: ''
+    '38':
+      Name: '&9🐟 &6&lEpic Player Fish - Nebih'
+      AllBiomes: true
+      Biomes: JUNGLE
+      Description: '&cAttention! &eSpecial fish. Eat it to enjoy its perks. Learn more via /fish epic'
+      DataValue: 2
+      Glowing: true
+      EatingCommands:
+      - _epicfishes PLAYER Nebih
+      CustomModelData:
+        Use: false
+        Number: 1
+      TimeCycle:
+        Enabled: false
+        SpawnDuringDay: false
+      WeatherCycle:
+        Enabled: false
+        SpawnDuringRain: false
       Y-Level:
         Enabled: false
         Lower: 30

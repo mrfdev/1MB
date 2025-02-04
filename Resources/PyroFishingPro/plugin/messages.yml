@@ -91,6 +91,52 @@ SeasonalEvents:
     CrabmasName: '&c&lCrabmas'
     AlreadyUsedOrb: '&7You already have used an orb, and your next &cCrabmas&7 will
       be the boss.'
+    FrostshellCharm:
+      Menu:
+        NoEntropy: '&7You do not have enough entropy to do this!'
+        Name: '&8Activate Frostshell Charm?'
+        Cancel:
+          Name: '&cCancel Activation'
+          Lore:
+          - '&7Click to cancel.'
+        Confirm:
+          Lore:
+          - '&7Click to spend &b250,000 Entropy &7to'
+          - '&7activate your charm!'
+          Name: '&aConfirm Activation'
+        Activated: '&7You have activated your #0fa3fcFrostshell Charm&7!'
+      Activated:
+        Lore:
+        - '&7An ultra rare charm found from a &cCrabmas Boss&7.'
+        - ''
+        - '&7When held in your &foff-hand &7it gives you'
+        - '&fdouble &7chances for the &fSnowglobe Augment&7.'
+        - ''
+        - '&6&lLEGENDARY'
+        Name: '#0fa3fcFrostshell Charm'
+      NotActivated:
+        Lore:
+        - '&7An ultra rare charm found from a &cCrabmas Boss&7.'
+        - ''
+        - '&7It doesn''t seem to have any effect.'
+        - '&7Maybe if you charge it with &bEntropy &7you might'
+        - '&7be able to realise it''s effects.'
+        - ''
+        - '&eRight-click to charge with Entropy.'
+        - ''
+        - '&6&lLEGENDARY'
+        Name: '#0fa3fcFrostshell Charm &8(&fUnactivated&8)'
+    NotInBiome: '&7You sense that &cCrabmas &7is not in this biome this time...'
+    BiomeRuleOut: '&7Currently ruled-out biomes: %ruled-out%&7.'
+    AlreadyFound: '&7The Crabmas biome has already been found! Is currently is: &a%biome%&7.'
+    Collectable:
+      Name: '#FA9613Crabmas Trophy &8(#FE8F8DYear %year%&8)'
+      Lore:
+      - '&7A rare trophy from killing &cCrabmas&7.'
+      - ''
+      - '&7This shows that you took part in'
+      - '&7the &cCrabmas Event &7in &c%year%&7!'
+    PossibleBiomes: '&7Possible Crabmas Biomes: %ruled-out%&7.'
   Names:
     CRABMAS: Crabmas
 GUI:
@@ -106,6 +152,7 @@ GUI:
       TotalCaught: '&7Total Caught: &a'
       Bait: '&7Requires Bait:'
       FirstCaught: '&7First Caught By: &a'
+      NameNotFound: '&c???'
     Main:
       Platinum:
         Lore:
@@ -153,6 +200,37 @@ GUI:
       Name: '&a&lNext Page'
       Lore:
       - '&7Click to go to the next page.'
+    Items:
+      TierFilter:
+        Name: '#0CF42DFilter by Fish Tier'
+        Misc:
+          NotSelected: '&f'
+          Filter: '&7» %selectedColor%Tier %tier%'
+          Selected: '&a'
+        Lore:
+        - '&7Click to filter fish by their tier..'
+        - ''
+        - '%filter%'
+      PreviousPage:
+        Lore:
+        - '&7Click to view the recipes on the previous page.'
+        Name: '&cPrevious Page'
+      NextPage:
+        Name: '#00FFC1Next Page'
+        Lore:
+        - '&7Click to view the recipes on the next page.'
+    Information:
+      Lore:
+      - '&7These are all of the &3%tier% &7fish!'
+      - '&7Hover over each fish to see its information.'
+      - ''
+      - '&7You can also track which fish you have'
+      - '&7caught, and which fish you still need to catch!'
+      Name: '&a&lInformation'
+    Back:
+      Lore:
+      - '&7Click to go back to the main menu.'
+      Name: '&cBack'
   Shop:
     SpecialFish:
       Name: '&a&lSpecial Fish'
@@ -582,11 +660,12 @@ GUI:
         - ''
         - '&bClick to upgrade this skill.'
       DIVINE_JUDGEMENT:
+        Name: '&bDivine Judgement &7| %unlocked%'
         Lore:
-        - '&7This skill gives a chance to summon'
-        - '&7a divine strike that causes a &bTsunami&7.'
-        - '&7Fishing in the tsunami doubles all fish'
-        - '&7caught within its radius.'
+        - '&7This skill gives a chance to summon a divine'
+        - '&7strike that causes a &bTsunami&7. Fishing inside'
+        - '&7of this will have a &a%divine_judgement%% chance &7to double'
+        - '&7whatever fish you catch inside of it.'
         - ''
         - '&7Stats:'
         - '&8➵ &7Effect: &3%current%% Chance to Occur'
@@ -597,8 +676,9 @@ GUI:
         - '&7Other players can benefit from your Tsunami.'
         - '&6Hot Spot&7 and similar effects do not stack with this.'
         - ''
+        - '&7There is a &c10 minute cooldown &7between strikes.'
+        - ''
         - '%cost%'
-        Name: '&bDivine Judgement &7| %unlocked%'
       LUCK_OF_THE_CATCH:
         Name: '&bLuck of the Catch &7| Level: &9%level%'
         Lore:
@@ -716,6 +796,18 @@ GUI:
       Lore:
       - '&7Click to go back to the main menu.'
       Name: '&cBack'
+    RemoveNew:
+      Name: '&4&lRemove Augments'
+      Lore:
+      - '&7This will give you all the &bAugments'
+      - '&7on your fishing rod back to you.'
+      - '&7Doing this costs &d%amount% Entropy&7.'
+      - ''
+      - '&7Make sure your fishing rod is inside'
+      - '&7the GUI when doing this!'
+      - ''
+      - '&c&oThere is no ''Are you sure'' button'
+      - '&c&oafter clicking this. Be careful!'
   Stats:
     Stat:
       CurrentXP: '&7Current XP: &a'
@@ -769,6 +861,9 @@ GUI:
       - '&7required when starting deliveries.'
       - ''
       - '&7Status: %status%'
+    Misc:
+      CannotOpenYet: '&7You cannot open this menu yet. Please wait at least &c5 seconds
+        &7after joining to do this.'
   Totem:
     Unlock:
       NotLevelNew: '&7This is an advanced item that you currently do not understand.
@@ -988,6 +1083,7 @@ Commands:
         &l»&r Entropy Booster (2x)
         &l»&r Entropy Booster (4x)
     NotActive: '&7That event is not active until &c%date%&7.'
+    NoArgs: '&7Input the name of a seasonal event that you want to check.'
   StartTournament:
     InvalidArgs: '&7Correct Usage: &c/ft start <tournament> [duration]'
     TooShort: '&7The value &c%value% &7is too short. It must be greater then 0 seconds.'
@@ -998,10 +1094,12 @@ Commands:
     Removed: '&7You have removed that delivery.'
     CannotRemove: '&7You cannot remove that delivery as it is in progress or finished.'
     NoDelivery: '&7You do not have a delivery in that slot.'
+    NoSlot: '&7You need to specify which slot, or ''&call&7'' you want to remove deliveries
+      from.'
   InvalidSubCommand: '&7Invalid sub-command. Do /fish for a list of sub-commands.'
   Entropy:
     Amount: '&7You currently have &a%entropy% &7entropy.'
-  ReloadPlugin: '&3PyroFishingPro &7has been successfully reloaded!'
+  ReloadPlugin: '&31MB /fish &7has been successfully reloaded!'
   NotAnItem: '&7You have entered an invalid item.'
   TournamentInfo:
     NoTournament: '&7There is currently no tournament in progress.'
@@ -1032,6 +1130,31 @@ Commands:
     for a full list.'
   Codex:
     InvalidType: '&7That name is not a valid codex.'
+  AddXP:
+    Given: '&7You have been given &b%amount% &7XP.'
+    Gave: '&7You have gave &a%player% &b%amount% &7XP.'
+    NoPlayer: '&7You need to specify which player to give xp to.'
+    NoAmount: '&7You need to specify how much xp you want to add.'
+  GiveAugment:
+    Gave: '&7You have given &b%player% &f%amount%x &a%augment%&7.'
+    Console: '&7You need to supply a player to give this augment to.'
+    InvalidAugmentName: '&7That is not a valid augment name. Check the tab completion
+      for a full list.'
+    Given: '&7You have been given &f%amount%x &a%augment%&7.'
+    InputAugmentName: '&7You need to supply an augment name for this command.'
+  AddEntropy:
+    NoAmount: '&7You need to specify how much entropy you want to add.'
+    Gave: '&7You have gave &a%player% &b%amount% &7Entropy.'
+    NoPlayer: '&7You need to specify which player to give entropy to.'
+    Given: '&7You have been given &b%amount% &7Entropy.'
+  GiveItem:
+    Gave: '&7You have given &b%player% &f%amount%x &a%item%&7.'
+    NoPlayer: '&7You need to specify which player to give entropy to.'
+    Given: '&7You have been given &f%amount%x &a%item%&7.'
+    InvalidItem: '&7That is not a valid item. Check tab-completion for a full list.'
+    NoItem: '&7You need to specify which item to give.'
+  Stats:
+    NoPlayer: '&7You need to specify which player''s statistics you want to look at.'
 Tournaments:
   Names:
     LONGEST_LENGTH: Longest Length
@@ -1057,7 +1180,7 @@ Tournaments:
   InvalidArgument: '&cInvalid arguments. Do /ft for a list of sub-commands.'
 CommandsList:
 - ''
-- '&8]&m-----------+&8[ &6&lPyroFishingPro &8]&m+-----------&8['
+- '&8]&m-----------+&8[ &6&l1MB /fish &8]&m+-----------&8['
 - ''
 - '&e/fish help &7- Show some general help.'
 - '&e/fish menu &7- Opens the main fishing menu.'
@@ -1183,6 +1306,7 @@ Biomes:
   CRIMSON_FOREST: Crimson Forest
   SMALL_END_ISLANDS: Small End Islands
   OCEAN: Ocean
+  PALE_GARDEN: Pale Garden
 Augments:
   MoreThenOneRod: '&7You cannot have a stack of rods inside the augment menu. Unstack
     them and try again.'
@@ -1673,7 +1797,7 @@ Lores:
     - §7your odds of making money!
 Tournament:
   Length:
-    CaughtMessage: '&7You caught a &b%%fishname%%&7 which had a length of &b%length%cm&7.'
+    CaughtMessage: '&7You caught a &b%fishname%&7 which had a length of &b%length%cm&7.'
     LongestFish: '&7You have just caught your longest fish! Was: &3%before%cm &7and
       is now &b%new%cm&7!'
   NoTournament: '&7There is currently no Tournament Active.'
@@ -1683,7 +1807,7 @@ WithdrawnEntropy: '&7You have withdrawn &d10,000 Entropy &7and have been given a
   &bEntropy Crystal&7.'
 ShopTitleInformation: '&aSell Fish Here'
 FirstCaught: '&7You were the first person to catch a(n) %fish%&7!'
-ErrorPrefix: '&c&lPyroFishing &8➤ '
+ErrorPrefix: ' #02a4d31MB #007ec7/fish #02a4d3» '
 MythicalCatchBroadcast: '&3%player% &7has just caught a &5Mythical &7%fish%&7!'
 CaughtFirstFish: '&aYou have caught your first fish. You can use &2/fish menu &ato
   further explore the world of fishing.'
@@ -1731,3 +1855,4 @@ MoneyCooldown:
     &b%time%&7.'
 MainLevelUp: '&aYou have leveled up your Fishing level to &b%level%&7!'
 DisabledInWorld: '&7This feature is disabled in your current world.'
+version: 1

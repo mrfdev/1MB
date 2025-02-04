@@ -28,6 +28,19 @@ Settings:
     #How often in seconds should the broadcasts be sent?
     Duration: 900
 
+    
+  #Commands that are ran at different points in the tournament
+  Commands:
+  
+    #Commands to be run when a tournament starts
+    #%name% for the tournament name.
+    StartCommands: []
+    
+    #Commands to be run when a tournament ends
+    #%name% for the tournament name
+    #%first/second/third_name/value% for the names and values - i.e. %second_value% for the second place value.
+    StopCommands: []
+
   #If the tournament should use the boss-bar to tell players how long is
   #left for the tournament.
   BossBar:
@@ -148,6 +161,12 @@ TournamentSettings:
     #HIGHLY advised to keep this very small and close to 1.
     value: 1.01
 
+  TOTAL_LENGTH:
+
+    #What value should be used to generate lengths?
+    #HIGHLY advised to keep this very small and close to 1.
+    value: 1.01
+
 #==========================================================================
 
 #Various tournament messages that are used throughout the events.
@@ -172,7 +191,7 @@ Messages:
     - ''
     - '%center%&6&l1st Place: &b%first% &7with &b%firstscore%'
     - '%center%&f&l2nd Place: &b%second% &7with &b%secondscore%'
-    - '%center% &3&l3rd Place: &b%third% &7with &b%thirdscore%'
+    - '%center%&3&l3rd Place: &b%third% &7with &b%thirdscore%'
     - ''
     - ''
 
@@ -208,5 +227,6 @@ Messages:
     ShortestLength: '%center%&7Catch a fish to take part!'
     MostCatch: '%center%&7Catch a fish to take part!'
     MostBiomes: '%center%&7Fish in the most biomes!'
+    TotalLength: '%center%&7Catch a fish to take part!'
 
 #==========================================================================

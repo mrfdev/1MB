@@ -742,6 +742,10 @@ Builder:
       income: 1.5
       points: 1.5
       experience: 2
+    cut_sandstone:
+      income: 1.5
+      points: 1.5
+      experience: 2
     BAMBOO_BLOCK:
       income: 0.5
       points: 0.5

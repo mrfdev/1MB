@@ -70,6 +70,8 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
 # --compile craftbukkit (In case you have a reason to build craftbukkit)
 
+# https://hub.spigotmc.org/stash/projects/SPIGOT/repos/builddata/raw/info.json
+# https://hub.spigotmc.org/versions/ => latest.json
 _urlBase="https://hub.spigotmc.org"
 _jsonMcUrl="$_urlBase/stash/projects/SPIGOT/repos/builddata/raw/info.json"
 _jsonSpUrl="$_urlBase/versions/$_minecraftVersion.json"

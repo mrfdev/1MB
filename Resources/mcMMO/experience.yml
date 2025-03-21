@@ -325,7 +325,11 @@ Experience_Values:
         Red_Mushroom_Block: 70
         Brown_Mushroom_Block: 70
         Mushroom_Stem: 80
+        Pale_Oak_Log: 80
     Herbalism:
+        Eyeblossom: 66
+        Open_Eyeblossom: 66
+        Closed_Eyeblossom: 66
         Pitcher_Plant: 160
         Pink_Petals: 10
         Small_Dripleaf: 140
@@ -662,3 +666,4 @@ Experience_Values:
             Camel: 1.2
             Bogged: 2.0
             Breeze: 4.0
+            Creaking: 4.0

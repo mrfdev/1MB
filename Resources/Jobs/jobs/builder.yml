@@ -950,3 +950,32 @@ Builder:
       income: 1.5
       points: 1.5
       experience: 2
+    PALE_OAK_WOOD:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_SLAB:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_STAIRS:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_TRAPDOOR:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_PLANKS:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_FENCE:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    PALE_OAK_FENCE_GATE:
+      income: 1.5
+      points: 1.5
+      experience: 2
+      

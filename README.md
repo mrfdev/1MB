@@ -28,5 +28,3 @@ Our website [www.1moreblock.com](https://omgboards.com/)
 Our discord [discord.1moreblock.com](https://discord.gg/floris)
 
 ## Version
-
-This is 1MB Github version 2.14.1 build 089, March 25th, 2025

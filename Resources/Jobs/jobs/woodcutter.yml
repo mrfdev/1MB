@@ -79,6 +79,10 @@ Woodcutter:
       income: 1.0
       points: 1.0
       experience: 1.0
+    PALE_OAK_LOG:
+      income: 1.0
+      points: 1.0
+      experience: 1.0
     STRIPPED_WARPED_HYPHAE:
       income: 0.5
       points: 0.5

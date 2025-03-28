@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.18.6, build 076 for Minecraft 1.21.4 (Java 23.0.2, 64bit)
-# @Release: February 2nd, 2025
-# @Description: Helps us start a Paper (or Spigot) 1.21.4 server.
+# @Version: 2.18.7, build 077 for Minecraft 1.21.5 (Java 23.0.2, 64bit)
+# @Release: March 25th, 2025
+# @Description: Helps us start a Paper (or Spigot) 1.21.5 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.21.4"
+_minecraftVersion="1.21.5"
 # Which version are we running?
 
 _minJavaVersion=23
-# use 23 for java 23.0.1 which can be used with Minecraft 1.21.3 and 1.21.4
+# use 23 for java 23.0.2 which can be used with Minecraft 1.21+ and 1.21.5
 # use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1
 # use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.6
 

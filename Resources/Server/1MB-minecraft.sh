@@ -20,8 +20,9 @@
 _minecraftVersion="1.21.5"
 # Which version are we running?
 
-_minJavaVersion=23
-# use 23 for java 23.0.2 which can be used with Minecraft 1.21+ and 1.21.5
+_minJavaVersion=24
+# use 24 for java 24 which can be used with Minecraft 1.21.5
+# use 23 for java 23.0.2 which can be used with Minecraft 1.21+
 # use 22 for java 22.0.2 which can be used with Minecraft 1.20.4+ and 1.21.1
 # use 21 for java 21.0.2 which can be used with Minecraft 1.19.x and 1.20.6
 
@@ -36,7 +37,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # Figure out optimal flags for your configuration here: https://flags.sh/
 
 # jvm startup parameters
-_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
+_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-access=ALL-UNNAMED"
 # -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
@@ -47,13 +48,14 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true"
 # --illegal-access=permit (Temporary fix to get outdated plugins to work on 1.17.1)
 # -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.2 servers)
 # -Dpaper.useLegacyPluginLoading=true (Temporary fix circular plugin loading issue)
+# --enable-native-access=ALL-UNNAMED (Remove startup warning when using java24)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="paper"
+_engine="spigot"
 # spigot until paper jar is out
-# "" assumes auto detection for <engine>-1.21.4.jar 
-# "spigot" assumes to look for spigot-1.21.4.jar
-# "paper" assumes to look for paper-1.21.4.jar
+# "" assumes auto detection for <engine>-1.21.5.jar 
+# "spigot" assumes to look for spigot-1.21.5.jar
+# "paper" assumes to look for paper-1.21.5.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!

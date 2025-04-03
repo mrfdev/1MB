@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
+# @Version: 0.0.1, build 001
+# @Release: April 3rd, 2025
+# @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: @mrfloris on https://discord.gg/floris
+# @Install: chmod +x 1MB-macOS-NO-AutoOSUpdate.sh and add to LaunchD or crontab
+# @Syntax: ./1MB-macOS-NO-AutoOSUpdate.sh
+# @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+
+# @Information
+# Prevent macOS 15.4+ to set OS updates to true and do as they please,
+# we run services and servers, and need to be in control - and schedule - our updates
+# disable - Automatic checking for updates.
+# disable - Automatic downloading of macOS and security updates.
+# disable - Automatic installation of critical updates.
+# disable - App Store app auto-updates.
+# disable - Background scheduled updates.
+# disable - softwareupdate <- no apple, NO
+
+### CONFIGURATION
+#
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
+#
+###
+
+# Our preferences for our set-up, adjust to your liking, I don't mind certain app store things to update in the background, or update checks to run; I just don't want automatic installations and restarts (especially when they are unscheduled)
+
+### FUNCTIONS AND CODE
+#
+# ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
+#
+###
+
+#
+
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

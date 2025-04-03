@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.1.1, build 012
+# @Version: 0.1.2, build 014
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-macOS-NO-AutoOSUpdate.sh and add to LaunchD or crontab
-# @Syntax: sudo ./1MB-macOS-NO-AutoOSUpdate.sh
+# @Syntax: sudo ./1MB-macOS-NO-AutoOSUpdate.sh (--restore)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 # @Information
@@ -20,10 +20,6 @@
 # disable - Background scheduled updates (AutoUpdateRestartRequired)
 # disable - softwareupdate <- no apple, NO!!
 # disable - pre-release exclusion (AllowPreReleaseInstallation) <- NO
-
-# @Restore information
-# Allow macOS to do all the defaults again, run the script with the --restore parameter.
-# And remove the profile under general -> device management -> 1moreblock.com 
 
 ### CONFIGURATION
 #
@@ -46,9 +42,11 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+
+
 # Check for restore option
 if [[ "$1" == "--restore" ]]; then
-  echo "[RESTORE] Restoring default macOS software update settings..."
+  log "[RESTORE] Restoring default macOS software update settings..."
 
   # Re-enable automatic checking for updates
   defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -74,23 +72,30 @@ if [[ "$1" == "--restore" ]]; then
   # Optionally remove the configuration profile if previously installed
   PROFILE_PATH="/usr/local/1moreblock/DisableCriticalUpdates.mobileconfig"
   if [[ -f "$PROFILE_PATH" ]]; then
-    echo "[RESTORE] Removing configuration profile file at $PROFILE_PATH"
+    log "[RESTORE] Removing configuration profile file at $PROFILE_PATH"
     rm -f "$PROFILE_PATH"
   fi
 
-  echo "[RESTORE] macOS update settings have been restored to system defaults."
+  log "[RESTORE] macOS update settings have been restored to system defaults."
   exit 0
 fi
-echo "[INFO] Disabling auto update-related settings..."
+log "[INFO] Disabling auto update-related settings..."
 
+
+# Log function
+log() {
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a /var/log/1mb-update.log
+}
 # Prevent macOS from automatically checking for updates in the background.
+# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
 
 # Prevent automatic downloading of macOS updates once available.
+# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
 
 # Prevent automatic installation of critical system/data/security updates (XProtect, MRT, whatever it does).
-# No longer works (overridden by Apple in GUI)
+# Tessted, no longer works (overridden by Apple in GUI)
 defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
 
 # Prevent automatic updates of Mac App Store applications.
@@ -98,7 +103,7 @@ defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool false
 
 # Prevent macOS from automatically restarting to apply updates that require a reboot.
 # This is the big one, we really don't want this. 
-# No longer works (overridden by Apple in GUI)
+# Tessted, no longer works (overridden by Apple in GUI)
 defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool false
 
 # Disable the background scheduled check for software updates entirely.
@@ -109,7 +114,7 @@ softwareupdate --schedule off
 # This ensures only final, stable versions are available — useful for production machines.
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation -bool false
 
-echo "[INFO] Some update features disabled via defaults and softwareupdate."
+log "[INFO] Some update features disabled via defaults and softwareupdate."
 
 ### CONFIGURATION PROFILE FOR CRITICAL UPDATE BEHAVIOR
 
@@ -174,13 +179,13 @@ cat <<EOF > "$PROFILE_PATH"
 </plist>
 EOF
 
-echo "[INFO] Configuration profile saved to: $PROFILE_PATH"
+log "[INFO] Configuration profile saved to: $PROFILE_PATH"
 
 # macOS Ventura+ no longer supports 'profiles install' via CLI
 # Use `open` to let user install it manually in System Settings
-echo "[ACTION] Opening profile for manual install (Ventura+ compatible)..."
+log "[ACTION] Opening profile for manual install (Ventura+ compatible)..."
 open "$PROFILE_PATH"
 
-echo "[DONE] Please click 'Install' in System Settings → Profiles to complete setup."
+log "[DONE] Please click 'Install' in System Settings → Profiles to complete setup."
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.0.3, build 003
+# @Version: 0.0.3, build 004
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -13,12 +13,13 @@
 # @Information
 # Prevent macOS 15.4+ to set OS updates to true and do as they please,
 # we run services and servers, and need to be in control - and schedule - our updates
-# disable - Automatic checking for updates.
-# disable - Automatic downloading of macOS and security updates.
-# disable - Automatic installation of critical updates.
-# disable - App Store app auto-updates.
-# disable - Background scheduled updates.
-# disable - softwareupdate <- no apple, NO
+# disable - Automatic checking for updates (AutomaticCheckEnabled)
+# disable - Automatic downloading of macOS and security updates (AutomaticDownload)
+# disable - Automatic installation of critical updates (CriticalUpdateInstall)
+# disable - App Store app auto-updates (AutoUpdate)
+# disable - Background scheduled updates (AutoUpdateRestartRequired)
+# disable - softwareupdate <- no apple, NO!!
+# disable - pre-release exclusion (AllowPreReleaseInstallation) <- NO
 
 ### CONFIGURATION
 #
@@ -44,19 +45,32 @@ fi
 
 echo "Disabling things.."
 
-# disable the @information stuff
+# Disable the @information stuff:
+
+# Prevent macOS from automatically checking for updates in the background.
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
+
+# Prevent automatic downloading of macOS updates once available.
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
+
+# Prevent automatic installation of critical system/data/security updates (XProtect, MRT, whatever it does).
 defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
+
+# Prevent automatic updates of Mac App Store applications.
 defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool false
+
+# Prevent macOS from automatically restarting to apply updates that require a reboot.
+# This is the big one, we really don't want this. 
 defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool false
 
-# disable point release update and stuff
+# Disable the background scheduled check for software updates entirely.
+# This stops the system from periodically checking for updates on its own.
 softwareupdate --schedule off
 
-# Prevent macOS major updates (like 15.x -> 16.x)
+# Prevent the system from offering pre-release (beta) macOS updates, even if enrolled in a beta seed program.
+# This ensures only final, stable versions are available — useful for production machines.
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation -bool false
 
-echo "Things should be disabled now."
+echo "A bunch of auto update things should be disabled again."
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

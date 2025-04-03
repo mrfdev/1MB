@@ -978,4 +978,19 @@ Builder:
       income: 1.5
       points: 1.5
       experience: 2
-      
+    MUD_BRICKS:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    MUD_BRICK_WALL:
+      income: 1.5
+      points: 1.5
+      experience: 2
+    MUD_BRICK_STAIRS:
+      income: 1.5
+      points: 1.5
+      experience: 2   
+    MUD_BRICK_SLAB:
+      income: 1.5
+      points: 1.5
+      experience: 2  

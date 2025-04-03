@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.0.2, build 002
+# @Version: 0.0.3, build 003
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -35,6 +35,15 @@
 #
 ###
 
+# We require this to run automatically on the daily at least once, as a root or super-user, via launchd or crontab, so let's check for that (or exist)
+if [[ $EUID -ne 0 ]]; then
+  echo "Please run as root (su)"
+  echo "sudo $0"
+  exit 1
+fi
+
+echo "Disabling things.."
+
 # disable the @information stuff
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
@@ -47,5 +56,7 @@ softwareupdate --schedule off
 
 # Prevent macOS major updates (like 15.x -> 16.x)
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation -bool false
+
+echo "Things should be disabled now."
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

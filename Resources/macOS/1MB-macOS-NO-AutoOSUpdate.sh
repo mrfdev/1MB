@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.1.2, build 015
+# @Version: 0.1.3, build 016
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-macOS-NO-AutoOSUpdate.sh and add to LaunchD or crontab
-# @Syntax: sudo ./1MB-macOS-NO-AutoOSUpdate.sh (--restore)
+# @Syntax: sudo ./1MB-macOS-NO-AutoOSUpdate.sh (--restore) (--silent | --status)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 # @Information
@@ -44,8 +44,30 @@ fi
 
 # Log function
 log() {
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a /var/log/1mb-update.log
+  if [[ "$SILENT_MODE" != "true" ]]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a /var/log/1mb-update.log
+  else
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> /var/log/1mb-update.log
+  fi
 }
+
+
+# Parse optional flags
+SILENT_MODE="false"
+if [[ "$1" == "--silent" ]]; then
+  SILENT_MODE="true"
+elif [[ "$1" == "--status" ]]; then
+  echo "macOS Software Update Settings:"
+  echo "--------------------------------"
+  echo "AutomaticCheckEnabled: $(defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled 2>/dev/null)"
+  echo "AutomaticDownload: $(defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload 2>/dev/null)"
+  echo "CriticalUpdateInstall: $(defaults read /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall 2>/dev/null)"
+  echo "AutoUpdate (App Store): $(defaults read /Library/Preferences/com.apple.commerce AutoUpdate 2>/dev/null)"
+  echo "AutoUpdateRestartRequired: $(defaults read /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired 2>/dev/null)"
+  echo "AllowPreReleaseInstallation: $(defaults read /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation 2>/dev/null)"
+  echo "softwareupdate schedule: $(softwareupdate --schedule | awk '{print $NF}')"
+  exit 0
+fi
 
 # Check for restore option
 if [[ "$1" == "--restore" ]]; then
@@ -85,10 +107,6 @@ fi
 log "[INFO] Disabling auto update-related settings..."
 
 
-# Log function
-log() {
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a /var/log/1mb-update.log
-}
 # Prevent macOS from automatically checking for updates in the background.
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
 

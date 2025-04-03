@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.0.4, build 006
+# @Version: 0.1.0, build 011
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-macOS-NO-AutoOSUpdate.sh and add to LaunchD or crontab
-# @Syntax: ./1MB-macOS-NO-AutoOSUpdate.sh
+# @Syntax: sudo ./1MB-macOS-NO-AutoOSUpdate.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 # @Information
@@ -38,16 +38,14 @@
 
 # We require this to run automatically on the daily at least once, as a root or super-user, via launchd or crontab, so let's check for that (or exist)
 if [[ $EUID -ne 0 ]]; then
-  echo "Please run as root (su)"
-  echo "sudo $0"
+  echo "Please run as root: sudo $0"
   exit 1
 fi
 
-echo "Disabling things.."
-
-# Disable the @information stuff:
+echo "[INFO] Disabling auto update-related settings..."
 
 # Prevent macOS from automatically checking for updates in the background.
+# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
 
 # Prevent automatic downloading of macOS updates once available.
@@ -55,7 +53,7 @@ defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabl
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
 
 # Prevent automatic installation of critical system/data/security updates (XProtect, MRT, whatever it does).
-# tested: can not tell if it works
+# tested: can not tell if it works (overridden by Apple in GUI)
 # defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
 
 # Prevent automatic updates of Mac App Store applications.
@@ -69,14 +67,17 @@ defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool false
 
 # Disable the background scheduled check for software updates entirely.
 # This stops the system from periodically checking for updates on its own.
+# tested: works
 softwareupdate --schedule off
 
 # Prevent the system from offering pre-release (beta) macOS updates, even if enrolled in a beta seed program.
 # This ensures only final, stable versions are available — useful for production machines.
+# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation -bool false
 
-echo "A bunch of auto update things should be disabled again."
+echo "[INFO] Some update features disabled via defaults and softwareupdate."
 
+### CONFIGURATION PROFILE FOR CRITICAL UPDATE BEHAVIOR
 
 # Purpose: Create and install a configuration profile that disables:
 #  - Automatic macOS updates (AutomaticallyInstallMacOSUpdates)
@@ -86,84 +87,66 @@ echo "A bunch of auto update things should be disabled again."
 # The profile is configured with a removal option (removable) and uses the organization
 # name "1MoreBlock.com". This script requires sudo privileges.
 
-set -e
+# Define final location for the profile
+PROFILE_DIR="/usr/local/1moreblock"
+PROFILE_PATH="$PROFILE_DIR/DisableCriticalUpdates.mobileconfig"
 
-# Define the path for the mobileconfig file
-PROFILE_PATH="/tmp/DisableCriticalUpdates.mobileconfig"
+# Create directory if needed
+mkdir -p "$PROFILE_DIR"
 
-# Create the configuration profile file
-cat <<'EOF' > "$PROFILE_PATH"
+# Write the configuration profile
+cat <<EOF > "$PROFILE_PATH"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <!-- PayloadContent contains an array of settings payloads -->
   <key>PayloadContent</key>
   <array>
     <dict>
-      <!-- This payload configures Software Update settings -->
       <key>PayloadType</key>
       <string>com.apple.SoftwareUpdate</string>
       <key>PayloadVersion</key>
       <integer>1</integer>
-      
-      <!-- Disable automatic installation of macOS updates -->
+      <key>PayloadIdentifier</key>
+      <string>com.1MoreBlock.disablecriticalupdates.softwareupdate</string>
+      <key>PayloadUUID</key>
+      <string>ABCDEFAB-CDEF-1234-ABCD-ABCDEF123456</string>
       <key>AutomaticallyInstallMacOSUpdates</key>
       <false/>
-      
-      <!-- Disable installation of critical security updates -->
       <key>CriticalUpdateInstall</key>
       <false/>
-      
-      <!-- Disable installation of configuration data updates (e.g., security responses) -->
       <key>ConfigDataInstall</key>
       <false/>
-      
-      <!-- Set any delay (0 means immediate, here it effectively disables delay) -->
       <key>ConfigDataInstallDelay</key>
       <integer>0</integer>
     </dict>
   </array>
-  <!-- Display name for the configuration profile -->
   <key>PayloadDisplayName</key>
   <string>Disable Critical &amp; macOS Auto Updates</string>
-  
-  <!-- Unique identifier for the profile -->
   <key>PayloadIdentifier</key>
   <string>com.1MoreBlock.disablecriticalupdates</string>
-  
-  <!-- Custom organization name -->
   <key>PayloadOrganization</key>
   <string>1MoreBlock.com</string>
-  
-  <!-- Allow the profile to be removed by the user (false means removal is allowed) -->
   <key>PayloadRemovalDisallowed</key>
   <false/>
-  
-  <!-- Indicate that this is a configuration profile -->
   <key>PayloadType</key>
   <string>Configuration</string>
-  
-  <!-- Unique UUID for the profile -->
   <key>PayloadUUID</key>
   <string>5F3B5AE1-4C1B-4B93-A6A3-123456789ABC</string>
-  
-  <!-- Version number of the profile -->
   <key>PayloadVersion</key>
   <integer>1</integer>
 </dict>
 </plist>
 EOF
 
-echo "Configuration profile created at: $PROFILE_PATH"
+echo "[INFO] Configuration profile saved to: $PROFILE_PATH"
 
-# Install the configuration profile using the profiles command.
-# This requires sudo privileges.
-sudo profiles install -type configuration -path "$PROFILE_PATH"
+# macOS Ventura+ no longer supports 'profiles install' via CLI
+# Use `open` to let user install it manually in System Settings
+echo "[ACTION] Opening profile for manual install (Ventura+ compatible)..."
+open "$PROFILE_PATH"
 
-echo "Profile installed successfully."
-echo "To verify, run: sudo profiles list | grep disablecriticalupdates"
-
+echo "[DONE] Please click 'Install' in System Settings → Profiles to complete setup."
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

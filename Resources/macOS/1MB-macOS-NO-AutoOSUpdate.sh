@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-macOS-NO-AutoOSUpdate.sh
-# @Version: 0.1.0, build 011
+# @Version: 0.1.1, build 012
 # @Release: April 3rd, 2025
 # @Description: Helps us make sure Apple doesn't automatically force update macOS after 15.4 anymore.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -20,6 +20,10 @@
 # disable - Background scheduled updates (AutoUpdateRestartRequired)
 # disable - softwareupdate <- no apple, NO!!
 # disable - pre-release exclusion (AllowPreReleaseInstallation) <- NO
+
+# @Restore information
+# Allow macOS to do all the defaults again, run the script with the --restore parameter.
+# And remove the profile under general -> device management -> 1moreblock.com 
 
 ### CONFIGURATION
 #
@@ -42,37 +46,67 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Check for restore option
+if [[ "$1" == "--restore" ]]; then
+  echo "[RESTORE] Restoring default macOS software update settings..."
+
+  # Re-enable automatic checking for updates
+  defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+  # Re-enable automatic downloading of updates
+  defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool true
+
+  # Re-enable installation of critical system/data/security updates
+  defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
+
+  # Re-enable Mac App Store auto-updates
+  defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
+
+  # Re-enable automatic reboots for required updates
+  defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
+
+  # Enable background software update scheduling
+  softwareupdate --schedule on
+
+  # Allow pre-release macOS installations again (if desired)
+  defaults delete /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation 2>/dev/null || true
+
+  # Optionally remove the configuration profile if previously installed
+  PROFILE_PATH="/usr/local/1moreblock/DisableCriticalUpdates.mobileconfig"
+  if [[ -f "$PROFILE_PATH" ]]; then
+    echo "[RESTORE] Removing configuration profile file at $PROFILE_PATH"
+    rm -f "$PROFILE_PATH"
+  fi
+
+  echo "[RESTORE] macOS update settings have been restored to system defaults."
+  exit 0
+fi
 echo "[INFO] Disabling auto update-related settings..."
 
 # Prevent macOS from automatically checking for updates in the background.
-# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
 
 # Prevent automatic downloading of macOS updates once available.
-# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
 
 # Prevent automatic installation of critical system/data/security updates (XProtect, MRT, whatever it does).
-# tested: can not tell if it works (overridden by Apple in GUI)
-# defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
+# No longer works (overridden by Apple in GUI)
+defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
 
 # Prevent automatic updates of Mac App Store applications.
-# tested: works
 defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool false
 
 # Prevent macOS from automatically restarting to apply updates that require a reboot.
 # This is the big one, we really don't want this. 
-# tested: can not tell if it works
-# defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool false
+# No longer works (overridden by Apple in GUI)
+defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool false
 
 # Disable the background scheduled check for software updates entirely.
 # This stops the system from periodically checking for updates on its own.
-# tested: works
 softwareupdate --schedule off
 
 # Prevent the system from offering pre-release (beta) macOS updates, even if enrolled in a beta seed program.
 # This ensures only final, stable versions are available — useful for production machines.
-# tested: works
 defaults write /Library/Preferences/com.apple.SoftwareUpdate AllowPreReleaseInstallation -bool false
 
 echo "[INFO] Some update features disabled via defaults and softwareupdate."

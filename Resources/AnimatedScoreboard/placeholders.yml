@@ -5,6 +5,11 @@ scoreboard:
     globalscoreboard: globalscoreboard
     netherscoreboard: netherscoreboard
     defaultscoreboard: defaultscoreboard
+    skyblockscoreboard: skyblockscoreboard
+    skygridscoreboard: skygridscoreboard
+    acidscoreboard: acidscoreboard
+    oneblockscoreboard: oneblockscoreboard
+    cavescoreboard: cavescoreboard
   disabled: '&cDisabled'
   enabled: '&aEnabled'
   none-active: '&7None'

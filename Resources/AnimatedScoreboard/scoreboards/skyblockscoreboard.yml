@@ -1,0 +1,132 @@
+scores:
+  hidden: true
+
+display:
+  title:
+    text:
+      - "&b&lSkyBlock"
+    random: false
+    interval: 20
+
+  line-1:
+    text:
+      - " "
+    random: false
+    interval: 200
+    score: 99
+
+  # Core island data
+  line-2:
+    text:
+      - "&bIsland: &f%bskyblock_island_name%"
+    random: false
+    interval: 60
+    score: 98
+
+  line-3:
+    text:
+      - "&bOwner: &f%bskyblock_island_owner%"
+    random: false
+    interval: 60
+    score: 97
+
+  line-4:
+    text:
+      - "&bMembers: &f%bskyblock_island_members_count%"
+    random: false
+    interval: 60
+    score: 96
+
+  line-5:
+    text:
+      - "&bOnline: &f%bskyblock_island_online_members_count%"
+    random: false
+    interval: 60
+    score: 95
+
+  line-6:
+    text:
+      - "&bResets Left: &f%bskyblock_resets_left%"
+    random: false
+    interval: 60
+    score: 94
+
+  line-7:
+    text:
+      - " "
+    random: false
+    interval: 20
+    score: 93
+
+  # Level addon placeholders
+  line-8:
+    text:
+      - "&bLevel: &f%Level_bskyblock_island_level%"
+    random: false
+    interval: 60
+    score: 92
+
+  line-9:
+    text:
+      - "&bMax Level: &f%Level_bskyblock_island_level_max%"
+    random: false
+    interval: 60
+    score: 91
+
+  line-10:
+    text:
+      - "&b→ Next: &f%Level_bskyblock_points_to_next_level%"
+    random: false
+    interval: 60
+    score: 90
+
+  line-11:
+    text:
+      - " "
+    random: false
+    interval: 20
+    score: 89
+
+  # Challenges addon placeholders
+  line-12:
+    text:
+      - "&bChallenges: &f%bskyblock_challenges_completed_count%"
+    random: false
+    interval: 60
+    score: 88
+
+  line-13:
+    text:
+      - "&bLevel: &f%bskyblock_challenges_latest_level_name%"
+    random: false
+    interval: 60
+    score: 87
+
+  line-14:
+    text:
+      - "&bDone In Level: &f%bskyblock_challenges_latest_level_completed_count%"
+    random: false
+    interval: 60
+    score: 86
+
+  line-15:
+    text:
+      - " "
+    random: false
+    interval: 20
+    score: 85
+
+  # Personal info / footer
+  line-16:
+    text:
+      - "&bRank: &f%bskyblock_rank%"
+    random: false
+    interval: 60
+    score: 84
+
+  line-17:
+    text:
+      - "<scroll space=5 width=16 update=10>&9Build high, build proud on SkyBlock!</scroll>"
+    random: true
+    interval: 1
+    score: 83

@@ -51,7 +51,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-ac
 # --enable-native-access=ALL-UNNAMED (Remove startup warning when using java24)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="spigot"
+_engine="paper"
 # spigot until paper jar is out
 # "" assumes auto detection for <engine>-1.21.5.jar 
 # "spigot" assumes to look for spigot-1.21.5.jar

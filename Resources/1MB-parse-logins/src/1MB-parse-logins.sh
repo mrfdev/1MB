@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.3.1 build 031
+# @Version: 0.3.2 build 032
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -136,19 +136,19 @@ UUID_LOG=$(mktemp)
 
 # Parse the log files, so we have something to work with
 find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) -print0 | while IFS= read -r -d '' file; do
-  echo "Processing: $file"
+  echo "Processing: $file: ..."
 
   case "$file" in
     *.gz)
-      echo "Processing: $file with zgrep"
+      echo "debug: $file with zgrep"
       zgrep -ai 'logged in' -- "$file"
       ;;
     *)
-      echo "Processing: $file with grep"
+      echo "debug: $file with grep"
       grep -ai 'logged in' -- "$file"
       ;;
   esac | while IFS= read -r line; do
-    echo "  Processing line: $line"  # for debug, remove later
+    echo "  Debug line: $line"  # for debug, remove later
 
     if [[ "$line" =~ ^.*\[Server\ thread/INFO\]:\ ([^[:space:]]+)\[/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ]]; then
       user="${BASH_REMATCH[1]}"

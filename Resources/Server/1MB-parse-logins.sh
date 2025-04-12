@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.1.0 build 010
+# @Version: 0.1.1 build 011
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-parse-logins.sh
 # @Syntax: ./1MB-parse-logins.sh
-# ./parse-logins.sh Normal mode, generate log and IP sharing report
-# ./parse-logins.sh --search-user Notch
-# ./parse-logins.sh --search-ip 127.0.0.1
-# ./parse-logins.sh --search-uuid 069a79f4-44e9-4726-a5be-fca90e38aaf5
+# cd /server-directory/
+# ./1MB-parse-logins.sh Normal mode, generate log and IP sharing report
+# ./1MB-parse-logins.sh --search-user Notch
+# ./1MB-parse-logins.sh --search-ip 127.0.0.1
+# ./1MB-parse-logins.sh --search-uuid 069a79f4-44e9-4726-a5be-fca90e38aaf5
 
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
@@ -49,22 +50,9 @@ SEARCH_USER=""
 SEARCH_IP=""
 SEARCH_UUID=""
 
-#### TODO
+# For now, let's auto detect some stuff
 
-# - create blacklist_users.txt looking like
-# Notch
-# mrfloris
-
-# - create blacklist_ips.txt looking like
-# 127.0.0.1
-# 192.168.0.1
-
-# - create blacklist_uuids.txt looking like
-# 069a79f4-44e9-4726-a5be-fca90e38aaf5
-# 631e3896-da2a-4077-974b-d047859d76bc
-
-# echo the output so we know we've started
-# echo the output so we know we're done
+touch "$BLACKLIST_USERS" "$BLACKLIST_IPS" "$BLACKLIST_UUIDS"
 
 
 ### FUNCTIONS AND CODE

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.2.1 build 014
+# @Version: 0.2.3 build 016
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -52,7 +52,6 @@ SEARCH_UUID=""
 
 # For now, let's auto detect some stuff
 
-touch "$BLACKLIST_USERS" "$BLACKLIST_IPS" "$BLACKLIST_UUIDS"
 
 
 ### FUNCTIONS AND CODE
@@ -70,17 +69,22 @@ is_blacklisted() {
   grep -q -x "$item" "$file" 2>/dev/null
 }
 
+# Check or create blacklist files
 check_or_create_blacklist() {
   local file="$1"
   local name="$2"
   if [[ -f "$file" ]]; then
-    echo "$name exists. Overwrite? (y/n)"
-    read -r answer
-    if [[ "$answer" == "y" ]]; then
-      > "$file"
-      echo "$name has been cleared."
+    if [[ $YES_MODE -eq 1 ]]; then
+      echo "$name exists. Skipping prompt due to --yes flag."
     else
-      echo "Keeping existing $name."
+      echo "$name exists. Overwrite? (y/n)"
+      read -r answer
+      if [[ "$answer" == "y" ]]; then
+        > "$file"
+        echo "$name has been cleared."
+      else
+        echo "Keeping existing $name."
+      fi
     fi
   else
     echo "$name does not exist. Creating..."
@@ -129,54 +133,6 @@ if [[ ! -d "$LOG_DIR" ]]; then
   exit 1
 fi
 
-# Check or create blacklist files
-check_or_create_blacklist() {
-  local file="$1"
-  local name="$2"
-  if [[ -f "$file" ]]; then
-    if [[ $YES_MODE -eq 1 ]]; then
-      echo "$name exists. Skipping prompt due to --yes flag."
-    else
-      echo "$name exists. Overwrite? (y/n)"
-      read -r answer
-      if [[ "$answer" == "y" ]]; then
-        > "$file"
-        echo "$name has been cleared."
-      else
-        echo "Keeping existing $name."
-      fi
-    fi
-  else
-    echo "$name does not exist. Creating..."
-    > "$file"
-  fi
-}
-
-check_or_create_blacklist "$BLACKLIST_USERS" "User blacklist"
-check_or_create_blacklist "$BLACKLIST_IPS" "IP blacklist"
-check_or_create_blacklist "$BLACKLIST_UUIDS" "UUID blacklist"
-
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --search-user)
-      SEARCH_USER="$2"
-      shift 2
-      ;;
-    --search-ip)
-      SEARCH_IP="$2"
-      shift 2
-      ;;
-    --search-uuid)
-      SEARCH_UUID="$2"
-      shift 2
-      ;;
-    *)
-      echo "Unknown option: $1"
-      echo "Usage: $0 [--search-user USERNAME] [--search-ip IP] [--search-uuid UUID]"
-      exit 1
-      ;;
-  esac
-done
 
 # Temp files
 TMP_LOG=$(mktemp)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.0.6, build 008
+# @Version: 0.0.7, build 009
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -148,6 +148,23 @@ sort "$TMP_LOG" | uniq > "$RAW_LOG"
 sort "$UUID_LOG" | uniq > "${RAW_LOG/.log/-uuids.log}"
 
 # The magic awk magic goes here probably.. gosh, i hope i can figure that out
+# disclaimer: What I tried kept failing, especially on macOS, so asked ChatGPT to review my code
+# and as it turned out, I approached this wrong and so we're trying this instead now. 
+# split(users_by_ip[ip], arr, ", ") within {.{.}.}
+awk '
+{
+  user = $1
+  ip = $2
+  users_by_ip[ip] = (users_by_ip[ip] ? users_by_ip[ip] ", " : "") user
+}
+END {
+  for (ip in users_by_ip) {
+    split(users_by_ip[ip], arr, ", ")
+    if (length(arr) > 1)
+      printf "IP %s is shared by: %s\n", ip, users_by_ip[ip]
+  }
+}
+' "$RAW_LOG" > "$FINAL_LOG"
 
 # Output results
 echo "Done."

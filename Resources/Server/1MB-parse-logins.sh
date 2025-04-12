@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.0.3, build 003
+# @Version: 0.0.4, build 004
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -109,6 +109,17 @@ TMP_LOG=$(mktemp)
 UUID_LOG=$(mktemp)
 
 # Parse the log files, so we have something to work with
+find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r file; do
+  if [[ "$file" == *.gz ]]; then
+    # cat wont work, testing with zcat?? otherwise zgrep is an option (and grep)
+  else
+    cat "$file"
+  fi | while read -r line; do
+    # Match login lines: username[/IP]
+    # also
+    # Match UUID lines
+  done
+done
 
 # Do the particular query type
 

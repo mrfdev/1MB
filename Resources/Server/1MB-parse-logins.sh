@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.0.7, build 009
+# @Version: 0.1.0 build 010
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -113,13 +113,26 @@ UUID_LOG=$(mktemp)
 # Parse the log files, so we have something to work with
 find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r file; do
   if [[ "$file" == *.gz ]]; then
-    # cat wont work, testing with zcat?? otherwise zgrep is an option (and grep)
+    zcat "$file"
   else
     cat "$file"
   fi | while read -r line; do
-    # Match login lines: username[/IP]
-    # also
-    # Match UUID lines
+    # Match for username[/IP]
+    if [[ "$line" =~ ^.*\[Server\ thread\/INFO\]:\ ([^[:space:]]+)\[/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ]]; then
+      user="${BASH_REMATCH[1]}"
+      ip="${BASH_REMATCH[2]}"
+      if is_blacklisted "$user" "$BLACKLIST_USERS"; then continue; fi
+      if is_blacklisted "$ip" "$BLACKLIST_IPS"; then continue; fi
+      echo "$user $ip" >> "$TMP_LOG"
+    fi
+
+    # Match for UUID lines
+    if [[ "$line" =~ UUID\ of\ player\ ([^[:space:]]+)\ is\ ([a-f0-9\-]+) ]]; then
+      user="${BASH_REMATCH[1]}"
+      uuid="${BASH_REMATCH[2]}"
+      if is_blacklisted "$uuid" "$BLACKLIST_UUIDS"; then continue; fi
+      echo "$user $uuid" >> "$UUID_LOG"
+    fi
   done
 done
 

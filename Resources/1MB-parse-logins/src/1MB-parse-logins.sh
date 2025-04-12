@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.2.6 build 020
+# @Version: 0.3.1 build 031
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -135,15 +135,21 @@ TMP_LOG=$(mktemp)
 UUID_LOG=$(mktemp)
 
 # Parse the log files, so we have something to work with
-# zcat on macOS doens't gunzip properlly NOoOooOoo wtf
 find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) -print0 | while IFS= read -r -d '' file; do
   echo "Processing: $file"
-  if [[ "$file" == *.gz ]]; then
-    gzip -cd -- "$file"
-  else
-    cat -- "$file"
-  fi | while IFS= read -r line; do
-    # Match login lines: username[/IP]
+
+  case "$file" in
+    *.gz)
+      echo "Processing: $file with zgrep"
+      zgrep -ai 'logged in' -- "$file"
+      ;;
+    *)
+      echo "Processing: $file with grep"
+      grep -ai 'logged in' -- "$file"
+      ;;
+  esac | while IFS= read -r line; do
+    echo "  Processing line: $line"  # for debug, remove later
+
     if [[ "$line" =~ ^.*\[Server\ thread/INFO\]:\ ([^[:space:]]+)\[/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ]]; then
       user="${BASH_REMATCH[1]}"
       ip="${BASH_REMATCH[2]}"
@@ -152,7 +158,6 @@ find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) -print0 | while 
       echo "$user $ip" >> "$TMP_LOG"
     fi
 
-    # Match UUID lines
     if [[ "$line" =~ UUID\ of\ player\ ([^[:space:]]+)\ is\ ([a-f0-9\-]+) ]]; then
       user="${BASH_REMATCH[1]}"
       uuid="${BASH_REMATCH[2]}"

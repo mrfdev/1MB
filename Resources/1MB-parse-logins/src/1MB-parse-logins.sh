@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.2.3 build 016
+# @Version: 0.2.5 build 018
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -50,10 +50,6 @@ SEARCH_USER=""
 SEARCH_IP=""
 SEARCH_UUID=""
 
-# For now, let's auto detect some stuff
-
-
-
 ### FUNCTIONS AND CODE
 #
 # ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
@@ -92,10 +88,7 @@ check_or_create_blacklist() {
   fi
 }
 
-check_or_create_blacklist "$BLACKLIST_USERS" "User blacklist"
-check_or_create_blacklist "$BLACKLIST_IPS" "IP blacklist"
-check_or_create_blacklist "$BLACKLIST_UUIDS" "UUID blacklist"
-
+# default no --yes mode
 YES_MODE=0
 
 # Before we make some temp files, let's identify what type of search we're trying to do
@@ -126,6 +119,10 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+check_or_create_blacklist "$BLACKLIST_USERS" "User blacklist"
+check_or_create_blacklist "$BLACKLIST_IPS" "IP blacklist"
+check_or_create_blacklist "$BLACKLIST_UUIDS" "UUID blacklist"
+
 # Okay, now we need to deal with some temp files
 # Verify logs directory exists
 if [[ ! -d "$LOG_DIR" ]]; then
@@ -139,7 +136,7 @@ TMP_LOG=$(mktemp)
 UUID_LOG=$(mktemp)
 
 # Parse the log files, so we have something to work with
-find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r file; do
+find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while IFS= read -r file; do
   if [[ "$file" == *.gz ]]; then
     zcat "$file"
   else

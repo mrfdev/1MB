@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.1.1 build 011
+# @Version: 0.2.0 build 013
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -10,9 +10,9 @@
 # @Syntax: ./1MB-parse-logins.sh
 # cd /server-directory/
 # ./1MB-parse-logins.sh Normal mode, generate log and IP sharing report
-# ./1MB-parse-logins.sh --search-user Notch
+# ./1MB-parse-logins.sh --search-user mrfloris
 # ./1MB-parse-logins.sh --search-ip 127.0.0.1
-# ./1MB-parse-logins.sh --search-uuid 069a79f4-44e9-4726-a5be-fca90e38aaf5
+# ./1MB-parse-logins.sh --search-uuid 631e3896-da2a-4077-974b-d047859d76bc
 
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
@@ -70,8 +70,92 @@ is_blacklisted() {
   grep -q -x "$item" "$file" 2>/dev/null
 }
 
+check_or_create_blacklist() {
+  local file="$1"
+  local name="$2"
+  if [[ -f "$file" ]]; then
+    echo "$name exists. Overwrite? (y/n)"
+    read -r answer
+    if [[ "$answer" == "y" ]]; then
+      > "$file"
+      echo "$name has been cleared."
+    else
+      echo "Keeping existing $name."
+    fi
+  else
+    echo "$name does not exist. Creating..."
+    > "$file"
+  fi
+}
+
+check_or_create_blacklist "$BLACKLIST_USERS" "User blacklist"
+check_or_create_blacklist "$BLACKLIST_IPS" "IP blacklist"
+check_or_create_blacklist "$BLACKLIST_UUIDS" "UUID blacklist"
+
+YES_MODE=0
+
 # Before we make some temp files, let's identify what type of search we're trying to do
 # Are we querying for a playername, playerip, or playeruuid, else report the param syntax is invalid, else skip this whole thing and do everything.
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --search-user)
+      SEARCH_USER="$2"
+      shift 2
+      ;;
+    --search-ip)
+      SEARCH_IP="$2"
+      shift 2
+      ;;
+    --search-uuid)
+      SEARCH_UUID="$2"
+      shift 2
+      ;;
+    --yes)
+      YES_MODE=1
+      shift
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Usage: $0 [--search-user USERNAME] [--search-ip IP] [--search-uuid UUID] [--yes]"
+      exit 1
+      ;;
+  esac
+done
+
+# Okay, now we need to deal with some temp files
+# Verify logs directory exists
+if [[ ! -d "$LOG_DIR" ]]; then
+  echo "Error: '$LOG_DIR' directory not found. Please make sure logs are located at ./logs/"
+  exit 1
+fi
+
+# Check or create blacklist files
+check_or_create_blacklist() {
+  local file="$1"
+  local name="$2"
+  if [[ -f "$file" ]]; then
+    if [[ $YES_MODE -eq 1 ]]; then
+      echo "$name exists. Skipping prompt due to --yes flag."
+    else
+      echo "$name exists. Overwrite? (y/n)"
+      read -r answer
+      if [[ "$answer" == "y" ]]; then
+        > "$file"
+        echo "$name has been cleared."
+      else
+        echo "Keeping existing $name."
+      fi
+    fi
+  else
+    echo "$name does not exist. Creating..."
+    > "$file"
+  fi
+}
+
+check_or_create_blacklist "$BLACKLIST_USERS" "User blacklist"
+check_or_create_blacklist "$BLACKLIST_IPS" "IP blacklist"
+check_or_create_blacklist "$BLACKLIST_UUIDS" "UUID blacklist"
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --search-user)
@@ -94,7 +178,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Okay, now we need some temp files
+# Temp files
 TMP_LOG=$(mktemp)
 UUID_LOG=$(mktemp)
 
@@ -105,8 +189,8 @@ find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r 
   else
     cat "$file"
   fi | while read -r line; do
-    # Match for username[/IP]
-    if [[ "$line" =~ ^.*\[Server\ thread\/INFO\]:\ ([^[:space:]]+)\[/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ]]; then
+    # Match login lines: username[/IP]
+    if [[ "$line" =~ ^.*\[Server\ thread/INFO\]:\ ([^[:space:]]+)\[/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ]]; then
       user="${BASH_REMATCH[1]}"
       ip="${BASH_REMATCH[2]}"
       if is_blacklisted "$user" "$BLACKLIST_USERS"; then continue; fi
@@ -114,7 +198,7 @@ find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r 
       echo "$user $ip" >> "$TMP_LOG"
     fi
 
-    # Match for UUID lines
+    # Match UUID lines
     if [[ "$line" =~ UUID\ of\ player\ ([^[:space:]]+)\ is\ ([a-f0-9\-]+) ]]; then
       user="${BASH_REMATCH[1]}"
       uuid="${BASH_REMATCH[2]}"
@@ -152,6 +236,7 @@ sort "$UUID_LOG" | uniq > "${RAW_LOG/.log/-uuids.log}"
 # disclaimer: What I tried kept failing, especially on macOS, so asked ChatGPT to review my code
 # and as it turned out, I approached this wrong and so we're trying this instead now. 
 # split(users_by_ip[ip], arr, ", ") within {.{.}.}
+
 awk '
 {
   user = $1
@@ -172,6 +257,5 @@ echo "Done."
 echo "- Logins: $RAW_LOG"
 echo "- Shared IP report: $FINAL_LOG"
 echo "- UUIDs: ${RAW_LOG/.log/-uuids.log}"
-
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

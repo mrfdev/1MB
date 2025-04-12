@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.0.4, build 004
+# @Version: 0.0.5, build 006
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -135,6 +135,8 @@ if [[ -n "$SEARCH_UUID" ]]; then
 fi
 
 # Then sort the results, regardless of type!
+sort "$TMP_LOG" | uniq > "$RAW_LOG"
+sort "$UUID_LOG" | uniq > "${RAW_LOG/.log/-uuids.log}"
 
 # The magic awk magic goes here probably.. gosh, i hope i can figure that out
 

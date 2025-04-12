@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-parse-logins.sh
-# @Version: 0.0.5, build 006
+# @Version: 0.0.6, build 008
 # @Release: April 12th, 2025
 # @Description: Helps us find alt accounts from /logs/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -73,6 +73,8 @@ SEARCH_UUID=""
 #
 ###
 
+echo "Starting..."
+
 # Handy helper that we can use later
 is_blacklisted() {
   local item="$1"
@@ -123,15 +125,22 @@ done
 
 # Do the particular query type
 if [[ -n "$SEARCH_USER" ]]; then
-# whatever
+  echo "Searching for username: $SEARCH_USER"
+  grep -i "^$SEARCH_USER " "$TMP_LOG"
+  grep -i "^$SEARCH_USER " "$UUID_LOG"
+  exit 0
 fi
 
 if [[ -n "$SEARCH_IP" ]]; then
-# whatever
+  echo "Searching for IP: $SEARCH_IP"
+  grep -i " $SEARCH_IP$" "$TMP_LOG"
+  exit 0
 fi
 
 if [[ -n "$SEARCH_UUID" ]]; then
-# whatever
+  echo "Searching for UUID: $SEARCH_UUID"
+  grep -i " $SEARCH_UUID$" "$UUID_LOG"
+  exit 0
 fi
 
 # Then sort the results, regardless of type!
@@ -141,6 +150,10 @@ sort "$UUID_LOG" | uniq > "${RAW_LOG/.log/-uuids.log}"
 # The magic awk magic goes here probably.. gosh, i hope i can figure that out
 
 # Output results
+echo "Done."
+echo "- Logins: $RAW_LOG"
+echo "- Shared IP report: $FINAL_LOG"
+echo "- UUIDs: ${RAW_LOG/.log/-uuids.log}"
 
 
 #EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

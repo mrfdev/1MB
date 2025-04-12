@@ -30,8 +30,14 @@ LOG_DIR="./logs"
 TIMESTAMP=$(date +%Y-%m-%d)
 RAW_LOG="${TIMESTAMP}.log"
 FINAL_LOG="${TIMESTAMP}-completed.log"
+
 BLACKLIST_USERS="./blacklist_users.txt"
 BLACKLIST_IPS="./blacklist_ips.txt"
+BLACKLIST_UUIDS="./blacklist_uuids.txt"
+
+SEARCH_USER=""
+SEARCH_IP=""
+SEARCH_UUID=""
 
 # TODO
 # - create blacklist_users.txt looking like
@@ -40,6 +46,9 @@ BLACKLIST_IPS="./blacklist_ips.txt"
 # - create blacklist_ips.txt looking like
 # 127.0.0.1
 # 192.168.0.1
+# - create blacklist_uuids.txt looking like
+# 39ffc683-669a-4c5f-9e27-7f3fce3cc4e1
+# 29ffc683-669a-4c5f-9e27-7f3fce3cc4e2
 
 
 ### FUNCTIONS AND CODE

@@ -8,7 +8,7 @@
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-parse-logins.sh
 # @Syntax: ./1MB-parse-logins.sh
-# TODO:  <playername | ip> params?
+# TODO:  <playername | ip | uuid> params?
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 # @info:

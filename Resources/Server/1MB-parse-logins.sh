@@ -122,6 +122,17 @@ find "$LOG_DIR" -type f \( -name "*.log" -o -name "*.log.gz" \) | while read -r 
 done
 
 # Do the particular query type
+if [[ -n "$SEARCH_USER" ]]; then
+# whatever
+fi
+
+if [[ -n "$SEARCH_IP" ]]; then
+# whatever
+fi
+
+if [[ -n "$SEARCH_UUID" ]]; then
+# whatever
+fi
 
 # Then sort the results, regardless of type!
 

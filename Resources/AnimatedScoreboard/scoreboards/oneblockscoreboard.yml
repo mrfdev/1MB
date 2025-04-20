@@ -4,13 +4,13 @@ scores:
 display:
   title:
     text:
-      - "&a&lOneBlock"
+      - "&6&l⛏ &a&l/oneblock &6&l⛏"
     random: false
     interval: 20
 
   line-1:
     text:
-      - " "
+      - "&7&m----------------------"
     random: false
     interval: 200
     score: 99
@@ -133,7 +133,7 @@ display:
 
   line-18:
     text:
-      - " "
+      - "&7&m----------------------"
     random: false
     interval: 200
     score: 82
@@ -141,7 +141,7 @@ display:
   # Footer
   line-19:
     text:
-      - "<scroll space=5 width=16 update=10>&6Keep progressing to unlock more phases!</scroll>"
+      - "<scroll space=5 width=16 update=10>&6&l⛏ Keep progressing to unlock more phases! &6&l⛏</scroll>"
     random: true
     interval: 1
-    score: 81
+    score: 82

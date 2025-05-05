@@ -18,28 +18,28 @@ display:
   # AOneBlock Phase & Progress
   line-2:
     text:
-      - "&aPhase: &f%aoneblock_my_island_phase%"
+      - "&aPhase: &f%aoneblock_visited_island_phase%"
     random: false
     interval: 60
     score: 98
 
   line-3:
     text:
-      - "&aProgress: &f%aoneblock_my_island_percent_done%%"
+      - "&aProgress: &f%aoneblock_visited_island_percent_done%"
     random: false
     interval: 60
     score: 97
 
   line-4:
     text:
-      - "&aNext: &f%aoneblock_my_island_next_phase%"
+      - "&aNext: &f%aoneblock_visited_island_next_phase%"
     random: false
     interval: 60
     score: 96
 
   line-5:
     text:
-      - "&aBlocks Left: &f%aoneblock_my_island_blocks_to_next_phase%"
+      - "&aBlocks Left: &f%aoneblock_visited_island_blocks_to_next_phase%"
     random: false
     interval: 60
     score: 95
@@ -54,7 +54,7 @@ display:
   # Level Info
   line-7:
     text:
-      - "&aIsland Level: &f%Level_aoneblock_island_level%"
+      - "&aIsland Level: &f%Level_aoneblock_visited_island_level%"
     random: false
     interval: 60
     score: 93

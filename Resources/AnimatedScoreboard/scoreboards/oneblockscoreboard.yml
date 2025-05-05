@@ -1,5 +1,7 @@
 scores:
   hidden: true
+  # This one change the default interval to 60.
+  interval: 60  
 
 display:
   title:
@@ -20,28 +22,24 @@ display:
     text:
       - "&aPhase: &f%aoneblock_my_island_phase%"
     random: false
-    interval: 60
     score: 98
 
   line-3:
     text:
       - "&aProgress: &f%aoneblock_my_island_percent_done%%"
     random: false
-    interval: 60
     score: 97
 
   line-4:
     text:
       - "&aNext: &f%aoneblock_my_island_next_phase%"
     random: false
-    interval: 60
     score: 96
 
   line-5:
     text:
       - "&aBlocks Left: &f%aoneblock_my_island_blocks_to_next_phase%"
     random: false
-    interval: 60
     score: 95
 
   line-6:
@@ -56,28 +54,24 @@ display:
     text:
       - "&aIsland Level: &f%Level_aoneblock_island_level%"
     random: false
-    interval: 60
     score: 93
 
   line-8:
     text:
       - "&aLevel Max: &f%Level_aoneblock_island_level_max%"
     random: false
-    interval: 60
     score: 92
 
   line-9:
     text:
       - "&aPoints → Next: &f%Level_aoneblock_points_to_next_level%"
     random: false
-    interval: 60
     score: 91
 
   line-10:
     text:
       - " "
     random: false
-    interval: 20
     score: 90
 
   # Challenge Info
@@ -85,21 +79,18 @@ display:
     text:
       - "&aChallenges Done: &f%aoneblock_challenges_completed_count%"
     random: false
-    interval: 60
     score: 89
 
   line-12:
     text:
       - "&aIn Level: &f%aoneblock_challenges_latest_level_name%"
     random: false
-    interval: 60
     score: 88
 
   line-13:
     text:
       - "&aIn Level Done: &f%aoneblock_challenges_latest_level_completed_count%"
     random: false
-    interval: 60
     score: 87
 
   line-14:
@@ -114,21 +105,18 @@ display:
     text:
       - "&aRole: &f%aoneblock_rank%"
     random: false
-    interval: 60
     score: 85
 
   line-16:
     text:
       - "&aOnline Members: &f%aoneblock_island_online_members_count%"
     random: false
-    interval: 60
     score: 84
 
   line-17:
     text:
       - "&aResets Left: &f%aoneblock_resets_left%"
     random: false
-    interval: 60
     score: 83
 
   line-18:

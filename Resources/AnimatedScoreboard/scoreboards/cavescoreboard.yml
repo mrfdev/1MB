@@ -4,13 +4,13 @@ scores:
 display:
   title:
     text:
-      - "&8&lCaveBlock"
+      - "&8&l🕯️ &8&l/cave &8&l🕯️"
     random: false
     interval: 20
 
   line-1:
     text:
-      - " "
+      - "&8&m----------------------"
     random: false
     interval: 200
     score: 99
@@ -82,7 +82,7 @@ display:
 
   line-11:
     text:
-      - " "
+      - "&8&m----------------------"
     random: false
     interval: 20
     score: 89

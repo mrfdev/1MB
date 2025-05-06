@@ -4,7 +4,7 @@ scores:
 display:
   title:
     text:
-      - "&8&l🕯️ &8&l/cave &8&l🕯️"
+      - "&7&l🕯 &7&l/cave &7&l🕯 "
     random: false
     interval: 20
 

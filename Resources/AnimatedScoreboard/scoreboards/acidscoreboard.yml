@@ -4,13 +4,13 @@ scores:
 display:
   title:
     text:
-      - "&2&lAcidIsland"
+      - "&2&l☣️ &2&l/acid &2&l☣️"
     random: false
     interval: 20
 
   line-1:
     text:
-      - " "
+      - "&2&m----------------------"
     random: false
     interval: 200
     score: 99
@@ -111,7 +111,7 @@ display:
 
   line-15:
     text:
-      - " "
+      - "&2&m----------------------"
     random: false
     interval: 20
     score: 85

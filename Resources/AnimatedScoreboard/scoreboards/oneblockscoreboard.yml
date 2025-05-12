@@ -6,7 +6,7 @@ display:
     text:
       - "&6&l⛏ &a&l/oneblock &6&l⛏"
     random: false
-    interval: 20
+    interval: 200
 
   line-1:
     text:
@@ -15,31 +15,30 @@ display:
     interval: 200
     score: 99
 
-  # AOneBlock Phase & Progress
   line-2:
     text:
-      - "&aPhase: &f%aoneblock_visited_island_phase%"
+      - "&aOwner: &f%aoneblock_visited_island_owner%"
     random: false
-    interval: 60
+    interval: 90
     score: 98
 
   line-3:
     text:
-      - "&aProgress: &f%aoneblock_visited_island_percent_done%"
+      - " "
     random: false
-    interval: 60
+    interval: 200
     score: 97
 
   line-4:
     text:
-      - "&aNext: &f%aoneblock_visited_island_next_phase%"
+      - "&aPhase: &f%aoneblock_visited_island_phase% (&f%aoneblock_visited_island_percent_done%)"
     random: false
     interval: 60
     score: 96
 
   line-5:
     text:
-      - "&aBlocks Left: &f%aoneblock_visited_island_blocks_to_next_phase%"
+      - "&aNext: &f%aoneblock_visited_island_next_phase% &ain &f%aoneblock_visited_island_blocks_to_next_phase% blocks"
     random: false
     interval: 60
     score: 95
@@ -48,39 +47,37 @@ display:
     text:
       - " "
     random: false
-    interval: 20
+    interval: 200
     score: 94
 
-  # Level Info
   line-7:
     text:
-      - "&aIsland Level: &f%Level_aoneblock_visited_island_level%"
+      - "&aLevel: &f%Level_aoneblock_visited_island_level%"
     random: false
     interval: 60
     score: 93
 
   line-8:
     text:
-      - "&aLevel Max: &f%Level_aoneblock_island_level_max%"
+      - "&aNext in: &f%Level_aoneblock_points_to_next_level% points"
     random: false
-    interval: 60
+    interval: 20
     score: 92
 
   line-9:
     text:
-      - "&aPoints → Next: &f%Level_aoneblock_points_to_next_level%"
+      - " "
     random: false
-    interval: 60
+    interval: 200
     score: 91
 
   line-10:
     text:
-      - " "
+      - "&7&m----------------------"
     random: false
-    interval: 20
+    interval: 200
     score: 90
 
-  # Challenge Info
   line-11:
     text:
       - "&aChallenges Done: &f%aoneblock_challenges_completed_count%"
@@ -90,58 +87,29 @@ display:
 
   line-12:
     text:
-      - "&aIn Level: &f%aoneblock_challenges_latest_level_name%"
+      - "&aChallenges Level: &f%aoneblock_challenges_latest_level_name%"
     random: false
-    interval: 60
-    score: 88
+    interval: 200
+    score: 87
 
   line-13:
     text:
-      - "&aIn Level Done: &f%aoneblock_challenges_latest_level_completed_count%"
+      - " "
     random: false
-    interval: 60
-    score: 87
+    interval: 200
+    score: 86
 
   line-14:
     text:
-      - " "
+      - "&aGenerator: &f%aoneblock_magiccobblestonegenerator_active_generator_names%"
     random: false
-    interval: 20
-    score: 86
-
-  # Personal Stats
-  line-15:
-    text:
-      - "&aRole: &f%aoneblock_rank%"
-    random: false
-    interval: 60
+    interval: 90
     score: 85
 
-  line-16:
+  line-15:
     text:
-      - "&aOnline Members: &f%aoneblock_island_online_members_count%"
-    random: false
-    interval: 60
-    score: 84
-
-  line-17:
-    text:
-      - "&aResets Left: &f%aoneblock_resets_left%"
-    random: false
-    interval: 60
-    score: 83
-
-  line-18:
-    text:
-      - "&7&m----------------------"
+      - " "
     random: false
     interval: 200
-    score: 82
+    score: 84
 
-  # Footer
-  line-19:
-    text:
-      - "<scroll space=5 width=16 update=10>&6&l⛏ Keep progressing to unlock more phases! &6&l⛏</scroll>"
-    random: true
-    interval: 1
-    score: 82

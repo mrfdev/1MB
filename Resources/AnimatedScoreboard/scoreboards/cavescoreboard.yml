@@ -10,7 +10,7 @@ display:
 
   line-1:
     text:
-      - "&8&m----------------------"
+      - "&8•&l&m                            &r&8•"
     random: false
     interval: 200
     score: 99
@@ -82,7 +82,7 @@ display:
 
   line-11:
     text:
-      - "&8&m----------------------"
+      - "&8•&l&m                            &r&8•"
     random: false
     interval: 20
     score: 89

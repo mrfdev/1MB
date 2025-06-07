@@ -889,7 +889,7 @@ PlayedTime:
     Type: rare
     Reward:
       Command:
-        Execute: say §6PLAYER is now a Hall of Famer!
+        Execute: say §6PLAYER is now in the 1MB Hall of Fame!
         Display: Fame and Glory
       Item: diamond_block 3
 DistanceFoot:

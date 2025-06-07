@@ -287,15 +287,10 @@ BungeeMode: false
 Places:
   chest:
     5:
-      # Optional, used in /aach list when achievement not yet received, and in advancements.
       Goal: Place 5 chests.
-      # Description, displayed when receiving achievement, and in /aach book and /aach list.
       Message: §6You have placed 5 chests!
-      # Database name, must also be used in /aach delete and /aach check.
       Name: place_5_chest
-      # Displayed when receiving achievement, and in /aach book and /aach list.
       DisplayName: Storage Expert
-      # Used to select the display item for this achievement in gui.yml.
       Type: normal
     50:
       Goal: Place 50 chests.
@@ -318,12 +313,45 @@ Places:
       Type: normal
       Reward:
         Command:
-          Execute: "say §7ALERT: §4PLAYER§7 has become the §4STONE GOD§7!"
+          Execute: 'say §7ALERT: §4PLAYER§7 has become the §4STONE GOD§7!'
           Display: Become the Stone God!
-
-# Count blocks broken. You can use any of the following:
-# - block names (available names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names).
-# - notations such as sand:1 (i.e. sand item with metadata 1, red sand) for 1.7-1.12 Minecraft versions .
+  obsidian:
+    50:
+      Goal: Place 50 obsidian blocks.
+      Message: You built something... indestructible?
+      Name: place_50_obsidian
+      DisplayName: Bedrock Wannabe
+      Type: rare
+      Reward:
+        Item: obsidian 8
+  crafting_table:
+    25:
+      Goal: Place 25 crafting tables.
+      Message: You placed 25 crafting tables! Workbench Collector!
+      Name: place_25_crafting_table
+      DisplayName: Workshop Tycoon
+      Type: normal
+      Reward:
+        Experience: 100
+        Item: oak_log 16
+  bamboo:
+    200:
+      Goal: Place 200 bamboo.
+      Message: Panda paradise achieved!
+      Name: place_200_bamboo
+      DisplayName: Bamboo Gardener
+      Type: normal
+      Reward:
+        Item: scaffolding 32
+  honey_block:
+    10:
+      Goal: Place 10 honey blocks.
+      Message: Sticky situation!
+      Name: place_10_honey_block
+      DisplayName: The Sticky Architect
+      Type: rare
+      Reward:
+        Item: honey_bottle 4
 Breaks:
   ice:
     10:
@@ -332,8 +360,6 @@ Breaks:
       Name: break_10_ice
       DisplayName: Cold Drink Supplier
       Type: normal
-  # Use the following construct to track multiple types. Note that if ever you add/remove a type grouped to 
-  # others with |, progress for this sub-category group will start back at 0.
   snow|snow_block|ice:
     32:
       Goal: Break 32 ice and/or snow.
@@ -351,15 +377,36 @@ Breaks:
       Reward:
         Command:
           Execute:
-            - give PLAYER dispenser 10
-            - give PLAYER lever 5
-
-# Count entities killed. You can use any of the following:
-# - entity types (available names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names).
-# - poweredcreeper.
-# - custom mob name (name tag/plugins such as Mythic Mobs) for Minecraft 1.8 or more recent.
-# - player to track player kills as a whole.
-# - specificplayer- followed by player UUID to track how many times a specific player has been killed.
+          - give PLAYER dispenser 10
+          - give PLAYER lever 5
+  deepslate:
+    500:
+      Goal: Break 500 deepslate blocks.
+      Message: 500 deepslate blocks shattered!
+      Name: break_500_deepslate
+      DisplayName: Deep Miner
+      Type: normal
+      Reward:
+        Experience: 250
+        Item: deepslate_bricks 32
+  ancient_debris:
+    5:
+      Goal: Break 5 ancient debris.
+      Message: You discovered ancient tech!
+      Name: break_5_ancient_debris
+      DisplayName: Nether Prospector
+      Type: rare
+      Reward:
+        Item: gold_ingot 8
+  glass:
+    100:
+      Goal: Break 100 glass blocks.
+      Message: Hope you recycled all that glass!
+      Name: break_100_glass
+      DisplayName: Glassbreaker
+      Type: normal
+      Reward:
+        Item: amethyst_shard 8
 Kills:
   zombie:
     1:
@@ -376,16 +423,12 @@ Kills:
       Goal: Kill the server Owner.
       Message: Yippie! You killed the owner of the server!
       Name: kills_1_darkpyves
-      DisplayName:  No More mrfloris
+      DisplayName: No More mrfloris
       Type: rare
       Reward:
         IncreaseMaxHealth: 1
         Money: 25000
         Item: diamond 16
-
-# Count targets shot (but not necessarily killed) with a projectile. You can use any of the following:
-# - block names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names
-# - entity names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names
 TargetsShot:
   villager:
     10:
@@ -401,8 +444,6 @@ TargetsShot:
       Name: targetsshot_100_glass
       DisplayName: Window Breaker
       Type: normal
-
-# Count items crafted (available names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names).
 Crafts:
   diamond_sword:
     1:
@@ -421,10 +462,6 @@ Crafts:
       Type: rare
       Reward:
         Experience: 500
-
-# Count specific commands used. Specify command prefixes in lower case without initial slash. For example, command
-# '/petm setcolor red' from the PetMaster plugin matches with subcategory 'petm setcolor'. Aliases of a given command
-# will also be taken into account.
 PlayerCommands:
   aach stats:
     10:
@@ -437,8 +474,6 @@ PlayerCommands:
         Command:
           Execute: say §7PLAYER is now a statistician
           Display: Broadcast
-
-# Count animals bred (available names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names).
 Breeding:
   sheep:
     1:
@@ -447,8 +482,6 @@ Breeding:
       Name: breeding_1_sheep
       DisplayName: Breeder
       Type: normal
-
-# Count the maximum level reached in a job (job name lower case).
 JobsReborn:
   hunter:
     1:
@@ -457,22 +490,12 @@ JobsReborn:
       Name: jobsreborn_1_hunter
       DisplayName: Hunter
       Type: normal
-
-#======================================================================================================================#
-#                                              NORMAL ACTION ACHIEVEMENTS                                              #
-#                                                                                                                      #
-#                      Achievements in the following categories require only require a threshold.                      #
-#======================================================================================================================#
-
-# Count player connections during the day; statistic increases at most once per day.
 Connections:
   1:
     Message: You connected to our server for the first time!
     Name: connect_1
     DisplayName: Good Choice
     Type: normal
-
-# Count player deaths.
 Deaths:
   1:
     Goal: You have to Die.
@@ -481,10 +504,7 @@ Deaths:
     DisplayName: Rest in Peace
     Type: normal
     Reward:
-        # Text after the material and quantity will be used as the custom name of the item.
-        Item: stone 5 Tombstone
-
-# Count arrows shot.
+      Item: stone 5 Tombstone
 Arrows:
   50:
     Goal: Shoot 50 arrows.
@@ -492,8 +512,6 @@ Arrows:
     Name: arrows_50
     DisplayName: Arrows Around the Place
     Type: normal
-
-# Count snowballs thrown.
 Snowballs:
   1000:
     Goal: Throw 1000 snowballs.
@@ -502,10 +520,7 @@ Snowballs:
     DisplayName: Winter Addict
     Type: normal
     Reward:
-        # 30 corresponds to one bubble in the oxygen bar.
-        IncreaseMaxOxygen: 30
-
-# Count eggs thrown
+      IncreaseMaxOxygen: 30
 Eggs:
   1000:
     Goal: Throw 1000 eggs.
@@ -513,8 +528,6 @@ Eggs:
     Name: eggs_1000
     DisplayName: Omelet Addict
     Type: normal
-
-# Count fish caught.
 Fish:
   1:
     Goal: Fish a fish.
@@ -522,8 +535,6 @@ Fish:
     Name: fish_1
     DisplayName: Time for Fish and Chips
     Type: normal
-
-# Count treasures caught with a fishing rod.
 Treasures:
   1:
     Goal: Get a treasure from the sea.
@@ -531,8 +542,6 @@ Treasures:
     Name: treasure_1
     DisplayName: Treasure Hunter
     Type: normal
-
-# Count tools, armors or weapons broken.
 ItemBreaks:
   1:
     Goal: Let an item break.
@@ -540,8 +549,6 @@ ItemBreaks:
     Name: itembreaks_1
     DisplayName: §4Clumsy Guy
     Type: normal
-
-# Count items eaten (excludes potions and milk).
 EatenItems:
   1:
     Goal: Eat something.
@@ -549,8 +556,6 @@ EatenItems:
     Name: eatenitems_1
     DisplayName: First Snack
     Type: normal
-
-# Count sheep sheared.
 Shear:
   100:
     Goal: Shear 100 sheep.
@@ -558,8 +563,6 @@ Shear:
     Name: shear_100
     DisplayName: §1Wool Addict
     Type: normal
-
-# Count cows milked.
 Milk:
   1:
     Goal: Milk a cow.
@@ -569,8 +572,6 @@ Milk:
     Type: normal
     Reward:
       Experience: 100
-
-# Count buckets filled with lava.
 LavaBuckets:
   10:
     Goal: Fill 10 buckets with lava.
@@ -578,8 +579,6 @@ LavaBuckets:
     Name: lavabuckets_10
     DisplayName: Pyroman
     Type: normal
-
-# Count buckets filled with water.
 WaterBuckets:
   15:
     Goal: Fill 10 buckets with water.
@@ -587,8 +586,6 @@ WaterBuckets:
     Name: waterbuckets_15
     DisplayName: Fireman
     Type: normal
-
-# Count trades with a villager (increases by one per trade regardless of the number of items traded).
 Trades:
   1:
     Goal: Trade with a villager.
@@ -596,8 +593,6 @@ Trades:
     Name: trades_1
     DisplayName: First Trade
     Type: normal
-
-# Count anvil usages.
 AnvilsUsed:
   1:
     Goal: Repair an item.
@@ -605,8 +600,6 @@ AnvilsUsed:
     Name: anvilsused_1
     DisplayName: First Repair
     Type: normal
-
-# Count enchantments performed.
 Enchantments:
   5:
     Goal: Enchant 5 things.
@@ -614,8 +607,6 @@ Enchantments:
     Name: enchantments_5
     DisplayName: §5Wizard
     Type: normal
-
-# Count the number of times a player enters a bed.
 Beds:
   5:
     Goal: Sleep 5 times.
@@ -623,8 +614,6 @@ Beds:
     Name: bed_5
     DisplayName: Sleepy Guy
     Type: normal
-
-# Count the maximum level reached.
 MaxLevel:
   10:
     Goal: Reach level 10.
@@ -632,8 +621,6 @@ MaxLevel:
     Name: maxlevel_10
     DisplayName: §4Rookie
     Type: normal
-
-# Count potions consumed.
 ConsumedPotions:
   100:
     Goal: Drink 100 potions.
@@ -641,8 +628,6 @@ ConsumedPotions:
     Name: consumedpotions_100
     DisplayName: Alcoholic
     Type: normal
-
-# Count the amount of time played on the server (in hours, use integers).
 PlayedTime:
   1:
     Goal: Play an hour.
@@ -650,8 +635,6 @@ PlayedTime:
     Name: playedtime_1
     DisplayName: First Hour
     Type: normal
-
-# Count distance traveled by foot.
 DistanceFoot:
   1000:
     Goal: Travel 1000 Blocks with your feet.
@@ -659,8 +642,6 @@ DistanceFoot:
     Name: distancefoot_1000
     DisplayName: Big Walker
     Type: normal
-
-# Count distance traveled on a pig.
 DistancePig:
   100:
     Goal: Travel 100 Blocks with a pig.
@@ -668,8 +649,6 @@ DistancePig:
     Name: distancepig_100
     DisplayName: Carrot on a Stick Master
     Type: rare
-
-# Count distance traveled on a horse.
 DistanceHorse:
   500:
     Goal: Travel 500 Blocks with a horse.
@@ -677,8 +656,6 @@ DistanceHorse:
     Name: distancehorse_500
     DisplayName: The Avener
     Type: normal
-
-# Count distance traveled in a minecart.
 DistanceMinecart:
   100:
     Goal: Travel 100 Blocks with a minecart.
@@ -686,8 +663,6 @@ DistanceMinecart:
     Name: distanceminecart_100
     DisplayName: Carting Fan
     Type: normal
-
-# Count distance traveled in a boat.
 DistanceBoat:
   200:
     Goal: Travel 200 Blocks with a boat.
@@ -695,8 +670,6 @@ DistanceBoat:
     Name: distanceboat_200
     DisplayName: Great Sailor
     Type: normal
-
-# Count distance traveled with elytra. Minimum Minecraft version: 1.9.
 DistanceGliding:
   100:
     Goal: Fly 100 blocks with an elytra.
@@ -704,8 +677,6 @@ DistanceGliding:
     Name: distancegliding_100
     DisplayName: Angel
     Type: rare
-
-# Count distance traveled on a llama. Minimum Minecraft version: 1.11.
 DistanceLlama:
   150:
     Goal: Travel 150 blocks with a llama.
@@ -713,8 +684,6 @@ DistanceLlama:
     Name: distancellama_150
     DisplayName: Llama Rider
     Type: rare
-
-# Count distance traveled whilst sneaking.
 DistanceSneaking:
   500:
     Goal: Travel 500 blocks whilst sneaking.
@@ -722,8 +691,6 @@ DistanceSneaking:
     Name: distancesneaking_500
     DisplayName: Ninja
     Type: normal
-
-# Count items dropped on the ground.
 ItemDrops:
   15:
     Goal: Drop 15 items.
@@ -731,8 +698,6 @@ ItemDrops:
     Name: itemdrops_15
     DisplayName: Polluter
     Type: normal
-
-# Count items picked up from the ground.
 ItemPickups:
   40:
     Goal: Pick 40 items up.
@@ -740,8 +705,6 @@ ItemPickups:
     Name: itempickups_40
     DisplayName: Environmentalist
     Type: normal
-
-# Count blocks of soil plowed with a hoe.
 HoePlowings:
   10:
     Goal: Plow 10 times.
@@ -750,9 +713,7 @@ HoePlowings:
     DisplayName: Farmer
     Type: normal
     Reward:
-        Item: cookie 15
-
-# Count the number of bone meals used to fertilise plants.
+      Item: cookie 15
 Fertilising:
   15:
     Goal: Use bonemeal 15 times.
@@ -760,8 +721,6 @@ Fertilising:
     Name: fertilising_15
     DisplayName: Gardener
     Type: normal
-
-# Count animals tamed.
 Taming:
   1:
     Goal: Tame an animal.
@@ -769,8 +728,6 @@ Taming:
     Name: taming_1
     DisplayName: Tamer
     Type: normal
-
-# Count potions brewed.
 Brewing:
   1:
     Goal: Brew a potion.
@@ -778,8 +735,6 @@ Brewing:
     Name: brewing_1
     DisplayName: Alchemist
     Type: normal
-
-# Count fireworks launched.
 Fireworks:
   10:
     Goal: Launch fireworks 10 times.
@@ -789,8 +744,6 @@ Fireworks:
     Type: normal
     Reward:
       Experience: 200
-
-# Count music discs played (i.e. inserted in a jukebox).
 MusicDiscs:
   1:
     Goal: Use a jukebox.
@@ -798,8 +751,6 @@ MusicDiscs:
     Name: musicdiscs_1
     DisplayName: DJ
     Type: normal
-
-# Count teleportations with an enderpearl.
 EnderPearls:
   10:
     Goal: Teleport with ender pearls 10 times.
@@ -807,8 +758,6 @@ EnderPearls:
     Name: enderpearls_10
     DisplayName: Teleport Man
     Type: normal
-
-# Count pets given to another player (requires Pet Master plugin version 1.4 or above).
 PetMasterGive:
   3:
     Goal: Give 3 pets to friends.
@@ -816,8 +765,6 @@ PetMasterGive:
     Name: petmastergive_3
     DisplayName: Donator
     Type: rare
-
-# Count pets received from another player (requires Pet Master plugin version 1.4 or above).
 PetMasterReceive:
   10:
     Goal: Receive 10 pets.
@@ -825,8 +772,6 @@ PetMasterReceive:
     Name: petmasterreceive_10
     DisplayName: Receiver
     Type: rare
-
-# Count items smelt in a furnace.
 Smelting:
   250:
     Goal: Smelt 250 items.
@@ -834,8 +779,6 @@ Smelting:
     Name: smeltitems_250
     DisplayName: The Smelter
     Type: normal
-
-# Count raids won.
 RaidsWon:
   1:
     Goal: Win a raid.
@@ -853,8 +796,6 @@ RaidsWon:
     Type: rare
     Reward:
       Item: totem_of_undying 1
-
-# Count the number of times riptide is used with a trident.
 Riptides:
   1:
     Goal: Use a magical trident.

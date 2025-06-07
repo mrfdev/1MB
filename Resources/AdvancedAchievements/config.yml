@@ -458,7 +458,7 @@ Crafts:
       DisplayName: Blacksmith Apprentice
       Type: normal
       Reward:
-        Money: 2
+        Money: 2000
     100:
       Goal: Craft 100 diamond swords.
       Message: Next craft, Excalibur?

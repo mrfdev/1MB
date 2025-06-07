@@ -561,16 +561,6 @@ PlayerCommands:
         Command:
           Execute: say §7PLAYER is now a statistician
           Display: Broadcast
-  spawn:
-    50:
-      Goal: Use /spawn 50 times.
-      Message: You must really love the hub!
-      Name: playercommand_spawn_50
-      DisplayName: Homebody
-      Type: normal
-      Reward:
-        Item: compass 1
-        Item2: cooked_porkchop 16
   tpa:
     30:
       Goal: Use /tpa 30 times.

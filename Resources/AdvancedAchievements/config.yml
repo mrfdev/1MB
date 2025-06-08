@@ -873,13 +873,13 @@ PlayedTime:
     Type: normal
   100:
     Goal: Play for 100 hours.
-    Message: Welcome to the Hall of Fame.
+    Message: Welcome back - the server recognizes you big time!
     Name: playedtime_100
-    DisplayName: Server Veteran
+    DisplayName: Server Recognition
     Type: rare
     Reward:
       Command:
-        Execute: say §6PLAYER is now in the 1MB Hall of Fame!
+        Execute: say §6PLAYER has been here many times before!
         Display: Fame and Glory
       Item: diamond_block 3
 DistanceFoot:

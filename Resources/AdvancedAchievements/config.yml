@@ -383,6 +383,17 @@ Breaks:
           Execute:
             - give PLAYER grass_block 10
             - give PLAYER oak_wood 15
+  mossy_cobblestone:
+    15:
+      Goal: Break 15 mossy cobblestone blocks.
+      Message: §1Taiga biome master!
+      Name: break_15_mossy_cobblestone
+      DisplayName: Taiga Biome Master!
+      Type: normal
+      Reward:
+        Command:
+          Execute:
+            - give PLAYER deepslate_diamond_ore 3
   deepslate:
     500:
       Goal: Break 500 deepslate blocks.

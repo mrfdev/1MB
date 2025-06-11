@@ -566,16 +566,15 @@ PlayerCommands:
         Command:
           Execute: say §7PLAYER is now a statistician
           Display: Broadcast
-  tpa:
+  mcstats:
     30:
-      Goal: Use /tpa 30 times.
+      Goal: Use /mcstats 30 times without spamming
       Message: So social!
-      Name: playercommand_tpa_30
-      DisplayName: Teleport Junkie
+      Name: playercommand_mcstats_30
+      DisplayName: mcMMO level grinder
       Type: normal
       Reward:
-        Item: cooked_beef 16
-        Item2: golden_carrot 8
+        Item: golden_carrot 8
 Breeding:
   sheep:
     1:
@@ -584,6 +583,8 @@ Breeding:
       Name: breeding_1_sheep
       DisplayName: Breeder
       Type: normal
+      Reward:
+        Item: SHEEP_SPAWN_EGG 1
   cat:
     3:
       Goal: Breed 3 cats.

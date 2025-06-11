@@ -394,6 +394,17 @@ Breaks:
         Command:
           Execute:
             - give PLAYER deepslate_diamond_ore 3
+  dripstone_block:
+    15:
+      Goal: Break 12 dripstone blocks.
+      Message: §1Cave Apprentice!
+      Name: break_12_dripstone_block
+      DisplayName: Keep exploring!
+      Type: normal
+      Reward:
+        Command:
+          Execute:
+            - give PLAYER deepslate_emerald_ore 3
   deepslate:
     500:
       Goal: Break 500 deepslate blocks.

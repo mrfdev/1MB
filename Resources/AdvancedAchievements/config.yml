@@ -86,7 +86,7 @@ ChatHeader: "§7[%ICON%§7]"
 
 # Stop all stats from increasing when player in creative mode, including PlayedTime. Connection achievements will only
 # be handled once a player switches to a non-creative mode.
-RestrictCreative: false
+RestrictCreative: true
 
 # Stop all stats from increasing when player in spectator mode, including PlayedTime. Connection achievements will only
 # be handled once a player switches to a non-spectator mode. Minimum Minecraft version: 1.8.

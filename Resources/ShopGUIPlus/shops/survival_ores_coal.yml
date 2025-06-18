@@ -1,5 +1,5 @@
 survival_ores_coal:
-  name: "&0&lCoal Shop"
+  name: "&0&lCoal and Fuel Shop"
   size: 54
   fillItem:
     material: BLACK_STAINED_GLASS_PANE
@@ -13,6 +13,7 @@ survival_ores_coal:
       buyPrice: 117
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
@@ -21,6 +22,7 @@ survival_ores_coal:
       buyPrice: 120
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
@@ -29,6 +31,7 @@ survival_ores_coal:
       buyPrice: 436
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
@@ -37,6 +40,7 @@ survival_ores_coal:
       buyPrice: 100
       sellPrice: 1
       slot: 13
+      page: 1
     5:
       type: item
       item:
@@ -45,7 +49,53 @@ survival_ores_coal:
       buyPrice: 110
       sellPrice: 1
       slot: 14
+      page: 1
     6:
+      type: item
+      item:
+        material: LAVA_BUCKET
+        quantity: 1
+      buyPrice: 10000
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: DRIED_KELP_BLOCK
+        quantity: 1
+      buyPrice: 400
+      sellPrice: 1
+      slot: 16
+      page: 1
+    8:
+      type: item
+      item:
+        material: BLAZE_ROD
+        quantity: 1
+      buyPrice: 3000
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: BAMBOO
+        quantity: 1
+      buyPrice: 5
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: STICK
+        quantity: 1
+      buyPrice: 2
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -56,7 +106,9 @@ survival_ores_coal:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    7:
+      page: 1
+    12:
       type: special
       special: BALANCE
       slot: 53
+      page: 1

@@ -1,0 +1,134 @@
+survival_logs:
+  name: "&0&lLog and Stem type Blocks"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: OAK_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: SPRUCE_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: BIRCH_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: JUNGLE_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: ACACIA_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: DARK_OAK_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: MANGROVE_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: CRIMSON_STEM
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: WARPED_STEM
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: MUSHROOM_STEM
+        quantity: 1
+      buyPrice: 220
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: BROWN_MUSHROOM_BLOCK
+        quantity: 1
+      buyPrice: 220
+      sellPrice: 1
+      slot: 22
+    12:
+      type: item
+      item:
+        material: RED_MUSHROOM_BLOCK
+        quantity: 1
+      buyPrice: 220
+      sellPrice: 1
+      slot: 23
+    13:
+      type: item
+      item:
+        material: CHERRY_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 24
+    14:
+      type: item
+      item:
+        material: PALE_OAK_LOG
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 25
+    15:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival blocks menu"
+      shop: "survival_blocks"
+      slot: 48
+    16:
+      type: special
+      special: BALANCE
+      slot: 53

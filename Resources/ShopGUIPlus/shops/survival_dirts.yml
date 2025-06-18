@@ -78,6 +78,22 @@ survival_dirts:
       sellPrice: 1
       slot: 20
     10:
+      type: item
+      item:
+        material: MOSS_BLOCK
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: MUDDY_MANGROVE_ROOTS
+        quantity: 1
+      buyPrice: 71
+      sellPrice: 1
+      slot: 22
+    12:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -88,7 +104,7 @@ survival_dirts:
           - "&7 to the survival blocks menu"
       shop: "survival_blocks"
       slot: 48
-    11:
+    13:
       type: special
       special: BALANCE
       slot: 53

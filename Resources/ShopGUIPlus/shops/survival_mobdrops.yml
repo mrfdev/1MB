@@ -1,0 +1,187 @@
+survival_mobdrops:
+  name: '&0&lMob Drops &r(page %page%)'
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  items:
+    1:
+      type: item
+      item:
+        material: BONE
+        quantity: 1
+      buyPrice: 15.0
+      sellPrice: 1
+      slot: 10
+      page: 1
+    2:
+      type: item
+      item:
+        material: STRING
+        quantity: 1
+      buyPrice: 10.0
+      sellPrice: 1
+      slot: 11
+      page: 1
+    3:
+      type: item
+      item:
+        material: ROTTEN_FLESH
+        quantity: 1
+      buyPrice: 33.0
+      sellPrice: 1
+      slot: 12
+      page: 1
+    4:
+      type: item
+      item:
+        material: GUNPOWDER
+        quantity: 1
+      buyPrice: 45.0
+      sellPrice: 1
+      slot: 13
+      page: 1
+    5:
+      type: item
+      item:
+        material: SPIDER_EYE
+        quantity: 1
+      buyPrice: 330.0
+      sellPrice: 1
+      slot: 14
+      page: 1
+    6:
+      type: item
+      item:
+        material: ENDER_PEARL
+        quantity: 1
+      buyPrice: 55.0
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: SLIME_BALL
+        quantity: 1
+      buyPrice: 110.0
+      sellPrice: 1
+      slot: 16
+      page: 1
+    8:
+      type: item
+      item:
+        material: PHANTOM_MEMBRANE
+        quantity: 1
+      buyPrice: 140.0
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: BLAZE_ROD
+        quantity: 1
+      buyPrice: 30.0
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: GHAST_TEAR
+        quantity: 1
+      buyPrice: 200.0
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
+      type: item
+      item:
+        material: MAGMA_CREAM
+        quantity: 1
+      buyPrice: 90.0
+      sellPrice: 1
+      slot: 22
+      page: 1
+    12:
+      type: item
+      item:
+        material: SHULKER_SHELL
+        quantity: 1
+      buyPrice: 100000.0
+      sellPrice: 1
+      slot: 23
+      page: 1
+    13:
+      type: item
+      item:
+        material: PRISMARINE_SHARD
+        quantity: 1
+      buyPrice: 20.0
+      sellPrice: 1
+      slot: 24
+      page: 1
+    14:
+      type: item
+      item:
+        material: PRISMARINE_CRYSTALS
+        quantity: 1
+      buyPrice: 30.0
+      sellPrice: 1
+      slot: 25
+      page: 1
+    15:
+      type: item
+      item:
+        material: FEATHER
+        quantity: 1
+      buyPrice: 5.0
+      sellPrice: 1
+      slot: 28
+      page: 1
+    16:
+      type: item
+      item:
+        material: LEATHER
+        quantity: 1
+      buyPrice: 45.0
+      sellPrice: 1
+      slot: 29
+      page: 1
+    17:
+      type: item
+      item:
+        material: INK_SAC
+        quantity: 1
+      buyPrice: 15.0
+      sellPrice: 1
+      slot: 30
+      page: 1
+    18:
+      type: item
+      item:
+        material: NAUTILUS_SHELL
+        quantity: 1
+      buyPrice: 90000.0
+      sellPrice: 1
+      slot: 31
+      page: 1
+    19:
+      type: item
+      item:
+        material: RABBIT_FOOT
+        quantity: 1
+      buyPrice: 80.0
+      sellPrice: 1
+      slot: 32
+      page: 1
+    20:
+      type: item
+      item:
+        material: RABBIT_HIDE
+        quantity: 1
+      buyPrice: 8.0
+      sellPrice: 1
+      slot: 33
+      page: 1

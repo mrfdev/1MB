@@ -1,0 +1,62 @@
+survival_ores_copper:
+  name: "&0&lCopper Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: RAW_COPPER
+        quantity: 1
+      buyPrice: 500
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: COPPER_INGOT
+        quantity: 1
+      buyPrice: 509
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: RAW_COPPER_BLOCK
+        quantity: 1
+      buyPrice: 4590
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: DEEPSLATE_COPPER_ORE
+        quantity: 1
+      buyPrice: 500
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: COPPER_ORE
+        quantity: 1
+      buyPrice: 500
+      sellPrice: 1
+      slot: 14
+    6:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival ores menu"
+      shop: "survival_ores"
+      slot: 48
+    7:
+      type: special
+      special: BALANCE
+      slot: 53

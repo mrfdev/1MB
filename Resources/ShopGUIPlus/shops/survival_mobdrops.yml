@@ -10,7 +10,7 @@ survival_mobdrops:
       item:
         material: BONE
         quantity: 1
-      buyPrice: 15.0
+      buyPrice: 22.0
       sellPrice: 1
       slot: 10
       page: 1
@@ -37,7 +37,7 @@ survival_mobdrops:
       item:
         material: GUNPOWDER
         quantity: 1
-      buyPrice: 45.0
+      buyPrice: 22.0
       sellPrice: 1
       slot: 13
       page: 1
@@ -82,7 +82,7 @@ survival_mobdrops:
       item:
         material: BLAZE_ROD
         quantity: 1
-      buyPrice: 30.0
+      buyPrice: 22.0
       sellPrice: 1
       slot: 20
       page: 1
@@ -136,7 +136,7 @@ survival_mobdrops:
       item:
         material: FEATHER
         quantity: 1
-      buyPrice: 5.0
+      buyPrice: 22.0
       sellPrice: 1
       slot: 28
       page: 1
@@ -154,7 +154,7 @@ survival_mobdrops:
       item:
         material: INK_SAC
         quantity: 1
-      buyPrice: 15.0
+      buyPrice: 8.0
       sellPrice: 1
       slot: 30
       page: 1

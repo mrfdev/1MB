@@ -1,5 +1,5 @@
 survival_ores_copper:
-  name: "&0&lCopper Block/Item Shop"
+  name: "&0&lCopper Shop"
   size: 54
   fillItem:
     material: BLACK_STAINED_GLASS_PANE
@@ -449,9 +449,9 @@ survival_ores_copper:
     50:
       type: item
       item:
-        material: COPPER_LANTERN
+        material: WAXED_COPPER_BULB
         quantity: 1
-      buyPrice: 9600
+      buyPrice: 1600
       sellPrice: 1
       slot: 19
       page: 3

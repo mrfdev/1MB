@@ -181,6 +181,10 @@ survival_food:
       sellPrice: 1
       slot: 34
     22:
+      type: special
+      special: BALANCE
+      slot: 53
+    23:
       type: item
       item:
         material: MELON
@@ -188,7 +192,8 @@ survival_food:
       buyPrice: 1440
       sellPrice: 1
       slot: 10
-    23:
+      page: 2
+    24:
       type: item
       item:
         material: MELON_SLICE
@@ -196,6 +201,160 @@ survival_food:
       buyPrice: 160
       sellPrice: 1
       slot: 11
+      page: 2
+    25:
+      type: item
+      item:
+        material: PUMPKIN
+        quantity: 8
+      buyPrice: 1200
+      sellPrice: 1
+      slot: 12
+      page: 2
+    26:
+      type: item
+      item:
+        material: PUMPKIN_PIE
+        quantity: 8
+      buyPrice: 2664
+      sellPrice: 1
+      slot: 13
+      page: 2
+    27:
+      type: item
+      item:
+        material: BREAD
+        quantity: 8
+      buyPrice: 976
+      sellPrice: 1
+      slot: 14
+      page: 2
+    28:
+      type: item
+      item:
+        material: COOKIE
+        quantity: 8
+      buyPrice: 96
+      sellPrice: 1
+      slot: 15
+      page: 2
+    29:
+      type: item
+      item:
+        material: SWEET_BERRIES
+        quantity: 8
+      buyPrice: 240
+      sellPrice: 1
+      slot: 16
+      page: 2
+    30:
+      type: item
+      item:
+        material: GLOW_BERRIES
+        quantity: 8
+      buyPrice: 400
+      sellPrice: 1
+      slot: 19
+      page: 2
+    31:
+      type: item
+      item:
+        material: CHORUS_FRUIT
+        quantity: 8
+      buyPrice: 160
+      sellPrice: 1
+      slot: 20
+      page: 2
+    32:
+      type: item
+      item:
+        material: BEETROOT
+        quantity: 8
+      buyPrice: 160
+      sellPrice: 1
+      slot: 21
+      page: 2
+    33:
+      type: item
+      item:
+        material: DRIED_KELP
+        quantity: 8
+      buyPrice: 560
+      sellPrice: 1
+      slot: 22
+      page: 2
+    34:
+      type: item
+      item:
+        material: TROPICAL_FISH
+        quantity: 8
+      buyPrice: 8000
+      sellPrice: 1
+      slot: 23
+      page: 2
+    35:
+      type: item
+      item:
+        material: PUFFERFISH
+        quantity: 8
+      buyPrice: 8000
+      sellPrice: 1
+      slot: 24
+      page: 2
+    36:
+      type: item
+      item:
+        material: MUSHROOM_STEW
+        quantity: 1
+      buyPrice: 65
+      sellPrice: 1
+      slot: 25
+      page: 2
+    37:
+      type: item
+      item:
+        material: BEETROOT_SOUP
+        quantity: 1
+      buyPrice: 139
+      sellPrice: 1
+      slot: 28
+      page: 2
+    38:
+      type: item
+      item:
+        material: RABBIT_STEW
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 1
+      slot: 29
+      page: 2
+    39:
+      type: item
+      item:
+        material: MILK_BUCKET
+        quantity: 1
+      buyPrice: 17000
+      sellPrice: 1
+      slot: 30
+      page: 2
+    40:
+      type: item
+      item:
+        material: HONEY_BOTTLE
+        quantity: 8
+      buyPrice: 1200
+      sellPrice: 1
+      slot: 31
+      page: 2
+    41:
+      type: item
+      item:
+        material: GLISTERING_MELON_SLICE
+        quantity: 8
+      buyPrice: 320
+      sellPrice: 1
+      slot: 32
+      page: 2
     42:
       type: special
       special: BALANCE

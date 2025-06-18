@@ -103,3 +103,11 @@ survival:
       type: special
       special: balance
       slot: 53
+    12:
+      type: SHOP_LINK
+      item:
+        material: DIAMOND_SWORD
+        quantity: 1
+        name: "&4&lWeapons"
+      shop: "survival_weapons"
+      slot: 24

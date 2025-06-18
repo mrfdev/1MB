@@ -5,6 +5,7 @@ survival_ores_redstone:
     material: BLACK_STAINED_GLASS_PANE
     name: " "
   items:
+    # --- Page 1: Basic Redstone Materials & Blocks ---
     1:
       type: item
       item:
@@ -13,6 +14,7 @@ survival_ores_redstone:
       buyPrice: 11
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
@@ -21,6 +23,7 @@ survival_ores_redstone:
       buyPrice: 109
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
@@ -29,6 +32,7 @@ survival_ores_redstone:
       buyPrice: 180
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
@@ -37,7 +41,246 @@ survival_ores_redstone:
       buyPrice: 200
       sellPrice: 1
       slot: 13
+      page: 1
     5:
+      type: item
+      item:
+        material: REDSTONE_TORCH
+        quantity: 1
+      buyPrice: 14
+      sellPrice: 1
+      slot: 14
+      page: 1
+    6:
+      type: item
+      item:
+        material: REPEATER
+        quantity: 1
+      buyPrice: 115
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: COMPARATOR
+        quantity: 1
+      buyPrice: 201
+      sellPrice: 1
+      slot: 16
+      page: 1
+    8:
+      type: item
+      item:
+        material: OBSERVER
+        quantity: 1
+      buyPrice: 465
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: PISTON
+        quantity: 1
+      buyPrice: 122
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: STICKY_PISTON
+        quantity: 1
+      buyPrice: 242
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
+      type: item
+      item:
+        material: DROPPER
+        quantity: 1
+      buyPrice: 41
+      sellPrice: 1
+      slot: 22
+      page: 1
+    12:
+      type: item
+      item:
+        material: DISPENSER
+        quantity: 1
+      buyPrice: 104
+      sellPrice: 1
+      slot: 23
+      page: 1
+    13:
+      type: item
+      item:
+        material: HOPPER
+        quantity: 1
+      buyPrice: 450
+      sellPrice: 1
+      slot: 24
+      page: 1
+    14:
+      type: item
+      item:
+        material: NOTE_BLOCK
+        quantity: 1
+      buyPrice: 49
+      sellPrice: 1
+      slot: 25
+      page: 1
+    15:
+      type: item
+      item:
+        material: JUKEBOX
+        quantity: 1
+      buyPrice: 3240
+      sellPrice: 1
+      slot: 28
+      page: 1
+    16:
+      type: item
+      item:
+        material: LEVER
+        quantity: 1
+      buyPrice: 8
+      sellPrice: 1
+      slot: 29
+      page: 1
+    17:
+      type: item
+      item:
+        material: TRIPWIRE_HOOK
+        quantity: 1
+      buyPrice: 10
+      sellPrice: 1
+      slot: 30
+      page: 1
+    18:
+      type: item
+      item:
+        material: DAYLIGHT_DETECTOR
+        quantity: 1
+      buyPrice: 303
+      sellPrice: 1
+      slot: 31
+      page: 1
+    19:
+      type: item
+      item:
+        material: TARGET
+        quantity: 1
+      buyPrice: 105
+      sellPrice: 1
+      slot: 32
+      page: 1
+    20:
+      type: item
+      item:
+        material: OAK_BUTTON
+        quantity: 1
+      buyPrice: 2
+      sellPrice: 1
+      slot: 33
+      page: 1
+    21:
+      type: item
+      item:
+        material: STONE_BUTTON
+        quantity: 1
+      buyPrice: 2
+      sellPrice: 1
+      slot: 34
+      page: 1
+
+    # --- Page 2: Pressure Plates, Rails, Lamps, Trapped Chest ---
+    22:
+      type: item
+      item:
+        material: STONE_PRESSURE_PLATE
+        quantity: 1
+      buyPrice: 3
+      sellPrice: 1
+      slot: 10
+      page: 2
+    23:
+      type: item
+      item:
+        material: LIGHT_WEIGHTED_PRESSURE_PLATE
+        quantity: 1
+      buyPrice: 53
+      sellPrice: 1
+      slot: 11
+      page: 2
+    24:
+      type: item
+      item:
+        material: HEAVY_WEIGHTED_PRESSURE_PLATE
+        quantity: 1
+      buyPrice: 504
+      sellPrice: 1
+      slot: 12
+      page: 2
+    25:
+      type: item
+      item:
+        material: TRAPPED_CHEST
+        quantity: 1
+      buyPrice: 64
+      sellPrice: 1
+      slot: 13
+      page: 2
+    26:
+      type: item
+      item:
+        material: REDSTONE_LAMP
+        quantity: 1
+      buyPrice: 51
+      sellPrice: 1
+      slot: 14
+      page: 2
+    27:
+      type: item
+      item:
+        material: DETECTOR_RAIL
+        quantity: 1
+      buyPrice: 54
+      sellPrice: 1
+      slot: 15
+      page: 2
+    28:
+      type: item
+      item:
+        material: POWERED_RAIL
+        quantity: 1
+      buyPrice: 184
+      sellPrice: 1
+      slot: 16
+      page: 2
+    29:
+      type: item
+      item:
+        material: ACTIVATOR_RAIL
+        quantity: 1
+      buyPrice: 61
+      sellPrice: 1
+      slot: 19
+      page: 2
+    30:
+      type: item
+      item:
+        material: RAIL
+        quantity: 1
+      buyPrice: 10
+      sellPrice: 1
+      slot: 20
+      page: 2
+
+    # --- Navigation/Extras ---
+    31:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -48,7 +291,9 @@ survival_ores_redstone:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    6:
+      page: 2
+    32:
       type: special
       special: BALANCE
       slot: 53
+      page: 2

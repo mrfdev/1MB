@@ -38,6 +38,14 @@ survival_ores_lapis:
       sellPrice: 1
       slot: 13
     5:
+      type: item
+      item:
+        material: ENCHANTING_TABLE
+        quantity: 1
+      buyPrice: 16000
+      sellPrice: 1
+      slot: 14
+    6:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -48,7 +56,7 @@ survival_ores_lapis:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    6:
+    7:
       type: special
       special: BALANCE
       slot: 53

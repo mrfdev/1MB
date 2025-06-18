@@ -1,5 +1,5 @@
 survival_logs:
-  name: "&0&lLog, Wood, and Sapling Blocks"
+  name: "&0&lLog, Wood, and Stripped Blocks"
   size: 54
   fillItem:
     material: BLACK_STAINED_GLASS_PANE

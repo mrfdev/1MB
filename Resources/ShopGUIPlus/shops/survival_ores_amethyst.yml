@@ -13,6 +13,7 @@ survival_ores_amethyst:
       buyPrice: 100
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
@@ -21,6 +22,7 @@ survival_ores_amethyst:
       buyPrice: 200
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
@@ -29,6 +31,7 @@ survival_ores_amethyst:
       buyPrice: 300
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
@@ -37,6 +40,7 @@ survival_ores_amethyst:
       buyPrice: 400
       sellPrice: 1
       slot: 13
+      page: 1
     5:
       type: item
       item:
@@ -45,23 +49,53 @@ survival_ores_amethyst:
       buyPrice: 40
       sellPrice: 1
       slot: 14
+      page: 1
     6:
       type: item
       item:
         material: AMETHYST_BLOCK
         quantity: 1
-      buyPrice: 163
+      buyPrice: 1630
       sellPrice: 1
       slot: 15
+      page: 1
     7:
       type: item
       item:
         material: BUDDING_AMETHYST
         quantity: 1
-      buyPrice: 163
+      buyPrice: 163000
       sellPrice: 1
       slot: 16
+      page: 1
     8:
+      type: item
+      item:
+        material: CALCITE
+        quantity: 1
+      buyPrice: 1200
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: TINTED_GLASS
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: SMOOTH_BASALT
+        quantity: 1
+      buyPrice: 600
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -72,7 +106,9 @@ survival_ores_amethyst:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    9:
+      page: 1
+    12:
       type: special
       special: BALANCE
       slot: 53
+      page: 1

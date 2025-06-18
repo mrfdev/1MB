@@ -1,0 +1,328 @@
+survival_glass:
+  name: "&0&lGlass Type Blocks"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: TINTED_GLASS
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: GLASS
+        quantity: 1
+      buyPrice: 48
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: WHITE_STAINED_GLASS
+        quantity: 1
+      buyPrice: 59
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: LIGHT_GRAY_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: GRAY_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: BLACK_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: BROWN_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: RED_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: ORANGE_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: YELLOW_STAINED_GLASS
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: LIME_STAINED_GLASS
+        quantity: 1
+      buyPrice: 65
+      sellPrice: 1
+      slot: 22
+    12:
+      type: item
+      item:
+        material: GREEN_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 23
+    13:
+      type: item
+      item:
+        material: CYAN_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 24
+    14:
+      type: item
+      item:
+        material: LIGHT_BLUE_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 25
+    15:
+      type: item
+      item:
+        material: BLUE_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 28
+    16:
+      type: item
+      item:
+        material: PURPLE_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 29
+    17:
+      type: item
+      item:
+        material: MAGENTA_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 30
+    18:
+      type: item
+      item:
+        material: PINK_STAINED_GLASS
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 31
+    19:
+      type: item
+      item:
+        material: GLASS_PANE
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 11
+      page: 2
+    20:
+      type: item
+      item:
+        material: WHITE_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 12
+      page: 2
+    21:
+      type: item
+      item:
+        material: LIGHT_GRAY_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 60
+      sellPrice: 1
+      slot: 13
+      page: 2
+    22:
+      type: item
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 14
+      page: 2
+    23:
+      type: item
+      item:
+        material: BLACK_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 15
+      page: 2
+    24:
+      type: item
+      item:
+        material: BROWN_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 16
+      page: 2
+    25:
+      type: item
+      item:
+        material: RED_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 19
+      page: 2
+    26:
+      type: item
+      item:
+        material: ORANGE_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 20
+      page: 2
+    27:
+      type: item
+      item:
+        material: YELLOW_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 21
+      page: 2
+    28:
+      type: item
+      item:
+        material: LIME_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 22
+      page: 2
+    29:
+      type: item
+      item:
+        material: GREEN_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 23
+      page: 2
+    30:
+      type: item
+      item:
+        material: CYAN_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 24
+      page: 2
+    31:
+      type: item
+      item:
+        material: LIGHT_BLUE_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 25
+      page: 2
+    32:
+      type: item
+      item:
+        material: BLUE_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 28
+      page: 2
+    33:
+      type: item
+      item:
+        material: PURPLE_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 29
+      page: 2
+    34:
+      type: item
+      item:
+        material: MAGENTA_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 30
+      page: 2
+    35:
+      type: item
+      item:
+        material: PINK_STAINED_GLASS_PANE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 31
+      page: 2
+    36:
+      type: item
+      item:
+        material: GLASS_BOTTLE
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 10
+      page: 2
+    37:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival blocks menu"
+      shop: "survival_blocks"
+      slot: 48
+    38:
+      type: special
+      special: BALANCE
+      slot: 53

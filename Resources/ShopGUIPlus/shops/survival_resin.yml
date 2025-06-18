@@ -1,5 +1,5 @@
-survival_ores_lapis:
-  name: "&0&lLapis Shop"
+survival_resin:
+  name: "&0&lResin Shop"
   size: 54
   fillItem:
     material: BLACK_STAINED_GLASS_PANE
@@ -8,44 +8,76 @@ survival_ores_lapis:
     1:
       type: item
       item:
-        material: LAPIS_LAZULI
+        material: RESIN_CLUMP
         quantity: 1
-      buyPrice: 12
+      buyPrice: 25
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
-        material: LAPIS_BLOCK
+        material: RESIN_BLOCK
         quantity: 1
-      buyPrice: 109
+      buyPrice: 229
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
-        material: DEEPSLATE_LAPIS_ORE
+        material: RESIN_BRICK
         quantity: 1
-      buyPrice: 200
+      buyPrice: 25
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
-        material: LAPIS_ORE
+        material: RESIN_BRICKS
         quantity: 1
-      buyPrice: 220
+      buyPrice: 102
       sellPrice: 1
       slot: 13
+      page: 1
     5:
       type: item
       item:
-        material: ENCHANTING_TABLE
+        material: RESIN_BRICK_SLAB
         quantity: 1
-      buyPrice: 13682
+      buyPrice: 52
       sellPrice: 1
       slot: 14
+      page: 1
     6:
+      type: item
+      item:
+        material: RESIN_BRICK_STAIRS
+        quantity: 1
+      buyPrice: 104
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: RESIN_BRICK_WALL
+        quantity: 1
+      buyPrice: 104
+      sellPrice: 1
+      slot: 16
+      page: 1
+    8:
+      type: item
+      item:
+        material: CHISELED_RESIN_BRICKS
+        quantity: 1
+      buyPrice: 104
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -53,10 +85,12 @@ survival_ores_lapis:
         name: "&c&lGo back .."
         lore:
           - "&7 Click here to return"
-          - "&7 to the survival ores menu"
-      shop: "survival_ores"
+          - "&7 to the survival shop menu"
+      shop: "survival"
       slot: 48
-    7:
+      page: 1
+    10:
       type: special
       special: BALANCE
       slot: 53
+      page: 1

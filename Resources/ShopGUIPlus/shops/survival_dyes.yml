@@ -1,0 +1,139 @@
+survival_dyes:
+  name: "&2&lDyes"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: WHITE_DYE
+        quantity: 16
+      buyPrice: 352
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: LIGHT_GRAY_DYE
+        quantity: 16
+      buyPrice: 304
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: GRAY_DYE
+        quantity: 16
+      buyPrice: 272
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: BLACK_DYE
+        quantity: 16
+      buyPrice: 192
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: BROWN_DYE
+        quantity: 16
+      buyPrice: 320
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: RED_DYE
+        quantity: 16
+      buyPrice: 320
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: ORANGE_DYE
+        quantity: 16
+      buyPrice: 304
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: YELLOW_DYE
+        quantity: 16
+      buyPrice: 272
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: LIME_DYE
+        quantity: 16
+      buyPrice: 384
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: GREEN_DYE
+        quantity: 16
+      buyPrice: 400
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: CYAN_DYE
+        quantity: 16
+      buyPrice: 496
+      sellPrice: 1
+      slot: 22
+    12:
+      type: item
+      item:
+        material: LIGHT_BLUE_DYE
+        quantity: 16
+      buyPrice: 272
+      sellPrice: 1
+      slot: 23
+    13:
+      type: item
+      item:
+        material: BLUE_DYE
+        quantity: 16
+      buyPrice: 192
+      sellPrice: 1
+      slot: 24
+    14:
+      type: item
+      item:
+        material: PURPLE_DYE
+        quantity: 16
+      buyPrice: 256
+      sellPrice: 1
+      slot: 25
+    15:
+      type: item
+      item:
+        material: MAGENTA_DYE
+        quantity: 16
+      buyPrice: 224
+      sellPrice: 1
+      slot: 30
+    16:
+      type: item
+      item:
+        material: PINK_DYE
+        quantity: 16
+      buyPrice: 144
+      sellPrice: 1
+      slot: 31
+    17:
+      type: special
+      special: BALANCE
+      slot: 53

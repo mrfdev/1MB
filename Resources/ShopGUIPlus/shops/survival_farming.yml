@@ -1,0 +1,332 @@
+survival_farming:
+  name: "&5&lFarming (page %page%)"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: WHEAT_SEEDS
+        quantity: 1
+      buyPrice: 10
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: PUMPKIN_SEEDS
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: MELON_SEEDS
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: BONE_MEAL
+        quantity: 1
+      buyPrice: 7
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: NETHER_WART
+        quantity: 1
+      buyPrice: 22
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: SUGAR_CANE
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: WHEAT
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: PUMPKIN
+        quantity: 1
+      buyPrice: 150
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: MELON_SLICE
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: CACTUS
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: OAK_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 22
+    12:
+      type: item
+      item:
+        material: SPRUCE_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 23
+    13:
+      type: item
+      item:
+        material: BIRCH_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 24
+    14:
+      type: item
+      item:
+        material: JUNGLE_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 25
+    15:
+      type: item
+      item:
+        material: ACACIA_SAPLING
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 28
+    16:
+      type: item
+      item:
+        material: DARK_OAK_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 29
+    17:
+      type: item
+      item:
+        material: CHERRY_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 30
+    18:
+      type: item
+      item:
+        material: PALE_OAK_SAPLING
+        quantity: 1
+      buyPrice: 31
+      sellPrice: 1
+      slot: 31
+    19:
+      type: item
+      item:
+        material: BROWN_MUSHROOM
+        quantity: 1
+      buyPrice: 24
+      sellPrice: 1
+      slot: 32
+    20:
+      type: item
+      item:
+        material: RED_MUSHROOM
+        quantity: 1
+      buyPrice: 24
+      sellPrice: 1
+      slot: 33
+    21:
+      type: item
+      item:
+        material: MANGROVE_PROPAGULE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 34
+    22:
+      type: item
+      item:
+        material: SWEET_BERRIES
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 10
+      page: 2
+    23:
+      type: item
+      item:
+        material: FLOWERING_AZALEA
+        quantity: 1
+      buyPrice: 1000
+      sellPrice: 1
+      slot: 11
+      page: 2
+    24:
+      type: item
+      item:
+        material: TORCHFLOWER_SEEDS
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 12
+      page: 2
+    25:
+      type: item
+      item:
+        material: PITCHER_POD
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 13
+      page: 2
+    26:
+      type: item
+      item:
+        material: COCOA_BEANS
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 14
+      page: 2
+    27:
+      type: item
+      item:
+        material: GLOW_BERRIES
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 15
+      page: 2
+    28:
+      type: item
+      item:
+        material: GLOW_LICHEN
+        quantity: 1
+      buyPrice: 70
+      sellPrice: 1
+      slot: 16
+      page: 2
+    29:
+      type: item
+      item:
+        material: WEEPING_VINES
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 19
+      page: 2
+    30:
+      type: item
+      item:
+        material: VINE
+        quantity: 1
+      buyPrice: 70
+      sellPrice: 1
+      slot: 20
+      page: 2
+    31:
+      type: item
+      item:
+        material: LILY_PAD
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 21
+      page: 2
+    32:
+      type: item
+      item:
+        material: SMALL_DRIPLEAF
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 22
+      page: 2
+    33:
+      type: item
+      item:
+        material: BIG_DRIPLEAF
+        quantity: 1
+      buyPrice: 500
+      sellPrice: 1
+      slot: 23
+      page: 2
+    34:
+      type: item
+      item:
+        material: KELP
+        quantity: 1
+      buyPrice: 8
+      sellPrice: 1
+      slot: 24
+      page: 2
+    35:
+      type: item
+      item:
+        material: TWISTING_VINES
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 25
+      page: 2
+    36:
+      type: item
+      item:
+        material: FERN
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 28
+      page: 2
+    37:
+      type: item
+      item:
+        material: LARGE_FERN
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 29
+      page: 2
+    38:
+      type: item
+      item:
+        material: TORCHFLOWER
+        quantity: 1
+      buyPrice: 1000
+      sellPrice: 1
+      slot: 30
+      page: 2
+    39:
+      type: special
+      special: BALANCE
+      slot: 53

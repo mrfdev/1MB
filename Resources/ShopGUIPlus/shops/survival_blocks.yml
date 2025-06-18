@@ -136,12 +136,16 @@ survival_blocks:
       shop: "survival_concrete"
       slot: 25
     15:
-      type: item
+      type: SHOP_LINK
       item:
-        material: WHITE_CONCRETE_POWDER
+        material: TUBE_CORAL_BLOCK
         quantity: 1
-      buyPrice: 60
-      sellPrice: 1
+        name: "&2&l Coral types .. "
+        lore:
+          - "&3 Shop page for Coral types:"
+          - "&6  all the colors and blocks, "
+          - "&6  aquatic items.  "
+      shop: "survival_coral"
       slot: 28
     16:
       type: item

@@ -8,6 +8,7 @@ survival_ores:
     goBack:
       slot: 49
   items:
+    # --- Overworld Ores ---
     1:
       type: SHOP_LINK
       item:
@@ -66,17 +67,6 @@ survival_ores:
     6:
       type: SHOP_LINK
       item:
-        material: DEEPSLATE_EMERALD_ORE
-        quantity: 1
-        name: "&2&l Emerald ore types .. "
-        lore:
-          - "&3 Shop page for emerald ore types:"
-          - "&6  deepslate ore, block, ore, etc."
-      shop: "survival_ores_emerald"
-      slot: 20
-    7:
-      type: SHOP_LINK
-      item:
         material: DEEPSLATE_LAPIS_ORE
         quantity: 1
         name: "&2&l Lapis ore types .. "
@@ -84,7 +74,18 @@ survival_ores:
           - "&3 Shop page for lapis ore types:"
           - "&6  deepslate ore, block, ore, etc."
       shop: "survival_ores_lapis"
-      slot: 21
+      slot: 16
+    7:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_EMERALD_ORE
+        quantity: 1
+        name: "&2&l Emerald ore types .. "
+        lore:
+          - "&3 Shop page for emerald ore types:"
+          - "&6  deepslate ore, block, ore, etc."
+      shop: "survival_ores_emerald"
+      slot: 17
     8:
       type: SHOP_LINK
       item:
@@ -95,19 +96,10 @@ survival_ores:
           - "&3 Shop page for diamond ore types:"
           - "&6  diamond, block, ore, etc."
       shop: "survival_ores_diamond"
-      slot: 22
+      slot: 18
+
+    # --- Nether Ores ---
     9:
-      type: SHOP_LINK
-      item:
-        material: ANCIENT_DEBRIS
-        quantity: 1
-        name: "&2&l Netherite ore types .. "
-        lore:
-          - "&3 Shop page for netherite ore types:"
-          - "&6  ancient debris, block, ore, etc."
-      shop: "survival_ores_netherite"
-      slot: 23
-    10:
       type: SHOP_LINK
       item:
         material: NETHER_QUARTZ_ORE
@@ -117,18 +109,33 @@ survival_ores:
           - "&3 Shop page for quartz ore types:"
           - "&6  quartz, ore, etc."
       shop: "survival_ores_quartz"
-      slot: 24
+      slot: 20
+    10:
+      type: SHOP_LINK
+      item:
+        material: ANCIENT_DEBRIS
+        quantity: 1
+        name: "&2&l Netherite ore types .. "
+        lore:
+          - "&3 Shop page for netherite ore types:"
+          - "&6  ancient debris, block, ore, etc."
+      shop: "survival_ores_netherite"
+      slot: 21
+
+    # --- Other Crystals ---
     11:
       type: SHOP_LINK
       item:
         material: AMETHYST_BLOCK
         quantity: 1
-        name: "&2&l Amethyst ore types .. "
+        name: "&2&l Amethyst types .. "
         lore:
           - "&3 Shop page for amethyst types:"
           - "&6  small, large, budded, etc."
       shop: "survival_ores_amethyst"
-      slot: 29
+      slot: 23
+
+    # --- Shop Navigation ---
     12:
       type: SHOP_LINK
       item:

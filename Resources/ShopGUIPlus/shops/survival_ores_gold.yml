@@ -1,0 +1,94 @@
+survival_ores_gold:
+  name: "&0&lGold Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: GOLD_NUGGET
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 1
+      buyPrice: 270
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: GOLD_BLOCK
+        quantity: 1
+      buyPrice: 2831
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: RAW_GOLD
+        quantity: 1
+      buyPrice: 260
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: RAW_GOLD_BLOCK
+        quantity: 1
+      buyPrice: 2386
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: DEEPSLATE_GOLD_ORE
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: GOLD_ORE
+        quantity: 1
+      buyPrice: 220
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: NETHER_GOLD_ORE
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: GILDED_BLACKSTONE
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 1
+      slot: 20
+    10:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival ores menu"
+      shop: "survival_ores"
+      slot: 48
+    11:
+      type: special
+      special: BALANCE
+      slot: 53

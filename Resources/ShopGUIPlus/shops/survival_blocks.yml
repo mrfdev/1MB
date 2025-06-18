@@ -508,3 +508,16 @@ survival_blocks:
       type: special
       special: BALANCE
       slot: 53
+    57:
+      type: SHOP_LINK
+      item:
+        material: RESIN_BRICK
+        quantity: 1
+        name: "&2&l Resin types .. "
+        lore:
+          - "&3 Shop page for resin types:"
+          - "&6  resin clump, block, bricks, "
+          - "&6  slabs, stairs, walls, chiseled, etc."
+      shop: "survival_resin"
+      slot: 25
+      page: 3

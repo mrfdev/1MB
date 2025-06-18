@@ -22,6 +22,70 @@ survival_ores_quartz:
       sellPrice: 1
       slot: 11
     3:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ
+        quantity: 1
+      buyPrice: 110
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: QUARTZ_STAIRS
+        quantity: 1
+      buyPrice: 33
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ_STAIRS
+        quantity: 1
+      buyPrice: 33
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: QUARTZ_SLAB
+        quantity: 1
+      buyPrice: 11
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: QUARTZ_PILLAR
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: CHISELED_QUARTZ_BLOCK
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: QUARTZ_BRICKS
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 21
+    11:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -32,7 +96,7 @@ survival_ores_quartz:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    4:
+    12:
       type: special
       special: BALANCE
       slot: 53

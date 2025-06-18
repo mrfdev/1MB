@@ -13,6 +13,7 @@ survival_glass:
       buyPrice: 100
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
@@ -21,6 +22,7 @@ survival_glass:
       buyPrice: 48
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
@@ -29,6 +31,7 @@ survival_glass:
       buyPrice: 59
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
@@ -37,6 +40,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 13
+      page: 1
     5:
       type: item
       item:
@@ -45,6 +49,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 14
+      page: 1
     6:
       type: item
       item:
@@ -53,6 +58,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 15
+      page: 1
     7:
       type: item
       item:
@@ -61,6 +67,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 16
+      page: 1
     8:
       type: item
       item:
@@ -69,6 +76,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 19
+      page: 1
     9:
       type: item
       item:
@@ -77,22 +85,25 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 20
+      page: 1
     10:
       type: item
       item:
         material: YELLOW_STAINED_GLASS
         quantity: 1
-      buyPrice: 80
+      buyPrice: 60
       sellPrice: 1
       slot: 21
+      page: 1
     11:
       type: item
       item:
         material: LIME_STAINED_GLASS
         quantity: 1
-      buyPrice: 65
+      buyPrice: 60
       sellPrice: 1
       slot: 22
+      page: 1
     12:
       type: item
       item:
@@ -101,6 +112,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 23
+      page: 1
     13:
       type: item
       item:
@@ -109,6 +121,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 24
+      page: 1
     14:
       type: item
       item:
@@ -117,6 +130,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 25
+      page: 1
     15:
       type: item
       item:
@@ -125,6 +139,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 28
+      page: 1
     16:
       type: item
       item:
@@ -133,6 +148,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 29
+      page: 1
     17:
       type: item
       item:
@@ -141,6 +157,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 30
+      page: 1
     18:
       type: item
       item:
@@ -149,6 +166,7 @@ survival_glass:
       buyPrice: 60
       sellPrice: 1
       slot: 31
+      page: 1
     19:
       type: item
       item:
@@ -156,8 +174,8 @@ survival_glass:
         quantity: 1
       buyPrice: 20
       sellPrice: 1
-      slot: 11
-      page: 2
+      slot: 32
+      page: 1
     20:
       type: item
       item:
@@ -165,8 +183,8 @@ survival_glass:
         quantity: 1
       buyPrice: 20
       sellPrice: 1
-      slot: 12
-      page: 2
+      slot: 33
+      page: 1
     21:
       type: item
       item:
@@ -174,8 +192,8 @@ survival_glass:
         quantity: 1
       buyPrice: 60
       sellPrice: 1
-      slot: 13
-      page: 2
+      slot: 34
+      page: 1
     22:
       type: item
       item:
@@ -183,7 +201,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 14
+      slot: 10
       page: 2
     23:
       type: item
@@ -192,7 +210,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 15
+      slot: 11
       page: 2
     24:
       type: item
@@ -201,7 +219,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 16
+      slot: 12
       page: 2
     25:
       type: item
@@ -210,7 +228,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 19
+      slot: 13
       page: 2
     26:
       type: item
@@ -219,7 +237,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 20
+      slot: 14
       page: 2
     27:
       type: item
@@ -228,7 +246,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 21
+      slot: 15
       page: 2
     28:
       type: item
@@ -237,7 +255,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 22
+      slot: 16
       page: 2
     29:
       type: item
@@ -246,7 +264,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 23
+      slot: 19
       page: 2
     30:
       type: item
@@ -255,7 +273,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 24
+      slot: 20
       page: 2
     31:
       type: item
@@ -264,7 +282,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 25
+      slot: 21
       page: 2
     32:
       type: item
@@ -273,7 +291,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 28
+      slot: 22
       page: 2
     33:
       type: item
@@ -282,7 +300,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 29
+      slot: 23
       page: 2
     34:
       type: item
@@ -291,7 +309,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 30
+      slot: 24
       page: 2
     35:
       type: item
@@ -300,7 +318,7 @@ survival_glass:
         quantity: 1
       buyPrice: 30
       sellPrice: 1
-      slot: 31
+      slot: 25
       page: 2
     36:
       type: item
@@ -309,7 +327,7 @@ survival_glass:
         quantity: 1
       buyPrice: 100
       sellPrice: 1
-      slot: 10
+      slot: 28
       page: 2
     37:
       type: SHOP_LINK
@@ -322,7 +340,9 @@ survival_glass:
           - "&7 to the survival blocks menu"
       shop: "survival_blocks"
       slot: 48
+      page: 2
     38:
       type: special
       special: BALANCE
       slot: 53
+      page: 2

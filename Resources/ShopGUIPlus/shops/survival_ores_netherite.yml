@@ -13,6 +13,7 @@ survival_ores_netherite:
       buyPrice: 6230
       sellPrice: 1
       slot: 10
+      page: 1
     2:
       type: item
       item:
@@ -21,6 +22,7 @@ survival_ores_netherite:
       buyPrice: 26000
       sellPrice: 1
       slot: 11
+      page: 1
     3:
       type: item
       item:
@@ -29,6 +31,7 @@ survival_ores_netherite:
       buyPrice: 234300
       sellPrice: 1
       slot: 12
+      page: 1
     4:
       type: item
       item:
@@ -37,7 +40,103 @@ survival_ores_netherite:
       buyPrice: 6200
       sellPrice: 1
       slot: 13
+      page: 1
     5:
+      type: item
+      item:
+        material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+        quantity: 1
+      buyPrice: 25000
+      sellPrice: 1
+      slot: 14
+      page: 1
+
+    # Netherite Tools & Weapons
+    6:
+      type: item
+      item:
+        material: NETHERITE_PICKAXE
+        quantity: 1
+      buyPrice: 87720
+      sellPrice: 1
+      slot: 19
+      page: 1
+    7:
+      type: item
+      item:
+        material: NETHERITE_AXE
+        quantity: 1
+      buyPrice: 87720
+      sellPrice: 1
+      slot: 20
+      page: 1
+    8:
+      type: item
+      item:
+        material: NETHERITE_SHOVEL
+        quantity: 1
+      buyPrice: 46920
+      sellPrice: 1
+      slot: 21
+      page: 1
+    9:
+      type: item
+      item:
+        material: NETHERITE_HOE
+        quantity: 1
+      buyPrice: 67320
+      sellPrice: 1
+      slot: 22
+      page: 1
+    10:
+      type: item
+      item:
+        material: NETHERITE_SWORD
+        quantity: 1
+      buyPrice: 67320
+      sellPrice: 1
+      slot: 23
+      page: 1
+
+    # Netherite Armor
+    11:
+      type: item
+      item:
+        material: NETHERITE_HELMET
+        quantity: 1
+      buyPrice: 128520
+      sellPrice: 1
+      slot: 28
+      page: 1
+    12:
+      type: item
+      item:
+        material: NETHERITE_CHESTPLATE
+        quantity: 1
+      buyPrice: 189720
+      sellPrice: 1
+      slot: 29
+      page: 1
+    13:
+      type: item
+      item:
+        material: NETHERITE_LEGGINGS
+        quantity: 1
+      buyPrice: 169320
+      sellPrice: 1
+      slot: 30
+      page: 1
+    14:
+      type: item
+      item:
+        material: NETHERITE_BOOTS
+        quantity: 1
+      buyPrice: 108120
+      sellPrice: 1
+      slot: 31
+      page: 1
+
+    15:
       type: SHOP_LINK
       item:
         material: PLAYER_HEAD
@@ -48,7 +147,9 @@ survival_ores_netherite:
           - "&7 to the survival ores menu"
       shop: "survival_ores"
       slot: 48
-    6:
+      page: 1
+    16:
       type: special
       special: BALANCE
       slot: 53
+      page: 1

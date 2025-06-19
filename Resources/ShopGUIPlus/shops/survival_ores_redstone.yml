@@ -47,7 +47,7 @@ survival_ores_redstone:
       item:
         material: REDSTONE_TORCH
         quantity: 1
-      buyPrice: 14
+      buyPrice: 23
       sellPrice: 1
       slot: 14
       page: 1
@@ -56,7 +56,7 @@ survival_ores_redstone:
       item:
         material: REPEATER
         quantity: 1
-      buyPrice: 115
+      buyPrice: 288
       sellPrice: 1
       slot: 15
       page: 1
@@ -65,7 +65,7 @@ survival_ores_redstone:
       item:
         material: COMPARATOR
         quantity: 1
-      buyPrice: 201
+      buyPrice: 242
       sellPrice: 1
       slot: 16
       page: 1
@@ -74,7 +74,7 @@ survival_ores_redstone:
       item:
         material: OBSERVER
         quantity: 1
-      buyPrice: 465
+      buyPrice: 180
       sellPrice: 1
       slot: 19
       page: 1
@@ -83,7 +83,7 @@ survival_ores_redstone:
       item:
         material: PISTON
         quantity: 1
-      buyPrice: 122
+      buyPrice: 350
       sellPrice: 1
       slot: 20
       page: 1
@@ -92,7 +92,7 @@ survival_ores_redstone:
       item:
         material: STICKY_PISTON
         quantity: 1
-      buyPrice: 242
+      buyPrice: 506
       sellPrice: 1
       slot: 21
       page: 1
@@ -101,7 +101,7 @@ survival_ores_redstone:
       item:
         material: DROPPER
         quantity: 1
-      buyPrice: 41
+      buyPrice: 169
       sellPrice: 1
       slot: 22
       page: 1
@@ -110,7 +110,7 @@ survival_ores_redstone:
       item:
         material: DISPENSER
         quantity: 1
-      buyPrice: 104
+      buyPrice: 258
       sellPrice: 1
       slot: 23
       page: 1
@@ -119,7 +119,7 @@ survival_ores_redstone:
       item:
         material: HOPPER
         quantity: 1
-      buyPrice: 450
+      buyPrice: 1083
       sellPrice: 1
       slot: 24
       page: 1
@@ -128,7 +128,7 @@ survival_ores_redstone:
       item:
         material: NOTE_BLOCK
         quantity: 1
-      buyPrice: 49
+      buyPrice: 172
       sellPrice: 1
       slot: 25
       page: 1
@@ -137,7 +137,7 @@ survival_ores_redstone:
       item:
         material: JUKEBOX
         quantity: 1
-      buyPrice: 3240
+      buyPrice: 4000
       sellPrice: 1
       slot: 28
       page: 1
@@ -146,7 +146,7 @@ survival_ores_redstone:
       item:
         material: LEVER
         quantity: 1
-      buyPrice: 8
+      buyPrice: 35
       sellPrice: 1
       slot: 29
       page: 1
@@ -155,7 +155,7 @@ survival_ores_redstone:
       item:
         material: TRIPWIRE_HOOK
         quantity: 1
-      buyPrice: 10
+      buyPrice: 106
       sellPrice: 1
       slot: 30
       page: 1
@@ -164,7 +164,7 @@ survival_ores_redstone:
       item:
         material: DAYLIGHT_DETECTOR
         quantity: 1
-      buyPrice: 303
+      buyPrice: 263
       sellPrice: 1
       slot: 31
       page: 1
@@ -173,7 +173,7 @@ survival_ores_redstone:
       item:
         material: TARGET
         quantity: 1
-      buyPrice: 105
+      buyPrice: 156
       sellPrice: 1
       slot: 32
       page: 1
@@ -182,7 +182,7 @@ survival_ores_redstone:
       item:
         material: OAK_BUTTON
         quantity: 1
-      buyPrice: 2
+      buyPrice: 23
       sellPrice: 1
       slot: 33
       page: 1
@@ -191,7 +191,7 @@ survival_ores_redstone:
       item:
         material: STONE_BUTTON
         quantity: 1
-      buyPrice: 2
+      buyPrice: 75
       sellPrice: 1
       slot: 34
       page: 1
@@ -202,7 +202,7 @@ survival_ores_redstone:
       item:
         material: STONE_PRESSURE_PLATE
         quantity: 1
-      buyPrice: 3
+      buyPrice: 150
       sellPrice: 1
       slot: 10
       page: 2
@@ -211,7 +211,7 @@ survival_ores_redstone:
       item:
         material: LIGHT_WEIGHTED_PRESSURE_PLATE
         quantity: 1
-      buyPrice: 53
+      buyPrice: 629
       sellPrice: 1
       slot: 11
       page: 2
@@ -220,7 +220,7 @@ survival_ores_redstone:
       item:
         material: HEAVY_WEIGHTED_PRESSURE_PLATE
         quantity: 1
-      buyPrice: 504
+      buyPrice: 363
       sellPrice: 1
       slot: 12
       page: 2
@@ -229,7 +229,7 @@ survival_ores_redstone:
       item:
         material: TRAPPED_CHEST
         quantity: 1
-      buyPrice: 64
+      buyPrice: 200
       sellPrice: 1
       slot: 13
       page: 2
@@ -238,7 +238,7 @@ survival_ores_redstone:
       item:
         material: REDSTONE_LAMP
         quantity: 1
-      buyPrice: 51
+      buyPrice: 261
       sellPrice: 1
       slot: 14
       page: 2
@@ -247,7 +247,7 @@ survival_ores_redstone:
       item:
         material: DETECTOR_RAIL
         quantity: 1
-      buyPrice: 54
+      buyPrice: 100
       sellPrice: 1
       slot: 15
       page: 2
@@ -256,7 +256,7 @@ survival_ores_redstone:
       item:
         material: POWERED_RAIL
         quantity: 1
-      buyPrice: 184
+      buyPrice: 100
       sellPrice: 1
       slot: 16
       page: 2
@@ -265,7 +265,7 @@ survival_ores_redstone:
       item:
         material: ACTIVATOR_RAIL
         quantity: 1
-      buyPrice: 61
+      buyPrice: 100
       sellPrice: 1
       slot: 19
       page: 2
@@ -274,7 +274,7 @@ survival_ores_redstone:
       item:
         material: RAIL
         quantity: 1
-      buyPrice: 10
+      buyPrice: 69
       sellPrice: 1
       slot: 20
       page: 2

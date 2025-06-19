@@ -102,7 +102,7 @@ survival_weapons:
       item:
         material: DIAMOND_AXE
         quantity: 1
-      buyPrice: 34120
+      buyPrice: 22970
       sellPrice: 1
       slot: 22
       page: 1

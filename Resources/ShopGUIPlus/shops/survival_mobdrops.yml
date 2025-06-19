@@ -73,7 +73,7 @@ survival_mobdrops:
       item:
         material: PHANTOM_MEMBRANE
         quantity: 1
-      buyPrice: 140.0
+      buyPrice: 44.0
       sellPrice: 1
       slot: 19
       page: 1
@@ -91,7 +91,7 @@ survival_mobdrops:
       item:
         material: GHAST_TEAR
         quantity: 1
-      buyPrice: 200.0
+      buyPrice: 16500.0
       sellPrice: 1
       slot: 21
       page: 1
@@ -127,7 +127,7 @@ survival_mobdrops:
       item:
         material: PRISMARINE_CRYSTALS
         quantity: 1
-      buyPrice: 30.0
+      buyPrice: 50.0
       sellPrice: 1
       slot: 25
       page: 1
@@ -145,7 +145,7 @@ survival_mobdrops:
       item:
         material: LEATHER
         quantity: 1
-      buyPrice: 45.0
+      buyPrice: 24.0
       sellPrice: 1
       slot: 29
       page: 1
@@ -172,7 +172,7 @@ survival_mobdrops:
       item:
         material: RABBIT_FOOT
         quantity: 1
-      buyPrice: 80.0
+      buyPrice: 440.0
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +181,7 @@ survival_mobdrops:
       item:
         material: RABBIT_HIDE
         quantity: 1
-      buyPrice: 8.0
+      buyPrice: 330.0
       sellPrice: 1
       slot: 33
       page: 1

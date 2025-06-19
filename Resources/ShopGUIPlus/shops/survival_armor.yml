@@ -154,7 +154,7 @@ survival_armor:
       item:
         material: DIAMOND_HELMET
         quantity: 1
-      buyPrice: 51320.00000000001
+      buyPrice: 38250.0
       sellPrice: 1
       slot: 30
       page: 1
@@ -163,7 +163,7 @@ survival_armor:
       item:
         material: DIAMOND_CHESTPLATE
         quantity: 1
-      buyPrice: 83620.0
+      buyPrice: 61200.0
       sellPrice: 1
       slot: 31
       page: 1
@@ -172,7 +172,7 @@ survival_armor:
       item:
         material: DIAMOND_LEGGINGS
         quantity: 1
-      buyPrice: 74120.0
+      buyPrice: 53550.0
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +181,7 @@ survival_armor:
       item:
         material: DIAMOND_BOOTS
         quantity: 1
-      buyPrice: 42000.0
+      buyPrice: 30600.0
       sellPrice: 1
       slot: 33
       page: 1

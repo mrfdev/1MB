@@ -122,7 +122,7 @@ survival_farming:
       item:
         material: ACACIA_SAPLING
         quantity: 1
-      buyPrice: 30
+      buyPrice: 31
       sellPrice: 1
       slot: 28
     16:

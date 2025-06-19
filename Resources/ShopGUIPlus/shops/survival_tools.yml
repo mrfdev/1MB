@@ -10,7 +10,7 @@ survival_tools:
       item:
         material: WOODEN_PICKAXE
         quantity: 1
-      buyPrice: 1500
+      buyPrice: 80
       sellPrice: 1
       slot: 10
       page: 1
@@ -19,7 +19,7 @@ survival_tools:
       item:
         material: STONE_PICKAXE
         quantity: 1
-      buyPrice: 2500
+      buyPrice: 81
       sellPrice: 1
       slot: 11
       page: 1
@@ -28,7 +28,7 @@ survival_tools:
       item:
         material: IRON_PICKAXE
         quantity: 1
-      buyPrice: 8500
+      buyPrice: 15320
       sellPrice: 1
       slot: 12
       page: 1
@@ -37,7 +37,7 @@ survival_tools:
       item:
         material: GOLDEN_PICKAXE
         quantity: 1
-      buyPrice: 13500
+      buyPrice: 895
       sellPrice: 1
       slot: 13
       page: 1
@@ -46,7 +46,7 @@ survival_tools:
       item:
         material: DIAMOND_PICKAXE
         quantity: 1
-      buyPrice: 145000
+      buyPrice: 22970
       sellPrice: 1
       slot: 14
       page: 1
@@ -55,7 +55,7 @@ survival_tools:
       item:
         material: NETHERITE_PICKAXE
         quantity: 1
-      buyPrice: 285000
+      buyPrice: 87720
       sellPrice: 1
       slot: 15
       page: 1
@@ -64,7 +64,7 @@ survival_tools:
       item:
         material: WOODEN_AXE
         quantity: 1
-      buyPrice: 1500
+      buyPrice: 80
       sellPrice: 1
       slot: 16
       page: 1
@@ -73,7 +73,7 @@ survival_tools:
       item:
         material: STONE_AXE
         quantity: 1
-      buyPrice: 2500
+      buyPrice: 81
       sellPrice: 1
       slot: 19
       page: 1
@@ -82,7 +82,7 @@ survival_tools:
       item:
         material: IRON_AXE
         quantity: 1
-      buyPrice: 8500
+      buyPrice: 15320
       sellPrice: 1
       slot: 20
       page: 1
@@ -91,7 +91,7 @@ survival_tools:
       item:
         material: GOLDEN_AXE
         quantity: 1
-      buyPrice: 13500
+      buyPrice: 895
       sellPrice: 1
       slot: 21
       page: 1
@@ -100,7 +100,7 @@ survival_tools:
       item:
         material: DIAMOND_AXE
         quantity: 1
-      buyPrice: 145000
+      buyPrice: 22970
       sellPrice: 1
       slot: 22
       page: 1
@@ -109,7 +109,7 @@ survival_tools:
       item:
         material: NETHERITE_AXE
         quantity: 1
-      buyPrice: 285000
+      buyPrice: 87720
       sellPrice: 1
       slot: 23
       page: 1
@@ -118,7 +118,7 @@ survival_tools:
       item:
         material: WOODEN_SHOVEL
         quantity: 1
-      buyPrice: 1500
+      buyPrice: 40
       sellPrice: 1
       slot: 24
       page: 1
@@ -127,7 +127,7 @@ survival_tools:
       item:
         material: STONE_SHOVEL
         quantity: 1
-      buyPrice: 2500
+      buyPrice: 40
       sellPrice: 1
       slot: 25
       page: 1
@@ -136,7 +136,7 @@ survival_tools:
       item:
         material: IRON_SHOVEL
         quantity: 1
-      buyPrice: 8500
+      buyPrice: 5120
       sellPrice: 1
       slot: 28
       page: 1
@@ -145,7 +145,7 @@ survival_tools:
       item:
         material: GOLDEN_SHOVEL
         quantity: 1
-      buyPrice: 13500
+      buyPrice: 312
       sellPrice: 1
       slot: 29
       page: 1
@@ -154,7 +154,7 @@ survival_tools:
       item:
         material: DIAMOND_SHOVEL
         quantity: 1
-      buyPrice: 145000
+      buyPrice: 7670
       sellPrice: 1
       slot: 30
       page: 1
@@ -163,7 +163,7 @@ survival_tools:
       item:
         material: NETHERITE_SHOVEL
         quantity: 1
-      buyPrice: 285000
+      buyPrice: 46920
       sellPrice: 1
       slot: 31
       page: 1
@@ -172,7 +172,7 @@ survival_tools:
       item:
         material: WOODEN_HOE
         quantity: 1
-      buyPrice: 1000
+      buyPrice: 60
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +181,7 @@ survival_tools:
       item:
         material: STONE_HOE
         quantity: 1
-      buyPrice: 2000
+      buyPrice: 61
       sellPrice: 1
       slot: 33
       page: 1
@@ -190,7 +190,7 @@ survival_tools:
       item:
         material: IRON_HOE
         quantity: 1
-      buyPrice: 8000
+      buyPrice: 10220
       sellPrice: 1
       slot: 34
       page: 1
@@ -199,7 +199,7 @@ survival_tools:
       item:
         material: GOLDEN_HOE
         quantity: 1
-      buyPrice: 12000
+      buyPrice: 603
       sellPrice: 1
       slot: 10
       page: 2
@@ -208,7 +208,7 @@ survival_tools:
       item:
         material: DIAMOND_HOE
         quantity: 1
-      buyPrice: 138000
+      buyPrice: 15320
       sellPrice: 1
       slot: 11
       page: 2
@@ -217,7 +217,7 @@ survival_tools:
       item:
         material: NETHERITE_HOE
         quantity: 1
-      buyPrice: 270000
+      buyPrice: 67320
       sellPrice: 1
       slot: 12
       page: 2
@@ -235,7 +235,7 @@ survival_tools:
       item:
         material: FLINT_AND_STEEL
         quantity: 1
-      buyPrice: 1100
+      buyPrice: 50
       sellPrice: 1
       slot: 14
       page: 2

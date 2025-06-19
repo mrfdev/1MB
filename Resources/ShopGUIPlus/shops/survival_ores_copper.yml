@@ -55,7 +55,7 @@ survival_ores_copper:
       item:
         material: COPPER_BLOCK
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4672
       sellPrice: 1
       slot: 15
       page: 1
@@ -64,7 +64,7 @@ survival_ores_copper:
       item:
         material: CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1191
       sellPrice: 1
       slot: 16
       page: 1
@@ -73,7 +73,7 @@ survival_ores_copper:
       item:
         material: EXPOSED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 19
       page: 1
@@ -82,7 +82,7 @@ survival_ores_copper:
       item:
         material: WEATHERED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 20
       page: 1
@@ -91,7 +91,7 @@ survival_ores_copper:
       item:
         material: OXIDIZED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 21
       page: 1
@@ -100,7 +100,7 @@ survival_ores_copper:
       item:
         material: WAXED_COPPER_BLOCK
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4672
       sellPrice: 1
       slot: 22
       page: 1
@@ -109,7 +109,7 @@ survival_ores_copper:
       item:
         material: WAXED_EXPOSED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 23
       page: 1
@@ -118,7 +118,7 @@ survival_ores_copper:
       item:
         material: WAXED_WEATHERED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 24
       page: 1
@@ -127,7 +127,7 @@ survival_ores_copper:
       item:
         material: WAXED_OXIDIZED_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 4500
       sellPrice: 1
       slot: 25
       page: 1
@@ -136,7 +136,7 @@ survival_ores_copper:
       item:
         material: CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 595
       sellPrice: 1
       slot: 28
       page: 1
@@ -145,7 +145,7 @@ survival_ores_copper:
       item:
         material: CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1191
       sellPrice: 1
       slot: 29
       page: 1
@@ -154,7 +154,7 @@ survival_ores_copper:
       item:
         material: EXPOSED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 30
       page: 1
@@ -163,7 +163,7 @@ survival_ores_copper:
       item:
         material: WEATHERED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 31
       page: 1
@@ -172,7 +172,7 @@ survival_ores_copper:
       item:
         material: OXIDIZED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +181,7 @@ survival_ores_copper:
       item:
         material: WAXED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1191
       sellPrice: 1
       slot: 33
       page: 1
@@ -190,7 +190,7 @@ survival_ores_copper:
       item:
         material: WAXED_EXPOSED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 34
       page: 1
@@ -199,7 +199,7 @@ survival_ores_copper:
       item:
         material: WAXED_WEATHERED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 10
       page: 2
@@ -208,7 +208,7 @@ survival_ores_copper:
       item:
         material: WAXED_OXIDIZED_CUT_COPPER
         quantity: 1
-      buyPrice: 5100
+      buyPrice: 1147
       sellPrice: 1
       slot: 11
       page: 2
@@ -217,7 +217,7 @@ survival_ores_copper:
       item:
         material: EXPOSED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 12
       page: 2
@@ -226,7 +226,7 @@ survival_ores_copper:
       item:
         material: WEATHERED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 13
       page: 2
@@ -235,7 +235,7 @@ survival_ores_copper:
       item:
         material: OXIDIZED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 14
       page: 2
@@ -244,7 +244,7 @@ survival_ores_copper:
       item:
         material: WAXED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 595
       sellPrice: 1
       slot: 15
       page: 2
@@ -253,7 +253,7 @@ survival_ores_copper:
       item:
         material: WAXED_EXPOSED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 16
       page: 2
@@ -262,7 +262,7 @@ survival_ores_copper:
       item:
         material: WAXED_WEATHERED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 19
       page: 2
@@ -271,7 +271,7 @@ survival_ores_copper:
       item:
         material: WAXED_OXIDIZED_CUT_COPPER_SLAB
         quantity: 1
-      buyPrice: 1280
+      buyPrice: 573
       sellPrice: 1
       slot: 20
       page: 2
@@ -280,7 +280,7 @@ survival_ores_copper:
       item:
         material: EXPOSED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 21
       page: 2
@@ -289,7 +289,7 @@ survival_ores_copper:
       item:
         material: WEATHERED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 22
       page: 2
@@ -298,7 +298,7 @@ survival_ores_copper:
       item:
         material: OXIDIZED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 23
       page: 2
@@ -307,7 +307,7 @@ survival_ores_copper:
       item:
         material: WAXED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1191
       sellPrice: 1
       slot: 24
       page: 2
@@ -316,7 +316,7 @@ survival_ores_copper:
       item:
         material: WAXED_EXPOSED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 25
       page: 2
@@ -325,7 +325,7 @@ survival_ores_copper:
       item:
         material: WAXED_WEATHERED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 28
       page: 2
@@ -334,7 +334,7 @@ survival_ores_copper:
       item:
         material: WAXED_OXIDIZED_CUT_COPPER_STAIRS
         quantity: 1
-      buyPrice: 1920
+      buyPrice: 1147
       sellPrice: 1
       slot: 29
       page: 2
@@ -343,7 +343,7 @@ survival_ores_copper:
       item:
         material: COPPER_DOOR
         quantity: 1
-      buyPrice: 300
+      buyPrice: 1038
       sellPrice: 1
       slot: 30
       page: 2
@@ -352,7 +352,7 @@ survival_ores_copper:
       item:
         material: COPPER_TRAPDOOR
         quantity: 1
-      buyPrice: 200
+      buyPrice: 1557
       sellPrice: 1
       slot: 31
       page: 2
@@ -361,7 +361,7 @@ survival_ores_copper:
       item:
         material: COPPER_GRATE
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1191
       sellPrice: 1
       slot: 32
       page: 2
@@ -370,7 +370,7 @@ survival_ores_copper:
       item:
         material: CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1191
       sellPrice: 1
       slot: 33
       page: 2
@@ -379,7 +379,7 @@ survival_ores_copper:
       item:
         material: EXPOSED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 34
       page: 2
@@ -388,7 +388,7 @@ survival_ores_copper:
       item:
         material: WEATHERED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 10
       page: 3
@@ -397,7 +397,7 @@ survival_ores_copper:
       item:
         material: OXIDIZED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 11
       page: 3
@@ -406,7 +406,7 @@ survival_ores_copper:
       item:
         material: WAXED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1191
       sellPrice: 1
       slot: 12
       page: 3
@@ -415,7 +415,7 @@ survival_ores_copper:
       item:
         material: WAXED_EXPOSED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 13
       page: 3
@@ -424,7 +424,7 @@ survival_ores_copper:
       item:
         material: WAXED_WEATHERED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 14
       page: 3
@@ -433,7 +433,7 @@ survival_ores_copper:
       item:
         material: WAXED_OXIDIZED_CHISELED_COPPER
         quantity: 1
-      buyPrice: 800
+      buyPrice: 1147
       sellPrice: 1
       slot: 15
       page: 3
@@ -442,7 +442,7 @@ survival_ores_copper:
       item:
         material: COPPER_BULB
         quantity: 1
-      buyPrice: 1600
+      buyPrice: 3582
       sellPrice: 1
       slot: 16
       page: 3
@@ -451,7 +451,7 @@ survival_ores_copper:
       item:
         material: WAXED_COPPER_BULB
         quantity: 1
-      buyPrice: 1600
+      buyPrice: 3582
       sellPrice: 1
       slot: 19
       page: 3

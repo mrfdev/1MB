@@ -80,7 +80,7 @@ survival_food:
       item:
         material: CHORUS_FRUIT
         quantity: 1
-      buyPrice: 180
+      buyPrice: 20
       sellPrice: 1
       slot: 19
       page: 1
@@ -98,7 +98,7 @@ survival_food:
       item:
         material: COOKED_CHICKEN
         quantity: 1
-      buyPrice: 32
+      buyPrice: 40
       sellPrice: 1
       slot: 21
       page: 1
@@ -107,7 +107,7 @@ survival_food:
       item:
         material: COOKED_COD
         quantity: 1
-      buyPrice: 16
+      buyPrice: 1000
       sellPrice: 1
       slot: 22
       page: 1
@@ -116,7 +116,7 @@ survival_food:
       item:
         material: COOKED_MUTTON
         quantity: 1
-      buyPrice: 32
+      buyPrice: 40
       sellPrice: 1
       slot: 23
       page: 1
@@ -143,7 +143,7 @@ survival_food:
       item:
         material: COOKED_SALMON
         quantity: 1
-      buyPrice: 20
+      buyPrice: 1000
       sellPrice: 1
       slot: 28
       page: 1
@@ -152,7 +152,7 @@ survival_food:
       item:
         material: COOKIE
         quantity: 1
-      buyPrice: 60
+      buyPrice: 12
       sellPrice: 1
       slot: 29
       page: 1
@@ -188,7 +188,7 @@ survival_food:
       item:
         material: GOLDEN_APPLE
         quantity: 1
-      buyPrice: 22000
+      buyPrice: 25110
       sellPrice: 1
       slot: 33
       page: 1
@@ -197,7 +197,7 @@ survival_food:
       item:
         material: GOLDEN_CARROT
         quantity: 1
-      buyPrice: 2680
+      buyPrice: 335
       sellPrice: 1
       slot: 34
       page: 1
@@ -215,7 +215,7 @@ survival_food:
       item:
         material: MELON_SLICE
         quantity: 1
-      buyPrice: 16
+      buyPrice: 20
       sellPrice: 1
       slot: 11
       page: 2
@@ -260,7 +260,7 @@ survival_food:
       item:
         material: RABBIT
         quantity: 1
-      buyPrice: 14
+      buyPrice: 20
       sellPrice: 1
       slot: 16
       page: 2
@@ -296,7 +296,7 @@ survival_food:
       item:
         material: COD
         quantity: 1
-      buyPrice: 16
+      buyPrice: 1000
       sellPrice: 1
       slot: 22
       page: 2
@@ -332,7 +332,7 @@ survival_food:
       item:
         material: SALMON
         quantity: 1
-      buyPrice: 16
+      buyPrice: 1000
       sellPrice: 1
       slot: 28
       page: 2
@@ -377,7 +377,7 @@ survival_food:
       item:
         material: TROPICAL_FISH
         quantity: 1
-      buyPrice: 100
+      buyPrice: 1000
       sellPrice: 1
       slot: 33
       page: 2

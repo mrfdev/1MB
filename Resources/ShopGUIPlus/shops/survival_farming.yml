@@ -205,7 +205,7 @@ survival_farming:
       item:
         material: PITCHER_POD
         quantity: 1
-      buyPrice: 30
+      buyPrice: 20
       sellPrice: 1
       slot: 13
       page: 2
@@ -232,7 +232,7 @@ survival_farming:
       item:
         material: GLOW_LICHEN
         quantity: 1
-      buyPrice: 70
+      buyPrice: 100
       sellPrice: 1
       slot: 16
       page: 2
@@ -259,7 +259,7 @@ survival_farming:
       item:
         material: LILY_PAD
         quantity: 1
-      buyPrice: 30
+      buyPrice: 110
       sellPrice: 1
       slot: 21
       page: 2
@@ -268,7 +268,7 @@ survival_farming:
       item:
         material: SMALL_DRIPLEAF
         quantity: 1
-      buyPrice: 100
+      buyPrice: 70
       sellPrice: 1
       slot: 22
       page: 2
@@ -277,7 +277,7 @@ survival_farming:
       item:
         material: BIG_DRIPLEAF
         quantity: 1
-      buyPrice: 500
+      buyPrice: 100
       sellPrice: 1
       slot: 23
       page: 2
@@ -286,7 +286,7 @@ survival_farming:
       item:
         material: KELP
         quantity: 1
-      buyPrice: 8
+      buyPrice: 70
       sellPrice: 1
       slot: 24
       page: 2
@@ -304,7 +304,7 @@ survival_farming:
       item:
         material: FERN
         quantity: 1
-      buyPrice: 50
+      buyPrice: 20
       sellPrice: 1
       slot: 28
       page: 2
@@ -313,7 +313,7 @@ survival_farming:
       item:
         material: LARGE_FERN
         quantity: 1
-      buyPrice: 80
+      buyPrice: 20
       sellPrice: 1
       slot: 29
       page: 2
@@ -322,7 +322,7 @@ survival_farming:
       item:
         material: TORCHFLOWER
         quantity: 1
-      buyPrice: 1000
+      buyPrice: 20
       sellPrice: 1
       slot: 30
       page: 2

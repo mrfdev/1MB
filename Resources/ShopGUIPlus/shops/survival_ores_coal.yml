@@ -55,7 +55,7 @@ survival_ores_coal:
       item:
         material: LAVA_BUCKET
         quantity: 1
-      buyPrice: 10000
+      buyPrice: 7500
       sellPrice: 1
       slot: 15
       page: 1
@@ -64,7 +64,7 @@ survival_ores_coal:
       item:
         material: DRIED_KELP_BLOCK
         quantity: 1
-      buyPrice: 400
+      buyPrice: 630
       sellPrice: 1
       slot: 16
       page: 1
@@ -73,7 +73,7 @@ survival_ores_coal:
       item:
         material: BLAZE_ROD
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 22
       sellPrice: 1
       slot: 19
       page: 1
@@ -91,7 +91,7 @@ survival_ores_coal:
       item:
         material: STICK
         quantity: 1
-      buyPrice: 2
+      buyPrice: 10
       sellPrice: 1
       slot: 21
       page: 1

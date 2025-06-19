@@ -201,8 +201,8 @@ survival_nether:
         quantity: 1
       buyPrice: 104.00
       sellPrice: 1
-      slot: 37
-      page: 1
+      slot: 10
+      page: 2
     23:
       type: item
       item:
@@ -210,8 +210,8 @@ survival_nether:
         quantity: 1
       buyPrice: 122.00
       sellPrice: 1
-      slot: 38
-      page: 1
+      slot: 11
+      page: 2
     24:
       type: item
       item:
@@ -219,8 +219,8 @@ survival_nether:
         quantity: 1
       buyPrice: 6200.00
       sellPrice: 1
-      slot: 39
-      page: 1
+      slot: 12
+      page: 2
     25:
       type: item
       item:
@@ -228,8 +228,8 @@ survival_nether:
         quantity: 1
       buyPrice: 6230.00
       sellPrice: 1
-      slot: 40
-      page: 1
+      slot: 13
+      page: 2
     26:
       type: item
       item:
@@ -237,8 +237,8 @@ survival_nether:
         quantity: 1
       buyPrice: 234300.00
       sellPrice: 1
-      slot: 41
-      page: 1
+      slot: 14
+      page: 2
     27:
       type: item
       item:
@@ -246,8 +246,8 @@ survival_nether:
         quantity: 1
       buyPrice: 88.00
       sellPrice: 1
-      slot: 42
-      page: 1
+      slot: 15
+      page: 2
     28:
       type: item
       item:
@@ -255,8 +255,8 @@ survival_nether:
         quantity: 1
       buyPrice: 100.00
       sellPrice: 1
-      slot: 43
-      page: 1
+      slot: 16
+      page: 2
     29:
       type: item
       item:
@@ -264,8 +264,8 @@ survival_nether:
         quantity: 1
       buyPrice: 22.00
       sellPrice: 1
-      slot: 50
-      page: 1
+      slot: 34
+      page: 2
     30:
       type: item
       item:
@@ -273,7 +273,7 @@ survival_nether:
         quantity: 1
       buyPrice: 201.00
       sellPrice: 1
-      slot: 10
+      slot: 19
       page: 2
     31:
       type: item
@@ -282,7 +282,7 @@ survival_nether:
         quantity: 1
       buyPrice: 30.00
       sellPrice: 1
-      slot: 11
+      slot: 20
       page: 2
     32:
       type: item
@@ -291,7 +291,7 @@ survival_nether:
         quantity: 1
       buyPrice: 30.00
       sellPrice: 1
-      slot: 12
+      slot: 21
       page: 2
     33:
       type: item
@@ -300,7 +300,7 @@ survival_nether:
         quantity: 1
       buyPrice: 30.00
       sellPrice: 1
-      slot: 13
+      slot: 22
       page: 2
     34:
       type: item
@@ -309,7 +309,7 @@ survival_nether:
         quantity: 1
       buyPrice: 30.00
       sellPrice: 1
-      slot: 14
+      slot: 23
       page: 2
     35:
       type: item
@@ -318,7 +318,7 @@ survival_nether:
         quantity: 1
       buyPrice: 20.00
       sellPrice: 1
-      slot: 15
+      slot: 24
       page: 2
     36:
       type: item
@@ -327,7 +327,7 @@ survival_nether:
         quantity: 1
       buyPrice: 20.00
       sellPrice: 1
-      slot: 16
+      slot: 25
       page: 2
     37:
       type: item
@@ -336,7 +336,7 @@ survival_nether:
         quantity: 1
       buyPrice: 20.00
       sellPrice: 1
-      slot: 19
+      slot: 28
       page: 2
     38:
       type: item
@@ -345,7 +345,7 @@ survival_nether:
         quantity: 1
       buyPrice: 10.00
       sellPrice: 1
-      slot: 20
+      slot: 29
       page: 2
     39:
       type: item
@@ -354,7 +354,7 @@ survival_nether:
         quantity: 1
       buyPrice: 100.00
       sellPrice: 1
-      slot: 21
+      slot: 30
       page: 2
     40:
       type: item
@@ -363,7 +363,7 @@ survival_nether:
         quantity: 1
       buyPrice: 140.00
       sellPrice: 1
-      slot: 22
+      slot: 31
       page: 2
     41:
       type: item
@@ -372,7 +372,7 @@ survival_nether:
         quantity: 1
       buyPrice: 347.00
       sellPrice: 1
-      slot: 23
+      slot: 32
       page: 2
     42:
       type: item
@@ -381,7 +381,7 @@ survival_nether:
         quantity: 1
       buyPrice: 4630.00
       sellPrice: 1
-      slot: 24
+      slot: 33
       page: 2
     43:
       type: item
@@ -390,8 +390,8 @@ survival_nether:
         quantity: 1
       buyPrice: 1000.00
       sellPrice: 1
-      slot: 25
-      page: 2
+      slot: 15
+      page: 3
 
     # ---- Nether Mob Drops & Special Items ----
 
@@ -402,8 +402,8 @@ survival_nether:
         quantity: 1
       buyPrice: 22.00
       sellPrice: 1
-      slot: 28
-      page: 2
+      slot: 10
+      page: 3
     45:
       type: item
       item:
@@ -411,8 +411,8 @@ survival_nether:
         quantity: 1
       buyPrice: 200.00
       sellPrice: 1
-      slot: 29
-      page: 2
+      slot: 11
+      page: 3
     46:
       type: item
       item:
@@ -420,8 +420,8 @@ survival_nether:
         quantity: 1
       buyPrice: 90.00
       sellPrice: 1
-      slot: 30
-      page: 2
+      slot: 12
+      page: 3
     47:
       type: item
       item:
@@ -429,8 +429,8 @@ survival_nether:
         quantity: 1
       buyPrice: 200000.00
       sellPrice: 1
-      slot: 31
-      page: 2
+      slot: 13
+      page: 3
     48:
       type: item
       item:
@@ -438,8 +438,8 @@ survival_nether:
         quantity: 1
       buyPrice: 10000.00
       sellPrice: 1
-      slot: 32
-      page: 2
+      slot: 14
+      page: 3
 
     49:
       type: special

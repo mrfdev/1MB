@@ -11,7 +11,7 @@ survival_wools:
       item:
         material: WHITE_WOOL
         quantity: 1
-      buyPrice: 40
+      buyPrice: 40    # NOT FOUND IN WORTH.YML
       sellPrice: 1
       slot: 10
       page: 1
@@ -157,7 +157,7 @@ survival_wools:
       item:
         material: WHITE_CARPET
         quantity: 1
-      buyPrice: 5
+      buyPrice: 5    # NOT FOUND IN WORTH.YML
       sellPrice: 1
       slot: 10
       page: 2
@@ -166,7 +166,7 @@ survival_wools:
       item:
         material: LIGHT_GRAY_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 11
       page: 2
@@ -175,7 +175,7 @@ survival_wools:
       item:
         material: GRAY_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 12
       page: 2
@@ -184,7 +184,7 @@ survival_wools:
       item:
         material: BLACK_CARPET
         quantity: 1
-      buyPrice: 7
+      buyPrice: 40
       sellPrice: 1
       slot: 13
       page: 2
@@ -193,7 +193,7 @@ survival_wools:
       item:
         material: BROWN_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 14
       page: 2
@@ -202,7 +202,7 @@ survival_wools:
       item:
         material: RED_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 15
       page: 2
@@ -211,7 +211,7 @@ survival_wools:
       item:
         material: ORANGE_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 16
       page: 2
@@ -220,7 +220,7 @@ survival_wools:
       item:
         material: YELLOW_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 19
       page: 2
@@ -229,7 +229,7 @@ survival_wools:
       item:
         material: LIME_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 20
       page: 2
@@ -238,7 +238,7 @@ survival_wools:
       item:
         material: GREEN_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 21
       page: 2
@@ -247,7 +247,7 @@ survival_wools:
       item:
         material: CYAN_CARPET
         quantity: 1
-      buyPrice: 10
+      buyPrice: 40
       sellPrice: 1
       slot: 22
       page: 2
@@ -256,7 +256,7 @@ survival_wools:
       item:
         material: LIGHT_BLUE_CARPET
         quantity: 1
-      buyPrice: 8
+      buyPrice: 40
       sellPrice: 1
       slot: 23
       page: 2
@@ -265,7 +265,7 @@ survival_wools:
       item:
         material: BLUE_CARPET
         quantity: 1
-      buyPrice: 7
+      buyPrice: 40
       sellPrice: 1
       slot: 24
       page: 2
@@ -274,7 +274,7 @@ survival_wools:
       item:
         material: PURPLE_CARPET
         quantity: 1
-      buyPrice: 7
+      buyPrice: 40
       sellPrice: 1
       slot: 25
       page: 2
@@ -283,7 +283,7 @@ survival_wools:
       item:
         material: MAGENTA_CARPET
         quantity: 1
-      buyPrice: 7
+      buyPrice: 40
       sellPrice: 1
       slot: 28
       page: 2
@@ -292,7 +292,7 @@ survival_wools:
       item:
         material: PINK_CARPET
         quantity: 1
-      buyPrice: 7
+      buyPrice: 40
       sellPrice: 1
       slot: 29
       page: 2
@@ -303,7 +303,7 @@ survival_wools:
       item:
         material: WHITE_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 200
       sellPrice: 1
       slot: 10
       page: 3
@@ -312,7 +312,7 @@ survival_wools:
       item:
         material: ORANGE_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 191
       sellPrice: 1
       slot: 11
       page: 3
@@ -321,7 +321,7 @@ survival_wools:
       item:
         material: MAGENTA_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 244
       sellPrice: 1
       slot: 12
       page: 3
@@ -330,7 +330,7 @@ survival_wools:
       item:
         material: LIGHT_BLUE_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 260
       sellPrice: 1
       slot: 13
       page: 3
@@ -339,7 +339,7 @@ survival_wools:
       item:
         material: YELLOW_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 275
       sellPrice: 1
       slot: 14
       page: 3
@@ -348,7 +348,7 @@ survival_wools:
       item:
         material: LIME_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 196
       sellPrice: 1
       slot: 15
       page: 3
@@ -357,7 +357,7 @@ survival_wools:
       item:
         material: PINK_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 181
       sellPrice: 1
       slot: 16
       page: 3
@@ -366,7 +366,7 @@ survival_wools:
       item:
         material: GRAY_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 189
       sellPrice: 1
       slot: 19
       page: 3
@@ -375,7 +375,7 @@ survival_wools:
       item:
         material: LIGHT_GRAY_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 275
       sellPrice: 1
       slot: 20
       page: 3
@@ -384,7 +384,7 @@ survival_wools:
       item:
         material: CYAN_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 204
       sellPrice: 1
       slot: 21
       page: 3
@@ -393,7 +393,7 @@ survival_wools:
       item:
         material: PURPLE_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 244
       sellPrice: 1
       slot: 22
       page: 3
@@ -402,7 +402,7 @@ survival_wools:
       item:
         material: BLUE_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 244
       sellPrice: 1
       slot: 23
       page: 3
@@ -411,7 +411,7 @@ survival_wools:
       item:
         material: BROWN_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 275
       sellPrice: 1
       slot: 24
       page: 3
@@ -420,7 +420,7 @@ survival_wools:
       item:
         material: GREEN_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 275
       sellPrice: 1
       slot: 25
       page: 3
@@ -429,7 +429,7 @@ survival_wools:
       item:
         material: RED_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 275
       sellPrice: 1
       slot: 28
       page: 3
@@ -438,7 +438,7 @@ survival_wools:
       item:
         material: BLACK_BED
         quantity: 1
-      buyPrice: 800
+      buyPrice: 244
       sellPrice: 1
       slot: 29
       page: 3
@@ -449,7 +449,7 @@ survival_wools:
       item:
         material: WHITE_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 10
       page: 4
@@ -458,7 +458,7 @@ survival_wools:
       item:
         material: ORANGE_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 429
       sellPrice: 1
       slot: 11
       page: 4
@@ -467,7 +467,7 @@ survival_wools:
       item:
         material: MAGENTA_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 12
       page: 4
@@ -476,7 +476,7 @@ survival_wools:
       item:
         material: LIGHT_BLUE_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 400
       sellPrice: 1
       slot: 13
       page: 4
@@ -485,7 +485,7 @@ survival_wools:
       item:
         material: YELLOW_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 429
       sellPrice: 1
       slot: 14
       page: 4
@@ -494,7 +494,7 @@ survival_wools:
       item:
         material: LIME_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 430
       sellPrice: 1
       slot: 15
       page: 4
@@ -503,7 +503,7 @@ survival_wools:
       item:
         material: PINK_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 16
       page: 4
@@ -512,7 +512,7 @@ survival_wools:
       item:
         material: GRAY_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 400
       sellPrice: 1
       slot: 19
       page: 4
@@ -521,7 +521,7 @@ survival_wools:
       item:
         material: LIGHT_GRAY_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 429
       sellPrice: 1
       slot: 20
       page: 4
@@ -530,7 +530,7 @@ survival_wools:
       item:
         material: CYAN_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 490
       sellPrice: 1
       slot: 21
       page: 4
@@ -539,7 +539,7 @@ survival_wools:
       item:
         material: PURPLE_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 22
       page: 4
@@ -548,7 +548,7 @@ survival_wools:
       item:
         material: BLUE_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 23
       page: 4
@@ -557,7 +557,7 @@ survival_wools:
       item:
         material: BROWN_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 430
       sellPrice: 1
       slot: 24
       page: 4
@@ -566,7 +566,7 @@ survival_wools:
       item:
         material: GREEN_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 430
       sellPrice: 1
       slot: 25
       page: 4
@@ -575,7 +575,7 @@ survival_wools:
       item:
         material: RED_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 429
       sellPrice: 1
       slot: 28
       page: 4
@@ -584,7 +584,7 @@ survival_wools:
       item:
         material: BLACK_BANNER
         quantity: 1
-      buyPrice: 500
+      buyPrice: 370
       sellPrice: 1
       slot: 29
       page: 4
@@ -595,7 +595,7 @@ survival_wools:
       item:
         material: STRING
         quantity: 1
-      buyPrice: 10
+      buyPrice: 10    # NOT FOUND IN WORTH.YML
       sellPrice: 1
       slot: 10
       page: 5
@@ -604,7 +604,7 @@ survival_wools:
       item:
         material: PAINTING
         quantity: 1
-      buyPrice: 360
+      buyPrice: 124
       sellPrice: 1
       slot: 11
       page: 5
@@ -613,7 +613,7 @@ survival_wools:
       item:
         material: ITEM_FRAME
         quantity: 1
-      buyPrice: 1200
+      buyPrice: 124
       sellPrice: 1
       slot: 12
       page: 5
@@ -622,7 +622,7 @@ survival_wools:
       item:
         material: GLOW_ITEM_FRAME
         quantity: 1
-      buyPrice: 2100
+      buyPrice: 146
       sellPrice: 1
       slot: 13
       page: 5

@@ -136,7 +136,7 @@ survival_logs:
       item:
         material: OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 28
       page: 1
@@ -145,7 +145,7 @@ survival_logs:
       item:
         material: SPRUCE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 29
       page: 1
@@ -154,7 +154,7 @@ survival_logs:
       item:
         material: BIRCH_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 30
       page: 1
@@ -163,7 +163,7 @@ survival_logs:
       item:
         material: JUNGLE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 31
       page: 1
@@ -172,7 +172,7 @@ survival_logs:
       item:
         material: ACACIA_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +181,7 @@ survival_logs:
       item:
         material: DARK_OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 33
       page: 1
@@ -190,7 +190,7 @@ survival_logs:
       item:
         material: MANGROVE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 34
       page: 1
@@ -199,7 +199,7 @@ survival_logs:
       item:
         material: CHERRY_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 10
       page: 2
@@ -208,7 +208,7 @@ survival_logs:
       item:
         material: PALE_OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 11
       page: 2
@@ -217,7 +217,7 @@ survival_logs:
       item:
         material: CRIMSON_HYPHAE
         quantity: 1
-      buyPrice: 120
+      buyPrice: 163
       sellPrice: 1
       slot: 12
       page: 2
@@ -226,7 +226,7 @@ survival_logs:
       item:
         material: WARPED_HYPHAE
         quantity: 1
-      buyPrice: 120
+      buyPrice: 163
       sellPrice: 1
       slot: 13
       page: 2
@@ -334,7 +334,7 @@ survival_logs:
       item:
         material: STRIPPED_OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 29
       page: 2
@@ -343,7 +343,7 @@ survival_logs:
       item:
         material: STRIPPED_SPRUCE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 30
       page: 2
@@ -352,7 +352,7 @@ survival_logs:
       item:
         material: STRIPPED_BIRCH_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 31
       page: 2
@@ -361,7 +361,7 @@ survival_logs:
       item:
         material: STRIPPED_JUNGLE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 132
       sellPrice: 1
       slot: 32
       page: 2
@@ -370,7 +370,7 @@ survival_logs:
       item:
         material: STRIPPED_ACACIA_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 33
       page: 2
@@ -379,7 +379,7 @@ survival_logs:
       item:
         material: STRIPPED_DARK_OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 131
       sellPrice: 1
       slot: 34
       page: 2
@@ -388,7 +388,7 @@ survival_logs:
       item:
         material: STRIPPED_MANGROVE_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 10
       page: 3
@@ -397,7 +397,7 @@ survival_logs:
       item:
         material: STRIPPED_CHERRY_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 11
       page: 3
@@ -406,7 +406,7 @@ survival_logs:
       item:
         material: STRIPPED_PALE_OAK_WOOD
         quantity: 1
-      buyPrice: 100
+      buyPrice: 136
       sellPrice: 1
       slot: 12
       page: 3
@@ -415,7 +415,7 @@ survival_logs:
       item:
         material: STRIPPED_CRIMSON_HYPHAE
         quantity: 1
-      buyPrice: 120
+      buyPrice: 163
       sellPrice: 1
       slot: 13
       page: 3

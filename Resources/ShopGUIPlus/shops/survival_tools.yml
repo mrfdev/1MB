@@ -370,7 +370,7 @@ survival_tools:
       item:
         material: TOTEM_OF_UNDYING
         quantity: 1
-      buyPrice: 22000
+      buyPrice: 119000
       sellPrice: 1
       slot: 33
       page: 2

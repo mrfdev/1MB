@@ -185,3 +185,12 @@ survival_mobdrops:
       sellPrice: 1
       slot: 33
       page: 1
+    21:
+      type: item
+      item:
+        material: BREEZE_ROD
+        quantity: 1
+      buyPrice: 500.0
+      sellPrice: 1
+      slot: 34
+      page: 1

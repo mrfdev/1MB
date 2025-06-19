@@ -15,13 +15,10 @@ survival:
     1:
       type: SHOP_LINK
       item:
-        # The same rules apply for material, amount, damage and lore as for goBackButton
         material: GRASS_BLOCK
         quantity: 1
         name: "&9&lBlocks"
-      # Shop ID from shops yaml
       shop: "survival_blocks"
-      # Slot in shops menu, counting from 0 to 53
       slot: 11
     2:
       type: SHOP_LINK
@@ -103,3 +100,13 @@ survival:
         name: "&4&lWeapons"
       shop: "survival_weapons"
       slot: 24
+    12:
+      type: SHOP_LINK
+      item:
+        material: ARCHER_POTTERY_SHERD
+        quantity: 1
+        name: "&e&lPottery Sherds"
+        lore:
+          - "&7Browse all sherds and decorated pots"
+      shop: "survival_sherds"
+      slot: 29

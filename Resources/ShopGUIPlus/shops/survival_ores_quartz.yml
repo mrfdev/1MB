@@ -50,7 +50,7 @@ survival_ores_quartz:
       item:
         material: SMOOTH_QUARTZ_STAIRS
         quantity: 1
-      buyPrice: 33
+      buyPrice: 120
       sellPrice: 1
       slot: 15
     7:

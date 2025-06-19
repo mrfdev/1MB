@@ -241,7 +241,7 @@ survival_farming:
       item:
         material: WEEPING_VINES
         quantity: 1
-      buyPrice: 50
+      buyPrice: 100
       sellPrice: 1
       slot: 19
       page: 2
@@ -250,7 +250,7 @@ survival_farming:
       item:
         material: VINE
         quantity: 1
-      buyPrice: 70
+      buyPrice: 100
       sellPrice: 1
       slot: 20
       page: 2
@@ -295,7 +295,7 @@ survival_farming:
       item:
         material: TWISTING_VINES
         quantity: 1
-      buyPrice: 50
+      buyPrice: 100
       sellPrice: 1
       slot: 25
       page: 2

@@ -409,7 +409,7 @@ survival_nether:
       item:
         material: GHAST_TEAR
         quantity: 1
-      buyPrice: 200.00
+      buyPrice: 16500.00
       sellPrice: 1
       slot: 11
       page: 3
@@ -427,7 +427,7 @@ survival_nether:
       item:
         material: NETHER_STAR
         quantity: 1
-      buyPrice: 200000.00
+      buyPrice: 1000000.00
       sellPrice: 1
       slot: 13
       page: 3

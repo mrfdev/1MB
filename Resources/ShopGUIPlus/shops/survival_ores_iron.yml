@@ -39,7 +39,7 @@ survival_ores_iron:
       item:
         material: IRON_INGOT
         quantity: 1
-      buyPrice: 5000
+      buyPrice: 2500
       sellPrice: 1
       slot: 13
       page: 1
@@ -86,7 +86,7 @@ survival_ores_iron:
       item:
         material: CAULDRON
         quantity: 1
-      buyPrice: 135000
+      buyPrice: 35000
       sellPrice: 1
       slot: 20
       page: 1
@@ -95,7 +95,7 @@ survival_ores_iron:
       item:
         material: ANVIL
         quantity: 1
-      buyPrice: 590000
+      buyPrice: 158100
       sellPrice: 1
       slot: 21
       page: 1
@@ -104,7 +104,7 @@ survival_ores_iron:
       item:
         material: IRON_BARS
         quantity: 1
-      buyPrice: 40000
+      buyPrice: 1912
       sellPrice: 1
       slot: 22
       page: 1
@@ -113,7 +113,7 @@ survival_ores_iron:
       item:
         material: CHAIN
         quantity: 1
-      buyPrice: 16000
+      buyPrice: 5000
       sellPrice: 1
       slot: 23
       page: 1
@@ -122,7 +122,7 @@ survival_ores_iron:
       item:
         material: IRON_DOOR
         quantity: 1
-      buyPrice: 35000
+      buyPrice: 363
       sellPrice: 1
       slot: 24
       page: 1
@@ -131,7 +131,7 @@ survival_ores_iron:
       item:
         material: IRON_TRAPDOOR
         quantity: 1
-      buyPrice: 60000
+      buyPrice: 5000
       sellPrice: 1
       slot: 25
       page: 1
@@ -189,7 +189,7 @@ survival_ores_iron:
       item:
         material: IRON_PICKAXE
         quantity: 1
-      buyPrice: 1532000
+      buyPrice: 15320
       sellPrice: 1
       slot: 10
       page: 2
@@ -198,7 +198,7 @@ survival_ores_iron:
       item:
         material: IRON_AXE
         quantity: 1
-      buyPrice: 1532000
+      buyPrice: 15320
       sellPrice: 1
       slot: 11
       page: 2
@@ -207,7 +207,7 @@ survival_ores_iron:
       item:
         material: IRON_SHOVEL
         quantity: 1
-      buyPrice: 512000
+      buyPrice: 5120
       sellPrice: 1
       slot: 12
       page: 2
@@ -216,7 +216,7 @@ survival_ores_iron:
       item:
         material: IRON_HOE
         quantity: 1
-      buyPrice: 1022000
+      buyPrice: 10220
       sellPrice: 1
       slot: 13
       page: 2
@@ -225,7 +225,7 @@ survival_ores_iron:
       item:
         material: IRON_SWORD
         quantity: 1
-      buyPrice: 1022000
+      buyPrice: 10210
       sellPrice: 1
       slot: 14
       page: 2
@@ -234,7 +234,7 @@ survival_ores_iron:
       item:
         material: IRON_HELMET
         quantity: 1
-      buyPrice: 1882000
+      buyPrice: 25500
       sellPrice: 1
       slot: 19
       page: 2
@@ -243,7 +243,7 @@ survival_ores_iron:
       item:
         material: IRON_CHESTPLATE
         quantity: 1
-      buyPrice: 2916000
+      buyPrice: 40800
       sellPrice: 1
       slot: 20
       page: 2
@@ -252,7 +252,7 @@ survival_ores_iron:
       item:
         material: IRON_LEGGINGS
         quantity: 1
-      buyPrice: 2442000
+      buyPrice: 35700
       sellPrice: 1
       slot: 21
       page: 2
@@ -261,7 +261,7 @@ survival_ores_iron:
       item:
         material: IRON_BOOTS
         quantity: 1
-      buyPrice: 1626000
+      buyPrice: 20400
       sellPrice: 1
       slot: 22
       page: 2
@@ -272,7 +272,7 @@ survival_ores_iron:
       item:
         material: CHAINMAIL_HELMET
         quantity: 1
-      buyPrice: 180000
+      buyPrice: 130
       sellPrice: 1
       slot: 28
       page: 2
@@ -281,7 +281,7 @@ survival_ores_iron:
       item:
         material: CHAINMAIL_CHESTPLATE
         quantity: 1
-      buyPrice: 290000
+      buyPrice: 210
       sellPrice: 1
       slot: 29
       page: 2
@@ -290,7 +290,7 @@ survival_ores_iron:
       item:
         material: CHAINMAIL_LEGGINGS
         quantity: 1
-      buyPrice: 240000
+      buyPrice: 180
       sellPrice: 1
       slot: 30
       page: 2
@@ -299,7 +299,7 @@ survival_ores_iron:
       item:
         material: CHAINMAIL_BOOTS
         quantity: 1
-      buyPrice: 160000
+      buyPrice: 100
       sellPrice: 1
       slot: 31
       page: 2
@@ -310,7 +310,7 @@ survival_ores_iron:
       item:
         material: LODESTONE
         quantity: 1
-      buyPrice: 1000000
+      buyPrice: 28152
       sellPrice: 1
       slot: 34
       page: 2

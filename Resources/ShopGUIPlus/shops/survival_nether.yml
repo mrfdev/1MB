@@ -436,7 +436,7 @@ survival_nether:
       item:
         material: WITHER_ROSE
         quantity: 1
-      buyPrice: 10000.00
+      buyPrice: 1000.00
       sellPrice: 1
       slot: 14
       page: 3

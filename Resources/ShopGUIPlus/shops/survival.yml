@@ -86,24 +86,16 @@ survival:
     9:
       type: SHOP_LINK
       item:
-        material: SADDLE
-        quantity: 1
-        name: "&3&lMiscellaneous"
-      shop: "miscellaneous"
-      slot: 31
-    10:
-      type: SHOP_LINK
-      item:
         material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
         quantity: 1
         name: "&9&lSmithing Templates"
       shop: "island_templates"
       slot: 20
-    11:
+    10:
       type: special
       special: balance
       slot: 53
-    12:
+    11:
       type: SHOP_LINK
       item:
         material: DIAMOND_SWORD

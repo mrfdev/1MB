@@ -297,7 +297,7 @@ survival_blocks:
       item:
         material: NETHER_BRICK
         quantity: 1
-      buyPrice: 120
+      buyPrice: 30
       sellPrice: 1
       slot: 22
       page: 2
@@ -459,7 +459,7 @@ survival_blocks:
       item:
         material: BASALT
         quantity: 1
-      buyPrice: 400
+      buyPrice: 100
       sellPrice: 1
       slot: 19
       page: 3

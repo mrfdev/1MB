@@ -11,7 +11,7 @@ survival_terracotta:
       item:
         material: TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 10
       page: 1
@@ -20,7 +20,7 @@ survival_terracotta:
       item:
         material: WHITE_TERRACOTTA
         quantity: 1
-      buyPrice: 2000
+      buyPrice: 30
       sellPrice: 1
       slot: 11
       page: 1
@@ -29,7 +29,7 @@ survival_terracotta:
       item:
         material: LIGHT_GRAY_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 12
       page: 1
@@ -38,7 +38,7 @@ survival_terracotta:
       item:
         material: GRAY_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 13
       page: 1
@@ -47,7 +47,7 @@ survival_terracotta:
       item:
         material: BLACK_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 14
       page: 1
@@ -56,7 +56,7 @@ survival_terracotta:
       item:
         material: BROWN_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 15
       page: 1
@@ -65,7 +65,7 @@ survival_terracotta:
       item:
         material: RED_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 16
       page: 1
@@ -74,7 +74,7 @@ survival_terracotta:
       item:
         material: ORANGE_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 19
       page: 1
@@ -83,7 +83,7 @@ survival_terracotta:
       item:
         material: YELLOW_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 20
       page: 1
@@ -92,7 +92,7 @@ survival_terracotta:
       item:
         material: LIME_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 21
       page: 1
@@ -101,7 +101,7 @@ survival_terracotta:
       item:
         material: GREEN_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 22
       page: 1
@@ -110,7 +110,7 @@ survival_terracotta:
       item:
         material: CYAN_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 23
       page: 1
@@ -119,7 +119,7 @@ survival_terracotta:
       item:
         material: LIGHT_BLUE_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 24
       page: 1
@@ -128,7 +128,7 @@ survival_terracotta:
       item:
         material: BLUE_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 25
       page: 1
@@ -137,7 +137,7 @@ survival_terracotta:
       item:
         material: PURPLE_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 28
       page: 1
@@ -146,7 +146,7 @@ survival_terracotta:
       item:
         material: MAGENTA_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 29
       page: 1
@@ -155,7 +155,7 @@ survival_terracotta:
       item:
         material: PINK_TERRACOTTA
         quantity: 1
-      buyPrice: 3000
+      buyPrice: 30
       sellPrice: 1
       slot: 30
       page: 1
@@ -166,7 +166,7 @@ survival_terracotta:
       item:
         material: WHITE_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 10
       page: 2
@@ -175,7 +175,7 @@ survival_terracotta:
       item:
         material: LIGHT_GRAY_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 11
       page: 2
@@ -184,7 +184,7 @@ survival_terracotta:
       item:
         material: GRAY_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 12
       page: 2
@@ -193,7 +193,7 @@ survival_terracotta:
       item:
         material: BLACK_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 13
       page: 2
@@ -202,7 +202,7 @@ survival_terracotta:
       item:
         material: BROWN_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 14
       page: 2
@@ -211,7 +211,7 @@ survival_terracotta:
       item:
         material: RED_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 15
       page: 2
@@ -220,7 +220,7 @@ survival_terracotta:
       item:
         material: ORANGE_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 16
       page: 2
@@ -229,7 +229,7 @@ survival_terracotta:
       item:
         material: YELLOW_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 19
       page: 2
@@ -238,7 +238,7 @@ survival_terracotta:
       item:
         material: LIME_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 20
       page: 2
@@ -247,7 +247,7 @@ survival_terracotta:
       item:
         material: GREEN_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 21
       page: 2
@@ -256,7 +256,7 @@ survival_terracotta:
       item:
         material: CYAN_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 22
       page: 2
@@ -265,7 +265,7 @@ survival_terracotta:
       item:
         material: LIGHT_BLUE_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 23
       page: 2
@@ -274,7 +274,7 @@ survival_terracotta:
       item:
         material: BLUE_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 24
       page: 2
@@ -283,7 +283,7 @@ survival_terracotta:
       item:
         material: PURPLE_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 25
       page: 2
@@ -292,7 +292,7 @@ survival_terracotta:
       item:
         material: MAGENTA_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 28
       page: 2
@@ -301,7 +301,7 @@ survival_terracotta:
       item:
         material: PINK_GLAZED_TERRACOTTA
         quantity: 1
-      buyPrice: 4000
+      buyPrice: 40
       sellPrice: 1
       slot: 29
       page: 2

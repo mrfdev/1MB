@@ -55,7 +55,7 @@ survival_ores_amethyst:
       item:
         material: AMETHYST_BLOCK
         quantity: 1
-      buyPrice: 1630
+      buyPrice: 163
       sellPrice: 1
       slot: 15
       page: 1
@@ -73,7 +73,7 @@ survival_ores_amethyst:
       item:
         material: CALCITE
         quantity: 1
-      buyPrice: 1200
+      buyPrice: 200
       sellPrice: 1
       slot: 19
       page: 1
@@ -91,7 +91,7 @@ survival_ores_amethyst:
       item:
         material: SMOOTH_BASALT
         quantity: 1
-      buyPrice: 600
+      buyPrice: 102
       sellPrice: 1
       slot: 21
       page: 1

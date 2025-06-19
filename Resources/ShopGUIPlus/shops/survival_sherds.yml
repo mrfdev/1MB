@@ -1,5 +1,5 @@
 survival_sherds:
-  name: "&0&lPottery Sherds Shop"
+  name: "&0&lPottery Sherds Shop &r(page %page%)"
   size: 54
   fillItem:
     material: BLACK_STAINED_GLASS_PANE
@@ -201,8 +201,8 @@ survival_sherds:
         quantity: 1
       buyPrice: 2500
       sellPrice: 1
-      slot: 37
-      page: 1
+      slot: 10
+      page: 2
     23:
       type: item
       item:
@@ -210,8 +210,8 @@ survival_sherds:
         quantity: 1
       buyPrice: 2500
       sellPrice: 1
-      slot: 38
-      page: 1
+      slot: 11
+      page: 2
     24:
       type: item
       item:
@@ -219,8 +219,8 @@ survival_sherds:
         quantity: 1
       buyPrice: 244
       sellPrice: 1
-      slot: 39
-      page: 1
+      slot: 12
+      page: 2
     25:
       type: special
       special: BALANCE

@@ -226,7 +226,7 @@ survival_tools:
       item:
         material: SHEARS
         quantity: 1
-      buyPrice: 1350
+      buyPrice: 363
       sellPrice: 1
       slot: 13
       page: 2
@@ -244,7 +244,7 @@ survival_tools:
       item:
         material: FISHING_ROD
         quantity: 1
-      buyPrice: 300
+      buyPrice: 57
       sellPrice: 1
       slot: 15
       page: 2
@@ -253,7 +253,7 @@ survival_tools:
       item:
         material: COMPASS
         quantity: 1
-      buyPrice: 1800
+      buyPrice: 1464
       sellPrice: 1
       slot: 16
       page: 2
@@ -262,7 +262,7 @@ survival_tools:
       item:
         material: CLOCK
         quantity: 1
-      buyPrice: 1500
+      buyPrice: 1271
       sellPrice: 1
       slot: 19
       page: 2
@@ -271,7 +271,7 @@ survival_tools:
       item:
         material: SPYGLASS
         quantity: 1
-      buyPrice: 1800
+      buyPrice: 8361
       sellPrice: 1
       slot: 20
       page: 2
@@ -280,7 +280,7 @@ survival_tools:
       item:
         material: LEAD
         quantity: 1
-      buyPrice: 200
+      buyPrice: 85
       sellPrice: 1
       slot: 21
       page: 2
@@ -289,7 +289,7 @@ survival_tools:
       item:
         material: CARROT_ON_A_STICK
         quantity: 1
-      buyPrice: 500
+      buyPrice: 91
       sellPrice: 1
       slot: 22
       page: 2
@@ -298,7 +298,7 @@ survival_tools:
       item:
         material: WARPED_FUNGUS_ON_A_STICK
         quantity: 1
-      buyPrice: 500
+      buyPrice: 100
       sellPrice: 1
       slot: 23
       page: 2
@@ -307,7 +307,7 @@ survival_tools:
       item:
         material: RECOVERY_COMPASS
         quantity: 1
-      buyPrice: 22000
+      buyPrice: 2000
       sellPrice: 1
       slot: 24
       page: 2
@@ -316,7 +316,7 @@ survival_tools:
       item:
         material: BUCKET
         quantity: 1
-      buyPrice: 500
+      buyPrice: 7500
       sellPrice: 1
       slot: 25
       page: 2
@@ -325,7 +325,7 @@ survival_tools:
       item:
         material: BRUSH
         quantity: 1
-      buyPrice: 300
+      buyPrice: 551
       sellPrice: 1
       slot: 28
       page: 2
@@ -334,7 +334,7 @@ survival_tools:
       item:
         material: TRIDENT
         quantity: 1
-      buyPrice: 60000
+      buyPrice: 250000
       sellPrice: 1
       slot: 29
       page: 2
@@ -343,7 +343,7 @@ survival_tools:
       item:
         material: SHIELD
         quantity: 1
-      buyPrice: 900
+      buyPrice: 5222
       sellPrice: 1
       slot: 30
       page: 2
@@ -352,7 +352,7 @@ survival_tools:
       item:
         material: CROSSBOW
         quantity: 1
-      buyPrice: 1500
+      buyPrice: 4000
       sellPrice: 1
       slot: 31
       page: 2
@@ -361,7 +361,7 @@ survival_tools:
       item:
         material: BOW
         quantity: 1
-      buyPrice: 700
+      buyPrice: 60
       sellPrice: 1
       slot: 32
       page: 2
@@ -379,7 +379,7 @@ survival_tools:
       item:
         material: MAP
         quantity: 1
-      buyPrice: 180
+      buyPrice: 1819
       sellPrice: 1
       slot: 34
       page: 2

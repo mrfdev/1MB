@@ -110,3 +110,14 @@ survival:
           - "&7Browse all sherds and decorated pots"
       shop: "survival_sherds"
       slot: 29
+    13:
+      type: SHOP_LINK
+      item:
+        material: NETHERRACK
+        quantity: 1
+        name: "&e&lNether Dimension Shop"
+        lore:
+          - "&7Browse all blocks and items from"
+          - "&7the Nether dimension"
+      shop: "survival_nether"
+      slot: 30

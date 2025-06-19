@@ -189,7 +189,7 @@ survival_end:
     21:
       type: item
       item:
-        material: END_PORTAL_FRAME
+        material: STONE
         quantity: 1
       buyPrice: 10.0     # 0.1 x 100
       sellPrice: 1

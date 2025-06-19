@@ -525,3 +525,22 @@ survival_blocks:
       shop: "survival_resin"
       slot: 25
       page: 3
+    # Nether Nylium blocks
+    58:
+      type: item
+      item:
+        material: CRIMSON_NYLIUM
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 28
+      page: 3
+    59:
+      type: item
+      item:
+        material: WARPED_NYLIUM
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 29
+      page: 3

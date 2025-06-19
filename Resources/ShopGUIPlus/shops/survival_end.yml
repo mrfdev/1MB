@@ -5,12 +5,13 @@ survival_end:
     material: BLACK_STAINED_GLASS_PANE
     name: " "
   items:
+    # PAGE 1
     1:
       type: item
       item:
         material: END_STONE
         quantity: 1
-      buyPrice: 45.0
+      buyPrice: 45.0    # 0.45 x 100
       sellPrice: 1
       slot: 10
       page: 1
@@ -19,7 +20,7 @@ survival_end:
       item:
         material: END_STONE_BRICKS
         quantity: 1
-      buyPrice: 51.0
+      buyPrice: 180.0   # 1.8 x 100
       sellPrice: 1
       slot: 11
       page: 1
@@ -28,7 +29,7 @@ survival_end:
       item:
         material: END_STONE_BRICK_SLAB
         quantity: 1
-      buyPrice: 50.0
+      buyPrice: 183.0   # 1.83 x 100
       sellPrice: 1
       slot: 12
       page: 1
@@ -37,7 +38,7 @@ survival_end:
       item:
         material: END_STONE_BRICK_STAIRS
         quantity: 1
-      buyPrice: 51.0
+      buyPrice: 183.0   # 1.83 x 100
       sellPrice: 1
       slot: 13
       page: 1
@@ -46,7 +47,7 @@ survival_end:
       item:
         material: PURPUR_BLOCK
         quantity: 1
-      buyPrice: 122.0
+      buyPrice: 122.0   # 1.22 x 100
       sellPrice: 1
       slot: 14
       page: 1
@@ -55,7 +56,7 @@ survival_end:
       item:
         material: PURPUR_PILLAR
         quantity: 1
-      buyPrice: 124.0
+      buyPrice: 124.0   # 1.24 x 100
       sellPrice: 1
       slot: 15
       page: 1
@@ -64,7 +65,7 @@ survival_end:
       item:
         material: PURPUR_STAIRS
         quantity: 1
-      buyPrice: 123.0
+      buyPrice: 124.0   # 1.24 x 100
       sellPrice: 1
       slot: 16
       page: 1
@@ -73,7 +74,7 @@ survival_end:
       item:
         material: PURPUR_SLAB
         quantity: 1
-      buyPrice: 121.0
+      buyPrice: 124.0   # 1.24 x 100
       sellPrice: 1
       slot: 19
       page: 1
@@ -82,7 +83,7 @@ survival_end:
       item:
         material: CHORUS_PLANT
         quantity: 1
-      buyPrice: 35.0
+      buyPrice: 20.0    # 0.2 x 100
       sellPrice: 1
       slot: 20
       page: 1
@@ -91,7 +92,7 @@ survival_end:
       item:
         material: CHORUS_FLOWER
         quantity: 1
-      buyPrice: 33.0
+      buyPrice: 30.0    # 0.3 x 100
       sellPrice: 1
       slot: 21
       page: 1
@@ -100,7 +101,7 @@ survival_end:
       item:
         material: CHORUS_FRUIT
         quantity: 1
-      buyPrice: 24.0
+      buyPrice: 20.0    # 0.2 x 100
       sellPrice: 1
       slot: 22
       page: 1
@@ -109,7 +110,7 @@ survival_end:
       item:
         material: POPPED_CHORUS_FRUIT
         quantity: 1
-      buyPrice: 32.0
+      buyPrice: 30.0    # 0.3 x 100
       sellPrice: 1
       slot: 23
       page: 1
@@ -118,7 +119,7 @@ survival_end:
       item:
         material: END_ROD
         quantity: 1
-      buyPrice: 110.0
+      buyPrice: 300.0   # 3.0 x 100
       sellPrice: 1
       slot: 24
       page: 1
@@ -127,7 +128,7 @@ survival_end:
       item:
         material: DRAGON_BREATH
         quantity: 1
-      buyPrice: 8000.0
+      buyPrice: 50.0    # 0.5 x 100
       sellPrice: 1
       slot: 25
       page: 1
@@ -136,7 +137,7 @@ survival_end:
       item:
         material: DRAGON_EGG
         quantity: 1
-      buyPrice: 1000000.0
+      buyPrice: 275000.0   # 2750.0 x 100
       sellPrice: 1
       slot: 28
       page: 1
@@ -145,7 +146,7 @@ survival_end:
       item:
         material: DRAGON_HEAD
         quantity: 1
-      buyPrice: 150000.0
+      buyPrice: 150000.0   # 1500.0 x 100
       sellPrice: 1
       slot: 29
       page: 1
@@ -154,7 +155,7 @@ survival_end:
       item:
         material: ELYTRA
         quantity: 1
-      buyPrice: 125000.0
+      buyPrice: 125000.0   # 1250.0 x 100
       sellPrice: 1
       slot: 30
       page: 1
@@ -163,7 +164,7 @@ survival_end:
       item:
         material: SHULKER_SHELL
         quantity: 1
-      buyPrice: 100000.0
+      buyPrice: 100000.0   # 1000.0 x 100
       sellPrice: 1
       slot: 31
       page: 1
@@ -172,7 +173,7 @@ survival_end:
       item:
         material: END_CRYSTAL
         quantity: 1
-      buyPrice: 51000.0
+      buyPrice: 20000.0    # 200.0 x 100
       sellPrice: 1
       slot: 32
       page: 1
@@ -181,7 +182,7 @@ survival_end:
       item:
         material: OBSIDIAN
         quantity: 1
-      buyPrice: 600.0
+      buyPrice: 600.0    # 6.0 x 100
       sellPrice: 1
       slot: 33
       page: 1
@@ -190,29 +191,175 @@ survival_end:
       item:
         material: END_PORTAL_FRAME
         quantity: 1
-      buyPrice: 51000.0
+      buyPrice: 10.0     # 0.1 x 100
       sellPrice: 1
       slot: 34
       page: 1
+
+    # PAGE 2
     22:
       type: item
       item:
         material: ENDER_PEARL
         quantity: 1
-      buyPrice: 55.0
+      buyPrice: 55.0    # 0.55 x 100
       sellPrice: 1
       slot: 10
       page: 2
     23:
       type: item
       item:
-        material: END_CRYSTAL
+        material: SHULKER_BOX
         quantity: 1
-      buyPrice: 51000.0
+      buyPrice: 200000.0   # 2000.0 x 100
       sellPrice: 1
       slot: 11
       page: 2
     24:
+      type: item
+      item:
+        material: PURPLE_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 12
+      page: 2
+    25:
+      type: item
+      item:
+        material: MAGENTA_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 13
+      page: 2
+    26:
+      type: item
+      item:
+        material: WHITE_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 14
+      page: 2
+    27:
+      type: item
+      item:
+        material: BLUE_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 15
+      page: 2
+    28:
+      type: item
+      item:
+        material: CYAN_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 16
+      page: 2
+    29:
+      type: item
+      item:
+        material: GREEN_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 19
+      page: 2
+    30:
+      type: item
+      item:
+        material: RED_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 20
+      page: 2
+    31:
+      type: item
+      item:
+        material: ORANGE_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 21
+      page: 2
+    32:
+      type: item
+      item:
+        material: PINK_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 22
+      page: 2
+    33:
+      type: item
+      item:
+        material: YELLOW_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 23
+      page: 2
+    34:
+      type: item
+      item:
+        material: BLACK_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 24
+      page: 2
+    35:
+      type: item
+      item:
+        material: GRAY_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 25
+      page: 2
+    36:
+      type: item
+      item:
+        material: LIGHT_BLUE_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 28
+      page: 2
+    37:
+      type: item
+      item:
+        material: LIGHT_GRAY_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 29
+      page: 2
+    38:
+      type: item
+      item:
+        material: LIME_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 30
+      page: 2
+    39:
+      type: item
+      item:
+        material: BROWN_SHULKER_BOX
+        quantity: 1
+      buyPrice: 200000.0   # 2000.0 x 100
+      sellPrice: 1
+      slot: 31
+      page: 2
+    40:
       type: special
       special: BALANCE
       slot: 53

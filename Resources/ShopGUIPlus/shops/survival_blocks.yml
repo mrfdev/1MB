@@ -468,7 +468,7 @@ survival_blocks:
       item:
         material: TUFF
         quantity: 1
-      buyPrice: 200
+      buyPrice: 204
       sellPrice: 1
       slot: 20
       page: 3

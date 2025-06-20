@@ -157,7 +157,7 @@ survival_wools:
       item:
         material: WHITE_CARPET
         quantity: 1
-      buyPrice: 5    # NOT FOUND IN WORTH.YML
+      buyPrice: 30
       sellPrice: 1
       slot: 10
       page: 2
@@ -303,7 +303,7 @@ survival_wools:
       item:
         material: WHITE_BED
         quantity: 1
-      buyPrice: 200
+      buyPrice: 169
       sellPrice: 1
       slot: 10
       page: 3
@@ -339,7 +339,7 @@ survival_wools:
       item:
         material: YELLOW_BED
         quantity: 1
-      buyPrice: 275
+      buyPrice: 260
       sellPrice: 1
       slot: 14
       page: 3
@@ -393,7 +393,7 @@ survival_wools:
       item:
         material: PURPLE_BED
         quantity: 1
-      buyPrice: 244
+      buyPrice: 188
       sellPrice: 1
       slot: 22
       page: 3
@@ -429,7 +429,7 @@ survival_wools:
       item:
         material: RED_BED
         quantity: 1
-      buyPrice: 275
+      buyPrice: 192
       sellPrice: 1
       slot: 28
       page: 3
@@ -449,7 +449,7 @@ survival_wools:
       item:
         material: WHITE_BANNER
         quantity: 1
-      buyPrice: 370
+      buyPrice: 250
       sellPrice: 1
       slot: 10
       page: 4
@@ -485,7 +485,7 @@ survival_wools:
       item:
         material: YELLOW_BANNER
         quantity: 1
-      buyPrice: 429
+      buyPrice: 400
       sellPrice: 1
       slot: 14
       page: 4

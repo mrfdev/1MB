@@ -526,3 +526,102 @@ survival_logs:
       special: BALANCE
       slot: 53
       page: 3
+    59:
+      type: item
+      item:
+        material: OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 28
+      page: 3
+    60:
+      type: item
+      item:
+        material: SPRUCE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 29
+      page: 3
+    61:
+      type: item
+      item:
+        material: BIRCH_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 30
+      page: 3
+    62:
+      type: item
+      item:
+        material: JUNGLE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 31
+      page: 3
+    63:
+      type: item
+      item:
+        material: ACACIA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 32
+      page: 3
+    64:
+      type: item
+      item:
+        material: DARK_OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 33
+      page: 3
+    65:
+      type: item
+      item:
+        material: AZALEA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 34
+      page: 3
+    66:
+      type: item
+      item:
+        material: FLOWERING_AZALEA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 10
+      page: 4
+    67:
+      type: item
+      item:
+        material: MANGROVE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 11
+      page: 4
+    68:
+      type: item
+      item:
+        material: CHERRY_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 12
+      page: 4
+    69:
+      type: item
+      item:
+        material: PALE_OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 13
+      page: 4

@@ -330,3 +330,105 @@ survival_farming:
       type: special
       special: BALANCE
       slot: 53
+
+    # --- Leaves page (page 3) ---
+
+    40:
+      type: item
+      item:
+        material: OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 10
+      page: 3
+    41:
+      type: item
+      item:
+        material: SPRUCE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 11
+      page: 3
+    42:
+      type: item
+      item:
+        material: BIRCH_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 12
+      page: 3
+    43:
+      type: item
+      item:
+        material: JUNGLE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 13
+      page: 3
+    44:
+      type: item
+      item:
+        material: ACACIA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 14
+      page: 3
+    45:
+      type: item
+      item:
+        material: DARK_OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 15
+      page: 3
+    46:
+      type: item
+      item:
+        material: AZALEA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 16
+      page: 3
+    47:
+      type: item
+      item:
+        material: FLOWERING_AZALEA_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 19
+      page: 3
+    48:
+      type: item
+      item:
+        material: MANGROVE_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 20
+      page: 3
+    49:
+      type: item
+      item:
+        material: CHERRY_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 21
+      page: 3
+    50:
+      type: item
+      item:
+        material: PALE_OAK_LEAVES
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 22
+      page: 3

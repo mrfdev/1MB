@@ -6,10 +6,12 @@ set -e
 # PaperMC Server Updater Script - mrfloris-paper-script/1.0
 # Maintainer: mrfloris (https://github.com/mrfdev/1MB)
 #
+# This script:
 # - Only downloads official PaperMC JARs, never self-updates code.
 # - Updates a local cache with project, version, build, channel, commit SHA.
 # - Verifies SHA-256 before updating JAR.
 # - Offers CLI flags for autoupdate, cache reset, and more.
+# - Fully supports Paper v3 API (with version objects, not strings).
 ##############################################################################
 
 # ------------ Configurable Defaults ------------------
@@ -123,14 +125,15 @@ clear_cache() {
 }
 
 # ------------ Get Latest Minecraft Version -------------
-# Uses .versions[-1] (last in the sorted API list)
+# Uses .versions[-1].version.id from the new API
 get_latest_mc_version() {
     VERSIONS_URL="$API_BASE/projects/$PROJECT/versions"
     VERSIONS_JSON=$(curl -sSL -H "User-Agent: $USER_AGENT" "$VERSIONS_URL")
     if [ "$DEBUG" -eq 1 ]; then
         printf "\n[DEBUG] Raw VERSIONS_JSON:\n%s\n\n" "$VERSIONS_JSON"
     fi
-    LATEST_VER=$(printf '%s' "$VERSIONS_JSON" | jq -r '.versions[-1]')
+    # The array is sorted oldest->newest, so [-1] is latest
+    LATEST_VER=$(printf '%s' "$VERSIONS_JSON" | jq -r '.versions[-1].version.id')
     printf "%s" "$LATEST_VER"
 }
 

@@ -15,7 +15,7 @@ API_BASE="https://fill.papermc.io/v3"
 DEBUG=1  # Set to 1 for verbose, 0 for quiet
 
 # ----------- Download Command Selection -------------
-if command -v xurl >/dev/null 2>&1; then
+if command -v curl >/dev/null 2>&1; then
     DL_CMD="curl"
 elif command -v wget >/dev/null 2>&1; then
     DL_CMD="wget"

@@ -6,11 +6,13 @@ set -e
 # PaperMC Server Updater Script - mrfloris-paper-script/1.0
 # Maintainer: mrfloris (https://github.com/mrfdev/1MB)
 #
-# This script never self-updates or downloads code from anywhere but
-# the official PaperMC API. To update this script, visit:
-# https://github.com/mrfdev/1MB
+# - Only downloads official PaperMC JARs, never self-updates code.
+# - Updates a local cache with project, version, build, channel, commit SHA.
+# - Verifies SHA-256 before updating JAR.
+# - Offers CLI flags for autoupdate, cache reset, and more.
 ##############################################################################
 
+# ------------ Configurable Defaults ------------------
 CACHE_FILE=".papercache.json"
 DEFAULT_PROJECT="paper"
 DEFAULT_VERSION="1.21.6"
@@ -18,9 +20,9 @@ DEFAULT_CHANNEL="STABLE"
 DEFAULT_AUTO_UPDATE=0
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
-DEBUG=0   # Set to 1 for extra API output, 0 to disable
+DEBUG=0    # Set to 1 for extra API info
 
-# ----------------- CLI Argument Parsing ---------------------
+# ------------ CLI Parsing ----------------------------
 SHOW_HELP=0
 CLEAR_CACHE=0
 FORCE_UPDATE_LATEST=0
@@ -46,7 +48,7 @@ if [ "$SHOW_HELP" = "1" ]; then
     exit 0
 fi
 
-# ----------------- Safeguards & Dependency Checks -----------
+# ------------ Pre-flight checks ----------------------
 if [ "$EUID" -eq 0 ]; then
     printf "\n[ERROR] This script should NOT be run as root or with sudo.\n"
     exit 1
@@ -60,6 +62,7 @@ if ! command -v jq >/dev/null 2>&1; then
     exit 1
 fi
 
+# Set SHA-256 checker depending on platform
 if command -v shasum >/dev/null 2>&1; then
     SHA_CMD="shasum -a 256"
 elif command -v sha256sum >/dev/null 2>&1; then
@@ -69,7 +72,8 @@ else
     exit 1
 fi
 
-# ----------------- Cache Handling -------------------------
+# ------------ Cache handling -------------------------
+# Load or initialize cache
 load_cache() {
     if [ -f "$CACHE_FILE" ]; then
         PROJECT=$(jq -r '.project' "$CACHE_FILE")
@@ -91,6 +95,7 @@ load_cache() {
     fi
 }
 
+# Write to cache file
 save_cache() {
     printf '{\n'        > "$CACHE_FILE"
     printf '  "project": "%s",\n' "$PROJECT" >> "$CACHE_FILE"
@@ -103,6 +108,7 @@ save_cache() {
     printf '}\n'        >> "$CACHE_FILE"
 }
 
+# Wipe cache and re-init
 clear_cache() {
     printf "[INFO] Clearing cache and starting fresh...\n"
     rm -f "$CACHE_FILE"
@@ -116,18 +122,19 @@ clear_cache() {
     save_cache
 }
 
-# ------------- Fetch Latest MC Version ---------------------
+# ------------ Get Latest Minecraft Version -------------
+# Uses .versions[-1] (last in the sorted API list)
 get_latest_mc_version() {
     VERSIONS_URL="$API_BASE/projects/$PROJECT/versions"
     VERSIONS_JSON=$(curl -sSL -H "User-Agent: $USER_AGENT" "$VERSIONS_URL")
     if [ "$DEBUG" -eq 1 ]; then
         printf "\n[DEBUG] Raw VERSIONS_JSON:\n%s\n\n" "$VERSIONS_JSON"
     fi
-    VERSIONS=$(printf '%s' "$VERSIONS_JSON" | jq -r '.versions[]')
-    printf '%s\n' "$VERSIONS" | sort -V | tail -1
+    LATEST_VER=$(printf '%s' "$VERSIONS_JSON" | jq -r '.versions[-1]')
+    printf "%s" "$LATEST_VER"
 }
 
-# ------------- Fetch Latest Build for Version --------------
+# ------------ Get Latest Build Info For Version -------------
 fetch_latest_build_info() {
     API_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds/latest"
     RESPONSE=$(curl -sSL -H "User-Agent: $USER_AGENT" "$API_URL")
@@ -139,7 +146,7 @@ fetch_latest_build_info() {
     LATEST_COMMIT_SHA=$(printf '%s' "$RESPONSE" | jq -r '.commits[0].sha // ""')
     LATEST_JAR_SHA=$(printf '%s' "$RESPONSE" | jq -r '.downloads."server:default".checksums.sha256 // ""')
     LATEST_CHANNEL=$(printf '%s' "$RESPONSE" | jq -r '.channel // ""')
-    # If something goes wrong
+    # Exit on missing info
     if [ -z "$LATEST_BUILD_NUMBER" ] || [ "$LATEST_BUILD_NUMBER" = "null" ]; then
         printf "\n[ERROR] Could not find a valid build number for version %s\n" "$VERSION"
         exit 1
@@ -150,24 +157,25 @@ fetch_latest_build_info() {
     fi
 }
 
-# ----------------- Main Script Flow ------------------------
-
+# ------------ Main script flow ------------------------
 printf "[INFO] For script updates, visit: https://github.com/mrfdev/1MB\n"
 
-# Handle CLI flags
+# Optional: reset cache
 if [ "$CLEAR_CACHE" = "1" ]; then
     clear_cache
 fi
 
+# Always load cache after any flag changes
 load_cache
 
+# Enable or save auto-update mode if flagged
 if [ "$AUTO_UPDATE_FLAG" = "1" ]; then
     AUTO_UPDATE=1
     save_cache
     printf "[INFO] Auto-update mode enabled.\n"
 fi
 
-# If user wants to force update to latest MC version/build/channel:
+# CLI: one-time upgrade to latest MC version/build
 if [ "$FORCE_UPDATE_LATEST" = "1" ] || [ "$AUTO_UPDATE" = "1" ]; then
     LATEST_VERSION=$(get_latest_mc_version)
     if [ "$VERSION" != "$LATEST_VERSION" ]; then
@@ -178,7 +186,7 @@ if [ "$FORCE_UPDATE_LATEST" = "1" ] || [ "$AUTO_UPDATE" = "1" ]; then
     fi
 fi
 
-# Always check if there is a newer MC version (unless in full auto-update mode)
+# If not auto-update, prompt if MC version bump is available
 if [ "$AUTO_UPDATE" = "0" ]; then
     LATEST_VERSION=$(get_latest_mc_version)
     if [ "$VERSION" != "$LATEST_VERSION" ]; then
@@ -196,18 +204,20 @@ if [ "$AUTO_UPDATE" = "0" ]; then
     fi
 fi
 
-# Fetch and check the latest build for the current version
+# Get latest build for this MC version
 fetch_latest_build_info
 
+# Prep jar name and backup path
 JAR_BASENAME="paper-${VERSION}-${LATEST_BUILD_NUMBER}.jar"
 JAR_PATH="./${JAR_BASENAME}"
 BACKUP_DIR="./backups"
 
+# Show cache and status info
 printf "\n[INFO] Loaded cache state:\n"
 cat "$CACHE_FILE"
 printf "\n[INFO] Latest available build for %s %s (%s): %s\n" "$PROJECT" "$VERSION" "$LATEST_CHANNEL" "$LATEST_BUILD_NUMBER"
 
-# Warn if channel is not the preferred one
+# Channel safety check
 if [ "$LATEST_CHANNEL" != "$CHANNEL" ] && [ "$AUTO_UPDATE" = "0" ]; then
     printf "[WARN] Build channel is '%s', but you prefer '%s'.\n" "$LATEST_CHANNEL" "$CHANNEL"
     printf "       Proceed with this build? [y/N]: "
@@ -218,9 +228,11 @@ if [ "$LATEST_CHANNEL" != "$CHANNEL" ] && [ "$AUTO_UPDATE" = "0" ]; then
     fi
 fi
 
+# Show current vs latest
 printf "[INFO] Cached build: %s\n" "$BUILD"
 printf "[INFO] Latest build: %s\n" "$LATEST_BUILD_NUMBER"
 
+# If already up-to-date, exit
 if [ "$BUILD" = "$LATEST_BUILD_NUMBER" ]; then
     printf "[INFO] You already have the latest build (%s). No update needed.\n" "$BUILD"
     exit 0
@@ -228,8 +240,8 @@ fi
 
 printf "[INFO] Newer build detected! Updating from build %s to %s\n" "$BUILD" "$LATEST_BUILD_NUMBER"
 
+# Backup old jar if present
 mkdir -p "$BACKUP_DIR"
-
 if [ "$BUILD" != "0" ]; then
     OLD_JAR="paper-${VERSION}-${BUILD}.jar"
     if [ -f "$OLD_JAR" ]; then
@@ -241,7 +253,7 @@ if [ "$BUILD" != "0" ]; then
     fi
 fi
 
-# Download new jar
+# Download, with user agent
 printf "[INFO] Downloading new jar to: %s\n" "$JAR_PATH"
 curl -fSL -o "$JAR_PATH" -H "User-Agent: $USER_AGENT" "$LATEST_DOWNLOAD_URL"
 if [ $? -eq 0 ]; then
@@ -251,7 +263,7 @@ else
     exit 1
 fi
 
-# Verify SHA-256
+# Validate SHA-256 checksum
 EXPECTED_SHA="$LATEST_JAR_SHA"
 LOCAL_SHA=$($SHA_CMD "$JAR_PATH" | awk '{print $1}')
 if [ "$EXPECTED_SHA" != "$LOCAL_SHA" ]; then
@@ -265,7 +277,7 @@ else
     printf "[INFO] SHA-256 checksum verified: %s\n" "$LOCAL_SHA"
 fi
 
-# Update cache with the new build info
+# Update cache for new build
 BUILD="$LATEST_BUILD_NUMBER"
 COMMIT_SHA="$LATEST_COMMIT_SHA"
 JAR_SHA="$LOCAL_SHA"
@@ -273,4 +285,4 @@ CHANNEL="$LATEST_CHANNEL"
 save_cache
 printf "[INFO] Cache updated with new build, SHA, and commit.\n"
 
-# All done!
+# Finished!

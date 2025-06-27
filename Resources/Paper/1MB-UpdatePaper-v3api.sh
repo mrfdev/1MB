@@ -3,7 +3,8 @@
 set -e
 
 ##############################################################################
-# Simple PaperMC Updater with Smart Backups and Cache Reset Option
+# Simple PaperMC Updater with Smart Backups, Cache Reset Option, and
+# Download Command Fallback (curl or wget)
 ##############################################################################
 
 CACHE_FILE=".papercache.json"
@@ -11,7 +12,20 @@ DEFAULT_PROJECT="paper"
 DEFAULT_VERSION="1.21.6"
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
-DEBUG=0  # Set to 1 for verbose, 0 for quiet
+DEBUG=1  # Set to 1 for verbose, 0 for quiet
+
+# ----------- Download Command Selection -------------
+if command -v xurl >/dev/null 2>&1; then
+    DL_CMD="curl"
+elif command -v wget >/dev/null 2>&1; then
+    DL_CMD="wget"
+else
+    printf "\n[ERROR] Neither 'curl' nor 'wget' is installed. At least one is required.\n"
+    printf "Install with:\n"
+    printf "  macOS:  brew install curl\n"
+    printf "  Ubuntu: sudo apt update && sudo apt install curl\n"
+    exit 1
+fi
 
 # SHA checker for macOS/Linux
 if command -v shasum >/dev/null 2>&1; then
@@ -80,7 +94,12 @@ clear_cache() {
 # --------- GET LATEST BUILD INFO ---------
 get_latest_build() {
     LATEST_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds/latest"
-    RESPONSE=$(curl -sSL -H "User-Agent: $USER_AGENT" "$LATEST_URL")
+    RESPONSE=""
+    if [ "$DL_CMD" = "curl" ]; then
+        RESPONSE=$(curl -sSL -H "User-Agent: $USER_AGENT" "$LATEST_URL")
+    else
+        RESPONSE=$(wget --header="User-Agent: $USER_AGENT" -qO- "$LATEST_URL")
+    fi
     LATEST_BUILD=$(echo "$RESPONSE" | jq -r '.id')
     DOWNLOAD_URL=$(echo "$RESPONSE" | jq -r '.downloads."server:default".url')
     EXPECTED_SHA=$(echo "$RESPONSE" | jq -r '.downloads."server:default".checksums.sha256')
@@ -124,7 +143,7 @@ JAR_BASENAME="paper-${VERSION}-${LATEST_BUILD}.jar"
 JAR_PATH="./$JAR_BASENAME"
 BACKUP_DIR="./backups"
 
-# --- NEW: Backup any existing jar (even same build) before downloading ---
+# --- Backup any existing jar (even same build) before downloading ---
 if [ -f "$JAR_PATH" ]; then
     mkdir -p "$BACKUP_DIR"
     BACKUP_PATH="${BACKUP_DIR}/${JAR_BASENAME}-backup-$(date +%Y%m%d_%H%M%S)"
@@ -134,7 +153,11 @@ fi
 
 # Download and verify
 printf "[INFO] Downloading build %s to %s\n" "$LATEST_BUILD" "$JAR_PATH"
-curl -fSL -o "$JAR_PATH" -H "User-Agent: $USER_AGENT" "$DOWNLOAD_URL"
+if [ "$DL_CMD" = "curl" ]; then
+    curl -fSL -o "$JAR_PATH" -H "User-Agent: $USER_AGENT" "$DOWNLOAD_URL"
+else
+    wget --header="User-Agent: $USER_AGENT" -O "$JAR_PATH" "$DOWNLOAD_URL"
+fi
 
 LOCAL_SHA=$($SHA_CMD "$JAR_PATH" | awk '{print $1}')
 if [ "$EXPECTED_SHA" != "$LOCAL_SHA" ]; then

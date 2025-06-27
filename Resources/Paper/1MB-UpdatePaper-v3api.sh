@@ -15,20 +15,17 @@ set -e
 #   - Does not run as root/sudo for safety.
 ##############################################################################
 
-DEBUG=1  # Set to 1 to print raw API response, 0 to disable
-
-# ----------------- Configurable Variables ---------------------
+# ------------- User Settings & Variables -------------
 CACHE_FILE=".papercache.json"
 DEFAULT_PROJECT="paper"
 DEFAULT_VERSION="1.21.6"         # Change as needed
 DEFAULT_CHANNEL="STABLE"         # Options: STABLE, BETA, ALPHA, RECOMMENDED
-
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
-#API_BASE="https://fill.papermc.io/api/v3"
 API_BASE="https://fill.papermc.io/v3"
 
+DEBUG=1   # Set to 1 for extra API output, 0 to disable
 
-# ----------------- Script Safeguards --------------------------
+# ------------- Safeguards & Dependency Checks -------------
 
 # Prevent running as root
 if [ "$EUID" -eq 0 ]; then
@@ -37,7 +34,7 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-# Dependency check for jq (JSON parser)
+# Check for jq (JSON parser)
 if ! command -v jq >/dev/null 2>&1; then
     printf "\n[ERROR] The 'jq' command is required but was not found.\n"
     printf "Install it with:\n"
@@ -46,9 +43,7 @@ if ! command -v jq >/dev/null 2>&1; then
     exit 1
 fi
 
-# ----------------- Cache Logic --------------------------------
-
-# Load cache from file, or create a new one with defaults
+# ------------- Cache Handling -------------
 load_cache() {
     if [ -f "$CACHE_FILE" ]; then
         PROJECT=$(jq -r '.project' "$CACHE_FILE")
@@ -64,7 +59,6 @@ load_cache() {
     fi
 }
 
-# Save current cache variables to the cache file as JSON
 save_cache() {
     printf '{\n'        > "$CACHE_FILE"
     printf '  "project": "%s",\n' "$PROJECT" >> "$CACHE_FILE"
@@ -74,9 +68,7 @@ save_cache() {
     printf '}\n'        >> "$CACHE_FILE"
 }
 
-# ----------------- Paper API Query Logic ----------------------
-
-# Query PaperMC API for the latest build info for the specified version
+# ------------- Paper API Query Logic -------------
 fetch_latest_build_info() {
     API_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds/latest"
     printf "[INFO] Querying PaperMC API for latest build...\n"
@@ -116,10 +108,7 @@ fetch_latest_build_info() {
     )
 }
 
-
-
-
-# ----------------- Main Script Logic --------------------------
+# ------------- MAIN SCRIPT FLOW -------------
 
 load_cache
 
@@ -129,16 +118,54 @@ printf "\n"
 
 fetch_latest_build_info
 
-# Next: add logic to compare build numbers, download/update jar, etc.
-# For now, this script prints the cache and latest build info, and is ready to extend!
+# Variables for this update/check session
+LATEST_BUILD_NUMBER="${LATEST_BUILD_INFO[0]}"
+LATEST_DOWNLOAD_URL="${LATEST_BUILD_INFO[1]}"
+LATEST_MC_VERSION="${LATEST_BUILD_INFO[2]}"
+JAR_BASENAME="paper-${VERSION}-${LATEST_BUILD_NUMBER}.jar"
+JAR_PATH="./${JAR_BASENAME}"
+BACKUP_DIR="./backups"
 
-##############################################################################
-# Next Steps (Not Yet Implemented - Add your own code here!)
-# - Compare cached BUILD to LATEST_BUILD_NUMBER
-# - If new, backup existing paper jar, download new one, update cache
-# - If MC version changes, prompt to reset cache, confirm with user
-# - Optionally allow switching channel/project/version interactively
-##############################################################################
+# --- Step 3: Compare, Download, and Backup if Needed ---
 
-# End of script
+printf "\n[INFO] Cached build: %s\n" "$BUILD"
+printf "[INFO] Latest build: %s\n" "$LATEST_BUILD_NUMBER"
 
+if [ "$BUILD" = "$LATEST_BUILD_NUMBER" ]; then
+    printf "\n[INFO] You already have the latest build (%s). No update needed.\n" "$BUILD"
+    exit 0
+fi
+
+printf "\n[INFO] Newer build detected! Updating from build %s to %s\n" "$BUILD" "$LATEST_BUILD_NUMBER"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Backup the old jar, if present and not a placeholder build 0
+if [ "$BUILD" != "0" ]; then
+    OLD_JAR="paper-${VERSION}-${BUILD}.jar"
+    if [ -f "$OLD_JAR" ]; then
+        BACKUP_PATH="${BACKUP_DIR}/${OLD_JAR}-backup-$(date +%Y%m%d_%H%M%S)"
+        printf "[INFO] Backing up old jar: %s -> %s\n" "$OLD_JAR" "$BACKUP_PATH"
+        mv "$OLD_JAR" "$BACKUP_PATH"
+    else
+        printf "[WARN] Old jar %s not found, skipping backup.\n" "$OLD_JAR"
+    fi
+fi
+
+# Download new jar
+printf "[INFO] Downloading new jar to: %s\n" "$JAR_PATH"
+curl -fSL -o "$JAR_PATH" -H "User-Agent: $USER_AGENT" "$LATEST_DOWNLOAD_URL"
+if [ $? -eq 0 ]; then
+    printf "[INFO] Download successful: %s\n" "$JAR_PATH"
+else
+    printf "[ERROR] Failed to download the new jar!\n"
+    exit 1
+fi
+
+# Update cache with the new build number
+BUILD="$LATEST_BUILD_NUMBER"
+save_cache
+printf "[INFO] Cache updated with new build number (%s).\n" "$BUILD"
+
+# All done!

@@ -124,14 +124,8 @@ get_latest_mc_version() {
         printf "\n[DEBUG] Raw VERSIONS_JSON:\n%s\n\n" "$VERSIONS_JSON"
     fi
     VERSIONS=$(printf '%s' "$VERSIONS_JSON" | jq -r '.versions[]')
-    LATEST_VERSION=$(printf '%s\n' "$VERSIONS" | sort -V | tail -1)
-    if [ "$DEBUG" -eq 1 ]; then
-        printf "[DEBUG] Sorted versions (version sort):\n%s\n" "$(printf '%s\n' "$VERSIONS" | sort -V)"
-        printf "[DEBUG] LATEST_VERSION detected: %s\n" "$LATEST_VERSION"
-    fi
+    printf '%s\n' "$VERSIONS" | sort -V | tail -1
 }
-
-
 
 # ------------- Fetch Latest Build for Version --------------
 fetch_latest_build_info() {
@@ -175,7 +169,7 @@ fi
 
 # If user wants to force update to latest MC version/build/channel:
 if [ "$FORCE_UPDATE_LATEST" = "1" ] || [ "$AUTO_UPDATE" = "1" ]; then
-    get_latest_mc_version
+    LATEST_VERSION=$(get_latest_mc_version)
     if [ "$VERSION" != "$LATEST_VERSION" ]; then
         printf "[INFO] Updating to latest MC version: %s (was %s)\n" "$LATEST_VERSION" "$VERSION"
         VERSION="$LATEST_VERSION"
@@ -186,7 +180,7 @@ fi
 
 # Always check if there is a newer MC version (unless in full auto-update mode)
 if [ "$AUTO_UPDATE" = "0" ]; then
-    get_latest_mc_version
+    LATEST_VERSION=$(get_latest_mc_version)
     if [ "$VERSION" != "$LATEST_VERSION" ]; then
         printf "[INFO] Newer Minecraft version available: %s (current: %s)\n" "$LATEST_VERSION" "$VERSION"
         printf "       Do you want to upgrade and update your cache? [y/N]: "

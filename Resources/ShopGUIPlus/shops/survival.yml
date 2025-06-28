@@ -1,0 +1,134 @@
+survival:
+  name: "&0&lSurvival Server Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  buttons:
+    goBack:
+      slot: 49
+    previousPage:
+      slot: 39
+    nextPage:
+      slot: 41
+  items:
+    1:
+      type: SHOP_LINK
+      item:
+        material: GRASS_BLOCK
+        quantity: 1
+        name: "&9&lBlocks"
+      shop: "survival_blocks"
+      slot: 11
+    2:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_DIAMOND_ORE
+        quantity: 1
+        damage: 0
+        name: "&9&lMetals & Crystals"
+      shop: "survival_ores"
+      slot: 12
+    3:
+      type: SHOP_LINK
+      item:
+        material: COOKED_CHICKEN
+        quantity: 1
+        damage: 0
+        name: "&2&lFood"
+        lore:
+          - "&7Get some yummy food here!"
+      shop: "survival_food"
+      slot: 15
+    4:
+      type: SHOP_LINK
+      item:
+        material: IRON_PICKAXE
+        quantity: 1
+        name: "&8&lTools"
+      shop: "survival_tools"
+      slot: 21
+    5:
+      type: SHOP_LINK
+      item:
+        material: DIAMOND_CHESTPLATE
+        quantity: 1
+        name: "&4&lArmor"
+      shop: "survival_armor"
+      slot: 23
+    6:
+      type: SHOP_LINK
+      item:
+        material: WHEAT
+        quantity: 1
+        name: "&5&lFarming"
+      shop: "survival_farming"
+      slot: 14
+    7:
+      type: SHOP_LINK
+      item:
+        material: SPIDER_EYE
+        quantity: 1
+        name: "&9&lMob drops"
+      shop: "survival_mobdrops"
+      slot: 22
+    8:
+      type: SHOP_LINK
+      item:
+        material: LIGHT_BLUE_DYE
+        quantity: 1
+        name: "&2&lDyes"
+      shop: "survival_dyes"
+      slot: 13
+    9:
+      type: SHOP_LINK
+      item:
+        material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+        quantity: 1
+        name: "&9&lSmithing Templates"
+      shop: "island_templates"
+      slot: 20
+    10:
+      type: special
+      special: balance
+      slot: 53
+    11:
+      type: SHOP_LINK
+      item:
+        material: DIAMOND_SWORD
+        quantity: 1
+        name: "&4&lWeapons"
+      shop: "survival_weapons"
+      slot: 24
+    12:
+      type: SHOP_LINK
+      item:
+        material: ARCHER_POTTERY_SHERD
+        quantity: 1
+        name: "&e&lPottery Sherds"
+        lore:
+          - "&7Browse all sherds and decorated pots"
+      shop: "survival_sherds"
+      slot: 29
+    13:
+      type: SHOP_LINK
+      item:
+        material: NETHERRACK
+        quantity: 1
+        name: "&e&lNether Dimension Shop"
+        lore:
+          - "&7Browse all blocks and items from"
+          - "&7the Nether dimension"
+      shop: "survival_nether"
+      slot: 30
+    14:
+      type: SHOP_LINK
+      item:
+        material: END_STONE
+        quantity: 1
+        name: "&e&lEnd Dimension Shop"
+        lore:
+          - "&7Browse all blocks and items from"
+          - "&7the End dimension"
+      shop: "survival_end"
+      slot: 31

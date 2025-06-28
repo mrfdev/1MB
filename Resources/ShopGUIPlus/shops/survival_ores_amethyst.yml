@@ -1,0 +1,114 @@
+survival_ores_amethyst:
+  name: "&0&lAmethyst Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: SMALL_AMETHYST_BUD
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 10
+      page: 1
+    2:
+      type: item
+      item:
+        material: MEDIUM_AMETHYST_BUD
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 1
+      slot: 11
+      page: 1
+    3:
+      type: item
+      item:
+        material: LARGE_AMETHYST_BUD
+        quantity: 1
+      buyPrice: 300
+      sellPrice: 1
+      slot: 12
+      page: 1
+    4:
+      type: item
+      item:
+        material: AMETHYST_CLUSTER
+        quantity: 1
+      buyPrice: 400
+      sellPrice: 1
+      slot: 13
+      page: 1
+    5:
+      type: item
+      item:
+        material: AMETHYST_SHARD
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 14
+      page: 1
+    6:
+      type: item
+      item:
+        material: AMETHYST_BLOCK
+        quantity: 1
+      buyPrice: 163
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: BUDDING_AMETHYST
+        quantity: 1
+      buyPrice: 163000
+      sellPrice: 1
+      slot: 16
+      page: 1
+    8:
+      type: item
+      item:
+        material: CALCITE
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: TINTED_GLASS
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: SMOOTH_BASALT
+        quantity: 1
+      buyPrice: 102
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival ores menu"
+      shop: "survival_ores"
+      slot: 48
+      page: 1
+    12:
+      type: special
+      special: BALANCE
+      slot: 53
+      page: 1

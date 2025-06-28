@@ -1,0 +1,151 @@
+survival_ores:
+  name: "&0&lMetals & Crystals"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  buttons:
+    goBack:
+      slot: 49
+  items:
+    # --- Overworld Ores ---
+    1:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_COAL_ORE
+        quantity: 1
+        name: "&2&l Coal ore types .. "
+        lore:
+          - "&3 Shop page for coal ore types:"
+          - "&6  coal, charcoal, coal ore, etc."
+      shop: "survival_ores_coal"
+      slot: 10
+    2:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_COPPER_ORE
+        quantity: 1
+        name: "&2&l Copper ore types .. "
+        lore:
+          - "&3 Shop page for copper ore types:"
+          - "&6  raw, ingots, ores, etc."
+      shop: "survival_ores_copper"
+      slot: 11
+    3:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_IRON_ORE
+        quantity: 1
+        name: "&2&l Iron ore types .. "
+        lore:
+          - "&3 Shop page for iron ore types:"
+          - "&6  nuggets, ingots, ores, etc."
+      shop: "survival_ores_iron"
+      slot: 12
+    4:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_GOLD_ORE
+        quantity: 1
+        name: "&2&l Gold ore types .. "
+        lore:
+          - "&3 Shop page for gold ore types:"
+          - "&6  nuggets, ingots, ores, etc."
+      shop: "survival_ores_gold"
+      slot: 13
+    5:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_REDSTONE_ORE
+        quantity: 1
+        name: "&2&l Redstone ore types .. "
+        lore:
+          - "&3 Shop page for redstone ore types:"
+          - "&6  dust, ingots, ores, etc."
+      shop: "survival_ores_redstone"
+      slot: 14
+    6:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_LAPIS_ORE
+        quantity: 1
+        name: "&2&l Lapis ore types .. "
+        lore:
+          - "&3 Shop page for lapis ore types:"
+          - "&6  deepslate ore, block, ore, etc."
+      shop: "survival_ores_lapis"
+      slot: 15
+    7:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_EMERALD_ORE
+        quantity: 1
+        name: "&2&l Emerald ore types .. "
+        lore:
+          - "&3 Shop page for emerald ore types:"
+          - "&6  deepslate ore, block, ore, etc."
+      shop: "survival_ores_emerald"
+      slot: 16
+
+    # --- Overworld/End/Nether (next row) ---
+    8:
+      type: SHOP_LINK
+      item:
+        material: DEEPSLATE_DIAMOND_ORE
+        quantity: 1
+        name: "&2&l Diamond ore types .. "
+        lore:
+          - "&3 Shop page for diamond ore types:"
+          - "&6  diamond, block, ore, etc."
+      shop: "survival_ores_diamond"
+      slot: 19
+    9:
+      type: SHOP_LINK
+      item:
+        material: NETHER_QUARTZ_ORE
+        quantity: 1
+        name: "&2&l Quartz ore types .. "
+        lore:
+          - "&3 Shop page for quartz ore types:"
+          - "&6  quartz, ore, etc."
+      shop: "survival_ores_quartz"
+      slot: 20
+    10:
+      type: SHOP_LINK
+      item:
+        material: ANCIENT_DEBRIS
+        quantity: 1
+        name: "&2&l Netherite ore types .. "
+        lore:
+          - "&3 Shop page for netherite ore types:"
+          - "&6  ancient debris, block, ore, etc."
+      shop: "survival_ores_netherite"
+      slot: 21
+    11:
+      type: SHOP_LINK
+      item:
+        material: AMETHYST_BLOCK
+        quantity: 1
+        name: "&2&l Amethyst types .. "
+        lore:
+          - "&3 Shop page for amethyst types:"
+          - "&6  small, large, budded, etc."
+      shop: "survival_ores_amethyst"
+      slot: 22
+
+    # --- Shop Navigation ---
+    12:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival shop menu"
+      shop: "survival"
+      slot: 48
+    13:
+      type: special
+      special: BALANCE
+      slot: 53

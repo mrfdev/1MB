@@ -1,0 +1,118 @@
+survival_ores_quartz:
+  name: "&0&lQuartz Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: item
+      item:
+        material: QUARTZ
+        quantity: 1
+      buyPrice: 22
+      sellPrice: 1
+      slot: 10
+    2:
+      type: item
+      item:
+        material: NETHER_QUARTZ_ORE
+        quantity: 1
+      buyPrice: 88
+      sellPrice: 1
+      slot: 11
+    3:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 12
+    4:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: QUARTZ_STAIRS
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ_STAIRS
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: QUARTZ_SLAB
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: QUARTZ_PILLAR
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: CHISELED_QUARTZ_BLOCK
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: QUARTZ_BRICKS
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 21
+    11:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival ores menu"
+      shop: "survival_ores"
+      slot: 48
+    12:
+      type: special
+      special: BALANCE
+      slot: 53
+    13:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ_SLAB
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 22
+    14:
+      type: item
+      item:
+        material: SMOOTH_QUARTZ_STAIRS
+        quantity: 1
+      buyPrice: 120
+      sellPrice: 1
+      slot: 23

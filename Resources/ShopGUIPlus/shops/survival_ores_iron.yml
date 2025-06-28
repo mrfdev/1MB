@@ -1,0 +1,335 @@
+survival_ores_iron:
+  name: "&0&lIron Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+
+    # --- Row 2: Ores, Raw, Processed ---
+    1:
+      type: item
+      item:
+        material: IRON_NUGGET
+        quantity: 1
+      buyPrice: 550
+      sellPrice: 1
+      slot: 10
+      page: 1
+    2:
+      type: item
+      item:
+        material: RAW_IRON
+        quantity: 1
+      buyPrice: 5000
+      sellPrice: 1
+      slot: 11
+      page: 1
+    3:
+      type: item
+      item:
+        material: RAW_IRON_BLOCK
+        quantity: 1
+      buyPrice: 45900
+      sellPrice: 1
+      slot: 12
+      page: 1
+    4:
+      type: item
+      item:
+        material: IRON_INGOT
+        quantity: 1
+      buyPrice: 2500
+      sellPrice: 1
+      slot: 13
+      page: 1
+    5:
+      type: item
+      item:
+        material: IRON_BLOCK
+        quantity: 1
+      buyPrice: 45000
+      sellPrice: 1
+      slot: 14
+      page: 1
+    6:
+      type: item
+      item:
+        material: IRON_ORE
+        quantity: 1
+      buyPrice: 7500
+      sellPrice: 1
+      slot: 15
+      page: 1
+    7:
+      type: item
+      item:
+        material: DEEPSLATE_IRON_ORE
+        quantity: 1
+      buyPrice: 6000
+      sellPrice: 1
+      slot: 16
+      page: 1
+
+    # --- Row 3: Utility/Blocks ---
+    8:
+      type: item
+      item:
+        material: BUCKET
+        quantity: 1
+      buyPrice: 7500
+      sellPrice: 1
+      slot: 19
+      page: 1
+    9:
+      type: item
+      item:
+        material: CAULDRON
+        quantity: 1
+      buyPrice: 35000
+      sellPrice: 1
+      slot: 20
+      page: 1
+    10:
+      type: item
+      item:
+        material: ANVIL
+        quantity: 1
+      buyPrice: 158100
+      sellPrice: 1
+      slot: 21
+      page: 1
+    11:
+      type: item
+      item:
+        material: IRON_BARS
+        quantity: 1
+      buyPrice: 1912
+      sellPrice: 1
+      slot: 22
+      page: 1
+    12:
+      type: item
+      item:
+        material: CHAIN
+        quantity: 1
+      buyPrice: 5000
+      sellPrice: 1
+      slot: 23
+      page: 1
+    13:
+      type: item
+      item:
+        material: IRON_DOOR
+        quantity: 1
+      buyPrice: 363
+      sellPrice: 1
+      slot: 24
+      page: 1
+    14:
+      type: item
+      item:
+        material: IRON_TRAPDOOR
+        quantity: 1
+      buyPrice: 5000
+      sellPrice: 1
+      slot: 25
+      page: 1
+
+    # --- Row 4: Tools, Weapons, Armor, Extras ---
+    15:
+      type: item
+      item:
+        material: SHEARS
+        quantity: 1
+      buyPrice: 363
+      sellPrice: 1
+      slot: 28
+      page: 1
+    16:
+      type: item
+      item:
+        material: FLINT_AND_STEEL
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 1
+      slot: 29
+      page: 1
+    17:
+      type: item
+      item:
+        material: SHIELD
+        quantity: 1
+      buyPrice: 5222
+      sellPrice: 1
+      slot: 30
+      page: 1
+    18:
+      type: item
+      item:
+        material: COMPASS
+        quantity: 1
+      buyPrice: 1464
+      sellPrice: 1
+      slot: 31
+      page: 1
+    19:
+      type: item
+      item:
+        material: CLOCK
+        quantity: 1
+      buyPrice: 1271
+      sellPrice: 1
+      slot: 32
+      page: 1
+
+    # --- Page 2: Tools/Armor (iron, chainmail) ---
+    20:
+      type: item
+      item:
+        material: IRON_PICKAXE
+        quantity: 1
+      buyPrice: 15320
+      sellPrice: 1
+      slot: 10
+      page: 2
+    21:
+      type: item
+      item:
+        material: IRON_AXE
+        quantity: 1
+      buyPrice: 15320
+      sellPrice: 1
+      slot: 11
+      page: 2
+    22:
+      type: item
+      item:
+        material: IRON_SHOVEL
+        quantity: 1
+      buyPrice: 5120
+      sellPrice: 1
+      slot: 12
+      page: 2
+    23:
+      type: item
+      item:
+        material: IRON_HOE
+        quantity: 1
+      buyPrice: 10220
+      sellPrice: 1
+      slot: 13
+      page: 2
+    24:
+      type: item
+      item:
+        material: IRON_SWORD
+        quantity: 1
+      buyPrice: 10210
+      sellPrice: 1
+      slot: 14
+      page: 2
+    25:
+      type: item
+      item:
+        material: IRON_HELMET
+        quantity: 1
+      buyPrice: 25500
+      sellPrice: 1
+      slot: 19
+      page: 2
+    26:
+      type: item
+      item:
+        material: IRON_CHESTPLATE
+        quantity: 1
+      buyPrice: 40800
+      sellPrice: 1
+      slot: 20
+      page: 2
+    27:
+      type: item
+      item:
+        material: IRON_LEGGINGS
+        quantity: 1
+      buyPrice: 35700
+      sellPrice: 1
+      slot: 21
+      page: 2
+    28:
+      type: item
+      item:
+        material: IRON_BOOTS
+        quantity: 1
+      buyPrice: 20400
+      sellPrice: 1
+      slot: 22
+      page: 2
+
+    # Chainmail Armor (survival obtainable via loot/trading)
+    29:
+      type: item
+      item:
+        material: CHAINMAIL_HELMET
+        quantity: 1
+      buyPrice: 130
+      sellPrice: 1
+      slot: 28
+      page: 2
+    30:
+      type: item
+      item:
+        material: CHAINMAIL_CHESTPLATE
+        quantity: 1
+      buyPrice: 210
+      sellPrice: 1
+      slot: 29
+      page: 2
+    31:
+      type: item
+      item:
+        material: CHAINMAIL_LEGGINGS
+        quantity: 1
+      buyPrice: 180
+      sellPrice: 1
+      slot: 30
+      page: 2
+    32:
+      type: item
+      item:
+        material: CHAINMAIL_BOOTS
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 31
+      page: 2
+
+    # Lodestone - iron-based, end-game
+    33:
+      type: item
+      item:
+        material: LODESTONE
+        quantity: 1
+      buyPrice: 28152
+      sellPrice: 1
+      slot: 34
+      page: 2
+
+    # Shop navigation
+    34:
+      type: SHOP_LINK
+      item:
+        material: PLAYER_HEAD
+        skin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdhZWU5YTc1YmYwZGY3ODk3MTgzMDE1Y2NhMGIyYTdkNzU1YzYzMzg4ZmYwMTc1MmQ1ZjQ0MTlmYzY0NSJ9fX0=
+        name: "&c&lGo back .."
+        lore:
+          - "&7 Click here to return"
+          - "&7 to the survival ores menu"
+      shop: "survival_ores"
+      slot: 48
+      page: 2
+    35:
+      type: special
+      special: BALANCE
+      slot: 53
+      page: 2

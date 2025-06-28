@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.15.5, build 066 for Minecraft 1.21.5 (Java 23.0.2, 64bit)
-# @Release: March 25th, 2025
-# @Description: Helps us start and fork a Minecraft 1.21.5 server session.
+# @Version: 2.16.0, build 068 for Minecraft 1.21.7 (Java 24.0.1, 64bit)
+# @Release: June 25th, 2025
+# @Description: Helps us start and fork a Minecraft 1.21.7 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-start.sh

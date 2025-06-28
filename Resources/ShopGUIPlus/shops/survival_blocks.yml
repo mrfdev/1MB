@@ -1,0 +1,546 @@
+survival_blocks:
+  name: "&0&lBlocks &r(page %page%)"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    1:
+      type: SHOP_LINK
+      item:
+        material: GRASS_BLOCK
+        quantity: 1
+        name: "&2&l Dirt types .. "
+        lore:
+          - "&3 Shop page for dirt types:"
+          - "&6  dirt, coarse dirt, rooted dirt, "
+          - "&6  grass block, dirt path, farmland,  "
+          - "&6  podzol, mycelium, and mud."
+      shop: "survival_dirts"
+      slot: 10
+    2:
+      type: SHOP_LINK
+      item:
+        material: OAK_Log
+        quantity: 1
+        name: "&2&l Log and Stem types .. "
+        lore:
+          - "&3 Shop page for log types:"
+          - "&6  oak, spruce, birch, jungle, acacia,  "
+          - "&6  dark oak, and mangrove logs,"
+          - "&6  mushroom stem block types, and "
+          - "&6  crimson and warped stem blocks."
+      shop: "survival_logs"
+      slot: 11
+    3:
+      type: SHOP_LINK
+      item:
+        material: WHITE_WOOL
+        quantity: 1
+        name: "&2&l Wool types .. "
+        lore:
+          - "&3 Shop page for wool types:"
+          - "&6  All colors. "
+      shop: "survival_wools"
+      slot: 12
+    4:
+      type: item
+      item:
+        material: COBBLESTONE
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 13
+    5:
+      type: item
+      item:
+        material: MOSSY_COBBLESTONE
+        quantity: 1
+      buyPrice: 122
+      sellPrice: 1
+      slot: 14
+    6:
+      type: item
+      item:
+        material: STONE
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 15
+    7:
+      type: item
+      item:
+        material: GRANITE
+        quantity: 1
+      buyPrice: 66
+      sellPrice: 1
+      slot: 16
+    8:
+      type: item
+      item:
+        material: DIORITE
+        quantity: 1
+      buyPrice: 44
+      sellPrice: 1
+      slot: 19
+    9:
+      type: item
+      item:
+        material: ANDESITE
+        quantity: 1
+      buyPrice: 33
+      sellPrice: 1
+      slot: 20
+    10:
+      type: item
+      item:
+        material: GRAVEL
+        quantity: 1
+      buyPrice: 10
+      sellPrice: 1
+      slot: 21
+    11:
+      type: item
+      item:
+        material: STONE_BRICKS
+        quantity: 1
+      buyPrice: 90
+      sellPrice: 1
+      slot: 22
+    12:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 23
+    13:
+      type: item
+      item:
+        material: COPPER_BLOCK
+        quantity: 1
+      buyPrice: 4672
+      sellPrice: 1
+      slot: 24
+    14:
+      type: SHOP_LINK
+      item:
+        material: WHITE_CONCRETE
+        quantity: 1
+        name: "&2&l Concrete types .. "
+        lore:
+          - "&3 Shop page for concrete types:"
+          - "&6  all the colors, for both, "
+          - "&6  regular concrete, and powder.  "
+      shop: "survival_concrete"
+      slot: 25
+    15:
+      type: SHOP_LINK
+      item:
+        material: TUBE_CORAL_BLOCK
+        quantity: 1
+        name: "&2&l Coral types .. "
+        lore:
+          - "&3 Shop page for Coral types:"
+          - "&6  all the colors and blocks, "
+          - "&6  aquatic items.  "
+      shop: "survival_coral"
+      slot: 28
+    16:
+      type: item
+      item:
+        material: SNOW_BLOCK
+        quantity: 1
+      buyPrice: 5
+      sellPrice: 1
+      slot: 29
+    17:
+      type: item
+      item:
+        material: ICE
+        quantity: 1
+      buyPrice: 143
+      sellPrice: 1
+      slot: 30
+    18:
+      type: item
+      item:
+        material: PACKED_ICE
+        quantity: 1
+      buyPrice: 400
+      sellPrice: 1
+      slot: 31
+    19:
+      type: item
+      item:
+        material: SPONGE
+        quantity: 1
+      buyPrice: 3500
+      sellPrice: 1
+      slot: 32
+    20:
+      type: item
+      item:
+        material: SAND
+        quantity: 1
+      buyPrice: 3
+      sellPrice: 1
+      slot: 33
+    21:
+      type: item
+      item:
+        material: SANDSTONE
+        quantity: 1
+      buyPrice: 20
+      sellPrice: 1
+      slot: 34
+    22:
+      type: item
+      item:
+        material: RED_SAND
+        quantity: 1
+        damage: 1
+      buyPrice: 4
+      sellPrice: 1
+      slot: 10
+      page: 2
+    23:
+      type: item
+      item:
+        material: RED_SANDSTONE
+        quantity: 1
+      buyPrice: 16
+      sellPrice: 1
+      slot: 11
+      page: 2
+    24:
+      type: SHOP_LINK
+      item:
+        material: GLASS
+        quantity: 1
+        name: "&2&l Glass types .. "
+        lore:
+          - "&3 Shop page for glass types:"
+          - "&6  blocks, panes, tinted, stained."
+      shop: "survival_glass"
+      slot: 12
+      page: 2
+    25:
+      type: item
+      item:
+        material: CLAY
+        quantity: 1
+      buyPrice: 242
+      sellPrice: 1
+      slot: 13
+      page: 2
+    26:
+      type: SHOP_LINK
+      item:
+        material: TERRACOTTA
+        quantity: 1
+        name: "&2&l Terracotta types .. "
+        lore:
+          - "&3 Shop page for Terracotta types:"
+          - "&6  blocks, glazed, etc."
+      shop: "survival_terracotta"
+      slot: 14
+      page: 2
+    27:
+      type: item
+      item:
+        material: BRICKS
+        quantity: 1
+      buyPrice: 240
+      sellPrice: 1
+      slot: 15
+      page: 2
+    28:
+      type: item
+      item:
+        material: OBSIDIAN
+        quantity: 1
+      buyPrice: 600
+      sellPrice: 1
+      slot: 16
+      page: 2
+    29:
+      type: item
+      item:
+        material: NETHERRACK
+        quantity: 1
+      buyPrice: 22
+      sellPrice: 1
+      slot: 19
+      page: 2
+    30:
+      type: item
+      item:
+        material: GLOWSTONE
+        quantity: 1
+      buyPrice: 190
+      sellPrice: 1
+      slot: 20
+      page: 2
+    31:
+      type: item
+      item:
+        material: SOUL_SAND
+        quantity: 1
+      buyPrice: 11
+      sellPrice: 1
+      slot: 21
+      page: 2
+    32:
+      type: item
+      item:
+        material: NETHER_BRICK
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 22
+      page: 2
+    33:
+      type: item
+      item:
+        material: END_STONE
+        quantity: 1
+      buyPrice: 45
+      sellPrice: 1
+      slot: 23
+      page: 2
+    34:
+      type: item
+      item:
+        material: PRISMARINE
+        quantity: 1
+      buyPrice: 80
+      sellPrice: 1
+      slot: 24
+      page: 2
+    35:
+      type: item
+      item:
+        material: BOOKSHELF
+        quantity: 1
+      buyPrice: 511
+      sellPrice: 1
+      slot: 25
+      page: 2
+    36:
+      type: item
+      item:
+        material: CALCITE
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 1
+      slot: 28
+      page: 2
+    37:
+      type: item
+      item:
+        material: MOSS_BLOCK
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 29
+      page: 2
+    38:
+      type: item
+      item:
+        material: DEEPSLATE
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 30
+      page: 2
+    39:
+      type: item
+      item:
+        material: BLACKSTONE
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 31
+      page: 2
+    40:
+      type: item
+      item:
+        material: PURPUR_BLOCK
+        quantity: 1
+      buyPrice: 122
+      sellPrice: 1
+      slot: 32
+      page: 2
+    41:
+      type: item
+      item:
+        material: TUBE_CORAL_BLOCK
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 33
+      page: 2
+    42:
+      type: item
+      item:
+        material: BAMBOO_BLOCK
+        quantity: 1
+      buyPrice: 45
+      sellPrice: 1
+      slot: 34
+      page: 2
+    43:
+      type: item
+      item:
+        material: MUD
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 10
+      page: 3
+    44:
+      type: item
+      item:
+        material: CHISELED_BOOKSHELF
+        quantity: 1
+      buyPrice: 156
+      sellPrice: 1
+      slot: 11
+      page: 3
+    45:
+      type: item
+      item:
+        material: SUSPICIOUS_SAND
+        quantity: 1
+      buyPrice: 4
+      sellPrice: 1
+      slot: 12
+      page: 3
+    46:
+      type: item
+      item:
+        material: SUSPICIOUS_GRAVEL
+        quantity: 1
+      buyPrice: 12
+      sellPrice: 1
+      slot: 13
+      page: 3
+    47:
+      type: item
+      item:
+        material: SEA_LANTERN
+        quantity: 1
+      buyPrice: 330
+      sellPrice: 1
+      slot: 14
+      page: 3
+    48:
+      type: item
+      item:
+        material: SCULK
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 15
+      page: 3
+    49:
+      type: item
+      item:
+        material: DRIPSTONE_BLOCK
+        quantity: 1
+      buyPrice: 400
+      sellPrice: 1
+      slot: 16
+      page: 3
+    50:
+      type: item
+      item:
+        material: BASALT
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 19
+      page: 3
+    51:
+      type: item
+      item:
+        material: TUFF
+        quantity: 1
+      buyPrice: 204
+      sellPrice: 1
+      slot: 20
+      page: 3
+    52:
+      type: item
+      item:
+        material: OCHRE_FROGLIGHT
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 21
+      page: 3
+    53:
+      type: item
+      item:
+        material: VERDANT_FROGLIGHT
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 22
+      page: 3
+    54:
+      type: item
+      item:
+        material: PEARLESCENT_FROGLIGHT
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 1
+      slot: 23
+      page: 3
+    55:
+      type: item
+      item:
+        material: MANGROVE_ROOTS
+        quantity: 1
+      buyPrice: 40
+      sellPrice: 1
+      slot: 24
+      page: 3
+    56:
+      type: special
+      special: BALANCE
+      slot: 53
+    57:
+      type: SHOP_LINK
+      item:
+        material: RESIN_BRICK
+        quantity: 1
+        name: "&2&l Resin types .. "
+        lore:
+          - "&3 Shop page for resin types:"
+          - "&6  resin clump, block, bricks, "
+          - "&6  slabs, stairs, walls, chiseled, etc."
+      shop: "survival_resin"
+      slot: 25
+      page: 3
+    # Nether Nylium blocks
+    58:
+      type: item
+      item:
+        material: CRIMSON_NYLIUM
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 28
+      page: 3
+    59:
+      type: item
+      item:
+        material: WARPED_NYLIUM
+        quantity: 1
+      buyPrice: 30
+      sellPrice: 1
+      slot: 29
+      page: 3

@@ -1,4 +1,5 @@
-PREFIX: '#02a4d3 #01a0d11#019cd0M#0198cfB#0194ce #0191cdS#008dcbh#0089cao#0085c9p#0081c8#007ec7 »#9fdd8c '
+PREFIX: '#02a4d3 #01a0d11#019cd0M#0198cfB#0194ce #0191cdS#008dcbh#0089cao#0085c9p#0081c8#007ec7
+  »#9fdd8c '
 LANG:
   CONSOLE: Console
 MSG:
@@ -15,8 +16,8 @@ MSG:
       ADDMODIFIER:
         ITEM:
           USAGE: /shop addmodifier item <player> <shop> <item> <value> [buy|sell]
-          ADDED: You set &c%player%#9fdd8c's %type% price modifier for the %item% item
-            in %shop% shop to &c%modifier%#9fdd8c.
+          ADDED: You set &c%player%#9fdd8c's %type% price modifier for the %item%
+            item in %shop% shop to &c%modifier%#9fdd8c.
           ADDEDBY: Your %type% price modifier for the %item% item in %shop% shop was
             set to &c%modifier%#9fdd8c by &c%player%#9fdd8c.
         SHOP:
@@ -47,12 +48,20 @@ MSG:
             ITEM: 'Item: &c%item%&f, shop: &c%shop%&f, buy: &c%buy%&f, sell: &c%sell%&f'
             SHOP: 'Shop: &c%shop%&f, buy: &c%buy%&f, sell: &c%sell%&f'
             GLOBAL: 'Buy: &c%buy%&f, sell: &c%sell%&f'
+          VIEWPERMISSIONMODIFIERS: |-
+            &c%player%&f's permission modifiers:
+            Global modifiers:
+            %global%Shop modifiers:
+            %shop%
+            Item modifiers:
+            %item%
       RESETMODIFIER:
         ITEM:
           USAGE: /shop resetmodifier item <player> <shop> <item> [buy|sell]
-          RESET: "You reset #d4dfe2%player%#9fdd8c's %type% price modifier for the %item% item in %shop% shop."
-          RESETBY: "Your %type% price modifier for the %item% item in %shop% shop was
-                      reset by &c%player%&f."
+          RESET: 'You reset #d4dfe2%player%#9fdd8c''s %type% price modifier for the
+            %item% item in %shop% shop.'
+          RESETBY: Your %type% price modifier for the %item% item in %shop% shop was
+            reset by &c%player%&f.
         SHOP:
           USAGE: /shop resetmodifier shop <player> <shop> [buy|sell]
           RESET: You reset &c%player%&f's %type% price modifier for all items in %shop%
@@ -73,7 +82,7 @@ MSG:
   INVALIDPLAYER: Invalid player name specified.
   INVALIDSHOP: Shop with ID &c%shop%&f not found.
   INVALIDITEM: Item with ID &c%item%&f not found in &c%shop%&f.
-  NOACCESSTOSHOP: "You don't have access to #d4dfe2%shop%&f shop."
+  NOACCESSTOSHOP: 'You don''t have access to #d4dfe2%shop%&f shop.'
   NODIRECTACCESSTOSHOP: You can't access the &c%shop%&f shop.
   MAINMENUDISABLED: You can't use this command. Please use /shop <id> instead.
   WORLDBLACKLISTED: You can't access %shop% in this world.
@@ -83,10 +92,10 @@ MSG:
   GAMEMODEBANNEDTARGET: '%player% can''t access the shop when in gamemode %gamemode%.'
   ITEM:
     FULLINVENTORY: You don't have enough free space in your inventory.
-    CANNOTAFFORD: "You need #d4dfe2%price%#9fdd8c to buy #d4dfe2%amount% x %item%#9fdd8c."
+    CANNOTAFFORD: 'You need #d4dfe2%price%#9fdd8c to buy #d4dfe2%amount% x %item%#9fdd8c.'
     CANNOTBUY: You can't buy this item.
     CANNOTSELL: You can't sell this item.
-    BOUGHT: "You bought #d4dfe2%amount% x %item%#9fdd8c for #d4dfe2%price%#9fdd8c."
+    BOUGHT: 'You bought #d4dfe2%amount% x %item%#9fdd8c for #d4dfe2%price%#9fdd8c.'
     BOUGHTFREE: You received &c%amount% x %item%#9fdd8c.
     NOTENOUGH: You don't have &c%amount% x %item%#9fdd8c to sell.
     SOLD: You sold &a%amount% x %item%&f for &a%price%#9fdd8c.
@@ -95,8 +104,8 @@ MSG:
     SOLDALLFREE: You gave away all &a%item%#9fdd8c (&a%amount% x %item%#9fdd8c).
     NOACCESS: You don't have access to this item.
   ENCHANT:
-    CANNOTAPPLY: Enchantment &c%enchantment%#9fdd8c cannot be applied to the item you're
-      holding.
+    CANNOTAPPLY: Enchantment &c%enchantment%#9fdd8c cannot be applied to the item
+      you're holding.
     ALREADYAPPLIED: This item already has &c%enchantment%#9fdd8c applied.
     LEVELDIFF: You need an item with at least &c%enchantment% %level%#9fdd8c applied.
     CANNOTAFFORD: You need &c%price%#9fdd8c to buy &c%enchantment%#9fdd8c.
@@ -126,6 +135,20 @@ MSG:
     NOITEMS: You don't have any items you can sell.
     SOLD: You sold &a%quantity% items#9fdd8c for a total of &a%price%#9fdd8c.
     INVALIDSHOP: Invalid shop specified.
+  NUMBERFORMAT:
+    SHORTSCALE:
+      THOUSAND: ' Thousand'
+      MILLION: ' Million'
+      BILLION: ' Billion'
+      TRILLION: ' Trillion'
+      QUADRILLION: ' Quadrillion'
+      QUINTILLION: ' Quintillion'
+      SEXTILLION: ' Sextillion'
+      SEPTILLION: ' Septillion'
+      OCTILLION: ' Octillion'
+      NONILLION: ' Nonillion'
+      DECILLION: ' Decillion'
+  INVALIDPAGE: Shop &c%shop%&f with page &c%page%&f not found.
 DIALOG:
   AMOUNTSELECTION:
     BUY:

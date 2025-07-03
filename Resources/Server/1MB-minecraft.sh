@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.19.0, build 079 for Minecraft 1.21.7 (Java 24.0.1, 64bit)
-# @Release: June 25th, 2025
+# @Version: 2.19.1, build 080 for Minecraft 1.21.7 (Java 24.0.1, 64bit)
+# @Release: July 3rd, 2025
 # @Description: Helps us start a Paper (or Spigot) 1.21.7 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -36,7 +36,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # Figure out optimal flags for your configuration here: https://flags.sh/
 
 # jvm startup parameters
-_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-access=ALL-UNNAMED"
+_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-access=ALL-UNNAMED --sun-misc-unsafe-memory-access=allow"
 # -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
@@ -48,6 +48,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-ac
 # -Dlog4j2.formatMsgNoLookups=true (Temporary fix to help address log4j2 issue for pre 1.18.2 servers)
 # -Dpaper.useLegacyPluginLoading=true (Temporary fix circular plugin loading issue)
 # --enable-native-access=ALL-UNNAMED (Remove startup warning when using java24)
+# --sun-misc-unsafe-memory-access=allow (Remove unsafe warning during java24 jvm startup)
 
 # Override auto engine jar detection; only use this if you have issues
 _engine="paper"

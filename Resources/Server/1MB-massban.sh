@@ -5,7 +5,6 @@
 # note, it does not check if a user is already banned
 # purpose of script: helper to get rid of botnets
 # should be able to use minecraft:ban, essentialsx ban, cmi ban -s, etc
-# note please that i use cmi ban, and line 28 has -s included to tell cmi to silence output, so we don't bother ingame players
 
 # Configurable variables
 TMUX_SESSION="mcserver"

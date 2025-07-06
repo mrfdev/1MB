@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 # 1MB-VersionManifest.sh
-# version 0.0.2, build 004, Floris Fiedeldij Dop - Feel free to use
+# version 0.0.3, build 005, Floris Fiedeldij Dop - Feel free to use
 
 # Description:
 #   Checks Mojang's Minecraft Java Edition version manifest for the latest release,
 #   compares with your locally known version, and lets you know if there is a new release.
 #
 #   Optionally, use -list to print all version IDs (release, snapshot, prerelease, etc).
+#   Always prints Mojang and Wiki changelog links for the latest version.
 
 # Requirements:
 #   - curl (default on macOS/Ubuntu)
@@ -52,6 +53,15 @@ fi
 # --- Get the latest release version ---
 LATEST_RELEASE=$(printf '%s' "$JSON" | jq -r '.latest.release')
 printf "Latest Minecraft Java Edition release: %s\n" "$LATEST_RELEASE"
+
+# --- Changelog Links ---
+# Mojang: replace dots with hyphens for the official article URL
+MOJANG_VER="${LATEST_RELEASE//./-}"
+MOJANG_CHANGELOG_URL="https://www.minecraft.net/en-us/article/minecraft-java-edition-$MOJANG_VER"
+WIKI_CHANGELOG_URL="https://minecraft.wiki/w/Java_Edition_$LATEST_RELEASE"
+
+printf "Mojang Changelog: %s\n" "$MOJANG_CHANGELOG_URL"
+printf "Wiki Changelog:   %s\n" "$WIKI_CHANGELOG_URL"
 
 # --- Compare with last known version file ---
 if [[ -f "$LAST_KNOWN_VERSION_FILE" ]]; then

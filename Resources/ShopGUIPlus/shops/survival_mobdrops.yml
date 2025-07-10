@@ -194,3 +194,12 @@ survival_mobdrops:
       sellPrice: 1
       slot: 34
       page: 1
+    22:
+      type: item
+      item:
+        material: ARMADILLO_SCUTE
+        quantity: 1
+      buyPrice: 20.0
+      sellPrice: 1
+      slot: 35
+      page: 1

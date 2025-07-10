@@ -198,3 +198,12 @@ survival_weapons:
       sellPrice: 1
       slot: 34
       page: 1
+    22:
+      type: item
+      item:
+        material: MACE
+        quantity: 1
+      buyPrice: 175500
+      sellPrice: 1
+      slot: 35
+      page: 1

@@ -390,5 +390,5 @@ survival_tools:
         quantity: 1
       buyPrice: 175000
       sellPrice: 1
-      slot: 35
-      page: 2
+      slot: 10
+      page: 3

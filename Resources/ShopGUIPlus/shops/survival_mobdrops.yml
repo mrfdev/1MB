@@ -201,5 +201,5 @@ survival_mobdrops:
         quantity: 1
       buyPrice: 20.0
       sellPrice: 1
-      slot: 35
-      page: 1
+      slot: 10
+      page: 2

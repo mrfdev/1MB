@@ -205,5 +205,5 @@ survival_weapons:
         quantity: 1
       buyPrice: 175500
       sellPrice: 1
-      slot: 35
-      page: 1
+      slot: 10
+      page: 2

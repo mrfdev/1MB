@@ -383,3 +383,12 @@ survival_tools:
       sellPrice: 1
       slot: 34
       page: 2
+    43:
+      type: item
+      item:
+        material: HEAVY_CORE
+        quantity: 1
+      buyPrice: 175000
+      sellPrice: 1
+      slot: 35
+      page: 2

@@ -284,3 +284,12 @@ survival_armor:
       sellPrice: 1
       slot: 21
       page: 2
+    32:
+      type: item
+      item:
+        material: WOLF_ARMOR
+        quantity: 1
+      buyPrice: 140.0
+      sellPrice: 1
+      slot: 22
+      page: 2      

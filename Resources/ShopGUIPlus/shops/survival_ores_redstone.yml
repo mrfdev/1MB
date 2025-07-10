@@ -119,7 +119,7 @@ survival_ores_redstone:
       item:
         material: HOPPER
         quantity: 1
-      buyPrice: 1083
+      buyPrice: 1475
       sellPrice: 1
       slot: 24
       page: 1
@@ -220,7 +220,7 @@ survival_ores_redstone:
       item:
         material: HEAVY_WEIGHTED_PRESSURE_PLATE
         quantity: 1
-      buyPrice: 363
+      buyPrice: 561
       sellPrice: 1
       slot: 12
       page: 2
@@ -247,7 +247,7 @@ survival_ores_redstone:
       item:
         material: DETECTOR_RAIL
         quantity: 1
-      buyPrice: 100
+      buyPrice: 307
       sellPrice: 1
       slot: 15
       page: 2
@@ -265,7 +265,7 @@ survival_ores_redstone:
       item:
         material: ACTIVATOR_RAIL
         quantity: 1
-      buyPrice: 100
+      buyPrice: 287
       sellPrice: 1
       slot: 19
       page: 2
@@ -274,7 +274,7 @@ survival_ores_redstone:
       item:
         material: RAIL
         quantity: 1
-      buyPrice: 69
+      buyPrice: 105
       sellPrice: 1
       slot: 20
       page: 2

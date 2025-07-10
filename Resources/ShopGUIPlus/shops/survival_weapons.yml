@@ -176,7 +176,7 @@ survival_weapons:
       item:
         material: FLINT_AND_STEEL
         quantity: 1
-      buyPrice: 50
+      buyPrice: 302
       sellPrice: 1
       slot: 32
       page: 1

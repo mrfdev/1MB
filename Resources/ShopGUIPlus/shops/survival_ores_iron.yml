@@ -77,7 +77,7 @@ survival_ores_iron:
       item:
         material: BUCKET
         quantity: 1
-      buyPrice: 308
+      buyPrice: 825
       sellPrice: 1
       slot: 19
       page: 1
@@ -86,7 +86,7 @@ survival_ores_iron:
       item:
         material: CAULDRON
         quantity: 1
-      buyPrice: 1162
+      buyPrice: 1163
       sellPrice: 1
       slot: 20
       page: 1
@@ -113,7 +113,7 @@ survival_ores_iron:
       item:
         material: CHAIN
         quantity: 1
-      buyPrice: 170
+      buyPrice: 337
       sellPrice: 1
       slot: 23
       page: 1
@@ -160,7 +160,7 @@ survival_ores_iron:
       item:
         material: SHIELD
         quantity: 1
-      buyPrice: 561
+      buyPrice: 402
       sellPrice: 1
       slot: 30
       page: 1
@@ -169,7 +169,7 @@ survival_ores_iron:
       item:
         material: COMPASS
         quantity: 1
-      buyPrice: 723
+      buyPrice: 1133
       sellPrice: 1
       slot: 31
       page: 1

@@ -316,7 +316,7 @@ survival_tools:
       item:
         material: BUCKET
         quantity: 1
-      buyPrice: 841
+      buyPrice: 825
       sellPrice: 1
       slot: 25
       page: 2

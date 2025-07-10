@@ -82,7 +82,7 @@ survival_armor:
       item:
         material: IRON_HELMET
         quantity: 1
-      buyPrice: 25500.0
+      buyPrice: 1402
       sellPrice: 1
       slot: 20
       page: 1
@@ -91,7 +91,7 @@ survival_armor:
       item:
         material: IRON_CHESTPLATE
         quantity: 1
-      buyPrice: 40800.0
+      buyPrice: 2244
       sellPrice: 1
       slot: 21
       page: 1
@@ -100,7 +100,7 @@ survival_armor:
       item:
         material: IRON_LEGGINGS
         quantity: 1
-      buyPrice: 35700.0
+      buyPrice: 1963
       sellPrice: 1
       slot: 22
       page: 1
@@ -109,7 +109,7 @@ survival_armor:
       item:
         material: IRON_BOOTS
         quantity: 1
-      buyPrice: 20400.0
+      buyPrice: 1122
       sellPrice: 1
       slot: 23
       page: 1
@@ -244,7 +244,7 @@ survival_armor:
       item:
         material: IRON_HORSE_ARMOR
         quantity: 1
-      buyPrice: 10000.0
+      buyPrice: 2832
       sellPrice: 1
       slot: 15
       page: 2
@@ -280,7 +280,7 @@ survival_armor:
       item:
         material: SHIELD
         quantity: 1
-      buyPrice: 5222.0
+      buyPrice: 402
       sellPrice: 1
       slot: 21
       page: 2

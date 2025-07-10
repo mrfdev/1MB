@@ -29,7 +29,7 @@ survival_weapons:
       item:
         material: IRON_SWORD
         quantity: 1
-      buyPrice: 10210
+      buyPrice: 571
       sellPrice: 1
       slot: 12
       page: 1
@@ -84,7 +84,7 @@ survival_weapons:
       item:
         material: IRON_AXE
         quantity: 1
-      buyPrice: 15320
+      buyPrice: 861
       sellPrice: 1
       slot: 20
       page: 1
@@ -185,7 +185,7 @@ survival_weapons:
       item:
         material: SHIELD
         quantity: 1
-      buyPrice: 5222
+      buyPrice: 402
       sellPrice: 1
       slot: 33
       page: 1

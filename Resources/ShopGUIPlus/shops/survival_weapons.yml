@@ -139,7 +139,7 @@ survival_weapons:
       item:
         material: TRIDENT
         quantity: 1
-      buyPrice: 250000
+      buyPrice: 125000
       sellPrice: 1
       slot: 28
       page: 1

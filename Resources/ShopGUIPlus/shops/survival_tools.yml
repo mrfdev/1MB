@@ -28,7 +28,7 @@ survival_tools:
       item:
         material: IRON_PICKAXE
         quantity: 1
-      buyPrice: 15320
+      buyPrice: 861
       sellPrice: 1
       slot: 12
       page: 1
@@ -82,7 +82,7 @@ survival_tools:
       item:
         material: IRON_AXE
         quantity: 1
-      buyPrice: 15320
+      buyPrice: 861
       sellPrice: 1
       slot: 20
       page: 1
@@ -136,7 +136,7 @@ survival_tools:
       item:
         material: IRON_SHOVEL
         quantity: 1
-      buyPrice: 5120
+      buyPrice: 300
       sellPrice: 1
       slot: 28
       page: 1
@@ -190,7 +190,7 @@ survival_tools:
       item:
         material: IRON_HOE
         quantity: 1
-      buyPrice: 10220
+      buyPrice: 581
       sellPrice: 1
       slot: 34
       page: 1
@@ -226,7 +226,7 @@ survival_tools:
       item:
         material: SHEARS
         quantity: 1
-      buyPrice: 363
+      buyPrice: 561
       sellPrice: 1
       slot: 13
       page: 2
@@ -235,7 +235,7 @@ survival_tools:
       item:
         material: FLINT_AND_STEEL
         quantity: 1
-      buyPrice: 50
+      buyPrice: 302
       sellPrice: 1
       slot: 14
       page: 2
@@ -253,7 +253,7 @@ survival_tools:
       item:
         material: COMPASS
         quantity: 1
-      buyPrice: 1464
+      buyPrice: 1133
       sellPrice: 1
       slot: 16
       page: 2
@@ -316,7 +316,7 @@ survival_tools:
       item:
         material: BUCKET
         quantity: 1
-      buyPrice: 7500
+      buyPrice: 841
       sellPrice: 1
       slot: 25
       page: 2
@@ -343,7 +343,7 @@ survival_tools:
       item:
         material: SHIELD
         quantity: 1
-      buyPrice: 5222
+      buyPrice: 402
       sellPrice: 1
       slot: 30
       page: 2

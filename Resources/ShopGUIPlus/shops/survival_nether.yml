@@ -82,7 +82,7 @@ survival_nether:
       item:
         material: CRYING_OBSIDIAN
         quantity: 1
-      buyPrice: 300.00
+      buyPrice: 200.00
       sellPrice: 1
       slot: 20
       page: 1
@@ -100,7 +100,7 @@ survival_nether:
       item:
         material: GLOWSTONE
         quantity: 1
-      buyPrice: 190.00
+      buyPrice: 100.00
       sellPrice: 1
       slot: 22
       page: 1
@@ -343,7 +343,7 @@ survival_nether:
       item:
         material: WEEPING_VINES
         quantity: 1
-      buyPrice: 10.00
+      buyPrice: 100.00
       sellPrice: 1
       slot: 29
       page: 2

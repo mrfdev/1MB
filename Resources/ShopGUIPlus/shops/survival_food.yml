@@ -134,7 +134,7 @@ survival_food:
       item:
         material: COOKED_RABBIT
         quantity: 1
-      buyPrice: 32
+      buyPrice: 40
       sellPrice: 1
       slot: 25
       page: 1
@@ -323,7 +323,7 @@ survival_food:
       item:
         material: MILK_BUCKET
         quantity: 1
-      buyPrice: 17000
+      buyPrice: 1000
       sellPrice: 1
       slot: 25
       page: 2

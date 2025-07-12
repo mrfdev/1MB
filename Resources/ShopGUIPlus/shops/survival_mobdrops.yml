@@ -118,7 +118,7 @@ survival_mobdrops:
       item:
         material: PRISMARINE_SHARD
         quantity: 1
-      buyPrice: 20.0
+      buyPrice: 10.0
       sellPrice: 1
       slot: 24
       page: 1
@@ -127,7 +127,7 @@ survival_mobdrops:
       item:
         material: PRISMARINE_CRYSTALS
         quantity: 1
-      buyPrice: 50.0
+      buyPrice: 25.0
       sellPrice: 1
       slot: 25
       page: 1

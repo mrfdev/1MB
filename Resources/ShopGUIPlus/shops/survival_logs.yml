@@ -154,7 +154,7 @@ survival_logs:
       item:
         material: BIRCH_WOOD
         quantity: 1
-      buyPrice: 132
+      buyPrice: 131
       sellPrice: 1
       slot: 30
       page: 1
@@ -361,7 +361,7 @@ survival_logs:
       item:
         material: STRIPPED_JUNGLE_WOOD
         quantity: 1
-      buyPrice: 132
+      buyPrice: 131
       sellPrice: 1
       slot: 32
       page: 2
@@ -424,7 +424,7 @@ survival_logs:
       item:
         material: STRIPPED_WARPED_HYPHAE
         quantity: 1
-      buyPrice: 120
+      buyPrice: 163
       sellPrice: 1
       slot: 14
       page: 3

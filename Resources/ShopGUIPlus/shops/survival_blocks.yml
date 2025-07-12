@@ -279,7 +279,7 @@ survival_blocks:
       item:
         material: GLOWSTONE
         quantity: 1
-      buyPrice: 190
+      buyPrice: 100
       sellPrice: 1
       slot: 20
       page: 2

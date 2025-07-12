@@ -55,7 +55,7 @@ survival_ores_coal:
       item:
         material: LAVA_BUCKET
         quantity: 1
-      buyPrice: 7500
+      buyPrice: 1000
       sellPrice: 1
       slot: 15
       page: 1

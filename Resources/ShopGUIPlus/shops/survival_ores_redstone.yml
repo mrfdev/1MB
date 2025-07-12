@@ -238,7 +238,7 @@ survival_ores_redstone:
       item:
         material: REDSTONE_LAMP
         quantity: 1
-      buyPrice: 261
+      buyPrice: 144
       sellPrice: 1
       slot: 14
       page: 2

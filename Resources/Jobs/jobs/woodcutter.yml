@@ -29,7 +29,7 @@ Woodcutter:
       - Break logs and get money
       - Get 100 for this!
   Gui:
-    Item: birch_log
+    ItemStack: birch_log
   Break:
     STRIPPED_OAK_LOG:
       income: 0.75

@@ -4,7 +4,7 @@ Items:
   #   Price: 10000.0
   #   Icon:
   #     # (REQUIRED) Icon item
-  #     Id: diamond_pickaxe
+  #     ItemStack: diamond_pickaxe
   #     # (Optional - Default: 1) Icon item amount
   #     Amount: 1
   #     # (Optional) Icon name. Supports usual color codes
@@ -41,7 +41,7 @@ Items:
   #     # Can be any word
   #     PickAxe:
   #       # (Required) Item name
-  #       Id: diamond_pickaxe
+  #       ItemStack: diamond_pickaxe
   #       # (Optional - Default: 1) Item amount
   #       Amount: 1
   #       # (Optional) Item name
@@ -56,11 +56,11 @@ Items:
   #     # Can be any word
   #     Apple:
   #       # (Required) Item name
-  #       Id: apple
+  #       ItemStack: apple
   # WoodenShovel:
   #   Price: 100.0
   #   Icon:
-  #     Id: wooden_shovel
+  #     ItemStack: wooden_shovel
   #     Name: "&eWooden shovel"
   #     HideWithoutPermission: true
   #   RequiredPermission:
@@ -73,7 +73,7 @@ Items:
   # LureEnchantBook:
   #   Price: 100.0
   #   Icon:
-  #     Id: enchanted_book
+  #     ItemStack: enchanted_book
   #     Name: "&eEnchant book"
   #     Lore:
   #     - "&eContains Lure 3 enchant"
@@ -86,13 +86,13 @@ Items:
   #   - "msg &eThanks [player] for buying this book!"
   #   GiveItems:
   #     Book:
-  #       Id: enchanted_book
+  #       ItemStack: enchanted_book
   #       Enchants:
   #       - LURE=3
   # Elytra:
   #   Price: 100000.0
   #   Icon:
-  #     Id: elytra
+  #     ItemStack: elytra
   #     Name: "&eAngel wings"
   #     HideWithoutPermission: true
   #   RequiredPermission:
@@ -102,11 +102,11 @@ Items:
   #   # (Optional) Gives items by defined criteria
   #   GiveItems:
   #     Elytra:
-  #       Id: elytra
+  #       ItemStack: elytra
   SilkSpawner:
     Price: 175000.0
     Icon:
-      Id: wooden_pickaxe
+      ItemStack: wooden_pickaxe
       Name: "&6&lSilk Spawner Pick"
       # (Optional) Icon name. Supports usual color codes
       Lore:
@@ -124,7 +124,7 @@ Items:
   partyhelmet:
     Price: 25000.0
     Icon:
-      Id: LEATHER_HELMET
+      ItemStack: LEATHER_HELMET
       Name: "&6 Party Hat &r"
       # (Optional) Icon name. Supports usual color codes
       Lore:
@@ -143,7 +143,7 @@ Items:
   partyjacket:
     Price: 25000.0
     Icon:
-      Id: LEATHER_CHESTPLATE
+      ItemStack: LEATHER_CHESTPLATE
       Name: "&6 Party Jacket &r"
       # (Optional) Icon name. Supports usual color codes
       Lore:
@@ -162,7 +162,7 @@ Items:
   partypants:
     Price: 25000.0
     Icon:
-      Id: LEATHER_LEGGINGS
+      ItemStack: LEATHER_LEGGINGS
       Name: "&6 Party Pants &r"
       # (Optional) Icon name. Supports usual color codes
       Lore:
@@ -181,7 +181,7 @@ Items:
   partyshoes:
     Price: 25000.0
     Icon:
-      Id: LEATHER_BOOTS
+      ItemStack: LEATHER_BOOTS
       Name: "&6 Party Shoes &r"
       # (Optional) Icon name. Supports usual color codes
       Lore:

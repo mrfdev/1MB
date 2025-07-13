@@ -1,0 +1,216 @@
+database:
+  #Database backend type, can be set to mysql or sqlite
+  type: sqlite
+  #MySQL database host
+  mySQLHost: localhost
+  #MySQL connection port number
+  mySQLPort: 3306
+  #MySQL database name
+  mySQLDatabase: db
+  #MySQL database user
+  mySQLUser: root
+  #MySQL user's password
+  mySQLPassword: ""
+  #MySQL table names
+  tableNames:
+    players: players
+    shops: shops
+
+#Logging settings
+log:
+  #Define whether transactions will be logged to the console/main server log
+  toConsole: true
+  #Define whether transactions will be logged to a separate log
+  toFile: true
+  #Date format of transactions (http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+  formatDate: "yyyy/MM/dd HH:mm:ss"
+  #Log message formats
+  messageFormats:
+    sell: "%owner% put up %quantity% x %item% for sale! Price: %price%, duration: %duration%"
+    bought: "%buyer% bought %quantity% x %item% from %owner% for %price%."
+    expired: "%owner%'s %quantity% x %item% expired."
+    cancelled: "%player% cancelled %owner%'s %quantity% x %item% for %price% sell lot."
+
+
+#Default settings for sold items when not specified
+defaultSettings:
+  quantity: 1
+  price: 99.0
+
+#Minimum settings values for sold items (set to -1 for no limit)
+minSettings:
+  quantity: -1
+  price: 1
+
+#Maximum settings values for sold items (set to -1 for no limit), 64 is the maximal supported quantity
+maxSettings:
+  quantity: 64
+  price: 1000000.0
+
+#Choose how many items player will be able to sell at the same time, permission format
+# is playershopguiplus.limit.NAME, eg. playershopguiplus.limit.default
+limits:
+  #"default" is required
+  default: 5
+  first: 5
+  player: 10
+  member: 15
+  boosted: 20
+  builder: 25
+  rogue: 30
+  donator: 35
+  mvp: 40
+  epic: 45
+  legendary: 50
+  veteran: 50
+  helper: 100
+  admin: 100
+  owner: 999
+  unique: 100
+
+#Choose how many items player will be able to have unclaimed at the same time, permission format is
+# playershopguiplus.unclaimedlimit.NAME, eg. playershopguiplus.unclaimedlimit.default
+unclaimedLimits:
+  #"default" is required
+  default: 45
+  first: 45
+  player: 45
+  member: 45
+  boosted: 45
+  builder: 45
+  rogue: 45
+  donator: 45
+  mvp: 45
+  epic: 45
+  legendary: 45
+  veteran: 45
+  helper: 45
+  admin: 45
+  owner: 45
+  unique: 45
+
+#List of items players won't be to put up for sale. Explained in FAQ #1 here:
+bannedItems:
+  1:
+    material: STRUCTURE_VOID
+    compareQuantity: false
+    compareItemMeta: false
+
+#Date format; more info: https://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html
+dateFormat: "dd.MM.yyyy, HH:mm"
+
+#Choose what gamemodes will prevent players from accessing player shops. Valid values: ADVENTURE, CREATIVE, SPECTATOR, SURVIVAL
+disableInGamemodes:
+  - ADVENTURE
+  - CREATIVE
+  - SPECTATOR
+
+#Choose in which worlds player shops will be completely disabled
+disableInWorlds:
+  - pixelasia
+  - builders
+  - legacy
+  - cave
+  - vubbo
+  - oneblock
+  - run
+  - acid
+  - skyblock
+  - skygrid
+  - jackper
+  - TmpYellowWinter
+  - owo
+  - santa
+  - uwu
+  - halloween
+  - sushi
+  - sanctuary
+  - debug
+  - valentine
+  - thanksgiving
+  - parkour
+  - lumifae
+
+#Players won't be able to use shop names containing following words/phrases
+bannedShopNames:
+  - fuck
+  - ass
+  - cocaine
+  - weed
+  - sex
+  - nigger
+
+economy:
+  # Economy which will be used for all shops.
+  # Supported economies:
+  #  - EXP (default Minecraft experience points)
+  #  - VAULT (requires http://dev.bukkit.org/bukkit-plugins/vault/)
+  #  - GEMS_ECONOMY (requires https://www.spigotmc.org/resources/gemseconomy.19655/)
+  #  - GRINGOTTS (requires https://www.spigotmc.org/resources/gringotts.42071/)
+  #  - PLAYER_POINTS (requires https://dev.bukkit.org/projects/playerpoints)
+  #  - TOKEN_ENCHANT (requires https://www.spigotmc.org/resources/tokenenchant.2287/)
+  type: VAULT
+  # Prefixes & suffixes used for price formatting. The format is ECONOMYTYPE: "value"
+  prefixes:
+    VAULT: "$"
+  suffixes:
+    VAULT: ""
+
+#Choose for how long items will be buyable before they expire (in minutes, set to -1 to disable)
+shopItemDuration: 20160
+#Choose if shop view will be refresh automatically every X ticks (set below in autoRefreshInterval)
+autoRefresh: false
+#Interval (in ticks, 20 ticks = 1 second) between refreshing shops view
+#Warning: This can cause log when set to low interval with many players online/shops
+autoRefreshInterval: 20
+#Choose if empty shops (with no item lots) shall be displayed in the "All shops" menu
+displayEmptyShops: false
+#Default player shop name
+defaultShopName: "Shop: %player%"
+#Choose if GUI notifications will be displayed (or message ones instead)
+enableGuiNotifications: true
+#Choose if short dates formats will be used, eg. h instead of hours, m instead of minutes etc.
+useShortDateFormats: true
+#Choose if chests should be displayed instead of player heads in shops GUI.
+#This is useful for bigger server where fetching skins can cause lags.
+useChestShopPlaceholders: false
+#Settings of /playershop sell command
+commandSell:
+  #Require choose whether it should require the player to specify the quantity instead of setting
+  #the default one instead - takes effect only when enableGui is set to false
+  requireQuantity: false
+  #Require choose whether it should require the player to specify the price instead of setting
+  #the default one instead - takes effect only when enableGui is set to false
+  requirePrice: true
+  #Choose whether a message will be broadcast after players puts up an item for sale
+  broadcast: true
+  #Set minimal item price the broadcast should be sent for
+  broadcastMinPrice: 0.0
+
+# Choose sounds for certain GUI actions. Full list is available at https://docs.brcdev.net/#/sounds
+sounds:
+  MAIN_MENU_OPEN: UI_BUTTON_CLICK
+  SHOPS_MENU_OPEN: UI_BUTTON_CLICK
+  SHOP_MENU_OPEN: UI_BUTTON_CLICK
+  ITEMS_MENU_OPEN: UI_BUTTON_CLICK
+  CATEGORIES_MENU_OPEN: UI_BUTTON_CLICK
+  CATEGORY_MENU_OPEN: UI_BUTTON_CLICK
+  SEARCH_SHOPS_OPEN: UI_BUTTON_CLICK
+  SEARCH_ITEMS_OPEN: UI_BUTTON_CLICK
+  SHOP_OWN_MENU_OPEN: UI_BUTTON_CLICK
+  UNCLAIMED_MENU_OPEN: UI_BUTTON_CLICK
+  SELL_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  BUY_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  CANCEL_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  NOTIFICATION_ERROR_OPEN: UI_BUTTON_CLICK
+  NOTIFICATION_WARNING_OPEN: UI_BUTTON_CLICK
+  NOTIFICATION_SUCCESS_OPEN: ENTITY_EXPERIENCE_ORB_PICKUP
+
+# Choose actions for mouse clicks inside shops
+# Supported click types: all from ClickType enum (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/ClickType.html)
+# Supported actions: BUY, CANCEL, CANCEL_OTHERS, NONE
+clickActions:
+  LEFT: BUY
+  RIGHT: CANCEL
+  SHIFT_RIGHT: CANCEL_OTHERS
+  MIDDLE: CANCEL_OTHERS

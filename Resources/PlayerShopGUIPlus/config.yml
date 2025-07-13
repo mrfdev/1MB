@@ -93,6 +93,23 @@ unclaimedLimits:
   owner: 45
   unique: 45
 
+#Tax settings.
+tax:
+  #Should the player have a proportion of their sale price taken away as a cost of selling an item?
+  tax: false
+  #Choose how much should be taken away from the player as a proportion of the sale value. 0.2 = 20%
+  taxAmount: 0.2
+  #Should the player be refunded the tax when the item expires?
+  refund:
+    # Refund the tax amount when the sellers item is purchased.
+    purchase: false
+    # Refund the tax amount when the item expires.
+    expired: false
+    # Refund the tax amount when the item is forcefully cancelled by the seller or an admin with the needed permissions.
+    cancelled: false
+  #Choose how much should be given back to the player as a proportion of the tax value. 1 = 100%
+  refundAmount: 1
+
 #List of items players won't be to put up for sale. Explained in FAQ #1 here:
 bannedItems:
   1:
@@ -173,6 +190,10 @@ displayEmptyShops: false
 defaultShopName: "Shop: %player%"
 #Choose if GUI notifications will be displayed (or message ones instead)
 enableGuiNotifications: true
+#Choose if item selling starting can be handled by GUI
+enableStartGui: true
+#When start GUI is enabled (with the setting above) and smart start is enabled, the GUI will be opened when any of the settings arguments is missing (eg. /pshop start)
+enableSmartStartGui: true
 #Choose if short dates formats will be used, eg. h instead of hours, m instead of minutes etc.
 useShortDateFormats: true
 #Choose if chests should be displayed instead of player heads in shops GUI.

@@ -1,3 +1,7 @@
+#
+# See our Wiki for PlayerShopGUI+ at the link below:
+# https://docs.brcdev.net/ -> Both 'General' & 'PlayerShopGUI+' Sections are for PlayerShopGUI+
+#
 database:
   #Database backend type, can be set to mysql or sqlite
   type: sqlite
@@ -205,6 +209,9 @@ sounds:
   NOTIFICATION_ERROR_OPEN: UI_BUTTON_CLICK
   NOTIFICATION_WARNING_OPEN: UI_BUTTON_CLICK
   NOTIFICATION_SUCCESS_OPEN: ENTITY_EXPERIENCE_ORB_PICKUP
+  START_PRICE_MENU_OPEN: UI_BUTTON_CLICK
+  START_QUANTITY_MENU_OPEN: UI_BUTTON_CLICK
+  CLOSE_MENU: UI_BUTTON_CLICK
 
 # Choose actions for mouse clicks inside shops
 # Supported click types: all from ClickType enum (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/ClickType.html)
@@ -214,3 +221,29 @@ clickActions:
   RIGHT: CANCEL
   SHIFT_RIGHT: CANCEL_OTHERS
   MIDDLE: CANCEL_OTHERS
+
+# Format numbers within your messages using these options.
+numberFormat:
+  # Change the character used for separating decimals in figures which may not be whole numbers.
+  decimalSeparator: "."
+  # Change the character using for separating commas in figures which are larger numbers.
+  groupingSeparator: ","
+  # Specify the minimum number of digits shown for integer numbers.
+  minimumIntegerDigits: 1
+  # Specify the maximum number of digits shown for integer numbers. This can help with displaying larger numbers.
+  maximumIntegerDigits: 32
+  # Specify the minimum number of decimal places shown for fractional numbers.
+  minimumFractionDigits: 0
+  # Specify the maximum number of decimal places shown for fractional numbers.
+  maximumFractionDigits: 8
+  # Specify whether you would like the ending decimal digits to be removed when not applicable. This will change $100.00 to $100
+  hideFraction: true
+  shortScale:
+    # Specify whether you would like the number shown in messages to be converted in short-scale above a certain number. This will convert "1,000,000" to "1 million".
+    enableShortScaleNumbering: false
+    # Specify the limit at which short-scale number formatting will start from. Any number above this limit will be converted to short-scale number formatting.
+    shortScaleLimit: 1000000
+    # Specify the maximum number of decimal place figures shown when showing the decimal part of the large, short-hand number. (Will truncate the figure to 2 d.p by default).
+    shortHandDecimalLimit: 2
+    # Specify the maximum number of digits shown in larger short-hand numbers. (Will truncate the figure to 32 digits by default).
+    shortHandNumberLimit: 32

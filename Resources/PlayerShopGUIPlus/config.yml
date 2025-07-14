@@ -151,6 +151,7 @@ disableInWorlds:
   - thanksgiving
   - parkour
   - lumifae
+  - summer
 
 #Players won't be able to use shop names containing following words/phrases
 bannedShopNames:
@@ -198,7 +199,7 @@ enableSmartStartGui: true
 useShortDateFormats: true
 #Choose if chests should be displayed instead of player heads in shops GUI.
 #This is useful for bigger server where fetching skins can cause lags.
-useChestShopPlaceholders: false
+useChestShopPlaceholders: true
 #Settings of /playershop sell command
 commandSell:
   #Require choose whether it should require the player to specify the quantity instead of setting

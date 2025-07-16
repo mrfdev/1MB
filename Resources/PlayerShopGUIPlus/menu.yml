@@ -1,7 +1,7 @@
 menu:
   main:
-    name: "&01MB Global Market"
-    rows: 6
+    name: "Player shops"
+    rows: 5
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -9,48 +9,48 @@ menu:
     buttons:
       shops:
         item:
-          material: LIGHT_BLUE_SHULKER_BOX
+          material: CHEST
           quantity: 1
-          name: "&6&lBrowse Player Shops..."
+          name: "&6&lBrowse shops"
           lore: 
-            - "&7There are %number% players selling items."
+            - "&7There are %number% player shops."
         slot: 11
       items:
         item:
-          material: BARREL
+          material: CHEST
           quantity: 1
-          name: "&6&lBrowse All Items..."
+          name: "&6&lBrowse items"
           lore:
-            - "&7There are %number% items for sale."
+            - "&7There are %number% items."
         slot: 13
       categories:
         item:
           material: CHEST
           quantity: 1
-          name: "&6&lBrowse Categories..."
+          name: "&6&lBrowse categories"
           lore:
-            - "&7There are %number% categories with items."
+            - "&7There are %number% categories."
         slot: 15
       searchShops:
         item:
           material: BOOK
           quantity: 1
-          name: "&6&lSearch for shops by player"
+          name: "&6&lSearch shops"
         slot: 28
       searchItems:
         item:
           material: PAPER
           quantity: 1
-          name: "&6&lSearch for specific items"
+          name: "&6&lSearch items"
         slot: 30
       own:
         item:
           material: PLAYER_HEAD
           quantity: 1
-          name: "&6&lYour personal shop"
+          name: "&6&lYour shop"
           lore:
-            - "&7You have %number% items"
-            - "&7for sale in your shop."
+            - "&7You have %number%"
+            - "&7items in your shop."
         slot: 32
       unclaimed:
         item:
@@ -62,8 +62,10 @@ menu:
             - "&7unclaimed items."
         slot: 34
   shops:
-    name: "&0All Shops made by Players"
+    name: "All shops"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -98,8 +100,10 @@ menu:
       - "&7Owner: &6%owner%"
       - "&7Items: &6%items%"
   items:
-    name: "&0List of all Items for Sale"
+    name: "All items"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -123,6 +127,14 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       back:
         item:
           material: RED_STAINED_GLASS
@@ -135,7 +147,7 @@ menu:
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
   categories:
-    name: "&0Browse through Categories"
+    name: "All categories"
     rows: 6
     fill:
       item:
@@ -170,8 +182,10 @@ menu:
     lore:
       - "&7Items: &6%items%"
   own:
-    name: "&0Your Listed Items"
+    name: "Your items"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -195,12 +209,20 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       editName:
         item:
           material: WRITABLE_BOOK
           quantity: 1
           name: "&6&lEdit shop name"
-        slot: 49
+        slot: 53
       back:
         item:
           material: RED_STAINED_GLASS
@@ -213,8 +235,10 @@ menu:
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
   shop:
-    name: "&0%name%"
+    name: "%name%"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -238,6 +262,14 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       back:
         item:
           material: RED_STAINED_GLASS
@@ -250,8 +282,10 @@ menu:
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
   category:
-    name: "&0%name%"
+    name: "%name%"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -275,6 +309,14 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       back:
         item:
           material: RED_STAINED_GLASS
@@ -287,8 +329,10 @@ menu:
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
   searchShops:
-    name: "&0Shop by Player Search Results"
+    name: "Shop search results"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -323,8 +367,10 @@ menu:
       - "&7Owner: &6%owner%"
       - "&7Items: &6%items%"
   searchItems:
-    name: "&0Item Search Results"
+    name: "Item search results"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -348,6 +394,14 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       back:
         item:
           material: RED_STAINED_GLASS
@@ -360,8 +414,10 @@ menu:
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
   unclaimed:
-    name: "&0Your Unclaimed Items"
+    name: "Unclaimed items"
     rows: 6
+    itemSlots:
+      - 0-45
     fill:
       item:
         material: GRAY_STAINED_GLASS_PANE
@@ -385,6 +441,14 @@ menu:
           quantity: 1
           name: "&6&lRefresh"
         slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&lChange Item Order"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
       back:
         item:
           material: RED_STAINED_GLASS
@@ -479,6 +543,158 @@ menu:
       - "&7Seller: &6%owner%"
       - "&7Price: &6%price%"
       - "&7Expires in: &6%timeleft%"
+  start:
+    quantity:
+      name: "Choose quantity"
+      rows: 6
+      itemSlot: 22
+      fill:
+        item:
+          material: GRAY_STAINED_GLASS_PANE
+          quantity: 1
+      buttons:
+        less3:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&lRemove 32"
+            lore:
+              - "&7Sell 32 fewer"
+          value: 32
+          slot: 18
+        less2:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&lRemove 10"
+            lore:
+              - "&7Sell 10 fewer"
+          value: 10
+          slot: 19
+        less1:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&lRemove 1"
+            lore:
+              - "&7Sell 1 fewer"
+          value: 1
+          slot: 20
+        more1:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&lAdd 1"
+            lore:
+              - "&7Sell 1 more"
+          value: 1
+          slot: 24
+        more2:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&lAdd 10"
+            lore:
+              - "&7Sell 10 more"
+          value: 10
+          slot: 25
+        more3:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&lAdd 32"
+            lore:
+              - "&7Sell 32 more"
+          value: 32
+          slot: 26
+        confirm:
+          item:
+            material: LIME_STAINED_GLASS
+            quantity: 1
+            name: "&a&lConfirm"
+          slot: 39
+        cancel:
+          item:
+            material: RED_STAINED_GLASS
+            quantity: 1
+            name: "&c&lCancel"
+          slot: 41
+      replaceLore: false
+      lore:
+        - "&7Quantity: &6%quantity%"
+    price:
+      name: "Choose price"
+      rows: 6
+      itemSlot: 22
+      fill:
+        item:
+          material: GRAY_STAINED_GLASS_PANE
+          quantity: 1
+      buttons:
+        less3:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&l-100"
+          value: 100
+          slot: 18
+        less2:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&l-10"
+          value: 10
+          slot: 19
+        less1:
+          item:
+            material: RED_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&c&l-1"
+          value: 1
+          slot: 20
+        more1:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&l+1"
+          value: 1
+          slot: 24
+        more2:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&l+10"
+          value: 10
+          slot: 25
+        more3:
+          item:
+            material: LIME_STAINED_GLASS_PANE
+            quantity: 1
+            name: "&a&l+100"
+          value: 100
+          slot: 26
+        confirm:
+          item:
+            material: LIME_STAINED_GLASS
+            quantity: 1
+            name: "&a&lConfirm"
+          slot: 39
+        goBack:
+          item:
+            material: RED_STAINED_GLASS
+            quantity: 1
+            name: "&c&lGo back"
+          slot: 40
+        cancel:
+          item:
+            material: RED_STAINED_GLASS
+            quantity: 1
+            name: "&c&lCancel"
+          slot: 41
+      replaceLore: false
+      lore:
+        - "&7Quantity: &6%quantity%"
+        - "&7Price: &6%price%"
 
 notifications:
   error:

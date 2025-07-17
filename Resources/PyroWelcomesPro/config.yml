@@ -7,7 +7,7 @@
 #           \/                         \/       \/          \/            \/     \/     \/                          
 #=====================================================================================================================
 
-#Version: 0.4.0
+#Version: 0.4.1
 
 #=====================================================================================================================
 
@@ -78,6 +78,10 @@ Settings:
   #For example: 'welcome back <player>'
   Phrases:
     
+    #Setting this to true will let players use nicknames or display names rather then the players set name
+    #to earn points and trigger the phrases. 
+    AllowNicknames: true
+    
     #Enabling this will make it so, saying anything as long as it contains their name will earn them a point.
     #Would recommend to use this as mistypes, languages, and different factors can make it so players won't earn points.
     AllPhrases: true
@@ -87,6 +91,24 @@ Settings:
     Specific:
       - 'example phrase 1'
       - 'example phrase 2'
+      
+  #Discord SRV Specific Settings
+  DiscordSRV:
+  
+    #Should welcoming from discord be enabled?
+    Enabled: true
+  
+    #How many points should players get from welcoming a player?
+    EarnablePoints: 1
+    
+    #Should players be able to get their daily bonus from discord?
+    DailyBonus: true
+    
+    #What emojis get added to the players message upon a successful greet.
+    Emojis:
+      Success: '🪙'
+      DailyBonus: '📆'
+    
  
 #=====================================================================================================================
 
@@ -143,22 +165,4 @@ Emojis:
   mrfloris: ❤
 
 
-
 #=====================================================================================================================
-
-#Discord SRV Specific Settings
-DiscordSRV:
-
-  #Should welcoming from discord be enabled?
-  Enabled: true
-
-  #How many points should players get from welcoming a player?
-  EarnablePoints: 1
-  
-  #Should players be able to get their daily bonus from discord?
-  DailyBonus: true
-  
-  #What emojis get added to the players message upon a successful greet.
-  Emojis:
-    Success: '🪙'
-    DailyBonus: '📆'

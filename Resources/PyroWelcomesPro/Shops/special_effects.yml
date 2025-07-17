@@ -1,0 +1,212 @@
+#=========================================================================================
+#
+# To make a new category, or shop, just copy this file and rename it.
+#
+# This is a example category shop. To make an item buyable with points, add
+# 'price: <cost>' to the itemstack you want to add. 
+# Not including this will mark it as a decoration instead. i.e. glass, etc.
+#
+# If you want to make an item open another category, i.e. sub-menu, add 
+# 'category: <id>' to the itemstack you want to add it to.
+#
+# You do not need to include everything on each item. If you don't include it
+# like in the background-black example, it will be ignored.
+#
+# Commands are executed through console. Not including 'permission' on an item
+# will make it assume there is no permission.
+#
+#=========================================================================================
+
+Category:
+  Title: '&5&lSpecial Effects Category'
+
+  #What items should be in the menu.
+  Items:
+
+    effect_clear:
+      price: 15
+      enabled: true
+      permission: 'pyrowelcomespro.special_effects.effect_clear'
+      commands: 
+        - 'cmi effect %player% clear'
+      name: '&2&l 1MB Effect: Clear!!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [10] #Must be a list.
+      glowing: false
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Please notice:'
+        - '&8>#4585e6 Click this will remove'
+        - '&8>#4585e6 ALL your set effects.'
+
+    remove_curse:
+      price: 200
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.remove_curse'
+      commands: 
+        - 'cmi enchant %player% VanishingCurse 0 -inform'
+        - 'cmi enchant %player% BindingCurse 0 -inform'
+      name: '&2&l 1MB Curse begone!'
+      material: GRINDSTONE
+      amount: 1
+      slots: [11] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b READ THIS VERY CAREFULLY!'
+        - '&8>#4585e6 For 200 /points, it will attempt'
+        - '&8>#4585e6 to remove the Vanishing Curse,'
+        - '&8>#4585e6 and the Binding Curse from the'
+        - '&8>#4585e6 item that you are holding.'
+        - '&8>&7 Offhand is completely ignored!'
+
+    effect_nightvision:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_nightvision'
+      commands: 
+        - 'cmi effect %player% nightvision +900 1 -visual'
+      name: '&2&l 1MB Effect: Nightvision!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [19] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Tired of the dark?'
+        - '&8>#4585e6 Ready for 15 minutes'
+        - '&8>#4585e6 of seeing in the dark?'
+
+    effect_waterbreathing:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_waterbreathing'
+      commands: 
+        - 'cmi effect %player% water_breathing +900 1 -visual'
+      name: '&2&l 1MB Effect: Water Breathing!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [20] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Tired of drowning?'
+        - '&8>#4585e6 Ready for 15 minutes'
+        - '&8>#4585e6 of breathing under water?'
+
+    effect_fireresistance:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_fireresistance'
+      commands: 
+        - 'cmi effect %player% fire_resistance +900 1 -visual'
+      name: '&2&l 1MB Effect: Fire Resistance!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [21] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Tired of burning up?'
+        - '&8>#4585e6 Ready for 15 minutes'
+        - '&8>#4585e6 of being resistant to fire?'
+
+    effect_megajumping:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_megajumping'
+      commands: 
+        - 'cmi effect %player% jump +900 5 -visual'
+      name: '&2&l 1MB Effect: Mega Jumping!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [22] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Cannot get up something?'
+        - '&8>#4585e6 Ready for 15 minutes'
+        - '&8>#4585e6 of jumping super high?'
+
+    effect_megaspeed:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_megaspeed'
+      commands: 
+        - 'cmi effect %player% speed +900 4 -visual'
+      name: '&2&l 1MB Effect: Mega Speed!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [23] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Cannot get there fast'
+        - '&8>#4585e6 enough? Ready for 15mins'
+        - '&8>#4585e6 of running super fast?'
+
+    effect_regeneration:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.effect_regeneration'
+      commands: 
+        - 'cmi effect %player% regeneration +900 2 -visual'
+      name: '&2&l 1MB Effect: Regeneration!'
+      material: GLASS_BOTTLE
+      amount: 1
+      slots: [24] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Need some extra help'
+        - '&8>#4585e6 staying alive? Here is '
+        - '&8>#4585e6 15mins of Regeneration'
+
+    #Cosmetic item
+    background-black:
+      material: BLACK_STAINED_GLASS_PANE
+      name: ' '
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 27, 36, 17, 26, 35, 44, 46, 47, 48, 50, 51, 52]
+      
+    back-to-index:
+      material: ARROW
+      name: '&aBack to Index'
+      lore:
+        - '&7Press to go to the index'
+      category: 'categories'
+      slots: [53]
+
+    #Cosmetic item
+    point-balance:
+      material: EMERALD
+      name: '&aPoint Balance:'
+      lore:
+        - '&7You currently have &e%pyrowelcomespro_points% &7points.'
+      slots: [49]
+
+    infobook:
+      material: WRITABLE_BOOK
+      name: '#d9e645Info'
+      lore:
+        - '#4585e6Press to learn more about'
+        - '#4585e6this /points feature, and'
+        - '#4585e6how to earn more points.'
+      slots: [45]
+      commands:
+        - 'cmi openbook points %player%'

@@ -1,0 +1,79 @@
+Commands:
+  OnlyPlayer: '&7This command, or arguments cannot be executed through console.'
+  PlayFlair:
+    Played: '&7You have played the flair &b%flair%&7.'
+    NoArgs: '&7Incorrect command usage. Correct usage: &c/welcomes playflair <flair>
+      [player]'
+    PlayedPlayer: '&7You have played the flair &b%flair% &7on &3%player%&7.'
+    Invalid: '&7That flair does not exist, or is not registered.'
+    Console: '&7You can only execute this command with the player argument from console.
+      &c/welcomes playflair <flair> <player>'
+  Info:
+    Information:
+    - '&8---------------------------------------'
+    - '&7To earn points, wait until a player joins the server.'
+    - '&7Once they have joined, say their name in chat along'
+    - '&7with a nice greeting message. Such as ''welcome back <player>''.'
+    - '&7The first welcome of the day will earn bonus points.'
+    - '&7To spend your points, use the &a/welcomes shop&7.'
+    - '&8---------------------------------------'
+  Added:
+    Sender: '&7You have given &e%player% %points% &7points.'
+    Player: '&7You have been given &e%points% &7points.'
+  NeverPlayed: '&7That player has never played this server.'
+  Balance:
+    Other: '&d%player%''s &7Point Balance: &e%points%'
+    Self: '&7Point Balance: &e%points%'
+  Shop:
+    NoDefaultShop: '&7No default shop has been set, or the configured one is invalid.'
+    NoPermission: '&7You do not have permission to access this shop with this command.
+      You require &cpyrowelcomespro.shop.%id% &7for this.'
+    InvalidShop: '&7That shop does not exist.'
+  ReloadedPlugin: '&7You have successfully reloaded the plugin.'
+  InvalidInt: '&7The value &c%value%&7 is not a valid integer.'
+  InvalidUsername: '&7That is not a valid username, or the user has never joined the
+    server before.'
+  InvalidCommand: '&7That is not a valid command. &c/welcomes &7for the command list.'
+  InvalidArgs: '&7Invalid arguments. Check &c/welcomes &7for the command list.'
+  InvalidPlayer: '&7That is an &cinvalid &7player or that player is not online!'
+  InvalidSubCommand: '&7Invalid sub-command. Check &c/welcomes &7for the command list.'
+GUINames:
+  JoinMessageMenu: '&7Join Message Picker'
+  ConfirmationMenu: '&2Confirm Purchase'
+  FlairMenu: '&7Flair Picker'
+Emojis:
+  CancelMessage: '&7Your message contains an &cEmoji &7that you do not have permission
+    for.'
+SuccessPrefix: '&6&l1MB Points '
+Cancel:
+  Name: '&cCancel Purchase'
+  Lore:
+  - '&7Click to cancel this purchase.'
+NoPermission: '&7You do not have permission to do this. You require &c%permission%
+  &7for this.'
+NotEnabledInWorld: '&7You cannot access this shop category in this world!'
+BoughtItem: '&7You have bought %item%&7 for &b%cost% &7points. You now have &e%points%
+  &7left.'
+DailyBonusPoints: '&7For your first welcome of the day, you earned a bonus &e%points%
+  &7points!'
+NoPermissionItem: '&7You do not have permission to purchase this item.'
+NotEnoughPoints: '&7You do not have enough points to purchase this item.'
+EarnPoint: '&7You earned &b%amount% &7points for welcoming &3%player%&7 :)'
+CommandList:
+- ''
+- '&8]&m--------+&r&8[ &6&l1MB Points &r&8]&m+---------&r&8['
+- ''
+- '&e/points &7- Shows this command list.'
+- '&e/points balance &7- Shows your point balance.'
+- '&e/points shop [id] &7- Opens the point shop.'
+- '&e/points info &7- Shows some information.'
+- ''
+- '&8]&m-----------+&r&8[ &6Page (1/1) &r&8]&m+--------------&r&8['
+- ''
+Confirm:
+  Lore:
+  - '&7Click to purchase this item for &a%cost% &7points.'
+  Name: '&aConfirm Purchase - %item%'
+ErrorPrefix: '&c&l1MB Points &8➤ '
+CategoryNotExist: '&7That category does not exist for this item. Please report this
+  to an administator.'

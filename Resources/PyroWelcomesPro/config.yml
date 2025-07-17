@@ -1,0 +1,147 @@
+#=====================================================================================================================
+#__________                      __      __       .__                                     __________                
+#\______   \___.__._______  ____/  \    /  \ ____ |  |   ____  ____   _____   ____   _____\______   \_______  ____  
+# |     ___<   |  |\_  __ \/  _ \   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \ /  ___/|     ___/\_  __ \/  _ \ 
+# |    |    \___  | |  | \(  <_> )        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/ \___ \ |    |     |  | \(  <_> )
+# |____|    / ____| |__|   \____/ \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >____  >|____|     |__|   \____/ 
+#           \/                         \/       \/          \/            \/     \/     \/                          
+#=====================================================================================================================
+
+#Version: 0.4.0
+
+#=====================================================================================================================
+
+#General and misc settings for the plugin
+Settings:
+
+  #How many points should players earn from welcoming a player?
+  EarnablePoints: 2
+
+  #This will make it so the player will earn bonus points for their first welcome of the day.
+  DailyPointBonus: 5
+
+  #How much time do players have to welcome a player to earn points? - in seconds.
+  EarnPointTime: 15
+  
+  #What shop should the '/welcomes shop' command open if no argument is provided?
+  #Make sure to use the name of the file exactly without the .yml
+  #This will ignore requiring permission to open the shop with '/welcomes shop <shop>' - permission is 'pyrowelcomespro.shop.<id>'
+  DefaultShop: categories
+  
+  #Should the plugin log a message in points.log file showing purchases of items and balances before/after.
+  #Very useful to ensure players got their items and they aren't lying about points missing.
+  ItemPurchaseLogging: true
+
+  #How long should each player have to wait until they are marked to be earnable for a point? - in seconds.
+  #At default this is 600, which means, if a player joins, and I earn a point off them, I have to wait 600 seconds
+  #before I can earn another point from that player.
+  PlayerJoinPointCooldown: 600
+  
+  #Should the default join message be changed? If so, what should it look like?
+  #Leave it as 'DEFAULT' to use the default message.
+  #Set it to '' to remove the message entirely.
+  #If players have a custom join message enabled, that will be used instead of this.
+  #%player% = Username, %nickname% = Player Display Name
+  DefaultJoinMessage: 'DEFAULT'
+  
+  #Should the default leave message be changed? If so, what should it look like?
+  #Leave it as 'DEFAULT' to use the default message.
+  #Set it to '' to remove the message entirely.
+  #If players have a custom join message enabled, that will be used instead of this.
+  #%player% = Username, %nickname% = Player Display Name
+  DefaultLeaveMessage: 'DEFAULT'
+  
+  #What commands should be run on the player when they first join the server?
+  FirstJoinCommands:
+    - 'example command'
+    
+  #What commands should be run whenever a player joins the server?
+  #If the player is joining for the first time, these will not run.
+  JoinCommands:
+    - 'example command'
+    
+  #What commands should be run whenever a player leaves the server?
+  LeaveCommands:
+    - 'example command'
+    
+  #How many ticks should the flair wait after the player joins before running.
+  #Using 0, or a very low amount may make the player not able to see it.
+  FlairJoinDelay: 20
+  
+  #This will assume default commands for players and not require you to assign specific permissions for default commands.
+  #Disabling this will make every command require a permission to execute.
+  # Shop, Balance, Balance Other, Flairs, Custom Join Messages
+  AssumeDefaultCommands: true
+  
+  #What phrases can the player use to earn points?
+  #To earn a point, the player MUST use the players username, or display name (nickname) to earn a point.
+  #For example: 'welcome back <player>'
+  Phrases:
+    
+    #Enabling this will make it so, saying anything as long as it contains their name will earn them a point.
+    #Would recommend to use this as mistypes, languages, and different factors can make it so players won't earn points.
+    AllPhrases: true
+    
+    #If you don't want to use the above setting, you can put the phrases here.
+    #These will check to see if the message includes it. i.e. 'wb' will work for 'bla bla wb <player>'
+    Specific:
+      - 'example phrase 1'
+      - 'example phrase 2'
+ 
+#=====================================================================================================================
+
+#Custom join and leave messages. You can create your own below.
+#Permission will be 'pyrowelcomespro.joinmessage.<name>'
+#Valid types are 'LOGIN, LOGOUT, BOTH'
+
+CustomJoinMessages:
+
+  #Commented example
+  #Name of the message - can be anything as long as it is unique.
+  #The permission for this custom join message will be 'pyrowelcomespro.joinmessage.fireballed_in'
+  fireballed_in:
+  
+    #If this should be a join, leave or a message for both instances. 
+    type: LOGIN
+    
+    #Supports PlaceholderAPI
+    message: '&c%player% has just fireballed in.'
+
+  #uncommented examples
+  vanished_void:
+    type: LOGOUT
+    message: '&7%player% has just vanished into the void.'
+    
+  poofed_in:
+    type: LOGIN
+    message: '&a%player% has just poofed into existence.'
+
+
+#=====================================================================================================================
+
+#Emojis for chat. You can use this if you have a plugin that adds in Emojis using Chinese or Japanese Kanji or symbols
+#and the plugin doesn't have specific support for it.
+
+#Settings to do with emojis.
+EmojiSettings:
+
+  #The chat format required to parse emojis into chat.
+  Format: ':%key%:' #Example for this: :heart: 
+  
+  #This will cancel the message if the message includes an emoji
+  #that the player does not have permission to use.
+  CancelMessage: false
+  
+  #This will remove emojis from the message if it includes an emoji
+  #that the player does not have permission to use.
+  RemoveEmojis: false
+
+#Permission for each emoji is 'pyrowelcomes.emoji.<key>' 
+#You can give all emojis with 'pyrowelcomes.emoji.*'
+Emojis:
+  
+  mrfloris: ❤
+
+
+
+#=====================================================================================================================

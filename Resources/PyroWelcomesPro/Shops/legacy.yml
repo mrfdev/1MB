@@ -1,0 +1,496 @@
+#=========================================================================================
+#
+# To make a new category, or shop, just copy this file and rename it.
+#
+# This is a example category shop. To make an item buyable with points, add
+# 'price: <cost>' to the itemstack you want to add. 
+# Not including this will mark it as a decoration instead. i.e. glass, etc.
+#
+# If you want to make an item open another category, i.e. sub-menu, add 
+# 'category: <id>' to the itemstack you want to add it to.
+#
+# You do not need to include everything on each item. If you don't include it
+# like in the background-black example, it will be ignored.
+#
+# Commands are executed through console. Not including 'permission' on an item
+# will make it assume there is no permission.
+#
+#=========================================================================================
+
+Category:
+  Title: '&5&lLegacy Category'
+
+  #What items should be in the menu.
+  Items:
+
+    diamond_and_emerald:
+      price: 15
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.diamond_and_emerald'
+      commands: 
+        - 'cmi give %player% diamond 1'
+        - 'cmi give %player% emerald 1'
+      name: '&2&l1 Diamond & Emerald'
+      material: DIAMOND
+      amount: 1
+      slots: [10] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Exchange your welcome points, '
+        - '&8>#4585e6 for a diamond and an emerald. '
+
+    smite_yourself:
+      price: 15
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.smite_yourself'
+      commands: 
+        - 'cmi smite %player%'
+        - 'cmi effect %player% slow 10 1 -s -visual'
+      name: '&b&l Smite Yourself!'
+      material: GOLDEN_AXE
+      amount: 1
+      slots: [11] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Want to impress your friends? '
+        - '&8>#4585e6 Get struck by lightning :O '
+
+    mending_book:
+      price: 800
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.mending_book'
+      commands: 
+        - 'cmi give %player% enchanted_book:mending 1'
+      name: '&e&l Mending Book!'
+      material: ENCHANTED_BOOK
+      amount: 1
+      slots: [12] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Fix your armour or tools, '
+        - '&8>#4585e6 with this Mending enchant. '
+
+    convert_money:
+      price: 20
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.convert_money'
+      commands: 
+        - 'cmi money give %player% 250'
+      name: '&2&l Money'
+      material: PAPER
+      amount: 1
+      slots: [13] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Become a little richer, '
+        - '&8>#4585e6 exchange for $250 /money. '
+
+    repair_tool:
+      price: 125
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.repair_tool'
+      commands: 
+        - 'cmi repair %player% hand'
+        - 'cmi msg %player% !{#d9e645} I have tried to repair the tool in your hand'
+      name: '&2&l Repair Tool'
+      material: ANVIL
+      amount: 1
+      slots: [14] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Repair the one tool you are '
+        - '&8>#4585e6 now holding in your hand. '
+
+    repair_armor:
+      price: 525
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.repair_armor'
+      commands: 
+        - 'cmi repair %player% armor'
+        - 'cmi msg %player% !{#d9e645} I have tried to repair the armor you are wearing'
+      name: '&2&l Repair Armor'
+      material: CHIPPED_ANVIL
+      amount: 1
+      slots: [15] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Repair all the armor you '
+        - '&8>#4585e6 are currently wearing. '
+
+    repair_everything:
+      price: 5000
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.repair_everything'
+      commands: 
+        - 'cmi repair %player% all'
+        - 'cmi msg %player% !{#d9e645} I have tried to repair everything in your inventory'
+      name: '&2&l Repair Everything'
+      material: DAMAGED_ANVIL
+      amount: 1
+      slots: [16] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Repair all the armor, tools, '
+        - '&8>#4585e6 and weapons in your inventory. '
+
+    repair_health:
+      price: 30
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.repair_health'
+      commands: 
+        - 'cmi heal %player%'
+        - 'cmi msg %player% !{#d9e645} I have tried to fix your hunger and hearts'
+      name: '&2&l Repair Health'
+      material: GOLDEN_APPLE
+      amount: 1
+      slots: [19] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Repair your hunger and hearts, '
+        - '&8>#4585e6 stay safe out there. <3 '
+
+    emmasparkles_fireworks:
+      price: 30
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.emmasparkles_fireworks'
+      commands: 
+        - 'cmi kit emmasparkles %player%'
+      name: '&2&l Fireworks!'
+      material: FIREWORK_ROCKET
+      amount: 64
+      slots: [20] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Orange sparkly party fireworks,'
+        - '&8>#4585e6 these are made by emmabear.'
+
+    purple_shulkerbox:
+      price: 150
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.purple_shulkerbox'
+      commands: 
+        - 'cmi give %player% PURPLE_SHULKER_BOX 1'
+      name: '&2&l Shulker Box!'
+      material: PURPLE_SHULKER_BOX
+      amount: 1
+      slots: [21] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Our server does not have backpacks,'
+        - '&8>#4585e6 but here is extra storage for you.'
+
+    elytra:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.elytra'
+      commands: 
+        - 'cmi give %player% ELYTRA 1'
+      name: '&2&l Wings!'
+      material: ELYTRA
+      amount: 1
+      slots: [22] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Fly around like a boss,'
+        - '&8>#4585e6 or look like an angel.'
+
+    cheat_death:
+      price: 125
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.cheat_death'
+      commands: 
+        - 'cmi give %player% TOTEM_OF_UNDYING 1'
+      name: '&2&l Cheat Death!'
+      material: TOTEM_OF_UNDYING
+      amount: 1
+      slots: [23] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Just like a cat,'
+        - '&8>#4585e6 an extra life.'
+
+    nether_star:
+      price: 300
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.nether_star'
+      commands: 
+        - 'cmi give %player% nether_star 1'
+      name: '&2&l Awesome Powers!'
+      material: NETHER_STAR
+      amount: 1
+      slots: [24] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Buff powers for your base,'
+        - '&8>#4585e6 with this awesome nether_star.'
+
+    heal_everybody:
+      price: 30
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.heal_everybody'
+      commands: 
+        - 'cmi heal all'
+        - 'cmi broadcast !&e %player% was super friendly and healed everybody online. woop'
+      name: '&2&l Heal Everybody!'
+      material: COBBLESTONE
+      amount: 1
+      slots: [25] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 be kind and heal all'
+        - '&8>#4585e6 online players at once.'
+
+    trident:
+      price: 200
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.trident'
+      commands: 
+        - 'cmi give %player% TRIDENT 1'
+      name: '&2&l Spear!'
+      material: TRIDENT
+      amount: 1
+      slots: [28] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Kill like a boss, or look'
+        - '&8>#4585e6 cool like a king of the sea.'
+
+    land_florist:
+      price: 60
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.land_florist'
+      commands: 
+        - 'mcperks Florist %player%'
+      name: '&2&l 1MB Land Florist!'
+      material: BONE_MEAL
+      amount: 1
+      slots: [29] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Become a 1MB Land Florist with'
+        - '&8>#4585e6 this perk for 2 minutes!'
+        - '&8>#4585e6 Bonemeal when used on land'
+        - '&8>#4585e6 will plant flowers!'
+        - '&8>#4585e6 (Perk is global, for all players)'
+
+    aquatic_florist:
+      price: 60
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.aquatic_florist'
+      commands: 
+        - 'mcperks UnderWaterFlorist %player%'
+      name: '&2&l 1MB Aquatic Florist!'
+      material: BONE_MEAL
+      amount: 1
+      slots: [30] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Become a 1MB Aquatic Florist with'
+        - '&8>#4585e6 this perk for 2 minutes!'
+        - '&8>#4585e6 Bonemeal when used underwater'
+        - '&8>#4585e6 will have an aquatic effect!'
+        - '&8>#4585e6 (Perk is global, for all players)'
+
+    extra_hearts:
+      price: 60
+      enabled: false
+      permission: 'pyrowelcomespro.legacy.extra_hearts'
+      commands: 
+        - 'mcperks IncreaseMaxHealth %player%'
+      name: '&2&l 1MB Extra Hearts!'
+      material: GOLDEN_APPLE
+      amount: 1
+      slots: [31] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Increase the max health of all!'
+        - '&8>#4585e6 Gives you extra hearts yay!'
+        - '&8>#4585e6 This perk is for 2 minutes!'
+        - '&8>#4585e6 (Perk is global, for all players)'
+
+    god_mode:
+      price: 100
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.example_item'
+      commands: 
+        - 'cmi tgod %player% 60'
+      name: '&2&l 1MB Temp God Mode!'
+      material: RESPAWN_ANCHOR
+      amount: 1
+      slots: [32] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b READ THIS VERY CAREFULLY!'
+        - '&8>#4585e6 For 100 /points, it will try'
+        - '&8>#4585e6 to make give you GOD MODE,'
+        - '&8>#4585e6 for &l30 seconds&r#4585e6. It might'
+        - '&8>#4585e6 just be what you need!'
+        - '&8>&7 NOTE: Time does not stack.'
+
+    player_own_head:
+      price: 75
+      enabled: false
+      permission: 'pyrowelcomespro.legacy.player_own_head'
+      commands: 
+        - 'cmi skin off %player%'
+        - 'cmi skin update %player%'
+        - 'cmi skin %player% %player%'
+        - 'cmi head %player% %player%'
+        - 'cmi skin off %player%'
+      name: '&2&l 1MB Your Head!'
+      material: PLAYER_HEAD
+      amount: 1
+      slots: [33] #Must be a list.
+      glowing: false
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b player_head of you'
+        - '&8>#4585e6 For 75 /points, it will try'
+        - '&8>#4585e6 to give you your player_head.'
+
+    sponge:
+      price: 75
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.sponge'
+      commands: 
+        - 'cmi give %player% sponge 1'
+      name: '&2&l 1MB Item: Sponge!'
+      material: SPONGE
+      amount: 1
+      slots: [34] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Tired of the water?'
+        - '&8>#4585e6 Cleaning out grinder?'
+        - '&8>#4585e6 A quick way to get a Sponge!'
+
+    nautilus_shell:
+      price: 75
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.nautilus_shell'
+      commands: 
+        - 'cmi give %player% NAUTILUS_SHELL 1'
+      name: '&2&l 1MB Item: Nautilus Shell!'
+      material: NAUTILUS_SHELL
+      amount: 1
+      slots: [37] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>&b Tired of looking for these'
+        - '&8>#4585e6 fancy shells? This is a quick'
+        - '&8>#4585e6 way to get a Nautilus Shell!'
+
+    heart_ofthe_sea:
+      price: 300
+      enabled: true
+      permission: 'pyrowelcomespro.legacy.heart_ofthe_sea'
+      commands: 
+        - 'cmi give %player% heart_of_the_sea 1'
+      name: '&2&l Finally, the heart of the sea!!'
+      material: HEART_OF_THE_SEA
+      amount: 1
+      slots: [38] #Must be a list.
+      glowing: true
+      model_data: 0
+      lore:
+        - '&8>#d9e645 Price: &l%price%&r#d9e645 points.'
+        - '&r'
+        - '&8>#4585e6 Complete your aquatic experience,'
+        - '&8>#4585e6 with this hard to find heart_of_the_sea.'
+
+    #Cosmetic item
+    background-black:
+      material: BLACK_STAINED_GLASS_PANE
+      name: ' '
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 27, 36, 17, 26, 35, 44, 46, 47, 48, 50, 51, 52]
+      
+    back-to-index:
+      material: ARROW
+      name: '&aBack to Index'
+      lore:
+        - '&7Press to go to the index'
+      category: 'categories'
+      slots: [53]
+
+    #Cosmetic item
+    point-balance:
+      material: EMERALD
+      name: '&aPoint Balance:'
+      lore:
+        - '&7You currently have &e%pyrowelcomespro_points% &7points.'
+      slots: [49]
+
+    infobook:
+      material: WRITABLE_BOOK
+      name: '#d9e645Info'
+      lore:
+        - '#4585e6Press to learn more about'
+        - '#4585e6this /points feature, and'
+        - '#4585e6how to earn more points.'
+      slots: [45]
+      commands:
+        - 'cmi openbook points %player%'

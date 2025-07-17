@@ -1,0 +1,88 @@
+#=========================================================================================
+#
+# To make a new category, or shop, just copy this file and rename it.
+#
+# This is a example category shop. To make an item buyable with points, add
+# 'price: <cost>' to the itemstack you want to add. 
+# Not including this will mark it as a decoration instead. i.e. glass, etc.
+#
+# If you want to make an item open another category, i.e. sub-menu, add 
+# 'category: <id>' to the itemstack you want to add it to.
+#
+# You do not need to include everything on each item. If you don't include it
+# like in the background-black example, it will be ignored.
+#
+# Commands are executed through console. Not including 'permission' on an item
+# will make it assume there is no permission.
+#
+#=========================================================================================
+
+Category:
+  Title: '&5&lExample Category'
+  
+  #What items should be in the menu.
+  Items:
+  
+    #Permission with sellable item.
+    example_item:
+      enabled: false
+      permission: 'pyrowelcomespro.ores.example_item'
+      material: DIAMOND_ORE
+      name: '&bDiamond Ore'
+      amount: 1
+      lore:
+        - '&fExample Lore for diamond ore here.'
+      slots: [20] #Must be a list.
+      glowing: false
+      model_data: 0
+      price: 100
+      commands:
+        - 'example command 1'
+        - 'example command 2'
+       
+    #This shows the bare minimum needed to make an item buyable in the gemshop.
+    example_item2:
+      enabled: false
+      permission: 'pyrowelcomespro.ores.example_item'
+      material: DIAMOND_ORE
+      name: '&bDiamond Ore'
+      lore:
+        - '&fExample Lore for diamond ore here.'
+      slots: [22] #Must be a list.
+      price: 100
+      commands:
+        - 'example command 1'
+        - 'example command 2'
+          
+    #Cosmetic item
+    background-black:
+      material: BLACK_STAINED_GLASS_PANE
+      name: ' '
+      slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 27, 36, 17, 26, 35, 44, 46, 47, 48, 50, 51, 52]
+
+    back-to-index:
+      material: ARROW
+      name: '&aBack to Index'
+      lore:
+        - '&7Press to go to the index'
+      category: 'categories'
+      slots: [53]
+
+    #Cosmetic item
+    point-balance:
+      material: EMERALD
+      name: '&aPoint Balance:'
+      lore:
+        - '&7You currently have &e%pyrowelcomespro_points% &7points.'
+      slots: [49]
+
+    infobook:
+      material: WRITABLE_BOOK
+      name: '#d9e645Info'
+      lore:
+        - '#4585e6Press to learn more about'
+        - '#4585e6this /points feature, and'
+        - '#4585e6how to earn more points.'
+      slots: [45]
+      commands:
+        - 'cmi openbook points %player%'

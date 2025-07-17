@@ -21,7 +21,7 @@ Settings:
   DailyPointBonus: 5
 
   #How much time do players have to welcome a player to earn points? - in seconds.
-  EarnPointTime: 15
+  EarnPointTime: 18
   
   #What shop should the '/welcomes shop' command open if no argument is provided?
   #Make sure to use the name of the file exactly without the .yml
@@ -145,3 +145,20 @@ Emojis:
 
 
 #=====================================================================================================================
+
+#Discord SRV Specific Settings
+DiscordSRV:
+
+  #Should welcoming from discord be enabled?
+  Enabled: true
+
+  #How many points should players get from welcoming a player?
+  EarnablePoints: 1
+  
+  #Should players be able to get their daily bonus from discord?
+  DailyBonus: true
+  
+  #What emojis get added to the players message upon a successful greet.
+  Emojis:
+    Success: '🪙'
+    DailyBonus: '📆'

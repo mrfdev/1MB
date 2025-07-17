@@ -20,7 +20,7 @@ set -e  # Exit immediately on error
 
 CACHE_FILE=".papercache.json"            # File to store the cache
 DEFAULT_PROJECT="paper"                  # Project (usually 'paper')
-DEFAULT_VERSION="1.21.7"                 # Desired Minecraft version
+DEFAULT_VERSION="1.21.8"                 # Desired Minecraft version
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"    # PaperMC v3 API endpoint
 DEBUG=1                                  # Set to 1 for verbose debug output

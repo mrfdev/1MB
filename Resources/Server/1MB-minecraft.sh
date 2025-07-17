@@ -17,7 +17,7 @@
 #
 ###
 
-_minecraftVersion="1.21.7"
+_minecraftVersion="1.21.8"
 # Which version are we running?
 
 _minJavaVersion=24

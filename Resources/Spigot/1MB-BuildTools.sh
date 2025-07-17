@@ -17,13 +17,12 @@
 #
 ###
 
-_minecraftVersion="1.21.7"
+_minecraftVersion="1.21.8"
 # Which version are we running?
 
 _minJavaVersion=24
 # use 24 for java 24.0.1 which can be used with Minecraft 1.21.7
 # use 23 for java 23.0.2 which can be used with Minecraft 1.21.4+
-# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x+
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/

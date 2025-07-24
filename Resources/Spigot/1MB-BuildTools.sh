@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.17.0, build 106
-# @Release: June 25th, 2025
-# @Description: Helps us make a Minecraft Spigot 1.21.7 server.
+# @Version: 2.17.1, build 107
+# @Release: July 24th, 2025
+# @Description: Helps us make a Minecraft Spigot 1.21.8 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-BuildTools.sh
 # @Syntax: ./1MB-BuildTools.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
+
+# @News: > ⚠️ **Deprecated** – This script is no longer actively maintained as I've fully switched to PaperMC for which I also have an Update script.
 
 ### CONFIGURATION
 #
@@ -21,8 +23,7 @@ _minecraftVersion="1.21.8"
 # Which version are we running?
 
 _minJavaVersion=24
-# use 24 for java 24.0.1 which can be used with Minecraft 1.21.7
-# use 23 for java 23.0.2 which can be used with Minecraft 1.21.4+
+# use 24 for java 24.0.2 which can be used with Minecraft 1.21.7
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -52,8 +53,7 @@ _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-24.0.1.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-24.0.2.jdk/Contents/Home/bin/java"
 
 _dirScript="" #leave empty for auto discovery
 # example: _dirScript="/Users/floris/MinecraftServer/_development"

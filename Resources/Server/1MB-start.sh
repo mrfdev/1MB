@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.16.1, build 069 for Minecraft 1.21.8 (Java 24.0.1, 64bit)
+# @Version: 2.16.1, build 070 for Minecraft 1.21.8 (Java 24.0.2, 64bit)
 # @Release: July 17th, 2025
 # @Description: Helps us start and fork a Minecraft 1.21.8 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.

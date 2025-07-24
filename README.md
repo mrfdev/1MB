@@ -27,7 +27,7 @@ We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
 ## 🚀 Quick Start
 
 1. **Connect:**  
-   Java Edition 1.21.4: `play.1moreblock.com:25565`
+   Java Edition 1.21.8: `1moreblock.com:25565`
 2. **Whitelist:**  
    Apply via our website or Discord
 3. **Read Rules:**  
@@ -41,16 +41,16 @@ We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
 
 | Purpose    | Link                                                           |
 | ---------- | -------------------------------------------------------------- |
-| Website    | [https://1moreblock.com](https://1moreblock.com)               |
-| Discord    | [https://discord.gg/1moreblock](https://discord.gg/1moreblock) |
-| Wiki (WIP) | [https://wiki.1moreblock.com](https://wiki.1moreblock.com)     |
-| Rules      | [https://1moreblock.com/rules](https://1moreblock.com/rules)   |
+| Website    | [https://www.1moreblock.com](https://www.1moreblock.com)       |
+| Discord    | [https://discord.gg/floris](https://discord.gg/floris)         |
+| Wiki (WIP) | [https://www.1moreblock.com](https://www.1moreblock.com)       |
+| Rules      | [https://www.1moreblock.com](https://www.1moreblock.com)       |
 
 ---
 
 ## 🛠️ Server Details
 
-- **Software:** Standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
+- **Software:** Standalone [PaperMC 1.21.8](https://papermc.io/software/paper)
 - **Host Hardware:** Apple M-series (M1, M2 Pro, M4 Pro)
 - **Primary Gamemodes:** Survival, Creative, OneBlock, Skyblock, Event worlds
 
@@ -104,8 +104,8 @@ We welcome:
 
 ## 📌 Version Info
 
-- **Current Minecraft Version:** Paper 1.21.4
-- **Current Server Build:** 1MB v3.8.10 - released July 1st, 2025
+- **Current Minecraft Version:** Paper 1.21.8
+- **Current Server Build:** 1MB v3.9.0 - released 23rd, 2025
 
 ---
 
@@ -133,4 +133,4 @@ Spot an error or want to help? Open an Issue or submit a PR!
 
 ## Version
 
-This is 1MB Github version 2.15.5 build 102, July 17th, 2025.
+This is 1MB Github version 2.16.0 build 103, July 24th, 2025.

@@ -31,6 +31,8 @@ pets:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW
@@ -66,9 +68,6 @@ pets:
       maximum-characters: 15
       cost: 500
 
-    # This feature makes the entity toss items in different directions.
-    tossing-items: true
-
   cosmetics:
     allay:
       enable: true
@@ -77,6 +76,13 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "ALLAY"
+      baby: false
+      spawn-sound: "ENTITY_ALLAY_AMBIENT_WITHOUT_ITEM"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: GHAST_TEAR
       amount: 1
       slot: 10
@@ -88,6 +94,30 @@ pets:
         - "&7A friendly spirit that"
         - "&7follows you around."
 
+    armadillo:
+      enable: true
+      name: "&bArmadillo"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: COMMON
+      entity: "ARMADILLO"
+      baby: true
+      spawn-sound: "ENTITY_ARMADILLO_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
+      material: ARMADILLO_SCUTE
+      amount: 1
+      slot: 11
+      page: 1
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7A friendly companion."
+
     axolotl:
       enable: true
       name: "&bAxolotl"
@@ -95,9 +125,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "AXOLOTL"
+      baby: true
+      spawn-sound: "ENTITY_AXOLOTL_SWIM"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: AXOLOTL_BUCKET
       amount: 1
-      slot: 11
+      slot: 12
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -112,9 +149,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "BEE"
+      baby: true
+      spawn-sound: "ENTITY_BEE_LOOP"
+      toss-item:
+        enable: true
+        material: "HONEYCOMB"
+        custom-model-data: 0
       material: HONEYCOMB
       amount: 1
-      slot: 12
+      slot: 13
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -131,7 +175,7 @@ pets:
       rarity: LEGENDARY
       material: POPPY
       amount: 1
-      slot: 13
+      slot: 14
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -147,9 +191,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "COW"
+      baby: true
+      spawn-sound: "ENTITY_COW_AMBIENT"
+      toss-item:
+        enable: true
+        material: "MILK_BUCKET"
+        custom-model-data: 0
       material: MILK_BUCKET
       amount: 1
-      slot: 14
+      slot: 15
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -165,9 +216,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "CAMEL"
+      baby: true
+      spawn-sound: "ENTITY_CAMEL_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: SAND
       amount: 1
-      slot: 15
+      slot: 16
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -182,9 +240,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "CAVE_SPIDER"
+      baby: false
+      spawn-sound: "ENTITY_SPIDER_AMBIENT"
+      toss-item:
+        enable: true
+        material: "COBWEB"
+        custom-model-data: 0
       material: SPIDER_EYE
       amount: 1
-      slot: 16
+      slot: 19
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -200,9 +265,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "CHICKEN"
+      baby: true
+      spawn-sound: "ENTITY_CHICKEN_AMBIENT"
+      toss-item:
+        enable: true
+        material: "EGG"
+        custom-model-data: 0
       material: FEATHER
       amount: 1
-      slot: 19
+      slot: 20
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -219,7 +291,7 @@ pets:
       rarity: COMMON
       material: WHITE_WOOL
       amount: 1
-      slot: 20
+      slot: 21
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -235,9 +307,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "RABBIT"
+      baby: true
+      spawn-sound: "ENTITY_RABBIT_AMBIENT"
+      toss-item:
+        enable: true
+        material: "EGG"
+        custom-model-data: 0
       material: CARROT
       amount: 1
-      slot: 21
+      slot: 22
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -255,7 +334,7 @@ pets:
       rarity: LEGENDARY
       material: EMERALD
       amount: 1
-      slot: 22
+      slot: 23
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -270,9 +349,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "ENDERMITE"
+      baby: true
+      spawn-sound: "ENTITY_ENDERMITE_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: ENDER_PEARL
       amount: 1
-      slot: 23
+      slot: 24
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -287,9 +373,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "FOX"
+      baby: true
+      spawn-sound: "ENTITY_FOX_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: ORANGE_DYE
       amount: 1
-      slot: 24
+      slot: 25
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -304,9 +397,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "FROG"
+      baby: true
+      spawn-sound: "ENTITY_FROG_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: SLIME_BALL
       amount: 1
-      slot: 25
+      slot: 28
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -321,9 +421,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "GOAT"
+      baby: true
+      spawn-sound: "ENTITY_GOAT_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: MILK_BUCKET
       amount: 1
-      slot: 28
+      slot: 29
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -338,9 +445,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "HOGLIN"
+      baby: true
+      spawn-sound: "ENTITY_HOGLIN_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: RAW_GOLD
       amount: 1
-      slot: 29
+      slot: 30
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -355,9 +469,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "CAT"
+      baby: true
+      spawn-sound: "ENTITY_CAT_AMBIENT"
+      toss-item:
+        enable: true
+        material: "TROPICAL_FISH"
+        custom-model-data: 0
       material: COD
       amount: 1
-      slot: 30
+      slot: 31
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -373,9 +494,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "LLAMA"
+      baby: true
+      spawn-sound: "ENTITY_LLAMA_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: LEAD
       amount: 1
-      slot: 31
+      slot: 32
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -390,9 +518,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "MOOSHROOM"
+      baby: true
+      spawn-sound: "ENTITY_COW_AMBIENT"
+      toss-item:
+        enable: true
+        material: "RED_MUSHROOM"
+        custom-model-data: 0
       material: RED_MUSHROOM
       amount: 1
-      slot: 32
+      slot: 33
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -408,9 +543,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "PANDA"
+      baby: true
+      spawn-sound: "ENTITY_PANDA_AMBIENT"
+      toss-item:
+        enable: true
+        material: "BAMBOO"
+        custom-model-data: 0
       material: BAMBOO
       amount: 1
-      slot: 33
+      slot: 34
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -425,9 +567,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "PARROT"
+      baby: false
+      spawn-sound: "ENTITY_PARROT_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: FEATHER
       amount: 1
-      slot: 34
+      slot: 37
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -442,9 +591,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "PIG"
+      baby: true
+      spawn-sound: "ENTITY_PIG_AMBIENT"
+      toss-item:
+        enable: true
+        material: "PORKCHOP"
+        custom-model-data: 0
       material: PORKCHOP
       amount: 1
-      slot: 37
+      slot: 38
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -460,9 +616,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "PIGLIN"
+      baby: true
+      spawn-sound: "ENTITY_PIGLIN_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: GOLD_INGOT
       amount: 1
-      slot: 38
+      slot: 39
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -478,9 +641,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "POLAR_BEAR"
+      baby: true
+      spawn-sound: "ENTITY_POLAR_BEAR_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: PACKED_ICE
       amount: 1
-      slot: 39
+      slot: 40
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -496,9 +666,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "WOLF"
+      baby: true
+      spawn-sound: "ENTITY_WOLF_AMBIENT"
+      toss-item:
+        enable: true
+        material: "BONE"
+        custom-model-data: 0
       material: BONE
       amount: 1
-      slot: 40
+      slot: 41
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -515,7 +692,7 @@ pets:
       rarity: LEGENDARY
       material: REDSTONE
       amount: 1
-      slot: 41
+      slot: 42
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -531,9 +708,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "SILVERFISH"
+      baby: false
+      spawn-sound: "ENTITY_SILVERFISH_AMBIENT"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: STONE_BUTTON
       amount: 1
-      slot: 42
+      slot: 43
       page: 1
       custom-model-data: 0
       displayname: "%name%"
@@ -549,10 +733,17 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "SNIFFER"
+      baby: true
+      spawn-sound: "ENTITY_SNIFFER_SNIFFING"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: SNIFFER_EGG
       amount: 1
-      slot: 43
-      page: 1
+      slot: 10
+      page: 2
       custom-model-data: 0
       displayname: "%name%"
       lore:
@@ -566,9 +757,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "TURTLE"
+      baby: false
+      spawn-sound: "ENTITY_TURTLE_EGG_HATCH"
+      toss-item:
+        enable: false
+        material: "DIAMOND"
+        custom-model-data: 0
       material: TURTLE_HELMET
       amount: 1
-      slot: 10
+      slot: 11
       page: 2
       custom-model-data: 0
       displayname: "%name%"
@@ -585,7 +783,7 @@ pets:
       rarity: COMMON
       material: EMERALD
       amount: 1
-      slot: 11
+      slot: 12
       page: 2
       custom-model-data: 0
       displayname: "%name%"
@@ -600,9 +798,16 @@ pets:
       purchasable: false
       cost: 2000
       rarity: COMMON
+      entity: "ZOMBIE_VILLAGER"
+      baby: true
+      spawn-sound: "ENTITY_ZOMBIE_AMBIENT"
+      toss-item:
+        enable: true
+        material: "ROTTEN_FLESH"
+        custom-model-data: 0
       material: ROTTEN_FLESH
       amount: 1
-      slot: 12
+      slot: 13
       page: 2
       custom-model-data: 0
       displayname: "%name%"

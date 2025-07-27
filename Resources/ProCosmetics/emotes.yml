@@ -29,6 +29,8 @@ emotes:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW

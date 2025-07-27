@@ -20,6 +20,7 @@ multi-world:
     - spawn
     - sanctuary
     - parkour
+    - lumifae
 
 # World Guard Support
 world-guard:
@@ -71,6 +72,7 @@ settings:
     give-on:
       join: false
       world-change: false
+      death: false
 
     material: CHEST
     amount: 1

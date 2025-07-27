@@ -29,6 +29,8 @@ morphs:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW
@@ -62,7 +64,7 @@ morphs:
 
     self-view:
       enable: true
-      default-enabled: false
+      default-enabled: true
       show-name-tag: true
 
   cosmetics:
@@ -130,7 +132,7 @@ morphs:
         - "&7can choose to become the nicest or"
         - "&7the most evil witch in the world."
         - ""
-        - "&bLeft-click §7to throw a speed potion."
+        - "&bLeft-click &7to throw a speed potion."
         - "&bSneak while left-clicking &7to throw a"
         - "&7blindness potion."
 

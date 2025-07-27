@@ -30,6 +30,8 @@ mounts:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW
@@ -57,7 +59,7 @@ mounts:
     ride-on-spawn: false
     # This feature despawns the mount once a player stops riding it.
     despawn-on-dismount: false
-  
+
   cosmetics:
     infernal-horror:
       enable: true

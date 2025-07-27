@@ -30,6 +30,8 @@ gadgets:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW
@@ -703,13 +705,13 @@ gadgets:
       enable: true
       name: "&bShower"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 80.0
       duration: 60.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -731,13 +733,13 @@ gadgets:
       enable: true
       name: "&bHot Tub"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 80.0
       duration: 60.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -759,13 +761,13 @@ gadgets:
       enable: true
       name: "&bHot Air Balloon"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 60.0
       duration: 40.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -787,13 +789,13 @@ gadgets:
       enable: true
       name: "&bCannon"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 20.0
       duration: 10.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -815,13 +817,13 @@ gadgets:
       enable: true
       name: "&bDiving Board"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 80.0
       duration: 60.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -843,13 +845,13 @@ gadgets:
       enable: true
       name: "&bFlame Thrower"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 30.0
       duration: 10.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -871,13 +873,13 @@ gadgets:
       enable: true
       name: "&bParkour Spiral"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 80.0
       duration: 60.0
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false
@@ -899,12 +901,12 @@ gadgets:
       enable: true
       name: "&bWater Gun"
       can-be-found: true
-      purchasable: true
+      purchasable: false
       cost: 2000
       rarity: RARE
       cooldown: 1.5
       ammo:
-        purchasable: true
+        purchasable: false
         purchase-amount: 10
         cost: 200
         infinity: false

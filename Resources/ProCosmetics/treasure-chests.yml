@@ -53,7 +53,7 @@ treasure-chests:
     normal:
       enable: true
       name: "Normal"
-      purchasable: true
+      purchasable: false
       cost: 1000
       chests-to-open: 4
       chest-animation: NORMAL
@@ -128,7 +128,7 @@ treasure-chests:
     mythical:
       enable: true
       name: "Mythical"
-      purchasable: true
+      purchasable: false
       cost: 5000
       chests-to-open: 4
       chest-animation: MYTHICAL
@@ -203,7 +203,7 @@ treasure-chests:
     legendary:
       enable: true
       name: "Legendary"
-      purchasable: true
+      purchasable: false
       cost: 10000
       chests-to-open: 4
       chest-animation: LEGENDARY

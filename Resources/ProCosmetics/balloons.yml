@@ -339,6 +339,26 @@ balloons:
         - ""
         - "&7Summer memories last forever."
 
+    dutchflag:
+      enable: true
+      name: "&bDutch Balloon"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: RARE
+      entity: ARMOR_STAND
+      baby: false
+      texture: "de3535538e4713eb5ca6a77d1e86db2e0fa6c54a20761fe1b9abd10d7c371fe5"
+      material: PLAYER_HEAD
+      amount: 1
+      slot: 11
+      page: 3
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&71MB is a Dutch server!."
+
     soccerball:
       enable: true
       name: "&bSoccerball Balloon"

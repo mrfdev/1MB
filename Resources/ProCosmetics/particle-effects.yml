@@ -30,6 +30,8 @@ particle-effects:
       custom-model-data: 0
       displayname: "&cGo back"
       lore: [ ]
+      # If this is empty, it will return to the main menu.
+      command: ""
 
     previous-page:
       material: ARROW
@@ -614,6 +616,40 @@ particle-effects:
       lore:
         - ""
         - "&7Spruce up your living."
+
+    skull:
+      enable: true
+      name: "&bSkull"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: SKELETON_SKULL
+      amount: 1
+      slot: 14
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Spooky scary skeletons ☠"
+
+    bunny:
+      enable: true
+      name: "&bBunny"
+      can-be-found: true
+      purchasable: false
+      cost: 2000
+      rarity: LEGENDARY
+      material: RABBIT_SPAWN_EGG
+      amount: 1
+      slot: 15
+      page: 2
+      custom-model-data: 0
+      displayname: "%name%"
+      lore:
+        - ""
+        - "&7Cute Easter bunny!"
 
 # Do not edit this!
 config-version: 1

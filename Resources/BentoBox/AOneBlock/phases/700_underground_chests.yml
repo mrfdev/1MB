@@ -447,8 +447,4 @@
           ==: org.bukkit.inventory.ItemStack
           v: 2230
           type: IRON_INGOT
-        15:
-          ==: org.bukkit.inventory.ItemStack
-          v: 2230
-          type: GLOW_BERRIES
       rarity: EPIC

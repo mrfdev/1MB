@@ -1,4 +1,4 @@
-# AOneBlock Configuration 1.17.0-SNAPSHOT-b400
+# AOneBlock Configuration 1.19.0
 aoneblock:
   command:
     # Player command. What command users will run to access their island.
@@ -31,6 +31,10 @@ aoneblock:
     # By default it is 'setCount'.
     # Added since 1.10.0.
     set-count-command: setCount
+    # The command label that toggers the progress bar.
+    # By default it is 'bossbar'.
+    # Added since 1.19.0.
+    bossbar-command: bossbar
     # How long a player must wait until they can use the setCount command again. In minutes.
     # This is the command that is run from the phases panel.
     # Added since 1.13.0.
@@ -125,6 +129,9 @@ world:
   # Island height - Lowest is 5.
   # It is the y coordinate of the bedrock block in the schem.
   island-height: 80
+  # The number of concurrent islands a player can have in the world
+  # A value of 0 will use the BentoBox config.yml default
+  concurrent-islands: 1
   # Disallow team members from having their own islands.
   disallow-team-member-islands: false
   # Use your own world generator for this world.
@@ -145,11 +152,11 @@ world:
   # a new island for example. Options are SURVIVAL, CREATIVE, ADVENTURE, SPECTATOR
   default-game-mode: SURVIVAL
   # The default biome for the overworld
-  default-biome: PLAINS
+  default-biome: plains
   # The default biome for the nether world (this may affect what mobs can spawn)
-  default-nether-biome: NETHER_WASTES
+  default-nether-biome: nether_wastes
   # The default biome for the end world (this may affect what mobs can spawn)
-  default-end-biome: THE_END
+  default-end-biome: the_end
   # The maximum number of players a player can ban at any one time in this game mode.
   # The permission acidisland.ban.maxlimit.X where X is a number can also be used per player
   # -1 = unlimited
@@ -195,10 +202,10 @@ world:
     create-obsidian-platform: false
   # Mob white list - these mobs will NOT be removed when logging in or doing /island
   remove-mobs-whitelist:
-  - ENDERMAN
-  - ZOMBIE_VILLAGER
-  - WITHER
-  - ZOMBIFIED_PIGLIN
+  - enderman
+  - zombified_piglin
+  - zombie_villager
+  - wither
   # World flags. These are boolean settings for various flags for this world
   flags:
     DRAGON_EGG: false
@@ -273,6 +280,7 @@ world:
     ENDER_PEARL: false
     DOOR: true
     BREAK_HOPPERS: false
+    PODZOL: false
     FURNACE: false
     LIQUIDS_FLOWING_OUT: false
     MINECART: false
@@ -338,9 +346,11 @@ world:
     BUCKET: 500
     LOCK: 0
     ENDER_PEARL: 500
+    BELL_RINGING: 500
     DOOR: 500
     BREAK_HOPPERS: 500
     FURNACE: 500
+    HURT_TAMED_ANIMALS: 500
     ANVIL: 500
     MINECART: 500
     FISH_SCOOPING: 500
@@ -390,6 +400,7 @@ world:
     COMMAND_RANKS: 500
     ALLAY: 500
     BEACON: 500
+    CRAFTER: 500
     TRAPDOOR: 500
     EXPERIENCE_BOTTLE_THROWING: 500
     PRESSURE_PLATE: 0
@@ -412,6 +423,7 @@ world:
     SMITHING: 500
     EXPERIENCE_PICKUP: 500
     HOPPER: 500
+    CANDLES: 500
     LEASH: 500
     BREAK_BLOCKS: 500
     MOUNT_INVENTORY: 500
@@ -429,14 +441,17 @@ world:
     LEAF_DECAY: true
     ENDERMAN_TELEPORT: true
     ANIMAL_NATURAL_SPAWN: true
+    BOSSBAR: true
     MONSTER_NATURAL_SPAWN: true
     SHULKER_TELEPORT: true
     FIRE_SPREAD: true
     FIRE_BURNING: true
+    COMMAND_RANKS: true
     PVP_OVERWORLD: false
     MONSTER_SPAWNERS_SPAWN: true
     TNT_DAMAGE: true
     FIRE_IGNITE: true
+    ONEBLOCK_BOSSBAR: true
     BLOCK_EXPLODE_DAMAGE: true
     ANIMAL_SPAWNERS_SPAWN: true
   # These settings/flags are hidden from users
@@ -486,6 +501,9 @@ world:
   - parkour
   - dback
   - back
+  - ec
+  - cmi ender
+  - ender
 island:
   # Drop broken blocks on top of magic block
   # If you want Jobs or other plugins to recognize magic block breaking this must be false

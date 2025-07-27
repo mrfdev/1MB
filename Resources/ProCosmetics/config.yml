@@ -145,5 +145,18 @@ settings:
       - ""
       - "&aClick to purchase for &e%cost% coins&a!"
 
+  unlocked-cosmetic:
+    lore:
+      - "%cosmetic_lore%"
+      - ""
+      - "&eClick to equip!"
+
+  equipped-cosmetic:
+    lore:
+      - "%cosmetic_lore%"
+      - ""
+      - "&eClick to unequip!"
+
+
 # Do not edit this!
 config-version: 1

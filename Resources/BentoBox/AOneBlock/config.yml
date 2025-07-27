@@ -75,11 +75,11 @@ world:
     # Size of particles. Default is 0.5. Must be greater than 0.
     particle-size: 0.5
     # Density of particles - Value from 0.1 to 1. Default is 0.65. Smaller values are more dense, higher are less.
-    particle-density: 0.8
+    particle-density: 0.65
     # Color of particles
     particle-color:
       ==: Color
-      ALPHA: 235
+      ALPHA: 255
       RED: 0
       BLUE: 0
       GREEN: 128
@@ -203,132 +203,37 @@ world:
   # Mob white list - these mobs will NOT be removed when logging in or doing /island
   remove-mobs-whitelist:
   - enderman
-  - zombified_piglin
   - zombie_villager
   - wither
   # World flags. These are boolean settings for various flags for this world
   flags:
-    DRAGON_EGG: false
+    CREEPER_DAMAGE: true
+    OBSIDIAN_SCOOPING: true
     ISLAND_RESPAWN: true
     CREEPER_GRIEFING: false
-    PETS_STAY_AT_HOME: true
-    MAGIC_COBBLESTONE_GENERATOR_PERMISSION: false
-    NATURAL_SPAWNING_OUTSIDE_RANGE: true
-    ANVIL: false
-    VISITOR_TRIGGER_RAID: true
-    TRAPPED_CHEST: false
-    ENDER_CHEST: true
-    TREES_GROWING_OUTSIDE_RANGE: false
-    FROST_WALKER: false
-    PISTON_PUSH: false
-    COLLECT_LAVA: false
-    MAGIC_SUMMON_ISLAND_PROTECTION: false
-    LEVER: false
-    MAGIC_SUMMON_ENABLE_FLAG: true
-    CAKE: false
-    HURT_MONSTERS: false
-    CLEAN_SUPER_FLAT: false
-    TRADING: false
-    EGGS: false
-    CHEST: false
-    ENTER_EXIT_MESSAGES: true
-    PLACE_WARP: false
-    ENDERMAN_DEATH_DROP: true
-    FLINT_AND_STEEL: false
-    SCULK_SENSOR: true
-    CROP_TRAMPLE: false
-    DROPPER: false
-    ENTITY_PORTAL_TELEPORT: false
-    OBSIDIAN_SCOOPING: true
-    TNT_PRIMING: false
-    COLLECT_WATER: false
-    AXOLOTL_SCOOPING: false
-    WORLD_BLOCK_EXPLODE_DAMAGE: false
-    BUTTON: false
-    COMPOSTER: false
-    COMMAND_RANKS: false
-    TRAPDOOR: true
-    EXPERIENCE_BOTTLE_THROWING: false
-    DYE: false
-    HIVE: false
-    ITEM_FRAME: false
-    CRAFTING: true
-    ENCHANTING: true
-    SHEARING: false
-    BOAT: false
-    BED: false
-    SPAWN_EGGS: false
-    BIOMES_WORLD_PROTECTION: true
-    CAULDRON_WITCHERY_ISLAND_PROTECTION: false
-    SCULK_SHRIEKER: true
-    CHEST_DAMAGE: false
-    EXPERIENCE_PICKUP: false
-    PREVENT_TELEPORT_WHEN_FALLING: true
-    HOPPER: false
-    WORLD_TNT_DAMAGE: false
-    LEASH: false
-    BREAK_BLOCKS: false
-    MOUNT_INVENTORY: false
-    OFFLINE_REDSTONE: false
-    JUKEBOX: false
-    POTION_THROWING: false
-    SPAWNER_SPAWN_EGGS: false
-    HURT_ANIMALS: false
-    REDSTONE: false
     VISITOR_KEEP_INVENTORY: false
-    BUCKET: false
-    ENDER_PEARL: false
-    DOOR: true
-    BREAK_HOPPERS: false
-    PODZOL: false
-    FURNACE: false
+    PETS_STAY_AT_HOME: true
+    NATURAL_SPAWNING_OUTSIDE_RANGE: true
     LIQUIDS_FLOWING_OUT: false
-    MINECART: false
-    FISH_SCOOPING: false
-    END_PORTAL: false
-    BREEDING: false
-    HURT_VILLAGERS: false
+    REMOVE_MOBS: true
+    ENDER_CHEST: false
+    TREES_GROWING_OUTSIDE_RANGE: false
     WITHER_DAMAGE: false
-    FARMER_DANCE: false
-    CHALLENGES_ISLAND_PROTECTION: false
-    TURTLE_EGGS: false
-    BIOMES_ISLAND_PROTECTION: false
-    BREAK_SPAWNERS: false
-    ELYTRA: false
+    PISTON_PUSH: false
     COARSE_DIRT_TILLING: true
-    RIDING: false
-    ARMOR_STAND: false
-    NAME_TAG: false
-    ENDERMAN_GRIEFING: false
-    ITEM_DROP: true
-    NOTE_BLOCK: false
-    CREATE_SHOPS: false
+    ENDERMAN_GRIEFING: true
+    CLEAN_SUPER_FLAT: false
+    CHEST_DAMAGE: false
+    PREVENT_TELEPORT_WHEN_FALLING: false
     START_SAFETY: false
-    NETHER_PORTAL: false
+    ENTER_EXIT_MESSAGES: true
+    ALLOW_MOVE_BOX: true
+    ENDERMAN_DEATH_DROP: true
+    OFFLINE_REDSTONE: true
     REMOVE_END_EXIT_ISLAND: true
-    LECTERN: false
-    OFFLINE_GROWTH: false
-    SHULKER_BOX: false
-    ITEM_PICKUP: false
-    BREWING: false
-    CREEPER_DAMAGE: true
-    GREENHOUSE: false
-    FIRE_EXTINGUISH: false
-    BEACON: false
-    ALLAY: false
-    PRESSURE_PLATE: false
-    PLACE_BLOCKS: false
-    REMOVE_MOBS: false
-    FLOWER_POT: false
-    MILKING: false
-    DISPENSER: false
-    GATE: true
-    CHALLENGES_WORLD_PROTECTION: true
-    CHORUS_FRUIT: false
-    CONTAINER: false
+    OFFLINE_GROWTH: true
     ITEM_FRAME_DAMAGE: false
-    BARREL: false
-    COLLECT_POWDERED_SNOW: false
+    SPAWNER_SPAWN_EGGS: true
   # These are the default protection settings for new islands.
   # The value is the minimum island rank required allowed to do the action
   # Ranks are the following:
@@ -360,17 +265,17 @@ world:
     HURT_VILLAGERS: 500
     BOOKSHELF: 500
     HARVEST: 500
-    TURTLE_EGGS: 500
     FROST_WALKER: 500
+    TURTLE_EGGS: 500
     COLLECT_LAVA: 500
     BREAK_SPAWNERS: 500
     LEVER: 500
     ELYTRA: 0
+    CAKE: 500
     RIDING: 500
     HURT_MONSTERS: 0
-    CAKE: 500
-    ARMOR_STAND: 500
     NAME_TAG: 500
+    ARMOR_STAND: 500
     CHANGE_SETTINGS: 1000
     SIGN_EDITING: 500
     TRADING: 0
@@ -378,44 +283,44 @@ world:
     ITEM_DROP: 0
     CHEST: 500
     NOTE_BLOCK: 0
-    CREATE_SHOPS: 400
     FLINT_AND_STEEL: 500
     NETHER_PORTAL: 500
     SCULK_SENSOR: 500
     LECTERN: 500
     SHULKER_BOX: 500
     GRINDSTONE: 500
-    CROP_TRAMPLE: 500
     ITEM_PICKUP: 0
-    BREWING: 500
+    CROP_TRAMPLE: 500
     DROPPER: 500
+    BREWING: 500
+    MOVE_BOX: 1000
     TNT_PRIMING: 500
     PARKOUR_CREATIVE: 500
     COLLECT_WATER: 500
     AXOLOTL_SCOOPING: 500
-    COMPOSTER: 500
     BUTTON: 500
+    COMPOSTER: 500
     STONECUTTING: 500
     FIRE_EXTINGUISH: 500
     COMMAND_RANKS: 500
-    ALLAY: 500
     BEACON: 500
+    ALLAY: 500
     CRAFTER: 500
     TRAPDOOR: 500
-    EXPERIENCE_BOTTLE_THROWING: 500
     PRESSURE_PLATE: 0
+    EXPERIENCE_BOTTLE_THROWING: 500
     DYE: 500
     HIVE: 500
-    PLACE_BLOCKS: 500
     ITEM_FRAME: 500
+    PLACE_BLOCKS: 500
     CROP_PLANTING: 500
     CRAFTING: 0
-    ENCHANTING: 0
     SHEARING: 500
+    ENCHANTING: 0
     FLOWER_POT: 500
     BOAT: 500
-    BED: 500
     SPAWN_EGGS: 500
+    BED: 500
     MILKING: 0
     DISPENSER: 500
     SCULK_SHRIEKER: 500
@@ -425,13 +330,13 @@ world:
     HOPPER: 500
     CANDLES: 500
     LEASH: 500
-    BREAK_BLOCKS: 500
     MOUNT_INVENTORY: 500
+    BREAK_BLOCKS: 500
     CHORUS_FRUIT: 500
     CONTAINER: 500
-    BARREL: 500
     JUKEBOX: 500
     POTION_THROWING: 500
+    BARREL: 500
     COLLECT_POWDERED_SNOW: 500
     CARTOGRAPHY: 500
   # These are the default settings for new islands
@@ -441,15 +346,14 @@ world:
     LEAF_DECAY: true
     ENDERMAN_TELEPORT: true
     ANIMAL_NATURAL_SPAWN: true
-    BOSSBAR: true
     MONSTER_NATURAL_SPAWN: true
     SHULKER_TELEPORT: true
     FIRE_SPREAD: true
     FIRE_BURNING: true
     COMMAND_RANKS: true
     PVP_OVERWORLD: false
-    MONSTER_SPAWNERS_SPAWN: true
     TNT_DAMAGE: true
+    MONSTER_SPAWNERS_SPAWN: true
     FIRE_IGNITE: true
     ONEBLOCK_BOSSBAR: true
     BLOCK_EXPLODE_DAMAGE: true
@@ -457,18 +361,7 @@ world:
   # These settings/flags are hidden from users
   # Ops can toggle hiding in-game using SHIFT-LEFT-CLICK on flags in settings
   # Added since 1.4.1.
-  hidden-flags:
-  - TRADING
-  - CREATE_SHOPS
-  - MONSTER_SPAWN
-  - ANIMAL_SPAWN
-  - REMOVE_MOBS
-  - MONSTER_NATURAL_SPAWN
-  - ANIMAL_NATURAL_SPAWN
-  - FIRE_BURNING
-  - FIRE_SPREAD
-  - TNT_DAMAGE
-  - MONSTER_SPAWNERS_SPAWN
+  hidden-flags: []
   # Visitor banned commands - Visitors to islands cannot use these commands in this world
   visitor-banned-commands:
   - spawner

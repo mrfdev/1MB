@@ -8,4 +8,4 @@
 
 ## Version
 
-Version 0.2.0, build 005.
+Version 0.2.1, build 006.

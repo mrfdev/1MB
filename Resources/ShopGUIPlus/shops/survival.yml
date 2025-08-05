@@ -132,3 +132,14 @@ survival:
           - "&7the End dimension"
       shop: "survival_end"
       slot: 31
+    15:
+      type: SHOP_LINK
+      item:
+        material: STONE
+        quantity: 1
+        name: "&2&lMisc Items Shop"
+        lore:
+          - "&7Browse all blocks and items from"
+          - "&7that we do not know where else to put."
+      shop: "survival_misc"
+      slot: 32

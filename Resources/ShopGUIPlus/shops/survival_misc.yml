@@ -1,0 +1,49 @@
+survival_misc:
+  name: "&2&lMisc Shop"
+  size: 54
+  fillItem:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  items:
+    # PAGE 1
+    1:
+      type: item
+      item:
+        material: LANTERN
+        quantity: 1
+      buyPrice: 265.0
+      sellPrice: 1
+      slot: 10
+      page: 1
+    2:
+      type: item
+      item:
+        material: MINECART
+        quantity: 1
+      buyPrice: 1402
+      sellPrice: 1
+      slot: 11
+      page: 1
+    3:
+      type: item
+      item:
+        material: SMITHING_TABLE
+        quantity: 1
+      buyPrice: 642
+      sellPrice: 1
+      slot: 12
+      page: 1
+    4:
+      type: item
+      item:
+        material: BLAST_FURNACE
+        quantity: 1
+      buyPrice: 642
+      sellPrice: 1
+      slot: 13
+      page: 1
+    999:
+      type: special
+      special: BALANCE
+      slot: 53
+      page: 2

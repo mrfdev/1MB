@@ -133,4 +133,4 @@ Spot an error or want to help? Open an Issue or submit a PR!
 
 ## Version
 
-This is 1MB Github version 2.16.1 build 104, July 27th, 2025.
+This is 1MB Github version 2.16.1 build 105, August 31st, 2025.

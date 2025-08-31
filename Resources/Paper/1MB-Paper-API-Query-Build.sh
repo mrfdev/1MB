@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Build.sh  v0.2.1 (build 010)
+# 1MB-Paper-API-Query-Build.sh  v0.0.1 (build 002)
 # Query PaperMC Fill v3 API for a single build of a version (e.g. build 56 of 1.21.8).
 # - Shows ALL commits by default.
 # - Prints primary artifact details (server:default): name, size, sha256, url.
@@ -33,7 +33,7 @@ TIMEOUT_SECS=20
 
 DEFAULT_PROJECT="paper"
 DEFAULT_VERSION="1.21.8"
-DEFAULT_BUILD="53"          # leave empty to force CLI; or set to a number. Supports "latest"
+DEFAULT_BUILD="latest"          # leave empty to force CLI; or set to a number. Supports "latest"
 DEFAULT_CHANNEL="STABLE"  # only used when resolving latest via builds endpoint
 
 # Presentation:

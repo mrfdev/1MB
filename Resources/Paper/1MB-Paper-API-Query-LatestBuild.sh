@@ -38,6 +38,8 @@ COMMITS_SHOWN_DEFAULT=-1  # -1 = ALL commits by default
 
 # Downloads:
 DOWNLOAD_IF_NEW=false     # true/false: auto-download when a newer build is recommended. If false, ask Y/n.
+DOWNLOAD_FORCE=false      # NEW: if true (+ -download), always download (bypass newer-check)
+
 # -------------------------
 
 have() { command -v "$1" >/dev/null 2>&1; }
@@ -111,12 +113,16 @@ Options:
   --headers
 
   -download             Auto-download if newer is recommended (overrides config DOWNLOAD_IF_NEW=false)
+  -force                Enable force mode (bypass newer-check). Pair with -download to skip prompt.
+  -forcedownload        Convenience flag: same as -force -download
+
 
   -h, --help            Show this help
 
 Examples:
   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8
   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -c STABLE -download
+  ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -forcedownload
 EOF
 }
 
@@ -129,6 +135,8 @@ CHANNEL="$DEFAULT_CHANNEL"
 COMMITS_SHOWN="$COMMITS_SHOWN_DEFAULT"
 SHOW_HEADERS="0"
 AUTO_DOWNLOAD="$DOWNLOAD_IF_NEW"
+FORCE_DOWNLOAD="$DOWNLOAD_FORCE"
+
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -154,6 +162,9 @@ while [[ $# -gt 0 ]]; do
     -headers|--headers) SHOW_HEADERS="1"; shift ;;
 
     -download|--download) AUTO_DOWNLOAD="true"; shift ;;
+
+    -force|--force) FORCE_DOWNLOAD="true"; shift ;;
+    -forcedownload|--forcedownload) FORCE_DOWNLOAD="true"; AUTO_DOWNLOAD="true"; shift ;;
 
     *) echo "Unknown option: $1" >&2; print_help; exit 64 ;;
   esac
@@ -433,7 +444,23 @@ maybe_download() {
 }
 
 proceed_download="no"
-if [[ "$RECOMMEND_DL" == "yes" ]]; then
+
+if [[ "$FORCE_DOWNLOAD" == "true" ]]; then
+  # Force mode bypasses the “newer than cache” check.
+  if [[ "$AUTO_DOWNLOAD" == "true" ]]; then
+    echo "Force download enabled: bypassing newer-check."
+    proceed_download="yes"
+  else
+    # Ask Y/n (default Y) but clarify it's a forced download
+    read -r -p "Force download (bypass newer-check)? [Y/n] " ans
+    ans="${ans:-Y}"
+    case "$ans" in
+      Y|y) proceed_download="yes" ;;
+      *)   proceed_download="no" ;;
+    esac
+  fi
+
+elif [[ "$RECOMMEND_DL" == "yes" ]]; then
   if [[ "$AUTO_DOWNLOAD" == "true" ]]; then
     proceed_download="yes"
   else

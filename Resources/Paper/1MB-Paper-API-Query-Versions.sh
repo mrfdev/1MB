@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # 1MB-Paper-API-Query-Versions.sh  v0.0.1 (build 001)
-# Query PaperMC Fill v3 API for all versions of a single project (paper)
+# Query PaperMC Fill v3 API for all versions of the 'paper' project
 # Pretty output via jq, semver sorting via gsort/sort -V fallback.
 # Cache: .paper-versions-cache.json
 #
@@ -14,10 +14,11 @@ set -euo pipefail
 # -------------------------
 CACHE_FILE=".paper-versions-cache.json"          # Cache for versions endpoint
 DEFAULT_PROJECT="paper"                          # Project id (assumed 'paper')
+DEFAULT_VERSION="1.21.8"                         # Your currently running Paper version (no build tag)
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
 TIMEOUT_SECS=15
-# How many builds to show per version (set 0 for none, -1 for 'all' - not recommended)
+# How many builds to show per version (0 = none, -1 = all)
 BUILDS_SHOWN=10
 # -------------------------
 
@@ -44,7 +45,7 @@ http_get() {
 
 USE_JQ="false"; have jq && USE_JQ="true"
 
-# Semver-aware sorting
+# Semver-aware sorting (best with gsort from coreutils; else try sort -V; else pass-through)
 semver_sort_desc() {
   if have gsort; then gsort -Vr
   elif sort -V </dev/null >/dev/null 2>&1; then sort -Vr
@@ -71,12 +72,24 @@ join_lines() {
   awk -v d="$delim" 'BEGIN{first=1} {if(!first) printf("%s",d); printf("%s",$0); first=0} END{if(!first) printf("\n")}'
 }
 
+# Extract major "X.Y" from a version like "1.21.8" or "1.13-pre7"
+major_of() {
+  sed -E 's/^([0-9]+)\.([0-9]+).*/\1.\2/'
+}
+
+# Strict "a < b" using version sort; equal -> return 1 (false)
+ver_lt() {
+  local a="$1" b="$2"
+  [[ "$a" == "$b" ]] && return 1
+  printf "%s\n%s\n" "$a" "$b" | semver_sort_desc | tail -n1 | grep -qx "$a"
+}
+
 # Normalize API JSON to flat objects:
 # { id, support, java_min, flags[], builds[], latest_build, builds_count }
 normalize_versions() {
   jq -c '
     # Handle either {"versions":[...]} or a raw array
-    (.versions // .) 
+    (.versions // .)
     | map({
         id: (.version.id // "unknown"),
         support: (.version.support.status // "UNKNOWN"),
@@ -105,13 +118,21 @@ main() {
   echo
 
   if [[ "$USE_JQ" != "true" ]]; then
-    echo "Error: 'jq' is required for this script. Please install jq (brew install jq) and retry." >&2
+    echo "Error: 'jq' is required. Please install jq (brew install jq) and retry." >&2
     exit 2
   fi
 
-  # Normalize
+  # Normalize current payload
   local norm
   norm="$(printf "%s" "$fresh_json" | normalize_versions)"
+
+  # Load previous cache (BEFORE we overwrite it)
+  local prev_json prev_norm have_prev_cache="false"
+  prev_json="$(load_cache || true)"
+  if [[ -n "$prev_json" ]] && is_valid_json "$prev_json"; then
+    prev_norm="$(printf "%s" "$prev_json" | normalize_versions)"
+    have_prev_cache="true"
+  fi
 
   # IDs sorted (desc semver)
   local ids_desc
@@ -127,7 +148,7 @@ main() {
   while IFS= read -r vid; do
     [[ -z "$vid" ]] && continue
     local item
-    item="$(printf "%s" "$norm" | jq -c --arg id "$vid" 'map(select(.id==$id))[0]')"
+    item="$(printf "%s" "$norm" | jq -c --arg id "$vid" 'first(.[] | select(.id==$id))')"
     [[ -z "$item" || "$item" == "null" ]] && continue
 
     local support java_min latest_build builds_count
@@ -145,11 +166,10 @@ main() {
     if [[ "${BUILDS_SHOWN}" -ne 0 ]]; then
       local builds_line extra
       if [[ "${BUILDS_SHOWN}" -lt 0 ]]; then
-        # all builds (sorted numeric desc)
         builds_line="$(jq -r '.builds | sort | reverse | .[]' <<<"$item" | join_lines ', ')"
         echo "  Builds: $builds_line"
       else
-        builds_line="$(jq -r ".builds | sort | reverse | .[] | tostring" <<<"$item" | head -n "$BUILDS_SHOWN" | join_lines ', ')"
+        builds_line="$(jq -r '.builds | sort | reverse | .[] | tostring' <<<"$item" | head -n "$BUILDS_SHOWN" | join_lines ', ')"
         extra=$(( builds_count - BUILDS_SHOWN ))
         if (( extra > 0 )); then
           echo "  Builds: $builds_line … (+$extra more)"
@@ -171,44 +191,102 @@ main() {
     echo
   done <<< "$ids_desc"
 
-  # Summary for latest version
-  local latest_id latest_item latest_support latest_java latest_build flags_line
+  # Summary of latest overall
+  local latest_id latest_item latest_support latest_java latest_build latest_major latest_flags_line
   latest_id="$(printf "%s\n" "$ids_desc" | head -n1)"
-  latest_item="$(printf "%s" "$norm" | jq -c --arg id "$latest_id" 'map(select(.id==$id))[0]')"
+  latest_item="$(printf "%s" "$norm" | jq -c --arg id "$latest_id" 'first(.[] | select(.id==$id))')"
   latest_support="$(jq -r '.support // "UNKNOWN"' <<<"$latest_item")"
   latest_java="$(jq -r '.java_min // "?"' <<<"$latest_item")"
   latest_build="$(jq -r '.latest_build // "?"' <<<"$latest_item")"
-  flags_line="$(jq -r '.flags[]?' <<<"$latest_item" | join_lines ' ')"
+  latest_major="$(printf "%s" "$latest_id" | major_of)"
+  latest_flags_line="$(jq -r '.flags[]?' <<<"$latest_item" | join_lines ' ')"
 
   echo "Summary:"
   echo "  Latest version: $latest_id"
   echo "  Support status: $latest_support"
   echo "  Latest build:   $latest_build"
   echo "  Min Java:       $latest_java"
-  if [[ -n "$flags_line" ]]; then
+  if [[ -n "$latest_flags_line" ]]; then
     echo "  Recommended flags:"
-    # wrapped for easy copy-paste
-    echo "    $flags_line"
+    echo "    $latest_flags_line"
   else
     echo "  Recommended flags: (none)"
   fi
+
+  # Your install (with build compare vs cached)
+  if [[ -n "$DEFAULT_VERSION" ]]; then
+    local def_major def_item def_support def_java def_latest_build def_major_latest
+    def_major="$(printf "%s" "$DEFAULT_VERSION" | major_of)"
+    def_item="$(printf "%s" "$norm" | jq -c --arg id "$DEFAULT_VERSION" 'first(.[] | select(.id==$id))')"
+
+    echo
+    echo "Your install:"
+    if [[ -n "$def_item" && "$def_item" != "null" ]]; then
+      def_support="$(jq -r '.support // "UNKNOWN"' <<<"$def_item")"
+      def_java="$(jq -r '.java_min // "?"' <<<"$def_item")"
+      def_latest_build="$(jq -r '.latest_build // "?"' <<<"$def_item")"
+      echo "  Version: $DEFAULT_VERSION  (major $def_major)"
+      echo "  Support: $def_support"
+      echo "  Min Java: ≥ $def_java"
+      echo "  Latest build available for $DEFAULT_VERSION: $def_latest_build"
+
+      # Compare build vs cached build for this version
+      if [[ "$have_prev_cache" == "true" ]]; then
+        local def_prev_build
+        def_prev_build="$(printf "%s" "$prev_norm" | jq -r --arg id "$DEFAULT_VERSION" 'first(.[] | select(.id==$id)) | .latest_build // empty')"
+        if [[ -n "$def_prev_build" ]]; then
+          if [[ "$def_prev_build" =~ ^[0-9]+$ && "$def_latest_build" =~ ^[0-9]+$ ]]; then
+            if (( def_latest_build > def_prev_build )); then
+              echo "  Newer build available for $DEFAULT_VERSION? Yes (latest: $def_latest_build - you have cached: $def_prev_build)"
+            else
+              echo "  Newer build available for $DEFAULT_VERSION? No (latest: $def_latest_build - cached: $def_prev_build)"
+            fi
+          else
+            echo "  Newer build available for $DEFAULT_VERSION? Unknown (non-numeric build data)"
+          fi
+        else
+          echo "  Newer build available for $DEFAULT_VERSION? Unknown (no cached build found)"
+        fi
+      else
+        echo "  Newer build available for $DEFAULT_VERSION? Unknown (no previous cache)"
+      fi
+    else
+      echo "  Version: $DEFAULT_VERSION  (major $def_major)  [not present in API list]"
+    fi
+
+    # Find latest in your major
+    def_major_latest="$(
+      printf "%s\n" "$ids_desc" | grep -E "^${def_major}(\.|$)" | head -n1
+    )"
+
+    if [[ -n "$def_major_latest" ]]; then
+      if ver_lt "$DEFAULT_VERSION" "$def_major_latest"; then
+        echo "  Newer patch in $def_major? Yes (latest: $def_major_latest — you have $DEFAULT_VERSION)"
+      else
+        echo "  Newer patch in $def_major? No (latest: $def_major_latest — you have $DEFAULT_VERSION)"
+      fi
+    else
+      echo "  Newer patch in $def_major? Unknown (no versions for this major in API)"
+    fi
+
+    # Newer major?
+    if [[ "$def_major" != "$latest_major" ]]; then
+      echo "  Newer major available? Yes (latest major: $latest_major; latest version: $latest_id)"
+    else
+      echo "  Newer major available? No (you are on the latest major: $latest_major)"
+    fi
+  fi
   echo
 
-  # Cache & diff
-  local prev_json prev_norm ids_prev_asc ids_curr_asc added removed support_changes
-  prev_json="$(load_cache || true)"
-  save_cache "$fresh_json"
-
-  if [[ -n "$prev_json" ]] && is_valid_json "$prev_json"; then
-    prev_norm="$(printf "%s" "$prev_json" | normalize_versions)"
-
+  # Changes since last cache (add/remove versions + support changes)
+  if [[ "$have_prev_cache" == "true" ]]; then
+    local ids_prev_asc ids_curr_asc added removed support_changes
     ids_prev_asc="$(printf "%s" "$prev_norm" | jq -r '.[].id' | semver_sort_asc)"
     ids_curr_asc="$(printf "%s" "$norm"      | jq -r '.[].id' | semver_sort_asc)"
 
     added="$(comm -13 <(printf "%s\n" "$ids_prev_asc") <(printf "%s\n" "$ids_curr_asc") || true)"
     removed="$(comm -23 <(printf "%s\n" "$ids_prev_asc") <(printf "%s\n" "$ids_curr_asc") || true)"
 
-    # Support status changes
     support_changes="$(
       jq -n \
         --argjson prev "$prev_norm" \
@@ -224,16 +302,20 @@ main() {
     if [[ -z "$added$removed" && "$(jq 'length' <<<"$support_changes")" -eq 0 ]]; then
       echo "  No version or support-status changes."
     else
-      [[ -n "$added" ]]   && { echo "  New versions:";      printf '    + %s\n' $added; }
-      [[ -n "$removed" ]] && { echo "  Removed versions:";  printf '    - %s\n' $removed; }
+      [[ -n "$added"   ]] && { echo "  New versions:";     printf '    + %s\n' $added; }
+      [[ -n "$removed" ]] && { echo "  Removed versions:"; printf '    - %s\n' $removed; }
       if [[ "$(jq 'length' <<<"$support_changes")" -gt 0 ]]; then
         echo "  Support status changes:"
         jq -r '.[] | "    * \(.id): \(.from) -> \(.to)"' <<<"$support_changes"
       fi
     fi
   else
-    echo "No previous valid cache found. Created/updated cache at: $CACHE_FILE"
+    echo "No previous valid cache found."
   fi
+
+  # Finally write the new cache
+  save_cache "$fresh_json"
+  echo "Cache updated at: $CACHE_FILE"
 }
 
 main "$@"

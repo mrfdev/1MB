@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Build.sh  v0.0.1 (build 002)
+# 1MB-Paper-API-Query-Build.sh  v0.1.0 (build 003)
 # Query PaperMC Fill v3 API for a single build of a version (e.g. build 56 of 1.21.8).
 # - Shows ALL commits by default.
 # - Prints primary artifact details (server:default): name, size, sha256, url.

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Builds.sh  v0.0.1 (build 001)
+# 1MB-Paper-API-Query-Builds.sh  v0.1.0 (build 003)
 # Query PaperMC Fill v3 API for build details of a single Paper version.
 # - Supports default channel filter (STABLE) and CLI override (-channel:stable).
 # - Pretty output (requires jq).

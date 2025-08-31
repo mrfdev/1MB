@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Version.sh  v0.0.1 (build 001)
+# 1MB-Paper-API-Query-Version.sh  v0.1.0 (build 003)
 # Query PaperMC Fill v3 API for a single Paper version (DEFAULT_VERSION).
 # Pretty output via jq, cache compare for newer build since last run.
 # Cache: .paper-version-cache.json

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-LatestBuild.sh  v0.0.1 (build 002)
+# 1MB-Paper-API-Query-LatestBuild.sh  v0.1.0 (build 003)
 # Query PaperMC Fill v3 API for the *latest* build of a version.
 # - Uses the /builds/latest endpoint for the given version.
 # - Shows ALL commits by default.

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Versions.sh  v0.0.1 (build 001)
+# 1MB-Paper-API-Query-Versions.sh  v0.1.0 (build 003)
 # Query PaperMC Fill v3 API for all versions of the 'paper' project
 # Pretty output via jq, semver sorting via gsort/sort -V fallback.
 # Cache: .paper-versions-cache.json

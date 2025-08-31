@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Project.sh  v0.0.1 (build 001)
+# 1MB-Paper-API-Query-Project.sh  v0.1.0 (build 003)
 # Queries PaperMC Fill v3 API for a single project (paper)
 # Cache: .paper-project-cache.json
 

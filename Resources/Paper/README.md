@@ -50,7 +50,7 @@ Show help:
 
 ## License
 
-[MIT](LICENSE) (or specify your own)
+[MIT](LICENSE)
 
 ---
 

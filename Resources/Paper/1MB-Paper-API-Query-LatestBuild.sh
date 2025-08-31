@@ -1,23 +1,22 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-LatestBuild.sh  v0.1.0 (build 001)
+# 1MB-Paper-API-Query-LatestBuild.sh  v0.0.1 (build 002)
 # Query PaperMC Fill v3 API for the *latest* build of a version.
 # - Uses the /builds/latest endpoint for the given version.
 # - Shows ALL commits by default.
 # - Prints primary artifact details (server:default): name, size, sha256, url.
 # - Falls back to the first available artifact if server:default is missing.
-# - Can optionally show response headers (-headers).
-# - For baseline/compare, optionally fetches the builds listing filtered by -channel
-#   (default STABLE) to compute "channel latest" and list builds newer than cache.
-# - Caches the response in .paper-latestbuild-cache.json for change detection.
+# - Optional response headers (-headers).
+# - Baseline comparison using builds list (optionally filtered by -channel, default STABLE).
+# - NEW: Download support with safe backup/rename and SHA-256 verification.
 #
 # Cache file: .paper-latestbuild-cache.json
 #
 # examples:
-#   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8
-#   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -headers
-#   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -c ALPHA
-#
+# Ask Y/n if newer:
+# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8
+# Auto-download if newer (no prompt):
+# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -download
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -36,7 +35,9 @@ DEFAULT_CHANNEL="STABLE"  # used for baseline comparisons via the builds listing
 
 # Presentation:
 COMMITS_SHOWN_DEFAULT=-1  # -1 = ALL commits by default
-DOWNLOAD_IF_NEW=false # true/false, automatically downloads the .jar file if we determined there's a newer jar
+
+# Downloads:
+DOWNLOAD_IF_NEW=false     # true/false: auto-download when a newer build is recommended. If false, ask Y/n.
 # -------------------------
 
 have() { command -v "$1" >/dev/null 2>&1; }
@@ -109,11 +110,13 @@ Options:
   -headers              Print response headers for the latest request
   --headers
 
+  -download             Auto-download if newer is recommended (overrides config DOWNLOAD_IF_NEW=false)
+
   -h, --help            Show this help
 
 Examples:
   ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8
-  ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -c stable -headers
+  ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -c STABLE -download
 EOF
 }
 
@@ -125,6 +128,7 @@ VERSION="$DEFAULT_VERSION"
 CHANNEL="$DEFAULT_CHANNEL"
 COMMITS_SHOWN="$COMMITS_SHOWN_DEFAULT"
 SHOW_HEADERS="0"
+AUTO_DOWNLOAD="$DOWNLOAD_IF_NEW"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -148,6 +152,8 @@ while [[ $# -gt 0 ]]; do
     -commits|-m) COMMITS_SHOWN="${2:-}"; shift 2 ;;
 
     -headers|--headers) SHOW_HEADERS="1"; shift ;;
+
+    -download|--download) AUTO_DOWNLOAD="true"; shift ;;
 
     *) echo "Unknown option: $1" >&2; print_help; exit 64 ;;
   esac
@@ -176,9 +182,7 @@ if [[ "$SHOW_HEADERS" == "1" ]]; then
   echo "== Response Headers =="
   RAW_HEADERS="$(http_head "$LATEST_URL" || true)"
   while IFS= read -r line; do
-    case "$line" in
-      *$'\r') line="${line%$'\r'}" ;;
-    esac
+    case "$line" in *$'\r') line="${line%$'\r'}";; esac
     if [[ "$line" =~ ^(HTTP/|date:|Date:|age:|Age:|cache-control:|Cache-Control:|etag:|ETag:|cf-cache-status:|CF-Cache-Status:|content-type:|Content-Type:|strict-transport-security:|Strict-Transport-Security:|x-content-type-options:|X-Content-Type-Options:|x-frame-options:|X-Frame-Options:|x-xss-protection:|X-XSS-Protection:|server:|Server:|vary:|Vary:) ]]; then
       echo "  $line"
     fi
@@ -265,7 +269,6 @@ fi
 # Cache & Baseline Comparison
 # -------------------------
 
-# For baseline we may fetch the builds listing (optionally filtered by channel)
 BASE_LIST_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds"
 LIST_URL="$BASE_LIST_URL"
 if [[ -n "$CHANNEL_UP" ]]; then
@@ -309,45 +312,145 @@ fi
 
 is_int() { [[ "${1:-}" =~ ^[0-9]+$ ]]; }
 
-# Newer build since cache? (baseline channel latest vs cached)
-if is_int "$CHANNEL_LATEST_ID" && is_int "$CACHED_BUILD"; then
-  if (( CHANNEL_LATEST_ID > CACHED_BUILD )); then
-    echo "  Newer build since cache? Yes (channel latest: $CHANNEL_LATEST_ID — cached: $CACHED_BUILD)"
-    NEWERS="$(jq -r --argjson than "${CACHED_BUILD:-0}" '[ .[] | select(.id > $than) | .id ] | sort | join(", ")' <<<"$LIST_JSON")"
-    [[ -n "$NEWERS" ]] && echo "  Builds newer than cache: $NEWERS"
-  else
-    echo "  Newer build since cache? No (channel latest: $CHANNEL_LATEST_ID — cached: $CACHED_BUILD)"
-  fi
-fi
-
-# Endpoint vs baseline note (only if they differ)
-if is_int "$CHANNEL_LATEST_ID" && is_int "$ENDPOINT_LATEST_ID" && (( ENDPOINT_LATEST_ID != CHANNEL_LATEST_ID )); then
-  echo "  Note: endpoint latest ($ENDPOINT_LATEST_ID, ${ENDPOINT_LATEST_CHANNEL}) differs from baseline by channel ($CHANNEL_LATEST_ID)."
-fi
-
-# Simple recommendation
+RECOMMEND_DL="unknown"
 if is_int "$CHANNEL_LATEST_ID"; then
   if ! is_int "$CACHED_BUILD"; then
-    echo "  Should download? Yes — no cache yet; baseline latest is $CHANNEL_LATEST_ID."
+    echo "  Newer build since cache? Yes (channel latest: $CHANNEL_LATEST_ID — cached: none)"
+    RECOMMEND_DL="yes"
   elif (( CHANNEL_LATEST_ID > CACHED_BUILD )); then
-    echo "  Should download? Yes — newer than cache ($CHANNEL_LATEST_ID > $CACHED_BUILD)."
+    echo "  Newer build since cache? Yes (channel latest: $CHANNEL_LATEST_ID — cached: $CACHED_BUILD)"
+    RECOMMEND_DL="yes"
   else
-    echo "  Should download? No — nothing newer than cached."
+    echo "  Newer build since cache? No (channel latest: $CHANNEL_LATEST_ID — cached: $CACHED_BUILD)"
+    RECOMMEND_DL="no"
   fi
 else
   # Fall back to endpoint id if channel latest is unknown
   if is_int "$ENDPOINT_LATEST_ID"; then
     if ! is_int "$CACHED_BUILD" || (( ENDPOINT_LATEST_ID > CACHED_BUILD )); then
-      echo "  Should download? Yes — endpoint latest is newer than cache or no cache."
+      echo "  Newer build since cache? Yes (endpoint latest vs cache)"
+      RECOMMEND_DL="yes"
     else
-      echo "  Should download? No — endpoint latest not newer than cache."
+      echo "  Newer build since cache? No (endpoint latest vs cache)"
+      RECOMMEND_DL="no"
     fi
   else
-    echo "  Should download? (n/a) — unable to determine latest id."
+    echo "  Newer build since cache? (n/a) — unable to determine latest id."
+    RECOMMEND_DL="no"
   fi
 fi
 
+if is_int "$CHANNEL_LATEST_ID" && is_int "$ENDPOINT_LATEST_ID" && (( ENDPOINT_LATEST_ID != CHANNEL_LATEST_ID )); then
+  echo "  Note: endpoint latest ($ENDPOINT_LATEST_ID, ${ENDPOINT_LATEST_CHANNEL}) differs from baseline by channel ($CHANNEL_LATEST_ID)."
+fi
+
+if [[ "$RECOMMEND_DL" == "yes" ]]; then
+  echo "  Should download? Yes — newer than cache or no cache."
+else
+  echo "  Should download? No — nothing newer than cached."
+fi
 echo
+
+# -------------------------
+# Download logic (backup -> download -> verify)
+# -------------------------
+artifact_name="$(jq -r '.downloads["server:default"].name // ( .downloads | to_entries | sort_by(.key) | (.[0].value.name // empty) )' <<<"$JSON")"
+artifact_url="$(jq -r '.downloads["server:default"].url  // ( .downloads | to_entries | sort_by(.key) | (.[0].value.url  // empty) )' <<<"$JSON")"
+artifact_sha="$(jq -r '.downloads["server:default"].checksums.sha256 // ( .downloads | to_entries | sort_by(.key) | (.[0].value.checksums.sha256 // empty) )' <<<"$JSON")"
+
+do_sha256() {
+  local file="$1"
+  if have sha256sum; then
+    sha256sum "$file" | awk '{print $1}'
+  elif have shasum; then
+    shasum -a 256 "$file" | awk '{print $1}'
+  else
+    echo ""
+  fi
+}
+
+download_file() {
+  local url="$1"
+  local out="$2"
+  if [[ "$HTTP_CLIENT" == "curl" ]]; then
+    curl -fL --progress-bar -A "$USER_AGENT" --max-time "$TIMEOUT_SECS" -o "$out" "$url"
+  else
+    wget --user-agent="$USER_AGENT" --timeout="$TIMEOUT_SECS" -O "$out" "$url"
+  fi
+}
+
+maybe_download() {
+  local name="$1" url="$2" sha="$3"
+  if [[ -z "$name" || -z "$url" ]]; then
+    echo "Download: No artifact name or URL available; skipping." >&2
+    return 1
+  fi
+
+  # Backup if existing
+  if [[ -f "$name" ]]; then
+    local backup="_$name"
+    if [[ -f "$backup" ]]; then
+      echo "Removing existing backup: $backup"
+      rm -f -- "$backup"
+    fi
+    echo "Backing up existing file: $name -> $backup"
+    mv -f -- "$name" "$backup"
+  fi
+
+  echo "Downloading: $name"
+  download_file "$url" "$name"
+
+  if [[ ! -f "$name" ]]; then
+    echo "Download failed: $name not found after download." >&2
+    return 2
+  fi
+
+  # Verify SHA-256 if provided & tool available
+  if [[ -n "$sha" ]]; then
+    local have_hasher="false"
+    if have sha256sum || have shasum; then have_hasher="true"; fi
+    if [[ "$have_hasher" == "true" ]]; then
+      local calc
+      calc="$(do_sha256 "$name" || true)"
+      if [[ -n "$calc" ]]; then
+        if [[ "${calc,,}" == "${sha,,}" ]]; then
+          echo "Checksum OK: $calc"
+        else
+          echo "WARNING: Checksum mismatch!"
+          echo "  expected: $sha"
+          echo "  got:      $calc"
+          echo "Backup (if any) kept as _${name}. Investigate before deploying this jar."
+        fi
+      else
+        echo "Checksum: tool not available to verify on this system."
+      fi
+    else
+      echo "Checksum: verification skipped (no sha256sum/shasum)."
+    fi
+  else
+    echo "Checksum: no SHA-256 provided by API; skipped."
+  fi
+}
+
+proceed_download="no"
+if [[ "$RECOMMEND_DL" == "yes" ]]; then
+  if [[ "$AUTO_DOWNLOAD" == "true" ]]; then
+    proceed_download="yes"
+  else
+    # Ask Y/n (default Y)
+    read -r -p "Download newer build now? [Y/n] " ans
+    ans="${ans:-Y}"
+    case "$ans" in
+      Y|y) proceed_download="yes" ;;
+      *)   proceed_download="no" ;;
+    esac
+  fi
+fi
+
+if [[ "$proceed_download" == "yes" ]]; then
+  maybe_download "$artifact_name" "$artifact_url" "$artifact_sha"
+  echo
+fi
 
 # -------------------------
 # Cache: remember this payload and detect changes

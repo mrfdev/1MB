@@ -13,10 +13,10 @@
 #
 # exact build
 # ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b 56
-
+#
 # latest STABLE for that version
 # ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b latest
-
+#
 # latest ALPHA and show headers
 # ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b latest -c ALPHA -headers
 
@@ -165,7 +165,10 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Normalize channel (for latest resolution only)
+# Keep the raw value the user asked for (so we can compare "latest vs requested")
+REQUESTED_BUILD_RAW="$BUILD"
+
+# Normalize channel (for latest resolution / comparisons)
 CHANNEL_UP="$(tr '[:lower:]' '[:upper:]' <<< "${CHANNEL:-}")"
 [[ "$CHANNEL_UP" == "ALL" ]] && CHANNEL_UP=""
 
@@ -180,6 +183,8 @@ if [[ -z "${BUILD:-}" ]]; then
 fi
 
 # If build == latest, resolve via builds listing (optionally filtering by channel).
+LIST_JSON_FOR_COMPARE=""
+LATEST_FOR_COMPARE=""
 if [[ "$BUILD" == "latest" || "$BUILD" == "LATEST" ]]; then
   BASE_LIST_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds"
   LIST_URL="$BASE_LIST_URL"
@@ -198,6 +203,9 @@ if [[ "$BUILD" == "latest" || "$BUILD" == "LATEST" ]]; then
     exit 1
   fi
   BUILD="$LATEST_ID"
+  # keep for later comparisons so we don't refetch
+  LIST_JSON_FOR_COMPARE="$LIST_JSON"
+  LATEST_FOR_COMPARE="$LATEST_ID"
 fi
 
 BUILD_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds/$BUILD"
@@ -213,14 +221,11 @@ fi
 # Optionally grab headers (best-effort)
 if [[ "$SHOW_HEADERS" == "1" ]]; then
   echo "== Response Headers =="
-  # Filter a few common headers if present
   RAW_HEADERS="$(http_head "$BUILD_URL" || true)"
-  # Normalize wget output by stripping leading spaces
   while IFS= read -r line; do
     case "$line" in
       *$'\r') line="${line%$'\r'}" ;;
     esac
-    # Only show interesting headers
     if [[ "$line" =~ ^(HTTP/|date:|Date:|age:|Age:|cache-control:|Cache-Control:|etag:|ETag:|cf-cache-status:|CF-Cache-Status:|content-type:|Content-Type:|strict-transport-security:|Strict-Transport-Security:|x-content-type-options:|X-Content-Type-Options:|x-frame-options:|X-Frame-Options:|x-xss-protection:|X-XSS-Protection:|server:|Server:|vary:|Vary:) ]]; then
       echo "  $line"
     fi
@@ -231,7 +236,6 @@ fi
 # -------------------------
 # Pretty print
 # -------------------------
-# Helper jq to select primary artifact (server:default preferred, else first entry)
 JQ_PROG='
 def primary_download:
   (.downloads["server:default"] //
@@ -256,7 +260,6 @@ def primary_download:
   + "  sha256: \($d.checksums.sha256 // "unknown")\n"
   + "  url: \($d.url // "unknown")\n"
 '
-
 echo -e "$(jq -r "$JQ_PROG" <<<"$JSON")"
 
 # List other downloads (if any besides server:default)
@@ -306,6 +309,103 @@ if [[ "$(jq '(.commits|length) > 0' <<<"$JSON")" == "true" ]] && [[ "$COMMITS_SH
 fi
 
 # -------------------------
+# Latest & Cache comparisons
+# -------------------------
+
+# Get the builds list once for comparisons (reuse if we already fetched above)
+if [[ -n "${LIST_JSON_FOR_COMPARE}" ]]; then
+  LIST_JSON="$LIST_JSON_FOR_COMPARE"
+  LATEST_ID="${LATEST_FOR_COMPARE}"
+else
+  BASE_LIST_URL="$API_BASE/projects/$PROJECT/versions/$VERSION/builds"
+  LIST_URL="$BASE_LIST_URL"
+  if [[ -n "$CHANNEL_UP" ]]; then
+    LIST_URL="$BASE_LIST_URL?channel=$CHANNEL_UP"
+  fi
+  LIST_JSON="$(http_get "$LIST_URL")" || { echo "Error: failed to fetch $LIST_URL" >&2; exit 1; }
+  is_valid_json "$LIST_JSON" || { echo "Error: invalid JSON from $LIST_URL" >&2; exit 1; }
+  LATEST_ID="$(jq -r 'if type=="array" and length>0 then (map(.id)|max) else empty end' <<<"$LIST_JSON")"
+fi
+
+echo "== Latest & Cache Comparison =="
+if [[ -n "$CHANNEL_UP" ]]; then
+  echo "  Channel filter for latest: $CHANNEL_UP"
+else
+  echo "  Channel filter for latest: (ALL)"
+fi
+echo "  Latest build id: ${LATEST_ID:-unknown}"
+
+# Helper to test integers safely
+is_int() { [[ "${1:-}" =~ ^[0-9]+$ ]]; }
+
+# Load previous cache BEFORE overwriting it
+load_cache() { [[ -s "$CACHE_FILE" ]] && cat "$CACHE_FILE" || true; }
+PREV="$(load_cache || true)"
+
+CACHED_PROJECT=""; CACHED_VERSION=""; CACHED_BUILD=""
+if [[ -n "$PREV" ]] && is_valid_json "$PREV"; then
+  CACHED_PROJECT="$(jq -r '._meta.project // empty' <<<"$PREV" 2>/dev/null || true)"
+  CACHED_VERSION="$(jq -r '._meta.version // empty' <<<"$PREV" 2>/dev/null || true)"
+  CACHED_BUILD="$(jq -r '._meta.build // empty' <<<"$PREV" 2>/dev/null || true)"
+fi
+
+if [[ -n "$CACHED_BUILD" ]]; then
+  echo "  Cached build: $CACHED_BUILD (project=$CACHED_PROJECT, version=$CACHED_VERSION)"
+else
+  echo "  Cached build: (none)"
+fi
+
+# Newer build since cache? (latest vs cached)
+if is_int "$LATEST_ID" && is_int "$CACHED_BUILD"; then
+  if (( LATEST_ID > CACHED_BUILD )); then
+    echo "  Newer build since cache? Yes (latest: $LATEST_ID — cached: $CACHED_BUILD)"
+    # list the exact ids newer than cache
+    NEWERS="$(jq -r --argjson than "${CACHED_BUILD:-0}" '[ .[] | select(.id > $than) | .id ] | sort | join(", ")' <<<"$LIST_JSON")"
+    [[ -n "$NEWERS" ]] && echo "  Builds newer than cache: $NEWERS"
+  else
+    echo "  Newer build since cache? No (latest: $LATEST_ID — cached: $CACHED_BUILD)"
+  fi
+fi
+
+# Newer than requested build? (latest vs what the user asked for)
+if [[ "${REQUESTED_BUILD_RAW,,}" != "latest" ]] && is_int "$REQUESTED_BUILD_RAW" && is_int "$LATEST_ID"; then
+  if (( LATEST_ID > REQUESTED_BUILD_RAW )); then
+    echo "  Newer than requested build? Yes (latest: $LATEST_ID — requested: $REQUESTED_BUILD_RAW)"
+  else
+    echo "  Newer than requested build? No (latest: $LATEST_ID — requested: $REQUESTED_BUILD_RAW)"
+  fi
+fi
+
+# Simple recommendation (handles no-cache + requested<latest properly)
+if is_int "$LATEST_ID"; then
+  if [[ "${REQUESTED_BUILD_RAW,,}" == "latest" ]]; then
+    echo "  Should download? Yes — you requested latest ($LATEST_ID)."
+  elif is_int "$REQUESTED_BUILD_RAW" && (( LATEST_ID > REQUESTED_BUILD_RAW )); then
+    echo "  Should download? Yes — latest ($LATEST_ID) is newer than requested ($REQUESTED_BUILD_RAW)."
+  elif is_int "$CACHED_BUILD" && (( LATEST_ID > CACHED_BUILD )); then
+    echo "  Should download? Yes — newer build available ($LATEST_ID) than cached ($CACHED_BUILD)."
+  elif is_int "$CACHED_BUILD" && is_int "$BUILD" && (( BUILD > CACHED_BUILD )); then
+    echo "  Should download? Yes — requested build ($BUILD) is newer than cached ($CACHED_BUILD)."
+  else
+    # If no cache exists, fall back to comparing fetched vs latest
+    if ! is_int "$CACHED_BUILD"; then
+      if is_int "$BUILD" && (( LATEST_ID > BUILD )); then
+        echo "  Should download? Yes — latest ($LATEST_ID) is newer than fetched build ($BUILD)."
+      else
+        echo "  Should download? No — nothing newer than requested/fetched."
+      fi
+    else
+      echo "  Should download? No — nothing newer than cached."
+    fi
+  fi
+else
+  echo "  Should download? (n/a) — unable to determine latest id."
+fi
+
+
+echo
+
+# -------------------------
 # Cache: remember this build payload and detect changes
 # -------------------------
 save_cache() {
@@ -321,9 +421,7 @@ save_cache() {
   ' <<<"$sorted" > "$CACHE_FILE"
 }
 
-load_cache() { [[ -s "$CACHE_FILE" ]] && cat "$CACHE_FILE" || true; }
-
-PREV="$(load_cache || true)"
+# Re-run the old “changed/unchanged/overwriting” summary (kept as-is)
 if [[ -n "$PREV" ]] && is_valid_json "$PREV"; then
   SAME_TARGET="$(jq -r --arg p "$PROJECT" --arg v "$VERSION" --arg b "$BUILD" '
     (._meta.project == $p) and (._meta.version == $v) and (._meta.build == $b)

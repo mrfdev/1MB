@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # chmod +x 1MB-massban.sh
 # populate banlist.txt with usernames to ban

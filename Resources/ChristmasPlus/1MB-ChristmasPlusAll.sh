@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-ChristmasPlusAll.sh
-# @Version: 0.0.2, build 002
-# @Release: February 2nd, 2025
+# @Version: 0.0.2, build 003
+# @Release: September 5th, 2025
 # @Description: Runs 1MB-ChristmasPlus.sh in a loop to get some player data from ChristmasPlus database.db
 # @Contact: I am #momshroom on Discord, and Momshroom in MineCraft.
 # @Discord: @momshroom on https://discord.gg/ySRPTYTtKf

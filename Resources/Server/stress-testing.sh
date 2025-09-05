@@ -1,5 +1,5 @@
-#!/bin/bash
-# version 0.0.2, build 002
+#!/usr/bin/env bash
+# version 0.0.2, build 003
 
 # generate some valid mc usernames with prefix user_
 generate_username() {

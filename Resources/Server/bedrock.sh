@@ -1,5 +1,5 @@
-#!/bin/bash
-# version 0.0.2, build 4
+#!/usr/bin/env bash
+# version 0.0.2, build 005
 # put this in /logs/ and let it run, checks latest.log and all .gz files (not other .log btw)
 # results are on screen and in a .txt file
 # grabs all geyser joins, and sorts them on uniqueness, and lists on frequency, includes filename found and join time/date

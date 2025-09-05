@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 0.3.3, build 027
-# @Release: February 2nd, 2025
+# @Version: 0.3.3, build 028
+# @Release: September 5th, 2025
 # @Description: Helps us get some player data from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris

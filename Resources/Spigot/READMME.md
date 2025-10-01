@@ -1,6 +1,6 @@
 # 1MB BuildTools Shell Script
 
-A little helper that I use on my macOS 15+ and Ubuntu 20+ systems to help me automatically run the steps to get buildtools, and build the desired Spigot jar.
+A little helper that I use on my macOS 26+ and Ubuntu 20+ systems to help me automatically run the steps to get buildtools, and build the desired Spigot jar.
 
 ## Deprecated
 

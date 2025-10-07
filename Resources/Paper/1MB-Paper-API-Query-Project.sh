@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Project.sh  v0.1.0 (build 003)
+# 1MB-Paper-API-Query-Project.sh  v0.1.1 (build 004)
 # Queries PaperMC Fill v3 API for a single project (paper)
 # Cache: .paper-project-cache.json
 
@@ -11,7 +11,7 @@ set -euo pipefail
 # -------------------------
 CACHE_FILE=".paper-project-cache.json"
 DEFAULT_PROJECT="paper"
-DEFAULT_VERSION="1.21.8"
+DEFAULT_VERSION="1.21.10"
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
 TIMEOUT_SECS=15

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# 1MB-Paper-API-Query-Projects.sh version 0.1.0, build 003, discord.gg/floris by @mrfloris for 1MoreBlock.com - August 31st, 2025
+# 1MB-Paper-API-Query-Projects.sh version 0.1.1, build 004, discord.gg/floris by @mrfloris for 1MoreBlock.com - October 7th, 2025
 # Description: Helper script that queries the Paper v3 API endpoint to discover which /projects/ there are
 # Installation: chmod +x 1MB-Paper-API-Query-Projects.sh (once), then (each time) run with: ./1MB-Paper-API-Query-Projects.sh
 # TODO: oh so much..
@@ -12,7 +12,7 @@ set -euo pipefail
 # -------------------------
 CACHE_FILE=".paper-projects-cache.json"           # File to store the cache
 DEFAULT_PROJECT="paper"                          # Project (usually 'paper')
-DEFAULT_VERSION="1.21.8"                         # Desired Minecraft version (unused here)
+DEFAULT_VERSION="1.21.10"                         # Desired Minecraft version (unused here)
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"           # PaperMC v3 API endpoint
 TIMEOUT_SECS=15

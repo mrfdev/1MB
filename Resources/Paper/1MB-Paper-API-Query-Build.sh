@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Build.sh  v0.1.0 (build 003)
-# Query PaperMC Fill v3 API for a single build of a version (e.g. build 56 of 1.21.8).
+# 1MB-Paper-API-Query-Build.sh  v0.1.1 (build 004)
+# Query PaperMC Fill v3 API for a single build of a version (e.g. build 1 of 1.21.10).
 # - Shows ALL commits by default.
 # - Prints primary artifact details (server:default): name, size, sha256, url.
 # - Falls back to the first available artifact if server:default is missing.
@@ -12,13 +12,13 @@
 # Cache file: .paper-build-cache.json
 #
 # exact build
-# ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b 56
+# ./1MB-Paper-API-Query-Build.sh -v 1.21.10 -b 56
 #
 # latest STABLE for that version
-# ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b latest
+# ./1MB-Paper-API-Query-Build.sh -v 1.21.10 -b latest
 #
 # latest ALPHA and show headers
-# ./1MB-Paper-API-Query-Build.sh -v 1.21.8 -b latest -c ALPHA -headers
+# ./1MB-Paper-API-Query-Build.sh -v 1.21.10 -b latest -c ALPHA -headers
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -32,7 +32,7 @@ USER_AGENT="1MB-paper-scripts/0.1 (+https://github.com/mrfdev/1MB)"
 TIMEOUT_SECS=20
 
 DEFAULT_PROJECT="paper"
-DEFAULT_VERSION="1.21.8"
+DEFAULT_VERSION="1.21.10"
 DEFAULT_BUILD="latest"          # leave empty to force CLI; or set to a number. Supports "latest"
 DEFAULT_CHANNEL="STABLE"  # only used when resolving latest via builds endpoint
 

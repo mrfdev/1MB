@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Version.sh  v0.1.0 (build 003)
+# 1MB-Paper-API-Query-Version.sh  v0.1.1 (build 004)
 # Query PaperMC Fill v3 API for a single Paper version (DEFAULT_VERSION).
 # Pretty output via jq, cache compare for newer build since last run.
 # Cache: .paper-version-cache.json
@@ -14,7 +14,7 @@ set -euo pipefail
 # -------------------------
 CACHE_FILE=".paper-version-cache.json"           # Cache for single version endpoint
 DEFAULT_PROJECT="paper"                          # Project id (assumed 'paper')
-DEFAULT_VERSION="1.21.8"                         # Version to inspect (no build tag)
+DEFAULT_VERSION="1.21.10"                         # Version to inspect (no build tag)
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
 TIMEOUT_SECS=15

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-LatestBuild.sh  v0.1.0 (build 003)
+# 1MB-Paper-API-Query-LatestBuild.sh  v0.1.1 (build 004)
 # Query PaperMC Fill v3 API for the *latest* build of a version.
 # - Uses the /builds/latest endpoint for the given version.
 # - Shows ALL commits by default.
@@ -14,9 +14,9 @@
 #
 # examples:
 # Ask Y/n if newer:
-# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8
+# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.10
 # Auto-download if newer (no prompt):
-# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.8 -download
+# ./1MB-Paper-API-Query-LatestBuild.sh -v 1.21.10 -download
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -30,7 +30,7 @@ USER_AGENT="1MB-paper-scripts/0.1 (+https://github.com/mrfdev/1MB)"
 TIMEOUT_SECS=20
 
 DEFAULT_PROJECT="paper"
-DEFAULT_VERSION="1.21.8"
+DEFAULT_VERSION="1.21.10"
 DEFAULT_CHANNEL="STABLE"  # used for baseline comparisons via the builds listing
 
 # Presentation:

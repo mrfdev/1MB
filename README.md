@@ -105,7 +105,7 @@ We welcome:
 ## 📌 Version Info
 
 - **Current Minecraft Version:** Paper 1.21.8
-- **Current Server Build:** 1MB v3.9.0 - released 23rd, 2025
+- **Current Server Build:** 1MB v3.9.7 - released October 7th, 2025
 
 ---
 
@@ -133,4 +133,4 @@ Spot an error or want to help? Open an Issue or submit a PR!
 
 ## Version
 
-This is 1MB Github version 2.16.2 build 107, August 31st, 2025.
+This is 1MB Github version 2.16.3 build 108, October 7th, 2025.

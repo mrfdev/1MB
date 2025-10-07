@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Versions.sh  v0.1.0 (build 003)
+# 1MB-Paper-API-Query-Versions.sh  v0.1.1 (build 004)
 # Query PaperMC Fill v3 API for all versions of the 'paper' project
 # Pretty output via jq, semver sorting via gsort/sort -V fallback.
 # Cache: .paper-versions-cache.json
@@ -14,7 +14,7 @@ set -euo pipefail
 # -------------------------
 CACHE_FILE=".paper-versions-cache.json"          # Cache for versions endpoint
 DEFAULT_PROJECT="paper"                          # Project id (assumed 'paper')
-DEFAULT_VERSION="1.21.8"                         # Your currently running Paper version (no build tag)
+DEFAULT_VERSION="1.21.10"                         # Your currently running Paper version (no build tag)
 USER_AGENT="mrfloris-paper-script/1.0 (https://github.com/mrfdev/1MB)"
 API_BASE="https://fill.papermc.io/v3"
 TIMEOUT_SECS=15

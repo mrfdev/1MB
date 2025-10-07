@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 1MB-Paper-API-Query-Builds.sh  v0.1.0 (build 003)
+# 1MB-Paper-API-Query-Builds.sh  v0.1.1 (build 004)
 # Query PaperMC Fill v3 API for build details of a single Paper version.
 # - Supports default channel filter (STABLE) and CLI override (-channel:stable).
 # - Pretty output (requires jq).
@@ -25,7 +25,7 @@ USER_AGENT="1MB-paper-scripts/0.1 (+https://github.com/mrfdev/1MB)"
 TIMEOUT_SECS=20
 
 DEFAULT_PROJECT="paper"
-DEFAULT_VERSION="1.21.8"
+DEFAULT_VERSION="1.21.10"
 # Common channels seen: RECOMMENDED, STABLE, ALPHA, BETA (Use "ALL" (or empty) to fetch all channels).
 DEFAULT_CHANNEL="STABLE"
 

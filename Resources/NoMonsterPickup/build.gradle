@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.mrfloris.nopickup'
+version = '1.1.0'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes(
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version
+        )
+    }
+}

@@ -4,7 +4,7 @@ Paper 1.21.8 plugin that prevents **all Monster** entities from picking up items
 
 ## Build (Gradle)
 
-1. Ensure Java 21+ and Gradle are installed.
+1. Ensure Java 25+ and Gradle are installed.
 2. In this folder, run:
    ```bash
    gradle build

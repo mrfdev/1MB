@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-# 1MB-MissingDoors.sh (v4)
+# 1MB-MissingDoors.sh (v5)
 # - Per-player missing-door report with count summary + colorized output
 # - List mode:
-#     -list:60  -> show players who found ALL doors
-#     -list:59  -> show players who found exactly 59 doors, and which door(s) they are missing
+#     -list:N  -> N in [0..TOTAL].
+#                 If N == TOTAL: show players who found ALL doors (no missing list).
+#                 If N <  TOTAL: show players who found exactly N doors, and which door(s) they are missing.
 #
 # Usage:
 #   1MB-MissingDoors.sh <PlayerName> [path/to/database.db]
 #   1MB-MissingDoors.sh -list:60 [path/to/database.db]
-#   1MB-MissingDoors.sh -list:59 [path/to/database.db]
+#   1MB-MissingDoors.sh -list:58 [path/to/database.db]
 #
 # Defaults:
 #   DB defaults to ./totdatabase.db if not provided.
@@ -24,10 +25,8 @@ fi
 
 # -------- Colors (auto-disable if not a TTY) --------
 use_color=0
-if [[ -t 1 ]]; then
-  if tput colors >/dev/null 2>&1; then
-    use_color=1
-  fi
+if [[ -t 1 ]] && tput colors >/dev/null 2>&1; then
+  use_color=1
 fi
 if [[ ${NO_COLOR:-} != "" ]]; then
   use_color=0
@@ -50,12 +49,11 @@ fi
 if [[ $# -lt 1 || $# -gt 2 ]]; then
   echo "Usage:"
   echo "  $0 <PlayerName> [path/to/database.db]"
-  echo "  $0 -list:60 [path/to/database.db]"
-  echo "  $0 -list:59 [path/to/database.db]"
+  echo "  $0 -list:<N> [path/to/database.db]     # N=0..TOTAL"
   exit 2
 fi
 
-MODE="$1"
+ARG1="$1"
 DB_PATH=${2:-"./totdatabase.db"}
 
 if [[ ! -f "$DB_PATH" ]]; then
@@ -63,12 +61,16 @@ if [[ ! -f "$DB_PATH" ]]; then
   exit 3
 fi
 
-# -------- Shared helpers --------
+# -------- Helpers --------
+get_total() {
+  sqlite3 "$DB_PATH" "SELECT COUNT(*) FROM registered_doors;"
+}
+
 player_summary() {
   local player="$1"
   local player_esc="${player//\'/\'\'}"
   local total have
-  total=$(sqlite3 "$DB_PATH" "SELECT COUNT(*) FROM registered_doors;")
+  total=$(get_total)
   have=$(sqlite3 "$DB_PATH" "SELECT COUNT(DISTINCT door_id) FROM interactions WHERE lower(player_name) = lower('$player_esc');")
   local missing=$(( total - have ))
   echo "$have|$total|$missing"
@@ -120,46 +122,55 @@ print_player_missing() {
   echo -e "${C_DIM}Player has ${have} of ${total} doors (${missing} missing).${C_RST}"
 }
 
-list_all_60() {
-  # List all players (case-insensitive grouped) that have all doors
-  local sql="
-    WITH total(t) AS (SELECT COUNT(*) FROM registered_doors),
-    pc AS (
-      SELECT lower(player_name) AS norm,
-             MAX(player_name)   AS display,
-             COUNT(DISTINCT door_id) AS c
-      FROM interactions
-      GROUP BY norm
-    )
-    SELECT display
-    FROM pc, total
-    WHERE c = t
-    ORDER BY display COLLATE NOCASE;
-  "
-  local rows
-  rows=$(sqlite3 -noheader "$DB_PATH" "$sql")
+list_all_found_exact() {
+  # $1 = N (exactly this many doors found)
+  local n="$1"
+  local total
+  total=$(get_total)
 
-  echo -e "${C_HI}${C_CYN}Players with ALL doors${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
-  echo "-----------------------------------------------"
-  if [[ -z "$rows" ]]; then
-    echo -e "${C_YEL}No players with complete set.${C_RST}"
+  if [[ "$n" -gt "$total" ]]; then
+    echo -e "${C_RED}Requested -list:${n} exceeds total doors (${total}).${C_RST}" >&2
+    exit 4
+  fi
+
+  if [[ "$n" -eq "$total" ]]; then
+    # Players with ALL doors (no missing list)
+    local sql="
+      WITH pc AS (
+        SELECT lower(player_name) AS norm,
+               MAX(player_name)   AS display,
+               COUNT(DISTINCT door_id) AS c
+        FROM interactions
+        GROUP BY norm
+      )
+      SELECT display
+      FROM pc
+      WHERE c = $n
+      ORDER BY display COLLATE NOCASE;
+    "
+    local rows
+    rows=$(sqlite3 -noheader "$DB_PATH" "$sql")
+
+    echo -e "${C_HI}${C_CYN}Players with ALL doors${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
+    echo "-----------------------------------------------"
+    if [[ -z "$rows" ]]; then
+      echo -e "${C_YEL}No players with complete set.${C_RST}"
+      return 0
+    fi
+    local count=0
+    while IFS= read -r name; do
+      [[ -z "$name" ]] && continue
+      echo "• $name"
+      ((count++)) || true
+    done <<< "$rows"
+    echo
+    echo -e "${C_DIM}Total players with all doors: ${count}.${C_RST}"
     return 0
   fi
-  local count=0
-  while IFS= read -r name; do
-    [[ -z "$name" ]] && continue
-    echo "• $name"
-    ((count++)) || true
-  done <<< "$rows"
-  echo
-  echo -e "${C_DIM}Total players with all doors: ${count}.${C_RST}"
-}
 
-list_all_59() {
-  # Players who have exactly total-1 doors, and show which door(s) they miss (plus TP one-liner)
+  # Players with exactly N found; list which doors they are missing.
   local sql="
-    WITH total(t) AS (SELECT COUNT(*) FROM registered_doors),
-    pc AS (
+    WITH pc AS (
       SELECT lower(player_name) AS norm,
              MAX(player_name)   AS display,
              COUNT(DISTINCT door_id) AS c
@@ -167,7 +178,9 @@ list_all_59() {
       GROUP BY norm
     ),
     eligible AS (
-      SELECT pc.norm, pc.display FROM pc, total WHERE pc.c = t-1
+      SELECT pc.norm, pc.display
+      FROM pc
+      WHERE pc.c = $n
     ),
     missing AS (
       SELECT e.display AS player_name,
@@ -190,14 +203,13 @@ list_all_59() {
   local rows
   rows=$(sqlite3 -separator '|' -noheader "$DB_PATH" "$sql")
 
-  echo -e "${C_HI}${C_CYN}Players with 59 doors (missing exactly 1)${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
+  echo -e "${C_HI}${C_CYN}Players with ${n} doors (missing exactly $(( total - n )))${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
   echo "-----------------------------------------------"
   if [[ -z "$rows" ]]; then
-    echo -e "${C_YEL}No players are at 59/60 right now.${C_RST}"
+    echo -e "${C_YEL}No players at ${n}/${total} right now.${C_RST}"
     return 0
   fi
 
-  # Group by player, print missing door with TP
   local current=""
   local count=0
   while IFS='|' read -r name id x y z world; do
@@ -211,18 +223,13 @@ list_all_59() {
     printf "  ${C_DIM}missing door_id %-3s${C_RST} -> ${C_GRN}/tppos %s %s %s %s${C_RST}\n" "$id" "$x" "$y" "$z" "$world"
   done <<< "$rows"
   echo
-  echo -e "${C_DIM}Total players at 59/60: ${count}.${C_RST}"
+  echo -e "${C_DIM}Total players at ${n}/${total}: ${count}.${C_RST}"
 }
 
 # -------- Mode dispatch --------
-case "$MODE" in
-  -list:60)
-    list_all_60
-    ;;
-  -list:59)
-    list_all_59
-    ;;
-  *)
-    print_player_missing "$MODE"
-    ;;
-esac
+if [[ "$ARG1" =~ ^-list:([0-9]+)$ ]]; then
+  LNUM="${BASH_REMATCH[1]}"
+  list_all_found_exact "$LNUM"
+else
+  print_player_missing "$ARG1"
+fi

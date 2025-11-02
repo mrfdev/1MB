@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
-# 1MB-MissingDoors.sh (v5)
+# 1MB-MissingDoors.sh (v6)
 # - Per-player missing-door report with count summary + colorized output
-# - List mode:
-#     -list:N  -> N in [0..TOTAL].
-#                 If N == TOTAL: show players who found ALL doors (no missing list).
-#                 If N <  TOTAL: show players who found exactly N doors, and which door(s) they are missing.
+# - General list mode: -list:N (0..TOTAL)
+# - NEW: --world <name> (default: halloween). Scopes *everything* to that world:
+#        totals, found counts, and missing-door lists.
 #
 # Usage:
-#   1MB-MissingDoors.sh <PlayerName> [path/to/database.db]
-#   1MB-MissingDoors.sh -list:60 [path/to/database.db]
-#   1MB-MissingDoors.sh -list:58 [path/to/database.db]
+#   1MB-MissingDoors.v6.sh <PlayerName> [path/to/database.db] [--world <name>]
+#   1MB-MissingDoors.v6.sh -list:<N>   [path/to/database.db] [--world <name>]
 #
-# Defaults:
-#   DB defaults to ./totdatabase.db if not provided.
+# Examples:
+#   ./1MB-MissingDoors.v6.sh LayKam --world halloween
+#   ./1MB-MissingDoors.v6.sh -list:59 ./totdatabase.db --world halloween
 #
 # Requirements: sqlite3 CLI
 #
@@ -45,25 +44,78 @@ else
   C_HI=""; C_DIM=""; C_RED=""; C_GRN=""; C_YEL=""; C_BLU=""; C_CYN=""; C_RST=""
 fi
 
-# -------- Args --------
-if [[ $# -lt 1 || $# -gt 2 ]]; then
+# -------- Arg parsing --------
+MODE=""
+DB_PATH="./totdatabase.db"
+WORLD="halloween"
+
+if [[ $# -lt 1 ]]; then
   echo "Usage:"
-  echo "  $0 <PlayerName> [path/to/database.db]"
-  echo "  $0 -list:<N> [path/to/database.db]     # N=0..TOTAL"
+  echo "  $0 <PlayerName> [path/to/database.db] [--world <name>]"
+  echo "  $0 -list:<N>   [path/to/database.db] [--world <name>]"
   exit 2
 fi
 
-ARG1="$1"
-DB_PATH=${2:-"./totdatabase.db"}
+# We accept args in any order: first non-flag becomes MODE, next non-flag becomes DB.
+i=1
+while [[ $i -le $# ]]; do
+  arg="${!i}"
+  case "$arg" in
+    --world)
+      j=$((i+1))
+      if [[ $j -le $# ]]; then
+        WORLD="${!j}"
+        i=$((i+2))
+        continue
+      else
+        echo "Error: --world requires a value." >&2
+        exit 2
+      fi
+      ;;
+    --world=*)
+      WORLD="${arg#--world=}"
+      i=$((i+1))
+      continue
+      ;;
+    -*)
+      # Could be -list:N
+      if [[ -z "$MODE" ]]; then
+        MODE="$arg"
+      else
+        echo "Error: unexpected flag '$arg'." >&2
+        exit 2
+      fi
+      i=$((i+1))
+      ;;
+    *)
+      # Non-flag: assign to MODE or DB depending on what's already set.
+      if [[ -z "$MODE" ]]; then
+        MODE="$arg"
+      elif [[ "$DB_PATH" == "./totdatabase.db" ]]; then
+        DB_PATH="$arg"
+      else
+        echo "Error: unexpected positional argument '$arg'." >&2
+        exit 2
+      fi
+      i=$((i+1))
+      ;;
+  esac
+done
 
 if [[ ! -f "$DB_PATH" ]]; then
   echo "Error: database file not found: $DB_PATH" >&2
   exit 3
 fi
 
-# -------- Helpers --------
+# Escape values for SQL
+WORLD_ESC=${WORLD//\'/\'\'}
+
+# -------- Helpers (scoped by WORLD) --------
 get_total() {
-  sqlite3 "$DB_PATH" "SELECT COUNT(*) FROM registered_doors;"
+  sqlite3 "$DB_PATH" "
+    SELECT COUNT(*) FROM registered_doors rd
+    WHERE lower(rd.door_world) = lower('$WORLD_ESC');
+  "
 }
 
 player_summary() {
@@ -71,7 +123,13 @@ player_summary() {
   local player_esc="${player//\'/\'\'}"
   local total have
   total=$(get_total)
-  have=$(sqlite3 "$DB_PATH" "SELECT COUNT(DISTINCT door_id) FROM interactions WHERE lower(player_name) = lower('$player_esc');")
+  have=$(sqlite3 "$DB_PATH" "
+    SELECT COUNT(DISTINCT i.door_id)
+    FROM interactions i
+    JOIN registered_doors rd ON rd.door_id = i.door_id
+    WHERE lower(i.player_name) = lower('$player_esc')
+      AND lower(rd.door_world) = lower('$WORLD_ESC');
+  ")
   local missing=$(( total - have ))
   echo "$have|$total|$missing"
 }
@@ -90,57 +148,61 @@ print_player_missing() {
     LEFT JOIN (
       SELECT DISTINCT i.door_id
       FROM interactions i
+      JOIN registered_doors r2 ON r2.door_id = i.door_id
       WHERE lower(i.player_name) = lower('$player_esc')
+        AND lower(r2.door_world) = lower('$WORLD_ESC')
     ) found ON found.door_id = rd.door_id
-    WHERE found.door_id IS NULL
+    WHERE lower(rd.door_world) = lower('$WORLD_ESC')
+      AND found.door_id IS NULL
     ORDER BY rd.door_id;
   "
   local results
   results=$(sqlite3 -separator '|' -noheader "$DB_PATH" "$sql")
 
-  echo -e "${C_HI}${C_CYN}Missing doors for player '${player}'${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
+  echo -e "${C_HI}${C_CYN}Missing doors for player '${player}'${C_RST} ${C_DIM}(DB: $DB_PATH, world: ${WORLD})${C_RST}"
   echo "-----------------------------------------------"
 
   IFS='|' read -r have total missing <<<"$(player_summary "$player")"
   if [[ -z "$results" ]]; then
     if [[ "$missing" -eq 0 ]]; then
-      echo -e "${C_GRN}Player has all ${total} doors. Nothing missing.${C_RST}"
+      echo -e "${C_GRN}Player has all ${total} doors in world '${WORLD}'. Nothing missing.${C_RST}"
     else
-      echo -e "${C_YEL}No missing-door rows returned, but summary indicates $missing missing.${C_RST}"
+      echo -e "${C_YEL}No missing-door rows returned, but summary indicates ${missing} missing in '${WORLD}'.${C_RST}"
       echo -e "${C_DIM}Player has ${have} of ${total} doors (${missing} missing).${C_RST}"
     fi
     return 0
   fi
 
-  # Print lines
   while IFS='|' read -r id x y z world; do
     [[ -z "$id" ]] && continue
     printf "${C_HI}door_id %-3s${C_RST}  ->  ${C_GRN}/tppos %s %s %s %s${C_RST}\n" "$id" "$x" "$y" "$z" "$world"
   done <<< "$results"
 
   echo
-  echo -e "${C_DIM}Player has ${have} of ${total} doors (${missing} missing).${C_RST}"
+  echo -e "${C_DIM}Player has ${have} of ${total} doors (${missing} missing) in '${WORLD}'.${C_RST}"
 }
 
 list_all_found_exact() {
-  # $1 = N (exactly this many doors found)
+  # $1 = N (exactly this many doors found) within WORLD
   local n="$1"
   local total
   total=$(get_total)
 
   if [[ "$n" -gt "$total" ]]; then
-    echo -e "${C_RED}Requested -list:${n} exceeds total doors (${total}).${C_RST}" >&2
+    echo -e "${C_RED}Requested -list:${n} exceeds total doors (${total}) in world '${WORLD}'.${C_RST}" >&2
     exit 4
   fi
 
   if [[ "$n" -eq "$total" ]]; then
-    # Players with ALL doors (no missing list)
+    # Players with ALL doors in WORLD
     local sql="
       WITH pc AS (
-        SELECT lower(player_name) AS norm,
-               MAX(player_name)   AS display,
-               COUNT(DISTINCT door_id) AS c
-        FROM interactions
+        SELECT lower(i.player_name) AS norm,
+               MAX(i.player_name)   AS display,
+               COUNT(DISTINCT i.door_id) AS c
+        FROM interactions i
+        JOIN registered_doors rd ON rd.door_id = i.door_id
+        WHERE lower(rd.door_world) = lower('$WORLD_ESC')
         GROUP BY norm
       )
       SELECT display
@@ -151,10 +213,10 @@ list_all_found_exact() {
     local rows
     rows=$(sqlite3 -noheader "$DB_PATH" "$sql")
 
-    echo -e "${C_HI}${C_CYN}Players with ALL doors${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
+    echo -e "${C_HI}${C_CYN}Players with ALL doors${C_RST} ${C_DIM}(DB: $DB_PATH, world: ${WORLD})${C_RST}"
     echo "-----------------------------------------------"
     if [[ -z "$rows" ]]; then
-      echo -e "${C_YEL}No players with complete set.${C_RST}"
+      echo -e "${C_YEL}No players with complete set in '${WORLD}'.${C_RST}"
       return 0
     fi
     local count=0
@@ -168,13 +230,15 @@ list_all_found_exact() {
     return 0
   fi
 
-  # Players with exactly N found; list which doors they are missing.
+  # Players with exactly N found; list which doors they are missing in WORLD.
   local sql="
     WITH pc AS (
-      SELECT lower(player_name) AS norm,
-             MAX(player_name)   AS display,
-             COUNT(DISTINCT door_id) AS c
-      FROM interactions
+      SELECT lower(i.player_name) AS norm,
+             MAX(i.player_name)   AS display,
+             COUNT(DISTINCT i.door_id) AS c
+      FROM interactions i
+      JOIN registered_doors rd ON rd.door_id = i.door_id
+      WHERE lower(rd.door_world) = lower('$WORLD_ESC')
       GROUP BY norm
     ),
     eligible AS (
@@ -194,7 +258,8 @@ list_all_found_exact() {
       LEFT JOIN interactions i
         ON lower(i.player_name) = e.norm
        AND i.door_id = rd.door_id
-      WHERE i.door_id IS NULL
+      WHERE lower(rd.door_world) = lower('$WORLD_ESC')
+        AND i.door_id IS NULL
     )
     SELECT player_name, door_id, x, y, z, world
     FROM missing
@@ -203,10 +268,10 @@ list_all_found_exact() {
   local rows
   rows=$(sqlite3 -separator '|' -noheader "$DB_PATH" "$sql")
 
-  echo -e "${C_HI}${C_CYN}Players with ${n} doors (missing exactly $(( total - n )))${C_RST} ${C_DIM}(DB: $DB_PATH)${C_RST}"
+  echo -e "${C_HI}${C_CYN}Players with ${n} doors (missing exactly $(( total - n )))${C_RST} ${C_DIM}(DB: $DB_PATH, world: ${WORLD})${C_RST}"
   echo "-----------------------------------------------"
   if [[ -z "$rows" ]]; then
-    echo -e "${C_YEL}No players at ${n}/${total} right now.${C_RST}"
+    echo -e "${C_YEL}No players at ${n}/${total} in '${WORLD}' right now.${C_RST}"
     return 0
   fi
 
@@ -227,9 +292,9 @@ list_all_found_exact() {
 }
 
 # -------- Mode dispatch --------
-if [[ "$ARG1" =~ ^-list:([0-9]+)$ ]]; then
+if [[ "$MODE" =~ ^-list:([0-9]+)$ ]]; then
   LNUM="${BASH_REMATCH[1]}"
   list_all_found_exact "$LNUM"
 else
-  print_player_missing "$ARG1"
+  print_player_missing "$MODE"
 fi

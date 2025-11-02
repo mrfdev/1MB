@@ -1,20 +1,53 @@
 #!/usr/bin/env bash
-# 1MB-MissingDoors.sh (v6)
-# - Per-player missing-door report with count summary + colorized output
-# - General list mode: -list:N (0..TOTAL)
-# - NEW: --world <name> (default: halloween). Scopes *everything* to that world:
-#        totals, found counts, and missing-door lists.
-#
+
+# @Filename: 1MB-Doors.sh
+# @Version: 2.0.1, build 012
+# @Release: November 2nd, 2025
+# @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
+# @Discord: @mrfloris on https://discord.gg/floris
+# @Install: chmod a+x 1MB-Doors.sh (put this file in ~/plugins/TrickOrTreatV2/)
+# @Description: Helps query the .db file for the halloween world to see who's found all doors, or who has 59 or 58 and which doors are missing, or which doors a particular player has not found (and counts summery)
+
 # Usage:
-#   1MB-MissingDoors.v6.sh <PlayerName> [path/to/database.db] [--world <name>]
-#   1MB-MissingDoors.v6.sh -list:<N>   [path/to/database.db] [--world <name>]
+#   1MB-Doors.sh <PlayerName> [path/to/totdatabase.db] [--world <name>]
+#   1MB-Doors.sh -list:<N>   [path/to/totdatabase.db] [--world <name>]
 #
-# Examples:
-#   ./1MB-MissingDoors.v6.sh LayKam --world halloween
-#   ./1MB-MissingDoors.v6.sh -list:59 ./totdatabase.db --world halloween
+
+# @Resource https://www.spigotmc.org/resources/halloween-trick-or-treating.48699/
+# @URL: Latest source, info, & support: https://scripts.1moreblock.com/
+
+## chmod +x 1MB-Doors.sh
+
+## # Per-player (defaults to ./totdatabase.db and world=halloween)
+## ./1MB-Doors.sh mrfloris
+## ./1MB-Doors.sh mrfloris ./totdatabase.db --world halloween
+
+## # List modes (N from 0..TOTAL, scoped to world)
+## ./1MB-Doors.sh -list:60 --world halloween
+## ./1MB-Doors.sh -list:59 --world halloween
+## ./1MB-Doors.sh -list:0  --world halloween
+
+## If later you add another event world to the same DB, just point to it:
+## ./1MB-Doors.sh -list:58 ./totdatabase.db --world easter
+
+### CONFIGURATION
 #
+# Declarations here you can customize to your preferred setup.
+# Generally only if you actually have to. Check Wiki for details.
+#
+###
+
+# none i guess
+
+### END OF CONFIGURATION
+#
+# Really stop configuring things
+# beyond this point. I mean it.
+#
+###
+
+
 # Requirements: sqlite3 CLI
-#
 set -euo pipefail
 
 if ! command -v sqlite3 >/dev/null 2>&1; then
@@ -298,3 +331,5 @@ if [[ "$MODE" =~ ^-list:([0-9]+)$ ]]; then
 else
   print_player_missing "$MODE"
 fi
+
+#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

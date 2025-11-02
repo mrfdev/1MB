@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-# 1MB-Ghosts.sh (v9) — UUID→name via Mojang SessionServer, fallback to PlayerDB + NameMC
+# 1MB-Ghosts.sh (v11)
+# - YAML→AWK core (BSD awk compatible)
+# - Optional --name-lookup using CACHE → PlayerDB → NameMC → Laby → Crafty
+# - Persistent cache at ~/.1mb-namecache.tsv (uuid<TAB>name)
+# - Ignores placeholder UUID 00000000-0000-0000-0000-000000000000
+# - Summary uses player name when available ("Player <name> has ...")
 #
 # Usage:
 #   1MB-Ghosts.sh <uuid> [data.yml] [--world <name>] [--name-lookup]
@@ -17,6 +22,7 @@ else
 fi
 
 MODE=""; YAML="./data.yml"; WORLD="halloween"; NAME_LOOKUP=0
+ZERO_UUID="00000000-0000-0000-0000-000000000000"
 
 if [[ $# -lt 1 ]]; then
   echo "Usage:"
@@ -53,78 +59,109 @@ UUIDS_FILE="$(mktemp "$TMPDIR/uuids.XXXXXX")"
 MAP_FILE="$(mktemp "$TMPDIR/map.XXXXXX")"
 trap 'rm -f "$UUIDS_FILE" "$MAP_FILE" 2>/dev/null || true' EXIT
 
-# Extract all UUIDs found in claimed lists
-awk '
+# Extract unique UUIDs from claimed (skip ZERO_UUID)
+awk -v ZERO="$ZERO_UUID" '
   BEGIN{cur=""; in_claim=0}
   /^[0-9a-fA-F-]{36}:[[:space:]]*$/ { cur=$0; sub(/:.*/,"",cur); in_claim=0; next }
   /^[[:space:]]+claimed:[[:space:]]*$/ { in_claim=1; next }
   /^[[:space:]]+-[[:space:]]+[0-9a-fA-F-]{36}[[:space:]]*$/ {
     if(in_claim){
-      u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u); print u
+      u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u);
+      if(u!=ZERO) print u
     }
   }
 ' "$YAML" | LC_ALL=C sort -u > "$UUIDS_FILE"
 
-# --- Optional UUID -> name mapping using Mojang + fallback ---
+# --- Optional UUID -> name mapping with persistent cache ---
+CACHE="$HOME/.1mb-namecache.tsv"
+mkdir -p "$(dirname "$CACHE")" 2>/dev/null || true
+touch "$CACHE" 2>/dev/null || true
+
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
 CURL_BASE=(curl -sS -L --connect-timeout 2 --max-time 3 -A "$UA")
 
 is_valid_name() { [[ "$1" =~ ^[A-Za-z0-9_]{3,16}$ ]]; }
-strip_dashes() { echo "${1//-/}"; }
-
-lookup_mojang() {
-  local uuid_no_dash name json
-  uuid_no_dash="$(strip_dashes "$1")"
-  # Mojang SessionServer returns JSON like: {"id":"<uuid>","name":"PlayerName",...}
-  json="$("${CURL_BASE[@]}" "https://sessionserver.mojang.com/session/minecraft/profile/${uuid_no_dash}" || true)"
-  name="$(printf "%s" "$json" | sed -n 's/.*"name"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)"
-  if is_valid_name "$name"; then echo "$name"; return 0; fi
-  return 1
-}
 
 lookup_playerdb() {
   local json name
   json="$("${CURL_BASE[@]}" "https://playerdb.co/api/player/minecraft/$1" || true)"
-  # {"code":"player.found","data":{"player":{"username":"mrfloris",...}}}
-  name="$(printf "%s" "$json" | sed -n 's/.*"username"[[:space:]]*":[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)"
+  name="$(printf "%s" "$json" | sed -n 's/.*\"username\"[[:space:]]*:[[:space:]]*\"\([^"]*\)\".*/\1/p' | head -1)"
   if is_valid_name "$name"; then echo "$name"; return 0; fi
   return 1
+}
+
+parse_og_title() {
+  sed -n 's/.*property="og:title" content="\([^"]*\)".*/\1/p' | head -1 | sed 's/ - .*$//' | awk "{print \$1}"
 }
 
 lookup_namemc() {
   local html name
   html="$("${CURL_BASE[@]}" "https://namemc.com/profile/$1" || true)"
-  name="$(printf "%s" "$html" | sed -n 's/.*property="og:title" content="\([^"]*\)".*/\1/p' | head -1 | sed 's/ - .*$//' | awk '{print $1}')"
+  name="$(printf "%s" "$html" | parse_og_title)"
   if is_valid_name "$name"; then echo "$name"; return 0; fi
   return 1
 }
 
+lookup_laby() {
+  local html name
+  html="$("${CURL_BASE[@]}" "https://laby.net/@$1" || true)"
+  name="$(printf "%s" "$html" | parse_og_title)"
+  if is_valid_name "$name"; then echo "$name"; return 0; fi
+  return 1
+}
+
+lookup_crafty() {
+  local html name
+  html="$("${CURL_BASE[@]}" "https://crafty.gg/@$1" || true)"
+  name="$(printf "%s" "$html" | parse_og_title)"
+  if is_valid_name "$name"; then echo "$name"; return 0; fi
+  return 1
+}
+
+cache_get() {
+  local uuid="$1"
+  awk -v U="$uuid" -F'\t' 'tolower($1)==tolower(U){print $2; found=1; exit} END{if(!found) exit 1}' "$CACHE"
+}
+
+cache_put() {
+  local uuid="$1" name="$2"
+  grep -vi "^$uuid\t" "$CACHE" > "$CACHE.tmp" 2>/dev/null || true
+  printf "%s\t%s\n" "$uuid" "$name" >> "$CACHE.tmp"
+  mv "$CACHE.tmp" "$CACHE"
+}
+
 resolve_name() {
   local uuid="$1" name=""
-  lookup_mojang "$uuid" && return 0 || true
-  name="$(lookup_mojang "$uuid")"; if is_valid_name "$name"; then echo "$name"; return; fi
-  name="$(lookup_playerdb "$uuid")"; if is_valid_name "$name"; then echo "$name"; return; fi
-  name="$(lookup_namemc "$uuid")"; if is_valid_name "$name"; then echo "$name"; return; fi
+  [[ "$uuid" == "$ZERO_UUID" ]] && echo "" && return 0
+  if name="$(cache_get "$uuid" 2>/dev/null)"; then echo "$name"; return 0; fi
+  name="$(lookup_playerdb "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
+  name="$(lookup_namemc "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
+  name="$(lookup_laby "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
+  name="$(lookup_crafty "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
   echo ""
 }
 
+# Build MAP_FILE = cache + new lookups if requested
 if [[ "$NAME_LOOKUP" -eq 1 ]]; then
+  awk 'BEGIN{FS="\t"} NF>=2{print $1 "\t" $2}' "$CACHE" > "$MAP_FILE" || true
   while IFS= read -r u; do
     n="$(resolve_name "$u")"
     if [[ -n "$n" ]]; then printf "%s\t%s\n" "$u" "$n" >> "$MAP_FILE"; fi
   done < "$UUIDS_FILE"
 fi
 
-# --- Main AWK core (BSD awk) ---
-awk -v MODE="$MODE" -v WORLD="$WORLD" -v WL="$WORLD_LC" -v MAP="$MAP_FILE" \
+# --- Main AWK core ---
+awk -v MODE="$MODE" -v WORLD="$WORLD" -v WL="$WORLD_LC" -v MAP="$MAP_FILE" -v ZERO="$ZERO_UUID" \
     -v HI="$C_HI" -v DIM="$C_DIM" -v RED="$C_RED" -v GRN="$C_GRN" -v CYN="$C_CYN" -v RST="$C_RST" '
   function trim(s){ gsub(/^[ \t]+|[ \t]+$/,"",s); return s }
   function label(u){ return (u in map ? map[u] " (" u ")" : u) }
+  function shortlabel(u){ return (u in map ? map[u] : u) }
+
   BEGIN{
     cur=""; in_claim=0; total=0;
     if(MAP!="" && (getline test < MAP)>0){
       close(MAP);
-      while((getline < MAP)>0){ split($0,a,"\t"); map[a[1]]=a[2] }
+      while((getline < MAP)>0){ split($0,a,"\t"); if(length(a[1])>0 && length(a[2])>0){ map[a[1]]=a[2] } }
       close(MAP)
     } else if(MAP!=""){ close(MAP) }
   }
@@ -140,7 +177,8 @@ awk -v MODE="$MODE" -v WORLD="$WORLD" -v WL="$WORLD_LC" -v MAP="$MAP_FILE" \
   /^[[:space:]]+claimed:[[:space:]]*$/ { in_claim=1; next }
   /^[[:space:]]+-[[:space:]]+[0-9a-fA-F-]{36}[[:space:]]*$/ {
     if(in_claim && cur!=""){
-      u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u); seen[u]=1; claims[u SUBSEP cur]=1
+      u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u);
+      if(u!=ZERO){ seen[u]=1; claims[u SUBSEP cur]=1 }
     }
     next
   }
@@ -191,15 +229,27 @@ awk -v MODE="$MODE" -v WORLD="$WORLD" -v WL="$WORLD_LC" -v MAP="$MAP_FILE" \
     u=MODE
     have=0; for(g in ghosts){ if((u SUBSEP g) in claims) have++ }
     miss=total-have
-    printf("%s%sMissing ghosts for %s%s %s(world: %s)%s\n", HI,CYN,label(u),RST,DIM,WORLD,RST)
+
+    if(u in map){
+      printf("%s%sMissing ghosts for %s (%s)%s %s(world: %s)%s\n", HI,CYN,shortlabel(u),u,RST,DIM,WORLD,RST)
+    } else {
+      printf("%s%sMissing ghosts for %s%s %s(world: %s)%s\n", HI,CYN,u,RST,DIM,WORLD,RST)
+    }
     print "-----------------------------------------------"
-    if(miss==0){ printf("%sThis UUID has all %d ghosts.%s\n", GRN, total, RST); exit 0 }
+
+    if(miss==0){
+      if(u in map){ printf("%sPlayer %s has all %d ghosts.%s\n", GRN, shortlabel(u), total, RST) }
+      else        { printf("%sThis UUID has all %d ghosts.%s\n", GRN, total, RST) }
+      exit 0
+    }
+
     for(g in ghosts){
       if(!((u SUBSEP g) in claims)){
         printf("%sghost %-36s%s -> %s/tppos %s %s %s %s%s\n", HI, g, RST, GRN, g_x[g], g_y[g], g_z[g], g_wo[g], RST)
       }
     }
     print ""
-    printf("%sUUID has %d of %d ghosts (%d missing).%s\n", DIM, have, total, miss, RST)
+    if(u in map){ printf("%sPlayer %s has %d of %d ghosts (%d missing).%s\n", DIM, shortlabel(u), have, total, miss, RST) }
+    else        { printf("%sUUID has %d of %d ghosts (%d missing).%s\n", DIM, have, total, miss, RST) }
   }
 ' "$YAML"

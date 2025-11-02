@@ -25,6 +25,12 @@ The script was built to work with the `totdatabase.db` SQLite database from the 
 
 ---
 
+### Screenshot
+
+<img width="779" height="981" alt="Screenshot- 2025-11-02 at 12 07 18" src="https://github.com/user-attachments/assets/4226d660-167a-405f-b38e-ea291394da4d" />
+
+---
+
 ## 🧩 Requirements
 - Bash 5 or later  
 - `sqlite3` installed and accessible in `$PATH`

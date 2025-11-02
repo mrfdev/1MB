@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-# 1MB-Ghosts.sh (v13)
-# - YAML→AWK core (BSD awk compatible)
-# - Per-UUID report for <uuid|playername> (cache-first; optional online name→uuid with --name-lookup)
-# - --player <uuid|playername>
-# - --ghost <ghost_uuid>
-# - --top, --top:N, --top:all  (leaderboard; with --name-lookup only first 5 unknown names fetched)
-# - --list:N  or  -list:N      (players with exactly N ghosts; shows which ones missing)
-# - --stats  (adds Most & Least found ghosts)
-# - --summary (writes ./ghost-event-summary.md; uses cached names in Top 10)
-# - --world <name> (default: halloween)
-# - --name-lookup (permits network for lookups; otherwise cache-only)
-# - Persistent cache at ~/.1mb-namecache.tsv
-# - Ignores ZERO UUID 00000000-0000-0000-0000-000000000000
+# 1MB-Ghosts.sh (v16)
+# - macOS Bash 3.2 compatible
+# - Robust NAME<->UUID caching (uses canonical username from PlayerDB on lookup)
+# - New: --cache-show <uuid|name>
 set -euo pipefail
 
 # Colors
@@ -27,6 +18,8 @@ fi
 MODE=""; YAML="./data.yml"; WORLD="halloween"; NAME_LOOKUP=0
 ZERO_UUID="00000000-0000-0000-0000-000000000000"
 
+trim() { printf "%s" "$1" | awk '{gsub(/^[ \t\r\n]+|[ \t\r\n]+$/,""); print}'; }
+
 if [[ $# -lt 1 ]]; then
   cat <<USAGE
 Usage:
@@ -36,16 +29,18 @@ Usage:
   $0 --top[(:N|:all)] [data.yml] [--world <name>] [--name-lookup]
   $0 --list:N   or   -list:N
   $0 --stats [data.yml] [--world <name>]
-  $0 --summary [data.yml] [--world <name>]
+  $0 --summary [data.yml] [--world <name>] [--name-lookup]
+  $0 --cache-show <uuid|name>
 USAGE
   exit 2
 fi
 
-# Parse args (support legacy -list:N)
+# Parse args
 TOP_ARG=""
 GHOST_ARG=""
 PLAYER_ARG=""
 LIST_N=""
+CACHE_SHOW=""
 i=1
 while [[ $i -le $# ]]; do
   arg="${!i}"
@@ -55,19 +50,21 @@ while [[ $i -le $# ]]; do
              WORLD="${!j}"; i=$((i+2));;
     --world=*) WORLD="${arg#--world=}"; i=$((i+1));;
     --ghost) j=$((i+1)); [[ $j -le $# ]] || { echo "Error: --ghost requires a ghost UUID." >&2; exit 2; }
-             MODE="--ghost"; GHOST_ARG="${!j}"; i=$((i+2));;
+             MODE="--ghost"; GHOST_ARG="$(trim "${!j}")"; i=$((i+2));;
     --player) j=$((i+1)); [[ $j -le $# ]] || { echo "Error: --player requires a uuid or playername." >&2; exit 2; }
-             MODE="--player"; PLAYER_ARG="${!j}"; i=$((i+2));;
+             MODE="--player"; PLAYER_ARG="$(trim "${!j}")"; i=$((i+2));;
     --top|--top:*)
              MODE="--top"; TOP_ARG="$arg"; i=$((i+1));;
     --list:*|-list:*)
              MODE="--list"; LIST_N="${arg#*:}"; i=$((i+1));;
     --stats) MODE="--stats"; i=$((i+1));;
     --summary) MODE="--summary"; i=$((i+1));;
+    --cache-show) j=$((i+1)); [[ $j -le $# ]] || { echo "Error: --cache-show requires a value." >&2; exit 2; }
+             MODE="--cache-show"; CACHE_SHOW="$(trim "${!j}")"; i=$((i+2));;
     -*)
       echo "Error: unexpected flag '$arg'." >&2; exit 2;;
     *)
-      if [[ -z "$MODE" ]]; then MODE="$arg"
+      if [[ -z "$MODE" ]]; then MODE="$(trim "$arg")"
       elif [[ "$YAML" == "./data.yml" ]]; then YAML="$arg"
       else echo "Error: unexpected positional argument '$arg'." >&2; exit 2; fi
       i=$((i+1));;
@@ -86,67 +83,67 @@ UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, l
 CURL_BASE=(curl -sS -L --connect-timeout 2 --max-time 3 -A "$UA")
 
 is_valid_name() { [[ "$1" =~ ^[A-Za-z0-9_]{3,16}$ ]]; }
-
-lookup_playerdb_uuid_by_name() {
-  # Returns UUID (with dashes) for a username
-  local json uuid
-  json="$("${CURL_BASE[@]}" "https://playerdb.co/api/player/minecraft/$1" || true)"
-  # PlayerDB returns id (uuid) and username; we prefer the id
-  uuid="$(printf "%s" "$json" | sed -n 's/.*"id"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)"
-  printf "%s" "$uuid"
+normalize_uuid() {
+  local raw="$1"
+  local u
+  u="$(printf "%s" "$raw" | tr -d '-' | tr '[:upper:]' '[:lower:]')"
+  if [[ ${#u} -eq 32 ]]; then
+    printf "%s-%s-%s-%s-%s" "${u:0:8}" "${u:8:4}" "${u:12:4}" "${u:16:4}" "${u:20:12}"
+  else
+    printf "%s" "$raw" | tr '[:upper:]' '[:lower:]'
+  fi
 }
 
-lookup_playerdb_name_by_uuid() {
-  local json name
-  json="$("${CURL_BASE[@]}" "https://playerdb.co/api/player/minecraft/$1" || true)"
-  name="$(printf "%s" "$json" | sed -n 's/.*"username"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)"
-  if is_valid_name "$name"; then echo "$name"; return 0; fi
-  return 1
+# PlayerDB helpers (extract both uuid and canonical username from one request)
+playerdb_fetch() {
+  "${CURL_BASE[@]}" "https://playerdb.co/api/player/minecraft/$1" || true
 }
-parse_og_title() { sed -n 's/.*property="og:title" content="\([^"]*\)".*/\1/p' | head -1 | sed 's/ - .*$//' | awk "{print \$1}"; }
+playerdb_uuid_from_json() { sed -n 's/.*"id"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1; }
+playerdb_name_from_json() { sed -n 's/.*"username"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1; }
+
+parse_og_title() { sed -n 's/.*property="og:title" content="\([^"]*\)".*/\1/p' | head -1 | sed 's/ - .*$//' | awk '{print $1}'; }
 lookup_namemc_name_by_uuid() { local html name; html="$("${CURL_BASE[@]}" "https://namemc.com/profile/$1" || true)"; name="$(printf "%s" "$html" | parse_og_title)"; if is_valid_name "$name"; then echo "$name"; return 0; fi; return 1; }
 lookup_laby_name_by_uuid() { local html name; html="$("${CURL_BASE[@]}" "https://laby.net/@$1" || true)"; name="$(printf "%s" "$html" | parse_og_title)"; if is_valid_name "$name"; then echo "$name"; return 0; fi; return 1; }
 lookup_crafty_name_by_uuid() { local html name; html="$("${CURL_BASE[@]}" "https://crafty.gg/@$1" || true)"; name="$(printf "%s" "$html" | parse_og_title)"; if is_valid_name "$name"; then echo "$name"; return 0; fi; return 1; }
 
-cache_get_name() { awk -v U="$1" -F'\t' 'tolower($1)==tolower(U){print $2; exit 0} END{exit 1}' "$CACHE"; }
-cache_get_uuid_by_name() { awk -v N="$1" -F'\t' 'tolower($2)==tolower(N){print $1; exit 0} END{exit 1}' "$CACHE"; }
 cache_put() {
-  local uuid="$1" name="$2"
-  grep -vi "^$uuid\t" "$CACHE" > "$CACHE.tmp" 2>/dev/null || true
+  local uuid name
+  uuid="$(normalize_uuid "$1")"; name="$2"
+  awk -v U="$uuid" -F'\t' 'tolower($1)!=tolower(U){print $0}' "$CACHE" > "$CACHE.tmp" 2>/dev/null || true
   printf "%s\t%s\n" "$uuid" "$name" >> "$CACHE.tmp"
   mv "$CACHE.tmp" "$CACHE"
 }
+cache_get_name() { awk -v U="$(normalize_uuid "$1")" -F'\t' 'tolower($1)==tolower(U){print $2; exit 0} END{exit 1}' "$CACHE"; }
+cache_get_uuid_by_name() { awk -v N="$1" -F'\t' 'tolower($2)==tolower(N){print $1; exit 0} END{exit 1}' "$CACHE"; }
 
-resolve_name_cached_only() {
-  local uuid="$1" name=""
-  [[ "$uuid" == "$ZERO_UUID" ]] && echo "" && return 0
-  if name="$(cache_get_name "$uuid" 2>/dev/null)"; then echo "$name"; return 0; fi
-  echo ""
-}
-
+resolve_name_cached_only() { local uuid; uuid="$(normalize_uuid "$1")"; [[ "$uuid" == "$ZERO_UUID" ]] && echo "" && return 0; if name="$(cache_get_name "$uuid" 2>/dev/null)"; then echo "$name"; return 0; fi; echo ""; }
 resolve_name_network_chain() {
-  local uuid="$1" name=""
-  [[ "$uuid" == "$ZERO_UUID" ]] && echo "" && return 0
+  local uuid name
+  uuid="$(normalize_uuid "$1")"; [[ "$uuid" == "$ZERO_UUID" ]] && echo "" && return 0
   if name="$(cache_get_name "$uuid" 2>/dev/null)"; then echo "$name"; return 0; fi
-  name="$(lookup_playerdb_name_by_uuid "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
   name="$(lookup_namemc_name_by_uuid "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
   name="$(lookup_laby_name_by_uuid "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
   name="$(lookup_crafty_name_by_uuid "$uuid" || true)"; if is_valid_name "$name"; then cache_put "$uuid" "$name"; echo "$name"; return 0; fi
   echo ""
 }
 
-# New: resolve token (uuid or name) to UUID; if not cached and --name-lookup, try PlayerDB
+# Resolve token to UUID; when NAME_LOOKUP is set and a name is used, fetch both uuid and canonical username and cache
 resolve_token_to_uuid() {
-  local tok="$1"
-  if [[ "$tok" =~ ^[0-9a-fA-F-]{36}$ ]]; then echo "$tok"; return 0; fi
-  # name → uuid
-  local uid
-  if uid="$(cache_get_uuid_by_name "$tok" 2>/dev/null)"; then echo "$uid"; return 0; fi
+  local tok uid json canon
+  tok="$(trim "$1")"
+  if [[ "$tok" =~ ^[0-9A-Fa-f-]{32,36}$ ]]; then
+    echo "$(normalize_uuid "$tok")"; return 0
+  fi
+  if uid="$(cache_get_uuid_by_name "$tok" 2>/dev/null)"; then
+    echo "$(normalize_uuid "$uid")"; return 0
+  fi
   if [[ $NAME_LOOKUP -eq 1 ]]; then
-    uid="$(lookup_playerdb_uuid_by_name "$tok" || true)"
-    if [[ "$uid" =~ ^[0-9a-fA-F-]{36}$ ]]; then
-      # also cache back name for future
-      cache_put "$uid" "$tok"
+    json="$(playerdb_fetch "$tok")"
+    uid="$(printf "%s" "$json" | playerdb_uuid_from_json | head -1)"
+    canon="$(printf "%s" "$json" | playerdb_name_from_json | head -1)"
+    uid="$(normalize_uuid "$uid")"
+    if [[ "$uid" =~ ^[0-9A-Fa-f-]{36}$ && -n "$canon" ]]; then
+      cache_put "$uid" "$canon"
       echo "$uid"; return 0
     fi
   fi
@@ -162,7 +159,7 @@ UUID_LIST="$(mktemp "$TMPDIR/uuid_list.XXXXXX")"         # uuid
 CLAIMS_FILE="$(mktemp "$TMPDIR/claims.XXXXXX")"          # uuid\tghost
 trap 'rm -f "$WORLD_GHOSTS" "$COUNTS_UUID" "$COUNTS_GHOST" "$UUID_LIST" "$CLAIMS_FILE" 2>/dev/null || true' EXIT
 
-awk -v WL="$WORLD_LC" -v ZERO="$ZERO_UUID" -v OUT_W="$WORLD_GHOSTS" -v OUT_U="$COUNTS_UUID" -v OUT_G="$COUNTS_GHOST" -v OUT_L="$UUID_LIST" -v OUT_C="$CLAIMS_FILE" '
+awk -v WL="$(printf "%s" "$WORLD" | tr "[:upper:]" "[:lower:]")" -v ZERO="$ZERO_UUID" -v OUT_W="$WORLD_GHOSTS" -v OUT_U="$COUNTS_UUID" -v OUT_G="$COUNTS_GHOST" -v OUT_L="$UUID_LIST" -v OUT_C="$CLAIMS_FILE" '
   function trim(s){ gsub(/^[ \t]+|[ \t]+$/,"",s); return s }
   BEGIN{ cur=""; in_claim=0 }
   /^[0-9a-fA-F-]{36}:[[:space:]]*$/ { cur=$0; sub(/:.*/,"",cur); in_claim=0; next }
@@ -209,21 +206,24 @@ TOTAL=$(wc -l < "$WORLD_GHOSTS" | tr -d '[:space:]')
 
 # Helpers
 label_uuid_cache_only() {
-  local u="$1" n
+  local u n
+  u="$(normalize_uuid "$1")"
   n="$(resolve_name_cached_only "$u")"
-  if [[ -n "$n" ]]; then printf "%s (%s)" "$n" "$u"; else printf "%s" "$u"; fi
-}
-label_uuid_network_if_allowed() {
-  local u="$1" n
-  if [[ $NAME_LOOKUP -eq 1 ]]; then
-    n="$(resolve_name_network_chain "$u")"
-  else
-    n="$(resolve_name_cached_only "$u")"
-  fi
   if [[ -n "$n" ]]; then printf "%s (%s)" "$n" "$u"; else printf "%s" "$u"; fi
 }
 
 # -------- Modes --------
+
+if [[ "$MODE" == "--cache-show" ]]; then
+  KEY="$CACHE_SHOW"
+  if [[ "$KEY" =~ ^[0-9A-Fa-f-]{32,36}$ ]]; then
+    KEY="$(normalize_uuid "$KEY")"
+    printf "%s\n" "$(awk -v U="$KEY" -F'\t' 'tolower($1)==tolower(U){print $0}' "$CACHE")"
+  else
+    printf "%s\n" "$(awk -v N="$KEY" -F'\t' 'tolower($2)==tolower(N){print $0}' "$CACHE")"
+  fi
+  exit 0
+fi
 
 if [[ "$MODE" == "--stats" ]]; then
   UNIQUE=$(wc -l < "$UUID_LIST" | tr -d '[:space:]')
@@ -231,7 +231,6 @@ if [[ "$MODE" == "--stats" ]]; then
   GTE40=$(awk '$2>=40{c++} END{print c+0}' "$COUNTS_UUID")
   AVG=$(awk '{sum+=$2; n++} END{ if(n>0) printf "%.1f", (sum/n); else print "0.0"}' "$COUNTS_UUID")
 
-  # Most/Least found ghosts
   MINREC=$(awk 'NR==1{min=$2} $2<min{min=$2} END{print (min==""?0:min)}' "$COUNTS_GHOST")
   MAXREC=$(awk 'NR==1{max=$2} $2>max{max=$2} END{print (max==""?0:max)}' "$COUNTS_GHOST")
   LGHOST=$(awk -v M="$MINREC" '$2==M{print $1; exit}' "$COUNTS_GHOST")
@@ -271,17 +270,23 @@ if [[ "$MODE" == "--top" ]]; then
   SORTED="$(mktemp "$TMPDIR/sorted.XXXXXX")"
   LC_ALL=C sort -t$'\t' -k2,2nr -k1,1 "$COUNTS_UUID" > "$SORTED"
 
+  MAX_ONLINE_LOOKUPS=0
+  if [[ $NAME_LOOKUP -eq 1 ]]; then
+    if [[ "$LIMIT" == "all" ]]; then MAX_ONLINE_LOOKUPS=10; else MAX_ONLINE_LOOKUPS="$LIMIT"; fi
+  fi
+
   UNKNOWN_DONE=0
-  MAX_ONLINE_LOOKUPS=5
   RANK=0
   while IFS=$'\t' read -r U C; do
     RANK=$((RANK+1))
     if [[ "$LIMIT" != "all" && $RANK -gt $LIMIT ]]; then break; fi
 
     NAME="$(resolve_name_cached_only "$U")"
-    if [[ -z "$NAME" && $NAME_LOOKUP -eq 1 && $UNKNOWN_DONE -lt $MAX_ONLINE_LOOKUPS ]]; then
-      NAME="$(lookup_playerdb_name_by_uuid "$U" || true)"
-      if [[ -n "$NAME" ]]; then cache_put "$U" "$NAME"; UNKNOWN_DONE=$((UNKNOWN_DONE+1)); fi
+    if [[ -z "$NAME" && $UNKNOWN_DONE -lt $MAX_ONLINE_LOOKUPS ]]; then
+      # Try PlayerDB once here for convenience
+      json="$(playerdb_fetch "$U")"
+      canon="$(printf "%s" "$json" | playerdb_name_from_json | head -1)"
+      if is_valid_name "$canon"; then cache_put "$U" "$canon"; NAME="$canon"; UNKNOWN_DONE=$((UNKNOWN_DONE+1)); fi
     fi
 
     if [[ -n "$NAME" ]]; then
@@ -302,22 +307,25 @@ if [[ "$MODE" == "--list" ]]; then
   if ! [[ "$LIST_N" =~ ^[0-9]+$ ]]; then echo "Error: --list:N expects a number."; exit 2; fi
   if (( LIST_N < 0 )); then echo "Error: --list:N must be >= 0"; exit 2; fi
 
-  echo -e "${C_HI}${C_CYN}UUIDs with ${LIST_N} ghosts${C_RST} ${C_DIM}(world: ${WORLD})${C_RST}"
+  echo -e "${C_HI}${C_CYN}Players with ${LIST_N} ghosts${C_RST} ${C_DIM}(world: ${WORLD})${C_RST}"
   echo "-----------------------------------------------"
 
-  # Build ghost set for quick membership tests
   GSET="$(mktemp "$TMPDIR/gset.XXXXXX")"
   awk -F'\t' '{print $1}' "$WORLD_GHOSTS" > "$GSET"
 
-  # For each uuid with exactly LIST_N, show missing ghosts (like earlier list mode)
   while IFS=$'\t' read -r U C; do
     if (( C == LIST_N )); then
-      printf "%s%s%s\n" "$C_HI" "$(label_uuid_cache_only "$U")" "$C_RST"
-      # show missing
+      NAME="$(resolve_name_cached_only "$U")"
+      if [[ -z "$NAME" && $NAME_LOOKUP -eq 1 ]]; then
+        json="$(playerdb_fetch "$U")"
+        canon="$(printf "%s" "$json" | playerdb_name_from_json | head -1)"
+        if is_valid_name "$canon"; then cache_put "$U" "$canon"; NAME="$canon"; fi
+      fi
+      if [[ -n "$NAME" ]]; then printf "%s%s (%s)%s\n" "$C_HI" "$NAME" "$U" "$C_RST"
+      else                     printf "%s%s%s\n" "$C_HI" "$U" "$C_RST"; fi
+
       while read -r G; do
-        # check claim pair in CLAIFS_FILE
         if ! grep -q -E "^${U}[[:space:]]+${G}$" "$CLAIMS_FILE"; then
-          # find coords
           read -r _gw _gx _gy _gz <<<"$(awk -v GG="$G" -F'\t' '$1==GG{print $2" "$3" "$4" "$5; exit}' "$WORLD_GHOSTS")"
           printf "  %smissing ghost %-36s%s -> %s/tppos %s %s %s %s%s\n" "$C_DIM" "$G" "$C_RST" "$C_GRN" "$_gx" "$_gy" "$_gz" "$_gw" "$C_RST"
         fi
@@ -329,7 +337,7 @@ if [[ "$MODE" == "--list" ]]; then
 fi
 
 if [[ "$MODE" == "--ghost" ]]; then
-  GID="$GHOST_ARG"
+  GID="$(normalize_uuid "$GHOST_ARG")"
   if ! [[ "$GID" =~ ^[0-9a-fA-F-]{36}$ ]]; then
     echo "Error: --ghost expects a ghost UUID." >&2
     exit 2
@@ -337,7 +345,7 @@ if [[ "$MODE" == "--ghost" ]]; then
   echo -e "${C_HI}${C_CYN}Players who found ghost ${GID}${C_RST} ${C_DIM}(world: ${WORLD})${C_RST}"
   echo "-----------------------------------------------"
   TMPU="$(mktemp "$TMPDIR/gh.XXXXXX")"
-  awk -v G="$GID" -v WL="$WORLD_LC" -v ZERO="$ZERO_UUID" '
+  awk -v G="$GID" -v WL="$(printf "%s" "$WORLD" | tr "[:upper:]" "[:lower:]")" -v ZERO="$ZERO_UUID" '
     function trim(s){ gsub(/^[ \t]+|[ \t]+$/,"",s); return s }
     BEGIN{ cur=""; in_claim=0; cur_w="" }
     /^[0-9a-fA-F-]{36}:[[:space:]]*$/ { cur=$0; sub(/:.*/,"",cur); in_claim=0; next }
@@ -348,7 +356,7 @@ if [[ "$MODE" == "--ghost" ]]; then
     /^[[:space:]]+claimed:[[:space:]]*$/ { in_claim=1; next }
     /^[[:space:]]+-[[:space:]]+[0-9a-fA-F-]{36}[[:space:]]*$/ {
       if(in_claim && cur==G && cur_w==WL){
-        u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u); if(u!=ZERO) print u
+        u=$0; sub(/^[[:space:]]+-[[:space:]]+/,"",u); if(u!="'$ZERO_UUID'") print u
       }
       next
     }
@@ -379,8 +387,22 @@ if [[ "$MODE" == "--summary" ]]; then
 
   SORTED="$(mktemp "$TMPDIR/sorted.XXXXXX")"
   LC_ALL=C sort -t$'\t' -k2,2nr -k1,1 "$COUNTS_UUID" > "$SORTED"
-  TOP_LINES=""
-  RANK=0
+
+  # Optionally resolve Top 10 names prior to writing
+  if [[ $NAME_LOOKUP -eq 1 ]]; then
+    R=0
+    while IFS=$'\t' read -r U C; do
+      R=$((R+1)); [[ $R -le 10 ]] || break
+      NAME="$(resolve_name_cached_only "$U")"
+      if [[ -z "$NAME" ]]; then
+        json="$(playerdb_fetch "$U")"
+        canon="$(printf "%s" "$json" | playerdb_name_from_json | head -1)"
+        if is_valid_name "$canon"; then cache_put "$U" "$canon"; fi
+      fi
+    done < "$SORTED"
+  fi
+
+  TOP_LINES=""; RANK=0
   while IFS=$'\t' read -r U C; do
     RANK=$((RANK+1)); [[ $RANK -le 10 ]] || break
     NAME="$(resolve_name_cached_only "$U")"
@@ -415,7 +437,7 @@ if [[ "$MODE" == "--summary" ]]; then
   exit 0
 fi
 
-# Default / --player mode: resolve token to UUID (cache-first; optional online)
+# Default / --player mode
 TOKEN="$MODE"
 if [[ "$MODE" == "--player" ]]; then TOKEN="$PLAYER_ARG"; fi
 if ! UUID="$(resolve_token_to_uuid "$TOKEN")"; then
@@ -423,9 +445,16 @@ if ! UUID="$(resolve_token_to_uuid "$TOKEN")"; then
   exit 2
 fi
 
-# Per-UUID report (AWK)
-awk -v U="$UUID" -v WL="$WORLD_LC" -v WORLD="$WORLD" \
-    -v HI="$C_HI" -v DIM="$C_DIM" -v GRN="$C_GRN" -v CYN="$C_CYN" -v RST="$C_RST" '
+# Per-UUID report (header uses cache name if present)
+NAMEHDR="$(resolve_name_cached_only "$UUID")"
+if [[ -n "$NAMEHDR" ]]; then
+  HDR="${NAMEHDR} (${UUID})"
+else
+  HDR="${UUID}"
+fi
+
+awk -v U="$(normalize_uuid "$UUID")" -v WL="$(printf "%s" "$WORLD" | tr "[:upper:]" "[:lower:]")" -v WORLD="$WORLD" \
+    -v HI="$C_HI" -v DIM="$C_DIM" -v GRN="$C_GRN" -v CYN="$C_CYN" -v RST="$C_RST" -v HDR="$HDR" '
   function trim(s){ gsub(/^[ \t]+|[ \t]+$/,"",s); return s }
   BEGIN{ cur=""; in_claim=0 }
   /^[0-9a-fA-F-]{36}:[[:space:]]*$/ { cur=$0; sub(/:.*/,"",cur); in_claim=0; next }
@@ -454,7 +483,7 @@ awk -v U="$UUID" -v WL="$WORLD_LC" -v WORLD="$WORLD" \
         if(g in has) have++
       }
     }
-    printf("%s%sMissing ghosts for %s%s %s(world: %s)%s\n", HI,CYN,U,RST,DIM,WORLD,RST)
+    printf("%s%sMissing ghosts for %s%s %s(world: %s)%s\n", HI,CYN,HDR,RST,DIM,WORLD,RST)
     print "-----------------------------------------------"
     if(have==total){
       printf("%sThis UUID has all %d ghosts.%s\n", GRN, total, RST); exit 0

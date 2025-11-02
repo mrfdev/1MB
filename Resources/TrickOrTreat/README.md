@@ -27,7 +27,7 @@ The script was built to work with the `totdatabase.db` SQLite database from the 
 
 ### Screenshot
 
-<img width="779" height="981" alt="Screenshot- 2025-11-02 at 12 07 18" src="https://github.com/user-attachments/assets/4226d660-167a-405f-b38e-ea291394da4d" />
+<img width="779" height="981" alt="1MB-Doors screenshot" src="https://github.com/user-attachments/assets/4226d660-167a-405f-b38e-ea291394da4d" />
 
 ---
 
@@ -111,16 +111,28 @@ Examples:
 
 ### 📊 Example Outputs
 
-| **Command** | **Example Output** |
-|--------------|--------------------|
-| `./1MB-Doors.sh -list:60 --world halloween` | ```Players with ALL doors (DB: ./totdatabase.db, world: halloween)
+> **Note:** GitHub tables don’t support fenced code blocks inside cells.  
+> The table below links to the full sample outputs shown right after it.
+
+| Command | Sample Output |
+|--------|----------------|
+| `./1MB-Doors.sh -list:60 --world halloween` | See **Sample A** below |
+| `./1MB-Doors.sh -list:0 --world halloween`  | See **Sample B** below |
+
+**Sample A – `-list:60`**
+```
+Players with ALL doors (DB: ./totdatabase.db, world: halloween)
 -----------------------------------------------
 • LayKam
 • FreddyTF2
 • DaishaunsBot
 
-Total players with all doors: 3.``` |
-| `./1MB-Doors.sh -list:0 --world halloween` | ```Players with 0 doors (missing exactly 60) (DB: ./totdatabase.db, world: halloween)
+Total players with all doors: 3.
+```
+
+**Sample B – `-list:0`**
+```
+Players with 0 doors (missing exactly 60) (DB: ./totdatabase.db, world: halloween)
 -----------------------------------------------
 NewPlayer123
   missing door_id 1  ->  /tppos 1533 77 678 halloween
@@ -128,7 +140,8 @@ NewPlayer123
   ...
   missing door_id 60 ->  /tppos 1477 71 689 halloween
 
-Total players at 0/60: 1.``` |
+Total players at 0/60: 1.
+```
 
 ---
 

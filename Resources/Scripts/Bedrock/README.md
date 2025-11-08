@@ -73,10 +73,9 @@ sudo apt-get install -y jq curl
 Clone the repository and mark the script as executable:
 
 ```bash
-git clone https://github.com/<your-username>/bedrock-lookup.git
-cd bedrock-lookup
-
-chmod +x bedrock.sh
+- Get the .sh file from https://github.com/mrfdev/1MB/tree/master/Resources/Scripts/Bedrock
+- Put it in any directory
+- chmod +x bedrock.sh
 ```
 
 You can then either run it from that directory, or copy it somewhere in your `PATH`, for example:

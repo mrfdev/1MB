@@ -991,34 +991,64 @@
     "<gray>Brains... I mean, balloons!</gray>"
   ],
 
+  "cosmetic.banners.anchor": "Anchor",
   "cosmetic.banners.candy_cane": "Candy Cane",
+  "cosmetic.banners.castle": "Castle",
+  "cosmetic.banners.cat": "Cat",
+  "cosmetic.banners.chicken": "Chicken",
+  "cosmetic.banners.christmas_creeper": "Christmas Creeper",
+  "cosmetic.banners.creeper": "Creeper",
   "cosmetic.banners.crown": "Crown",
+  "cosmetic.banners.crying_creeper": "Crying Creeper",
+  "cosmetic.banners.demon": "Demon",
   "cosmetic.banners.disco": "Disco",
+  "cosmetic.banners.duck": "Duck",
   "cosmetic.banners.ender_dragon": "Ender Dragon",
+  "cosmetic.banners.enderman": "Enderman",
   "cosmetic.banners.fire": "Fire",
   "cosmetic.banners.fox": "Fox",
   "cosmetic.banners.goose": "Goose",
+  "cosmetic.banners.halloween_creeper": "Halloween Creeper",
+  "cosmetic.banners.happy_ghast": "Happy Ghast",
   "cosmetic.banners.happy_sheep": "Happy Sheep",
   "cosmetic.banners.heart": "Heart",
+  "cosmetic.banners.ice_cream": "Ice Cream",
+  "cosmetic.banners.iron_golem": "Iron Golem",
+  "cosmetic.banners.lightning": "Lightning",
+  "cosmetic.banners.llama": "Llama",
+  "cosmetic.banners.mirror": "Mirror",
+  "cosmetic.banners.moon": "Moon",
+  "cosmetic.banners.mountain": "Mountain",
+  "cosmetic.banners.nether_portal": "Nether Portal",
   "cosmetic.banners.octopus": "Octopus",
+  "cosmetic.banners.ominous": "Ominous",
   "cosmetic.banners.panda": "Panda",
+  "cosmetic.banners.pig": "Pig",
   "cosmetic.banners.pineapple": "Pineapple",
+  "cosmetic.banners.pirate": "Pirate",
   "cosmetic.banners.pirate_skull": "Pirate Skull",
+  "cosmetic.banners.potion": "Potion",
   "cosmetic.banners.present": "Present",
   "cosmetic.banners.pug": "Pug",
   "cosmetic.banners.rabbit": "Rabbit",
+  "cosmetic.banners.rat": "Rat",
   "cosmetic.banners.rose": "Rose",
   "cosmetic.banners.santa_hat": "Santa Hat",
+  "cosmetic.banners.smile": "Smile",
   "cosmetic.banners.snowflake": "Snowflake",
   "cosmetic.banners.snowy_tree": "Snowy Tree",
   "cosmetic.banners.speech_bubble": "Speech Bubble",
   "cosmetic.banners.sun_flower": "Sunflower",
+  "cosmetic.banners.sunrise": "Sunrise",
   "cosmetic.banners.sweden": "Sweden",
   "cosmetic.banners.sword": "Sword",
   "cosmetic.banners.taco": "Taco",
   "cosmetic.banners.united_states_of_america": "United States of America",
+  "cosmetic.banners.white_flower": "White Flower",
   "cosmetic.banners.wither": "Wither",
+  "cosmetic.banners.wolf": "Wolf",
   "cosmetic.banners.wreath": "Wreath",
+  "cosmetic.banners.yellow_flower": "Yellow Flower",
 
   "menu.banners.title": "Banners",
   "menu.banners.next_page.name": "<green>Next Page</green>",
@@ -1079,21 +1109,61 @@
     "<yellow>Click to equip!</yellow>"
   ],
 
+  "menu.banners.anchor.name": "<name>",
+  "menu.banners.anchor.desc": [
+    "<gray>Drop anchor and stay awhile!</gray>"
+  ],
   "menu.banners.candy_cane.name": "<name>",
   "menu.banners.candy_cane.desc": [
     "<gray>Mmm, yummy!</gray>"
+  ],
+  "menu.banners.castle.name": "<name>",
+  "menu.banners.castle.desc": [
+    "<gray>Your fortress awaits!</gray>"
+  ],
+  "menu.banners.cat.name": "<name>",
+  "menu.banners.cat.desc": [
+    "<gray>Meow! Purr purr...</gray>"
+  ],
+  "menu.banners.chicken.name": "<name>",
+  "menu.banners.chicken.desc": [
+    "<gray>Bawk bawk bawk!</gray>"
+  ],
+  "menu.banners.christmas_creeper.name": "<name>",
+  "menu.banners.christmas_creeper.desc": [
+    "<gray>That'sss a nice holiday you have there...</gray>"
+  ],
+  "menu.banners.creeper.name": "<name>",
+  "menu.banners.creeper.desc": [
+    "<gray>That's a nice house you have there...</gray>"
   ],
   "menu.banners.crown.name": "<name>",
   "menu.banners.crown.desc": [
     "<gray>Become a ruler.</gray>"
   ],
+  "menu.banners.crying_creeper.name": "<name>",
+  "menu.banners.crying_creeper.desc": [
+    "<gray>Poor little creeper just wants a hug!</gray>"
+  ],
+  "menu.banners.demon.name": "<name>",
+  "menu.banners.demon.desc": [
+    "<gray>From the depths of the Nether!</gray>"
+  ],
   "menu.banners.disco.name": "<name>",
   "menu.banners.disco.desc": [
     "<gray>Show me those dance moves.</gray>"
   ],
+  "menu.banners.duck.name": "<name>",
+  "menu.banners.duck.desc": [
+    "<gray>Quack quack!</gray>"
+  ],
   "menu.banners.ender_dragon.name": "<name>",
   "menu.banners.ender_dragon.desc": [
     "<gray>You made it all the way here?</gray>"
+  ],
+  "menu.banners.enderman.name": "<name>",
+  "menu.banners.enderman.desc": [
+    "<gray>Don't look it in the eyes!</gray>"
   ],
   "menu.banners.fire.name": "<name>",
   "menu.banners.fire.desc": [
@@ -1107,6 +1177,14 @@
   "menu.banners.goose.desc": [
     "<gray>Honk honk!</gray>"
   ],
+  "menu.banners.halloween_creeper.name": "<name>",
+  "menu.banners.halloween_creeper.desc": [
+    "<gray>Trick or treat... or explode!</gray>"
+  ],
+  "menu.banners.happy_ghast.name": "<name>",
+  "menu.banners.happy_ghast.desc": [
+    "<gray>Finally, a ghast with a smile!</gray>"
+  ],
   "menu.banners.happy_sheep.name": "<name>",
   "menu.banners.happy_sheep.desc": [
     "<gray>Cute fluffy sheep!</gray>"
@@ -1115,21 +1193,69 @@
   "menu.banners.heart.desc": [
     "<gray>How deep is your love?</gray>"
   ],
+  "menu.banners.ice_cream.name": "<name>",
+  "menu.banners.ice_cream.desc": [
+    "<gray>Sweet and cold, just like your heart!</gray>"
+  ],
+  "menu.banners.iron_golem.name": "<name>",
+  "menu.banners.iron_golem.desc": [
+    "<gray>The village's protector!</gray>"
+  ],
+  "menu.banners.lightning.name": "<name>",
+  "menu.banners.lightning.desc": [
+    "<gray>Strike with the power of Zeus!</gray>"
+  ],
+  "menu.banners.llama.name": "<name>",
+  "menu.banners.llama.desc": [
+    "<gray>Will spit at you if provoked.</gray>"
+  ],
+  "menu.banners.mirror.name": "<name>",
+  "menu.banners.mirror.desc": [
+    "<gray>Mirror, mirror on the wall...</gray>"
+  ],
+  "menu.banners.moon.name": "<name>",
+  "menu.banners.moon.desc": [
+    "<gray>Shine bright in the night sky!</gray>"
+  ],
+  "menu.banners.mountain.name": "<name>",
+  "menu.banners.mountain.desc": [
+    "<gray>Reach for the peaks!</gray>"
+  ],
+  "menu.banners.nether_portal.name": "<name>",
+  "menu.banners.nether_portal.desc": [
+    "<gray>Gateway to another dimension!</gray>"
+  ],
   "menu.banners.octopus.name": "<name>",
   "menu.banners.octopus.desc": [
     "<gray>Can easily be confused with squid.</gray>"
+  ],
+  "menu.banners.ominous.name": "<name>",
+  "menu.banners.ominous.desc": [
+    "<gray>Something wicked this way comes...</gray>"
   ],
   "menu.banners.panda.name": "<name>",
   "menu.banners.panda.desc": [
     "<gray>Loves bamboo and cake.</gray>"
   ],
+  "menu.banners.pig.name": "<name>",
+  "menu.banners.pig.desc": [
+    "<gray>Oink oink! Got any carrots?</gray>"
+  ],
   "menu.banners.pineapple.name": "<name>",
   "menu.banners.pineapple.desc": [
     "<gray>Pen Pineapple Apple Pen</gray>"
   ],
+  "menu.banners.pirate.name": "<name>",
+  "menu.banners.pirate.desc": [
+    "<gray>Sail the seven seas!</gray>"
+  ],
   "menu.banners.pirate_skull.name": "<name>",
   "menu.banners.pirate_skull.desc": [
     "<gray>YaRrr!</gray>"
+  ],
+  "menu.banners.potion.name": "<name>",
+  "menu.banners.potion.desc": [
+    "<gray>Bottled magic and mystery!</gray>"
   ],
   "menu.banners.present.name": "<name>",
   "menu.banners.present.desc": [
@@ -1143,6 +1269,10 @@
   "menu.banners.rabbit.desc": [
     "<gray>It likes carrots!</gray>"
   ],
+  "menu.banners.rat.name": "<name>",
+  "menu.banners.rat.desc": [
+    "<gray>Squeaky little rascal!</gray>"
+  ],
   "menu.banners.rose.name": "<name>",
   "menu.banners.rose.desc": [
     "<gray>Be careful around its thorns.</gray>"
@@ -1150,6 +1280,10 @@
   "menu.banners.santa_hat.name": "<name>",
   "menu.banners.santa_hat.desc": [
     "<gray>I believe in Santa!</gray>"
+  ],
+  "menu.banners.smile.name": "<name>",
+  "menu.banners.smile.desc": [
+    "<gray>Turn that frown upside down!</gray>"
   ],
   "menu.banners.snowflake.name": "<name>",
   "menu.banners.snowflake.desc": [
@@ -1167,6 +1301,10 @@
   "menu.banners.sun_flower.desc": [
     "<gray>We're all golden sunflowers inside.</gray>"
   ],
+  "menu.banners.sunrise.name": "<name>",
+  "menu.banners.sunrise.desc": [
+    "<gray>A new day begins!</gray>"
+  ],
   "menu.banners.sweden.name": "<name>",
   "menu.banners.sweden.desc": [
     "<gray>Notch's favorite banner!</gray>"
@@ -1183,13 +1321,25 @@
   "menu.banners.united_states_of_america.desc": [
     "<gray>How many stars are there on the flag?</gray>"
   ],
+  "menu.banners.white_flower.name": "<name>",
+  "menu.banners.white_flower.desc": [
+    "<gray>Pure and elegant beauty!</gray>"
+  ],
   "menu.banners.wither.name": "<name>",
   "menu.banners.wither.desc": [
     "<gray>Watch out for those skulls!</gray>"
   ],
+  "menu.banners.wolf.name": "<name>",
+  "menu.banners.wolf.desc": [
+    "<gray>Man's best friend... if tamed!</gray>"
+  ],
   "menu.banners.wreath.name": "<name>",
   "menu.banners.wreath.desc": [
     "<gray>Not as pretty as a Christmas tree.</gray>"
+  ],
+  "menu.banners.yellow_flower.name": "<name>",
+  "menu.banners.yellow_flower.desc": [
+    "<gray>Bright and cheerful blooms!</gray>"
   ],
 
   "cosmetic.death_effects.bloody_death": "Bloody Death",
@@ -2837,11 +2987,14 @@
   "cosmetic.pets.axolotl": "Axolotl",
   "cosmetic.pets.bee": "Bee",
   "cosmetic.pets.body_guard": "Body Guard",
+  "cosmetic.pets.breeze": "Breeze",
   "cosmetic.pets.calf": "Calf",
   "cosmetic.pets.camel": "Camel",
   "cosmetic.pets.cave_spider": "Cave Spider",
   "cosmetic.pets.chicken": "Chicken",
   "cosmetic.pets.colorful_lamb": "Colorful Lamb",
+  "cosmetic.pets.copper_golem": "Copper Golem",
+  "cosmetic.pets.creaking": "Creaking",
   "cosmetic.pets.easter_bunny": "Easter Bunny",
   "cosmetic.pets.elf": "Elf",
   "cosmetic.pets.endermite": "Endermite",
@@ -2863,6 +3016,7 @@
   "cosmetic.pets.sniffer": "Sniffer",
   "cosmetic.pets.turtle": "Turtle",
   "cosmetic.pets.villager": "Villager",
+  "cosmetic.pets.warden": "Warden",
   "cosmetic.pets.zombie_villager": "Zombie Villager",
 
   "menu.pets.title": "Pets",
@@ -2946,6 +3100,11 @@
     "<gray>Follows you around with a</gray>",
     "<gray>rose in his hand.</gray>"
   ],
+  "menu.pets.breeze.name": "<name>",
+  "menu.pets.breeze.desc": [
+    "<gray>A playful creature carried</gray>",
+    "<gray>by swirling winds.</gray>"
+  ],
   "menu.pets.calf.name": "<name>",
   "menu.pets.calf.desc": [
     "<gray>He wants a lot of grass</gray>",
@@ -2968,6 +3127,16 @@
   "menu.pets.colorful_lamb.desc": [
     "<gray>Who said sheep cannot change</gray>",
     "<gray>their wool color?</gray>"
+  ],
+  "menu.pets.copper_golem.name": "<name>",
+  "menu.pets.copper_golem.desc": [
+    "<gray>A tiny mechanical friend</gray>",
+    "<gray>with a copper spark.</gray>"
+  ],
+  "menu.pets.creaking.name": "<name>",
+  "menu.pets.creaking.desc": [
+    "<gray>A mysterious wooden spirit</gray>",
+    "<gray>that creaks behind you.</gray>"
   ],
   "menu.pets.easter_bunny.name": "<name>",
   "menu.pets.easter_bunny.desc": [
@@ -3059,6 +3228,11 @@
   "menu.pets.villager.name": "<name>",
   "menu.pets.villager.desc": [
     "<gray>Your smallest trader ever.</gray>"
+  ],
+  "menu.pets.warden.name": "<name>",
+  "menu.pets.warden.desc": [
+    "<gray>A calm but powerful creature</gray>",
+    "<gray>from the deep dark.</gray>"
   ],
   "menu.pets.zombie_villager.name": "<name>",
   "menu.pets.zombie_villager.desc": [

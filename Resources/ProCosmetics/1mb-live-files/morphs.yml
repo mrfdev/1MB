@@ -11,7 +11,7 @@ self_view:
 
 menu:
   rows: 6
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -22,469 +22,469 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
-
+    
     toggle_self_view:
       enabled: true
-      item: "minecraft:saddle"
+      item: minecraft:saddle
       count: 1
       slot: -2
 
 cosmetics:
   bat:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 1.0
-    item: "minecraft:bat_spawn_egg"
+    item: minecraft:bat_spawn_egg
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   blaze:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 5.0
-    item: "minecraft:blaze_powder"
+    item: minecraft:blaze_powder
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   block:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 5.0
-    item: "minecraft:emerald_block"
+    item: minecraft:emerald_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   bunny:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 0.0
-    item: "minecraft:egg"
+    item: minecraft:egg
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   cat:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:tropical_fish"
+    item: minecraft:tropical_fish
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   cave_spider:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 10.0
-    item: "minecraft:spider_eye"
+    item: minecraft:spider_eye
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   chicken:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:feather"
+    item: minecraft:feather
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   cow:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:leather"
+    item: minecraft:leather
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   creeper:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 20.0
-    item: "minecraft:creeper_head[!minecraft:rarity]"
+    item: minecraft:creeper_head[!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   dog:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:bone"
+    item: minecraft:bone
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   donkey:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:lead"
+    item: minecraft:lead
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   elder_guardian:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 30.0
-    item: "minecraft:prismarine_shard"
+    item: minecraft:prismarine_shard
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   enderman:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 8.0
-    item: "minecraft:ender_pearl"
+    item: minecraft:ender_pearl
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   iron_golem:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 15.0
-    item: "minecraft:iron_block"
+    item: minecraft:iron_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   magma_cube:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 0.0
-    item: "minecraft:netherrack"
+    item: minecraft:netherrack
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   mushroom_cow:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:red_mushroom"
+    item: minecraft:red_mushroom
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   olaf:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 8.0
-    item: "minecraft:snowball"
+    item: minecraft:snowball
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pig:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:porkchop"
+    item: minecraft:porkchop
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   piglin:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:golden_sword"
+    item: minecraft:golden_sword
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sheep:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:white_wool"
+    item: minecraft:white_wool
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   skeleton:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 10.0
-    item: "minecraft:arrow"
+    item: minecraft:arrow
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   slime:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 10.0
-    item: "minecraft:slime_block"
+    item: minecraft:slime_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   spider:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 20.0
-    item: "minecraft:cobweb"
+    item: minecraft:cobweb
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   squid:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 20.0
-    item: "minecraft:ink_sac"
+    item: minecraft:ink_sac
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   villager:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 2.0
-    item: "minecraft:emerald"
+    item: minecraft:emerald
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   witch:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 5.0
-    item: "minecraft:potion[!minecraft:potion_contents]"
+    item: minecraft:potion[!minecraft:potion_contents]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   wither:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 12.0
-    item: "minecraft:wither_skeleton_skull[!minecraft:rarity]"
+    item: minecraft:wither_skeleton_skull[!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   zombie:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     ability: true
     cooldown: 20.0
-    item: "minecraft:zombie_head[!minecraft:rarity]"
+    item: minecraft:zombie_head[!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
 config_version: 1

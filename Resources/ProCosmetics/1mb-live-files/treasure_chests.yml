@@ -1,16 +1,51 @@
-# Whenever or not to enable the Treasure Chests feature.
-enable: true
+# Treasure chests
+# Treasure chests are a rewarding system that allows players to unlock cosmetics,
+# earn coins, and receive custom rewards through an engaging chest-opening experience.
+#
+# Players can obtain treasure chests by:
+#   - Purchasing them with in-game coins
+#   - Commands - Perfect for server stores, rank rewards, or vote rewards
+#   - Custom integration with other plugins
+#
+# Treasure Chests can be purchased using permissions:
+#   - Allow purchase of all treasure chests: procosmetics.purchase.treasure_chest.*
+#   - Allow purchase of a specific treasure chest: procosmetics.purchase.treasure_chest.<treasure_chest>
+#
+# Create a treasure chest platform using:
+#   /pc platform create <platform_name>
+# The default platform is "default_platform"
+#
+# Rewards are distributed by rarity tiers:
+#   - COMMON - Most frequent drops
+#   - RARE - Moderately rare items
+#   - LEGENDARY - Extremely rare and valuable items
+#
+# Rarity weights work like a lottery:
+#   If weights are: common: 40, rare: 9, legendary: 1
+#   Total weight = 50 (40 + 9 + 1), so:
+#     - Common: 40/50 = 80% chance
+#     - Rare: 9/50 = 18% chance
+#     - Legendary: 1/50 = 2% chance
 
 # Duplicate handling
-# Options: "allow", "convert_to_coins", "prevent"
-duplicate_handling: "convert_to_coins"
-
-# This setting allows you to configure who receives the message "File14 is opening a Common Chest!".
-# You can choose to broadcast the message to just the player who found the item, to nearby players
-# within a 32-block radius, world players, or to all online players.
-# NOTE: opening_broadcast must be set to true for the specific treasure you are opening for this to take effect!
+# What happens when a player receives a cosmetic they already own?
 #
-# Modes: SELF, NEARBY, WORLD, ALL
+# Modes:
+#   ALLOW              - Give the duplicate anyway
+#   CONVERT_TO_COINS   - Convert duplicate to coins
+#   PREVENT            - Reroll until they get something they don't own
+duplicate_handling: CONVERT_TO_COINS
+
+# Control who sees chest opening and loot messages
+#
+# NOTE: opening_broadcast must be enabled in the specific treasure chest
+#       configuration for broadcast_opening_treasure to take effect!
+#
+# Modes:
+#   SELF   - Only the player opening the chest
+#   NEARBY - Players within 32 blocks
+#   WORLD  - All players in the same world
+#   ALL    - All players on the server
 broadcast_opening_treasure:
   mode: ALL
 
@@ -21,13 +56,14 @@ broadcast_loot:
   #
   # Modes: SELF, NEARBY, WORLD, ALL
   mode: ALL
-  # You can exclude certain rarities from being broadcasted!
+  # Exclude certain rarities from being announced
+  # Useful to prevent spam from common drops
   excludes:
-    - COMMON
+  - COMMON
 
 menu:
   rows: 3
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -38,72 +74,74 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
 
+# Menu showing different categories of loot (cosmetics, coins, custom items)
 loot_categories:
   enabled: true
   rows: 5
-
+  
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
-
+    
     information:
       enabled: true
-      item: "minecraft:knowledge_book[!minecraft:rarity]"
+      item: minecraft:knowledge_book[!minecraft:rarity]
       count: 1
       slot: -1
-
+    
     coins:
-      item: "minecraft:sunflower"
+      item: minecraft:sunflower
       count: 1
-
+    
     ammo:
-      item: "minecraft:gunpowder"
+      item: minecraft:gunpowder
       count: 1
 
+# Menu showing individual loot items within a category
 loot_entries:
   enabled: true
   rows: 5
-
+  
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
 
@@ -114,13 +152,13 @@ treasure_chests:
       enabled: false
       cost: 1000
     chests_to_open: 4
-    chest_animation: "common"
+    chest_animation: common
     animation_layouts:
-      - "common_1"
-      - "common_2"
-      - "common_3"
+    - common_1
+    - common_2
+    - common_3
     opening_broadcast: true
-    item: "minecraft:chest"
+    item: minecraft:chest
     count: 1
     slot: 10
     # Rarity weights (integers) determine the chance of getting each rarity tier
@@ -132,40 +170,41 @@ treasure_chests:
       legendary: 1
     coins:
       enabled: true
-      rarity: "common"
+      rarity: common
       minimum_amount: 200
       maximum_amount: 500
-    # You can add as much custom loot as you want. Command placeholders: <player>/<player_name>, <player_uuid>
-    # To disable custom loot completely, set this section to: loot: []
     custom:
       # Categories define the display item for categories of custom loot
       categories:
         coin_bag:
-          item: "minecraft:sunflower"
+          item: minecraft:sunflower
           count: 1
+      # Individual custom rewards
+      # You can add as much custom loot as you want. Command placeholders: <player>/<player_name>, <player_uuid>
+      # To disable custom loot completely, set this section to: loot: []
       loot:
         small_coin_bag:
           enabled: true
-          category: "coin_bag"
-          rarity: "common"
-          item: "minecraft:sunflower"
+          category: coin_bag
+          rarity: common
+          item: minecraft:sunflower
           count: 1
           commands:
-            - "pc add coins <player> 100"
-
+          - pc add coins <player> 100
+  
   mythical:
     enabled: true
     purchasable:
       enabled: false
       cost: 5000
     chests_to_open: 4
-    chest_animation: "MYTHICAL"
+    chest_animation: MYTHICAL
     animation_layouts:
-      - "mythical_1"
-      - "mythical_2"
-      - "mythical_3"
+    - mythical_1
+    - mythical_2
+    - mythical_3
     opening_broadcast: true
-    item: "minecraft:ender_chest"
+    item: minecraft:ender_chest
     count: 1
     slot: 13
     # Rarity weights (integers) determine the chance of getting each rarity tier
@@ -178,40 +217,41 @@ treasure_chests:
       legendary: 1
     coins:
       enabled: true
-      rarity: "RARE"
+      rarity: RARE
       minimum_amount: 500
       maximum_amount: 2000
-    # You can add as many custom rewards as you want. Command placeholders: <player>/<player_name>, <player_uuid>
-    # To disable custom rewards completely, set this section to: loot: []
     custom:
       # Categories define the display item for categories of custom loot
       categories:
         coin_bag:
-          item: "minecraft:sunflower"
+          item: minecraft:sunflower
           count: 1
+      # Individual custom rewards
+      # You can add as much custom loot as you want. Command placeholders: <player>/<player_name>, <player_uuid>
+      # To disable custom loot completely, set this section to: loot: []
       loot:
         medium_coin_bag:
           enabled: true
-          category: "coin_bag"
-          rarity: "RARE"
-          item: "minecraft:sunflower"
+          category: coin_bag
+          rarity: RARE
+          item: minecraft:sunflower
           count: 1
           commands:
-            - "pc add coins <player> 500"
-
+          - pc add coins <player> 500
+  
   legendary:
     enabled: true
     purchasable:
       enabled: false
       cost: 10000
     chests_to_open: 4
-    chest_animation: "LEGENDARY"
+    chest_animation: LEGENDARY
     animation_layouts:
-      - "legendary_1"
-      - "legendary_2"
-      - "legendary_3"
+    - legendary_1
+    - legendary_2
+    - legendary_3
     opening_broadcast: true
-    item: "minecraft:chest"
+    item: minecraft:chest
     count: 1
     slot: 16
     # Rarity weights (integers) determine the chance of getting each rarity tier
@@ -223,26 +263,27 @@ treasure_chests:
       legendary: 4
     coins:
       enabled: true
-      rarity: "LEGENDARY"
+      rarity: LEGENDARY
       minimum_amount: 1000
       maximum_amount: 2500
-    # You can add as many custom rewards as you want. Command placeholders: <player>/<player_name>, <player_uuid>
-    # To disable custom rewards completely, set this section to: loot: []
     custom:
       # Categories define the display item for categories of custom loot
       categories:
         coin_bag:
-          item: "minecraft:sunflower"
+          item: minecraft:sunflower
           count: 1
+      # Individual custom rewards
+      # You can add as much custom loot as you want. Command placeholders: <player>/<player_name>, <player_uuid>
+      # To disable custom loot completely, set this section to: loot: []
       loot:
         large_coin_bag:
           enabled: true
-          category: "coin_bag"
-          rarity: "LEGENDARY"
-          item: "minecraft:sunflower"
+          category: coin_bag
+          rarity: LEGENDARY
+          item: minecraft:sunflower
           count: 1
           commands:
-            - "pc add coins <player> 5000"
+          - pc add coins <player> 5000
 
 # Do not edit this!
 config_version: 1

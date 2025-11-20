@@ -4,7 +4,7 @@ enabled: true
 
 menu:
   rows: 4
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -15,669 +15,672 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
+# You can add as many custom emotes as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
 cosmetics:
   cheeky:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 2
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JkNDBmNzFjNDBmYzMwODcxOGQzOTgxM2IyYThmZDk2MDJmNDRiODAzYTViNTg3ZDNmM2IxMzFlNGI4YzYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 15
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI2NDYxNGFkNGJiMmViNjFiMDZiMWE4YjVkNTdmMDI0NDhhOTc1YTgyMTdlYzE2NTcxZjg3YzQ5MjI3Y2JkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxNGI4OWQ0M2IyZTkyOGYxYzU4OTc3NzdkZDg1ZTM0ZjQ1ZjhiODNkMGUyNWMyZjc1NTU4ODcxMmE5MDNjIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNWNlNzRiZjM2ODMyYThmNzc5Yjk2N2JlZGFlNTUxZjVlZDJmMjIzZDc2N2JhMThlZTYzZTM2MTVkNTliZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNWNlNzRiZjM2ODMyYThmNzc5Yjk2N2JlZGFlNTUxZjVlZDJmMjIzZDc2N2JhMThlZTYzZTM2MTVkNTliZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxNGI4OWQ0M2IyZTkyOGYxYzU4OTc3NzdkZDg1ZTM0ZjQ1ZjhiODNkMGUyNWMyZjc1NTU4ODcxMmE5MDNjIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI2NDYxNGFkNGJiMmViNjFiMDZiMWE4YjVkNTdmMDI0NDhhOTc1YTgyMTdlYzE2NTcxZjg3YzQ5MjI3Y2JkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JkNDBmNzFjNDBmYzMwODcxOGQzOTgxM2IyYThmZDk2MDJmNDRiODAzYTViNTg3ZDNmM2IxMzFlNGI4YzYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 15
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI2NDYxNGFkNGJiMmViNjFiMDZiMWE4YjVkNTdmMDI0NDhhOTc1YTgyMTdlYzE2NTcxZjg3YzQ5MjI3Y2JkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxNGI4OWQ0M2IyZTkyOGYxYzU4OTc3NzdkZDg1ZTM0ZjQ1ZjhiODNkMGUyNWMyZjc1NTU4ODcxMmE5MDNjIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNWNlNzRiZjM2ODMyYThmNzc5Yjk2N2JlZGFlNTUxZjVlZDJmMjIzZDc2N2JhMThlZTYzZTM2MTVkNTliZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU3ODVhYmVhNTEzNTA4Mzg5M2YxYTJmMWJmYWY5ZjQ5NzI1NTNmOWFmMjRkNmJkODFkYTY4YTkxMDczNiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFjNDliZDQxMzg2MDNhOTA0ZmFhZmUxMzY2ZjZiZmI3M2ViZDE2NzQwNThhODk4NTY2MjhlYjJjOTVjMjAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk5NzcyMjI5MzgyOWUxM2QyYmE3YmE1NzVjZTc4YTVkN2VlYjVlNzQ1ZTZlMjk1OTYxMzQ4ZDU1Y2M3ZmU3In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNWNlNzRiZjM2ODMyYThmNzc5Yjk2N2JlZGFlNTUxZjVlZDJmMjIzZDc2N2JhMThlZTYzZTM2MTVkNTliZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxNGI4OWQ0M2IyZTkyOGYxYzU4OTc3NzdkZDg1ZTM0ZjQ1ZjhiODNkMGUyNWMyZjc1NTU4ODcxMmE5MDNjIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI2NDYxNGFkNGJiMmViNjFiMDZiMWE4YjVkNTdmMDI0NDhhOTc1YTgyMTdlYzE2NTcxZjg3YzQ5MjI3Y2JkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+  
   cool:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 8
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyMWU2ZGJmZDc0YTE4NTlkZGJhZTMzODBmYzFhYjcxZjIzODk3NDU5NDVmYzkyMzI5YjE2NDYzNWJkMTRmIn19fQ=='}]},!minecraft:rarity]"
-        duration: 5
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM3MzNkYjlhOTRiZmUxNWNkYmI3Y2E1ODMyYzg1Y2ZhZGE5OGFkMmM4Mzk5MzQ3NjZiZGM0MWY5NzdiNWMxNjMifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]"
-        duration: 10
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM3MzNkYjlhOTRiZmUxNWNkYmI3Y2E1ODMyYzg1Y2ZhZGE5OGFkMmM4Mzk5MzQ3NjZiZGM0MWY5NzdiNWMxNjMifX19'}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyMWU2ZGJmZDc0YTE4NTlkZGJhZTMzODBmYzFhYjcxZjIzODk3NDU5NDVmYzkyMzI5YjE2NDYzNWJkMTRmIn19fQ=='}]},!minecraft:rarity]
+      duration: 5
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM3MzNkYjlhOTRiZmUxNWNkYmI3Y2E1ODMyYzg1Y2ZhZGE5OGFkMmM4Mzk5MzQ3NjZiZGM0MWY5NzdiNWMxNjMifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2NmIzZWVmM2M3MjZlY2I4MTZjNDM4MzkxODllZWI4ZTM2MzgyZTNlNWZlNDExMjgzNzI3ODUxODVhMzIyIn19fQ=='}]},!minecraft:rarity]
+      duration: 10
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM3MzNkYjlhOTRiZmUxNWNkYmI3Y2E1ODMyYzg1Y2ZhZGE5OGFkMmM4Mzk5MzQ3NjZiZGM0MWY5NzdiNWMxNjMifX19'}]},!minecraft:rarity]
+      duration: 1
+  
   deal_with_it:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 5
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzcyYmI4YmE3OTY0ODcxOGZlODA2ODdlZDRkZjJiOWUyODRlNzMyNTgzZTA1NjU4ZTIyN2VmZDdmZGY4MGY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 4
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI5YjViMWYyYzkyYTEyODM0NTZmNjA4YjI5ZWMzNjE3MTkxYWJhMmJkMzFiZDRiNGIwOGU2Y2JhNjgwNjIyNyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc5NTllZjVmYWJiM2Y4M2ZiMTliYmE2Y2E2N2JiOTc3NThlZWM2MDIzNWNmNDZlNzFkODM0YjIzNzMzN2M0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYzMTM0MTFlOTc5NjNkMTA0MzIyMjE4OTY3YTg1YTVkNjkxMzMwYmFkNWY3MTkyZTM3ODFkOTU2NWViYmRmIn19fQ=='}]},!minecraft:rarity]"
-        duration: 3
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 3
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3MzRkMmI0NmFkMzNhNjg5ODY5NTE1ZDE3YTgyMGYxZjIzMTlhYWQ1NDU1NGI2YmEyOGU3OWUyYzljZTVlYiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EzMjRiNWM4ZmU2OWRmZDA2MjE4NTU4OTk2MmRhNjZlMjhhODk5OWE3OTdjMDQwNTNhYmMxZTNmYzFjMSJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlNzllNWY5ZDgxYzhhODRlMWY5YzJhODE3Njg3ZjNiOTU0M2JkYmI2MDllZjhjNmY5MDk3NGY3M2QwYzIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM5MjNmNWI0MmQxNjc3MTU1ZDA4NDQyYzBhYTM5ODUxNTk2MTU2YzVlMDliMzQ2MWFhMzU4Njg5ODlhNGJiIn19fQ=='}]},!minecraft:rarity]"
-        duration: 6
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc5NTllZjVmYWJiM2Y4M2ZiMTliYmE2Y2E2N2JiOTc3NThlZWM2MDIzNWNmNDZlNzFkODM0YjIzNzMzN2M0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI5YjViMWYyYzkyYTEyODM0NTZmNjA4YjI5ZWMzNjE3MTkxYWJhMmJkMzFiZDRiNGIwOGU2Y2JhNjgwNjIyNyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzcyYmI4YmE3OTY0ODcxOGZlODA2ODdlZDRkZjJiOWUyODRlNzMyNTgzZTA1NjU4ZTIyN2VmZDdmZGY4MGY0In19fQ=='}]},!minecraft:rarity]
+      duration: 4
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI5YjViMWYyYzkyYTEyODM0NTZmNjA4YjI5ZWMzNjE3MTkxYWJhMmJkMzFiZDRiNGIwOGU2Y2JhNjgwNjIyNyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc5NTllZjVmYWJiM2Y4M2ZiMTliYmE2Y2E2N2JiOTc3NThlZWM2MDIzNWNmNDZlNzFkODM0YjIzNzMzN2M0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYzMTM0MTFlOTc5NjNkMTA0MzIyMjE4OTY3YTg1YTVkNjkxMzMwYmFkNWY3MTkyZTM3ODFkOTU2NWViYmRmIn19fQ=='}]},!minecraft:rarity]
+      duration: 3
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhM2Y3ZjJmNjk3MGQzMmRiMjg0MjYxNTIwYzhjNDQxZmU0YjMyNjhhYzBjOTlhZWI0YTUyNDg2NTZiZCJ9fX0='}]},!minecraft:rarity]
+      duration: 3
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3MzRkMmI0NmFkMzNhNjg5ODY5NTE1ZDE3YTgyMGYxZjIzMTlhYWQ1NDU1NGI2YmEyOGU3OWUyYzljZTVlYiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EzMjRiNWM4ZmU2OWRmZDA2MjE4NTU4OTk2MmRhNjZlMjhhODk5OWE3OTdjMDQwNTNhYmMxZTNmYzFjMSJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlNzllNWY5ZDgxYzhhODRlMWY5YzJhODE3Njg3ZjNiOTU0M2JkYmI2MDllZjhjNmY5MDk3NGY3M2QwYzIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM5MjNmNWI0MmQxNjc3MTU1ZDA4NDQyYzBhYTM5ODUxNTk2MTU2YzVlMDliMzQ2MWFhMzU4Njg5ODlhNGJiIn19fQ=='}]},!minecraft:rarity]
+      duration: 6
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc5NTllZjVmYWJiM2Y4M2ZiMTliYmE2Y2E2N2JiOTc3NThlZWM2MDIzNWNmNDZlNzFkODM0YjIzNzMzN2M0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI5YjViMWYyYzkyYTEyODM0NTZmNjA4YjI5ZWMzNjE3MTkxYWJhMmJkMzFiZDRiNGIwOGU2Y2JhNjgwNjIyNyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   dizzy:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 3
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjNDZlZTc2ZmQ5ZTk0N2UzNzg5ZmFjMzQ4MjE2YWI5OGMyNDIxMjY4ZmFmYWYzZWIyOWVjOTQ5YzBiODIxNjkifX19'}]},!minecraft:rarity]"
-        duration: 6
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjNDZlZTc2ZmQ5ZTk0N2UzNzg5ZmFjMzQ4MjE2YWI5OGMyNDIxMjY4ZmFmYWYzZWIyOWVjOTQ5YzBiODIxNjkifX19'}]},!minecraft:rarity]
+      duration: 6
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYxODAzYTcxMzJmYmU1OWU2NTA2MGRkZWM2MjYzZDY3NGExZGE2ZDIzOGNlMGFkYTE0MGU2Nzk5YjI4NTU5ZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4OTJmYzU1YjIzNGIzYjUzNTYzY2Q0OGY5OGMyNmU4ZTNmN2U1YWUzNTIzYjZlZWQ4OWIyNjJlY2YxYzVkNSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQxNmYzZGNlOTc3ZDhiNzk3ZTFlNDc2ZjVhYjkzNjE5ZWQyZjJiMjFhNDlhYzkzNzQzMTQwY2Y2N2EwODgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTUxYTU1ZWJhNzM0ZjFjNjUxYmJjN2U3MTdjYzhhN2ZmNTU3NWQ2ODA0ZjEzN2QxY2QyMTYxMzE0OTg5ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   happy:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 3
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 4
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]"
-        duration: 14
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]"
-        duration: 6
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 4
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzAxYjlkZWY1NTg3NmM0MWMxN2M4MTVmODgxMTVmMDJjOTVmODk2MjBmYmVkNmE2Y2IyZDM4ZDQ2ZmUwNSJ9fX0='}]},!minecraft:rarity]
+      duration: 14
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]
+      duration: 6
+  
   in_love:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 2
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]"
-        duration: 11
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkwMWI5NThlZDJjMzZlNDViYWU3MmI0MmQ0ZWU3MTlkNDUyNDBiMjMzNjY5MDkxYjFjYzllMDcwZTMxMTE5In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkMjZhZTRiNTc5M2QwODdlNjJhMmNmM2YzNDM1OTgyOWQwMjg2OWFhZTY2MjZiZmNmZjU5ZGUxNDY5ZjUxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkMjZhZTRiNTc5M2QwODdlNjJhMmNmM2YzNDM1OTgyOWQwMjg2OWFhZTY2MjZiZmNmZjU5ZGUxNDY5ZjUxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]
+      duration: 11
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkwMWI5NThlZDJjMzZlNDViYWU3MmI0MmQ0ZWU3MTlkNDUyNDBiMjMzNjY5MDkxYjFjYzllMDcwZTMxMTE5In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkMjZhZTRiNTc5M2QwODdlNjJhMmNmM2YzNDM1OTgyOWQwMjg2OWFhZTY2MjZiZmNmZjU5ZGUxNDY5ZjUxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5NWY2NDE1YmQ5NDI0YTY2NGQ2OTQzNzFhODQ2ODM4YzIwZmIzNmMzYjRhMjJmMzg1ZmU3ZTNkY2UyOTk2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkMjZhZTRiNTc5M2QwODdlNjJhMmNmM2YzNDM1OTgyOWQwMjg2OWFhZTY2MjZiZmNmZjU5ZGUxNDY5ZjUxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2ZmJiNTJhNGQwYzYyZDhlNmNhZThjNDg1ZTU1MWIzN2ZlYzY4ZTZkYWFiMjNkODVmMmZmNTJmYWE0YzQifX19'}]},!minecraft:rarity]
+      duration: 1
+  
   rage:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 2
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkNDE0MDczNjNiY2I0NjgzNzUzOGE2M2ZkZjcwNTUyNzhkNDJkYzRhYWM2MzllZDU3OTQ1MzNiYmQ3NzAifX19'}]},!minecraft:rarity]"
-        duration: 11
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3YmJmNmQ5ZjRjNTc1NTZlZWY4MTZjNTBlYjc1ZjlkMTU4ZjUzOTU0OTU3YWFiZTZjMmUxNGZmYTZjOTAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E3NTAxMjdmMWMzYzcxZjZhNWY1ZTk5MTdhODI1ZTkyMzVlMTk1OWIyNThmZjI5YjZmZjk3NzFjYjQ0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U5NWIyMGZiMWZjZmJlZjIyMjA2MmRkNDNlZWNiY2IzODcxYzUyODY2NWY4ZWQ2NzVmNDJmYzZlNTg5YTBiNyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3NWM0NjE4NGY5YTg1MzUxZDZiYTYxOGY4ZDE2NTVjYjViNzFkNmZjNmVkM2NjYzQ2MmQ5MTZkMzc2YThkYiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3NWM0NjE4NGY5YTg1MzUxZDZiYTYxOGY4ZDE2NTVjYjViNzFkNmZjNmVkM2NjYzQ2MmQ5MTZkMzc2YThkYiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U5NWIyMGZiMWZjZmJlZjIyMjA2MmRkNDNlZWNiY2IzODcxYzUyODY2NWY4ZWQ2NzVmNDJmYzZlNTg5YTBiNyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E3NTAxMjdmMWMzYzcxZjZhNWY1ZTk5MTdhODI1ZTkyMzVlMTk1OWIyNThmZjI5YjZmZjk3NzFjYjQ0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3YmJmNmQ5ZjRjNTc1NTZlZWY4MTZjNTBlYjc1ZjlkMTU4ZjUzOTU0OTU3YWFiZTZjMmUxNGZmYTZjOTAifX19'}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkNDE0MDczNjNiY2I0NjgzNzUzOGE2M2ZkZjcwNTUyNzhkNDJkYzRhYWM2MzllZDU3OTQ1MzNiYmQ3NzAifX19'}]},!minecraft:rarity]
+      duration: 11
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3YmJmNmQ5ZjRjNTc1NTZlZWY4MTZjNTBlYjc1ZjlkMTU4ZjUzOTU0OTU3YWFiZTZjMmUxNGZmYTZjOTAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E3NTAxMjdmMWMzYzcxZjZhNWY1ZTk5MTdhODI1ZTkyMzVlMTk1OWIyNThmZjI5YjZmZjk3NzFjYjQ0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U5NWIyMGZiMWZjZmJlZjIyMjA2MmRkNDNlZWNiY2IzODcxYzUyODY2NWY4ZWQ2NzVmNDJmYzZlNTg5YTBiNyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3NWM0NjE4NGY5YTg1MzUxZDZiYTYxOGY4ZDE2NTVjYjViNzFkNmZjNmVkM2NjYzQ2MmQ5MTZkMzc2YThkYiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZhMTUxY2ViNjZiMzQxMjc3NWU5ZDQ0ODc5MDQ2YTM5OGRiZGI3ZGZjYjBhZjU3MWI3YTAzZTcyZDlmYmYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzljYjIyNTNlNWYzZTQxOTUzNzU3NzI0ZDQ1ODY5OGYzYzMxMzcyNzk3NjRkYmVlM2Q1NmJlNzc2Y2RkY2NmNzkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4MjczOGZjODJiZWRhZjMwMjk2MTJmMWVjOTJmZTBjZjg0OGU1NDFjOGUzMGRjZjQxZWZjMDRiZWEzMGJhIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3NWM0NjE4NGY5YTg1MzUxZDZiYTYxOGY4ZDE2NTVjYjViNzFkNmZjNmVkM2NjYzQ2MmQ5MTZkMzc2YThkYiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U5NWIyMGZiMWZjZmJlZjIyMjA2MmRkNDNlZWNiY2IzODcxYzUyODY2NWY4ZWQ2NzVmNDJmYzZlNTg5YTBiNyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E3NTAxMjdmMWMzYzcxZjZhNWY1ZTk5MTdhODI1ZTkyMzVlMTk1OWIyNThmZjI5YjZmZjk3NzFjYjQ0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3YmJmNmQ5ZjRjNTc1NTZlZWY4MTZjNTBlYjc1ZjlkMTU4ZjUzOTU0OTU3YWFiZTZjMmUxNGZmYTZjOTAifX19'}]},!minecraft:rarity]
+      duration: 1
+  
   rip:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 4
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwZTc4Mjg1ZDVhZWUwYjI4Nzg3YWQ4OGE1ZDU4ZmIwNWNjZjIyOTE4ZGFhNTE2ZWFkODVhNmJmNGZlMDY4In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYzNjExYjU3MjRlMDkxODU0ZTc5OTI2ZmQxMWU0ODZiZmQwZjk5MDQyNzIxYzNiMzQxNzdmODE4NjM5YzE5ZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgzZTA2MjFiNDVkM2EzMjZkMjM2MjkzY2Q4ZWE0OWFlNzRkNTJlNTZmYzhkMWQxMzNlN2ZjOGJjZjJhNTk4OCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzZlMTZhN2FlMTg2YzNjZmVhYzM2NGVhYzBlODNkMzUyODc0MWMzZGQ5ZWY4Mjc3MDgwZTAzZGVhYmM3MTQifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIwZWMzYTgwZWQzNWJkOWJlYjdkMjBjYjc1ZjFlY2Q1YjhhYjBkNTc2ZjFkYjY5OWY3ZGVmMTMxMzFmYmM1In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]"
-        duration: 13
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMwZTc4Mjg1ZDVhZWUwYjI4Nzg3YWQ4OGE1ZDU4ZmIwNWNjZjIyOTE4ZGFhNTE2ZWFkODVhNmJmNGZlMDY4In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzYzNjExYjU3MjRlMDkxODU0ZTc5OTI2ZmQxMWU0ODZiZmQwZjk5MDQyNzIxYzNiMzQxNzdmODE4NjM5YzE5ZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgzZTA2MjFiNDVkM2EzMjZkMjM2MjkzY2Q4ZWE0OWFlNzRkNTJlNTZmYzhkMWQxMzNlN2ZjOGJjZjJhNTk4OCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzZlMTZhN2FlMTg2YzNjZmVhYzM2NGVhYzBlODNkMzUyODc0MWMzZGQ5ZWY4Mjc3MDgwZTAzZGVhYmM3MTQifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIwZWMzYTgwZWQzNWJkOWJlYjdkMjBjYjc1ZjFlY2Q1YjhhYjBkNTc2ZjFkYjY5OWY3ZGVmMTMxMzFmYmM1In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQzOWMzZGY3YTYyOGFmOGQ3NTFlY2NhMTk3NjQyY2RjMWEwN2MzMGUzMjg5YjJkMzI2MWY3YTY1Y2YzOTViIn19fQ=='}]},!minecraft:rarity]
+      duration: 13
+  
   sad:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 3
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2YTRiODhhMjk3Yzc4ZjlkZDUzZWU4YzcxNjRkZGEwZGVkN2U5ODgzODI1NTViYzdkODljOTAxOTIyYjMyZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 11
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2YTRiODhhMjk3Yzc4ZjlkZDUzZWU4YzcxNjRkZGEwZGVkN2U5ODgzODI1NTViYzdkODljOTAxOTIyYjMyZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NmI4ZTI3MmM1NGE0MjJkOWRmMzZkODVjYWZmMjY2MjRjNzMzZTdiM2Y2MDQwZDNlNGM5Y2Q2ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RlYzlhYTliM2Y0NjE5NWFlOWM3ZmVhN2M2MTE0ODc2NGE0MWUwZDY4ZGFlNDFlODI4NjhkNzkyYjNjIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlMjlkYWRiNjBjOTA5NmZhYjkyZmZhNzc0OWUzMDQ2MmUxNGE4YWZhZjZkZTkzOGQ5YzBhNGQ3ODc4MSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4YWJhMWY0OWZiZjg4Mjk4NTlkZGQ4ZjdlNTkxODE1NWU3ZGRjNzg5MTk3NjhiNmU2YzUzNmU1Mjc4YzMxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwNzNiYTNmMWNhMWQxZTRmN2UxZWM3NDJkZGNmZjhmYjBkOTYyYmM1NjYyZDEyNzYyMmEzNzI2ZTNiYjY2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1MmRjZGIxM2Y3MzIzNDJlZjM3Y2JmMDkwMjk2MDk4NDk5MmY1ZTY3Mjg5MzczMDU0YjAwYzJhMWY3In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRiMGYyZjNkMzQ5OTk1OWU5N2QyN2U2MTBiY2ZkOTBkYmY4ZGY1ZTFjZjRiOThmMjU5Mjg0ZjJlMzU1NzI4In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRiMGYyZjNkMzQ5OTk1OWU5N2QyN2U2MTBiY2ZkOTBkYmY4ZGY1ZTFjZjRiOThmMjU5Mjg0ZjJlMzU1NzI4In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1MmRjZGIxM2Y3MzIzNDJlZjM3Y2JmMDkwMjk2MDk4NDk5MmY1ZTY3Mjg5MzczMDU0YjAwYzJhMWY3In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwNzNiYTNmMWNhMWQxZTRmN2UxZWM3NDJkZGNmZjhmYjBkOTYyYmM1NjYyZDEyNzYyMmEzNzI2ZTNiYjY2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4YWJhMWY0OWZiZjg4Mjk4NTlkZGQ4ZjdlNTkxODE1NWU3ZGRjNzg5MTk3NjhiNmU2YzUzNmU1Mjc4YzMxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlMjlkYWRiNjBjOTA5NmZhYjkyZmZhNzc0OWUzMDQ2MmUxNGE4YWZhZjZkZTkzOGQ5YzBhNGQ3ODc4MSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RlYzlhYTliM2Y0NjE5NWFlOWM3ZmVhN2M2MTE0ODc2NGE0MWUwZDY4ZGFlNDFlODI4NjhkNzkyYjNjIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NmI4ZTI3MmM1NGE0MjJkOWRmMzZkODVjYWZmMjY2MjRjNzMzZTdiM2Y2MDQwZDNlNGM5Y2Q2ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2YTRiODhhMjk3Yzc4ZjlkZDUzZWU4YzcxNjRkZGEwZGVkN2U5ODgzODI1NTViYzdkODljOTAxOTIyYjMyZSJ9fX0='}]},!minecraft:rarity]
+      duration: 11
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2YTRiODhhMjk3Yzc4ZjlkZDUzZWU4YzcxNjRkZGEwZGVkN2U5ODgzODI1NTViYzdkODljOTAxOTIyYjMyZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NmI4ZTI3MmM1NGE0MjJkOWRmMzZkODVjYWZmMjY2MjRjNzMzZTdiM2Y2MDQwZDNlNGM5Y2Q2ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RlYzlhYTliM2Y0NjE5NWFlOWM3ZmVhN2M2MTE0ODc2NGE0MWUwZDY4ZGFlNDFlODI4NjhkNzkyYjNjIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlMjlkYWRiNjBjOTA5NmZhYjkyZmZhNzc0OWUzMDQ2MmUxNGE4YWZhZjZkZTkzOGQ5YzBhNGQ3ODc4MSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4YWJhMWY0OWZiZjg4Mjk4NTlkZGQ4ZjdlNTkxODE1NWU3ZGRjNzg5MTk3NjhiNmU2YzUzNmU1Mjc4YzMxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwNzNiYTNmMWNhMWQxZTRmN2UxZWM3NDJkZGNmZjhmYjBkOTYyYmM1NjYyZDEyNzYyMmEzNzI2ZTNiYjY2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1MmRjZGIxM2Y3MzIzNDJlZjM3Y2JmMDkwMjk2MDk4NDk5MmY1ZTY3Mjg5MzczMDU0YjAwYzJhMWY3In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRiMGYyZjNkMzQ5OTk1OWU5N2QyN2U2MTBiY2ZkOTBkYmY4ZGY1ZTFjZjRiOThmMjU5Mjg0ZjJlMzU1NzI4In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczMmZlMTIxYTYzZWFhYmQ5OWNlZDZkMWFjYzkxNzk4NjUyZDFlZTgwODRkMmY5MTI3ZDhhMzE1Y2FkNWNlNCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IzZjJiYmQxNWVhMTRmYWYyMmIwNjk4ZWMwMzJmNjRlYjEzZGIzNzljOGVlMWVmNzhhOWIyN2YyYWU2ZDg2NjIifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZlM2UyMjc2MWM3NmI0ZjhmYWQ4OWRiYzgwZjNhZjIwM2U3YjgyMTEyMzgwMTFiZTdmZmI4MDI2MWQ5YzY0In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRiMGYyZjNkMzQ5OTk1OWU5N2QyN2U2MTBiY2ZkOTBkYmY4ZGY1ZTFjZjRiOThmMjU5Mjg0ZjJlMzU1NzI4In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1MmRjZGIxM2Y3MzIzNDJlZjM3Y2JmMDkwMjk2MDk4NDk5MmY1ZTY3Mjg5MzczMDU0YjAwYzJhMWY3In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwNzNiYTNmMWNhMWQxZTRmN2UxZWM3NDJkZGNmZjhmYjBkOTYyYmM1NjYyZDEyNzYyMmEzNzI2ZTNiYjY2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4YWJhMWY0OWZiZjg4Mjk4NTlkZGQ4ZjdlNTkxODE1NWU3ZGRjNzg5MTk3NjhiNmU2YzUzNmU1Mjc4YzMxIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlMjlkYWRiNjBjOTA5NmZhYjkyZmZhNzc0OWUzMDQ2MmUxNGE4YWZhZjZkZTkzOGQ5YzBhNGQ3ODc4MSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RlYzlhYTliM2Y0NjE5NWFlOWM3ZmVhN2M2MTE0ODc2NGE0MWUwZDY4ZGFlNDFlODI4NjhkNzkyYjNjIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NmI4ZTI3MmM1NGE0MjJkOWRmMzZkODVjYWZmMjY2MjRjNzMzZTdiM2Y2MDQwZDNlNGM5Y2Q2ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   sleepy:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg2MjljNmJmNTc1ZGVlNjU3NjI2YTg0Yjg4N2ExZTcxNDcxNGM5OTRmMjc4MmRlYjk2ODE4Y2MzODI5ZTdjNjkifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg2MjljNmJmNTc1ZGVlNjU3NjI2YTg0Yjg4N2ExZTcxNDcxNGM5OTRmMjc4MmRlYjk2ODE4Y2MzODI5ZTdjNjkifX19'}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 5
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JkNDBmNzFjNDBmYzMwODcxOGQzOTgxM2IyYThmZDk2MDJmNDRiODAzYTViNTg3ZDNmM2IxMzFlNGI4YzYxIn19fQ=='}]},!minecraft:rarity]"
-        duration: 8
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1ODY3MDllYzNmZGVkNGY2OTM4MjE4YWQyMWI0OGZhMzJlZWZmM2M0YWUxNWM2NWQ3YWQyNjU3ODg2OWMxOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NGRmNjQyYjI3NjI2MjQ0ODFhNWIyYmUyMWE4MTNkNWVhNDEyZjUyMWQxMGMzNjNhNzE0ZTQ3NDhhOTI2OSJ9fX0='}]},!minecraft:rarity]"
-        duration: 4
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IyZTJmNjQzNjE4YjUxOThiNmZkZmE0ZjRlZmEzNTdmMmE2NzlkM2RmYWU5MGY4ZmVmMDNlY2RhZjQyY2EifX19'}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IyZTJmNjQzNjE4YjUxOThiNmZkZmE0ZjRlZmEzNTdmMmE2NzlkM2RmYWU5MGY4ZmVmMDNlY2RhZjQyY2EifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NGRmNjQyYjI3NjI2MjQ0ODFhNWIyYmUyMWE4MTNkNWVhNDEyZjUyMWQxMGMzNjNhNzE0ZTQ3NDhhOTI2OSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1ODY3MDllYzNmZGVkNGY2OTM4MjE4YWQyMWI0OGZhMzJlZWZmM2M0YWUxNWM2NWQ3YWQyNjU3ODg2OWMxOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JkNDBmNzFjNDBmYzMwODcxOGQzOTgxM2IyYThmZDk2MDJmNDRiODAzYTViNTg3ZDNmM2IxMzFlNGI4YzYxIn19fQ=='}]},!minecraft:rarity]
+      duration: 8
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1ODY3MDllYzNmZGVkNGY2OTM4MjE4YWQyMWI0OGZhMzJlZWZmM2M0YWUxNWM2NWQ3YWQyNjU3ODg2OWMxOSJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NGRmNjQyYjI3NjI2MjQ0ODFhNWIyYmUyMWE4MTNkNWVhNDEyZjUyMWQxMGMzNjNhNzE0ZTQ3NDhhOTI2OSJ9fX0='}]},!minecraft:rarity]
+      duration: 4
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IyZTJmNjQzNjE4YjUxOThiNmZkZmE0ZjRlZmEzNTdmMmE2NzlkM2RmYWU5MGY4ZmVmMDNlY2RhZjQyY2EifX19'}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U0MzQ5NzJjMzI2YzJjMzlhNWU0MWQwNzNmZWVjYTRhZWJhOTFkZjFhMTIwNDAyYjg5NGVmYzhjNWFmOTkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNlMTA2ZWM2N2NiMmEyMzJmNGYyNzk3MWE1MmIzYWI0Yjk1MGEzMWVhNDQ2ZWE5MmVlYjI1OTI2M2NmZDExOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IyZTJmNjQzNjE4YjUxOThiNmZkZmE0ZjRlZmEzNTdmMmE2NzlkM2RmYWU5MGY4ZmVmMDNlY2RhZjQyY2EifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE5NGRmNjQyYjI3NjI2MjQ0ODFhNWIyYmUyMWE4MTNkNWVhNDEyZjUyMWQxMGMzNjNhNzE0ZTQ3NDhhOTI2OSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1ODY3MDllYzNmZGVkNGY2OTM4MjE4YWQyMWI0OGZhMzJlZWZmM2M0YWUxNWM2NWQ3YWQyNjU3ODg2OWMxOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   spicy:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 3
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkyN2ViYmY1YzI1MzVmZTZiNWNlZjhiOGE3ZTFlNzA2N2EzOWVkMjFiYTU0N2Y4M2ZjZTQ0NzIxODRkODBjNyJ9fX0='}]},!minecraft:rarity]"
-        duration: 13
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU4NGY5ZWU2ODVlYzY1NGVhNTk0MWQ3ODk4Mzg3ODVkMzIxNGUyMzYxNTNmYTJlNDgyMjg3NmJjZmVmODkifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNGRhZDZjOWVhYjBiYWY5ZjlkOWIwZjZiZTZlMTk5MzZiM2ExZTIwZmMzZTIxN2I4ODVlYWRlYjMxOCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2M2JhOWY4OGZhNWY1MzU5ZDVjZDk0ZTlkZjhjZWViZmRjZDQzNTVkNWJmYjVmZTY3MzI1MWVkZTBlN2Y2M2QifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNThhYzk5MTE0NTYxMTAzNzc3OTljZGZkNzVhNWY0ZmQ3MzFhMzhiZDI5YWIzOTg4Nzk0M2FhYTEzOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZjk2YmZjOTA1YzQ2ODk2OThjMDljZDJjYmI4MTg4MjUxNDZjMWJjNjE4NDk0MDMzZTgwNzdjYjlhNzAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFlNTY3NTU1N2RlZGVlZWRkNDU5OWZkMGMwYjJlYWU3ZDhkZWZiZmM2MTNmMzIxZjUxMGM3NGM2NjJhM2E2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFlNTY3NTU1N2RlZGVlZWRkNDU5OWZkMGMwYjJlYWU3ZDhkZWZiZmM2MTNmMzIxZjUxMGM3NGM2NjJhM2E2In19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZjk2YmZjOTA1YzQ2ODk2OThjMDljZDJjYmI4MTg4MjUxNDZjMWJjNjE4NDk0MDMzZTgwNzdjYjlhNzAifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNThhYzk5MTE0NTYxMTAzNzc3OTljZGZkNzVhNWY0ZmQ3MzFhMzhiZDI5YWIzOTg4Nzk0M2FhYTEzOSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2M2JhOWY4OGZhNWY1MzU5ZDVjZDk0ZTlkZjhjZWViZmRjZDQzNTVkNWJmYjVmZTY3MzI1MWVkZTBlN2Y2M2QifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNGRhZDZjOWVhYjBiYWY5ZjlkOWIwZjZiZTZlMTk5MzZiM2ExZTIwZmMzZTIxN2I4ODVlYWRlYjMxOCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkyN2ViYmY1YzI1MzVmZTZiNWNlZjhiOGE3ZTFlNzA2N2EzOWVkMjFiYTU0N2Y4M2ZjZTQ0NzIxODRkODBjNyJ9fX0='}]},!minecraft:rarity]
+      duration: 13
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU4NGY5ZWU2ODVlYzY1NGVhNTk0MWQ3ODk4Mzg3ODVkMzIxNGUyMzYxNTNmYTJlNDgyMjg3NmJjZmVmODkifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNGRhZDZjOWVhYjBiYWY5ZjlkOWIwZjZiZTZlMTk5MzZiM2ExZTIwZmMzZTIxN2I4ODVlYWRlYjMxOCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2M2JhOWY4OGZhNWY1MzU5ZDVjZDk0ZTlkZjhjZWViZmRjZDQzNTVkNWJmYjVmZTY3MzI1MWVkZTBlN2Y2M2QifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNThhYzk5MTE0NTYxMTAzNzc3OTljZGZkNzVhNWY0ZmQ3MzFhMzhiZDI5YWIzOTg4Nzk0M2FhYTEzOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZjk2YmZjOTA1YzQ2ODk2OThjMDljZDJjYmI4MTg4MjUxNDZjMWJjNjE4NDk0MDMzZTgwNzdjYjlhNzAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFlNTY3NTU1N2RlZGVlZWRkNDU5OWZkMGMwYjJlYWU3ZDhkZWZiZmM2MTNmMzIxZjUxMGM3NGM2NjJhM2E2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ5ZjA0ODJjYTZiYTU5OWZiZWQ0NmExZTdiYjMzMjQ1OWFjMTMyMWJiNWNjMmRjOWJmMmEyYmE3ZjYxYjgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg4MTFlYzM2MThkZmMwNzU4MThhZjhhN2ZkYTUyZWU1NmMwYmIyMDNlNGQyNzgyMWUxNzg2ZjJhZjU1YjlkIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFlNTY3NTU1N2RlZGVlZWRkNDU5OWZkMGMwYjJlYWU3ZDhkZWZiZmM2MTNmMzIxZjUxMGM3NGM2NjJhM2E2In19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZjk2YmZjOTA1YzQ2ODk2OThjMDljZDJjYmI4MTg4MjUxNDZjMWJjNjE4NDk0MDMzZTgwNzdjYjlhNzAifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNThhYzk5MTE0NTYxMTAzNzc3OTljZGZkNzVhNWY0ZmQ3MzFhMzhiZDI5YWIzOTg4Nzk0M2FhYTEzOSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk2M2JhOWY4OGZhNWY1MzU5ZDVjZDk0ZTlkZjhjZWViZmRjZDQzNTVkNWJmYjVmZTY3MzI1MWVkZTBlN2Y2M2QifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNGRhZDZjOWVhYjBiYWY5ZjlkOWIwZjZiZTZlMTk5MzZiM2ExZTIwZmMzZTIxN2I4ODVlYWRlYjMxOCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   sun_tan:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 4
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkMjE3NWViZTlhZTBlMWE2NThkOWFmODJkYWNmYjgzNjkwNTJkODEyMWQ0ZWEzODg2NzM4YTFjY2E1In19fQ=='}]},!minecraft:rarity]"
-        duration: 10
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdlZjU3NTYyOWEyNjg5ZDYzYTNhM2U5MWJkMzQyZWMzZjc4YjRmMzk3Njg3YzA4MzNiZjZkNjRiZjI2ZDEyZTgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI4NWM3ODliMWJhZmViNjI3NGQ1YzMzMTRlMDMzM2NjZjZhYjkyZDczMTJlZjIxNGY4OTc5M2M5NTlkMjUifX19'}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzOGFkZGUzYWE0ZGYyY2Y4YTUyMTY2NDNkM2Y2ZjkyMTMzZTE1OTlkNTBiMmVmNDFjZWZjODFmMWVlYzE3YyJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI4NWM3ODliMWJhZmViNjI3NGQ1YzMzMTRlMDMzM2NjZjZhYjkyZDczMTJlZjIxNGY4OTc5M2M5NTlkMjUifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdlZjU3NTYyOWEyNjg5ZDYzYTNhM2U5MWJkMzQyZWMzZjc4YjRmMzk3Njg3YzA4MzNiZjZkNjRiZjI2ZDEyZTgifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU2ZjBjNmE2ZjU1MjVkMDg3Njc3Mzc2OGUyYTdmNmJkNDM2MDhkOGIxNWYwZTg3ODBmNjRkNTEyZjIwIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwM2VjNjIxZWYyMzE3NWVlNGVlY2M1ZDFkOTIyMmI5ZTI3Y2E4NzU4YmVkZTUwNGUzZmEzYzBhYzE1MzJiZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc3OGFiMzc4MWRmZTk2ZTUxOWIxNzRlNDdlZmRiYzY4ODE3MTVkN2FlOGNhNDFhMWQ4YWU2MjBmNDc3OWQyIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkZGRhM2RmOWZkZTMwMjA4Y2FkMWEzMDg2MzRjOTVmOTVjOWI0OGE0Mjc4NDJhZGM5YzhjY2ZlYzYyNmI0ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczNjVjNjY2ZTdkOTgwNDM5N2U3NmRlMzU1ZWUyZTY4ZDRjOTY5YjVmZjdjMGFiNmFmNzdiZDdjN2UyNjYifX19'}]},!minecraft:rarity]"
-        duration: 3
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczNjVjNjY2ZTdkOTgwNDM5N2U3NmRlMzU1ZWUyZTY4ZDRjOTY5YjVmZjdjMGFiNmFmNzdiZDdjN2UyNjYifX19'}]},!minecraft:rarity]"
-        duration: 3
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkZGRhM2RmOWZkZTMwMjA4Y2FkMWEzMDg2MzRjOTVmOTVjOWI0OGE0Mjc4NDJhZGM5YzhjY2ZlYzYyNmI0ZiJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc3OGFiMzc4MWRmZTk2ZTUxOWIxNzRlNDdlZmRiYzY4ODE3MTVkN2FlOGNhNDFhMWQ4YWU2MjBmNDc3OWQyIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwM2VjNjIxZWYyMzE3NWVlNGVlY2M1ZDFkOTIyMmI5ZTI3Y2E4NzU4YmVkZTUwNGUzZmEzYzBhYzE1MzJiZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkMjE3NWViZTlhZTBlMWE2NThkOWFmODJkYWNmYjgzNjkwNTJkODEyMWQ0ZWEzODg2NzM4YTFjY2E1In19fQ=='}]},!minecraft:rarity]
+      duration: 10
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdlZjU3NTYyOWEyNjg5ZDYzYTNhM2U5MWJkMzQyZWMzZjc4YjRmMzk3Njg3YzA4MzNiZjZkNjRiZjI2ZDEyZTgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI4NWM3ODliMWJhZmViNjI3NGQ1YzMzMTRlMDMzM2NjZjZhYjkyZDczMTJlZjIxNGY4OTc5M2M5NTlkMjUifX19'}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzOGFkZGUzYWE0ZGYyY2Y4YTUyMTY2NDNkM2Y2ZjkyMTMzZTE1OTlkNTBiMmVmNDFjZWZjODFmMWVlYzE3YyJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI4NWM3ODliMWJhZmViNjI3NGQ1YzMzMTRlMDMzM2NjZjZhYjkyZDczMTJlZjIxNGY4OTc5M2M5NTlkMjUifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdlZjU3NTYyOWEyNjg5ZDYzYTNhM2U5MWJkMzQyZWMzZjc4YjRmMzk3Njg3YzA4MzNiZjZkNjRiZjI2ZDEyZTgifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU2ZjBjNmE2ZjU1MjVkMDg3Njc3Mzc2OGUyYTdmNmJkNDM2MDhkOGIxNWYwZTg3ODBmNjRkNTEyZjIwIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwM2VjNjIxZWYyMzE3NWVlNGVlY2M1ZDFkOTIyMmI5ZTI3Y2E4NzU4YmVkZTUwNGUzZmEzYzBhYzE1MzJiZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc3OGFiMzc4MWRmZTk2ZTUxOWIxNzRlNDdlZmRiYzY4ODE3MTVkN2FlOGNhNDFhMWQ4YWU2MjBmNDc3OWQyIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkZGRhM2RmOWZkZTMwMjA4Y2FkMWEzMDg2MzRjOTVmOTVjOWI0OGE0Mjc4NDJhZGM5YzhjY2ZlYzYyNmI0ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczNjVjNjY2ZTdkOTgwNDM5N2U3NmRlMzU1ZWUyZTY4ZDRjOTY5YjVmZjdjMGFiNmFmNzdiZDdjN2UyNjYifX19'}]},!minecraft:rarity]
+      duration: 3
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTExMjJjODM3YTg3Y2UxOGQ1MWU3OTc5ODNkYTZhZDM4NDc5M2ZkZDlmNzcyNTM3NjNhZTliNmQ5YTEifX19'}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMzg4OWU0NGI1NTQ2NWFiZmY1Y2VkYzViODZkM2JkYTM0NmJjNzBjOWJmOGI5N2ZjZjc5Mzk0OGYzNzljMSJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzczNjVjNjY2ZTdkOTgwNDM5N2U3NmRlMzU1ZWUyZTY4ZDRjOTY5YjVmZjdjMGFiNmFmNzdiZDdjN2UyNjYifX19'}]},!minecraft:rarity]
+      duration: 3
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkZGRhM2RmOWZkZTMwMjA4Y2FkMWEzMDg2MzRjOTVmOTVjOWI0OGE0Mjc4NDJhZGM5YzhjY2ZlYzYyNmI0ZiJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc3OGFiMzc4MWRmZTk2ZTUxOWIxNzRlNDdlZmRiYzY4ODE3MTVkN2FlOGNhNDFhMWQ4YWU2MjBmNDc3OWQyIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwM2VjNjIxZWYyMzE3NWVlNGVlY2M1ZDFkOTIyMmI5ZTI3Y2E4NzU4YmVkZTUwNGUzZmEzYzBhYzE1MzJiZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+  
   surprised:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 4
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzZiN2YyNGJiNmE0NTg1ZGU4ZjQyMzAzMTYxYmRlZDVjODM5OGNlMzc1NjMxYmUxNDk0NjBkNjgzNWFlYzQ0ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 7
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzYzc2MGY2NjBkNDQ3ODQ2YWI2YjNkNWE5MTRjNGIwMWYxMDY3MmI2M2Q0MzExZDQ2OGI2ZGMyOGJhMGUzIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM4MmQxNWU5NDE4MjIwNjAyNTk3M2ZmMTkyOGY0NDU2YmY3YWJhZmY3Mzc5NDJkNTRiMWM1Njk5ODkyYyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkNjQxYmQzMzE4MGM1M2RjYzc3ZTNkNGM2NjU5MzVlNjMwMTFkODdhZTk3OTZhMmFlN2JkMzM0Y2Q2NCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]"
-        duration: 7
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkNjQxYmQzMzE4MGM1M2RjYzc3ZTNkNGM2NjU5MzVlNjMwMTFkODdhZTk3OTZhMmFlN2JkMzM0Y2Q2NCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM4MmQxNWU5NDE4MjIwNjAyNTk3M2ZmMTkyOGY0NDU2YmY3YWJhZmY3Mzc5NDJkNTRiMWM1Njk5ODkyYyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzYzc2MGY2NjBkNDQ3ODQ2YWI2YjNkNWE5MTRjNGIwMWYxMDY3MmI2M2Q0MzExZDQ2OGI2ZGMyOGJhMGUzIn19fQ=='}]},!minecraft:rarity]"
-        duration: 1
-
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzZiN2YyNGJiNmE0NTg1ZGU4ZjQyMzAzMTYxYmRlZDVjODM5OGNlMzc1NjMxYmUxNDk0NjBkNjgzNWFlYzQ0ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 7
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzYzc2MGY2NjBkNDQ3ODQ2YWI2YjNkNWE5MTRjNGIwMWYxMDY3MmI2M2Q0MzExZDQ2OGI2ZGMyOGJhMGUzIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM4MmQxNWU5NDE4MjIwNjAyNTk3M2ZmMTkyOGY0NDU2YmY3YWJhZmY3Mzc5NDJkNTRiMWM1Njk5ODkyYyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkNjQxYmQzMzE4MGM1M2RjYzc3ZTNkNGM2NjU5MzVlNjMwMTFkODdhZTk3OTZhMmFlN2JkMzM0Y2Q2NCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjM2IwODllNDQ2ZjA2NWRkOTA1OTUxOWM4NWM0NWFlYmI1Mzg5MWJlM2MzYTdlZDViNWViNjFhOTY3NDcifX19'}]},!minecraft:rarity]
+      duration: 7
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkNjQxYmQzMzE4MGM1M2RjYzc3ZTNkNGM2NjU5MzVlNjMwMTFkODdhZTk3OTZhMmFlN2JkMzM0Y2Q2NCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzM4MmQxNWU5NDE4MjIwNjAyNTk3M2ZmMTkyOGY0NDU2YmY3YWJhZmY3Mzc5NDJkNTRiMWM1Njk5ODkyYyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzYzc2MGY2NjBkNDQ3ODQ2YWI2YjNkNWE5MTRjNGIwMWYxMDY3MmI2M2Q0MzExZDQ2OGI2ZGMyOGJhMGUzIn19fQ=='}]},!minecraft:rarity]
+      duration: 1
+  
   wink:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     tick_interval: 3
     frames:
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]"
-        duration: 1
-      - item: "minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
-        duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VmNjZjNzQ4NWNjYjg1M2E2NTM4MTIyZTQ1YzhhNDgyMWZiZTA5N2Y5NmE2MDYwZmViOTgxZjdhMmJiYTg5MCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E1ZDQzZWIwZWM1ZjZkZTFkNDY5YjY5NjgwOTc4YTZkZDcxMTc3NzJlZTBkODJmZmRmMDg3NDllODRkZjdlZCJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 2
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y0ZWEyZDZmOTM5ZmVmZWZmNWQxMjJlNjNkZDI2ZmE4YTQyN2RmOTBiMjkyOGJjMWZhODlhODI1MmE3ZSJ9fX0='}]},!minecraft:rarity]
+      duration: 1
+    - item: minecraft:player_head[profile={properties:[{name:'textures',value:'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]
+      duration: 2
 
 # Do not edit this!
 config_version: 1

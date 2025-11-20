@@ -7,7 +7,7 @@ disco_floor: true
 
 menu:
   rows: 3
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -18,88 +18,93 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
-# A music bundle with around 35 songs and a pre-configured music.yml file can be found at:
+# You can add as many custom songs as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
+#
+# More songs can be found at:
 # https://github.com/File14/ProCosmetics/wiki/Creating-Custom-Cosmetics#creating-music
 # Note: This bundle is not included by default in the plugin due to copyright restrictions.
-# Please be aware of copyright laws and use the songs at your own risk. Do not sell the copyrighted music through your server store.
+# Please be aware of copyright laws and use the songs at your own risk.
+# Do not sell the copyrighted music through your server store.
 #
 # The default songs listed below are safe to use as they are non-copyrighted.
 cosmetics:
   fur_elise:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:paper"
+    item: minecraft:music_disc_13
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   in_the_hall_of_the_mountain_king:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:paper"
+    item: minecraft:music_disc_strad
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sweden:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:paper"
+    item: minecraft:music_disc_wait
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
 config_version: 1

@@ -4,7 +4,7 @@ enabled: true
 
 menu:
   rows: 6
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -15,608 +15,813 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
+# You can add as many custom banners as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
 cosmetics:
+  anchor:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''blue'', pattern: ''minecraft:creeper''}, {color: ''blue'', pattern: ''minecraft:piglin''}, {color: ''white'', pattern: ''minecraft:straight_cross''}, {color: ''blue'', pattern: ''minecraft:curly_border''}, {color: ''blue'', pattern: ''minecraft:stripe_top''}, {color: ''yellow'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   candy_cane:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:red_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:triangle_top'},
-      {color: 'red', pattern: 'minecraft:rhombus'},
-      {color: 'white', pattern: 'minecraft:stripe_downleft'},
-      {color: 'red', pattern: 'minecraft:small_stripes'},
-      {color: 'red', pattern: 'minecraft:curly_border'},
-      {color: 'red', pattern: 'minecraft:border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:red_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:triangle_top''}, {color: ''red'', pattern: ''minecraft:rhombus''}, {color: ''white'', pattern: ''minecraft:stripe_downleft''}, {color: ''red'', pattern: ''minecraft:small_stripes''}, {color: ''red'', pattern: ''minecraft:curly_border''}, {color: ''red'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  castle:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:gray_banner[minecraft:banner_patterns=[{color: ''green'', pattern: ''minecraft:circle''}, {color: ''light_gray'', pattern: ''minecraft:bricks''}, {color: ''black'', pattern: ''minecraft:triangle_bottom''}, {color: ''lime'', pattern: ''minecraft:stripe_bottom''}, {color: ''light_blue'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  cat:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:gray_banner[minecraft:banner_patterns=[{color: ''light_blue'', pattern: ''minecraft:triangles_top''}, {color: ''light_blue'', pattern: ''minecraft:square_top_left''}, {color: ''light_blue'', pattern: ''minecraft:curly_border''}, {color: ''lime'', pattern: ''minecraft:stripe_bottom''}, {color: ''gray'', pattern: ''minecraft:mojang''}, {color: ''brown'', pattern: ''minecraft:triangles_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  chicken:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:stripe_top''}, {color: ''white'', pattern: ''minecraft:straight_cross''}, {color: ''red'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''white'', pattern: ''minecraft:border''}, {color: ''yellow'', pattern: ''minecraft:stripe_middle''}, {color: ''white'', pattern: ''minecraft:stripe_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  christmas_creeper:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:lime_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:stripe_top''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:triangle_top''}, {color: ''red'', pattern: ''minecraft:triangle_top''}, {color: ''black'', pattern: ''minecraft:circle''}, {color: ''white'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  creeper:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:lime_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:small_stripes''}, {color: ''lime'', pattern: ''minecraft:small_stripes''}, {color: ''black'', pattern: ''minecraft:bricks''}, {color: ''lime'', pattern: ''minecraft:bricks''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:creeper''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   crown:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:yellow_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:triangle_top'},
-      {color: 'yellow', pattern: 'minecraft:rhombus'},
-      {color: 'black', pattern: 'minecraft:half_horizontal_bottom'},
-      {color: 'black', pattern: 'minecraft:border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:yellow_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:triangle_top''}, {color: ''yellow'', pattern: ''minecraft:rhombus''}, {color: ''black'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''black'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  disco:
+    - common
+    - mythical
+    - legendary
+  
+  crying_creeper:
     enabled: true
-    rarity: "rare"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:light_blue_banner"
+    item: 'minecraft:lime_banner[minecraft:banner_patterns=[{color: ''light_blue'', pattern: ''minecraft:small_stripes''}, {color: ''lime'', pattern: ''minecraft:stripe_center''}, {color: ''lime'', pattern: ''minecraft:half_horizontal''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''lime'', pattern: ''minecraft:curly_border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  demon:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:red_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:small_stripes''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:triangle_top''}, {color: ''white'', pattern: ''minecraft:skull''}, {color: ''black'', pattern: ''minecraft:skull''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  disco:
+    enabled: true
+    rarity: rare
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: minecraft:light_blue_banner
     count: 1
     tick_interval: 5
     frames:
-      - item: "minecraft:light_blue_banner"
-        duration: 2
-      - item: "minecraft:yellow_banner"
-        duration: 2
-      - item: "minecraft:lime_banner"
-        duration: 2
-      - item: "minecraft:pink_banner"
-        duration: 2
-      - item: "minecraft:light_gray_banner"
-        duration: 2
-      - item: "minecraft:cyan_banner"
-        duration: 2
-      - item: "minecraft:purple_banner"
-        duration: 2
-      - item: "minecraft:blue_banner"
-        duration: 2
-      - item: "minecraft:green_banner"
-        duration: 2
-      - item: "minecraft:red_banner"
-        duration: 2
-      - item: "minecraft:orange_banner"
-        duration: 2
-      - item: "minecraft:magenta_banner"
-        duration: 2
+    - item: minecraft:light_blue_banner
+      duration: 2
+    - item: minecraft:yellow_banner
+      duration: 2
+    - item: minecraft:lime_banner
+      duration: 2
+    - item: minecraft:pink_banner
+      duration: 2
+    - item: minecraft:light_gray_banner
+      duration: 2
+    - item: minecraft:cyan_banner
+      duration: 2
+    - item: minecraft:purple_banner
+      duration: 2
+    - item: minecraft:blue_banner
+      duration: 2
+    - item: minecraft:green_banner
+      duration: 2
+    - item: minecraft:red_banner
+      duration: 2
+    - item: minecraft:orange_banner
+      duration: 2
+    - item: minecraft:magenta_banner
+      duration: 2
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  duck:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:stripe_center''}, {color: ''orange'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''yellow'', pattern: ''minecraft:border''}, {color: ''yellow'', pattern: ''minecraft:stripe_bottom''}, {color: ''yellow'', pattern: ''minecraft:stripe_top''}, {color: ''orange'', pattern: ''minecraft:stripe_middle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   ender_dragon:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:curly_border'},
-      {color: 'white', pattern: 'minecraft:stripe_right'},
-      {color: 'purple', pattern: 'minecraft:flower'},
-      {color: 'black', pattern: 'minecraft:stripe_middle'},
-      {color: 'white', pattern: 'minecraft:triangle_top'},
-      {color: 'black', pattern: 'minecraft:mojang'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:curly_border''}, {color: ''white'', pattern: ''minecraft:stripe_right''}, {color: ''purple'', pattern: ''minecraft:flower''}, {color: ''black'', pattern: ''minecraft:stripe_middle''}, {color: ''white'', pattern: ''minecraft:triangle_top''}, {color: ''black'', pattern: ''minecraft:mojang''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  enderman:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:purple_banner[minecraft:banner_patterns=[{color: ''magenta'', pattern: ''minecraft:small_stripes''}, {color: ''magenta'', pattern: ''minecraft:border''}, {color: ''black'', pattern: ''minecraft:stripe_top''}, {color: ''black'', pattern: ''minecraft:straight_cross''}, {color: ''black'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''black'', pattern: ''minecraft:stripe_middle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   fire:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
-      {color: 'black', pattern: 'minecraft:bricks'},
-      {color: 'orange', pattern: 'minecraft:triangle_bottom'},
-      {color: 'black', pattern: 'minecraft:rhombus'},
-      {color: 'orange', pattern: 'minecraft:gradient_up'},
-      {color: 'yellow', pattern: 'minecraft:triangles_bottom'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''orange'', pattern: ''minecraft:mojang''}, {color: ''black'', pattern: ''minecraft:bricks''}, {color: ''orange'', pattern: ''minecraft:triangle_bottom''}, {color: ''black'', pattern: ''minecraft:rhombus''}, {color: ''orange'', pattern: ''minecraft:gradient_up''}, {color: ''yellow'', pattern: ''minecraft:triangles_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   fox:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
-      {color: 'orange', pattern: 'minecraft:curly_border'},
-      {color: 'orange', pattern: 'minecraft:circle'},
-      {color: 'orange', pattern: 'minecraft:creeper'},
-      {color: 'orange', pattern: 'minecraft:triangle_top'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:rhombus''}, {color: ''orange'', pattern: ''minecraft:curly_border''}, {color: ''orange'', pattern: ''minecraft:circle''}, {color: ''orange'', pattern: ''minecraft:creeper''}, {color: ''orange'', pattern: ''minecraft:triangle_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   goose:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
-      {color: 'white', pattern: 'minecraft:curly_border'},
-      {color: 'white', pattern: 'minecraft:half_horizontal'},
-      {color: 'black', pattern: 'minecraft:stripe_top'},
-      {color: 'black', pattern: 'minecraft:stripe_downright'},
-      {color: 'black', pattern: 'minecraft:half_vertical_right'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''orange'', pattern: ''minecraft:mojang''}, {color: ''white'', pattern: ''minecraft:curly_border''}, {color: ''white'', pattern: ''minecraft:half_horizontal''}, {color: ''black'', pattern: ''minecraft:stripe_top''}, {color: ''black'', pattern: ''minecraft:stripe_downright''}, {color: ''black'', pattern: ''minecraft:half_vertical_right''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  halloween_creeper:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:orange_banner[minecraft:banner_patterns=[{color: ''brown'', pattern: ''minecraft:gradient''}, {color: ''orange'', pattern: ''minecraft:small_stripes''}, {color: ''orange'', pattern: ''minecraft:gradient_up''}, {color: ''green'', pattern: ''minecraft:triangles_top''}, {color: ''yellow'', pattern: ''minecraft:creeper''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  happy_ghast:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:stripe_bottom''}, {color: ''white'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:flower''}, {color: ''black'', pattern: ''minecraft:border''}, {color: ''black'', pattern: ''minecraft:stripe_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   happy_sheep:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:stripe_bottom'},
-      {color: 'white', pattern: 'minecraft:circle'},
-      {color: 'black', pattern: 'minecraft:creeper'},
-      {color: 'white', pattern: 'minecraft:flower'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''lime'', pattern: ''minecraft:stripe_bottom''}, {color: ''white'', pattern: ''minecraft:circle''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''white'', pattern: ''minecraft:flower''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   heart:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:rhombus'},
-      {color: 'red', pattern: 'minecraft:rhombus'},
-      {color: 'black', pattern: 'minecraft:triangle_top'},
-      {color: 'black', pattern: 'minecraft:triangle_top'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:rhombus''}, {color: ''red'', pattern: ''minecraft:rhombus''}, {color: ''black'', pattern: ''minecraft:triangle_top''}, {color: ''black'', pattern: ''minecraft:triangle_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  ice_cream:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:pink_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:rhombus''}, {color: ''orange'', pattern: ''minecraft:rhombus''}, {color: ''white'', pattern: ''minecraft:stripe_middle''}, {color: ''pink'', pattern: ''minecraft:half_horizontal''}, {color: ''pink'', pattern: ''minecraft:border''}, {color: ''white'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  iron_golem:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:rhombus''}, {color: ''white'', pattern: ''minecraft:stripe_bottom''}, {color: ''light_gray'', pattern: ''minecraft:stripe_center''}, {color: ''white'', pattern: ''minecraft:border''}, {color: ''black'', pattern: ''minecraft:stripe_middle''}, {color: ''white'', pattern: ''minecraft:half_horizontal''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  lightning:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:yellow_banner[minecraft:banner_patterns=[{color: ''light_blue'', pattern: ''minecraft:stripe_left''}, {color: ''light_blue'', pattern: ''minecraft:stripe_right''}, {color: ''light_blue'', pattern: ''minecraft:triangles_bottom''}, {color: ''light_blue'', pattern: ''minecraft:triangles_top''}, {color: ''light_blue'', pattern: ''minecraft:square_bottom_left''}, {color: ''light_blue'', pattern: ''minecraft:square_top_right''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  llama:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:creeper''}, {color: ''white'', pattern: ''minecraft:circle''}, {color: ''white'', pattern: ''minecraft:cross''}, {color: ''light_blue'', pattern: ''minecraft:triangle_top''}, {color: ''light_blue'', pattern: ''minecraft:stripe_top''}, {color: ''light_blue'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  mirror:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:circle''}, {color: ''light_blue'', pattern: ''minecraft:gradient''}, {color: ''white'', pattern: ''minecraft:stripe_downleft''}, {color: ''yellow'', pattern: ''minecraft:border''}, {color: ''yellow'', pattern: ''minecraft:triangles_bottom''}, {color: ''yellow'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  moon:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:mojang''}, {color: ''black'', pattern: ''minecraft:flower''}, {color: ''blue'', pattern: ''minecraft:gradient_up''}, {color: ''white'', pattern: ''minecraft:circle''}, {color: ''black'', pattern: ''minecraft:triangles_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  mountain:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:gradient_up''}, {color: ''orange'', pattern: ''minecraft:circle''}, {color: ''yellow'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:triangle_bottom''}, {color: ''light_gray'', pattern: ''minecraft:triangles_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  nether_portal:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:purple_banner[minecraft:banner_patterns=[{color: ''magenta'', pattern: ''minecraft:small_stripes''}, {color: ''purple'', pattern: ''minecraft:bricks''}, {color: ''magenta'', pattern: ''minecraft:curly_border''}, {color: ''black'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   octopus:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:gray_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:triangle_bottom'},
-      {color: 'gray', pattern: 'minecraft:small_stripes'},
-      {color: 'white', pattern: 'minecraft:stripe_middle'},
-      {color: 'blue', pattern: 'minecraft:curly_border'},
-      {color: 'gray', pattern: 'minecraft:circle'},
-      {color: 'blue', pattern: 'minecraft:border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:gray_banner[minecraft:banner_patterns=[{color: ''blue'', pattern: ''minecraft:triangle_bottom''}, {color: ''gray'', pattern: ''minecraft:small_stripes''}, {color: ''white'', pattern: ''minecraft:stripe_middle''}, {color: ''blue'', pattern: ''minecraft:curly_border''}, {color: ''gray'', pattern: ''minecraft:circle''}, {color: ''blue'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  ominous:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''cyan'', pattern: ''minecraft:rhombus''}, {color: ''light_gray'', pattern: ''minecraft:stripe_bottom''}, {color: ''gray'', pattern: ''minecraft:stripe_center''}, {color: ''black'', pattern: ''minecraft:stripe_middle''}, {color: ''light_gray'', pattern: ''minecraft:half_horizontal''}, {color: ''black'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   panda:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:flower'},
-      {color: 'white', pattern: 'minecraft:half_horizontal_bottom'},
-      {color: 'black', pattern: 'minecraft:triangles_top'},
-      {color: 'white', pattern: 'minecraft:stripe_center'},
-      {color: 'black', pattern: 'minecraft:creeper'},
-      {color: 'white', pattern: 'minecraft:stripe_bottom'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''black'', pattern: ''minecraft:triangles_top''}, {color: ''white'', pattern: ''minecraft:stripe_center''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''white'', pattern: ''minecraft:stripe_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  pig:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:border''}, {color: ''pink'', pattern: ''minecraft:stripe_middle''}, {color: ''pink'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''pink'', pattern: ''minecraft:stripe_top''}, {color: ''pink'', pattern: ''minecraft:stripe_center''}, {color: ''black'', pattern: ''minecraft:piglin''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   pineapple:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:orange_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:bricks'},
-      {color: 'light_blue', pattern: 'minecraft:half_horizontal'},
-      {color: 'lime', pattern: 'minecraft:flower'},
-      {color: 'light_blue', pattern: 'minecraft:border'},
-      {color: 'lime', pattern: 'minecraft:circle'},
-      {color: 'light_blue', pattern: 'minecraft:curly_border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:orange_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:bricks''}, {color: ''light_blue'', pattern: ''minecraft:half_horizontal''}, {color: ''lime'', pattern: ''minecraft:flower''}, {color: ''light_blue'', pattern: ''minecraft:border''}, {color: ''lime'', pattern: ''minecraft:circle''}, {color: ''light_blue'', pattern: ''minecraft:curly_border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pirate_skull:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
-      {color: 'white', pattern: 'minecraft:skull'},
-      {color: 'black', pattern: 'minecraft:stripe_top'},
-      {color: 'light_blue', pattern: 'minecraft:curly_border'},
-      {color: 'light_blue', pattern: 'minecraft:triangles_top'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:circle''}, {color: ''white'', pattern: ''minecraft:skull''}, {color: ''black'', pattern: ''minecraft:stripe_top''}, {color: ''light_blue'', pattern: ''minecraft:curly_border''}, {color: ''light_blue'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  potion:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:cross''}, {color: ''brown'', pattern: ''minecraft:triangle_top''}, {color: ''black'', pattern: ''minecraft:stripe_top''}, {color: ''magenta'', pattern: ''minecraft:stripe_bottom''}, {color: ''black'', pattern: ''minecraft:curly_border''}, {color: ''black'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   present:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:stripe_bottom'},
-      {color: 'yellow', pattern: 'minecraft:straight_cross'},
-      {color: 'yellow', pattern: 'minecraft:flower'},
-      {color: 'white', pattern: 'minecraft:stripe_middle'},
-      {color: 'white', pattern: 'minecraft:half_horizontal'},
-      {color: 'white', pattern: 'minecraft:border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:stripe_bottom''}, {color: ''yellow'', pattern: ''minecraft:straight_cross''}, {color: ''yellow'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:stripe_middle''}, {color: ''white'', pattern: ''minecraft:half_horizontal''}, {color: ''white'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pug:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:orange_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:bricks'},
-      {color: 'brown', pattern: 'minecraft:stripe_bottom'},
-      {color: 'orange', pattern: 'minecraft:border'},
-      {color: 'brown', pattern: 'minecraft:triangle_bottom'},
-      {color: 'pink', pattern: 'minecraft:rhombus'},
-      {color: 'black', pattern: 'minecraft:creeper'},
-      {color: 'black', pattern: 'minecraft:flower'},
-      {color: 'brown', pattern: 'minecraft:skull'},
-      {color: 'orange', pattern: 'minecraft:stripe_top'},
-      {color: 'orange', pattern: 'minecraft:triangle_top'},
-      {color: 'brown', pattern: 'minecraft:circle'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:orange_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:bricks''}, {color: ''brown'', pattern: ''minecraft:stripe_bottom''}, {color: ''orange'', pattern: ''minecraft:border''}, {color: ''brown'', pattern: ''minecraft:triangle_bottom''}, {color: ''pink'', pattern: ''minecraft:rhombus''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:flower''}, {color: ''brown'', pattern: ''minecraft:skull''}, {color: ''orange'', pattern: ''minecraft:stripe_top''}, {color: ''orange'', pattern: ''minecraft:triangle_top''}, {color: ''brown'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   rabbit:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
-      {color: 'white', pattern: 'minecraft:flower'},
-      {color: 'light_blue', pattern: 'minecraft:triangle_top'},
-      {color: 'white', pattern: 'minecraft:cross'},
-      {color: 'light_blue', pattern: 'minecraft:curly_border'},
-      {color: 'white', pattern: 'minecraft:triangles_bottom'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:circle''}, {color: ''white'', pattern: ''minecraft:flower''}, {color: ''light_blue'', pattern: ''minecraft:triangle_top''}, {color: ''white'', pattern: ''minecraft:cross''}, {color: ''light_blue'', pattern: ''minecraft:curly_border''}, {color: ''white'', pattern: ''minecraft:triangles_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  rat:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''light_gray'', pattern: ''minecraft:triangle_bottom''}, {color: ''gray'', pattern: ''minecraft:rhombus''}, {color: ''gray'', pattern: ''minecraft:rhombus''}, {color: ''white'', pattern: ''minecraft:half_horizontal''}, {color: ''light_gray'', pattern: ''minecraft:creeper''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   rose:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:mojang'},
-      {color: 'green', pattern: 'minecraft:flower'},
-      {color: 'white', pattern: 'minecraft:diagonal_up_left'},
-      {color: 'red', pattern: 'minecraft:square_top_left'},
-      {color: 'white', pattern: 'minecraft:curly_border'},
-      {color: 'white', pattern: 'minecraft:triangles_top'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''lime'', pattern: ''minecraft:mojang''}, {color: ''green'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:diagonal_up_left''}, {color: ''red'', pattern: ''minecraft:square_top_left''}, {color: ''white'', pattern: ''minecraft:curly_border''}, {color: ''white'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   santa_hat:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:green_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:border'},
-      {color: 'green', pattern: 'minecraft:diagonal_left'},
-      {color: 'green', pattern: 'minecraft:diagonal_up_right'},
-      {color: 'white', pattern: 'minecraft:circle'},
-      {color: 'red', pattern: 'minecraft:triangle_bottom'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:green_banner[minecraft:banner_patterns=[{color: ''white'', pattern: ''minecraft:border''}, {color: ''green'', pattern: ''minecraft:diagonal_left''}, {color: ''green'', pattern: ''minecraft:diagonal_up_right''}, {color: ''white'', pattern: ''minecraft:circle''}, {color: ''red'', pattern: ''minecraft:triangle_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  smile:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''blue'', pattern: ''minecraft:half_horizontal''}, {color: ''white'', pattern: ''minecraft:small_stripes''}, {color: ''yellow'', pattern: ''minecraft:straight_cross''}, {color: ''red'', pattern: ''minecraft:half_horizontal_bottom''}, {color: ''pink'', pattern: ''minecraft:square_bottom_right''}, {color: ''yellow'', pattern: ''minecraft:border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   snowflake:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:blue_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:gradient_up'},
-      {color: 'white', pattern: 'minecraft:rhombus'},
-      {color: 'light_blue', pattern: 'minecraft:flower'},
-      {color: 'white', pattern: 'minecraft:flower'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:blue_banner[minecraft:banner_patterns=[{color: ''light_blue'', pattern: ''minecraft:gradient_up''}, {color: ''white'', pattern: ''minecraft:rhombus''}, {color: ''light_blue'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:flower''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   snowy_tree:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'green', pattern: 'minecraft:bricks'},
-      {color: 'light_blue', pattern: 'minecraft:triangle_bottom'},
-      {color: 'brown', pattern: 'minecraft:straight_cross'},
-      {color: 'white', pattern: 'minecraft:triangle_top'},
-      {color: 'white', pattern: 'minecraft:triangles_top'},
-      {color: 'white', pattern: 'minecraft:rhombus'},
-      {color: 'green', pattern: 'minecraft:flower'},
-      {color: 'white', pattern: 'minecraft:stripe_middle'},
-      {color: 'green', pattern: 'minecraft:creeper'},
-      {color: 'white', pattern: 'minecraft:mojang'},
-      {color: 'light_blue', pattern: 'minecraft:curly_border'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''green'', pattern: ''minecraft:bricks''}, {color: ''light_blue'', pattern: ''minecraft:triangle_bottom''}, {color: ''brown'', pattern: ''minecraft:straight_cross''}, {color: ''white'', pattern: ''minecraft:triangle_top''}, {color: ''white'', pattern: ''minecraft:triangles_top''}, {color: ''white'', pattern: ''minecraft:rhombus''}, {color: ''green'', pattern: ''minecraft:flower''}, {color: ''white'', pattern: ''minecraft:stripe_middle''}, {color: ''green'', pattern: ''minecraft:creeper''}, {color: ''white'', pattern: ''minecraft:mojang''}, {color: ''light_blue'', pattern: ''minecraft:curly_border''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   speech_bubble:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:stripe_bottom'},
-      {color: 'light_blue', pattern: 'minecraft:border'},
-      {color: 'white', pattern: 'minecraft:rhombus'},
-      {color: 'light_blue', pattern: 'minecraft:stripe_top'},
-      {color: 'light_blue', pattern: 'minecraft:square_bottom_left'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''light_blue'', pattern: ''minecraft:stripe_bottom''}, {color: ''light_blue'', pattern: ''minecraft:border''}, {color: ''white'', pattern: ''minecraft:rhombus''}, {color: ''light_blue'', pattern: ''minecraft:stripe_top''}, {color: ''light_blue'', pattern: ''minecraft:square_bottom_left''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sun_flower:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:triangles_bottom'},
-      {color: 'lime', pattern: 'minecraft:stripe_center'},
-      {color: 'light_blue', pattern: 'minecraft:half_vertical_right'},
-      {color: 'light_blue', pattern: 'minecraft:half_horizontal'},
-      {color: 'blue', pattern: 'minecraft:gradient'},
-      {color: 'yellow', pattern: 'minecraft:flower'},
-      {color: 'brown', pattern: 'minecraft:circle'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''lime'', pattern: ''minecraft:triangles_bottom''}, {color: ''lime'', pattern: ''minecraft:stripe_center''}, {color: ''light_blue'', pattern: ''minecraft:half_vertical_right''}, {color: ''light_blue'', pattern: ''minecraft:half_horizontal''}, {color: ''blue'', pattern: ''minecraft:gradient''}, {color: ''yellow'', pattern: ''minecraft:flower''}, {color: ''brown'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  sunrise:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''orange'', pattern: ''minecraft:flower''}, {color: ''lime'', pattern: ''minecraft:stripe_bottom''}, {color: ''white'', pattern: ''minecraft:triangles_top''}, {color: ''yellow'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   sweden:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:stripe_middle'},
-      {color: 'yellow', pattern: 'minecraft:straight_cross'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:blue_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:stripe_middle''}, {color: ''yellow'', pattern: ''minecraft:straight_cross''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sword:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:black_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:flower'},
-      {color: 'black', pattern: 'minecraft:half_horizontal'},
-      {color: 'white', pattern: 'minecraft:stripe_center'},
-      {color: 'black', pattern: 'minecraft:curly_border'},
-      {color: 'black', pattern: 'minecraft:square_bottom_left'},
-      {color: 'black', pattern: 'minecraft:square_bottom_right'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:flower''}, {color: ''black'', pattern: ''minecraft:half_horizontal''}, {color: ''white'', pattern: ''minecraft:stripe_center''}, {color: ''black'', pattern: ''minecraft:curly_border''}, {color: ''black'', pattern: ''minecraft:square_bottom_left''}, {color: ''black'', pattern: ''minecraft:square_bottom_right''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   taco:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:skull'},
-      {color: 'lime', pattern: 'minecraft:flower'},
-      {color: 'yellow', pattern: 'minecraft:mojang'},
-      {color: 'yellow', pattern: 'minecraft:circle'},
-      {color: 'black', pattern: 'minecraft:half_horizontal_bottom'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:black_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:skull''}, {color: ''lime'', pattern: ''minecraft:flower''}, {color: ''yellow'', pattern: ''minecraft:mojang''}, {color: ''yellow'', pattern: ''minecraft:circle''}, {color: ''black'', pattern: ''minecraft:half_horizontal_bottom''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   united_states_of_america:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:small_stripes'},
-      {color: 'blue', pattern: 'minecraft:square_bottom_left'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''red'', pattern: ''minecraft:small_stripes''}, {color: ''blue'', pattern: ''minecraft:square_bottom_left''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  white_flower:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:green_banner[minecraft:banner_patterns=[{color: ''lime'', pattern: ''minecraft:gradient''}, {color: ''lime'', pattern: ''minecraft:straight_cross''}, {color: ''light_blue'', pattern: ''minecraft:stripe_middle''}, {color: ''light_blue'', pattern: ''minecraft:half_horizontal''}, {color: ''white'', pattern: ''minecraft:flower''}, {color: ''yellow'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   wither:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:straight_cross'},
-      {color: 'white', pattern: 'minecraft:half_horizontal'},
-      {color: 'black', pattern: 'minecraft:creeper'},
-      {color: 'black', pattern: 'minecraft:skull'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:straight_cross''}, {color: ''white'', pattern: ''minecraft:half_horizontal''}, {color: ''black'', pattern: ''minecraft:creeper''}, {color: ''black'', pattern: ''minecraft:skull''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
+  wolf:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:white_banner[minecraft:banner_patterns=[{color: ''black'', pattern: ''minecraft:rhombus''}, {color: ''light_gray'', pattern: ''minecraft:curly_border''}, {color: ''light_gray'', pattern: ''minecraft:circle''}, {color: ''light_gray'', pattern: ''minecraft:creeper''}, {color: ''light_gray'', pattern: ''minecraft:triangle_top''}, {color: ''light_gray'', pattern: ''minecraft:triangles_top''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
   wreath:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: >-
-      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:creeper'},
-      {color: 'red', pattern: 'minecraft:skull'},
-      {color: 'green', pattern: 'minecraft:flower'},
-      {color: 'light_blue', pattern: 'minecraft:circle'}],
-      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''yellow'', pattern: ''minecraft:creeper''}, {color: ''red'', pattern: ''minecraft:skull''}, {color: ''green'', pattern: ''minecraft:flower''}, {color: ''light_blue'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
+  
+  yellow_flower:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: 'minecraft:light_blue_banner[minecraft:banner_patterns=[{color: ''lime'', pattern: ''minecraft:stripe_center''}, {color: ''lime'', pattern: ''minecraft:triangles_bottom''}, {color: ''light_blue'', pattern: ''minecraft:small_stripes''}, {color: ''light_blue'', pattern: ''minecraft:half_horizontal''}, {color: ''orange'', pattern: ''minecraft:flower''}, {color: ''yellow'', pattern: ''minecraft:circle''}], minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]'
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
 config_version: 1

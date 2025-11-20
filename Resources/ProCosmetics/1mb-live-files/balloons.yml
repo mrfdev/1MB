@@ -4,7 +4,7 @@ enabled: true
 
 menu:
   rows: 6
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -15,811 +15,815 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
+# You can add as many custom balloons as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
+# List of entity types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
 cosmetics:
   beach_ball:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVhNWFiMDVlYTI1NGMzMmUzYzQ4ZjNmZGNmOWZkOWQ3N2QzY2JhMDRlNmI1ZWMyZTY4YjNjYmRjZmFjM2ZkIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVhNWFiMDVlYTI1NGMzMmUzYzQ4ZjNmZGNmOWZkOWQ3N2QzY2JhMDRlNmI1ZWMyZTY4YjNjYmRjZmFjM2ZkIn19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   bee:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE4NzQ3ODdlMzYxNTllNGQ3NGRiNWUyNWJhYmE5ODdiNjY1ZGNjODkwYmU5ZjI2MmJiMGNiY2Y1ZDAxYjgyYjYifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE4NzQ3ODdlMzYxNTllNGQ3NGRiNWUyNWJhYmE5ODdiNjY1ZGNjODkwYmU5ZjI2MmJiMGNiY2Y1ZDAxYjgyYjYifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "BEE"
+    entity: BEE
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   belgium:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4ZTBlMGRlNzA1ZDM2NmJhNTk1MDZiM2ZiMWEwNGZkM2Q1MWFmZjkwZTVjZmI0ZWJiZWE2NmVhNTk3NmMwZmYifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M4ZTBlMGRlNzA1ZDM2NmJhNTk1MDZiM2ZiMWEwNGZkM2Q1MWFmZjkwZTVjZmI0ZWJiZWE2NmVhNTk3NmMwZmYifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   bunny:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U4YTRmYjI1YWZiYzZiN2FlYzE1YWJlODcyZmNlYWQxZTViMzNjMWFiMTI1MjUxNDFkNzdiZmQyOThmYzMyZDkifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U4YTRmYjI1YWZiYzZiN2FlYzE1YWJlODcyZmNlYWQxZTViMzNjMWFiMTI1MjUxNDFkNzdiZmQyOThmYzMyZDkifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   burger:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRlMWI1ODVhYmRkNjQ3N2Y1OTRiY2ZjZWY4NDc3MWFhMmQ0MmFiODVkZDRjMjJhNGNjNDBjMjczNjA1MDhjOCJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRlMWI1ODVhYmRkNjQ3N2Y1OTRiY2ZjZWY4NDc3MWFhMmQ0MmFiODVkZDRjMjJhNGNjNDBjMjczNjA1MDhjOCJ9fX0='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   cake:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:cake"
+    item: minecraft:cake
     count: 1
-    entity: "BLOCK_DISPLAY"
+    entity: BLOCK_DISPLAY
     baby: false
     scale: 0.75
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   calf:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:milk_bucket"
+    item: minecraft:milk_bucket
     count: 1
-    entity: "COW"
+    entity: COW
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   canada:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNDFhNjk3ZjZkZmIxYzU3Y2RhMzI3YmFhNjczMmE3ODI4YzM5OGJlNGViZmRiZDE2NmMyMzJiY2FlMmIifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YyNDFhNjk3ZjZkZmIxYzU3Y2RhMzI3YmFhNjczMmE3ODI4YzM5OGJlNGViZmRiZDE2NmMyMzJiY2FlMmIifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   china:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdmOWJjMDM1Y2RjODBmMWFiNWUxMTk4ZjI5ZjNhZDNmZGQyYjQyZDlhNjlhZWI2NGRlOTkwNjgxODAwYjk4ZGMifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdmOWJjMDM1Y2RjODBmMWFiNWUxMTk4ZjI5ZjNhZDNmZGQyYjQyZDlhNjlhZWI2NGRlOTkwNjgxODAwYjk4ZGMifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   denmark:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwYzIzMDU1YzM5MjYwNmY3ZTUzMWRhYTI2NzZlYmUyZTM0ODk4ODgxMGMxNWYxNWRjNWIzNzMzOTk4MjMyIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwYzIzMDU1YzM5MjYwNmY3ZTUzMWRhYTI2NzZlYmUyZTM0ODk4ODgxMGMxNWYxNWRjNWIzNzMzOTk4MjMyIn19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   disco:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:blue_stained_glass"
+    item: minecraft:blue_stained_glass
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 0.5
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   earth:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M2OTE5NmIzMzBjNmI4OTYyZjIzYWQ1NjI3ZmI2ZWNjZTQ3MmVhZjVjOWQ0NGY3OTFmNjcwOWM3ZDBmNGRlY2UifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M2OTE5NmIzMzBjNmI4OTYyZjIzYWQ1NjI3ZmI2ZWNjZTQ3MmVhZjVjOWQ0NGY3OTFmNjcwOWM3ZDBmNGRlY2UifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   egg:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:dragon_egg[!minecraft:rarity]"
+    item: minecraft:dragon_egg[!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 0.5
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   emerald:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:emerald_block"
+    item: minecraft:emerald_block
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 0.5
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   explosive:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:tnt"
+    item: minecraft:tnt
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 0.5
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   finland:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU5ZjIzNDk3MjlhN2VjOGQ0YjE0NzhhZGZlNWNhOGFmOTY0NzllOTgzZmJhZDIzOGNjYmQ4MTQwOWI0ZWQifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzU5ZjIzNDk3MjlhN2VjOGQ0YjE0NzhhZGZlNWNhOGFmOTY0NzllOTgzZmJhZDIzOGNjYmQ4MTQwOWI0ZWQifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   france:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMjY5YTA2N2VlMzdlNjM2MzVjYTFlNzIzYjY3NmYxMzlkYzJkYmRkZmY5NmJiZmVmOTlkOGIzNWM5OTZiYyJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMjY5YTA2N2VlMzdlNjM2MzVjYTFlNzIzYjY3NmYxMzlkYzJkYmRkZmY5NmJiZmVmOTlkOGIzNWM5OTZiYyJ9fX0='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   germany:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVlNzg5OWI0ODA2ODU4Njk3ZTI4M2YwODRkOTE3M2ZlNDg3ODg2NDUzNzc0NjI2YjI0YmQ4Y2ZlY2M3N2IzZiJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVlNzg5OWI0ODA2ODU4Njk3ZTI4M2YwODRkOTE3M2ZlNDg3ODg2NDUzNzc0NjI2YjI0YmQ4Y2ZlY2M3N2IzZiJ9fX0='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   ghost:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4ZDIxODM2NDAyMThhYjMzMGFjNTZkMmFhYjdlMjlhOTc5MGE1NDVmNjkxNjE5ZTM4NTc4ZWE0YTY5YWUwYjYifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4ZDIxODM2NDAyMThhYjMzMGFjNTZkMmFhYjdlMjlhOTc5MGE1NDVmNjkxNjE5ZTM4NTc4ZWE0YTY5YWUwYjYifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   greece:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1MTRkZTZkZDJiNzY4MmIxZDNlYmNkMTAyOTFhZTFmMDIxZTMwMTJiNWM4YmVmZmViNzViMTgxOWViNDI1OWQifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1MTRkZTZkZDJiNzY4MmIxZDNlYmNkMTAyOTFhZTFmMDIxZTMwMTJiNWM4YmVmZmViNzViMTgxOWViNDI1OWQifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   guardian:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:prismarine_shard"
+    item: minecraft:prismarine_shard
     count: 1
-    entity: "GUARDIAN"
+    entity: GUARDIAN
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   italy:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1Y2U4OTIyM2ZhNDJmZTA2YWQ2NWQ4ZDQ0Y2E0MTJhZTg5OWM4MzEzMDlkNjg5MjRkZmUwZDE0MmZkYmVlYTQifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg1Y2U4OTIyM2ZhNDJmZTA2YWQ2NWQ4ZDQ0Y2E0MTJhZTg5OWM4MzEzMDlkNjg5MjRkZmUwZDE0MmZkYmVlYTQifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   japan:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2NDBhZTQ2NjE2MmE0N2QzZWUzM2M0MDc2ZGYxY2FiOTZmMTE4NjBmMDdlZGIxZjA4MzJjNTI1YTllMzMzMjMifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q2NDBhZTQ2NjE2MmE0N2QzZWUzM2M0MDc2ZGYxY2FiOTZmMTE4NjBmMDdlZGIxZjA4MzJjNTI1YTllMzMzMjMifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   kitten:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:cod"
+    item: minecraft:cod
     count: 1
-    entity: "CAT"
+    entity: CAT
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   mini_pig:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:cooked_porkchop"
+    item: minecraft:cooked_porkchop
     count: 1
-    entity: "PIG"
+    entity: PIG
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   money_bag:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNmU5NGY2YzM0YTM1NDY1ZmNlNGE5MGYyZTI1OTc2Mzg5ZWI5NzA5YTEyMjczNTc0ZmY3MGZkNGRhYTY4NTIifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UzNmU5NGY2YzM0YTM1NDY1ZmNlNGE5MGYyZTI1OTc2Mzg5ZWI5NzA5YTEyMjczNTc0ZmY3MGZkNGRhYTY4NTIifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   mouse:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg3NmZlZDE2Yzg1MTRjMDYzNDMyZDQ0NzFhYTIzMjQ3NTY4OGFiNGRmODYwODYxM2QyYjY2M2IzZTZmMTUxNWEifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg3NmZlZDE2Yzg1MTRjMDYzNDMyZDQ0NzFhYTIzMjQ3NTY4OGFiNGRmODYwODYxM2QyYjY2M2IzZTZmMTUxNWEifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   mushroom_cow:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:red_mushroom"
+    item: minecraft:red_mushroom
     count: 1
-    entity: "MUSHROOM_COW"
+    entity: MUSHROOM_COW
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   norway:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkYTA0OGJjMTUzYjM4NDY3ZTc2YTMzNDdmMzgzOTY4NjBhOGJjNjg2MDM5MzFlOTFmN2FmNThiZWM1NzM4M2QifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZkYTA0OGJjMTUzYjM4NDY3ZTc2YTMzNDdmMzgzOTY4NjBhOGJjNjg2MDM5MzFlOTFmN2FmNThiZWM1NzM4M2QifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pigeon:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I3ZWE0YzAxN2UzNDU2Y2YwOWE1YzI2M2YzNGQzY2M1ZjQxNTc3Yjc0ZDYwZjZmODE5NmM2MGUwN2Y4YzVhOTYifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I3ZWE0YzAxN2UzNDU2Y2YwOWE1YzI2M2YzNGQzY2M1ZjQxNTc3Yjc0ZDYwZjZmODE5NmM2MGUwN2Y4YzVhOTYifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   poland:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkyMWIyYWY4ZDIzMjIyODJmY2U0YTFhYTRmMjU3YTUyYjY4ZTI3ZWIzMzRmNGExODFmZDk3NmJhZTZkOGViIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzkyMWIyYWY4ZDIzMjIyODJmY2U0YTFhYTRmMjU3YTUyYjY4ZTI3ZWIzMzRmNGExODFmZDk3NmJhZTZkOGViIn19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   police_car:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RmMTBhZGUzYTMwYzhmNTgyZjhhY2Q3ZjM0NGUxMzQ4YzU3MGUwZjQzOGNhM2Y1YzMzZTJjOWE5M2JlNzhmMGMifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RmMTBhZGUzYTMwYzhmNTgyZjhhY2Q3ZjM0NGUxMzQ4YzU3MGUwZjQzOGNhM2Y1YzMzZTJjOWE5M2JlNzhmMGMifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   portugal:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ViZDUxZjQ2OTNhZjE3NGU2ZmUxOTc5MjMzZDIzYTQwYmI5ODczOThlMzg5MTY2NWZhZmQyYmE1NjdiNWE1M2EifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ViZDUxZjQ2OTNhZjE3NGU2ZmUxOTc5MjMzZDIzYTQwYmI5ODczOThlMzg5MTY2NWZhZmQyYmE1NjdiNWE1M2EifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   present:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMmU5NDUxY2RiMTk2Yjc4MTk1YThmMGE0YjljMWMwYTA0ZjU4Mjc4ODc5MjdiNmE4MmFhZDM5Y2FiMmY0MzAifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzUxMmU5NDUxY2RiMTk2Yjc4MTk1YThmMGE0YjljMWMwYTA0ZjU4Mjc4ODc5MjdiNmE4MmFhZDM5Y2FiMmY0MzAifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pride:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxYzhjNTg2YjRiOTc2MWQ4Yjc4ZjE2ZWI1NzM1ODMzNzRlNTJmMWEyODczNTc2NzRlMzFmZDJhODM4MiJ9fX0='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxYzhjNTg2YjRiOTc2MWQ4Yjc4ZjE2ZWI1NzM1ODMzNzRlNTJmMWEyODczNTc2NzRlMzFmZDJhODM4MiJ9fX0='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   pumpkin:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:pumpkin"
+    item: minecraft:pumpkin
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 0.5
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   puppy:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:bone"
+    item: minecraft:bone
     count: 1
-    entity: "WOLF"
+    entity: WOLF
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   rabbit:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:carrot"
+    item: minecraft:carrot
     count: 1
-    entity: "RABBIT"
+    entity: RABBIT
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   soccer_ball:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNGE3MGI3YmJjZDdhOGMzMjJkNTIyNTIwNDkxYTI3ZWE2YjgzZDYwZWNmOTYxZDJiNGVmYmJmOWY2MDVkIn19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlNGE3MGI3YmJjZDdhOGMzMjJkNTIyNTIwNDkxYTI3ZWE2YjgzZDYwZWNmOTYxZDJiNGVmYmJmOWY2MDVkIn19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   spain:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMyYmQ0NTIxOTgzMzA5ZTBhZDc2YzFlZTI5ODc0Mjg3OTU3ZWMzZDk2ZjhkODg5MzI0ZGE4Yzg4N2U0ODVlYTgifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMyYmQ0NTIxOTgzMzA5ZTBhZDc2YzFlZTI5ODc0Mjg3OTU3ZWMzZDk2ZjhkODg5MzI0ZGE4Yzg4N2U0ODVlYTgifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sun:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I4OTA0MjA4MmJiN2E3NjE4Yjc4NGVlNzYwNWExMzRjNTg4MzRlMjFlMzc0Yzg4ODkzNzE2MTA1N2Y2YzcifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2I4OTA0MjA4MmJiN2E3NjE4Yjc4NGVlNzYwNWExMzRjNTg4MzRlMjFlMzc0Yzg4ODkzNzE2MTA1N2Y2YzcifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sweden:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkODYyNDJiMGQ5N2VjZTk5OTQ2NjBmMzk3NGQ3MmRmN2I4ODdmNjMwYTQ1MzBkYWRjNWIxYWI3YzIxMzRhZWMifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkODYyNDJiMGQ5N2VjZTk5OTQ2NjBmMzk3NGQ3MmRmN2I4ODdmNjMwYTQ1MzBkYWRjNWIxYWI3YzIxMzRhZWMifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   tiny_villager:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:emerald"
+    item: minecraft:emerald
     count: 1
-    entity: "VILLAGER"
+    entity: VILLAGER
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   truck:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4ZDFhZGQwYjZhY2I2OTk1Y2Y5NzA5ZjJkYzViMGUzYzEwNGM0N2M4MWMzN2M1NDgyMWJiNzdhOWY4NmM3In19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4ZDFhZGQwYjZhY2I2OTk1Y2Y5NzA5ZjJkYzViMGUzYzEwNGM0N2M4MWMzN2M1NDgyMWJiNzdhOWY4NmM3In19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   turkey:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk4NTJiOWFiYTM0ODIzNDg1MTRjMTAzNGQwYWZmZTczNTQ1YzlkZTY3OWFlNDY0N2Y5OTU2MmI1ZTVmNDdkMDkifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk4NTJiOWFiYTM0ODIzNDg1MTRjMTAzNGQwYWZmZTczNTQ1YzlkZTY3OWFlNDY0N2Y5OTU2MmI1ZTVmNDdkMDkifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   united_kingdom:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5ZWRjZGQ3YjA2MTczZDdkMjIxYzcyNzRjODZjYmEzNTczMDE3MDc4OGJiNmExZGIwOWNjNjgxMDQzNWI5MmMifX19'}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5ZWRjZGQ3YjA2MTczZDdkMjIxYzcyNzRjODZjYmEzNTczMDE3MDc4OGJiNmExZGIwOWNjNjgxMDQzNWI5MmMifX19'}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   united_states_of_america:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjYWM5Nzc0ZGExMjE3MjQ4NTMyY2UxNDdmNzgzMWY2N2ExMmZkY2NhMWNmMGNiNGIzODQ4ZGU2YmM5NGI0In19fQ=='}]},!minecraft:rarity]"
+    item: minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRjYWM5Nzc0ZGExMjE3MjQ4NTMyY2UxNDdmNzgzMWY2N2ExMmZkY2NhMWNmMGNiNGIzODQ4ZGU2YmM5NGI0In19fQ=='}]},!minecraft:rarity]
     count: 1
-    entity: "ITEM_DISPLAY"
+    entity: ITEM_DISPLAY
     baby: false
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   zombie:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:rotten_flesh"
+    item: minecraft:rotten_flesh
     count: 1
-    entity: "ZOMBIE"
+    entity: ZOMBIE
     baby: true
     scale: 1.0
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
 config_version: 1

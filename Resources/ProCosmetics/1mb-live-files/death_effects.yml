@@ -7,7 +7,7 @@ kill_effects: false
 
 menu:
   rows: 4
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -18,225 +18,225 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
 cosmetics:
   bloody_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:redstone"
+    item: minecraft:redstone
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   candy_cane_remains:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:sugar"
+    item: minecraft:sugar
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   confetti_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:melon_seeds"
+    item: minecraft:melon_seeds
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   enchanted_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:book"
+    item: minecraft:book
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   fall_of_the_frost_lord:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:snowball"
+    item: minecraft:snowball
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   flame_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:blaze_powder"
+    item: minecraft:blaze_powder
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   last_love:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:poppy"
+    item: minecraft:poppy
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   lightning_death:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:poppy"
+    item: minecraft:poppy
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   lava_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:lava_bucket"
+    item: minecraft:lava_bucket
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   magical_death:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:purple_dye"
+    item: minecraft:purple_dye
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   musical_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:note_block"
+    item: minecraft:note_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   shadow_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:coal"
+    item: minecraft:coal
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   sparkly_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:firework_rocket[!minecraft:fireworks]"
+    item: minecraft:firework_rocket[!minecraft:fireworks]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
-
+    - common
+    - mythical
+    - legendary
+  
   wet_death:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:water_bucket"
+    item: minecraft:water_bucket
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
 config_version: 1

@@ -7,7 +7,7 @@ slot: 6
 
 menu:
   rows: 6
-
+  
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
   #
@@ -18,58 +18,58 @@ menu:
   items:
     fill_empty_slots:
       enabled: true
-      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
       count: 1
-
+    
     next_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -3
-
+    
     previous_page:
-      item: "minecraft:arrow"
+      item: minecraft:arrow
       count: 1
       slot: -7
-
+    
     go_back:
       enabled: true
-      item: "minecraft:red_bed"
+      item: minecraft:red_bed
       count: 1
       slot: -5
       on_click:
         # If the command is empty, players will be returned to the main menu.
         # Placeholders: <player_name>, <player_uuid>
-        command: ""
+        command: ''
         execute_as_player: false
-
+    
     sorting:
       enabled: true
-      item: "minecraft:hopper"
+      item: minecraft:hopper
       count: 1
       slot: -1
-
+    
     locked_cosmetic:
       # This specifies if another item should replace the original cosmetic item while it is locked.
       # This is useful to easily visualize which cosmetics the player has access to or not.
       enabled: true
-      item: "minecraft:firework_star"
+      item: minecraft:firework_star
       count: 1
 
 cosmetics:
   bat_blaster:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 5.0
     duration: 4.0
-    item: "minecraft:iron_horse_armor[!minecraft:attribute_modifiers]"
+    item: minecraft:iron_horse_armor[!minecraft:attribute_modifiers]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -86,21 +86,21 @@ cosmetics:
         legendary:
           minimum_amount: 10
           maximum_amount: 20
-
+  
   cannon:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 20.0
     duration: 10.0
-    item: "minecraft:coal"
+    item: minecraft:coal
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -117,20 +117,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   chicken_parachute:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 20.0
-    item: "minecraft:feather"
+    item: minecraft:feather
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -147,10 +147,10 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   coin_party_bomb:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
@@ -158,12 +158,12 @@ cosmetics:
     duration: 30.0
     # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
     pickup_reward: 10
-    item: "minecraft:sunflower"
+    item: minecraft:sunflower
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -180,20 +180,20 @@ cosmetics:
         legendary:
           minimum_amount: 1
           maximum_amount: 1
-
+  
   confetti:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 0.3
-    item: "minecraft:blaze_rod"
+    item: minecraft:blaze_rod
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -210,20 +210,20 @@ cosmetics:
         legendary:
           minimum_amount: 40
           maximum_amount: 80
-
+  
   cowboy:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 15.0
-    item: "minecraft:saddle"
+    item: minecraft:saddle
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -240,20 +240,20 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   detonator:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 8.0
-    item: "minecraft:lever"
+    item: minecraft:lever
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -270,21 +270,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   disco_ball:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 50.0
     duration: 15.0
-    item: "minecraft:blue_stained_glass"
+    item: minecraft:blue_stained_glass
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -301,21 +301,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   diving_board:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:white_carpet"
+    item: minecraft:white_carpet
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -332,20 +332,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   ethereal_pearl:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 5.0
-    item: "minecraft:ender_pearl"
+    item: minecraft:ender_pearl
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -362,21 +362,21 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   explosive_sheep:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 18.0
     duration: 6.0
-    item: "minecraft:red_wool"
+    item: minecraft:red_wool
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -393,21 +393,21 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   flame_thrower:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 30.0
     duration: 10.0
-    item: "minecraft:blaze_powder"
+    item: minecraft:blaze_powder
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -424,20 +424,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   flesh_hook:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 2.0
-    item: "minecraft:tripwire_hook"
+    item: minecraft:tripwire_hook
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -454,20 +454,20 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   fireworks:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 1.0
-    item: "minecraft:firework_rocket[!minecraft:fireworks]"
+    item: minecraft:firework_rocket[!minecraft:fireworks]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -484,20 +484,20 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   grappling_hook:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 1.0
-    item: "minecraft:fishing_rod"
+    item: minecraft:fishing_rod
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -514,21 +514,21 @@ cosmetics:
         legendary:
           minimum_amount: 40
           maximum_amount: 80
-
+  
   hot_air_balloon:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 60.0
     duration: 40.0
-    item: "minecraft:campfire"
+    item: minecraft:campfire
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -545,21 +545,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   hot_tub:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:magma_block"
+    item: minecraft:magma_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -576,20 +576,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   melon_launcher:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 4.0
-    item: "minecraft:melon"
+    item: minecraft:melon
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -606,21 +606,21 @@ cosmetics:
         legendary:
           minimum_amount: 15
           maximum_amount: 40
-
+  
   merry_go_round:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:minecart"
+    item: minecraft:minecart
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -637,20 +637,20 @@ cosmetics:
         legendary:
           minimum_amount: 4
           maximum_amount: 8
-
+  
   paintball:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 0.3
-    item: "minecraft:golden_horse_armor[!minecraft:attribute_modifiers]"
+    item: minecraft:golden_horse_armor[!minecraft:attribute_modifiers]
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -667,21 +667,21 @@ cosmetics:
         legendary:
           minimum_amount: 20
           maximum_amount: 50
-
+  
   parkour_spiral:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:lime_concrete"
+    item: minecraft:lime_concrete
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -698,21 +698,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   party_popper:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 20.0
     duration: 12.0
-    item: "minecraft:cake"
+    item: minecraft:cake
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -729,20 +729,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   rocket:
     enabled: true
-    rarity: "legendary"
+    rarity: legendary
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 30.0
-    item: "minecraft:iron_block"
+    item: minecraft:iron_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -759,21 +759,21 @@ cosmetics:
         legendary:
           minimum_amount: 4
           maximum_amount: 8
-
+  
   shower:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:water_bucket"
+    item: minecraft:water_bucket
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -790,21 +790,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   slide:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:warped_stairs"
+    item: minecraft:warped_stairs
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -821,21 +821,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   soccer_ball:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 70.0
     duration: 60.0
-    item: "minecraft:slime_block"
+    item: minecraft:slime_block
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -852,21 +852,21 @@ cosmetics:
         legendary:
           minimum_amount: 15
           maximum_amount: 40
-
+  
   swing:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 80.0
     duration: 60.0
-    item: "minecraft:string"
+    item: minecraft:string
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -883,20 +883,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   tnt:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 3.0
-    item: "minecraft:tnt"
+    item: minecraft:tnt
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -913,21 +913,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   trampoline:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 40.0
     duration: 35.0
-    item: "minecraft:black_wool"
+    item: minecraft:black_wool
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -944,20 +944,20 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   water_gun:
     enabled: true
-    rarity: "rare"
+    rarity: rare
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 1.5
-    item: "minecraft:soul_lantern"
+    item: minecraft:soul_lantern
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:
@@ -974,21 +974,21 @@ cosmetics:
         legendary:
           minimum_amount: 8
           maximum_amount: 15
-
+  
   wither_missile:
     enabled: true
-    rarity: "common"
+    rarity: common
     purchasable:
       enabled: false
       cost: 2000
     cooldown: 15.0
     duration: 10.0
-    item: "minecraft:wither_skeleton_skull"
+    item: minecraft:wither_skeleton_skull
     count: 1
     treasure_chests:
-      - common
-      - mythical
-      - legendary
+    - common
+    - mythical
+    - legendary
     ammo:
       infinity: false
       purchasable:

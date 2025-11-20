@@ -1,59 +1,85 @@
 #
-# Rarities are markers that identify the rarity of a cosmetic item, such as common or super rare.
-# They DO NOT affect the odds of obtaining items in the treasure chest.
-# Their purpose is to enhance the player's experience by creating a sense of excitement when receiving a rare item.
-# For example, receiving gadget ammo is not as exciting as receiving a cool particle effect.
+# Rarities represent how special a cosmetic item is, such as common, rare, or legendary.
 #
-# Rarities are mainly used and displayed when receiving cosmetics in treasure chests.
-# For example, when you receive a cosmetic it says:
-# %rarity_secondary_color% Gadget
-# %rarity_main_color% TNT
+# Rarities are used to influence the odds of obtaining cosmetics in treasure chests.
+# Higher rarities should appear less frequently, and lower rarities should be more common
+# Higher rarities often appear only in more expensive treasure chests.
 #
 # You can customize existing rarities and add new ones as needed.
-# The default color scheme works as follows: the main color should be brighter than the secondary color and should be within the same color range.
-# PLEASE NOTE: If you rename a default rarity (e.g., "common" and not name: "common"), remember to update all references to it in the cosmetics config files. Use the replace-all function to simplify this process.
-# PLEASE NOTE: Money & Gadget ammo will always fall back to the FIRST rarity listed below. It is defined as the most common rarity.
+# IMPORTANT:
+# If you rename a default rarity (e.g., "common" and not name: "common"), remember to update all references to it in the cosmetics config files.
+# Use the replace-all function to simplify this process.
 #
+# Useful links:
 # FIREWORK TYPES: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html
 # FIREWORK COLORS: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Color.html
 
 rarities:
   common:
-    name: "Common"
+    priority: 1
     colors:
-      main: "&b"
-      secondary: "&3"
+      primary: "<color:#999999>"     # Light gray
+      secondary: "<color:#555555>"   # Dark gray
     firework:
       detonations: 0
-      interval: 3
+      tick_interval: 3
       type: BURST
-      color: 65535
-      fade: 65535
+      color: 0x999999
+      fade: 0x555555
+      flicker: false
+      trail: false
+  uncommon:
+    priority: 10
+    colors:
+      primary: "<color:#00aa00>"     # Bright green
+      secondary: "<color:#55ff55>"   # Darker green
+    firework:
+      detonations: 1
+      tick_interval: 3
+      type: BURST
+      color: 0x00aa00
+      fade: 0x55ff55
       flicker: false
       trail: false
   rare:
-    name: "Rare"
+    priority: 20
     colors:
-      main: "&d"
-      secondary: "&5"
+      primary: "<color:#00ccff>"     # Bright blue
+      secondary: "<color:#66e0ff>"   # Dark blue
     firework:
       detonations: 4
-      interval: 3
+      tick_interval: 3
       type: BURST
-      color: 16711935
-      fade: 16711935
+      color: 0x00ccff
+      fade: 0x66e0ff
       flicker: false
       trail: false
   legendary:
-    name: "Legendary"
+    priority: 30
     colors:
-      main: "&a"
-      secondary: "&2"
+      primary: "<color:#b36b00>"     # Gold / orange
+      secondary: "<color:#cc8800>"   # Stronger orange
     firework:
       detonations: 10
-      interval: 10
+      tick_interval: 10
       type: BALL_LARGE
-      color: 65280
-      fade: 65280
+      color: 0xb36b00
+      fade: 0xcc8800
       flicker: false
-      trail: false
+      trail: true
+  limited:
+    priority: 40
+    colors:
+      primary: "<color:#aa00aa>"     # Purple
+      secondary: "<color:#ff66ff>"   # Deep purple
+    firework:
+      detonations: 10
+      tick_interval: 10
+      type: BALL_LARGE
+      color: 0xaa00aa
+      fade: 0xff66ff
+      flicker: true
+      trail: true
+
+# Do not edit this!
+config_version: 1

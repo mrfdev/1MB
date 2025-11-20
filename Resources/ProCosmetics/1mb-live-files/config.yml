@@ -3,160 +3,319 @@
 # | |__) | __ ___ | |     ___  ___ _ __ ___   ___| |_ _  ___ ___
 # |  ___/ '__/ _ \| |    / _ \/ __| '_ ` _ \ / _ \ __| |/ __/ __|
 # | |   | | | (_) | |___| (_) \__ \ | | | | |  __/ |_| | (__\__ \
-# |_|   |_|  \___/ \_____\___/|___/_| |_| |_|\___|\__|_|\___|___/ COPYRIGHT ©
+# |_|   |_|  \___/ \_____\___/|___/_| |_| |_|\___|\__|_|\___|___/
 #
 # Please read our wiki for further explanations: https://github.com/File14/ProCosmetics/wiki
 
-multi-world:
+multi_world:
   # Setting this to false will invert the feature to whitelisted-worlds.
-  blacklisted-worlds: true
+  blacklisted_worlds: true
   worlds:
-    - uwu
-    - owo
-    - sushi
-    - run
-    - builders
-    - pvp
-    - spawn
-    - sanctuary
-    - parkour
-    - lumifae
+    - world_no_cosmetics
+    - world_example
 
 # World Guard Support
-world-guard:
-  enable: false
-  # This feature allows you to automatically re-equip players' cosmetics when they can use them again.
-  restore-cosmetics: true
+world_guard:
+  enabled: true
+  # This feature allows players to automatically equip their previous cosmetics
+  # when they leave a restricted region where cosmetics are disabled.
+  restore_cosmetics: false
 
 storage:
-  # Types: SQLITE or MYSQL.
+  # Types: SQLite, MySQL, MariaDB or PostgreSQL
   type: SQLITE
 
-  mysql:
-    host: localhost
+  # Used for MySQL, MariaDB and PostgreSQL databases
+  hikari:
+    host: "localhost"
     port: 3306
-    database: ProCosmetics
-    table: procosmetics
-    user: root
+    database: "ProCosmetics"
+    table_prefix: "procosmetics"
+    user: "root"
     password: "password"
-    properties: "autoReconnect=true&useSSL=false&characterEncoding=UTF-8"
+
+    # The maximum number of SQL connections that can be open at once.
+    # Think of this as "how many players can be served at the same time".
+    # If the limit is reached, extra requests will wait until a connection is free.
+    maximum_pool_size: 10
+
+    # The minimum number of SQL connections that will always stay open.
+    # Even if nobody is online, this many are kept ready in the background.
+    minimum_idle: 5
+
+    # How long (in milliseconds) an unused SQL connection can stay open before being closed.
+    # Example: 300000 = 5 minutes. Helps free up resources if connections aren’t needed.
+    # Set to 0 if you never want idle connections to close.
+    idle_timeout: 300000
+
+    # The maximum time (in milliseconds) a single SQL connection can stay alive
+    # before being replaced with a new one.
+    # Example: 1800000 = 30 minutes. Prevents problems from “old” connections.
+    # This should usually be set a little lower than your database’s own timeout.
+    maximum_lifetime: 1800000
+
+    # How often (in milliseconds) an unused SQL connection is checked to keep it alive.
+    # 0 means disabled. Setting this helps stop the database or network from
+    # closing connections during quiet periods.
+    # Example: 300000 = 5 minutes is common.
+    keepalive_time: 0
+
+    # How long (in milliseconds) the server will wait when asking for an SQL connection
+    # before giving up with an error. Lower values fail faster, higher values wait longer.
+    # Example: 5000 = 5 seconds.
+    connection_timeout: 5000
+
+    # Extra JDBC connection properties you can define here.
+    # These options allow you to fine-tune how your database connection behaves.
+    # Add more lines under properties as needed.
+    #
+    # Documentation for available options:
+    # MySQL: https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
+    # MariaDB: https://mariadb.com/docs/connectors/mariadb-connector-j/about-mariadb-connector-j#optional-url-parameters
+    # PostgreSQL: https://jdbc.postgresql.org/documentation/publicapi/org/postgresql/PGProperty.html
+    properties:
+      # Disable SSL (set to true if your DB requires SSL/TLS encryption)
+      useSSL: false
+      # Automatically reconnect if the connection is dropped
+      autoReconnect: true
+      # Ensures proper handling of Unicode characters
+      characterEncoding: "UTF-8"
 
   sqlite:
     database: procosmetics
-    table: procosmetics
+    table_prefix: "procosmetics"
+
+  mongodb:
+    # MongoDB connection URI
+    # Format: mongodb://[username:password@]host[:port]/database[?options]
+    #
+    # Examples:
+    # - Local: "mongodb://localhost:27017/procosmetics"
+    # - With auth: "mongodb://username:password@localhost:27017/procosmetics?authSource=admin"
+    # - MongoDB Atlas: "mongodb+srv://user:pass@cluster.mongodb.net/procosmetics?retryWrites=true&w=majority"
+    # - Replica Set: "mongodb://host1:27017,host2:27017/procosmetics?replicaSet=myReplicaSet"
+    #
+    # For more URI configuration options, see:
+    # https://www.mongodb.com/docs/manual/reference/connection-string/
+    uri: "mongodb://username:password@localhost:27017/procosmetics?authSource=admin"
+
+    # Collection prefix allows multiple servers to share the same database
+    # Change this if you want to use different collections for different servers.
+    collection_prefix: "procosmetics"
+
+# Redis (optional)
+# Enables real-time visual synchronization of player data across multiple servers in your network.
+#
+# What gets synced (visual):
+# - Player coins (built-in mode only)
+# - Gadget ammo
+# - Treasure Chests
+#
+# Important:
+# Redis is NOT required for multiserver setups. All data transactions remain safe without Redis.
+# This only provides instant visual synchronization for a smoother player experience.
+redis:
+  enable: false
+  host: "localhost"
+  port: 6379
+  username: ""
+  password: ""
+  ssl: false
 
 economy:
-  # Types: VAULT, PLAYER_POINTS, BUILT_IN or CUSTOM (hooked via plugin API)
+  # Choose which economy system to use for handling the cosmetic currency.
+  #
+  # Available types:
+  #   VAULT - Uses the Vault API (depends on a Vault-compatible economy plugin).
+  #   PLAYER_POINTS - Uses the PlayerPoints plugin for currency.
+  #   BUILT_IN - Uses ProCosmetics’ built-in economy system.
+  #   CUSTOM - Custom integration through the ProCosmetics plugin API.
+  #
+  # Important:
+  # Only the BUILT_IN economy is stored in the ProCosmetics database and is synced between multiple serves.
+  # If you choose any other option, you are responsible for syncing the balances between servers.
   type: BUILT_IN
-
-  # Specifies the number of coins a player receives for each coin collected. Coins drop at a rate of 20 per second.
-  coin-party-bomb-amount: 250
 
 settings:
   # Enables checking for plugin updates at startup. Update notifications are only displayed in the console.
-  check-updates: false
+  check_updates: false
 
   # Allows enabling or disabling the sending of statistics (https://bstats.org/plugin/bukkit/ProCosmetics/6408)
-  enable-metrics: false
+  enable_metrics: false
+
+  # Sets the default language used in the plugin.
+  default_language: "en_us"
 
   # Saves players' last equipped cosmetics to automatically re-equip them upon their next login.
-  restore-cosmetics: false
+  restore_cosmetics: false
 
   # Executes this command when a player unlocks a cosmetic. Adapt the command for your specific permission plugin.
-  permission-add-command: "lp user %player% permission set %permission% true"
+  # Placeholders: <player_name>, <player_uuid> <cosmetic_key>, <cosmetic_permission>
+  permission_add_command: "lp user <player_uuid> permission set <cosmetic_permission> true"
 
-  cosmetic-menu:
-    title: "1MB /perk"
+# This is the cosmetic menu item. It is placed in the player’s inventory, and when clicked,
+# it opens the main cosmetics menu that contains all (enabled) categories.
+cosmetic_item:
+  item: "minecraft:chest"
+  count: 1
+  slot: 4
+  # When should the item be given to the player?
+  give_on:
+    join: false
+    world_change: false
+    death: false
+
+menu:
+  main:
     rows: 6
-    fill-empty-slots: true
-    give-on:
-      join: false
-      world-change: false
-      death: false
 
-    material: CHEST
-    amount: 1
-    slot: 0
-    custom-model-data: 0
-    displayname: "&aCosmetic Menu &7(Right-click)"
-    lore:
-      - "&7Right-click to open the Cosmetic menu."
-
-  fill-empty-slots:
-    material: GRAY_STAINED_GLASS_PANE
-    amount: 1
-    displayname: "&f"
-    custom-model-data: 0
-    lore: [ ]
-
-  unequip-all-cosmetics:
-    material: BARRIER
-    amount: 1
-    slot: 4
-    custom-model-data: 0
-    displayname: "&cUnequip All Cosmetics"
-    lore:
-      - ""
-      - "&7Right-click to unequip your current cosmetics!"
-
-  coins:
-    enable: true
-    material: SUNFLOWER
-    amount: 1
-    slot: 22
-    custom-model-data: 0
-    displayname: "&bYou have &e%coins% coins&b!"
-    lore:
-      - ""
-      - "&7Purchase more coins at our"
-      - "&7store: &9www.example.com"
+    # Items use vanilla Minecraft format for flexible customization.
+    # Supports resource packs and custom data components.
+    #
+    # Custom Model Data Format (Spigot version):
+    # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+    #
+    # For more information: https://minecraft.wiki/w/Data_component_format
+    items:
+      fill_empty_slots:
+        enabled: true
+        item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+        count: 1
+      arrow_effects:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:tipped_arrow[!minecraft:potion_contents]"
+        count: 1
+        slot: 11
+      balloons:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:lead"
+        count: 1
+        slot: 12
+      banners:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:light_blue_banner"
+        count: 1
+        slot: 13
+      death_effects:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:skeleton_skull[!minecraft:rarity]"
+        count: 1
+        slot: 14
+      emotes:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ3M2U3MmNjMzcxZGUyNWYzMzA1NjY1NzY5ZGQ3ZTlmZjExNjE2OTUyNTJlNzk5NjEyNTgwZGVlZWRkMyJ9fX0='}]},!minecraft:rarity]"
+        count: 1
+        slot: 15
+      gadgets:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:piston"
+        count: 1
+        slot: 20
+      miniatures:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:zombie_head[!minecraft:rarity]"
+        count: 1
+        slot: 21
+      morphs:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:carved_pumpkin"
+        count: 1
+        slot: 22
+      mounts:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:saddle"
+        count: 1
+        slot: 23
+      music:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:music_disc_mall[!minecraft:jukebox_playable, !minecraft:rarity]"
+        count: 1
+        slot: 24
+      particle_effects:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:nether_star[!minecraft:rarity]"
+        count: 1
+        slot: 30
+      pets:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:bone"
+        count: 1
+        slot: 31
+      statuses:
+        # Specifies whenever or not this category should be visible in the main menu.
+        enabled: true
+        item: "minecraft:name_tag"
+        count: 1
+        slot: 32
+      unequip_all:
+        enabled: true
+        item: "minecraft:barrier"
+        count: 1
+        slot: -1
+      coins:
+        enabled: true
+        item: "minecraft:sunflower"
+        count: 1
+        slot: -5
 
   purchase:
-    title: "Confirm Purchase"
-    rows: 3
-    fill-empty-slots: true
-
-    accept:
-      material: LIME_TERRACOTTA
-      amount: 1
-      slot: 16
-      custom-model-data: 0
-      displayname: "&aAccept Purchase"
-      lore:
-        - ""
-        - "&7Click to accept!"
-
-    deny:
-      material: RED_TERRACOTTA
-      amount: 1
-      slot: 10
-      custom-model-data: 0
-      displayname: "&cDeny Purchase"
-      lore:
-        - ""
-        - "&7Click to cancel!"
-
-  locked-cosmetic:
-    material: GRAY_DYE
-    amount: 1
-    custom-model-data: 0
-    lore:
-      - "%cosmetic_lore%"
-      - ""
-      - "&aClick to purchase for &e%cost% coins&a!"
-
-  unlocked-cosmetic:
-    lore:
-      - "%cosmetic_lore%"
-      - ""
-      - "&eClick to equip!"
-
-  equipped-cosmetic:
-    lore:
-      - "%cosmetic_lore%"
-      - ""
-      - "&eClick to unequip!"
-
+    cosmetic:
+      rows: 3
+      items:
+        fill_empty_slots:
+          enabled: true
+          item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+          count: 1
+        accept:
+          item: "minecraft:lime_terracotta"
+          count: 1
+          slot: 16
+        deny:
+          item: "minecraft:red_terracotta"
+          count: 1
+          slot: 10
+    gadget_ammo:
+      rows: 3
+      items:
+        fill_empty_slots:
+          enabled: true
+          item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+          count: 1
+        accept:
+          item: "minecraft:lime_terracotta"
+          count: 1
+          slot: 16
+        deny:
+          item: "minecraft:red_terracotta"
+          count: 1
+          slot: 10
+    treasure_chest:
+      rows: 3
+      items:
+        fill_empty_slots:
+          enabled: true
+          item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+          count: 1
+        accept:
+          item: "minecraft:lime_terracotta"
+          count: 1
+          slot: 16
+        deny:
+          item: "minecraft:red_terracotta"
+          count: 1
+          slot: 10
 
 # Do not edit this!
-config-version: 1
+config_version: 1

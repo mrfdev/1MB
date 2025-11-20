@@ -2,16 +2,8 @@
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
 enabled: true
 
-# This allows you to adjust the height of the status tag.
-# Above player name-tag: 0.525
-# Below player name-tag: 0.025
-height_offset: 0.025
-
-self_view:
-  default_enabled: false
-
 menu:
-  rows: 3
+  rows: 4
 
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
@@ -60,107 +52,184 @@ menu:
       item: "minecraft:firework_star"
       count: 1
 
-    toggle_self_view:
-      enabled: true
-      item: "minecraft:book"
-      count: 1
-      slot: -2
-
-# Note: refresh_interval is defined in ticks (20 ticks = 1 second), -1 = no update (static text)
 cosmetics:
-  afk:
-    enabled: true
-    rarity: "rare"
-    purchasable:
-      enabled: false
-      cost: 2000
-    item: "minecraft:name_tag"
-    count: 1
-    refresh_interval: -1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  coins:
-    enabled: true
-    rarity: "rare"
-    purchasable:
-      enabled: false
-      cost: 2000
-    item: "minecraft:name_tag"
-    count: 1
-    refresh_interval: 120
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  do_not_disturb:
-    enabled: true
-    rarity: "rare"
-    purchasable:
-      enabled: false
-      cost: 2000
-    item: "minecraft:name_tag"
-    count: 1
-    refresh_interval: -1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  just_chilling:
+  bloody_arrows:
     enabled: true
     rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:name_tag"
+    item: "minecraft:redstone"
     count: 1
-    refresh_interval: -1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  looking_to_chat:
+  candy_cane_arrows:
     enabled: true
     rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:name_tag"
+    item: "minecraft:sugar"
     count: 1
-    refresh_interval: -1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  looking_to_team_up:
+  confetti_arrows:
     enabled: true
     rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:name_tag"
+    item: "minecraft:melon_seeds"
     count: 1
-    refresh_interval: -1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  ping:
+  enchanted_arrows:
     enabled: true
-    rarity: "legendary"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:name_tag"
+    item: "minecraft:book"
     count: 1
-    refresh_interval: 120
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  flame_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:blaze_powder"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  frost_lord_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:snowball"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  green_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:emerald"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  lava_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:lava_bucket"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  love_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:poppy"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  magical_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:purple_dye"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  music_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:note_block"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  rain_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:water_bucket"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  shadow_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:coal"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
+
+  sparkly_arrows:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
+      cost: 2000
+    item: "minecraft:firework_rocket[!minecraft:fireworks]"
+    count: 1
     treasure_chests:
       - common
       - mythical

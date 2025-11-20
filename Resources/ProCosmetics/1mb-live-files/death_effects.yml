@@ -2,17 +2,11 @@
 # When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
 enabled: true
 
-# This feature makes some entities toss items in different directions.
-tossing_items: true
-# This feature makes some entities spawn blocks underneath them.
-block_trail: true
-# This feature forces the player to ride the mount when it spawns.
-ride_on_spawn: false
-# This feature despawns the mount once a player stops riding it.
-despawn_on_dismount: false
+# This option allows you to turn death effects into kill effects. Please note you will have to correct the description texts by yourself.
+kill_effects: false
 
 menu:
-  rows: 5
+  rows: 4
 
   # Items use vanilla Minecraft format for flexible customization.
   # Supports resource packs and custom data components.
@@ -62,87 +56,61 @@ menu:
       count: 1
 
 cosmetics:
-  baby_reindeer:
+  bloody_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:snow_block"
+    item: "minecraft:redstone"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  cave_spider:
+  candy_cane_remains:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:spider_eye"
+    item: "minecraft:sugar"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  clumsy_mule:
+  confetti_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:chest"
+    item: "minecraft:melon_seeds"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  crazy_chicken:
+  enchanted_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:egg"
+    item: "minecraft:book"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  decrepit_warhorse:
+  fall_of_the_frost_lord:
     enabled: true
-    rarity: "rare"
-    purchasable:
-      enabled: false
-      cost: 2000
-    item: "minecraft:rotten_flesh"
-    count: 1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  ethereal_dragon:
-    enabled: true
-    rarity: "rare"
-    purchasable:
-      enabled: false
-      cost: 2000
-    item: "minecraft:dragon_egg[!minecraft:rarity]"
-    count: 1
-    treasure_chests:
-      - common
-      - mythical
-      - legendary
-
-  frosty_snowman:
-    enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
@@ -153,117 +121,117 @@ cosmetics:
       - mythical
       - legendary
 
-  glacial_steed:
+  flame_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:packed_ice"
+    item: "minecraft:blaze_powder"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  hype_train:
+  last_love:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:minecart"
+    item: "minecraft:poppy"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  infernal_horror:
+  lightning_death:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:bone"
+    item: "minecraft:poppy"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  lovely_sheep:
+  lava_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:pink_stained_glass"
+    item: "minecraft:lava_bucket"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  molten_snake:
+  magical_death:
     enabled: true
     rarity: "rare"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:netherrack"
+    item: "minecraft:purple_dye"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  pirate_ship:
+  musical_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:oak_boat"
+    item: "minecraft:note_block"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  rudolf:
+  shadow_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:dead_bush"
+    item: "minecraft:coal"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  slime:
+  sparkly_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:slime_block"
+    item: "minecraft:firework_rocket[!minecraft:fireworks]"
     count: 1
     treasure_chests:
       - common
       - mythical
       - legendary
 
-  unicorn:
+  wet_death:
     enabled: true
-    rarity: "rare"
+    rarity: "common"
     purchasable:
       enabled: false
       cost: 2000
-    item: "minecraft:blaze_rod"
+    item: "minecraft:water_bucket"
     count: 1
     treasure_chests:
       - common

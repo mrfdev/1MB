@@ -1,529 +1,622 @@
-banners:
-  enable: true
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enabled: true
 
-  menu:
-    title: "Banners"
-    rows: 6
-    fill-empty-slots: true
-    material: WHITE_BANNER
-    amount: 1
-    slot: 50
-    custom-model-data: 0
-    displayname: "&bBanners"
-    lore:
-      - ""
-      - "&7Show off yourself with an epic banner"
-      - "&7on top of your head."
-      - ""
-      - "&3You own &b%current%&7/&b%maximum%&3!"
-      - ""
-      - "&7Left-click to open the menu!"
-      - "&7Right-click to unequip your current!"
+menu:
+  rows: 6
 
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
   items:
-    go-back:
-      enable: true
-      material: RED_BED
-      amount: 1
-      slot: 49
-      custom-model-data: 0
-      displayname: "&cGo back"
-      lore: [ ]
-      # If this is empty, it will return to the main menu.
-      command: ""
+    fill_empty_slots:
+      enabled: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
 
-    previous-page:
-      material: ARROW
-      amount: 1
-      slot: 47
-      custom-model-data: 0
-      displayname: "&aPrevious Page"
-      lore: [ ]
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
 
-    next-page:
-      material: ARROW
-      amount: 1
-      slot: 51
-      custom-model-data: 0
-      displayname: "&aNext Page"
-      lore: [ ]
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
 
-  cosmetics:
-    pug:
-      enable: true
-      name: "&bPug"
-      can-be-found: true
-      purchasable: false
+    go_back:
+      enabled: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
+        command: ""
+        execute_as_player: false
+
+    sorting:
+      enabled: true
+      item: "minecraft:hopper"
+      count: 1
+      slot: -1
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enabled: true
+      item: "minecraft:firework_star"
+      count: 1
+
+cosmetics:
+  candy_cane:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 10
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Who doesn't love pugs?"
+    item: >-
+      minecraft:red_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:triangle_top'},
+      {color: 'red', pattern: 'minecraft:rhombus'},
+      {color: 'white', pattern: 'minecraft:stripe_downleft'},
+      {color: 'red', pattern: 'minecraft:small_stripes'},
+      {color: 'red', pattern: 'minecraft:curly_border'},
+      {color: 'red', pattern: 'minecraft:border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    happy-sheep:
-      enable: true
-      name: "&bHappy Sheep"
-      can-be-found: true
-      purchasable: false
+  crown:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 11
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Cute fluffy sheep!"
+    item: >-
+      minecraft:yellow_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:triangle_top'},
+      {color: 'yellow', pattern: 'minecraft:rhombus'},
+      {color: 'black', pattern: 'minecraft:half_horizontal_bottom'},
+      {color: 'black', pattern: 'minecraft:border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    rabbit:
-      enable: true
-      name: "&bRabbit"
-      can-be-found: true
-      purchasable: false
+  disco:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 12
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It likes carrots!"
+    item: "minecraft:light_blue_banner"
+    count: 1
+    tick_interval: 5
+    frames:
+      - item: "minecraft:light_blue_banner"
+        duration: 2
+      - item: "minecraft:yellow_banner"
+        duration: 2
+      - item: "minecraft:lime_banner"
+        duration: 2
+      - item: "minecraft:pink_banner"
+        duration: 2
+      - item: "minecraft:light_gray_banner"
+        duration: 2
+      - item: "minecraft:cyan_banner"
+        duration: 2
+      - item: "minecraft:purple_banner"
+        duration: 2
+      - item: "minecraft:blue_banner"
+        duration: 2
+      - item: "minecraft:green_banner"
+        duration: 2
+      - item: "minecraft:red_banner"
+        duration: 2
+      - item: "minecraft:orange_banner"
+        duration: 2
+      - item: "minecraft:magenta_banner"
+        duration: 2
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    goose:
-      enable: true
-      name: "&bGoose"
-      can-be-found: true
-      purchasable: false
+  ender_dragon:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 13
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Honk honk!"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:curly_border'},
+      {color: 'white', pattern: 'minecraft:stripe_right'},
+      {color: 'purple', pattern: 'minecraft:flower'},
+      {color: 'black', pattern: 'minecraft:stripe_middle'},
+      {color: 'white', pattern: 'minecraft:triangle_top'},
+      {color: 'black', pattern: 'minecraft:mojang'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    panda:
-      enable: true
-      name: "&bPanda"
-      can-be-found: true
-      purchasable: false
+  fire:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 14
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Loves bamboo and cake."
+    item: >-
+      minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
+      {color: 'black', pattern: 'minecraft:bricks'},
+      {color: 'orange', pattern: 'minecraft:triangle_bottom'},
+      {color: 'black', pattern: 'minecraft:rhombus'},
+      {color: 'orange', pattern: 'minecraft:gradient_up'},
+      {color: 'yellow', pattern: 'minecraft:triangles_bottom'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    fox:
-      enable: true
-      name: "&bFox"
-      can-be-found: true
-      purchasable: false
+  fox:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 15
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Orange thieves."
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:rhombus'},
+      {color: 'orange', pattern: 'minecraft:curly_border'},
+      {color: 'orange', pattern: 'minecraft:circle'},
+      {color: 'orange', pattern: 'minecraft:creeper'},
+      {color: 'orange', pattern: 'minecraft:triangle_top'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    octopus:
-      enable: true
-      name: "&bOctopus"
-      can-be-found: true
-      purchasable: false
+  goose:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 16
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Can easily be confused with squid."
+    item: >-
+      minecraft:black_banner[minecraft:banner_patterns=[{color: 'orange', pattern: 'minecraft:mojang'},
+      {color: 'white', pattern: 'minecraft:curly_border'},
+      {color: 'white', pattern: 'minecraft:half_horizontal'},
+      {color: 'black', pattern: 'minecraft:stripe_top'},
+      {color: 'black', pattern: 'minecraft:stripe_downright'},
+      {color: 'black', pattern: 'minecraft:half_vertical_right'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    crown:
-      enable: true
-      name: "&bCrown"
-      can-be-found: true
-      purchasable: false
+  happy_sheep:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 19
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Become a ruler."
+    item: >-
+      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:stripe_bottom'},
+      {color: 'white', pattern: 'minecraft:circle'},
+      {color: 'black', pattern: 'minecraft:creeper'},
+      {color: 'white', pattern: 'minecraft:flower'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    sun-flower:
-      enable: true
-      name: "&bSunflower"
-      can-be-found: true
-      purchasable: false
+  heart:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 20
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7We're all golden sunflowers inside."
+    item: >-
+      minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:rhombus'},
+      {color: 'red', pattern: 'minecraft:rhombus'},
+      {color: 'black', pattern: 'minecraft:triangle_top'},
+      {color: 'black', pattern: 'minecraft:triangle_top'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    rose:
-      enable: true
-      name: "&bRose"
-      can-be-found: true
-      purchasable: false
+  octopus:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 21
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Be careful around its thorns."
+    item: >-
+      minecraft:gray_banner[minecraft:banner_patterns=[{color: 'blue', pattern: 'minecraft:triangle_bottom'},
+      {color: 'gray', pattern: 'minecraft:small_stripes'},
+      {color: 'white', pattern: 'minecraft:stripe_middle'},
+      {color: 'blue', pattern: 'minecraft:curly_border'},
+      {color: 'gray', pattern: 'minecraft:circle'},
+      {color: 'blue', pattern: 'minecraft:border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    pineapple:
-      enable: true
-      name: "&bPineapple"
-      can-be-found: true
-      purchasable: false
+  panda:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 22
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Pen Pineapple Apple Pen"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:flower'},
+      {color: 'white', pattern: 'minecraft:half_horizontal_bottom'},
+      {color: 'black', pattern: 'minecraft:triangles_top'},
+      {color: 'white', pattern: 'minecraft:stripe_center'},
+      {color: 'black', pattern: 'minecraft:creeper'},
+      {color: 'white', pattern: 'minecraft:stripe_bottom'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    taco:
-      enable: true
-      name: "&bTaco"
-      can-be-found: true
-      purchasable: false
+  pineapple:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 23
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Often served gluten-free."
+    item: >-
+      minecraft:orange_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:bricks'},
+      {color: 'light_blue', pattern: 'minecraft:half_horizontal'},
+      {color: 'lime', pattern: 'minecraft:flower'},
+      {color: 'light_blue', pattern: 'minecraft:border'},
+      {color: 'lime', pattern: 'minecraft:circle'},
+      {color: 'light_blue', pattern: 'minecraft:curly_border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    heart:
-      enable: true
-      name: "&bHeart"
-      can-be-found: true
-      purchasable: false
+  pirate_skull:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 24
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7How deep is your love?"
+    item: >-
+      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
+      {color: 'white', pattern: 'minecraft:skull'},
+      {color: 'black', pattern: 'minecraft:stripe_top'},
+      {color: 'light_blue', pattern: 'minecraft:curly_border'},
+      {color: 'light_blue', pattern: 'minecraft:triangles_top'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    speech-bubble:
-      enable: true
-      name: "&bSpeech Bubble"
-      can-be-found: true
-      purchasable: false
+  present:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 25
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Express yourself."
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:stripe_bottom'},
+      {color: 'yellow', pattern: 'minecraft:straight_cross'},
+      {color: 'yellow', pattern: 'minecraft:flower'},
+      {color: 'white', pattern: 'minecraft:stripe_middle'},
+      {color: 'white', pattern: 'minecraft:half_horizontal'},
+      {color: 'white', pattern: 'minecraft:border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    disco:
-      enable: true
-      name: "&bDisco"
-      can-be-found: true
-      purchasable: false
+  pug:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: WHITE_BANNER
-      amount: 1
-      slot: 28
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Show me those dance moves."
+    item: >-
+      minecraft:orange_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:bricks'},
+      {color: 'brown', pattern: 'minecraft:stripe_bottom'},
+      {color: 'orange', pattern: 'minecraft:border'},
+      {color: 'brown', pattern: 'minecraft:triangle_bottom'},
+      {color: 'pink', pattern: 'minecraft:rhombus'},
+      {color: 'black', pattern: 'minecraft:creeper'},
+      {color: 'black', pattern: 'minecraft:flower'},
+      {color: 'brown', pattern: 'minecraft:skull'},
+      {color: 'orange', pattern: 'minecraft:stripe_top'},
+      {color: 'orange', pattern: 'minecraft:triangle_top'},
+      {color: 'brown', pattern: 'minecraft:circle'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    the-united-states-of-america:
-      enable: true
-      name: "&bThe United States Of America"
-      can-be-found: true
-      purchasable: false
+  rabbit:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 29
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7How many stars are there on the flag?"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:circle'},
+      {color: 'white', pattern: 'minecraft:flower'},
+      {color: 'light_blue', pattern: 'minecraft:triangle_top'},
+      {color: 'white', pattern: 'minecraft:cross'},
+      {color: 'light_blue', pattern: 'minecraft:curly_border'},
+      {color: 'white', pattern: 'minecraft:triangles_bottom'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    sweden:
-      enable: true
-      name: "&bSweden"
-      can-be-found: true
-      purchasable: false
+  rose:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 30
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Notch's favorite banner!"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:mojang'},
+      {color: 'green', pattern: 'minecraft:flower'},
+      {color: 'white', pattern: 'minecraft:diagonal_up_left'},
+      {color: 'red', pattern: 'minecraft:square_top_left'},
+      {color: 'white', pattern: 'minecraft:curly_border'},
+      {color: 'white', pattern: 'minecraft:triangles_top'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    sword:
-      enable: true
-      name: "&bSword"
-      can-be-found: true
-      purchasable: false
+  santa_hat:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 31
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It's Excalibur!"
+    item: >-
+      minecraft:green_banner[minecraft:banner_patterns=[{color: 'white', pattern: 'minecraft:border'},
+      {color: 'green', pattern: 'minecraft:diagonal_left'},
+      {color: 'green', pattern: 'minecraft:diagonal_up_right'},
+      {color: 'white', pattern: 'minecraft:circle'},
+      {color: 'red', pattern: 'minecraft:triangle_bottom'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    pirate-skull:
-      enable: true
-      name: "&bPirate Skull"
-      can-be-found: true
-      purchasable: false
+  snowflake:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 32
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7YaRrr!"
+    item: >-
+      minecraft:blue_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:gradient_up'},
+      {color: 'white', pattern: 'minecraft:rhombus'},
+      {color: 'light_blue', pattern: 'minecraft:flower'},
+      {color: 'white', pattern: 'minecraft:flower'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    ender-dragon:
-      enable: true
-      name: "&bEnder Dragon"
-      can-be-found: true
-      purchasable: false
+  snowy_tree:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 33
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7You made it all the way here?"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'green', pattern: 'minecraft:bricks'},
+      {color: 'light_blue', pattern: 'minecraft:triangle_bottom'},
+      {color: 'brown', pattern: 'minecraft:straight_cross'},
+      {color: 'white', pattern: 'minecraft:triangle_top'},
+      {color: 'white', pattern: 'minecraft:triangles_top'},
+      {color: 'white', pattern: 'minecraft:rhombus'},
+      {color: 'green', pattern: 'minecraft:flower'},
+      {color: 'white', pattern: 'minecraft:stripe_middle'},
+      {color: 'green', pattern: 'minecraft:creeper'},
+      {color: 'white', pattern: 'minecraft:mojang'},
+      {color: 'light_blue', pattern: 'minecraft:curly_border'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    wither:
-      enable: true
-      name: "&bWither"
-      can-be-found: true
-      purchasable: false
+  speech_bubble:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 34
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Watch out for those skulls!"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'light_blue', pattern: 'minecraft:stripe_bottom'},
+      {color: 'light_blue', pattern: 'minecraft:border'},
+      {color: 'white', pattern: 'minecraft:rhombus'},
+      {color: 'light_blue', pattern: 'minecraft:stripe_top'},
+      {color: 'light_blue', pattern: 'minecraft:square_bottom_left'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    fire:
-      enable: true
-      name: "&bFire"
-      can-be-found: true
-      purchasable: false
+  sun_flower:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 37
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Keep yourself warm!"
+    item: >-
+      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'lime', pattern: 'minecraft:triangles_bottom'},
+      {color: 'lime', pattern: 'minecraft:stripe_center'},
+      {color: 'light_blue', pattern: 'minecraft:half_vertical_right'},
+      {color: 'light_blue', pattern: 'minecraft:half_horizontal'},
+      {color: 'blue', pattern: 'minecraft:gradient'},
+      {color: 'yellow', pattern: 'minecraft:flower'},
+      {color: 'brown', pattern: 'minecraft:circle'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    snowflake:
-      enable: true
-      name: "&bSnowflake"
-      can-be-found: true
-      purchasable: false
+  sweden:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 38
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A snowflake is winter's butterfly."
+    item: >-
+      minecraft:blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:stripe_middle'},
+      {color: 'yellow', pattern: 'minecraft:straight_cross'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    present:
-      enable: true
-      name: "&bPresent"
-      can-be-found: true
-      purchasable: false
+  sword:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 39
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Happy Holidays!"
+    item: >-
+      minecraft:black_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:flower'},
+      {color: 'black', pattern: 'minecraft:half_horizontal'},
+      {color: 'white', pattern: 'minecraft:stripe_center'},
+      {color: 'black', pattern: 'minecraft:curly_border'},
+      {color: 'black', pattern: 'minecraft:square_bottom_left'},
+      {color: 'black', pattern: 'minecraft:square_bottom_right'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    wreath:
-      enable: true
-      name: "&bWreath"
-      can-be-found: true
-      purchasable: false
+  taco:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 40
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Not as pretty as a Christmas tree."
+    item: >-
+      minecraft:black_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:skull'},
+      {color: 'lime', pattern: 'minecraft:flower'},
+      {color: 'yellow', pattern: 'minecraft:mojang'},
+      {color: 'yellow', pattern: 'minecraft:circle'},
+      {color: 'black', pattern: 'minecraft:half_horizontal_bottom'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    santa-hat:
-      enable: true
-      name: "&bSanta Hat"
-      can-be-found: true
-      purchasable: false
+  united_states_of_america:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 41
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7I believe in Santa!"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'red', pattern: 'minecraft:small_stripes'},
+      {color: 'blue', pattern: 'minecraft:square_bottom_left'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    candy-cane:
-      enable: true
-      name: "&bCandy Cane"
-      can-be-found: true
-      purchasable: false
+  wither:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 42
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Mmm, yummy!"
+    item: >-
+      minecraft:white_banner[minecraft:banner_patterns=[{color: 'black', pattern: 'minecraft:straight_cross'},
+      {color: 'white', pattern: 'minecraft:half_horizontal'},
+      {color: 'black', pattern: 'minecraft:creeper'},
+      {color: 'black', pattern: 'minecraft:skull'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    snowy-tree:
-      enable: true
-      name: "&bSnowy Tree"
-      can-be-found: true
-      purchasable: false
+  wreath:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_BANNER
-      amount: 1
-      slot: 43
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It's a tree, but white."
+    item: >-
+      minecraft:light_blue_banner[minecraft:banner_patterns=[{color: 'yellow', pattern: 'minecraft:creeper'},
+      {color: 'red', pattern: 'minecraft:skull'},
+      {color: 'green', pattern: 'minecraft:flower'},
+      {color: 'light_blue', pattern: 'minecraft:circle'}],
+      minecraft:tooltip_display={hidden_components: ["minecraft:banner_patterns"]}]
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
-config-version: 1
+config_version: 1

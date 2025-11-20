@@ -1,719 +1,486 @@
-miniatures:
-  enable: true
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enabled: true
 
-  menu:
-    title: "Miniatures"
-    rows: 6
-    fill-empty-slots: true
-    material: ZOMBIE_HEAD
-    amount: 1
-    slot: 48
-    custom-model-data: 0
-    displayname: "&bMiniatures"
-    lore:
-      - ""
-      - "&7These small creatures will follow"
-      - "&7you around in the world."
-      - ""
-      - "&3You own &b%current%&7/&b%maximum%&3!"
-      - ""
-      - "&7Left-click to open the menu!"
-      - "&7Right-click to unequip your current!"
+menu:
+  rows: 6
 
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
   items:
-    go-back:
-      enable: true
-      material: RED_BED
-      amount: 1
-      slot: 49
-      custom-model-data: 0
-      displayname: "&cGo back"
-      lore: [ ]
-      # If this is empty, it will return to the main menu.
-      command: ""
+    fill_empty_slots:
+      enabled: true
+      item: "minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]"
+      count: 1
 
-    previous-page:
-      material: ARROW
-      amount: 1
-      slot: 47
-      custom-model-data: 0
-      displayname: "&aPrevious Page"
-      lore: [ ]
+    next_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -3
 
-    next-page:
-      material: ARROW
-      amount: 1
-      slot: 51
-      custom-model-data: 0
-      displayname: "&aNext Page"
-      lore: [ ]
+    previous_page:
+      item: "minecraft:arrow"
+      count: 1
+      slot: -7
 
-  cosmetics:
-    astronaut:
-      enable: true
-      name: "&bAstronaut"
-      can-be-found: true
-      purchasable: false
+    go_back:
+      enabled: true
+      item: "minecraft:red_bed"
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
+        command: ""
+        execute_as_player: false
+
+    sorting:
+      enabled: true
+      item: "minecraft:hopper"
+      count: 1
+      slot: -1
+
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enabled: true
+      item: "minecraft:firework_star"
+      count: 1
+
+cosmetics:
+  astronaut:
+    enabled: true
+    rarity: "legendary"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: LEGENDARY
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 10
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Your own personal astronaut."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzk1ZTNlNzg1MTI3NDhiYTg1M2E4MjBjYjU2NzE2Zjc4ZmFhYzE2MWU0M2M2MWQ5MjQxYmE1NDljZTc0MGQ1Y2YifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    tiki:
-      enable: true
-      name: "&bTiki"
-      can-be-found: true
-      purchasable: false
+  brown_bear:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 11
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Great smile but can sometimes"
-        - "&7get a bit scary."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkNmVlNjdjMzUyYWRiZjZlY2VmZDg5NWJiODc3Zjg4NDY3MGQzYzdiYWQ5OGFmNDdiZmQyMmE0ZWJhYWE5ZCJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    devil:
-      enable: true
-      name: "&bDevil"
-      can-be-found: true
-      purchasable: false
+  bunny:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: LEGENDARY
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 12
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7For some reason the devil"
-        - "&7follows you around."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U4YTRmYjI1YWZiYzZiN2FlYzE1YWJlODcyZmNlYWQxZTViMzNjMWFiMTI1MjUxNDFkNzdiZmQyOThmYzMyZDkifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    ghost:
-      enable: true
-      name: "&bGhost"
-      can-be-found: true
-      purchasable: false
+  chicken:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 13
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Spooky! Boo!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFkMTdlNDhjOTI1M2U2NzQ3MzNjZWI3YmMzZGE3ZjUyMTUxZTUyODlkMDIxMmM4ZjJkZDcxZTQxNmU0ZWU2NSJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    vampire:
-      enable: true
-      name: "&bVampire"
-      can-be-found: true
-      purchasable: false
+  cow:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 14
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A vampire needs blood to survive..."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzdkZmEwYWMzN2JhYmEyYWEyOTBlNGZhZWU0MTlhNjEzY2Q2MTE3ZmE1NjhlNzA5ZDkwMzc0NzUzYzAzMmRjYjAifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    witch:
-      enable: true
-      name: "&bWitch"
-      can-be-found: true
-      purchasable: false
+  devil:
+    enabled: true
+    rarity: "legendary"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 15
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7The ability to curse someone is awesome!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkYTM5MjY5ZWY0NWY4MjVlYzYxYmI0ZjhhYTA5YmQzY2YwNzk5NmZiNmZhYzMzOGE2ZTkxZDY2OTlhZTQyNSJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    skeleton:
-      enable: true
-      name: "&bSkeleton"
-      can-be-found: true
-      purchasable: false
+  doge:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: SKELETON_SKULL
-      amount: 1
-      slot: 16
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Another defensive archer will be great!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EzOWU0M2RiODNhOTY2YzViNmY2YzAzYTE3ZDdjNmRhNGJhMWI2MjJlNjdjMjhjZTYwMTc2MDc2ODlmNmUyMzIifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    zombie:
-      enable: true
-      name: "&bZombie"
-      can-be-found: true
-      purchasable: false
+  dolphin:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: ZOMBIE_HEAD
-      amount: 1
-      slot: 19
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A tiny zombie will follow you around."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhlOTY4OGI5NTBkODgwYjU1YjdhYTJjZmNkNzZlNWEwZmE5NGFhYzZkMTZmNzhlODMzZjc0NDNlYTI5ZmVkMyJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    spider:
-      enable: true
-      name: "&bSpider"
-      can-be-found: true
-      purchasable: false
+  dwarf:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 20
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A bite could take someone's life."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IwNDgxZTUyZGFmMGI1MzYzNDY5YzBmMmNjOWM4YmEyMmM2YmI4MjVlMTI2MTc4ZTk5MjRiNDI4NDk5NzU2In19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    enderman:
-      enable: true
-      name: "&bEnderman"
-      can-be-found: true
-      purchasable: false
+  elephant:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 21
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7He will teleport you away from danger!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI1Y2U3NjJiYzhlN2FkNWUxNmIzNTM1NGY3ZDkzNDFjYmNjZDJkZTYxNzkxYTdhNjg4MmFjNDNjMzhjYzhlIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    brown-bear:
-      enable: true
-      name: "&bBrown Bear"
-      can-be-found: true
-      purchasable: false
+  enderman:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 22
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Feed him fish!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzQ1NDMyNmU3ZDJmYTBhNDM0YmU1MjU4NTUxMTBjMjZhMjQzYmI5NjcyNTIyZTk3NjNjYjk4ZDU4ZTExMmEzIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    koala-bear:
-      enable: true
-      name: "&bKoala Bear"
-      can-be-found: true
-      purchasable: false
+  fox:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 23
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Do you want a hug?"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhZTIxNjMwNWI1NGY3Yjk4ZmI1ODllNGM5NGVkZmE3MGQwODViZjM4MmNmNWU4Y2EyMzRmNDE5NDk1YzdmOGEifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    panda:
-      enable: true
-      name: "&bPanda"
-      can-be-found: true
-      purchasable: false
+  ghost:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 24
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This cutie will follow you around!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4ZDIxODM2NDAyMThhYjMzMGFjNTZkMmFhYjdlMjlhOTc5MGE1NDVmNjkxNjE5ZTM4NTc4ZWE0YTY5YWUwYjYifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    monkey:
-      enable: true
-      name: "&bMonkey"
-      can-be-found: true
-      purchasable: false
+  iron_golem:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 25
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Would you like a banana?"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg5MDkxZDc5ZWEwZjU5ZWY3ZWY5NGQ3YmJhNmU1ZjE3ZjJmN2Q0NTcyYzQ0ZjkwZjc2YzQ4MTlhNzE0In19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    elephant:
-      enable: true
-      name: "&bElephant"
-      can-be-found: true
-      purchasable: false
+  koala_bear:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 28
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Cute little elephant baby!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVmOGQ2ZTg2ODJjNTkyYTFmOTQwMzIxZWQ4MTE5ZDk2NzU4ZmM2N2I5NDcwZmIzZGFkYzVkZGM4ZGVjMTAxYzEifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    tiger:
-      enable: true
-      name: "&bTiger"
-      can-be-found: true
-      purchasable: false
+  ladybug:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 29
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7So soft fur!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YwZjQyODhhZTA4YTM4ZDJhYjljZjM0MzE0MTY0N2U0ZjNiZTE2YzVhOTI3ZTcyMjRhM2IxZGVjYWNmZjI1OSJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    zebra:
-      enable: true
-      name: "&bZebra"
-      can-be-found: true
-      purchasable: false
+  monkey:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 30
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Can you ride a zebra?"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIxZTk5MzM3ZGRjMmM4ZDE0Y2Y5ZjUyN2U5NzIyODUxMzM1NThjOTUzNzY1ZGU0ZGQ1ZDdhOTE5YTk4ODgyIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    chicken:
-      enable: true
-      name: "&bChicken"
-      can-be-found: true
-      purchasable: false
+  panda:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 31
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A flying chicken."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q4Y2RkNGYyODU2MzJjMjVkNzYyZWNlMjVmNDE5M2I5NjZjMjY0MWIxNWQ5YmRiYzBhMTEzMDIzZGU3NmFiIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    cow:
-      enable: true
-      name: "&bCow"
-      can-be-found: true
-      purchasable: false
+  parrot:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 32
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Mooo..."
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MxMzVmNTgzOGU1MTU4NWUxNTk0MmU4ZjJmMWNjMzZkYTk2MzA3MGRkZDViYTM1YWY5NWVkMzdlYjZjMyJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    sheep:
-      enable: true
-      name: "&bSheep"
-      can-be-found: true
-      purchasable: false
+  santa_claus:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 33
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Oh sheep!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJkNjFjY2JmZGNkZjg5NDFhZGFmNzZjNmMwZTAxODJkMmM4YmJiNWRjMThmMzc0ODk1NjUyYmM2NjFiNmVkIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    iron-golem:
-      enable: true
-      name: "&bIron Golem"
-      can-be-found: true
-      purchasable: false
+  shark:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 34
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7First time seeing this creature"
-        - "&7as a baby?"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5NGFlNDMzYjMwMWM3ZmI3YzY4Y2JhNjI1YjBiZDM2YjBiMTQxOTBmMjBlMzRhN2M4ZWUwZDlkZTA2ZDUzYjkifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    bunny:
-      enable: true
-      name: "&bBunny"
-      can-be-found: true
-      purchasable: false
+  sheep:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 37
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Is it the Easter Bunny?"
-    fox:
-      enable: true
-      name: "&bFox"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 38
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This cutie will follow you around!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2YzMWY5Y2NjNmIzZTMyZWNmMTNiOGExMWFjMjljZDMzZDE4Yzk1ZmM3M2RiOGE2NmM1ZDY1N2NjYjhiZTcwIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    parrot:
-      enable: true
-      name: "&bParrot"
-      can-be-found: true
-      purchasable: false
+  skeleton:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 39
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This cutie will follow you around!"
+    item: "minecraft:skeleton_skull[!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    ladybug:
-      enable: true
-      name: "&bLadybug"
-      can-be-found: true
-      purchasable: false
+  snail:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 40
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7How many black dots has a ladybug"
-        - "&7on its shell?"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzE1ZTJlNTliYTY3OGFkZTBhODBiMWQ0MmEyMTJiN2NmNGVjOTYzYjQ5NGY4ZWFlYWI5ZjY0M2UyY2FhYTkxIn19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    snail:
-      enable: true
-      name: "&bSnail"
-      can-be-found: true
-      purchasable: false
+  snowman:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 41
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Oh sheep!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyM2Y5NzgxMTY4ODUzMDVkMmYwMDI4NjYyYjM5MzYyY2ZmN2RmMDBjNjMxYjMzNzc0NmZmYmY1YmZjNzBiZWMifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    turtle:
-      enable: true
-      name: "&bTurtle"
-      can-be-found: true
-      purchasable: false
+  spider:
+    enabled: true
+    rarity: "common"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 42
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This cutie will follow you around!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NkNTQxNTQxZGFhZmY1MDg5NmNkMjU4YmRiZGQ0Y2Y4MGMzYmE4MTY3MzU3MjYwNzhiZmUzOTM5MjdlNTdmMSJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    dolphin:
-      enable: true
-      name: "&bDolphin"
-      can-be-found: true
-      purchasable: false
+  tiger:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 43
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This dolphin will follow you everywhere!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZjNDI2Mzg3NDQ5MjJiNWZjZjYyY2Q5YmYyN2VlYWI5MWIyZTcyZDZjNzBlODZjYzVhYTM4ODM5OTNlOWQ4NCJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    shark:
-      enable: true
-      name: "&bShark"
-      can-be-found: true
-      purchasable: false
+  tiki:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 10
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7This shark has very sharp teeth!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ZmZTkxMTcwOWQ4YzFhNzllMDFjZDA1ODhiYWJmNTFlNmNkY2IwOTE4YjdjZWNlNzM2NjkwOGNhMjU4ZjAyZiJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    snowman:
-      enable: true
-      name: "&bSnowman"
-      can-be-found: true
-      purchasable: false
+  turtle:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 11
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Let it snow!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEyZTU0ODQwOGFiNzVkN2RmOGU2ZDVkMjQ0NmQ5MGI2ZWM2MmFhNGY3ZmViNzkzMGQxZWU3MWVlZmRkZjYxODkifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    santa-claus:
-      enable: true
-      name: "&bSanta Claus"
-      can-be-found: true
-      purchasable: false
+  vampire:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 12
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7He watches you all the time!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzhkNDQ3NTZlMGI0ZWNlOGQ3NDYyOTZhM2Q1ZTI5N2UxNDE1ZjRiYTE3NjQ3ZmZlMjI4Mzg1MzgzZDE2MWE5In19fQ=='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    stitch:
-      enable: true
-      name: "&bStitch"
-      can-be-found: true
-      purchasable: false
+  witch:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 13
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Everyone loves Stitch!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJlMTM5MTMwZDdlZmQ0MWZiYWQ1MzczNWY2NGY4YWZmMjY1YmQ3YzU0OTc3MTg5YzAyYmFiYmVjNGIwZDA3YiJ9fX0='}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    mario:
-      enable: true
-      name: "&bMario"
-      can-be-found: true
-      purchasable: false
+  zebra:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 14
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It's meeee, Marioooooo!"
+    item: "minecraft:player_head[profile={properties:[{name:'textures',value:'e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y3NGJjZTk3ODFlMzg1MTk3Y2YzOWE5NjE5M2U5YzI0M2RmYjE0ZmVlZjcyMmM4N2JlYWNkNmI5OTMyOWIxNTUifX19'}]},!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
-    yoshi:
-      enable: true
-      name: "&bYoshi"
-      can-be-found: true
-      purchasable: false
+  zombie:
+    enabled: true
+    rarity: "rare"
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 15
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7You might recognize him from another game."
-
-    toad:
-      enable: true
-      name: "&bToad"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 16
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7He's from the Mushroom Kingdom."
-
-    doge:
-      enable: true
-      name: "&bDoge"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 19
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7WOW."
-
-    dwarf:
-      enable: true
-      name: "&bDwarf"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 20
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A cute little St. patrick's day dwarf!"
-
-    donald-duck:
-      enable: true
-      name: "&bDonald Duck"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: RARE
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 21
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Quack quack!"
-
-    ronald:
-      enable: true
-      name: "&bRonald"
-      can-be-found: true
-      purchasable: false
-      cost: 2000
-      rarity: COMMON
-      material: PLAYER_HEAD
-      amount: 1
-      slot: 22
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Would you like a hamburger?"
+    item: "minecraft:zombie_head[!minecraft:rarity]"
+    count: 1
+    treasure_chests:
+      - common
+      - mythical
+      - legendary
 
 # Do not edit this!
-config-version: 1
+config_version: 1

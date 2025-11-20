@@ -1,820 +1,781 @@
-pets:
-  enable: true
+# Enable/disable this entire category.
+# When disabled, players cannot equip any cosmetics from this category as they will NOT be loaded into cache.
+enabled: true
 
-  menu:
-    title: "Pets"
-    rows: 6
-    fill-empty-slots: true
-    material: BONE
-    amount: 1
-    slot: 46
-    custom-model-data: 0
-    displayname: "&bPets"
-    lore:
-      - ""
-      - "&7Life on a server can get"
-      - "&7lonely sometimes. Summon an"
-      - "&7adorable pet to follow you"
-      - "&7around."
-      - ""
-      - "&3You own &b%current%&7/&b%maximum%&3!"
-      - ""
-      - "&7Left-click to open the menu!"
-      - "&7Right-click to unequip your current!"
-
+menu:
+  rows: 6
+  
+  # Items use vanilla Minecraft format for flexible customization.
+  # Supports resource packs and custom data components.
+  #
+  # Custom Model Data Format (Spigot version):
+  # minecraft:stone[minecraft:custom_model_data={floats:[0.0f]}]
+  #
+  # For more information: https://minecraft.wiki/w/Data_component_format
   items:
-    go-back:
-      enable: true
-      material: RED_BED
-      amount: 1
-      slot: 49
-      custom-model-data: 0
-      displayname: "&cGo back"
-      lore: [ ]
-      # If this is empty, it will return to the main menu.
-      command: ""
+    fill_empty_slots:
+      enabled: true
+      item: minecraft:gray_stained_glass_pane[tooltip_display={hide_tooltip:true}]
+      count: 1
+    
+    next_page:
+      item: minecraft:arrow
+      count: 1
+      slot: -3
+    
+    previous_page:
+      item: minecraft:arrow
+      count: 1
+      slot: -7
+    
+    go_back:
+      enabled: true
+      item: minecraft:red_bed
+      count: 1
+      slot: -5
+      on_click:
+        # If the command is empty, players will be returned to the main menu.
+        # Placeholders: <player_name>, <player_uuid>
+        command: ''
+        execute_as_player: false
+    
+    sorting:
+      enabled: true
+      item: minecraft:hopper
+      count: 1
+      slot: -1
+    
+    locked_cosmetic:
+      # This specifies if another item should replace the original cosmetic item while it is locked.
+      # This is useful to easily visualize which cosmetics the player has access to or not.
+      enabled: true
+      item: minecraft:firework_star
+      count: 1
 
-    previous-page:
-      material: ARROW
-      amount: 1
-      slot: 47
-      custom-model-data: 0
-      displayname: "&aPrevious Page"
-      lore: [ ]
-
-    next-page:
-      material: ARROW
-      amount: 1
-      slot: 51
-      custom-model-data: 0
-      displayname: "&aNext Page"
-      lore: [ ]
-
-    name-tag:
-      material: NAME_TAG
-      amount: 1
-      slot: 53
-      custom-model-data: 0
-      displayname: "&eName Tag"
-      lore:
-        - ""
-        - "&7Rename your current pet"
-        - "&7for &e%nametag_cost% coins&7."
-
-  settings:
-    default-name-tag: "&b%player%'s &7%cosmetic%"
-    change-name-tag:
-      enable: true
-      maximum-characters: 15
-      cost: 500
-
-  cosmetics:
-    allay:
-      enable: true
-      name: "&bAllay"
-      can-be-found: true
-      purchasable: false
+# You can add as many custom pets as you like!
+# Simply follow the format of any existing below.
+# Don't forget to add the corresponding language translations for the ones you add.
+# List of entity types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+cosmetics:
+  allay:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "ALLAY"
-      baby: false
-      spawn-sound: "ENTITY_ALLAY_AMBIENT_WITHOUT_ITEM"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: GHAST_TEAR
-      amount: 1
-      slot: 10
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A friendly spirit that"
-        - "&7follows you around."
-
-    armadillo:
-      enable: true
-      name: "&bArmadillo"
-      can-be-found: true
-      purchasable: false
+    entity: ALLAY
+    baby: false
+    scale: 1.0
+    spawn_sound: ENTITY_ALLAY_AMBIENT_WITHOUT_ITEM
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:allay_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  armadillo:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "ARMADILLO"
-      baby: true
-      spawn-sound: "ENTITY_ARMADILLO_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: ARMADILLO_SCUTE
-      amount: 1
-      slot: 11
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A friendly companion."
-
-    axolotl:
-      enable: true
-      name: "&bAxolotl"
-      can-be-found: true
-      purchasable: false
+    entity: ARMADILLO
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_ARMADILLO_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:armadillo_scute
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  axolotl:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "AXOLOTL"
-      baby: true
-      spawn-sound: "ENTITY_AXOLOTL_SWIM"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: AXOLOTL_BUCKET
-      amount: 1
-      slot: 12
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A cute water creature."
-
-    bee:
-      enable: true
-      name: "&bBee"
-      can-be-found: true
-      purchasable: false
+    entity: AXOLOTL
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_AXOLOTL_SWIM
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:axolotl_bucket
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  bee:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "BEE"
-      baby: true
-      spawn-sound: "ENTITY_BEE_LOOP"
-      toss-item:
-        enable: true
-        material: "HONEYCOMB"
-        custom-model-data: 0
-      material: HONEYCOMB
-      amount: 1
-      slot: 13
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A buzzing companion."
-
-    body-guard:
-      enable: true
-      name: "&bBody Guard"
-      can-be-found: true
-      purchasable: false
+    entity: BEE
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_BEE_LOOP
+    toss_item:
+      enabled: true
+      item: minecraft:honeycomb
+    item: minecraft:bee_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  body_guard:
+    enabled: true
+    rarity: legendary
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: LEGENDARY
-      material: POPPY
-      amount: 1
-      slot: 14
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Follows you around with a"
-        - "&7rose in his hand."
-
-    calf:
-      enable: true
-      name: "&bCalf"
-      can-be-found: true
-      purchasable: false
+    entity: IRON_GOLEM
+    baby: false
+    scale: 0.5
+    spawn_sound: ENTITY_SNOW_GOLEM_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:iron_ingot
+    item: minecraft:iron_golem_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  calf:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "COW"
-      baby: true
-      spawn-sound: "ENTITY_COW_AMBIENT"
-      toss-item:
-        enable: true
-        material: "MILK_BUCKET"
-        custom-model-data: 0
-      material: MILK_BUCKET
-      amount: 1
-      slot: 15
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7He wants a lot of grass"
-        - "&7to eat."
-
-    camel:
-      enable: true
-      name: "&bCamel"
-      can-be-found: true
-      purchasable: false
+    entity: COW
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_COW_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:milk_bucket
+    item: minecraft:cow_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  camel:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "CAMEL"
-      baby: true
-      spawn-sound: "ENTITY_CAMEL_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: SAND
-      amount: 1
-      slot: 16
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A desert companion."
-
-    cave-spider:
-      enable: true
-      name: "&bCave Spider"
-      can-be-found: true
-      purchasable: false
+    entity: CAMEL
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_CAMEL_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:sand
+    item: minecraft:camel_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  cave_spider:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "CAVE_SPIDER"
-      baby: false
-      spawn-sound: "ENTITY_SPIDER_AMBIENT"
-      toss-item:
-        enable: true
-        material: "COBWEB"
-        custom-model-data: 0
-      material: SPIDER_EYE
-      amount: 1
-      slot: 19
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It may look like the spider"
-        - "&7is interested in you."
-
-    chicken:
-      enable: true
-      name: "&bChicken"
-      can-be-found: true
-      purchasable: false
+    entity: CAVE_SPIDER
+    baby: false
+    scale: 1.0
+    spawn_sound: ENTITY_SPIDER_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:cobweb
+    item: minecraft:cave_spider_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  chicken:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "CHICKEN"
-      baby: true
-      spawn-sound: "ENTITY_CHICKEN_AMBIENT"
-      toss-item:
-        enable: true
-        material: "EGG"
-        custom-model-data: 0
-      material: FEATHER
-      amount: 1
-      slot: 20
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A clucking companion."
-
-    colorful-lamb:
-      enable: true
-      name: "&bColorful Lamb"
-      can-be-found: true
-      purchasable: false
+    entity: CHICKEN
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_CHICKEN_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:egg
+    item: minecraft:chicken_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  colorful_lamb:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: WHITE_WOOL
-      amount: 1
-      slot: 21
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Who said sheep cannot change"
-        - "&7their wool color?"
-
-    easter-bunny:
-      enable: true
-      name: "&bEaster Bunny"
-      can-be-found: true
-      purchasable: false
+    entity: SHEEP
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_SHEEP_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:white_wool
+    item: minecraft:sheep_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  easter_bunny:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "RABBIT"
-      baby: true
-      spawn-sound: "ENTITY_RABBIT_AMBIENT"
-      toss-item:
-        enable: true
-        material: "EGG"
-        custom-model-data: 0
-      material: CARROT
-      amount: 1
-      slot: 22
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A cute bunny following"
-        - "&7you around!"
-
-    elf:
-      enable: true
-      name: "&bElf"
-      can-be-found: true
-      purchasable: false
+    entity: RABBIT
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_RABBIT_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:egg
+    item: minecraft:rabbit_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  elf:
+    enabled: true
+    rarity: legendary
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: LEGENDARY
-      material: EMERALD
-      amount: 1
-      slot: 23
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7I'm Santa's helper."
-
-    endermite:
-      enable: true
-      name: "&bEndermite"
-      can-be-found: true
-      purchasable: false
+    entity: ZOMBIE
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_WITCH_CELEBRATE
+    toss_item:
+      enabled: false
+      item: minecraft:emerald
+    item: minecraft:emerald
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  endermite:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "ENDERMITE"
-      baby: true
-      spawn-sound: "ENTITY_ENDERMITE_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: ENDER_PEARL
-      amount: 1
-      slot: 24
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A mysterious ender creature."
-
-    fox:
-      enable: true
-      name: "&bFox"
-      can-be-found: true
-      purchasable: false
+    entity: ENDERMITE
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_ENDERMITE_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:endermite_spawn_egg
+    item: minecraft:endermite_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  fox:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "FOX"
-      baby: true
-      spawn-sound: "ENTITY_FOX_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: ORANGE_DYE
-      amount: 1
-      slot: 25
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A clever and sly friend."
-
-    frog:
-      enable: true
-      name: "&bFrog"
-      can-be-found: true
-      purchasable: false
+    entity: FOX
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_FOX_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:tropical_fish
+    item: minecraft:fox_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  frog:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "FROG"
-      baby: true
-      spawn-sound: "ENTITY_FROG_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: SLIME_BALL
-      amount: 1
-      slot: 28
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Hop, hop! Ribbit, ribbit!"
-
-    goat:
-      enable: true
-      name: "&bGoat"
-      can-be-found: true
-      purchasable: false
+    entity: FROG
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_FROG_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:slime_ball
+    item: minecraft:frog_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  goat:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "GOAT"
-      baby: true
-      spawn-sound: "ENTITY_GOAT_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: MILK_BUCKET
-      amount: 1
-      slot: 29
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A furry friend with horns."
-
-    hoglin:
-      enable: true
-      name: "&bHoglin"
-      can-be-found: true
-      purchasable: false
+    entity: GOAT
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_GOAT_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:short_grass
+    item: minecraft:goat_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  hoglin:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "HOGLIN"
-      baby: true
-      spawn-sound: "ENTITY_HOGLIN_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: RAW_GOLD
-      amount: 1
-      slot: 30
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A tough and fierce companion."
-
-    kitten:
-      enable: true
-      name: "&bKitten"
-      can-be-found: true
-      purchasable: false
+    entity: HOGLIN
+    baby: true
+    scale: 0.8
+    spawn_sound: ENTITY_HOGLIN_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:raw_gold
+    item: minecraft:hoglin_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  kitten:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "CAT"
-      baby: true
-      spawn-sound: "ENTITY_CAT_AMBIENT"
-      toss-item:
-        enable: true
-        material: "TROPICAL_FISH"
-        custom-model-data: 0
-      material: COD
-      amount: 1
-      slot: 31
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Who wouldn't want a kitten"
-        - "&7following them around?"
-
-    llama:
-      enable: true
-      name: "&bLlama"
-      can-be-found: true
-      purchasable: false
+    entity: CAT
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_CAT_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:tropical_fish
+    item: minecraft:cat_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  llama:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "LLAMA"
-      baby: true
-      spawn-sound: "ENTITY_LLAMA_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: LEAD
-      amount: 1
-      slot: 32
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Carries your items in style."
-
-    mushroom-calf:
-      enable: true
-      name: "&bMushroom Calf"
-      can-be-found: true
-      purchasable: false
+    entity: LLAMA
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_LLAMA_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:llama_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  mushroom_calf:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "MOOSHROOM"
-      baby: true
-      spawn-sound: "ENTITY_COW_AMBIENT"
-      toss-item:
-        enable: true
-        material: "RED_MUSHROOM"
-        custom-model-data: 0
-      material: RED_MUSHROOM
-      amount: 1
-      slot: 33
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7It grows mushrooms on"
-        - "&7their back."
-
-    panda:
-      enable: true
-      name: "&bPanda"
-      can-be-found: true
-      purchasable: false
+    entity: MOOSHROOM
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_COW_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:red_mushroom
+    item: minecraft:red_mushroom
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  panda:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "PANDA"
-      baby: true
-      spawn-sound: "ENTITY_PANDA_AMBIENT"
-      toss-item:
-        enable: true
-        material: "BAMBOO"
-        custom-model-data: 0
-      material: BAMBOO
-      amount: 1
-      slot: 34
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A cute panda to keep you company."
-
-    parrot:
-      enable: true
-      name: "&bParrot"
-      can-be-found: true
-      purchasable: false
+    entity: PANDA
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_PANDA_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:bamboo
+    item: minecraft:panda_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  parrot:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "PARROT"
-      baby: false
-      spawn-sound: "ENTITY_PARROT_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: FEATHER
-      amount: 1
-      slot: 37
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A colorful feathered companion."
-
-    piggy:
-      enable: true
-      name: "&bPig"
-      can-be-found: true
-      purchasable: false
+    entity: PARROT
+    baby: false
+    scale: 1.0
+    spawn_sound: ENTITY_PARROT_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:feather
+    item: minecraft:parrot_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  piggy:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "PIG"
-      baby: true
-      spawn-sound: "ENTITY_PIG_AMBIENT"
-      toss-item:
-        enable: true
-        material: "PORKCHOP"
-        custom-model-data: 0
-      material: PORKCHOP
-      amount: 1
-      slot: 38
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Christmas ham?"
-        - "&7No!"
-
-    piglin:
-      enable: true
-      name: "&bPiglin"
-      can-be-found: true
-      purchasable: false
+    entity: PIG
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_PIG_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:porkchop
+    item: minecraft:pig_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  piglin:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "PIGLIN"
-      baby: true
-      spawn-sound: "ENTITY_PIGLIN_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: GOLD_INGOT
-      amount: 1
-      slot: 39
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A pig-like creature from the"
-        - "&7Nether with a golden touch."
-
-    polar-bear:
-      enable: true
-      name: "&bPolar Bear"
-      can-be-found: true
-      purchasable: false
+    entity: PIGLIN
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_PIGLIN_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:gold_ingot
+    item: minecraft:piglin_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  polar_bear:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "POLAR_BEAR"
-      baby: true
-      spawn-sound: "ENTITY_POLAR_BEAR_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: PACKED_ICE
-      amount: 1
-      slot: 40
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A furry companion from"
-        - "&7the icy wilderness."
-
-    puppy:
-      enable: true
-      name: "&bPuppy"
-      can-be-found: true
-      purchasable: false
+    entity: POLAR_BEAR
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_POLAR_BEAR_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:packed_ice
+    item: minecraft:polar_bear_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  puppy:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "WOLF"
-      baby: true
-      spawn-sound: "ENTITY_WOLF_AMBIENT"
-      toss-item:
-        enable: true
-        material: "BONE"
-        custom-model-data: 0
-      material: BONE
-      amount: 1
-      slot: 41
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Voff..."
-
-    santa-claus:
-      enable: true
-      name: "&bSanta Claus"
-      can-be-found: true
-      purchasable: false
+    entity: WOLF
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_WOLF_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:bone
+    item: minecraft:bone
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  santa_claus:
+    enabled: true
+    rarity: legendary
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: LEGENDARY
-      material: REDSTONE
-      amount: 1
-      slot: 42
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7I hope you've"
-        - "&7been nice."
-
-    silverfish:
-      enable: true
-      name: "&bSilverfish"
-      can-be-found: true
-      purchasable: false
+    entity: ZOMBIE
+    baby: false
+    scale: 1.0
+    spawn_sound: ENTITY_WITCH_CELEBRATE
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:redstone
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  silverfish:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "SILVERFISH"
-      baby: false
-      spawn-sound: "ENTITY_SILVERFISH_AMBIENT"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: STONE_BUTTON
-      amount: 1
-      slot: 43
-      page: 1
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7You may not even notice"
-        - "&7him."
-
-    sniffer:
-      enable: true
-      name: "&bSniffer"
-      can-be-found: true
-      purchasable: false
+    entity: SILVERFISH
+    baby: false
+    scale: 1.0
+    spawn_sound: ENTITY_SILVERFISH_AMBIENT
+    toss_item:
+      enabled: false
+      item: minecraft:stone_button
+    item: minecraft:silverfish_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  sniffer:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "SNIFFER"
-      baby: true
-      spawn-sound: "ENTITY_SNIFFER_SNIFFING"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: SNIFFER_EGG
-      amount: 1
-      slot: 10
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Has a keen sense of smell."
-
-    turtle:
-      enable: true
-      name: "&bTurtle"
-      can-be-found: true
-      purchasable: false
+    entity: SNIFFER
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_SNIFFER_SNIFFING
+    toss_item:
+      enabled: false
+      item: minecraft:sniffer_egg[!minecraft:rarity]
+    item: minecraft:sniffer_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  turtle:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "TURTLE"
-      baby: false
-      spawn-sound: "ENTITY_TURTLE_EGG_HATCH"
-      toss-item:
-        enable: false
-        material: "DIAMOND"
-        custom-model-data: 0
-      material: TURTLE_HELMET
-      amount: 1
-      slot: 11
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A slow but steady companion."
-
-    villager:
-      enable: true
-      name: "&bVillager"
-      can-be-found: true
-      purchasable: false
+    entity: TURTLE
+    baby: true
+    scale: 3.0
+    spawn_sound: ENTITY_TURTLE_EGG_HATCH
+    toss_item:
+      enabled: false
+      item: minecraft:diamond
+    item: minecraft:turtle_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  villager:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      material: EMERALD
-      amount: 1
-      slot: 12
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7Your smallest trader ever."
-
-    zombie-villager:
-      enable: true
-      name: "&bZombie Villager"
-      can-be-found: true
-      purchasable: false
+    entity: VILLAGER
+    baby: true
+    scale: 1.0
+    spawn_sound: ENTITY_VILLAGER_YES
+    toss_item:
+      enabled: false
+      item: minecraft:emerald
+    item: minecraft:villager_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  zombie_villager:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
       cost: 2000
-      rarity: COMMON
-      entity: "ZOMBIE_VILLAGER"
-      baby: true
-      spawn-sound: "ENTITY_ZOMBIE_AMBIENT"
-      toss-item:
-        enable: true
-        material: "ROTTEN_FLESH"
-        custom-model-data: 0
-      material: ROTTEN_FLESH
-      amount: 1
-      slot: 13
-      page: 2
-      custom-model-data: 0
-      displayname: "%name%"
-      lore:
-        - ""
-        - "&7A young villager has been infected."
-        - "&7They seem to be okay..."
+    entity: ZOMBIE_VILLAGER
+    baby: true
+    scale: 0.8
+    spawn_sound: ENTITY_ZOMBIE_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:rotten_flesh
+    item: minecraft:zombie_villager_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  breeze:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    entity: BREEZE
+    baby: false
+    scale: 0.6
+    spawn_sound: ENTITY_BREEZE_CHARGE
+    toss_item:
+      enabled: true
+      item: minecraft:wind_charge
+    item: minecraft:breeze_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  creaking:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    entity: CREAKING
+    baby: false
+    scale: 0.5
+    spawn_sound: ENTITY_CREAKING_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:creaking_heart
+    item: minecraft:creaking_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  warden:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    entity: WARDEN
+    baby: false
+    scale: 0.3
+    spawn_sound: ENTITY_WARDEN_AMBIENT
+    toss_item:
+      enabled: true
+      item: minecraft:disc_fragment_5
+    item: minecraft:warden_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
+  
+  copper_golem:
+    enabled: true
+    rarity: common
+    purchasable:
+      enabled: false
+      cost: 2000
+    entity: COPPER_GOLEM
+    baby: false
+    scale: 0.8
+    spawn_sound: ENTITY_COPPER_GOLEM_SPAWN
+    toss_item:
+      enabled: true
+      item: minecraft:copper_nugget
+    item: minecraft:copper_golem_spawn_egg
+    count: 1
+    treasure_chests:
+    - common
+    - mythical
+    - legendary
 
 # Do not edit this!
-config-version: 1
+config_version: 1

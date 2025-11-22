@@ -37,7 +37,6 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
     private static final String HEX_GRAY   = "§x§C§C§C§C§C§C";
     private static final String HEX_GREEN  = "§x§A§A§F§F§C§C";
     private static final String RESET      = "§r";
-
     private static final String VERSION    = "1.0.7";
     private static final String SOURCE_URL = "https://github.com/mrfdev/1MB/tree/master/Resources/BookExport";
 
@@ -51,7 +50,7 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
         super();
     }
 
-@Override
+    @Override
     public void onEnable() {
         // Ensure config exists
         saveDefaultConfig();
@@ -59,11 +58,26 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
         // Determine export folder based on config
         exportFolder = resolveExportFolder();
 
+        // Get console sender (parses color codes)
+        var console = getServer().getConsoleSender();
+
+        // Create folder if needed
         if (!exportFolder.exists() && exportFolder.mkdirs()) {
-            getLogger().info(ChatColor.YELLOW + "Created export folder: " + ChatColor.GRAY + exportFolder.getPath() + ChatColor.RESET);
+            console.sendMessage(
+                    HEX_GOLD + "[BookExport] " +
+                    HEX_YELLOW + "Created export folder: " +
+                    HEX_GRAY + exportFolder.getPath() +
+                    RESET
+            );
         }
 
-        getLogger().info(ChatColor.YELLOW + "BookExport enabled. Export folder: " + ChatColor.GRAY + exportFolder.getPath() + ChatColor.RESET);
+        // Enabled message
+        console.sendMessage(
+                HEX_GOLD + "[BookExport] " +
+                HEX_YELLOW + "BookExport enabled (v" + VERSION + "). " +
+                HEX_GRAY + "Export folder: " + exportFolder.getPath() +
+                RESET
+        );
 
         // Ensure we are the executor and tab-completer for /bookexport
         if (getCommand("bookexport") != null) {
@@ -74,8 +88,14 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
 
     @Override
     public void onDisable() {
-        getLogger().info(HEX_GOLD + "BookExport disabled." + RESET);
+        var console = getServer().getConsoleSender();
+        console.sendMessage(
+                HEX_GOLD + "[BookExport] " +
+                HEX_YELLOW + "BookExport disabled." +
+                RESET
+        );
     }
+
 
     private File resolveExportFolder() {
         File dataFolder = getDataFolder(); // plugins/BookExport

@@ -1,5 +1,7 @@
 package com.mrfloris.exportbook;
 
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -21,6 +23,14 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ExportBookPlugin extends JavaPlugin {
+
+    private static final String HEX_GOLD   = "§x§F§F§C§C§6§6";
+    private static final String HEX_YELLOW = "§x§F§F§F§7§9§9";
+    private static final String HEX_GRAY   = "§x§C§C§C§C§C§C";
+    private static final String HEX_GREEN  = "§x§A§A§F§F§C§C";
+    private static final String RESET      = "§r";
+
+    private static final String SOURCE_URL = "https://github.com/mrfdev/1MB/tree/master/Resources/BookExport";
 
     private File exportFolder;
 
@@ -58,8 +68,10 @@ public class ExportBookPlugin extends JavaPlugin {
             if (serverRoot == null) {
                 serverRoot = new File(".").getAbsoluteFile();
             }
+
             String subPath = s.substring(2); // remove "~/"
-            return new File(serverRoot, subPath);
+            File combined = new File(serverRoot, subPath);
+            return combined.toPath().normalize().toFile();
         }
 
         // Absolute path (Unix) or Windows drive path
@@ -82,7 +94,8 @@ public class ExportBookPlugin extends JavaPlugin {
             String sub = args[0].toLowerCase();
 
             if (sub.equals("reload")) {
-                if (!sender.hasPermission("exportbook.reload")) {
+                if (!sender.hasPermission("exportbook.reload")
+                        && !sender.hasPermission("exportbook.command")) {
                     sender.sendMessage(ChatColor.RED + "You don't have permission to reload the config.");
                     return true;
                 }
@@ -92,16 +105,26 @@ public class ExportBookPlugin extends JavaPlugin {
                 if (!exportFolder.exists()) {
                     exportFolder.mkdirs();
                 }
-                sender.sendMessage(ChatColor.GREEN + "BookExport configuration reloaded.");
+                sender.sendMessage(HEX_GREEN + "BookExport configuration reloaded." + RESET);
                 return true;
             }
 
             if (sub.equals("help")) {
+                if (!sender.hasPermission("exportbook.help")
+                        && !sender.hasPermission("exportbook.command")) {
+                    sender.sendMessage(ChatColor.RED + "You don't have permission to view help.");
+                    return true;
+                }
                 sendHelp(sender);
                 return true;
             }
 
             if (sub.equals("list")) {
+                if (!sender.hasPermission("exportbook.list")
+                        && !sender.hasPermission("exportbook.command")) {
+                    sender.sendMessage(ChatColor.RED + "You don't have permission to list exports.");
+                    return true;
+                }
                 listExports(sender);
                 return true;
             }
@@ -114,7 +137,8 @@ public class ExportBookPlugin extends JavaPlugin {
 
         Player player = (Player) sender;
 
-        if (!player.hasPermission("exportbook.command")) {
+        if (!player.hasPermission("exportbook.export")
+                && !player.hasPermission("exportbook.command")) {
             player.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
             return true;
         }
@@ -230,8 +254,7 @@ public class ExportBookPlugin extends JavaPlugin {
 
         try {
             Files.writeString(outFile.toPath(), sb.toString(), StandardCharsets.UTF_8);
-            player.sendMessage(ChatColor.GREEN + "Book exported to: "
-                    + ChatColor.YELLOW + outFile.getPath());
+            player.sendMessage(HEX_GREEN + "Book exported to: " + HEX_YELLOW + outFile.getPath() + RESET);
         } catch (IOException e) {
             player.sendMessage(ChatColor.RED + "Failed to export book. Check server console for details.");
             getLogger().severe("Error exporting book:");
@@ -251,27 +274,41 @@ public class ExportBookPlugin extends JavaPlugin {
         File[] files = exportFolder.listFiles(txtFilter);
 
         if (files == null || files.length == 0) {
-            sender.sendMessage(ChatColor.YELLOW + "No exported book files found in:");
-            sender.sendMessage(ChatColor.GRAY + "  " + exportFolder.getPath());
+            sender.sendMessage(HEX_YELLOW + "No exported book files found in:" + RESET);
+            sender.sendMessage(HEX_GRAY + "  " + exportFolder.getPath() + RESET);
             return;
         }
 
         Arrays.sort(files, Comparator.comparing(File::getName, String.CASE_INSENSITIVE_ORDER));
 
-        sender.sendMessage(ChatColor.GOLD + "Exported book files (" + files.length + "):");
+        sender.sendMessage(HEX_GOLD + "Exported book files (" + files.length + "):" + RESET);
         for (File file : files) {
-            sender.sendMessage(ChatColor.GRAY + " - " + file.getName());
+            sender.sendMessage(HEX_GRAY + " - " + file.getName() + RESET);
         }
     }
 
     private void sendHelp(CommandSender sender) {
-        sender.sendMessage(ChatColor.GOLD + "BookExport " + ChatColor.YELLOW + "- by mrfloris");
-        sender.sendMessage(ChatColor.YELLOW + "/bookexport <title> " + ChatColor.GRAY + "- Export the book in your main hand using a custom title.");
-        sender.sendMessage(ChatColor.YELLOW + "/bookexport " + ChatColor.GRAY + "- Export the book using its signed title (written books only).");
-        sender.sendMessage(ChatColor.YELLOW + "/bookexport list " + ChatColor.GRAY + "- List exported .txt files in the configured folder.");
-        sender.sendMessage(ChatColor.YELLOW + "/bookexport reload " + ChatColor.GRAY + "- Reload the configuration.");
-        sender.sendMessage(ChatColor.YELLOW + "/bookexport help " + ChatColor.GRAY + "- Show this help page.");
-        sender.sendMessage(ChatColor.GRAY + "Config options: pagination, pagination-markup, book-meta, exported-books-directory, color-code-handling");
+        sender.sendMessage(HEX_GOLD + "BookExport " + HEX_YELLOW + "- by mrfloris" + RESET);
+        sender.sendMessage(""); // blank line
+        sender.sendMessage(HEX_YELLOW + "Commands:" + RESET);
+        sender.sendMessage(HEX_YELLOW + "/bookexport <title> " + HEX_GRAY + "- Export the book in your main hand using a custom title." + RESET);
+        sender.sendMessage(HEX_YELLOW + "/bookexport " + HEX_GRAY + "- Export the book using its signed title (written books only)." + RESET);
+        sender.sendMessage(HEX_YELLOW + "/bookexport list " + HEX_GRAY + "- List exported .txt files in the configured folder." + RESET);
+        sender.sendMessage(HEX_YELLOW + "/bookexport reload " + HEX_GRAY + "- Reload the configuration." + RESET);
+        sender.sendMessage(HEX_YELLOW + "/bookexport help " + HEX_GRAY + "- Show this help page." + RESET);
+        sender.sendMessage(""); // blank line
+        sender.sendMessage(HEX_YELLOW + "Config options: " + HEX_GRAY +
+                "pagination, pagination-markup, book-meta, exported-books-directory, color-code-handling" + RESET);
+
+        if (sender instanceof Player player) {
+            TextComponent prefix = new TextComponent(HEX_YELLOW + "Source: " + RESET);
+            TextComponent link = new TextComponent(HEX_GREEN + SOURCE_URL + RESET);
+            link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, SOURCE_URL));
+            link.setUnderlined(true);
+            player.spigot().sendMessage(prefix, link);
+        } else {
+            sender.sendMessage(HEX_YELLOW + "Source: " + HEX_GREEN + SOURCE_URL + RESET);
+        }
     }
 
     private String applyColorHandling(String input) {

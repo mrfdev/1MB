@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.mrfloris'
-version = '1.0.4'
+version = '1.0.5'
 description = 'Exports written books to plaintext files.'
 
 java {

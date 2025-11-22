@@ -1,8 +1,8 @@
-# BookExport (v1.0.4)
+# BookExport
 
 A tiny Paper 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
 
-This is version **1.0.4**, building on earlier versions by adding:
+This is version **1.0.5**, building on earlier versions by adding:
 
 - Configurable pagination and metadata output via `config.yml`
 - `/bookexport` with no arguments uses the signed book title (for written books)
@@ -12,11 +12,14 @@ This is version **1.0.4**, building on earlier versions by adding:
 - Simplified filenames (no plugin version embedded in the filename anymore)
 - `/bookexport list` to list exported `.txt` files in the configured folder
 - `color-code-handling` to control how Minecraft color codes are exported
+- Hex-colored help and messages, and clickable source URL in `/bookexport help`
+- Separate permission nodes for export, list, help, and reload
 
 ## What it does
 
 - Adds a command: `/bookexport [<title>|help|list|reload]`
-- Requires permission: `exportbook.command` (and `exportbook.reload` for reload)
+- Requires permission: `exportbook.export` (and/or `exportbook.command`) to export
+- Requires `exportbook.list`, `exportbook.help`, and `exportbook.reload` for those subcommands
 - Exports the written book or writable book (book & quill) in your **main hand** to a text file.
 - Can list all exported `.txt` files in the configured export directory.
 - Can optionally transform Minecraft color codes into different formats.
@@ -46,15 +49,18 @@ This is version **1.0.4**, building on earlier versions by adding:
 
 - **Command:** `/bookexport [<title>|help|list|reload]`
 
-  - `/bookexport <title>` – export using a custom file title
-  - `/bookexport` – export using the book's signed title (for written books)
-  - `/bookexport list` – list exported `.txt` files in the configured folder
-  - `/bookexport help` – show help
-  - `/bookexport reload` – reload the config
+  - `/bookexport <title>` – export using a custom file title  (needs `exportbook.export` or `exportbook.command`)
+  - `/bookexport` – export using the book's signed title (for written books)  (same permission as above)
+  - `/bookexport list` – list exported `.txt` files in the configured folder  (needs `exportbook.list` or `exportbook.command`)
+  - `/bookexport help` – show help  (needs `exportbook.help` or `exportbook.command`)
+  - `/bookexport reload` – reload the config  (needs `exportbook.reload` or `exportbook.command`)
 
 - **Permissions:**
-  - `exportbook.command` – use `/bookexport`, list exports, and view help (default: OP)
-  - `exportbook.reload` – reload the config (default: OP)
+  - `exportbook.command` – legacy master permission; grants all other BookExport permissions (default: OP)
+  - `exportbook.export` – export books with `/bookexport` (default: OP)
+  - `exportbook.list` – use `/bookexport list` (default: OP)
+  - `exportbook.help` – use `/bookexport help` (default: OP)
+  - `exportbook.reload` – use `/bookexport reload` (default: OP)
 
 ## Configuration (`config.yml`)
 
@@ -139,7 +145,7 @@ BookExport resolves `exported-books-directory` like this:
   → uses that absolute path directly.
 
 - `"~/plugins/CMI/CustomText/"`  
-  → resolves `~` to the **server root** (the folder that contains `plugins`), then appends that path:
+  → resolves `~` to the **server root** (the folder that contains `plugins`), then appends and normalizes that path:
 
   ```text
   <server root>/plugins/CMI/CustomText/
@@ -179,7 +185,7 @@ gradle clean build
 The plugin JAR will be created at:
 
 ```text
-build/libs/BookExport-1.0.4.jar
+build/libs/BookExport-1.0.5.jar
 ```
 
 Copy that JAR into your server's `plugins/` folder and restart the server.
@@ -209,7 +215,7 @@ mvn clean package
 The plugin JAR will be created at:
 
 ```text
-target/bookexport-1.0.4.jar
+target/bookexport-1.0.5.jar
 ```
 
 Copy that JAR to your server's `plugins/` folder and restart.
@@ -219,14 +225,22 @@ Copy that JAR to your server's `plugins/` folder and restart.
 1. Build the plugin with **Gradle** or **Maven**.
 2. Copy the compiled JAR to your Paper 1.21.10 server's `plugins` folder.
 3. Start (or restart) the server.
-4. Give yourself permission:
+4. Give yourself permission (example with LuckPerms):
 
-   - With LuckPerms, for example:
+     ```text
+     /lp user <yourname> permission set exportbook.export true
+     /lp user <yourname> permission set exportbook.list true
+     /lp user <yourname> permission set exportbook.help true
+     /lp user <yourname> permission set exportbook.reload true
+     ```
+
+   Or simply:
 
      ```text
      /lp user <yourname> permission set exportbook.command true
-     /lp user <yourname> permission set exportbook.reload true
      ```
+
+   to grant all BookExport permissions.
 
 5. Hold a written book or writable book in your **main hand**.
 6. Run:
@@ -248,6 +262,12 @@ Copy that JAR to your server's `plugins/` folder and restart.
    ```
 
    to see the exported `.txt` files.
+
+## Source
+
+GitHub (monorepo path):
+
+https://github.com/mrfdev/1MB/tree/master/Resources/BookExport
 
 ## License
 

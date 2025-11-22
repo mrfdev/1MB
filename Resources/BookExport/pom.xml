@@ -5,10 +5,10 @@
 
     <groupId>com.mrfloris</groupId>
     <artifactId>bookexport</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <name>BookExport</name>
     <description>Exports written books to plaintext files.</description>
-    <url>https://github.com/mrfdev/bookexport</url>
+    <url>https://github.com/mrfdev/1MB/tree/master/Resources/BookExport</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

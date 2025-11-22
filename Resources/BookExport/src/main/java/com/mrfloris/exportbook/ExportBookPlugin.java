@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
@@ -18,11 +19,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class ExportBookPlugin extends JavaPlugin {
+public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
 
     private static final String HEX_GOLD   = "§x§F§F§C§C§6§6";
     private static final String HEX_YELLOW = "§x§F§F§F§7§9§9";
@@ -43,10 +45,21 @@ public class ExportBookPlugin extends JavaPlugin {
         exportFolder = resolveExportFolder();
 
         if (!exportFolder.exists() && exportFolder.mkdirs()) {
-            getLogger().info("Created export folder: " + exportFolder.getPath());
+            getLogger().info(ChatColor.YELLOW + "Created export folder: " + ChatColor.GRAY + exportFolder.getPath() + ChatColor.RESET);
         }
 
-        getLogger().info("BookExport enabled. Export folder: " + exportFolder.getPath());
+        getLogger().info(ChatColor.YELLOW + "BookExport enabled. Export folder: " + ChatColor.GRAY + exportFolder.getPath() + ChatColor.RESET);
+
+        // Ensure we are the executor and tab-completer for /bookexport
+        if (getCommand("bookexport") != null) {
+            getCommand("bookexport").setExecutor(this);
+            getCommand("bookexport").setTabCompleter(this);
+        }
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info(ChatColor.YELLOW + "BookExport disabled." + ChatColor.RESET);
     }
 
     private File resolveExportFolder() {
@@ -301,13 +314,17 @@ public class ExportBookPlugin extends JavaPlugin {
                 "pagination, pagination-markup, book-meta, exported-books-directory, color-code-handling" + RESET);
 
         if (sender instanceof Player player) {
-            TextComponent prefix = new TextComponent(HEX_YELLOW + "Source: " + RESET);
-            TextComponent link = new TextComponent(HEX_GREEN + SOURCE_URL + RESET);
-            link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, SOURCE_URL));
+            TextComponent prefix = new TextComponent("Source: ");
+            prefix.setColor(net.md_5.bungee.api.ChatColor.GOLD);
+
+            TextComponent link = new TextComponent("Github");
+            link.setColor(net.md_5.bungee.api.ChatColor.GRAY);
             link.setUnderlined(true);
+            link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, SOURCE_URL));
+
             player.spigot().sendMessage(prefix, link);
         } else {
-            sender.sendMessage(HEX_YELLOW + "Source: " + HEX_GREEN + SOURCE_URL + RESET);
+            sender.sendMessage(HEX_YELLOW + "Source: " + HEX_GRAY + SOURCE_URL + RESET);
         }
     }
 
@@ -445,5 +462,40 @@ public class ExportBookPlugin extends JavaPlugin {
             case 'f': return "FFFFFF"; // White
             default:  return null;
         }
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if (!command.getName().equalsIgnoreCase("bookexport")) {
+            return null;
+        }
+
+        // If first argument, suggest subcommands
+        if (args.length == 1) {
+            String prefix = args[0].toLowerCase();
+            List<String> options = new ArrayList<>();
+
+            if (sender.hasPermission("exportbook.help") || sender.hasPermission("exportbook.command")) {
+                options.add("help");
+            }
+            if (sender.hasPermission("exportbook.list") || sender.hasPermission("exportbook.command")) {
+                options.add("list");
+            }
+            if (sender.hasPermission("exportbook.reload") || sender.hasPermission("exportbook.command")) {
+                options.add("reload");
+            }
+
+            // Filter by prefix
+            List<String> result = new ArrayList<>();
+            for (String opt : options) {
+                if (opt.startsWith(prefix)) {
+                    result.add(opt);
+                }
+            }
+            return result;
+        }
+
+        // No tab suggestions for further args (used as title)
+        return new ArrayList<>();
     }
 }

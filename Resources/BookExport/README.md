@@ -1,8 +1,8 @@
 # BookExport
 
-A tiny Paper 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
+A tiny Paper **and Spigot** 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
 
-This is version **1.0.5**, building on earlier versions by adding:
+This is version **1.0.6**, building on earlier versions by adding:
 
 - Configurable pagination and metadata output via `config.yml`
 - `/bookexport` with no arguments uses the signed book title (for written books)
@@ -14,6 +14,8 @@ This is version **1.0.5**, building on earlier versions by adding:
 - `color-code-handling` to control how Minecraft color codes are exported
 - Hex-colored help and messages, and clickable source URL in `/bookexport help`
 - Separate permission nodes for export, list, help, and reload
+- Tab-completion for subcommands (`help`, `list`, `reload`)
+- Slightly colored console messages so BookExport output stands out without being flashy
 
 ## What it does
 
@@ -185,14 +187,18 @@ gradle clean build
 The plugin JAR will be created at:
 
 ```text
-build/libs/BookExport-1.0.5.jar
+build/libs/BookExport-1.0.6.jar
 ```
+
+You can also reference it directly in this repo as:
+
+- `build/libs/[BookExport-1.0.6.jar](build/libs/BookExport-1.0.6.jar)`
 
 Copy that JAR into your server's `plugins/` folder and restart the server.
 
 ### Using a specific JDK (optional)
 
-Paper 1.21.x targets Java 21, but you can build with any JDK >= 21 and `options.release = 21`.
+Paper/Spigot 1.21.x target Java 21, but you can build with any JDK >= 21 and `options.release = 21`.
 
 For example, to build with a local JDK 21 on macOS:
 
@@ -215,15 +221,15 @@ mvn clean package
 The plugin JAR will be created at:
 
 ```text
-target/bookexport-1.0.5.jar
+target/bookexport-1.0.6.jar
 ```
 
 Copy that JAR to your server's `plugins/` folder and restart.
 
-## Installation on your Paper server
+## Installation on your Paper/Spigot server
 
 1. Build the plugin with **Gradle** or **Maven**.
-2. Copy the compiled JAR to your Paper 1.21.10 server's `plugins` folder.
+2. Copy the compiled JAR to your Paper or Spigot 1.21.10 server's `plugins` folder.
 3. Start (or restart) the server.
 4. Give yourself permission (example with LuckPerms):
 

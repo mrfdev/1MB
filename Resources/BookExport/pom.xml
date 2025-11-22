@@ -5,7 +5,7 @@
 
     <groupId>com.mrfloris</groupId>
     <artifactId>bookexport</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>BookExport</name>
     <description>Exports written books to plaintext files.</description>
     <url>https://github.com/mrfdev/1MB/tree/master/Resources/BookExport</url>

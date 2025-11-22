@@ -47,3 +47,18 @@ pagination-markup: "=== Page %pageNumber% ==="
 # true  - include this metadata header at the top of the file
 # false - skip it, only export the raw text
 book-meta: true
+
+# How to handle Minecraft color codes in exported text.
+#
+# Options:
+#   vanilla - keep everything as-is, including §x§A§A§0§0§0§0 style hex and legacy §6 codes
+#   legacy  - keep codes but convert from § to & (so §6 becomes &6, §l becomes &l, etc.)
+#   strip   - remove all § color and formatting codes entirely
+#   cmi     - convert colors to CMI-style {#hex} tags
+#   mini    - convert colors to MiniMessage-style <#hex> tags
+#
+# Notes:
+# - Hex sequences like §x§A§A§0§0§0§0 will be converted to {#AA0000} or <#AA0000>.
+# - Legacy colors (e.g. §6) use their standard hex equivalents (e.g. #FFAA00).
+# - Formatting codes (k, l, m, n, o, r) are ignored in cmi/mini modes and not exported.
+color-code-handling: vanilla

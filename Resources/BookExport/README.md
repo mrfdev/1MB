@@ -1,8 +1,8 @@
-# BookExport
+# BookExport (v1.0.4)
 
 A tiny Paper 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
 
-This is version **1.0.3**, building on earlier versions by adding:
+This is version **1.0.4**, building on earlier versions by adding:
 
 - Configurable pagination and metadata output via `config.yml`
 - `/bookexport` with no arguments uses the signed book title (for written books)
@@ -11,6 +11,7 @@ This is version **1.0.3**, building on earlier versions by adding:
 - Configurable export directory via `exported-books-directory`
 - Simplified filenames (no plugin version embedded in the filename anymore)
 - `/bookexport list` to list exported `.txt` files in the configured folder
+- `color-code-handling` to control how Minecraft color codes are exported
 
 ## What it does
 
@@ -18,6 +19,7 @@ This is version **1.0.3**, building on earlier versions by adding:
 - Requires permission: `exportbook.command` (and `exportbook.reload` for reload)
 - Exports the written book or writable book (book & quill) in your **main hand** to a text file.
 - Can list all exported `.txt` files in the configured export directory.
+- Can optionally transform Minecraft color codes into different formats.
 
 ### Export behaviour
 
@@ -106,6 +108,21 @@ pagination-markup: "=== Page %pageNumber% ==="
 # true  - include this metadata header at the top of the file
 # false - skip it, only export the raw text
 book-meta: true
+
+# How to handle Minecraft color codes in exported text.
+#
+# Options:
+#   vanilla - keep everything as-is, including §x§A§A§0§0§0§0 style hex and legacy §6 codes
+#   legacy  - keep codes but convert from § to & (so §6 becomes &6, §l becomes &l, etc.)
+#   strip   - remove all § color and formatting codes entirely
+#   cmi     - convert colors to CMI-style {#hex} tags
+#   mini    - convert colors to MiniMessage-style <#hex> tags
+#
+# Notes:
+# - Hex sequences like §x§A§A§0§0§0§0 will be converted to {#AA0000} or <#AA0000>.
+# - Legacy colors (e.g. §6) use their standard hex equivalents (e.g. #FFAA00).
+# - Formatting codes (k, l, m, n, o, r) are ignored in cmi/mini modes and not exported.
+color-code-handling: vanilla
 ```
 
 ### Export directory resolver
@@ -162,7 +179,7 @@ gradle clean build
 The plugin JAR will be created at:
 
 ```text
-build/libs/BookExport-1.0.3.jar
+build/libs/BookExport-1.0.4.jar
 ```
 
 Copy that JAR into your server's `plugins/` folder and restart the server.
@@ -192,7 +209,7 @@ mvn clean package
 The plugin JAR will be created at:
 
 ```text
-target/bookexport-1.0.3.jar
+target/bookexport-1.0.4.jar
 ```
 
 Copy that JAR to your server's `plugins/` folder and restart.
@@ -200,7 +217,7 @@ Copy that JAR to your server's `plugins/` folder and restart.
 ## Installation on your Paper server
 
 1. Build the plugin with **Gradle** or **Maven**.
-2. Copy the compiled JAR to your Paper 1.21.10 server's `plugins/` folder.
+2. Copy the compiled JAR to your Paper 1.21.10 server's `plugins` folder.
 3. Start (or restart) the server.
 4. Give yourself permission:
 

@@ -187,12 +187,12 @@ public class ExportBookPlugin extends JavaPlugin {
         String author = bookMeta.getAuthor() != null ? bookMeta.getAuthor() : "Unknown";
 
         if (includeMeta) {
-            sb.append("Title: ").append(bookTitle).append(System.lineSeparator());
-            sb.append("Author: ").append(author).append(System.lineSeparator());
-            sb.append("Exported by: ").append(player.getName()).append(System.lineSeparator());
-            sb.append("Exported at: ").append(
-                    LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-            ).append(System.lineSeparator());
+            sb.append(applyColorHandling("Title: " + bookTitle)).append(System.lineSeparator());
+            sb.append(applyColorHandling("Author: " + author)).append(System.lineSeparator());
+            sb.append(applyColorHandling("Exported by: " + player.getName())).append(System.lineSeparator());
+            sb.append(applyColorHandling("Exported at: " +
+                    LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)))
+              .append(System.lineSeparator());
             sb.append(System.lineSeparator());
         }
 
@@ -202,10 +202,11 @@ public class ExportBookPlugin extends JavaPlugin {
 
             if (pagination) {
                 String paginationLine = paginationMarkup.replace("%pageNumber%", String.valueOf(pageNumber));
-                sb.append(paginationLine).append(System.lineSeparator());
+                sb.append(applyColorHandling(paginationLine)).append(System.lineSeparator());
             }
 
-            sb.append(pages.get(i))
+            String pageText = pages.get(i);
+            sb.append(applyColorHandling(pageText))
               .append(System.lineSeparator())
               .append(System.lineSeparator());
         }
@@ -270,6 +271,142 @@ public class ExportBookPlugin extends JavaPlugin {
         sender.sendMessage(ChatColor.YELLOW + "/bookexport list " + ChatColor.GRAY + "- List exported .txt files in the configured folder.");
         sender.sendMessage(ChatColor.YELLOW + "/bookexport reload " + ChatColor.GRAY + "- Reload the configuration.");
         sender.sendMessage(ChatColor.YELLOW + "/bookexport help " + ChatColor.GRAY + "- Show this help page.");
-        sender.sendMessage(ChatColor.GRAY + "Config options: pagination, pagination-markup, book-meta, exported-books-directory");
+        sender.sendMessage(ChatColor.GRAY + "Config options: pagination, pagination-markup, book-meta, exported-books-directory, color-code-handling");
+    }
+
+    private String applyColorHandling(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+        String mode = getConfig().getString("color-code-handling", "vanilla");
+        if (mode == null) {
+            mode = "vanilla";
+        }
+        mode = mode.toLowerCase();
+
+        // Quick exit if there are no section sign codes at all
+        if (input.indexOf('§') < 0) {
+            return input;
+        }
+
+        switch (mode) {
+            case "legacy":
+                // Convert § to & and keep everything else
+                return input.replace('§', '&');
+            case "strip":
+                return stripColorCodes(input);
+            case "cmi":
+                return convertToHexTagged(input, "{#", "}");
+            case "mini":
+                return convertToHexTagged(input, "<#", ">");
+            case "vanilla":
+            default:
+                return input;
+        }
+    }
+
+    private String stripColorCodes(String input) {
+        StringBuilder out = new StringBuilder(input.length());
+        char[] chars = input.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            char c = chars[i];
+            if (c == '§') {
+                if (i + 1 < chars.length) {
+                    char code = chars[i + 1];
+                    // Hex format: §x§R§R§G§G§B§B
+                    if ((code == 'x' || code == 'X') && i + 13 < chars.length) {
+                        i += 13; // skip: x + (6 * "§X")
+                        continue;
+                    } else {
+                        // Skip this color/formatting code and its following char
+                        i++;
+                        continue;
+                    }
+                }
+            }
+            out.append(c);
+        }
+        return out.toString();
+    }
+
+    private String convertToHexTagged(String input, String prefix, String suffix) {
+        StringBuilder out = new StringBuilder(input.length() + 16);
+        char[] chars = input.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            char c = chars[i];
+            if (c == '§' && i + 1 < chars.length) {
+                char code = chars[i + 1];
+
+                // Hex format: §x§R§R§G§G§B§B
+                if ((code == 'x' || code == 'X') && i + 13 < chars.length) {
+                    char r1 = chars[i + 3];
+                    char r2 = chars[i + 5];
+                    char g1 = chars[i + 7];
+                    char g2 = chars[i + 9];
+                    char b1 = chars[i + 11];
+                    char b2 = chars[i + 13];
+
+                    String hex = ("" + r1 + r2 + g1 + g2 + b1 + b2);
+                    out.append(prefix).append(hex).append(suffix);
+
+                    i += 13; // skip the hex sequence
+                    continue;
+                }
+
+                // Legacy color code 0-9A-F
+                if (isLegacyColorCode(code)) {
+                    String hex = legacyColorToHex(code);
+                    if (hex != null) {
+                        out.append(prefix).append(hex).append(suffix);
+                    }
+                    i++; // skip code char
+                    continue;
+                }
+
+                // Formatting codes (k, l, m, n, o, r) - we ignore them in hex modes
+                if (isFormatCode(code)) {
+                    i++;
+                    continue;
+                }
+            }
+
+            out.append(c);
+        }
+
+        return out.toString();
+    }
+
+    private boolean isLegacyColorCode(char c) {
+        c = Character.toLowerCase(c);
+        return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f');
+    }
+
+    private boolean isFormatCode(char c) {
+        c = Character.toLowerCase(c);
+        return c == 'k' || c == 'l' || c == 'm' || c == 'n' || c == 'o' || c == 'r';
+    }
+
+    private String legacyColorToHex(char code) {
+        switch (Character.toLowerCase(code)) {
+            case '0': return "000000"; // Black
+            case '1': return "0000AA"; // Dark Blue
+            case '2': return "00AA00"; // Dark Green
+            case '3': return "00AAAA"; // Dark Aqua
+            case '4': return "AA0000"; // Dark Red
+            case '5': return "AA00AA"; // Dark Purple
+            case '6': return "FFAA00"; // Gold
+            case '7': return "AAAAAA"; // Gray
+            case '8': return "555555"; // Dark Gray
+            case '9': return "5555FF"; // Blue
+            case 'a': return "55FF55"; // Green
+            case 'b': return "55FFFF"; // Aqua
+            case 'c': return "FF5555"; // Red
+            case 'd': return "FF55FF"; // Light Purple
+            case 'e': return "FFFF55"; // Yellow
+            case 'f': return "FFFFFF"; // White
+            default:  return null;
+        }
     }
 }

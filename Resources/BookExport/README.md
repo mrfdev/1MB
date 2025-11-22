@@ -1,6 +1,6 @@
 # BookExport
 
-A tiny Paper and Spigot 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
+A tiny Paper (and Spigot) 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
 
 This is version **1.0.7**, building on earlier versions by adding:
 

@@ -20,7 +20,7 @@
 #     -> <server root>/plugins/CMI/CustomText/
 #
 # If empty, BookExport will use the plugin data folder: plugins/BookExport/
-exported-books-directory: "books"
+exported-books-directory: "~/plugins/CMI/CustomText/"
 
 # Include pagination at all?
 # true  - include a pagination marker before each page
@@ -28,14 +28,12 @@ exported-books-directory: "books"
 pagination: true
 
 # In the .txt file, how should pagination show when enabled?
-# Default is: === Page 1 ===
-# For CMI ctext compatibility you might want: "<NextPage>"
+# Default is: <NextPage> (For CMI ctext compatibility)
 #
 # Use %pageNumber% as an internal placeholder to show the correct page number in that location.
 # Examples:
 #   "=== Page %pageNumber% ==="
-#   "<NextPage>"
-pagination-markup: "=== Page %pageNumber% ==="
+pagination-markup: "<NextPage>"
 
 # Include book meta data such as author, date, etc?
 # Example:
@@ -46,7 +44,7 @@ pagination-markup: "=== Page %pageNumber% ==="
 #
 # true  - include this metadata header at the top of the file
 # false - skip it, only export the raw text
-book-meta: true
+book-meta: false
 
 # How to handle Minecraft color codes in exported text.
 #

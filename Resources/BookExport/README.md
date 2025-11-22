@@ -1,8 +1,8 @@
 # BookExport
 
-A tiny Paper **and Spigot** 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
+A tiny Paper and Spigot 1.21.10 plugin by **mrfloris** that exports the book in your main hand to a plaintext `.txt` file.
 
-This is version **1.0.6**, building on earlier versions by adding:
+This is version **1.0.7**, building on earlier versions by adding:
 
 - Configurable pagination and metadata output via `config.yml`
 - `/bookexport` with no arguments uses the signed book title (for written books)
@@ -130,7 +130,7 @@ book-meta: true
 # - Hex sequences like §x§A§A§0§0§0§0 will be converted to {#AA0000} or <#AA0000>.
 # - Legacy colors (e.g. §6) use their standard hex equivalents (e.g. #FFAA00).
 # - Formatting codes (k, l, m, n, o, r) are ignored in cmi/mini modes and not exported.
-color-code-handling: vanilla
+color-code-handling: cmi
 ```
 
 ### Export directory resolver
@@ -187,12 +187,12 @@ gradle clean build
 The plugin JAR will be created at:
 
 ```text
-build/libs/BookExport-1.0.6.jar
+build/libs/BookExport-1.0.7.jar
 ```
 
 You can also reference it directly in this repo as:
 
-- `build/libs/[BookExport-1.0.6.jar](build/libs/BookExport-1.0.6.jar)`
+- `build/libs/[BookExport-1.0.7.jar](build/libs/BookExport-1.0.7.jar)`
 
 Copy that JAR into your server's `plugins/` folder and restart the server.
 
@@ -221,7 +221,7 @@ mvn clean package
 The plugin JAR will be created at:
 
 ```text
-target/bookexport-1.0.6.jar
+target/bookexport-1.0.7.jar
 ```
 
 Copy that JAR to your server's `plugins/` folder and restart.
@@ -278,3 +278,8 @@ https://github.com/mrfdev/1MB/tree/master/Resources/BookExport
 ## License
 
 Do whatever you want with this; no warranty. A credit to **mrfloris** is appreciated but not required.
+
+
+## Known issues
+
+- Better converting of hex colors is needed.

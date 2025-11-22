@@ -61,4 +61,4 @@ book-meta: true
 # - Hex sequences like §x§A§A§0§0§0§0 will be converted to {#AA0000} or <#AA0000>.
 # - Legacy colors (e.g. §6) use their standard hex equivalents (e.g. #FFAA00).
 # - Formatting codes (k, l, m, n, o, r) are ignored in cmi/mini modes and not exported.
-color-code-handling: vanilla
+color-code-handling: cmi

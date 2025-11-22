@@ -24,6 +24,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Main plugin class for BookExport.
+ * Exports written books or book and quill items in the player's main hand
+ * to configurable plaintext .txt files on disk.
+ */
+@SuppressWarnings("deprecation")
 public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
 
     private static final String HEX_GOLD   = "§x§F§F§C§C§6§6";
@@ -32,11 +38,20 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
     private static final String HEX_GREEN  = "§x§A§A§F§F§C§C";
     private static final String RESET      = "§r";
 
+    private static final String VERSION    = "1.0.7";
     private static final String SOURCE_URL = "https://github.com/mrfdev/1MB/tree/master/Resources/BookExport";
 
     private File exportFolder;
 
-    @Override
+    
+    /**
+     * Default constructor required by the Bukkit plugin system.
+     */
+    public ExportBookPlugin() {
+        super();
+    }
+
+@Override
     public void onEnable() {
         // Ensure config exists
         saveDefaultConfig();
@@ -59,7 +74,7 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
 
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.YELLOW + "BookExport disabled." + ChatColor.RESET);
+        getLogger().info(HEX_GOLD + "BookExport disabled." + RESET);
     }
 
     private File resolveExportFolder() {
@@ -159,7 +174,7 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
         ItemStack inHand = player.getInventory().getItemInMainHand();
         if (inHand == null || (inHand.getType() != Material.WRITTEN_BOOK
                 && inHand.getType() != Material.WRITABLE_BOOK)) {
-            player.sendMessage(ChatColor.RED + "You must hold a written book or book & quill in your main hand.");
+            player.sendMessage(ChatColor.RED + "You must hold a written book or book and quill in your main hand.");
             return true;
         }
 
@@ -179,7 +194,7 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
         if (args.length == 0) {
             String bookTitle = bookMeta.getTitle();
             if (bookTitle == null || bookTitle.isBlank()) {
-                // For book & quill with no title: show help instead
+                // For book and quill with no title: show help instead
                 if (inHand.getType() == Material.WRITABLE_BOOK) {
                     sendHelp(player);
                 } else {
@@ -301,16 +316,16 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
     }
 
     private void sendHelp(CommandSender sender) {
-        sender.sendMessage(HEX_GOLD + "BookExport " + HEX_YELLOW + "- by mrfloris" + RESET);
+        sender.sendMessage(HEX_GOLD + "BookExport " + HEX_GRAY + "(v" + VERSION + ") " + HEX_YELLOW + "- by mrfloris" + RESET);
         sender.sendMessage(""); // blank line
-        sender.sendMessage(HEX_YELLOW + "Commands:" + RESET);
+        sender.sendMessage(HEX_GOLD + "Commands:" + RESET);
         sender.sendMessage(HEX_YELLOW + "/bookexport <title> " + HEX_GRAY + "- Export the book in your main hand using a custom title." + RESET);
         sender.sendMessage(HEX_YELLOW + "/bookexport " + HEX_GRAY + "- Export the book using its signed title (written books only)." + RESET);
         sender.sendMessage(HEX_YELLOW + "/bookexport list " + HEX_GRAY + "- List exported .txt files in the configured folder." + RESET);
         sender.sendMessage(HEX_YELLOW + "/bookexport reload " + HEX_GRAY + "- Reload the configuration." + RESET);
         sender.sendMessage(HEX_YELLOW + "/bookexport help " + HEX_GRAY + "- Show this help page." + RESET);
         sender.sendMessage(""); // blank line
-        sender.sendMessage(HEX_YELLOW + "Config options: " + HEX_GRAY +
+        sender.sendMessage(HEX_GOLD + "Config options: " + HEX_GRAY +
                 "pagination, pagination-markup, book-meta, exported-books-directory, color-code-handling" + RESET);
 
         if (sender instanceof Player player) {
@@ -333,7 +348,7 @@ public class ExportBookPlugin extends JavaPlugin implements TabExecutor {
             return input;
         }
 
-        String mode = getConfig().getString("color-code-handling", "vanilla");
+        String mode = getConfig().getString("color-code-handling", "cmi");
         if (mode == null) {
             mode = "vanilla";
         }

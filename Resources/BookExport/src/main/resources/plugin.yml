@@ -1,0 +1,20 @@
+name: BookExport
+main: com.mrfloris.exportbook.ExportBookPlugin
+version: 1.0.3
+api-version: "1.21"
+author: "mrfloris"
+description: "Exports the book in your main hand to a configurable folder as a .txt file."
+
+commands:
+  bookexport:
+    description: Export the book in your main hand to a .txt file, or manage the plugin.
+    usage: "/bookexport [<title>|help|list|reload]"
+    permission: exportbook.command
+
+permissions:
+  exportbook.command:
+    description: Allows use of /bookexport to export books, list exports, and view help
+    default: op
+  exportbook.reload:
+    description: Allows reloading the BookExport configuration
+    default: op

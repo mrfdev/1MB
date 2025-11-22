@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# Other
+out/
+*.zip

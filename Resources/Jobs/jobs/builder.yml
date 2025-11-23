@@ -730,6 +730,10 @@ Builder:
       income: 1.5
       points: 1.5
       experience: 2
+    sandstone:
+      income: 1.5
+      points: 1.5
+      experience: 2
     red_sandstone:
       income: 1.5
       points: 1.5

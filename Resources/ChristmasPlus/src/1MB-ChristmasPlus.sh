@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 2.0.0, build 031
+# @Version: 2.0.1, build 032
 # @Release: December 1st, 2025
 # @Description: Helps us query advent progress and generate stats from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -22,20 +22,21 @@
 #   ./1MB-ChristmasPlus.sh stats
 #
 # Examples:
-#   ./1MB-ChristmasPlus.sh 1
-#   ./1MB-ChristmasPlus.sh 5 --uuid
-#   ./1MB-ChristmasPlus.sh mrfloris
-#   ./1MB-ChristmasPlus.sh mrfloris --uuid
-#   ./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc
-#   ./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc --uuid
-#   ./1MB-ChristmasPlus.sh all
-#   ./1MB-ChristmasPlus.sh complete
-#   ./1MB-ChristmasPlus.sh complete --uuid
-#   ./1MB-ChristmasPlus.sh allnames
-#   ./1MB-ChristmasPlus.sh allnames --uuid
-#   ./1MB-ChristmasPlus.sh allnames 5
-#   ./1MB-ChristmasPlus.sh allnames 5 --uuid
-#   ./1MB-ChristmasPlus.sh stats > stats.md
+#   ./1MB-ChristmasPlus.sh 1                                       # Who claimed Advent Day 1
+#   ./1MB-ChristmasPlus.sh 5 --uuid                                # Who claimed Day 5, but also show UUIDs
+#   ./1MB-ChristmasPlus.sh mrfloris                                # Show breakdown of days claimed & missed
+#   ./1MB-ChristmasPlus.sh mrfloris --uuid                         # Same breakdown, with UUID displayed
+#   ./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc    # Lookup by UUID instead of name
+#   ./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc --uuid # UUID lookup with UUID also shown
+#   ./1MB-ChristmasPlus.sh all                                     # Show players who claimed 24, 23 & 22 days
+#   ./1MB-ChristmasPlus.sh complete                                # Show above + full per-day breakdown 1–24
+#   ./1MB-ChristmasPlus.sh complete --uuid                         # Same full breakdown, but with UUIDs
+#   ./1MB-ChristmasPlus.sh allnames                                # List all players sorted by total claimed days
+#   ./1MB-ChristmasPlus.sh allnames --uuid                         # Same, but append UUID per player
+#   ./1MB-ChristmasPlus.sh allnames 5                              # Only players with ≥5 claimed days shown
+#   ./1MB-ChristmasPlus.sh allnames 5 --uuid                       # ≥5 days + UUID display
+#   ./1MB-ChristmasPlus.sh stats > stats.md                        # Generate full Markdown export summary
+# 
 #
 # @Changelog: v2.0.x is a full merge of my private version, the public script, and Momshroom’s contributions, refined and rewritten with assistance from ChatGPT. Codebase has been cleaned, updated, and optimized for Paper 1.21.10+ and the current Christmas+ plugin.
 
@@ -55,20 +56,21 @@ Usage:
   $(basename "$0") stats > [filename.md]
 
 Examples:
-  $(basename "$0") 1
-  $(basename "$0") 5 --uuid
-  $(basename "$0") mrfloris
-  $(basename "$0") mrfloris --uuid
-  $(basename "$0") 631e3896-da2a-4077-974b-d047859d76bc
-  $(basename "$0") 631e3896-da2a-4077-974b-d047859d76bc --uuid
-  $(basename "$0") all
-  $(basename "$0") complete
-  $(basename "$0") complete --uuid
-  $(basename "$0") allnames
-  $(basename "$0") allnames --uuid
-  $(basename "$0") allnames 5
-  $(basename "$0") allnames 5 --uuid
-  $(basename "$0") stats > advent-overview.md
+  $(basename "$0") 1                                       # Who claimed Advent Day 1
+  $(basename "$0") 5 --uuid                                # Claim list + UUID column
+  $(basename "$0") mrfloris                                # Claim/miss breakdown for player
+  $(basename "$0") mrfloris --uuid                         # Same breakdown but with UUID
+  $(basename "$0") 631e3896-da2a-4077-974b-d047859d76bc    # Lookup player by UUID
+  $(basename "$0") 631e3896-da2a-4077-974b-d047859d76bc --uuid # UUID lookup + UUID shown
+  $(basename "$0") all                                     # Show 24-day completers + 23/22 nearly complete
+  $(basename "$0") complete                                # Same as all + full per-day lists
+  $(basename "$0") complete --uuid                         # Full detailed breakdown including UUIDs
+  $(basename "$0") allnames                                # Sorted by claimed total (desc)
+  $(basename "$0") allnames --uuid                         # Same, but with UUID appended
+  $(basename "$0") allnames 5                              # Only players with ≥5 claimed days
+  $(basename "$0") allnames 5 --uuid                       # Filter + UUID output
+  $(basename "$0") stats > advent-overview.md              # Markdown stats file export for Discord/GitHub
+
 EOF
   exit 1
 }

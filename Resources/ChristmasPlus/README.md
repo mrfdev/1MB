@@ -8,15 +8,15 @@ This utility allows staff and server admins to inspect, audit, and export partic
 
 ## ✨ Features
 
-✔ Query who claimed **a specific Advent day (1–24)**
-✔ Look up **any player by name or UUID**
-✔ Show which days a player **claimed / missed**
-✔ Check who completed all 24, or nearly did (23/22)
-✔ Full **per-day breakdown** for every participant
-✔ Export Markdown formatted statistics (`stats > file.md`)
-✔ List all unique players sorted by total days claimed
-✔ Filter players: `allnames <minDays>`
-✔ Optional `--uuid` flag to append player UUIDs anywhere
+✔ Query who claimed a specific Advent day **(1–24)**  
+✔ Look up players by **name or UUID**  
+✔ Show which days a player **claimed / missed**  
+✔ Check who completed all 24, or nearly did **(23/22)**  
+✔ Full **per-day breakdown** for every participant  
+✔ Export Markdown statistics (`stats > file.md`)  
+✔ List all unique players sorted by **total days claimed**  
+✔ Filter players: `allnames <minDays>`  
+✔ Optional `--uuid` flag to append UUIDs anywhere  
 
 ---
 

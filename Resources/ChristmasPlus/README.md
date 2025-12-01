@@ -1,73 +1,112 @@
-# Missed Days Shell Script
-Get a quick overview of claimed/unclaimed days for a name or uuid
+# 📦 1MB-ChristmasPlus.sh
 
-## Note
-If this is of any use to some server owner then feel free to use this. You can clone/pr suggestions.
-I've made this mainly for myself, and have tested it against my database.db file, on my macOS 14.2 instance.
-This requires `jq` but this should work on Ubuntu 16+ as well. 
+A command-line tool for querying Advent calendar progress from the **Christmas+** Minecraft plugin database.
 
-## Release
-<https://github.com/mrfdev/1MB/tree/master/Resources/ChristmasPlus>
+This utility allows staff and server admins to inspect, audit, and export participation data from `database.db`, helping track daily advent claims, generate player lists, and produce full event statistics — including Markdown exports suitable for Discord, GitHub, or documentation.
+
+---
+
+## ✨ Features
+
+✔ Query who claimed **a specific Advent day (1–24)**
+✔ Look up **any player by name or UUID**
+✔ Show which days a player **claimed / missed**
+✔ Check who completed all 24, or nearly did (23/22)
+✔ Full **per-day breakdown** for every participant
+✔ Export Markdown formatted statistics (`stats > file.md`)
+✔ List all unique players sorted by total days claimed
+✔ Filter players: `allnames <minDays>`
+✔ Optional `--uuid` flag to append player UUIDs anywhere
+
+---
+
+## 📜 Requirements
+
+| Dependency | Needed For                                 |
+| ---------- | ------------------------------------------ |
+| `sqlite3`  | Reading Minecraft Christmas+ database      |
+| `jq`       | Parsing JSON stored in claimedGifts column |
+
+---
+
+## 🔧 Installation
+
+### Release / Download
 ```bash
-# @Version: 0.3.2, build 025
-# @Release: December 18th, 2023
+# @Version: 2.0.0, build 031
+# @Release: December 1st, 2025
 ```
-- You can download it from here: [1MB-ChristmasPlus.sh](/Resources/ChristmasPlus/1MB-ChristmasPlus.sh)
+- You can download it from here: [1MB-ChristmasPlus.sh](/Resources/ChristmasPlus/src/1MB-ChristmasPlus.sh)
 
-## Output examples
-With username as param
-```
-% ./1MB-ChristmasPlus.sh KoolKidSimp
-
-KoolKidSimp:
-Gifts claimed (true): '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14' '15' '16' '17'
-Gifts unclaimed (false): '18' '19' '20' '21' '22' '23' '24'
+### Make executable
+```bash
+chmod +x 1MB-ChristmasPlus.sh
 ```
 
-With uuid as param
-```
-% ./1MB-ChristmasPlus.sh 812c10b0-7bbf-49e5-ac53-3f0521eb504b
-
-812c10b0-7bbf-49e5-ac53-3f0521eb504b:
-Gifts claimed (true): '1' '2' '4' '10' '15' '16'
-Gifts unclaimed (false): '3' '5' '6' '7' '8' '9' '11' '12' '13' '14' '17' '18' '19' '20' '21' '22' '23' '24'
+### Place the script beside `database.db` (or define with:)
+```bash
+export DB_PATH=/path/to/database.db
 ```
 
-With no param, but using a set value within the .sh file (a default username)
-```
-% ./1MB-ChristmasPlus.sh
+---
 
-FumbleHead:
-Gifts claimed (true): '1' '2'
-Gifts unclaimed (false): '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14' '15' '16' '17' '18' '19' '20' '21' '22' '23' '24'
-```
+## 🚀 Usage
 
-## Configuration options
-You can edit the .sh file to point it to a different database file, set a different default uuid or user name, and you toggle logging to a file on/off, and you can define the filename.
-```
-# SQLite3 ChristmasPlus 2.32.2 database.db file is expected,
-# if you have renamed it, change that here obviously.
-# you can also set a full path like /full/path/to/database.db
-_databaseFile="./database.db"
+If you run the script, it will spit out the usage page.
 
-# If no param is provided, we fall back to a default username
-# can be uuid
-_user="FumbleHead"
-
-# output to a log file?
-_log=true
-_logFile="christmasplus-results.log"
+### 📘 Syntax / Usage
+```bash
+./1MB-ChristmasPlus.sh <day 1-24> [--uuid]
+./1MB-ChristmasPlus.sh <playername|uuid> [--uuid]
+./1MB-ChristmasPlus.sh all [--uuid]
+./1MB-ChristmasPlus.sh complete [--uuid]
+./1MB-ChristmasPlus.sh allnames [minDays] [--uuid]
+./1MB-ChristmasPlus.sh stats > stats.md
 ```
 
-## Why?
-- Well, on my server I give a voucher for when they've missed a day. So this allows them to give m the voucher, mention the day they say they've missed. I can quickly check and take their voucher, and give them the reward. 
-- Another reason is, that those who have collected all 24 days, can get a bonus advent box on day 25. This allows me to check if they have.
-- It's easier to read, and you don't need to clone the .db file, or download it, and open it in a sqlite3 viewer and stare at this for a bit to figure out what you're staring at:
-```json
-{"1":true,"2":true,"3":false,"4":true,"5":false,"6":false,"7":false,"8":false,"9":false,"10":true,"11":false,"12":false,"13":false,"14":false,"15":true,"16":true,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false}
+---
+
+### 🔥 Examples
+```bash
+./1MB-ChristmasPlus.sh 1                                   # who claimed Day 1
+./1MB-ChristmasPlus.sh 5 --uuid                            # who claimed Day 5 + UUID column
+./1MB-ChristmasPlus.sh mrfloris                            # breakdown for mrfloris
+./1MB-ChristmasPlus.sh mrfloris --uuid                     # breakdown w/ UUID
+./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc # lookup by UUID
+./1MB-ChristmasPlus.sh 631e3896-da2a-4077-974b-d047859d76bc --uuid # with UUID shown back
+./1MB-ChristmasPlus.sh all                                 # full, 23-day, 22-day lists
+./1MB-ChristmasPlus.sh complete                            # includes per-day breakdown
+./1MB-ChristmasPlus.sh complete --uuid                     # per-day breakdown with UUID
+./1MB-ChristmasPlus.sh allnames                            # sorted by total days claimed
+./1MB-ChristmasPlus.sh allnames --uuid                     # sorted, but with UUIDs included
+./1MB-ChristmasPlus.sh allnames 5                          # only players with ≥5 claimed days
+./1MB-ChristmasPlus.sh allnames 5 --uuid                   # only ≥5 claimed + UUIDs appended
+./1MB-ChristmasPlus.sh stats > stats.md                    # full Markdown export (Discord/GitHub friendly)
 ```
 
-### What's missing?
-- The ability to update a day if they give me a voucher and I give them the reward manually. This is a passive script, no database values are being changed.
-- I didn't include the tmux send-keys part, because my setup is probably 90% different than other servers, so I don't inlclude the parameter for the kit to pay out, or the tmux forked session to send it to. This way the script works for you still. and doesn't error because it didn't find 'my' server.
-- I couldn't figure out how to use jq or read -a to list all the keys smaller than today, to split the unclaimed list in 'missed days' before 'today', and 'unclaimed' days after today. Feel free to clone/pr a solution that works on macOS/Ubuntu
+---
+
+## 📄 Changelog (v2.0)
+
+> A full merge of the internal staff tool, the original public version, and Momshroom’s contributions — rebuilt, extended, cleaned, and refreshed with ChatGPT assistance for Christmas+ 2025.
+> Updated for **Paper 1.21.10+ & latest Christmas+ plugin**.
+> Code simplified, output clarified, and statistics improved.
+>
+
+---
+
+## 🧑‍💻 Authors & Credits
+
+| Contributor            | Notes                                           |
+| ---------------------- | ----------------------------------------------- |
+| **mrfloris**           | Project maintainer & core developer             |
+| **Momshroom**          | Additional logic & improvements                 |
+| **ChatGPT assistance** | Full v2.0 refactor, stats system, Markdown mode |
+
+---
+
+ ## 🌐 Project Links
+
+🔗 Latest source & updates: **[https://scripts.1moreblock.com](https://scripts.1moreblock.com)**
+💬 Discord support: **[https://discord.gg/floris](https://discord.gg/floris)**
+

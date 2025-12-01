@@ -107,6 +107,5 @@ If you run the script, it will spit out the usage page.
 
  ## 🌐 Project Links
 
-🔗 Latest source & updates: **[https://scripts.1moreblock.com](https://scripts.1moreblock.com)**
-💬 Discord support: **[https://discord.gg/floris](https://discord.gg/floris)**
-
+🔗 Latest source & updates: https://scripts.1moreblock.com  
+💬 Discord support: https://discord.gg/floris

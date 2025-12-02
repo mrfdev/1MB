@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fish Tier Statistics Analyzer
+Fish Tier Statistics Analyzer (v2.1)
 
 Parses Minecraft server logs (PyroFishingPro and 1MB /fish formats) from stdin,
 aggregates stats per tier (e.g. Mythical, Platinum), and prints a detailed report.
@@ -52,10 +52,33 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def print_usage_hint() -> None:
+    msg = """
+No input detected on stdin.
+
+This script reads Minecraft log lines from stdin.
+Make sure you pipe a file into it using '<' or a pipe.
+
+Usage examples:
+
+  python3 mythical_stats.py < fish-mythicals.log
+  python3 mythical_stats.py --tier Platinum < fish-catches.log
+  python3 mythical_stats.py --tier ALL < fish-catches.log
+  python3 mythical_stats.py --tier ALL --top 20 < fish-catches.log
+  python3 mythical_stats.py --tier ALL --outfile report.log < fish-catches.log
+"""
+    print(msg.strip())
+
+
 def main() -> None:
     args = parse_args()
     tier_filter = args.tier
     top_n = args.top
+
+    # If stdin is a TTY, no data is being piped in.
+    if sys.stdin.isatty():
+        print_usage_hint()
+        return
 
     # --- regex helpers ---
     re_date = re.compile(r"(\d{4}-\d{2}-\d{2})")

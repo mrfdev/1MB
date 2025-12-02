@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-ChristmasPlus.sh
-# @Version: 2.0.1, build 032
+# @Version: 2.0.1, build 033
 # @Release: December 1st, 2025
 # @Description: Helps us query advent progress and generate stats from ChristmasPlus database.db
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.

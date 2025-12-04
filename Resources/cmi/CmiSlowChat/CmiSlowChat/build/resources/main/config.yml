@@ -1,0 +1,15 @@
+# Global slow chat cooldown (in seconds).
+# Set to 0 or negative to disable the slow-chat feature.
+cooldown-seconds: 3
+
+# If true and CMI is installed, a tiny temp mute will also be applied
+# when a player hits the slow-chat cooldown.
+# This is optional; the plugin already cancels chat on its own.
+use-cmi-mute: false
+
+# Passed directly to /cmi mute <player> <duration> <reason>
+# Examples: "3s", "5s", "1m"
+cmi-mute-duration: "3s"
+
+# Reason for the temp mute. Color codes allowed (&7, &c, etc.).
+cmi-mute-reason: "&7Slow chat is enabled; please wait before chatting again."

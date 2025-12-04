@@ -1,0 +1,12 @@
+name: CmiSlowChat
+main: com.mrfloris.cmislowchat.CmiSlowChat
+version: 1.0.0
+api-version: "1.21"
+author: Floris
+description: Simple global slow-chat add-on using Paper 1.21.10+ and optional CMI mute.
+softdepend: [CMI]
+
+permissions:
+  cmi.slowchat.bypass:
+    description: Bypass global slow chat cooldown.
+    default: op

@@ -7,6 +7,8 @@ aggregates stats per tier (e.g. Mythical, Platinum), and prints a detailed repor
 
 It also writes the full report to a .log file by default, so it can be archived
 or processed by other tools later.
+
+source: https://github.com/mrfdev/1MB/tree/master/Resources/PyroFishingPro/PlayerData-Fish-Stats-from-Logs
 """
 
 import sys

@@ -239,6 +239,10 @@ Woodcutter:
       income: 0.5
       points: 0.5
       experience: 0.5
+    OAK_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
     DARK_OAK_LEAVES:
       income: 0.5
       points: 0.5

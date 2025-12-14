@@ -51,8 +51,9 @@ error-value: "The value VALUE must to be an integer!"
 statistic-increased: "Statistic ACH increased by AMOUNT for PLAYER!"
 
 # Used in achievement reception.
-achievement-received: "PLAYER received the achievement:"
-achievement-new: "New Achievement:"
+achievement-received: "PLAYER received the achievement: ACH"
+achievement-new: "New Achievement: ACH"
+boss-bar-progress: "Achievement progress: AMOUNT"
 
 # Used in /aach check.
 check-achievement-true: "PLAYER has received the achievement ACH!"
@@ -61,6 +62,10 @@ check-achievements-false: "PLAYER has not received the achievement ACH!"
 # Used in /aach delete.
 delete-achievements: "The achievement ACH was deleted from PLAYER."
 delete-all-achievements: "All achievements were deleted from PLAYER."
+
+#Used in /aach grant.
+achievement-granted: "Achievement granted"
+achievement-granted-all: "All achievements were given to PLAYER"
 
 # Used in achievement rewards.
 item-reward-received: "You received an item reward: AMOUNT ITEM"
@@ -103,6 +108,8 @@ aach-command-generate: "Generate advancements."
 aach-command-generate-hover: "Potentially slow command; use with care!"
 aach-command-inspect: "Inspect recipients of ACH."
 aach-command-inspect-hover: "Lists most recent recipients of an achievement, max 1000."
+aach-command-grant: "Grant ACH to NAME."
+aach-command-grant-hover: "Player must be online. Grants achievement to player"
 aach-tip: "&lHINT &8You can &7&n&ohover&8 or &7&n&oclick&8 on the commands!"
 
 # Used in /aach info.
@@ -113,7 +120,7 @@ version-command-description: "Description:"
 version-command-description-details: "Advanced Achievements enables unique and challenging achievements. Try to collect as many as you can, earn rewards, climb the rankings and receive RP books!"
 version-command-vault: "Vault integration:"
 version-command-petmaster: "Pet Master integration:"
-version-command-btlp: "BungeeTabListPlus integration:"
+version-command-cmi: "CMI integration:"
 version-command-essentials: "Essentials integration:"
 version-command-placeholderapi: "PlaceholderAPI integration:"
 version-command-database: "Database type:"
@@ -201,6 +208,8 @@ list-raids-won: "Raids Won"
 list-riptides: "Riptides Used"
 list-jobsreborn: "Jobs Level-Up"
 list-advancements-completed: "Advancements Completed"
+list-booksedited: "Books Edited"
+list-effectsheld: "Effects Held"
 
 # Used in /aach toggle.
 toggle-displayed: "You will now be notified when other players get achievements."
@@ -212,7 +221,6 @@ reset-all-successful: "All statistics were cleared for PLAYER."
 
 # Used in /aach generate.
 advancements-generated: "Advancements were successfully generated."
-minecraft-not-supported: "Advancements not supported in your Minecraft version. Please update to 1.12+."
 
 # Used in /aach inspect
 achievement-not-recognized: "Achievement called 'NAME' was not recognized. Did you mean CLOSEST_MATCH?"
@@ -222,11 +230,3 @@ achievement-not-recognized: "Achievement called 'NAME' was not recognized. Did y
 #                                                                                                                      #
 #                          New parameters added in future plugin releases will appear below.                           #
 #======================================================================================================================#
-
-boss-bar-progress: "Achievement progress: AMOUNT"
-
-list-booksedited: "Books Edited"
-
-list-effectsheld: "Effects Held"
-
-version-command-cmi: "CMI integration:"

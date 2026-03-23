@@ -90,6 +90,10 @@ Builder:
       income: 1.5
       points: 1.5
       experience: 2
+    cherry_planks:
+      income: 1.5
+      points: 1.5
+      experience: 2
     wool:
       income: 1.5
       points: 1.5

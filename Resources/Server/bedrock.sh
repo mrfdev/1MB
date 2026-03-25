@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# version 0.0.2, build 005
+# version 0.0.3, build 006
+# March 25th, 2026
 # put this in /logs/ and let it run, checks latest.log and all .gz files (not other .log btw)
 # results are on screen and in a .txt file
 # grabs all geyser joins, and sorts them on uniqueness, and lists on frequency, includes filename found and join time/date
@@ -54,3 +55,4 @@ awk -F'|' '{printf "%-25s | %-6s | %s\n", $1, $2, $3}' | sort -t'|' -k2 -nr
 
 # Cleanup
 rm "$TMP_ALL" "$TMP_FIRST" "$TMP_COUNT"
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

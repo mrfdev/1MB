@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-template.sh
-# @Version: 1.1.2, build 009
-# @Release: February 2nd, 2025
+# @Version: 1.1.3, build 010
+# @Release: March 25th, 2026
 # @Description: Helps us clone /template to /server
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
-# @Install: chmod a+x 1MB-template.sh
+# @Install: chmod +x 1MB-template.sh
 # @Syntax: ./1MB-template.sh
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
@@ -106,4 +106,4 @@ cp -R $_workingDir/templates/server/ $_workingDir/server/
 
 _output okay "Done. You can start the server if you want."
 
-#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

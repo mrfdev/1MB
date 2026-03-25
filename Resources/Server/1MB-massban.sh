@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # chmod +x 1MB-massban.sh
+# version 0.1.2, build 012 - March 25th, 2026
 # populate banlist.txt with usernames to ban
 # note, it does not check if a user is already banned
 # purpose of script: helper to get rid of botnets
@@ -42,3 +43,4 @@ while IFS= read -r username || [[ -n "$username" ]]; do
 done < banlist.txt
 
 [ "$VERBOSE" -eq 1 ] && printf "\nAll commands sent! Total usernames processed: %d\n" "$count"
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

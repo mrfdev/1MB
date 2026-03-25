@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 1MB-VersionManifest.sh
-# version 0.0.5, build 007, Floris Fiedeldij Dop - Feel free to use
+# version 0.0.6, build 008, March 25th, 2026, Floris Fiedeldij Dop - Feel free to use
 
 # Description:
 #   Checks Mojang's Minecraft Java Edition version manifest for the latest release,
@@ -103,4 +103,4 @@ if [[ "$DISCORD_WEBHOOK_URL" != "https://discord.com/api/webhooks/YOUR_WEBHOOK_H
     )
     curl -H "Content-Type: application/json" -X POST -d "$DISCORD_JSON" "$DISCORD_WEBHOOK_URL" >/dev/null 2>&1
 fi
-#EOF
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

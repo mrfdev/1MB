@@ -112,4 +112,4 @@ fi
 
 _output okay "Done checking for '$_proc/:$PORT.'"
 
-#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

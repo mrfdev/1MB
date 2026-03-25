@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-backup.sh
-# @Version: 0.1.3, build 012 for Minecraft 1.21.4 (Java 23.0.2, 64bit)
-# @Release: February 2nd, 2025
+# @Version: 0.1.4, build 013 for Minecraft 26.1 (Java 25, 64bit)
+# @Release: March 25th, 2026
 # @Description: Helps us make a compressed tarball of a Minecraft 1.21.x server. 
 # @Description: Note: Does not use rsync, this is meant for small servers only. | Now leaves out web /bluemap/
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -104,4 +104,4 @@ else
     exit 1
 fi
 
-#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

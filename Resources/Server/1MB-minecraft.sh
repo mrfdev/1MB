@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.19.2, build 082 for Minecraft 1.21.8 (Java 24.0.2, 64bit)
-# @Release: July 24th, 2025
-# @Description: Helps us start a Paper 1.21.8 server.
+# @Version: 2.20.0, build 083 for Minecraft 26.1 (Java 25, 64bit)
+# @Release: March 25th, 2026
+# @Description: Helps us start a Spigot 26.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-minecraft.sh
@@ -17,10 +17,11 @@
 #
 ###
 
-_minecraftVersion="1.21.8"
+_minecraftVersion="26.1"
 # Which version are we running?
 
-_minJavaVersion=24
+_minJavaVersion=25
+# use 25 for java 25.0.2 which can be used with Minecraft 1.21.11+
 # use 24 for java 24.0.2 which can be used with Minecraft 1.21.8
 # use 23 for java 23.0.2 which can be used with Minecraft 1.21.4+
 # use 21 for java 21.0.2 which can be used with Minecraft 1.19.x+
@@ -30,7 +31,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # "-Xmx2G" = maximum memory allocation pool of memory for JVM.
 # "-Xms1G" = initial memory allocation pool of memory for JVM.
 # More details here: https://stackoverflow.com/questions/14763079/
-# Example: (10GB host for dedicated Paper 1.21.x server with custom flags, using 10GB ram, etc.)
+# Example: (10GB host for dedicated Paper 26.1.x server with custom flags, using 10GB ram, etc.)
 # _javaMemory="-Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
 # _javaMemory="-Xms10240M -Xmx10240M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20"
 # Figure out optimal flags for your configuration here: https://flags.sh/
@@ -53,9 +54,9 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-ac
 # Override auto engine jar detection; only use this if you have issues
 _engine="paper"
 # spigot until paper jar is out
-# "" assumes auto detection for <engine>-1.21.x.jar 
-# "spigot" assumes to look for spigot-1.21.x.jar
-# "paper" assumes to look for paper-1.21.x.jar
+# "" assumes auto detection for <engine>-26.1.x.jar 
+# "spigot" assumes to look for spigot-26.1.x.jar
+# "paper" assumes to look for paper-26.1.x.jar
 
 _engineParams=""
 # Leave empty for every day running, only edit when you need this!
@@ -70,7 +71,7 @@ _engineParams=""
 # which is legally binding, and you should read it! https://account.mojang.com/documents/minecraft_eula
 _eula=false
 
-# leave "" if you want the 1.21.x server-gui
+# leave "" if you want the 26.1.x server-gui
 _noGui="--nogui"
 
 ### INTERNAL CONFIGURATION
@@ -83,7 +84,7 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery of java path, and 
 # if this fails, you could hard code the path, as exampled below:
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-24.0.2.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-25.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
 
 _debug=true
@@ -209,4 +210,4 @@ fi
 _startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
 $_startJVM || _output oops "Failed to start the jvm for some reason."
 
-#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

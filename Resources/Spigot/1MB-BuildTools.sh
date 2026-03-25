@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-BuildTools.sh
-# @Version: 2.17.3, build 109
-# @Release: October 1st, 2025
-# @Description: Helps us make a Minecraft Spigot 1.21.10 server.
+# @Version: 2.18.1, build 110
+# @Release: March 25th, 2026
+# @Description: Helps us make a Minecraft Spigot 26.1 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-BuildTools.sh
@@ -19,12 +19,11 @@
 #
 ###
 
-_minecraftVersion="1.21.10"
+_minecraftVersion="26.1"
 # Which version are we running?
 
 _minJavaVersion=25
-# use 24 for java 24.0.2 which can be used with Minecraft 1.21.8 and some lower versions
-# use 25 for java 25.x which can be used with Minecraft 1.21.8 and higher versions
+# use 25 for java 25.0.2 which can be used with Minecraft 1.21.11 and some lower versions
 
 _jarBuildtools="BuildTools.jar"
 # https://hub.spigotmc.org/jenkins/job/BuildTools/
@@ -47,7 +46,7 @@ _cacheFile="cachespigot.txt"
 
 # What to call the output jar file
 _jarSpigot="spigot-$_minecraftVersion.jar"
-# 1MB-start.sh defaults to, for example: spigot-1.21.x.jar
+# 1MB-start.sh defaults to, for example: spigot-26.1.x.jar
 _jarSpigotBackup="spigot-$_minecraftVersion._jar"
 # And the backup file we create
 
@@ -166,15 +165,15 @@ function cache {
 
 ### CACHE LEGEND / HANDLER
 #
-# line 1 : Minecraft version (example: 1.21.x)
-# line 2 : Spigot nightly build version (example: 4344)
-# line 3 : BuildTools build version (example: 187)
+# line 1 : Minecraft version (example: 26.1)
+# line 2 : Spigot nightly build version (example: 4605)
+# line 3 : BuildTools build version (example: 198)
 # line 4 : Shell script last-run state (example: true|false)
 # line 5 : Shell script state message (example: Build successful)
 #
 # At any time the cache txt file can be renamed,
 # or deleted. If it's not found it will create one.
-# The 'default' values are for Spigot 1.21.x,
+# The 'default' values are for Spigot 26.1.x,
 # but you can change this obviously.
 # The other values are 'old' on purpose, so when you
 # delete the cache txt file, it also forces a rebuild,
@@ -402,10 +401,10 @@ _output debug "Found the current data (online): MC: $_currentMcBuild, SP: $_curr
 
 # And COMPARE that against our cached data (regardless if that's old or new)
 
-# We want builds for 1.21.x, so the cached version and the current version have to both be 1.21.x
+# We want builds for 26.1.x, so the cached version and the current version have to both be 26.1.x
 # PATCH if [ "$_cacheMcBuild" == "$_currentMcBuild" ]; then
 if [ "$_minecraftVersion" == "$_currentMcBuild" ]; then
-    # success, 1.21.x == 1.21.x
+    # success, 26.1.x == 26.1.x
     _output debug "Comparing MC : OK; we can continue.."
 else
     # failure, current must be newer
@@ -433,7 +432,7 @@ else
     sed -i.tmp "2s#.*#${_currentSpBuild}#" "$_cacheFile"
 fi
 
-# Ok, we know there's a new build out for Spigot for Minecraft 1.21.x,
+# Ok, we know there's a new build out for Spigot for Minecraft 26.1.x,
 # we can make it with buildtools, however, we have to make sure
 # we are using the current version of buildtools, one more comparison
 if [ "$_currentBtBuild" == "$_cacheBtBuild" ]; then
@@ -458,7 +457,7 @@ else
 fi
 
 # Update: What happened?
-# If the script didn't quit here, that means we have a new spigot build for 1.21.x of minecraft,
+# If the script didn't quit here, that means we have a new spigot build for 26.1.x of minecraft,
 # and we know if we can upgrade spigot with the buildtools we have, or if we need to get a new jar.
 
 # do we just update spigot?
@@ -526,4 +525,4 @@ pwd
 # We are done, let's get outtah here
 _output okay "That's it, we're done!"
 
-#EOF Copyright (c) 1977-2025 - Floris Fiedeldij Dop - https://scripts.1moreblock.com
+#EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

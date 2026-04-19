@@ -1,0 +1,4475 @@
+# Full color code support and some variables
+# Keep in mind that variables wont work for some lines, when it will for anothers :)
+# Just keep them where there are now and everything will be ok :)
+# Some lines can have global variables set. For player who will be effected. In example /heal Zrips then Zrips data will be used
+# [serverName] to show server name
+# [playerName] to show target player name
+# [playerDisplayName] to show target player display name
+# [lvl] to show target player level
+# [exp] to show target player total exp
+# [hp] to show target player health
+# [maxHp] to show target player max health
+# [hunger] to show target player hunger level
+# [gameMode] to show target player gamemode
+# [prefix] to show target player prefix if possible
+# [suffix] to show target player suffix if possible
+# Sender is console or player who performs command. In example Zrips performs /heal Zhax then Zrips data will be used
+# [senderName] to show Sender player name
+# [senderDisplayName] to show Sender player display name
+# [senderLvl] to show Sender player level
+# [senderExp] to show Sender player total exp
+# [senderHp] to show Sender player health
+# [senderMaxHp] to show Sender player max health
+# [senderHunger] to show Sender player hunger level
+# [senderGameMode] to show Sender player gamemode
+# [senderPrefix] to show Sender player prefix if possible
+# [senderSuffix] to show Sender player suffix if possible
+# Source is player which is being used for extra info. In example Zrips performs /tp Zhax Zrips then Zhax data will be used as its location is being taken for new player location
+# [sourceName] to show source player name
+# [sourceDisplayName] to show source player display name
+# [sourceLvl] to show source player level
+# [sourceExp] to show source player total exp
+# [sourceHp] to show source player health
+# [sourceMaxHp] to show source player max health
+# [sourceHunger] to show source player hunger level
+# [sourceGameMode] to show source player gamemode
+# [sourcePrefix] to show source player prefix if possible
+# [sourceSuffix] to show source player suffix if possible
+# ***********************************************
+# Some lines supports option to send them to custom places, like action bar, title, sub title or even create JSON/clickable messages
+# If line starts with !toast! then player will get toast message (advancement popup, only 1.12 and up). Some extra variables can be used to define type and icon. example: !toast! -t:goal -icon:paper Hello world!
+# If line starts with !actionbar! then player will get action bar message defined after this variable
+# If line starts with !actionbar:[seconds]! then player will get action bar message for defined amount of time
+# If line starts with !broadcast! then everyone will receive message. You can add extra !toast! !actionbar! or !title! to send message for everyone to specific place, in example !broadcast!!title!
+# If line starts with !customtext:[cTextName]! then custom text will be taken by name provided and shown for player. In case its used after !broadcast! then everyone who is online will get this custom text message
+# If line starts with !title! then player will get title message defined after this variable, in addition it can contain !subtitle! which will add subtitle message. Optional time can be defined with !title:4.5! which will keep title message for 4.5 seconds
+# If line starts with !bossbar:[name]-[timer]! then player will get bossbar message defined after this variable, in addition you can define how long this message will be visible. You need to define bossbar name which can be anything you want, but lines with same name will override each other to prevent stacking
+#
+#
+#
+# ATTENTION! As of 9.0.0.0 CMI version some of the locale lines got moved to CMILib file. This is to centralize some of most used ones across multiple plugins.
+# After you update locale in CMILib file perform `/cmil reload` command for changes to take effect
+
+info:
+  Same: '{gcw}Can''t open your own inventory for editing!'
+  cantLoginWithDifCap: '{gcw}Can''t login with different name capitalization! Old
+    name: {gcs}[oldName]{gcw}. Current: {gcs}[currentName]'
+  NoCommandWhileSleeping: '{gcw}Can''t perform commands while sleeping!'
+  PurgeNotEnabled: '{gcw}Purge function is not enabled in config file!'
+  TeamManagementDisabled: '{gcp}This feature will have limited functionalaty while
+    DisableTeamManagement is set to true!'
+  NoGameMode: '{gcw}Please use 0/1/2/3 or Survival/Creative/Adventure/Spectator or
+    s/c/a/sp!'
+  NameChange: '{gcs}[playerDisplayName] {gcp}logged in, also known as: {gcs}[namelist]'
+  Cooldowns: '{gcp}This command is on cooldown for another {gcs}[time]'
+  specializedCooldowns: '{gcp}Cooldown in motion for this command, please wait {gcs}[time]'
+  specializedRunning: '{gcp}Command still running, please wait {gcs}[time]'
+  CooldownOneTime: '{gcp}This command can only be used once!'
+  WarmUp:
+    canceled: '{gcp}Command was cancelled due to your movement'
+    counter: '!actionbar!{gcp}--> Wait {gcs}[time] {gcp}seconds <--'
+    DontMove: '!title!{gcp}Teleporting!!subtitle!{gcp}Wait {gcw}[time] {gcp}seconds'
+    Boss:
+      DontMove: '{gcw}Don''t move for {gcs}[autoTimeLeft] {gcw}seconds!'
+      WaitFor: '{gcw}Wait for {gcs}[autoTimeLeft] {gcw}seconds!'
+  FailedSpawnerMine: '!actionbar!{gcw}Failed to mine spawner. {gcs}[percent]% {gcw}drop
+    chance'
+  ClickSpawner: '!actionbar!{gcs}[percent]% {gcp}Drop chance'
+  Elevator:
+    created: '{gcp}Created elevator sign'
+  CantPlaceSpawner: '{gcp}Can''t place spawner so close to another spawner ({gcs}[range]{gcp})'
+  ChunksLoading: '{gcp}World chunk data is still being loaded. Please wait a bit and
+    try again.'
+  CantUseNonEncrypted: '!actionbar!{gcw}Commands on this item are not encrypted. Can''t
+    use them!'
+  CantUseTrident: '!actionbar!{gcw}Can''t use trident with riptide enchant at this
+    moment!'
+  CantDecode: '!actionbar!{gcw}Can''t decode message/command. Key file contains wrong
+    key for this task. Inform server administration about this'
+  CantTeleport: '{gcp}You can''t teleport because you have too many limited items.
+    Scroll over this line to see the maximum amount of items allowed.'
+  CantTeleportDistance: '{gcp}Sorry you cant teleport over {gcs}[amount] {gcp}blocks
+    away!'
+  BlackList: '{gcp}[material] [amount] {gcs}Max: [max]'
+  wrongPortal: '{gcw}You are in incorrect area of effect'
+  ItemWillBreak: '!actionbar!{gcp}Your item ({gcs}[itemName]{gcp}) will break soon!
+    {gcs}[current]{gcp}/{gcs}[max]'
+  ArmorWillBreak: '!actionbar!{gcp}Your [itemName] will break soon! {gcs}[current]{gcp}/{gcs}[max]'
+  flyingToHigh: '{gcw}You can''t fly so high, max height is {gcs}[max]{gcw}!'
+  specializedItemFail: '{gcw}Can''t determine specialized item requirement by value:
+    {gcs}[value]'
+  sunSpeeding: Sleeping [count] of [total] [hour] hour [speed]X speed
+  sleepersRequired: '!actionbar!{gcs}[sleeping] {gcp}of {gcs}[required] {gcp}sleeping
+    from required for night time speedup'
+  sunSpeedingTitle: '{gcs}[hour]'
+  skippingNight: '!title!{gcsp}Skipping entire night'
+  sunSpeedingSubTitle: '{gcs}[count]{gcp}/{gcs}[total] {gcp}({gcs}[speed]X{gcp})'
+  repairConfirm: '{gcp}Click to confirm {gcs}[items] {gcp}item repair for {gcs}[cost]'
+  bookDate: '{gcp}Written at {gcs}[date]'
+  maintenance: '{gcp}Maintenance mode'
+  mapLimit: '{gcw}Cant go beyond 30 000 000 blocks'
+  startedEditingPainting: '{gcp}You started editing painting. Click any other block
+    to cancel.'
+  canceledEditingPainting: '{gcp}You canceled painting editing mode'
+  changedPainting: '!actionbar!{gcp}Changed painting to {gcs}[name] {gcp}with id of
+    {gcs}[id]'
+  noSpam: '!title!{gcw}No spamming!'
+  noCmdSpam: '!title!{gcw}No command spamming!'
+  spamConsoleInform: '{gcw}Player ({gcs}[playerName]{gcw}) triggered ({gcs}[rules]{gcw})
+    chat filter with:&r [message]'
+  # This line can have extra variables: [totalUsers] [onlinePlayers]
+  FirstJoin: '{gcp}Welcome {gcs}[playerDisplayName] {gcp}to our server!'
+  # Don't forget to enable custom logout messages in config!
+  LogoutCustom: ' {gcs}[playerDisplayName] {gcp}left the game'
+  # Don't forget to enable custom login messages in config!
+  LoginCustom: ' {gcs}[playerDisplayName] {gcp}joined the game'
+  deathlocation: '{gcp}You died at x:{gcs}[x]{gcp}, y:{gcs}[y]{gcp}, z:{gcs}[z]{gcp}
+    in {gcs}[world]'
+  book:
+    exploit: '{gcw}You cant create book with more than [amount] pages'
+  move:
+    CantUseShulkerBox: '{gcw}Can''t use shulker box while moving'
+  combat:
+    CostToOpen: '!actionbar!{gcp}Charged for opening: [amount]'
+    CantUseShulkerBox: '{gcw}Can''t use shulker box while you are in combat with player.
+      Wait: [time]'
+    CantUseCommand: '!actionbar!{gcw}Can''t use command while in combat mode. Wait:
+      [time]'
+    bossBarPvp: '{gcw}Combat mode [autoTimeLeft]'
+    bossBarPve: '{gcn}Combat mode [autoTimeLeft]'
+  noSchedule: '{gcw}Schedule by this name is not found'
+  totem:
+    cooldown: '{gcp}Totem cooldown: [time]'
+    warmup: '{gcp}Totem effect: [time]'
+    cantConsume: '{gcp}Totem usage was denied due to its cooldown time'
+  InventorySave:
+    info: '{gcp}Info: {gcn}[playerDisplayName]'
+    saved: '{gcs}[time] {gcp}Inventory saved with id: {gcs}[id]'
+    NoSavedInv: '{gcp}This player doesn''t have any saved inventories'
+    NoEntries: '{gce}File exists, but no inventories were found!'
+    CantFind: '{gcp}Can''t find inventory with this id'
+    TopLine: '{gcp}----------- {gcs}[playerDisplayName] saved inventory {gcp}-----------'
+    List: '{gcp}id: {gcs}[id]{gcp}. {gcs}[time]'
+    KillerSymbol: '{gcw} ☠'
+    Click: '{gcp}Click to check ([id]) saved inventory'
+    IdDontExist: '{gcw}This save Id doesn''t exist!'
+    Deleted: '{gcp}Saved inventory was successfully deleted!'
+    Restored: '{gcp}You have restored {gcs}[sourcename] {gcp}inventory for {gcs}[targetname]
+      {gcp}user.'
+    GotRestored: '{gcp}Your inventory was restored from {gcs}[sourcename] {gcp}saved
+      inventory on {gcs}[time]'
+    LoadForSelf: '{gcp}Load this inventory for your self'
+    LoadForOwner: '{gcp}Load this inventory for owner'
+    NextInventory: '{gcp}Next inventory'
+    PreviousInventory: '{gcp}Previous inventory'
+    Editable: '{gcp}Edit mode enabled'
+    NonEditable: '{gcp}Edit mode disabled'
+  vanishSymbolOn: '{gcs}[{gcn}H{gcs}]&r'
+  vanishSymbolOff: ''
+  afkSymbolOn: '{gcs}[{gcn}Afk{gcs}]&r'
+  afkSymbolOff: ''
+  beeinfo: '!actionbar!{gcp}Honey level: {gcs}[level]{gcp}/{gcs}[maxlevel] {gcp}Bees
+    inside: {gcs}[count]{gcp}/{gcs}[maxcount]'
+  decoratedpotinfo: '!actionbar!{gcp}Contents: {gcs}[items]'
+  pvp:
+    noGodDamage: '!actionbar!{gcw}You can''t damage players while being immortal'
+  pve:
+    noGodDamage: '!actionbar!{gcw}You can''t damage mobs while being immortal'
+  InvEmpty:
+    armor: '{gcp}Your armor slots should be empty!'
+    hand: '{gcp}Your hand should be empty!'
+    maininv: '{gcp}Your main inventory should be empty!'
+    maininvslots: '{gcp}Your main inventory should have atleast {gcs}[count] {gcp}empty
+      slots!'
+    inv: '{gcp}Your inventory should be empty!'
+    offhand: '{gcp}Your offhand should be empty!'
+    quickbar: '{gcp}Your quick bar should be empty!'
+    quickbarslots: '{gcp}Your quick bar should have atleast {gcs}[count] {gcp}empty
+      slots!'
+    subinv: '{gcp}Your sub inventory should be empty!'
+    subinvslots: '{gcp}Your sub inventory should have atleast {gcs}[count] {gcp}empty
+      slots!'
+  Relog: '{gcp}Relog might be needed for change to take effect'
+  Any: Any
+  Reset: '{gcp}Press {gcs}Q {gcp}to reset'
+  outsideWorldBorder: '{gcw}Location is outside world border'
+  noWorldAccess: '{gcw}No world access'
+  IncorrectColor: '{gcw}Color defined incorrectly!'
+  IncorrectFile: '{gcw}File name defined incorrectly!'
+  time:
+    # Mainly for placeholder playtime output
+    # Use + sign at the start of line to force include it even if specific and previous time values are 0
+    # Use - sign at the start of line if you want to include it only if its value isn't 0. If entire output results into empty line, then we will output seconds value
+    days: '{gcn}[d]{gcn}d:'
+    hours: '{gcn}[h]{gcn}h '
+    minutes: '{gcn}[m]{gcn}m '
+    seconds: '{gcn}[s]{gcn}s'
+  CommandFormat: '{gcw}Incorrect command format'
+  ServerSwitchOut: ' {gcs}[playerDisplayName] {gcp}switched server to {gcs}[serverName]'
+  ServerSwitchIn: ' {gcs}[playerDisplayName] {gcp}came from {gcs}[serverName] {gcp}server'
+dialog:
+  signEditor: Sign Editor
+  update: Update
+  save: Save
+  close: Close
+  line: Line [line]
+warp:
+  list: '{gcs}[pos]{gcp}. {gcs}[warpName] {gcn}- {gcs}[worldName] ([x]:[y]:[z])'
+afk:
+  'off': '{gcs}Playing'
+  # Placeholders can be used for MayNotRespond and MayNotRespondStaff
+  MayNotRespond: '{gcp}Player is AFK and may not respond'
+  MayNotRespondStaff: '{gcp}Staff member is AFK and may not respond. Try contacting
+    us through discord'
+BossBar:
+  hpBar: '{gcs}[victim] {gcs}[current]{gcs}/{gcs}[max] {gcs}({gcw}-[damage]{gcs})'
+  playerhpBar: '{gcs}%cmi_user_display_name% {gcs}[current]{gcs}/{gcs}[max] {gcs}({gcw}-[damage]{gcs})'
+Potion:
+  Effects: '{gcp}Potion effects'
+  List: '{gcs}[PotionName] [PotionAmplifier] {gcp}Duration: {gcs}[LeftDuration] {gcp}sec'
+  NoPotions: '{gcp}None'
+Information:
+  Title: '{gcp}Players information'
+  Health: '{gcp}Health: {gcs}[Health]/[maxHealth]'
+  Hunger: '{gcp}Hunger: {gcs}[Hunger]'
+  Saturation: '{gcp}Saturation: {gcs}[Saturation]'
+  Exp: '{gcp}Exp: {gcs}[Exp]'
+  NotEnoughExp: '{gcp}Not enough exp: {gcs}[Exp]'
+  NotEnoughExpNeed: '{gcp}Not enough exp: {gcs}[Exp]/[need]'
+  tooMuchExp: '{gcp}Too much exp: {gcs}[Exp]/[need]'
+  NotEnoughVotes: '{gcp}Not enough votes: {gcs}[votes]'
+  TooMuchVotes: '{gcp}Too many votes: {gcs}[votes]'
+  BadGameMode: '{gcw}You can''t do this in your current game mode'
+  BadArea: '{gcw}You can''t perform this action in this area'
+  GameMode: '{gcp}GameMode: {gcs}[GameMode]'
+  Flying: '{gcp}Flying: {gcs}[Flying]'
+  Uuid: '{gcs}[uuid]'
+  FirstConnection: '{gcp}First connection: {gcs}[time]'
+  Lastseen: '{gcp}Last seen: {gcs}[time]'
+  Onlinesince: '{gcp}Online since: {gcs}[time]'
+  Money: '{gcp}Balance: {gcs}[money]'
+  Group: '{gcp}Group: {gcs}[group]'
+econ:
+  commandCost: '{gcp}This command cost is {gcs}[cost] {gcp}repeat it or click here
+    to confirm'
+  disabled: '{gcw}Can''t use this command while economy support is disabled'
+Elytra:
+  Speed: '{gcp}Speed: {gcs}[speed]{gcp}km/h'
+  SpeedBoost: ' {gcs}+ '
+  SpeedSuperBoost: ' {gcn}+ '
+  CanUse: '{gcw}Can''t equip elytra without permission!'
+  CantGlide: '{gcw}Can''t use elytra here!'
+  Charging: '{gcp}Charging {gcs}[percentage]{gcp}%'
+NetherPortal:
+  ToHigh: '{gcw}Portal is to big, max height is {gcs}[max]{gcw}!'
+  ToWide: '{gcw}Portal is to wide, max width is {gcs}[max]{gcw}!'
+  Creation: '!actionbar!{gcp}Created [height]x[width] nether portal!'
+  Disabled: '{gcw}Portal creation disabled!'
+Ender:
+  Title: '{gcp}Open ender chest'
+Chat:
+  localPrefix: ''
+  shoutPrefix: '{gcn}[S]&r'
+  LocalNoOne: '!actionbar!{gcw}Nobody hear you, write ! before message for global
+    chat'
+  shoutDeduction: '!actionbar!{gcw}Deducted {gcs}[amount] {gcw}for shout'
+  # Use \n to add new line
+  publicHover: '{gcp}Sent time: {gcs}%server_time_hh:mm:ss%'
+  privateHover: '{gcp}Sent time: {gcs}%server_time_hh:mm:ss%'
+  staffHover: '{gcp}Sent time: {gcs}%server_time_hh:mm:ss%'
+  helpopHover: '{gcp}Sent time: {gcs}%server_time_hh:mm:ss%'
+  link: '&l{gcw}[{gcn}LINK{gcw}]'
+  item: '{gcn}[%cmi_iteminhand_displayname%[amount]{gcn}]'
+  itemAmount: ' x[amount]'
+  itemEmpty: '{gcn}[Mighty fist]'
+Spy:
+  Chat:
+    msg: '{gcn}Spy{gcp}[{gcp}[senderDisplayName] {gcp}-> {gcp}[playerDisplayName]{gcp}]{gcs}
+      [message]'
+    custom: '{gcn}Spy{gcp}[senderDisplayName] {gcp}-> {gcw}|{gcp}[place]{gcw}|{gcs}
+      [message]'
+  Command:
+    msg: '{gcs}C{gcn}Spy{gcp}[{gcp}[senderDisplayName]{gcp}]{gcp}: {gcs}[command]'
+  Sign:
+    msg: '{gcs}Sign{gcn}Spy{gcp}[{gcp}[senderDisplayName]{gcp}]{gcp}: {gcs}[text]'
+command:
+  help:
+    output:
+      usage: '{gcp}Usage: {gcs}%usage%'
+      cmdInfoFormat: '{gcp}[command] {gcp}- {gcs}[description]'
+      cmdFormat: '{gcp}/[command]{gcn}[arguments]'
+      helpPageDescription: '{gcs}* [description]'
+      explanation: '{gcs} * [explanation]'
+      title: '{gcs}------ ======= {gcp}Help {gcs}======= ------'
+  nocmd:
+    help:
+      info: '{gcp}Shows all available commands'
+      args: ''
+  actionbarmsg:
+    help:
+      info: Sends action bar message to player
+      args: '[playerName/all] (-s:[seconds]) [message]'
+    info:
+      message: '[message]'
+  afk:
+    help:
+      info: Toggle afk mode. Reason could be provided
+      args: (-p:playerName) (reason) (-s)
+    info:
+      # This only determines message in title message and not message shown in chat. For chat message check config.yml file
+      afkTitle: '{gcp}You are now AFK'
+      afkSubTitle:
+      - '{gcu}Don''t eat to much cookies!'
+      - '{gcu}Nice day for fishing'
+      - '{gcu}Afk, again?'
+      - '{gcu}Where are you?'
+  afkcheck:
+    help:
+      info: Check players afk status
+      args: '[playerName/all]'
+    info:
+      feedback: '{gcs}[playerDisplayName]{gcp}: {gcs}[status]'
+      feedbackInactive: '{gcp}Inactive for past {gcs}[time]'
+      feedbackAll: '{gcs}[place]{gcp}. {gcs}[playerDisplayName]{gcp}: {gcs}[status]'
+      feedbackReason: '{gcn}[reason]'
+  air:
+    help:
+      info: Set players air
+      args: '[playerName] [amount] (-s)'
+    info:
+      feedback: '{gcp}You have set {gcs}[amount]{gcp} air for {gcs}[playerName]{gcp}.'
+      targetFeedback: '{gcp}Your air was set to {gcs}[amount]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+      current: '{gcp}Current {gcs}[playerDisplayName] {gcp}air: {gcs}[amount]'
+  alert:
+    help:
+      info: Alerts administration on players login
+      args: '[add/list/remove] [playerName] (reason) (-s)'
+      explanation:
+      - '{gcp}Permissions:'
+      - '{gcs}command.alert.info.inform {gcp}- to see alerts on player login'
+    info:
+      inform:
+      - '{gcp}!Alert!******** {gcs}[name] {gcw}just logged in! {gcp}*******!Alert!'
+      reason: '{gcp}Alert reason: {gcs}[reason]'
+      removed: '{gcs}[playerDisplayName] {gcp}removed from alert list'
+      added: '{gcp}Alert message will be sent to all administrators, if {gcs}[playerDisplayName]
+        {gcp}join''s in next 24Hours'
+      online: '{gcs}[playerDisplayName] {gcp}already online'
+      add: '{gcu}Add extra day'
+      list: ' {gcs}[place]. {gcs}[playerDisplayName] {gcs}[time] {gcn}Reason: [reason]'
+  aliaseditor:
+    help:
+      info: Alias editor
+      args: (new) (alias-cmd)
+    info:
+      ListNumber: '{gcs}[number].'
+      alias: '{gcs}[alias]'
+      commandList: ' {gcs}/[command]  '
+      commandListDelay: ' {gcs}[command]  '
+      permRequirements: Permission
+      permReqExplanation: '{gcp}Will require {gcs}cmi.customalias.[alias] {gcp}to
+        use it'
+      tab: ' TabComplete'
+      tabCompleteExplanation: '{gcp}When disabled tabcomplete will not work'
+      tabCompletes: '{gcu}TabCompletes: '
+      cTab: ' CustomTab'
+      file: ' {gcu}FileName'
+      fileExplanation: '{gcp}Current destination file: {gcs}[file]'
+      addTabComplete: ' AddTab'
+      addTabExplanation: '{gcp}When enabled we will add defined tabs to existing ones'
+      exact: ' Exact'
+      addExactExplanation: '{gcp}When enabled we will only use this alias when exact
+        command is provided'
+      newAliasInfo: '{gcp}Enter new alias command name and press enter'
+      addInfo: '{gcp}Enter new command. Type {gcs}cancel {gcp}to cancel'
+      addInformationHover: "{gcp}Global variables supported as of sender category\
+        \ \n{gcp}delay! 5 {gcs}to include delay in commands \n{gcp}$1 {gcs}will take\
+        \ provided variable by new command and will place in that place \n{gcp}$1-\
+        \ {gcs}takes all variables from this point and inserts into original commands\
+        \ \n{gcp}? {gcs}makes it valid when using any last variable. For Help page\
+        \ usage\n{gcp}fromConsole! will perform command from console"
+      editInfo: '{gcp}Click to paste old text. Type {gcs}cancel {gcp}to cancel action.
+        Type {gcs}remove {gcp}to remove line'
+  anvil:
+    help:
+      info: Open anvil
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have opened anvil for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened anvil for you.'
+  anvilrepaircost:
+    help:
+      info: Set items repair cost
+      args: (playerName) [amount]
+      explanation:
+      - 'Example:'
+      - /repaircost 10
+      - /repaircost set 10
+      - /repaircost add 10
+      - /repaircost take 10
+      - /repaircost Zrips clear
+      - /repaircost Zrips add 10
+    info:
+      current: '{gcp}Current items base repair cost: {gcs}[cost]{gcp}.'
+      noitem: '{gcw}Not holding any item in hand.'
+      cantDetermineCost: '{gcw}Can''t determine base repair cost for this item.'
+      selffeedback: '{gcp}Base repair cost was set to {gcs}[amount] {gcp}for {gcs}[playerDisplayName]{gcp}
+        item in hand.'
+      targetfeedback: '{gcp}Your item repair cost was set to {gcs}[amount]{gcp} by
+        {gcs}[senderDisplayName]{gcp}.'
+  armoreffect:
+    help:
+      info: Modifies armor effects
+      args: '[potionEffect]'
+  armorstand:
+    help:
+      info: Open armor stand editor
+      args: (last/near)
+    info:
+      cantClick: '{gcw}Cant do this. Someone is already editing this armor stand'
+      tooFar: '{gcw}Armor stand is too far'
+      title: Editor
+      coordX: '{gcw}X'
+      coordY: '{gcu}Y'
+      coordZ: '{gcp}Z'
+      body: '{gcp}Body rotation: {gcs}[amount]'
+      head: '{gcp}Head [coord]{gcp}: {gcs}[amount]'
+      torso: '{gcp}Torso [coord]{gcp}: {gcs}[amount]'
+      leftArm: '{gcp}Left arm [coord]{gcp}: {gcs}[amount]'
+      rightArm: '{gcp}Right arm [coord]{gcp}: {gcs}[amount]'
+      leftLeg: '{gcp}Left leg [coord]{gcp}: {gcs}[amount]'
+      rightLeg: '{gcp}Right leg [coord]{gcp}: {gcs}[amount]'
+      pos: '{gcp}Position [coord]{gcp}: {gcs}[amount]'
+      list: '{gcp}[place]. {gcs}[distance] [items]'
+      items: '{gcs}[displayName]{gcp}[type]'
+      plate: '{gcp}Plate'
+      size: '{gcp}Small'
+      visible: '{gcp}Visible'
+      arms: '{gcp}Visible arms'
+      gravity: '{gcp}Gravity'
+      glow: '{gcp}Glowing'
+      invulnerable: '{gcp}Invulnerable'
+      name: '{gcp}Visible name'
+      nameEdit: '{gcp}Q click to edit name'
+      interactable: '{gcp}Interactable'
+      scale: '{gcp}Scale: {gcs}[amount]'
+      scaleLimits: '{gcs}[min] {gcp}- {gcs}[max]'
+      explanation: '{gcp}Left or right mouse button adjusts value'
+      explanation2: '{gcp}Hold shift to make it 10x faster'
+      disableGravity: '{gcp}Disable gravity if you want to change this value'
+      copyLabel: '{gcp}Open clone picker'
+      copyTitle: '{gcp}Pick what you want to clone'
+      click: '{gcp}Click armor stand to duplicate it, or punch any block to cancel
+        process'
+      canceled: '{gcp}ArmorStand copy process cancelled'
+      updated: '{gcp}ArmorStand updated'
+      positionLabel: '{gcp}Open position options'
+      saveLabel: '{gcp}Open template saver'
+      saveButton: '{gcp}Save'
+      saveTitle: '{gcp}Pick what you want to save'
+      receivedItem: '{gcp}Received special armor stand into your inventory'
+      armorStandItem: '{gcp}ArmorStand Template: {gcs}[name]'
+      action:
+        helmet: '{gcp}Helmet'
+        chest: '{gcp}Chest'
+        offhand: '{gcp}Offhand'
+        mainhand: '{gcp}Mainhand'
+        leggings: '{gcp}Leggings'
+        boots: '{gcp}Boots'
+        name: '{gcp}Name'
+        body: '{gcp}Body'
+        plate: '{gcp}Plate'
+        size: '{gcp}Size'
+        visible: '{gcp}Visible'
+        arms: '{gcp}Arms'
+        gravity: '{gcp}Gravity'
+        glow: '{gcp}Glow'
+        invulnerable: '{gcp}Invulnerable'
+        interactable: '{gcp}Interactable'
+        scale: '{gcp}Scale'
+        head: '{gcp}Head'
+        torso: '{gcp}Torso'
+        leftArm: '{gcp}Leftarm'
+        rightArm: '{gcp}Rightarm'
+        leftLeg: '{gcp}Leftleg'
+        rightLeg: '{gcp}Rightleg'
+  attachcommand:
+    help:
+      info: Attaches command to item
+      args: '[command/-clear]'
+      explanation:
+      - Separate commands with ;;
+      - You can define to run command on left or right mouse click separately with
+      - '!left! to perform command on left mouse click'
+      - '!right! to perform command on right click'
+      - '!limiteduse:[amount]! defines how many times you can use this item'
+      - '!safelimiteduse:[amount]! will not remove item after all usages are used'
+      - '!cc! performs command from console, requires cmi.command.attachcommand.cc
+        permission'
+      - '!cooldownn:[amount]! adds cooldown on item usage.'
+      - '[interactedPlayer] inserts name of player you interacted while holding item'
+      - Global variables working in addition with [itemUses]
+    info:
+      list: ' {gcp}[id]. {gcp}[cmd]'
+      uses: '{gcp}Item usages: {gcp}[amount]'
+      usesLeft: '!actionbar!{gcp}Item uses left: {gcp}[itemUses]'
+      cooldown: '{gcp}Item is on cooldown. Wait {gcp}[time]'
+  autorecharge:
+    help:
+      info: Toggle auto flight recharge
+      args: (playerName) [exp/money/off/on] (-s)
+    info:
+      moneyState: '{gcp}Money recharge: [state]'
+      expState: '{gcp}Exp recharge: [state]'
+      updated: '{gcp}State changed to [state]'
+  back:
+    help:
+      info: Teleports back to last saved location
+      args: (playerName) (-s)
+    info:
+      noinfo: '{gcw}There is no saved location to return to!'
+      feedback: '{gcp}Returned to last saved location ({gcs}[worldName]{gcp},{gcs}[x]{gcp},{gcs}[y]{gcp},{gcs}[z]{gcp})!'
+  balance:
+    help:
+      info: Check money balance
+      args: (playerName)
+    info:
+      balance: '{gcp}Balance: {gcs}[money]'
+      balanceOther: '{gcs}[playerDisplayName] {gcp}balance: {gcs}[money]'
+  baltop:
+    help:
+      info: Check top money list
+      args: (playerName)
+    info:
+      topLine: '{gcp}&m-----{gcs} Balancetop {gcp}&m-----'
+      topLineHover: '{gcp}Server Total: {gcn}[total]'
+      list: '{gcp}[place]{gcp}. {gcs}[playerDisplayName]: {gcn}[balance]'
+      ownLine: '{gcu}[place]{gcp}. {gcs}[playerDisplayName]: {gcn}[balance]'
+      # Set to empty field if you want to not show hover over message
+      hover: '{gcs}[playerName]'
+      recalculating: '{gcs}Baltop is being recalculated, please wait couple seconds
+        and try again'
+  ban:
+    help:
+      info: Ban player
+      args: '[playerName] (reason) (-s)'
+      explanation:
+      - cmi.command.ban.bypass - to bypass ban
+    info:
+      # Make sure that OverrideLoginMessage is enabled in config file
+      message: '{gcw}You are banned from this server!'
+      reason: '{gcp}Reason: {gcs}[reason]'
+      defaultReason: '{gcp}Violated server rules'
+      messageToAll: '{gcs}[playerDisplayName] {gcp}got banned by {gcs}[senderDisplayName]
+        {gcp}for: {gcs}[reason]'
+      banedSilent: '{gcp}[{gcn}Silent{gcp}]{gcs}[playerDisplayName] {gcp}got banned
+        by {gcs}[senderDisplayName] {gcp}for: {gcs}[reason]'
+      noSelfBan: '{gcw}You can''t ban yourself'
+      cantBan: '{gcw}You can''t ban this player'
+  banlist:
+    help:
+      info: Ban list
+      args: (-s)
+  bbroadcast:
+    help:
+      info: Sends special message to all players on all servers
+      args: (!) [message] (-s:[serverName,serverName])
+      explanation:
+      - If message starts with ! then clean message will be shown
+      - Servers can be defined to broadcast messages only in those servers
+    info:
+      format: '{gcp}[{gcw}Broadcast{gcp}] {gcn}[message]'
+  blockcycling:
+    help:
+      info: Cycle block states
+      args: ''
+  blockinfo:
+    help:
+      info: Check block information
+      args: ''
+    info:
+      Id: ' {gcp}Id: {gcs}[id][data]'
+      Material: ' {gcp}Material: {gcs}[name][ndata]'
+      RealName: ' {gcp}Real name: {gcs}[name]'
+      TempLight: ' {gcp}Temperature: {gcs}[temp]{gcp}, Light - block: {gcs}[blevel]{gcp},
+        sky: {gcs}[slevel]{gcp}, overral: {gcs}[level]'
+      Resistance: ' {gcp}Resistance - Mining: {gcs}[mining]{gcp}, Explosion: {gcs}[explosion]'
+      noteBlock: ' {gcp}Tone: {gcs}[tone] {gcp}Octave: {gcs}[octave] {gcp}Instrument:
+        {gcs}[instrument] {gcp}Pitch: {gcs}[pitch]'
+      BlockState: ' {gcp}[state]: {gcs}[value]'
+      BlockHitBox: ' {gcp}Height: {gcs}[height] {gcp}Length: {gcs}[length] {gcp}Width:
+        {gcs}[width]'
+      BlockHitBoxHover: '{gcp}From Top: {gcs}[top] {gcp}From Bottom: {gcs}[bottom]'
+      Books: ' {gcp}Books: {gcs}[list]'
+      Enchant: '{gcs}[name]:{gcp}[level] '
+  blocknbt:
+    help:
+      info: Show block NBT information
+      args: ''
+    info:
+      noNbt: '{gcp}Block does not contain any NBT data'
+  book:
+    help:
+      info: Book editing
+      args: '[Author/Title/Unlock] [value]'
+    info:
+      noitem: '{gcw}Not holding any item in hand.'
+      notBook: '{gcw}Item is not written book.'
+      wrongValue: '{gcw}Item is not closed written book.'
+      inccorectAction: '{gcp}Incorrect action name.'
+      authorChanged: '{gcp}Author changed to: {gcs}[author]'
+      titleChanged: '{gcp}Title changed to: {gcs}[title]'
+      unlocked: '{gcp}Book was unlocked'
+  bossbarmsg:
+    help:
+      info: Sends boss bar message to player
+      args: '[playerName/all] (-sec:[seconds])(-t:[timeToKeepFor]) (-n:nameOfBar)
+        (-p:[maxValue/current]) (-c:[color]) (-s:[1,6,10,12,20]) (-cmd:"command;;command2")
+        (-pcmd:"command;;command2") (-a:[ticks]) [message] (-cancel:nameOfBar)'
+      explanation:
+      - PlaceHolderAPI is supported for progression and text it self
+      - Time is defined in regular way, like 1s is one second and 1m is one minute.
+        This will determine for how long to keep bar shown for player before automatically
+        hiding
+      - nameOfBar is option and when defining same one, then current bar will update
+        with new information
+      - 'colors can be: red, green, pink, purple, white, yellow'
+      - max and current values determines bar fillup, PlaceHolderAPI variables can
+        be used for dynamic updates
+      - 'Examples:'
+      - /cmi bossbar Zrips BossBarTitle
+      - /cmi bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar
+        -c:red &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
+      - /cmi bossbarmsg all -p:+1 -n:testbar - will add one percent towards current
+        progresion bar by name
+      - /cmi bossbarmsg all -p:-1 -n:testbar - will take out one percent from current
+        progresion bar by name
+      - /cmi bossbarmsg all -s:10 -n:testbar - will set bossbar style to 10 segments
+        by bar name
+      - /cmi bossbarmsg all -sec:5 - will count for 5 seconds from 0 to 5
+      - /cmi bossbarmsg all -sec:-5 - will count for 5 seconds from 5 to 0
+      - '-cmd: will perform commands either for single player if target is specific
+        player or only once if its for everyone (all). This will not translated variables
+        lie [playerName] if used with ''all'' variable. Use -pcmd: instead'
+      - '-pcmd: will perform commands on each player if target is ''all'''
+      - https://www.zrips.net/cmi/commands/bossbarmsg-handling/
+  broadcast:
+    help:
+      info: Sends special message to all players
+      args: (!) [message] (-w:[worldName,worldName]) (-r:[range]) (-c:[world;x;y;z])
+      explanation:
+      - If message starts with ! then clean message will be shown
+      - Worlds can be defined to broadcast messages only in those worlds
+    info:
+      format: '{gcp}[{gcw}Broadcast{gcp}] {gcu}[message]'
+  burn:
+    help:
+      info: Burn a player
+      args: (playerName) (time) (-s)
+    info:
+      feedback: '{gcp}You have put on fire {gcs}[playerDisplayName]{gcp} for {gcs}[time].'
+      targetfeedback: '{gcp}You have been put on fire by {gcs}[senderDisplayName]{gcp}
+        for {gcs}[time]&e.'
+  cartographytable:
+    help:
+      info: Open cartography table
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have opened cartography table for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened cartography table for
+        you.'
+  charges:
+    help:
+      info: Shows left spawner charges
+      args: '[playerName] [add/set/take/clear/reset] (-f)'
+    info:
+      charges: '{gcp}* Charges: {gcs}[current]{gcp}/{gcs}[max] [bypass]'
+      cd: '{gcp}* CD: {gcs}[cdtime] {gcp}Next in: {gcs}[time]'
+      bypass: '{gcs}(Bypass)'
+      allUsed: '{gcp}All charges used! Next in [time]'
+      noGroup: '{gcp}Don''t have assigned charge group'
+      cantBreak: '{gcp}You can''t break until you will have assigned charge group'
+      minusCd: '{gcp} Minus {gcs}[sec]{gcp}sec on spawner charge cooldown'
+      add: '{gcp}Added {gcs}[amount] {gcp}spawner charges for {gcs}[playerDisplayName]'
+      set: '{gcp}Set {gcs}[amount] {gcp}spawner charges for {gcs}[playerDisplayName]'
+      clear: '{gcp}Cleared all spawner charges for {gcs}[playerDisplayName]'
+      reset: '{gcp}Reset spawner charge group for {gcs}[playerDisplayName]'
+      take: '{gcp}Took {gcs}[amount] {gcp}spawner charges from {gcs}[playerDisplayName]'
+  chat:
+    help:
+      info: Create and join chat rooms
+      args: '[create/join/leave/list/invite/kick/listrooms] (chatName/playerName)
+        (-private) (-locked) (-persistent)'
+    info:
+      joined: '{gcp}Joined chat room: {gcs}[chatRoomName]'
+      joinedWatcher: '{gcp}Observing chat room: {gcs}[chatRoomName]'
+      stopeedWatching: '{gcp}Stopped observing chat room: {gcs}[chatRoomName]'
+      watcherSymbol: ◕‿◕
+      watcherSymbolActive: '{gcu}'
+      watcherSymbolInactive: '{gcn}'
+      joinedInfo: '{gcs}[playerDisplayName] {gcp}joined chat room'
+      alreadyIn: '{gcp}You are already in {gcs}[chatRoomName] {gcp}chat room'
+      left: '{gcp}Left {gcs}[chatRoomName] {gcp}chat room'
+      leftInfo: '{gcs}[playerDisplayName] {gcp}left chat room'
+      invite: '{gcs}[playerDisplayName] {gcp}invites you to join chat room: {gcs}[chatRoomName]'
+      sentInvite: '{gcp}Invited {gcs}[playerDisplayName] {gcp}to join chat room: {gcs}[chatRoomName]'
+      format: '{gcn}|{gcs}[chatRoomName]{gcn}| {gcs}[playerDisplayName]: &r[message]'
+      nobody: '{gcw}Nobody is in chat room'
+      notOwner: '{gcw}Only chat owner can do this'
+      wrongName: '{gcw}Wrong chat room name'
+      takenName: '{gcw}Chat room name is taken, use different one'
+      notIn: '{gcw}User is not in chat room'
+      cantJoin: '{gcw}Chat room is private and you don''t have invitation'
+      cantSee: '{gcw}Chat room is private, you don''t have permission to see messages
+        in it'
+      kicked: '{gcs}[playerDisplayName] {gcp}kicked from chat room'
+      cantleave: '{gcp}Can''t leave locked room'
+      gotKicked: '{gcw}You got kicked from {gcs}[chatRoomName] {gcw}chat room'
+      list: '{gcp}[chatRoomName]{gcp}: {gcs}[list]'
+      globalList: '{gcs}[number]. [joined]{gcp}[chatRoomName][private]{gcp}: {gcs}[count][expires]'
+      globalListPrivate: '{gcn}(P)'
+      globalListJoined: '{gcu}+'
+      globalListHover:
+        Owner: '{gcp}Owner: {gcs}[playerDisplayName]'
+        Ends: ' {gcp}Expires in: {gcs}[time]'
+        Names: '{gcs}[playerDisplayName]'
+  chatcolor:
+    help:
+      info: Pick chat color
+      args: (playerName)
+    info:
+      reset: '{gcp}Reset'
+  checkaccount:
+    help:
+      info: Search for a players other accounts
+      args: (playerName/ip)
+      explanation:
+      - 'Extra permission: cmi.command.checkaccount.showip'
+    info:
+      place: '{gcs}[place]{gcp}. {gcs}'
+      ip: '{gcp}[ip]{gcs}: '
+      name: '{gcs}[name]{gcp}({gcs}[times]{gcp})'
+      nonIpList: '{gcp}Accounts: {gcs}'
+      nonIpName: '{gcs}[name]'
+      click: '{gcp}Click to check {gcs}[name] {gcp}account'
+      noData: '{gcw}There is no records for this user'
+  checkban:
+    help:
+      info: Check players ban status
+      args: (playerName)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[playerDisplayName] {gcs}[time]'
+      name: '{gcp}Name: {gcs}[playerName]'
+      permanent: '{gcn}Permanent'
+      bannedUntil: '{gcp}Banned for: {gcs}[time]'
+      reason: '{gcp}Reason: {gcs}[reason]'
+      bannedBy: '{gcp}Banned by: {gcs}[sourceDisplayName]'
+      bannedWhen: '{gcp}Banned at: {gcs}[date]'
+  checkcommand:
+    help:
+      info: Search for possible commands by keyword
+      args: (key word)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[command] {gcn}[args]'
+      hover: '{gcs}[desc]'
+      variableColor: '{gcn}'
+      noCommandFound: '{gcw}No commands found by this keyword'
+  checkexp:
+    help:
+      info: Check players exp
+      args: (playerName)
+    info:
+      current: '{gcp}Level: {gcs}[currentLevel] {gcp}Exp: {gcs}[levelExp] {gcp}Total
+        exp: {gcs}[exp]'
+      need: '{gcp}Need exp until next level: {gcs}[missingExp]'
+  checkperm:
+    help:
+      info: Check possible permission nodes
+      args: (key word)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[permission]'
+      hover: '{gcs}[desc]'
+      others: |-
+        {gcw}
+        ---->When command is used on another player<----
+        {gcw}Base command required
+      permissionColor: '{gcp}'
+      cmdPermissionColor: '{gcu}'
+      variableColor: '{gcn}'
+      noPermissionFound: '{gcw}No permissions found by this keyword'
+  cheque:
+    help:
+      info: Convert money into cheque
+      args: (playerName) [amount]
+    info:
+      transferred: '{gcp}Transferred {gcp}[amount] {gcp}to your account. New balance:
+        {gcp}[balance]'
+      chequeName: '{gcp}Cheque for {gcp}[amount]'
+      chequeLore:
+      - '&r{gcn}Issued by {gcs}[senderDisplayName]'
+      - '&r{gcn}Right click to deposit'
+      holdPaper: '{gcp}Hold paper in your hand'
+      cantUse: '{gcp}Can''t use this piece of paper. It is a cheque already!'
+      clarification: '{gcw}This type of cheque is no longer accepted. Please contact
+        with staff member to update it'
+  clear:
+    help:
+      info: Clear players inventory
+      args: (playerName) (item(:amount)(;data)) (-s) (+clearType) -exact
+      explanation:
+      - 'Possible clearTypes: quickbar, inventory, partinventory, weapons, armorslots,
+        tools, armors, mainhand, offhand'
+      - Should start with + sign
+      - Multiple types can be used
+      - cmi clear +armors - will remove armor type items
+      - cmi clear +armorslots - will remove items from armorslots
+    info:
+      clearFeedback: '{gcp}You have removed {gcp}[amount] {gcp}items from {gcp}[playerDisplayName]{gcp}
+        inventory.'
+      target: '{gcp}[amount] {gcp}items got removed from your inventory by {gcp}[senderDisplayName]{gcp}.'
+      confirm: '{gcu}Click to confirm inventory clear up. &cAll items will be removed!'
+  clearchat:
+    help:
+      info: Clears chat
+      args: (self) (-s)
+      explanation:
+      - 'Permission:'
+      - ' cmi.command.clearchat.bypass - to ignore chat cleaning'
+    info:
+      information: '{gcp}Chat was cleared by {gcs}[senderDisplayName]'
+  clearender:
+    help:
+      info: Clear players ender chest
+      args: '[playerName] (-s)'
+    info:
+      feedback: '{gcp}You have cleared {gcs}[playerDisplayName]{gcp} ender chest.'
+      targetfeedback: '{gcp}Your ender chest was cleared by {gcs}[senderDisplayName]{gcp}.'
+  colorlimits:
+    help:
+      info: Shows all possible colors
+      args: (playerName)
+    info:
+      publicmessage: ' {gcp}Public: '
+      privatemessage: ' {gcp}Private: '
+      nickname: ' {gcp}NickName: '
+      signs: ' {gcp}Signs: '
+      books: ' {gcp}Books: '
+      itemname: ' {gcp}ItemName: '
+      itemlore: ' {gcp}ItemLore: '
+      me: ' {gcp}Me: '
+      None: '{gcp}-'
+  colorpicker:
+    help:
+      info: Pick hex color
+      args: (hex/colorname)
+    info:
+      hovers:
+      - '[color]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
+      - '{gcn}[hex]'
+      - '{gcp}Closest named match: '
+      - '[colorHex] - [colorName]'
+      - '[closeColor]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
+      - '{gcs}Shift+Click'
+  colors:
+    help:
+      info: Shows all possible colors
+      args: (playerName)
+    info:
+      List:
+      - '{gcp}***************************************'
+      - '     &0&%0  &1&%1  &2&%2  &3&%3  &4&%4  &5&%5  &6&%6  &7&%7'
+      - '     &8&%8  &9&%9  &a&%a  &b&%b  &c&%c  &d&%d  &e&%e  &f&%f'
+      - '       &%k - &kMagic&r      &%l - &lBold'
+      - '       &%m - &mStrike&r     &%n - &nUline'
+      - '       &%o - &oItalic&r      &%r - &rReset'
+      - '{gcp}***************************************'
+  compass:
+    help:
+      info: Set players compass point to your location
+      args: (targetName) (sourceName) (x) (z) (worldname) (reset) (-s)
+      explanation:
+      - 'Example: /cmi compass Zhax'
+      - /cmi compass Zhax Zrips
+      - /cmi compass Zhax LT_Craft 0 0 -s
+      - /cmi compass reset Zhax
+    info:
+      wrongworld: '{gcw}Your defined world don''t exist!'
+      feedback: '{gcp}You have set {gcs}[playerDisplayName] {gcp}compass arrow to
+        {gcs}[sourceDisplayName] {gcp}location.'
+      feedbackCustom: '{gcp}You have set {gcs}[playerDisplayName] {gcp}compass arrow
+        to {gcs}[x] [z] [world] {gcp}location.'
+      targetFeedback: '{gcp}Your compass target was set to {gcs}[sourceDisplayName]
+        {gcp}location by {gcs}[senderName]{gcp}.'
+      targetFeedbackCustom: '{gcp}Your compass target was set to {gcs}[x] [z] [world]
+        {gcp}location by {gcs}[sourceDisplayName]{gcp}.'
+      targetPlayerFeedback: '{gcs}[playerDisplayName] {gcp}set their compass towards
+        your location'
+      reset: '{gcp}Compass target got reseted'
+  condense:
+    help:
+      info: Condense items into blocks
+      args: (itemName) (playerName) (-s)
+    info:
+      converted: '{gcp}Converted {gcs}[items] {gcp}items into {gcs}[blocks] {gcp}blocks'
+      nothing: '{gcw}There is nothing in your inventory that can be condensed.'
+  counter:
+    help:
+      info: Starts counter for surrounding players
+      args: '[join/leave/start] (t:time) (r:[range/-1]) (c:[world:x:y:z]) (msg:custom_message)
+        (-f)'
+      explanation:
+      - 'Permissions:'
+      - 'cmi.command.counter.force - to force counter for everyone in range '
+      - 'cmi.command.counter.time - define custom time range '
+      - cmi.command.counter.range - to define custom range
+      - cmi.command.counter.msg - to define custom message
+      - cmi.command.counter.autojoin - joins counter automatically
+      - -f will force counter to all players in range
+      - 'Example: /cmi counter start r:30 t:7 msg:&eCustom_message -f'
+    info:
+      join: '{gcp}Joined counter'
+      leave: '{gcp}Left counter'
+      go: '{gcp}GO!'
+      tooFast: '{gcw}Cant repeat command that fast, wait: {gcs}[sec]{gcp}sec'
+      noOne: '&cNo one seeing this counter!'
+  cplaytime:
+    help:
+      info: Detailed playtime
+      args: (playerName)
+    info:
+      moreDetails: '{gcp}Click for more details'
+      title: '&8[playerDisplayName] {gcp}playtime'
+      date: '&8[date]'
+      time: '{gcs}[hour]:00{gcn}-{gcs}[nextHour]:00'
+      thishour: '{gcp}Current hour'
+      hourback: '{gcp}Previous hour'
+      today: '{gcp}Today'
+      yesterday: '{gcp}Yesterday'
+      thisweek: '{gcp}Current week'
+      week: '{gcp}7 day range'
+      thismonth: '{gcp}Current month'
+      month: '{gcp}30 day range'
+      thisyear: '{gcp}Current year'
+      year: '{gcp}365 day range'
+      total: '{gcp}Total'
+  ctellraw:
+    help:
+      info: Send tellraw type message
+      args: '[playerName/all] [formattedMessage]'
+      explanation:
+      - Usage is same as shown in https://www.zrips.net/cmi/custom-text/ aka customtext
+        command
+  ctext:
+    help:
+      info: Shows custom text
+      args: '[cText] (playerName/all) (sourcePlayer) (pageNumber)'
+    info:
+      list: '{gcp}Custom Text''s: {gcs}'
+      check: '{gcp}Check: {gcs}[text]'
+  cuff:
+    help:
+      info: Suspends players actions
+      args: '[playername] (true/false) (-s)'
+    info:
+      noChat: '{gcw}All your actions are suspended. You can''t chat.'
+      noCommand: '{gcw}You cant use commands while suspended. {gcp}Allowed: {gcs}/msg,
+        /r, /tell'
+      cuffed: '{gcs}[playerDisplayName] {gcp}cuffed'
+      unCuffed: '{gcs}[playerDisplayName] {gcp}uncuffed'
+      free: '{gcp}You are free now'
+      gotCuffed: '{gcp}You have been cuffed'
+      cuffedInfo: '{gcp}You are cuffed'
+      cantCuff: '&cYou can''t cuff this player!'
+  customrecipe:
+    help:
+      info: Manages item custom recipes
+      args: ''
+    info:
+      removed: '{gcp}Recipe removed: [id]. For FULL effect you will need server restart.'
+      noRecipe: '{gcp}There is no custom recipe by this id'
+      edit: '{gcp}Edit recipe ({gcs}[type]{gcp})'
+      addNew: '{gcp}Add new recipe ({gcs}[type]{gcp})'
+      shapelessRecipe: '{gcp}Make new shapeless recipe'
+      shapedRecipe: '{gcp}Make new shaped recipe'
+      furnaceRecipe: '{gcp}Make new furnace recipe'
+      campfireRecipe: '{gcp}Make new campfire recipe'
+      smithingRecipe: '{gcp}Make new smithing recipe'
+      stonecuttingRecipe: '{gcp}Make new stonecutting recipe'
+      blastingRecipe: '{gcp}Make new blasting recipe'
+      smokingRecipe: '{gcp}Make new smoking recipe'
+      exact: '{gcp}Require exact ingredients: {gcs}[state]'
+      exists: '{gcw}Looks like recipe like this already exists'
+      mainTitle: '{gcp}Custom recipes ({gcs}[current]{gcp}/{gcs}[total]{gcp})'
+  database:
+    help:
+      info: Manage backup data
+      args: '[action] (playerName) (dataType) (fileName)'
+    info:
+      backupSuccess: '{gcp}Backup created with name {gcs}[name] {gcp}Tables: {gcs}[types]'
+      backupFailed: '{gcp}Backup failed'
+      userDataRestored: '{gcp}Restored {gcs}[playerName] {gcp}data. Tables: {gcs}[types]'
+      userDataFailed: '{gcw}Restoring failed for {gcs}[playerName]'
+  dback:
+    help:
+      info: Returns to death location
+      args: (playerName) (-s)
+    info:
+      noinfo: '{gcw}There is no saved location to return to!'
+      feedback: '{gcp}Returned to last saved location ([world],[x],[y],[z])!'
+  dialogs:
+    help:
+      info: Shows specified dialog
+      args: '[dialogName] (playerName) ([variableName]:value) (-s)'
+    info:
+      notFound: '{gcw}Dialog by this name was not found'
+  disableenchant:
+    help:
+      info: Disable enchantment
+      args: (enchant/id) (disable/enable)
+    info:
+      title: Enchant disabler
+      feedback: '{gcs}[enchantName] {gcp}has been {gcs}[state]'
+  dispose:
+    help:
+      info: Dispose of unneeded items
+      args: (playerName)
+    info:
+      title: '{gcw}Place all items you don''t need'
+      cant: '{gcw}You can''t dispose this item'
+  distance:
+    help:
+      info: Check distance between 2 points
+      args: (playerName) (playerName)
+    info:
+      feedback: '{gcp}Distance: {gcs}[dist] {gcp}x:{gcs}[x] {gcp}y:{gcs}[y] {gcp}z:{gcs}[z]
+        {gcp}Direction:{gcs}[dir]'
+  donate:
+    help:
+      info: Donate item you are holding
+      args: '[playerName] (amount)'
+    info:
+      donated: '{gcp}Donated {gcs}[type]{gcp}X{gcs}[amount] {gcp}items to {gcs}[playerDisplayName]'
+      got: '{gcp}Got {gcs}[type]{gcp}X{gcs}[amount] {gcp}donation from {gcs}[playerDisplayName]'
+      sentOffer: '{gcp}Sent donation to {gcs}[playerDisplayName]{gcp}. Waiting until
+        player accepts it'
+      gotOffer: '{gcp}Got {gcs}[type]{gcp}X{gcs}[amount] {gcp}donation from {gcs}[sourceDisplayName]{gcp}.
+        Click to accept it.'
+      doesnthave: '{gcp}Player doesn''t have this item anymore'
+      'no': '{gcp}No pending donations'
+      list: '&7[number]. {gcp}[playerDisplayName] {gcp}- &7[material] {gcs}x {gcp}[amount]'
+  down:
+    help:
+      info: Teleport one floor down
+      args: '[playerName] (-s) (max)'
+    info:
+      notFound: '{gcp}No suitable location'
+  dsign:
+    help:
+      info: Manage dynamic signs
+      args: (new)
+      explanation:
+      - Look at sign and perform /cmi dsign new
+    info:
+      howTo: '{gcw}This is not dynamic sign, to create new perform {gcs}/cmi dsign
+        new'
+      gui: '{gcs}---- {gcp}<Open gui> {gcs}----'
+      guiHover: '{gcp}Open dynamic sign settings GUI'
+      individual: '{gcp}Individual: [state]'
+      individualLore:
+      - '{gcu}True {gcp}- Will result sign to be different for each player'
+      - '{gcu}True {gcp}- Will update player placeholders'
+      - '{gcd}False {gcp}- Will result in sign to be physically updated'
+      - '{gcd}False {gcp}- Is more efficient but more limited at same time'
+      interval: '{gcp}Update every {gcs}[second] {gcp}second'
+      intervalLore:
+      - '{gcp}How often, in seconds, information on the sign is updated'
+      - '{gcp}This also defines line scroll speed'
+      range: '{gcp}Activation range: {gcs}[blocks]'
+      rangeLore:
+      - '{gcp}Defines area around sign to trigger updates'
+  dye:
+    help:
+      info: Dye leather armor
+      args: (playerName) (red,green,blue/hexCode/colorName/random/clear/rainbow/day/biome/health)
+        (-s)
+    info:
+      color: '{gcp}Current color - {gcs}[red],[green],[blue] {gcp}Hex:&6#[hex]'
+      custom: '{gcp}Enabled custom color mode: {gcs}[mode]'
+      bound: '{gcp}SoulBound to: {gcs}'
+      boundName: '[playerName]'
+  editctext:
+    help:
+      info: Custom text editor
+      args: ''
+    info:
+      noCText: '{gcw}Cant find custom text by this name ([name])'
+      editInfo: '{gcp}Click to paste old text. Type {gcs}cancel {gcp}to cancel action.
+        Type {gcs}remove {gcp}to remove line'
+      addInfo: '{gcp}Enter new line text. Type {gcs}cancel {gcp}to cancel'
+      addInformationHover: "{gcp}Global variables supported as of sender category\
+        \ \n{gcp}To include clickable messages: \n{gcp}<T>&rText{gcp}</T><H>&rHover\
+        \ text{gcp}</H><C>&rcommand{gcp}</C><SC>&rSuggested text{gcp}</SC> \n{gcs}<T>\
+        \ {gcp}and {gcs}</T> {gcp}required, other is optional \n{gcp}Use \\u005Cn\
+        \ to break line \n{gcp}To have more than one JSON message use <Next> \n{gcs}<SC>\
+        \ {gcp}Suggests text when clicked \n{gcs}<SI> {gcp}Suggests text when shift\
+        \ clicked which doesnt everrite current text in chat \n{gcs}<CC> {gcp}performs\
+        \ console command once \n{gcs}<CCI> {gcp}performs console commands every time\
+        \ player clicks text \n{gcs}<URL> {gcp}allows to add url to redirect player\
+        \ into web page"
+      newInfo: '{gcp}Enter name of new custom text. Type {gcs}cancel {gcp}to cancel'
+      deleteInfo: '{gcp}Type in {gcs}confirm {gcp}to confirm removal or type {gcs}cancel
+        {gcp}to cancel this action'
+      deleted: '{gcp}Custom text ({gcs}[ctext]{gcp}) was removed'
+      createdNew: '{gcp}Custom text ({gcs}[ctext]{gcp}) was created'
+      hidden: '{gcp}Hidden: {gcs}[state]'
+      autoPage: '{gcp}Auto page: {gcs}[state]'
+      autoAlias: '{gcp}Auto alias: {gcs}[state]'
+      permReq: '{gcp}Requires permission: {gcs}[state]'
+      pageLabel: ' {gcp}<PageLabel>'
+      pageLabelHover: '{gcp}[value]'
+      listTitle: '{gcp}CText''s'
+      listFormat: '{gcs}[name]&7: &r[extra]'
+  editlocale:
+    help:
+      info: Edit your locale file
+      args: (keyword(-s))
+    info:
+      found: '{gcs}********* {gcp}Found: [found] {gcs}*********'
+  editplaytime:
+    help:
+      info: Edit players playtime
+      args: (playerName) [add/take/set] [amount] (-s)
+    info:
+      cantSet: '{gcw}Failed to change playtime'
+      set: '{gcp}Changed from {gcs}[old] {gcp}to {gcs}[new]'
+  editwarnings:
+    help:
+      info: Check player warnings
+      args: (playerName/clearall) (clear)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[time] {gcp}by {gcs}[warnedBy] {gcp}for: {gcs}[warnedFor]'
+      hover: '{gcp}Expires in: {gcs}[time]'
+      cleared: '{gcp}All warnings from player got cleared'
+      allCleared: '{gcp}All warnings from ALL players got cleared'
+  editwarp:
+    help:
+      info: Edit warps
+      args: (warpName) (newName)
+    info:
+      exists: '{gcw}Warp by this name ({gcs}[newName]{gcw}) already exists. Pick different
+        one'
+      updated: '{gcp}Updated name from {gcs}[oldName]{gcp} into {gcs}[newName]'
+      placeItem: '{gcp}Place item to set custom icon'
+      placeOffItem: '{gcp}Place item to set custom off icon'
+      autoLore: '{gcp}Auto lore generation: [state]'
+      group: '{gcp}Group: {gcs}[group]'
+      newGroup: '{gcp}Enter new group name'
+      displayName: '{gcp}DisplayName: {gcs}[displayName]'
+      newDisplayName: '{gcp}Enter new display name'
+      randomizeYaw: '{gcp}Randomize direction: [state]'
+      permission: '{gcp}Requires permission to use: [state]'
+      reqPermission: '{gcp}Show without permission: [state]'
+      hidden: '{gcp}Hidden: [state]'
+      primaryLocation: '{gcp}Primary location'
+      secondaryLocation: '{gcp}Extra locations'
+      uniqueLocation: '{gcp}Repeating locations: [state]'
+      slot: '{gcp}Slot: {gcs}[slot]'
+      page: '{gcp}Page: {gcs}[page]'
+      overllaps: '{gcp}Overllaps with:'
+      notSet: '{gcp}Not set'
+  effect:
+    help:
+      info: Adds potion effect to player. use clear to remove all effects
+      args: '[playername/all] [effect/clear] (duration/infinite) (multiplier) (-s)
+        (-visual)'
+      explanation:
+      - -visual will add visible bubbles and icon on top right corner
+      - 'Examples:'
+      - /cmi effect zrips nightvision 60 1 - will give 60 sec night vision for Zrips
+      - /cmi effect zrips nightvision +10 - will add 10 sec to current night vision
+        time
+      - /cmi effect zrips nightvision -10 - will take out 10 sec from current night
+        vision time
+      - /cmi effect all health_boost 60 1 - will boost hp by 1 for everyone online
+    info:
+      feedback: '{gcp}Potion effect {gcs}[effect] {gcp}added to {gcs}[playerDisplayName]{gcp}
+        for {gcs}[sec]sec{gcp} with power of {gcs}[power].'
+      cleared: '{gcp}Potion effects have been cleared for {gcs}[playerDisplayName]&e.'
+  emojipicker:
+    help:
+      info: Pick emoji
+      args: ''
+    info:
+      hovers:
+      - '{gcs}Shift+Click'
+  enchant:
+    help:
+      info: Enchant items
+      args: (playerName) [enchant] [level] (-o) (-onlyvalid) (-keeponlyvalid) (-inform)
+        (-s) (-i:[itemName(:data)]) (clear)
+      explanation:
+      - -o will take item from offhand
+    info:
+      enchanted: '{gcp}Enchanted with {gcs}[enchant] {gcp}lvl {gcs}[level]{gcp} for
+        {gcs}[playerDisplayName]'
+      removed: '{gcp}You have removed {gcs}[enchant] {gcp}enchanted from item for
+        {gcs}[playerDisplayName]'
+      clear: '{gcp}Cleared enchantments from item for {gcs}[playerDisplayName]'
+      clearOne: '{gcp}Removed {gcs}[enchant] {gcp}enchantment from item for {gcs}[playerDisplayName]'
+      noitem: '{gcw}Not holding any item in hand.'
+      invalidEnchant: '{gcw}You don''t have permission to enchant item with invalid
+        enchantment'
+      clearedInvalid: '{gcp}Removed {gcs}[amount] {gcp}invalid enchantments from item'
+      inccorectId: '{gcp}Incorrect enchant name or id.'
+      wrongItem: '{gcp}Wrong item in your hand'
+      enchantlimit: '{gcw}You don''t have access to this enchantment'
+      levellimit: '{gcw}Level is too high, max allowed is {gcp}[level].'
+      conflict: '{gcw}Conflicting enchantment {gcs}[enchant1] {gcw}-> {gcs}[enchant2]'
+      possible: '{gcp}Possible enchants: '
+      possibleList: '{gcs}[enchant]'
+  ender:
+    help:
+      info: Opens players ender chest
+      args: (playerName) (playerName)
+      explanation:
+      - cmi.command.ender.preventmodify - prevents inventory modifications
+      - cmi.enderedit - allows to edit opened inventory
+    info:
+      title: '{gcs}[playerDisplayName] {gcp}Ender Chest'
+      feedback: '{gcp}You are editing {gcs}[playerDisplayName] {gcp}enderchest.'
+  endgateway:
+    help:
+      info: Toggle end gateway beam
+      args: ''
+    info:
+      'off': '{gcp}Beam was toggled {gcd}Off'
+      'on': '{gcp}Beam was toggled {gcu}On'
+  entityinfo:
+    help:
+      info: Check entity information
+      args: (playername)
+    info:
+      type: '{gcp}Entity Type: {gcs}[type]'
+      customName: '{gcp}Custom name: {gcs}[name]'
+      health: '{gcp}Health: {gcs}[current]{gcp}/{gcs}[max]'
+      lastDamage: '{gcp}Last damage cause: {gcs}[cause]'
+      tamed: '{gcp}Tamed: {gcs}[state]'
+      id: '{gcp}ID: {gcs}[id]'
+      uuid: '{gcs}[uuid]'
+      owner: '{gcp}Owner: {gcs}[playerDisplayName]'
+      grows: '{gcp}Grows up in: {gcs}[time]'
+      horse: '{gcp}Horse: jump {gcs}[jump] {gcp}blocks, speed {gcs}[speed] {gcp}blocks/sec'
+      villager: '{gcp}Profession: {gcs}[profession] {gcp}Lvl: {gcs}[lvl] {gcp}Type:
+        {gcs}[type]'
+      subTypes: '{gcp}Sub Types: {gcs}[list]'
+  entitynbt:
+    help:
+      info: Check entity nbt information
+      args: (playername) (-console)
+  exp:
+    help:
+      info: Set players exp. Use L to set levels
+      args: '[playerName] [add/set/take/clear] [amount][%rand/10-20%][1%[min-max][[playerName]]]
+        (-s)'
+      explanation:
+      - 'Example:'
+      - /exp 10
+      - /exp add 10
+      - /exp set 10L
+      - /exp take 10
+      - /exp Zrips clear
+      - /exp Zrips add 10
+      - /exp Zrips add 10%[10-50]
+    info:
+      current: '{gcs}[playerDisplayName] {gcp}is at {gcs}[lvl]{gcp}lvl with {gcs}[currentExp]{gcp}exp
+        or with {gcs}[exp]{gcp}exp in total.'
+      selfFeedback: '{gcp}Exp was set to {gcs}[exp] {gcp}for {gcs}[playerDisplayName]{gcp}.'
+      targetFeedback: '{gcp}Your exp was set to {gcs}[exp]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  ext:
+    help:
+      info: Extinguish a player
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have extinguished {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}You have been extinguished by {gcs}[senderDisplayName]{gcp}.'
+  falldistance:
+    help:
+      info: Set players falldistance
+      args: (playerName) (number) (-s)
+    info:
+      feedback: '{gcp}You have set fall distance to {gcs}[amount]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+  feed:
+    help:
+      info: Feed player
+      args: (playerName/all) (-s)
+    info:
+      feedback: '{gcp}You have fed {gcs}[playerDisplayName]{gcp}.'
+      feedbackMulti: '{gcp}You have fed {gcs}[count] {gcp}players.'
+      targetfeedback: '{gcp}You have been fed by {gcs}[senderDisplayName]{gcp}.'
+  findbiome:
+    help:
+      info: Finds nearest biome by name
+      args: (biomeName/stop/stopall)
+    info:
+      infoShow: '{gcp}TPS: {gcs}[tps] {gcp}Left {gcs}[left] {gcp}({gcs}[time]{gcp})
+        Speed: {gcs}[speed]'
+      stopped: '{gcp}Stopped!'
+      cantFindBiome: '{gcp}Could not find biome you wanted. Checked {gcs}[amount]
+        {gcp}chunks'
+      teleportedTo: '{gcp}Teleported to {gcs}[biome] {gcp}biome'
+  fixchunk:
+    help:
+      info: Scans for damaged chunks
+      args: w [worldName] r [range in chunks] c [x:z]
+      explanation:
+      - 'SubCommands:'
+      - '- stats - show current scanning stats'
+      - '- pause - pause scanning'
+      - '- continue - continue scanning'
+      - '- stop - stop scanning'
+      - '- stopall - stop all scanning'
+      - '- speed [amount] - set current scan speed'
+      - '- autospeed [true/false] - set autospeed turned off or on'
+      - '- messages [true/false] - set message output to off or on'
+      - 'Example:'
+      - /fixchunk w LT_Craft
+      - /fixchunk w LT_Craft r 50 c 1024:-2048
+      - /fixchunk w LT_Craft r g
+      - /fixchunk fix
+    info:
+      startScanning: '{gcp}Found {gcs}[amount] {gcp}chunks to check. Starting!'
+      paused: '{gcp}Scanning paused, to continue use {gcs}/cmi fixchunk continue.'
+      continuing: '{gcp}Scanning continuing'
+      stoped: '{gcp}Scanning stopped. You can check the results with /cmi fixchunk
+        info'
+      speedChange: '{gcp}Speed changed to [amount]'
+      autospeedChange: '{gcp}AutoSpeed changed to [state]'
+      messagesChange: '{gcp}Message state changed to [state]'
+      NoInfo: '{gcp}There is no info'
+      InfoShow: '{gcs}TPS: {gcs}[tps] {gcs}Left {gcp}[left] {gcs}({gcp}[min]m:[sec]s{gcs})
+        {gcs}Speed: {gcp}[speed] {gcs}Found: {gcp}[found]'
+      scanList: '{gcs}[number]. {gcp}X:{gcs}[x] {gcp}Z:{gcs}[z]'
+      finished: '{gcp}Scanning finished, use {gcs}/cmi fixchunk fix {gcp}to fix found
+        issues. {gcn}Chunks will be regenerated!'
+      fixed: '{gcs}[number] {gcp}chunks fixed'
+      total: '{gcp}Checking from [current]/[until] from total of [total]'
+      stats:
+      - '{gcp}************************************************************'
+      - '{gcp}* {gcs}Chunks: {gcp}[checked]/[total]'
+      - '{gcp}* {gcs}Scan range: {gcp}[range]'
+      - '{gcp}* {gcs}Scan speed: {gcp}[scanspeed] {gcs}({gcp}[autospeed]{gcs})'
+      - '{gcp}* {gcs}Real speed: {gcp}[cps] {gcs}CPS ({gcp}[avgcps] avg{gcs})'
+      - '{gcp}* {gcs}World: {gcp}[world]'
+      - '{gcp}* {gcs}Found: {gcp}[found]'
+      - '{gcp}* {gcs}Time: {gcp}[min]min [sec]sec'
+      - '{gcp}************************************************************'
+  flightcharge:
+    help:
+      info: Manage and check flight charges
+      args: (add/take/set/show/expcharge/moneycharge/recharge) (playerName) (amount)
+        (-s)
+    info:
+      charge: '{gcp}Current charge: {gcs}[charge]{gcp}/{gcs}[max]'
+      changed: '{gcp}Your flight charge level changed to {gcs}[charge]'
+      newCharge: '{gcp}New charge level: {gcs}[charge]'
+      bossbar: '{gcu}>> {gcp}Flight Charge {gcs}[charge][changeAmount]{gcp}/{gcs}[max]
+        {gcu}<<'
+      guiTitle: '{gcp}Flight recharge'
+      buttonExp: '{gcp}Recharge with exp'
+      buttonMoney: '{gcp}Recharge with money'
+      max: '{gcp}Already fully charged'
+      amounts:
+      - '{gcp}Left click +1. Cost: {gcs}[amount1]'
+      - '{gcp}Shift left +10. Cost: {gcs}[amount10]'
+      - '{gcp}Right click +100. Cost: {gcs}[amount100]'
+      - '{gcp}Shift right +1000. Cost: {gcs}[amount1000]'
+      - '{gcp}Middle Mouse +10000. Cost: {gcs}[amount10000]'
+      - ''
+      changeAmount: '{gcp}({gcs}[amount]{gcp})'
+      cost: '{gcp}Charged {gcs}[amount] {gcp}for {gcs}[charge] {gcp}flight charges'
+  fly:
+    help:
+      info: Set players fly true or false
+      args: '[playerName] (true/false) (-s)'
+    info:
+      feedback: '{gcp}You have set fly to {gcs}[boolean]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+      targetFeedback: '{gcp}Your fly mode set to {gcs}[boolean]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  flyc:
+    help:
+      info: Toggle flight charge mode
+      args: (playerName) (true/false) (-s)
+    info:
+      feedback: '{gcp}You have set fly charge mode to {gcs}[boolean]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+      targetFeedback: '{gcp}Your fly charge mode set to {gcs}[boolean]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+      targetFeedbackSelf: '{gcp}Your fly charge mode set to {gcs}[boolean]'
+      noCharge: '{gcp}Flight charge is depleted'
+  flyspeed:
+    help:
+      info: Set players fly speed from 0 to 10
+      args: (playerName) [amount] (-s)
+    info:
+      feedback: '{gcp}You have set {gcp}[amount]{gcp} fly speed for {gcp}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your flyspeed was set to {gcp}[amount]{gcp} by {gcp}[senderDisplayName]{gcp}.'
+      max: '{gcp}Max allowed fly speed for you is {gcs}[max]{gcp}.'
+  gamerule:
+    help:
+      info: Manage gamerules
+      args: (world) (gamerule) (value)
+    info:
+      updated: '{gcp}Game rule ({gcs}[rule]{gcp}) changed for {gcs}[world] {gcp}to
+        {gcs}[value]'
+  generateworth:
+    help:
+      info: Auto generate possible item worth values
+      args: ''
+  getbook:
+    help:
+      info: Get book
+      args: '[cTextName] (playerName)'
+    info:
+      list: '{gcp}Books: {gcs}'
+      check: '{gcp}Check: {gcs}[text]'
+      title: '{gcn}[title]'
+  giftpet:
+    help:
+      info: Gift your tamed pet to another player
+      args: '[playerName] (-s)'
+    info:
+      notTameable: '{gcp}This entity isin''t tameable'
+      notTamed: '{gcp}This entity isin''t tamed'
+      notOwner: '{gcp}You are not owner of this entity'
+      gifted: '{gcp}You gifted {gcs}[type] {gcp}entity {gcp}to {gcs}[playerDisplayName]'
+      received: '{gcp}You received {gcs}[type] {gcp}entity {gcp}from {gcs}[sourceDisplayName]'
+  give:
+    help:
+      info: Give item to player
+      args: (playerName) [itemdata/hand] (playerName) (-slot:[number]) (unstack) (-s)
+      explanation:
+      - |-
+        Example: /cmi give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
+        {#pink}With_Love!;sharpness:3,durability:3;hideenchants
+      - <T>More information at www.zrips.net/cmi/commands/icwol/</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
+    info:
+      feedback: '{gcp}Giving {gcs}[amount] {gcp}of {gcs}[itemname] {gcp}({gcs}[customitemname]{gcp})
+        to {gcs}[playerDisplayName]'
+      maxLimit: '{gcw}You can''t give more than {gcn}[max] {gcw}items in one go'
+      notItem: '{gcw}We can''t give you this, its not an item'
+      maxLimitResize: '&{gcw}You can''t give more than {gcn}[max]. {gcw}Resizing to
+        limit.'
+  giveall:
+    help:
+      info: Give item for all players
+      args: '[itemname] (amount) (e|l|n|offline)'
+      explanation:
+      - '&e- give item name or its id with data value'
+      - '&e- optionaly provide amount you want to give '
+      - '&e- &6n &e- to define itemname '
+      - '&e- &6l &e- to define item lore '
+      - '&e- &6e &e - to define item enchants '
+      - '&e- &6-s &e - wont show feedback message '
+      - '&e- &6h &e - followed with player name will give item from its hand '
+      - '&e- &6inv &e - followed by player name will give entire inventory for others '
+      - '&e- &6offline &e- to include offline players'
+      - '&ecmi giveall stone 1 n &2Uber_stone l &3Stone_lore offline'
+      - '&ecmi giveall h Zrips'
+      - '&ecmi giveall inv Zrips'
+    info:
+      starting: '{gcp}Starting to give items for all players, this can take some time.'
+      running: '{gcs}[amount] {gcp}already got item, still running.'
+      feedback: '{gcp}Finished. {gcs}[amount] {gcp}players got item.'
+  glow:
+    help:
+      info: Set players glow mode
+      args: (playerName) [true/false/color/gui]
+      explanation:
+      - 'Example: /glow Zrips red'
+      - 'Permissions: cmi.command.glow.color.[color] - allows to set particular glow
+        color'
+    info:
+      feedback: '{gcp}You have set [color]glow {gcp}to {gcs}[boolean]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your [color]glow {gcp}mode set to {gcs}[boolean]{gcp}
+        by {gcs}[senderDisplayName]{gcp}.'
+      title: '{gcp}Pick glow color'
+      incorrect: '{gcw}Incorrect color name'
+      lore: '{gcu}Click to select color'
+      noPerm: '{gcw}No permission yet'
+  gm:
+    help:
+      info: Set players game mode
+      args: (playerName) [gamemode]
+    info:
+      feedback: '{gcp}You have set {gcs}[playerDisplayName]{gcp} to gamemode {gcs}[gameMode]{gcp}.'
+      targetfeedback: '{gcp}Your game mode was set to {gcs}[gameMode]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  god:
+    help:
+      info: Set players god mode to true or false
+      args: '[playerName] (true/false) (-s)'
+    info:
+      feedback: '{gcp}You have set god to {gcs}[boolean]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your god mode was set to {gcs}[boolean]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  grindstone:
+    help:
+      info: Open grindstone
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have opened grindstone for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened grindstone for you.'
+  groundclean:
+    help:
+      info: Clears server from unnecessary items
+      args: (+cb) (+cm) (+ci) (+b) (+sh) (+tnt) (+all) (+fl) (+named) (-w:[worldName])
+        (-s)
+      explanation:
+      - +cm will include minecarts into cleaning
+      - +cb will include boats into cleaning
+      - +sh will include shulker box into cleaning
+      - +ci defines if you want to include weapons and armors
+      - +tnt defines if you want to include primed tnt
+      - +named removes items with custom name or lore
+      - +b broadcasts clear message to everyone
+    info:
+      removed: '{gcp}Removed -[list]'
+      items: ' {gcp}Items: {gcs}[items]'
+      arrows: ' {gcp}Arrows: {gcs}[arrows]'
+      exporbs: ' {gcp}ExpOrbs: {gcs}[exporbs]'
+      blocks: ' {gcp}FallingBlocks: {gcs}[blocks]'
+      projectiles: ' {gcp}Projectiles: {gcs}[projectiles]'
+      tnt: ' {gcp}PrimedTnt: {gcs}[tnt]'
+      boat: ' {gcp}Boats: {gcs}[boat]'
+      minecart: ' {gcp}Minecarts: {gcs}[minecart]'
+      nothing: '{gcp}Nothing to remove.'
+  haspermission:
+    help:
+      info: Check if player has particular permission
+      args: (playerName) [permissionNode]
+    info:
+      title: '{gcs}[playerDisplayName] {gcp}-> {gcs}[permission]'
+      none: '{gcp}Permission is not set for player and he is not OP. Results to {gcs}[state]'
+      softSet: '{gcp}Set by plugin.yml to {gcs}[state]'
+      hardSet: '{gcp}Hard set to {gcs}[state] {gcp}by some plugin'
+      notHardSet: '{gcp}Not hard set, can result to &cFalse {gcp}in some cases'
+      ops: '{gcp}Results to {gcs}[state] {gcp}because player is OP'
+      minMax: '{gcp}Min: {gcs}[min] {gcp}Max: {gcs}[max]'
+  hat:
+    help:
+      info: Place item like hat
+      args: (playerName)
+    info:
+      feedback: '!actionbar!{gcp}You have successfully changed hat!'
+      targetfeedback: '{gcp}Your hat was changed by {gcs}[senderDisplayName]{gcp}!'
+      fullinv: '{gcs}[playerDisplayName] {gcp}inventory is full, can''t change hat!'
+      incorrect: '{gcs}Incorrect item in head slot, cant replace with new one. Remove
+        it manually'
+      cantUse: '{gcs}Can''t use this item as a hat'
+  head:
+    help:
+      info: Get players head
+      args: '[sourceName] (targetName) (-s) (amount)'
+    info:
+      Feedback: '{gcs}[headName] {gcp}head created!'
+      targetFeedback: '{gcp}You got {gcs}[headName] {gcp}head from {gcs}[senderDisplayName]{gcp}!'
+  heal:
+    help:
+      info: Heal player
+      args: '[playerName/all] (healamount/healpercent) (-nofeed) (-ignoreffects) (-dontextinguish)'
+    info:
+      feedback: '{gcp}You have healed {gcs}[playerDisplayName]{gcp}.'
+      feedbackMulti: '{gcp}You have healed {gcs}[count] {gcp}players.'
+      targetfeedback: '{gcp}You have been healed by {gcs}[senderDisplayName]{gcp}.'
+  helpop:
+    help:
+      info: Sends message for help to staff members
+      args: '[message]'
+      explanation:
+      - Requires cmi.command.helpop.inform too see messages
+    info:
+      message: '{gcd}[Help]{gcw}[{gcn}[senderDisplayName]{gcw}]&r{gcd} [message]'
+      feedback: '{gcd}[Help]{gcn}Your question was submitted to online staff'
+      offline: '{gcd}[Help]{gcn}There are no staff members currently online, try later'
+  hideflags:
+    help:
+      info: Hides item flags
+      args: (playerName) [flagName/clear] (flagName)
+    info:
+      feedback: '{gcp}You have added new flag to item for {gcs}[playerDisplayName]{gcp}.'
+      cleared: '{gcp}Cleared {gcs}ALL {gcp}flags from item for {gcs}[playerDisplayName]{gcp}.'
+      noitem: '&cNot holding any item in hand.'
+      inccorectId: '{gcp}Incorrect flag name.'
+  hologram:
+    help:
+      info: Manage holograms
+      args: ''
+    info:
+      base: '{gcp}Base'
+      board: '{gcp}Board'
+      icons: '{gcp}Icon'
+      particle: '{gcp}Particle'
+      interaction: '{gcp}Interaction'
+      state: '{gcp}[state]'
+      offset: '{gcs}Offset'
+      scale: '{gcs}Scale'
+      direction: '{gcs}Direction'
+      material: '{gcp}Material: {gcs}[material]'
+      light: '{gcp}Light levels Sky: {gcs}[sky] {gcp}Block: {gcs}[block]'
+      reset: '{gcp}Press {gcs}Q {gcp}to reset'
+      basicDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y]'
+      fullDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y] {gcp}Roll: {gcs}[z]'
+      basicScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y]'
+      fullScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y] {gcp}Depth: {gcs}[z]'
+      basicVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y]'
+      fullVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y] {gcp}Z: {gcs}[z]'
+      howTo: '&cTo create new hologram perform &e/cmi hologram new {gcs}[name]'
+      gui: '{gcs}---- {gcp}<Open settings gui> {gcs}----'
+      guiHover: '{gcp}Open hologram settings GUI'
+      groupRelocate: '&7Relocate entire &f[group] &7group'
+      groupCount: '&7Group contains &f[count] &7holograms'
+      pageInterval: '{gcp}Change page every {gcs}[second] {gcp}seconds'
+      pageIntervalLore:
+      - '{gcp}How often, in seconds, hologram page is changed automatically'
+      pageIntervalNoPages: '{gcd}This hologram doesn''t have any pages yet'
+      reqPermission: '{gcp}Requires permission to see: {gcs}[state]'
+      teleport: '{gcp}Teleport to hologram location'
+      range: '{gcp}Show range: {gcs}[blocks]'
+      rangeLore:
+      - '{gcp}Defines area around hologram to show or hide it'
+      updateRange: '{gcp}Update range: {gcs}[blocks]'
+      updateRangeLore:
+      - '{gcp}Defines area around hologram to trigger update'
+      relocate: '{gcp}Relocate'
+      relocateLore:
+      - '{gcp}Relocates hologram to your current location'
+      holoYaw: '{gcp}Yaw: {gcs}[angle]'
+      los: '{gcp}Consider line of sight: {gcs}[state]'
+      interact: '{gcp}Interactable: {gcs}[state]'
+      particles: '{gcp}Show particles: {gcs}[state]'
+      seeThrough: '{gcp}See through: {gcs}[state]'
+      seeThroughExtra: '{gcp}Text might not be visible while Board is enabled'
+      commands: '{gcp}Commands:'
+      hoverParticles: '{gcp}Show hover particles: {gcs}[state]'
+      particleCount: '{gcp}Particles: {gcs}[count]'
+      particleType: '{gcp}Particle type: {gcs}[type]'
+      particleSpacing: '{gcp}Particle spacing: {gcs}[amount]'
+      basePrefix: '{gcp}Base prefix: &r[prefix]X'
+      hoverPrefix: '{gcp}Hover prefix: &r[prefix]X'
+      locationRange: '{gcp}Modify location and range'
+      interactions: '{gcp}Modify interactions'
+      animations: '{gcp}Modify animations'
+      displayMethod: '{gcp}Type: {gcs}[state]'
+      enabled: '{gcp}Activated: {gcs}[state]'
+      followType: '{gcp}Follow type: {gcs}[type]'
+      doubleSided: '{gcp}Double sided: {gcs}[state]'
+      autoRotate: '{gcp}Auto rotate: {gcs}[angle]'
+      alignment: '{gcp}Text alignment: {gcs}[type]'
+      shadow: '{gcp}Text shadow: {gcs}[state]'
+      textAlpha: '{gcp}Text transparency: {gcs}[alpha]'
+      textWidth: '{gcp}Text auto wrap width: {gcs}[width]'
+      order: '{gcp}Downwards placement: {gcs}[state]'
+      animationFadeIn: '{gcp}Fade In: {gcs}[value]'
+      animationFadeOut: '{gcp}Fade Out: {gcs}[value]'
+      bgColor: '{gcp}Background color: {gcs}[color]'
+      bgAlpha: '{gcp}Background transparency: {gcs}[alpha]'
+      textFiller: '{gcp}Text filler: {gcs}[width]'
+      filler: ' '
+      textFillerExplanation: '{gcp}Add %filler% to auto fill text'
+      interval: '{gcp}Update every {gcs}[second] {gcp}seconds'
+      intervalLore:
+      - '{gcp}How often, in seconds, information on the hologram is updated'
+      - '{gcp}If text is not changing, set it to 0'
+      embeddedAutoButton: '{gcp}Enabled pagination buttons: [state]'
+      autoPage: <T><<<<  </T><C>[prevPage]</C><T>  >>>></T><C>[nextPage]</C>
+      moveX: '{gcp}X: {gcs}[x]'
+      moveY: '{gcp}Y: {gcs}[y]'
+      moveZ: '{gcp}Z: {gcs}[z]'
+      listFormat: '{gcp}[name]{gcp}: &r[extra]'
+  hologrampages:
+    help:
+      info: Change hologram page
+      args: '[holoName] (playerName) (next/prev/[pageNumber])'
+  home:
+    help:
+      info: Teleport to home location
+      args: (homeName) (playerName) (whoTeleport)
+    info:
+      list: '{gcp}Homes: {gcs}'
+      listNonePrivate: '{gcn}'
+      listPrivate: '{gcu}'
+      click: '{gcp}Click to teleport to {gcs}[home]'
+      teleported: '{gcp}Teleported to home: {gcs}[home]'
+      noHomes: '{gcd}There is no saved homes'
+      private: '{gcd}his home location is private!'
+      blacklisted: '{gce}You have black listed items in your inventory.'
+      limitReached: '{gce}You have too many homes, please remove some'
+      remove: '{gcd}Shift+Right click to remove home'
+      missingBed: '{gcd}Missing bed for your home location'
+      notAccessible: '{gcd}Home location world ({gcs}[worldName]{gcd}) doesn''t exist!'
+      guiTitle: '{gcs}[playerDisplayName] {gcp}homes {gcs}[current]{gcp}/{gcs}[max]'
+  homes:
+    help:
+      info: A list of homes that you can click to teleport to.
+      args: (playerName/near:[range])
+    info:
+      nearList: '{gcs}[number]. {gcs}[playerDisplayName] {gcn}[homeName] {gcp}[distance]
+        blocks away {gcs}[direction]'
+      closeButton: '{gcp}Close'
+      infoButton: '{gcp}Information'
+      bedButton: '{gcp}Bed location'
+      homeButton: '{gcp}Home location'
+      deathButton: '{gcp}Death location'
+      backButton: '{gcp}Back location'
+      slot: '{gcp}Slot: {gcs}[slot]'
+      private: '{gcp}Private: {gcs}[state]'
+      favorite: '{gcp}Favorite: {gcs}[state]'
+      lore: |-
+        {gcp}[world]
+        {gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]
+      picker: '{gcp}Click to change icon'
+      edit: '{gcp}Click Q to edit'
+  hunger:
+    help:
+      info: Set players hunger
+      args: '[playerName] [amount] (-s)'
+    info:
+      feedback: '{gcp}You have set {gcs}[hunger]{gcp} hunger for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your hunger was set to {gcs}[hunger]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  ic:
+    help:
+      info: Create interactive command
+      args: (new) (name)
+    info:
+      public: ' {gcu}[Public]'
+      notPublic: ' {gcn}[NotPublic]'
+      reqPerm: ' {gcu}[ReqPerm]'
+      noPerm: ' {gcn}[ReqPerm]'
+      cancelEvent: ' {gcu}[cancelEvent]'
+      passEvent: ' {gcn}[passEvent]'
+      permHover: ' {gcp}Requires {gcs}[permission] {gcp}permission to place this sign'
+      editSign: ' {gcs}[EditSignLines]'
+      publicHover: "{gcp}Change public status. \nSigns top line {gcs}[ic:[name]]"
+      createdPublic: '{gcp}Created new interactive sign'
+      list: '{gcp}[place]. {gcs}[name]'
+      listType: ' {gcs}[type]    '
+      editCommands: '{gcp}Edit commands'
+      editBlocks: ' {gcp}Edit blocks'
+      addBlock: '{gcp}Add block you are looking at'
+      addEntity: ' {gcp}Add entity you are looking at'
+      manageCommands: '{gcp}Switch to command editor'
+      manageBlockEnt: '{gcp}Switch to block/entity editor'
+      locationList: '{gcs}[type]'
+      entityList: '{gcn}[type]'
+      notPublicIc: '{gcw}You cant use this, its not public'
+      block: (Block)
+      entity: (Entity)
+      both: (Both)
+      none: (None)
+      addedNew: '{gcp}Added new block/entity for {gcs}[name]'
+      dontExist: '{gcw}Interactive command don''t exist by this name'
+      exists: '{gcw}Interactive command with this name already exists'
+      blockExist: '{gcw}This block is already being used by {gcp}[name]'
+      entityExist: '{gcw}This entity is already being used by {gcp}[name]'
+      addInfo: '{gcp}Enter new command. Type {gcs}cancel {gcp}to cancel'
+      addInformationHover: "{gcp}Global variables supported as of sender category\
+        \ \n{gcp}To include delay in commands: \n{gcp}delay! 5 \n{gcp}Additional variables\
+        \ can be used to insert variables by their place \n{gcp}$1 will take provided\
+        \ variable by new command and will place in that place \n{gcp}$1- takes all\
+        \ variables from this point and inserts into original commands"
+      editInfo: '{gcp}Click to paste old text. Type {gcs}cancel {gcp}to cancel action.
+        Type {gcs}remove {gcp}to remove line'
+  ifoffline:
+    help:
+      info: Perform command only when player is offline
+      args: '[playerName] (command)'
+  ifonline:
+    help:
+      info: Perform command only when player is online
+      args: '[playerName] (command)'
+  ignore:
+    help:
+      info: Ignores player
+      args: (playerName/uuid/all) (-p:[playerName])
+      explanation:
+      - cmi.command.ignore.bypass - to bypass ignore list
+    info:
+      self: '{gcw}Don''t be silly, you can''t ignore yourself'
+      added: '{gcp}You''re now ignoring {gcs}[playerDisplayName]'
+      addedAll: '{gcp}You''re now ignoring everyone'
+      all: '{gcp}Everyone'
+      removed: '{gcp}You''re no longer ignoring {gcs}[playerDisplayName]'
+      removedAll: '{gcp}You''re no longer ignoring everyone'
+      list: '{gcs}[place]{gcp}. {gcs}[playerDisplayName]  '
+      ignoringYou: '{gcs}[playerDisplayName] {gcp}is ignoring you'
+      empty: '{gcp}Ignore list is empty'
+  importfrom:
+    help:
+      info: Import data from other plugins
+      args: '[essentials/hd] [home/warp/nick/logoutlocation/money/mail]'
+    info:
+      converted: '{gcp}Converted: {gcs}[done]{gcp}/{gcs}[total] {gcp}users'
+      convertedWarps: '{gcp}Converted {gcs}[amount] {gcp}warps'
+      noInfo: '{gcd}You forgot to provide information what you want to import exactly'
+      savingInProgress: '{gcp}Data will be saved into data base in next couple minutes
+        depending on how many entries we need to save'
+      HDfile: '{gcd}Could not find HolographicDisplays plugin database file. Aborting.'
+      HDexist: '{gcd}Hologram by {gcs}[name] {gcd}name already exists. Skipping.'
+      HDfailed: '{gcd}Could not load hologram ({gcs}[name]{gcd})'
+      HDimported: '{gcp}Imported {gcs}[amount] {gcp}holograms'
+  importoldusers:
+    help:
+      info: Imports users from playerdata folder in main world folder. Server can
+        suffer lag spike during import
+      args: ''
+    info:
+      starting: '{gcp}Starting import'
+      feedback: '{gcp}Imported {gcs}[amount] {gcp}new users'
+  info:
+    help:
+      info: Show players information
+      args: '[playerName/uuid]'
+    info:
+      feedback:
+        uuid: '{gcp}Left click to paste uuid into chat box'
+        ouuid: '{gcp}Shift + left click to paste online uuid into chat box'
+      newName: '{gcs}[playerName]'
+      newBalance: '{gcp}({gcs}[balance]{gcp}) '
+      newDisplayName: '{gcp}Display name: &r[playerDisplayName]'
+      newNameHover:
+      - '[playerDisplayName]'
+      - '[nick]'
+      - '[group]'
+      - '[title]'
+      - '[onlineoffline]'
+      - '[playtime]'
+      newIp: '{gcp}IP '
+      newIpHover:
+      - '[ip][country]'
+      - '[ping]'
+      - '[firstLogin]'
+      newNameHoverNick: '{gcp}Nick: {gcs}[nick]'
+      newNameHoverGroup: '{gcp}Group: {gcs}[group]'
+      newNameHoverTitle: '{gcp}Prefix: {gcs}[prefix] {gcp}Suffix: {gcs}[suffix]'
+      newNameHoverIp: '{gcp}Ip: {gcs}[ip]'
+      newNameHoverPing: '{gcp}Ping: {gcs}[ping]'
+      newNameHoverCountry: ' {gcs}[country] {gcp}({gcs}[countryCode]{gcp}) {gcs}[city]'
+      newFirstLogin: '{gcp}First login: {gcs}[firstLogin]'
+      newPlaytime: '{gcp}PlayTime: {gcs}[time]'
+      newOnline: '[state] for: {gcs}[logoff]'
+      newOnlineStateOn: '{gcu}Online'
+      newOnlineStateOff: '{gcn}Offline'
+      newUUID: '{gcp}UUID '
+      newUUIDHover: '{gcp}UUID: {gcs}[UUID]'
+      newOUUIDHover: '{gcp}OnlineUUID: {gcs}[OUUID]'
+      newTurnedOnColor: '{gcu}'
+      newTurnedOffColor: '{gcn}'
+      newOp: 'OP '
+      newGod: 'God '
+      newFly: 'CanFly{gcs}([flying]{gcs}) '
+      newFlying: Flying
+      newFlyHover: '{gcp}Fly speed: {gcs}[flyspeed]'
+      newFlyTemp: '{gcp}Temporary fly: {gcs}[time]'
+      newFlyCharge: '{gcp}Flight charge: {gcs}[charge]'
+      newElytraFlyHover: '{gcp}Flying with elytra'
+      newGodHover: '{gcp}TempGod for: {gcs}[time]'
+      newNoDamageHover: '{gcp}No Damage Ticks for: {gcs}[time]'
+      newSneaking: Sneaking
+      newSprint: Sprinting
+      newWalkSpeed: '{gcp}Walk speed: {gcs}[walkspeed]'
+      newGameMode: '{gcp}Mode: {gcs}[gameMode] '
+      newGameModeHover:
+      - '[sprint]'
+      - '[sneaking]'
+      - '[walkspeed]'
+      - '[hp]'
+      - '[air]'
+      - '[hunger]'
+      - '[saturation]'
+      - '[exp]'
+      newHp: '{gcp}HP: {gcs}[hp]{gcp}/{gcs}[maxhp]'
+      newAir: '{gcp}Air: {gcs}[leftAir]{gcp}/{gcs}[totalAir]'
+      newHunger: '{gcp}Hunger: {gcs}[food]{gcp}/{gcs}20'
+      newSaturation: '{gcp}Saturation +{gcs}[saturation]'
+      newExp: '{gcp}Exp: {gcs}[totalexp]{gcp}exp -> {gcs}[currentexp]{gcp}/{gcs}[needexp]
+        {gcp}({gcs}[level]{gcp}lvl{gcp})'
+      newPos: '{gcp}Pos '
+      newPosHover: '{gcs}[world] {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      newAfk: 'AFK '
+      newAfkHover: '{gcp}Afk for last: {gcs}[time]'
+      AfkInHover: '{gcp}Afk in: {gcs}[time]'
+      newBed: '{gcp}Bed '
+      newBedHover: '{gcs}[world] {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      newDeath: '{gcp}Death '
+      newDeathHover: '{gcs}[world] {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}{gcp}]{gcp})'
+      newBack: '{gcp}Back '
+      newBackHover: '{gcs}[world] {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      newRespawn: '{gcp}Respawn '
+      newRespawnHover: '{gcs}[world] {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      inv: '{gcp}Inv '
+      ender: '{gcp}Ender '
+      newSee: '◕‿◕ '
+      newSeeHover: '{gcp}Can see you'
+      newSeeHoverNot: '{gcu}Can''t see you'
+      vanished: '(V) '
+      vanishedHover: '{gcp}Vanished'
+      newBanned: 'Banned '
+      newBannedHover:
+      - '{gcp}Banned by: {gcs}[name]'
+      - '{gcp}Left: {gcs}[left]'
+      - '{gcp}For: {gcs}[reason]'
+      newMuted: 'Muted '
+      newMutedHover:
+      - '{gcp}Left: {gcs}[left]'
+      - '{gcp}For: {gcs}[reason]'
+      newShadowMutedHover: '{gcd}Shadow mute'
+      newCuffed: 'Cuffed '
+      newJailed: 'Jailed '
+      newJailedHover:
+      - '{gcp}Jail: {gcs}[jail]'
+      - '{gcp}Cell: {gcs}[id]'
+      - '{gcp}Left: {gcs}[time]'
+      - '{gcp}Reason: {gcs}[reason]'
+      newHomes: '{gcp}Homes: {gcs}[count] '
+      newMail: '{gcp}Mail: {gcs}[count] '
+      newWarnings: '{gcp}Warnings: {gcs}[count] '
+      newAlert: 'Alert '
+      newAlertHover:
+      - '{gcp}Left: {gcs}[left]'
+      - '{gcp}For: {gcs}[reason]'
+      newChatRoom: 'ChatRoom '
+      newChatRoomHover:
+      - '{gcp}ChatRoom: {gcs}[name]'
+      - '{gcp}Users in: {gcs}[count]'
+      List:
+      - '{gcp}------------- [enableColor]Enabled [disableColor]Disabled{gcp} -------------'
+      - '{gcp}| [name][balance][UUID][ip]'
+      - '{gcp}| [OP][god][fly][gameMode][afk][see]'
+      - '{gcp}| [banned][muted][cuffed][jailed][alert][chatroom]'
+      - '{gcp}| [pos][bed][respawn][death][back][ender][inv]'
+      - '{gcp}| [homes][mail][warnings]'
+      - '{gcp}-----------------------------------------'
+  inv:
+    help:
+      info: Opens players inventory
+      args: '[playerName]'
+      explanation:
+      - cmi.command.inv.preventmodify - prevents inventory editing
+      - cmi.invedit - allows to edit inventory
+      - cmi.command.inv.location - shows players location
+    info:
+      feedback: '{gcp}You are editing {gcs}[playerDisplayName] {gcp}inventory.'
+  invcheck:
+    help:
+      info: Open saved inventory in preview mode
+      args: (playerName) [id] (-e) (last)
+  invlist:
+    help:
+      info: Show saved inventories list
+      args: (playerName)
+  invload:
+    help:
+      info: Load saved inventory
+      args: (sourceName) (targetName) [id/last]
+  invremove:
+    help:
+      info: Remove saved inventories for player
+      args: (playerName) [id/all/last]
+  invremoveall:
+    help:
+      info: Removes all saved inventories
+      args: '[confirmed]'
+    info:
+      removed: '{gcp}All saved inventories removed ({gcs}[count]{gcp})'
+  invsave:
+    help:
+      info: Save inventory
+      args: (playerName) (id) (-s)
+  ipban:
+    help:
+      info: Ban ip
+      args: '[ip/playerName] (reason) (-s)'
+      explanation:
+      - cmi.command.banip.bypass - to bypass ban
+    info:
+      message: '{gcw}You are ip banned from this server!'
+      messageToAll: '{gcs}[playerDisplayName] {gcp}got ip banned by {gcs}[senderDisplayName]
+        {gcp}for: {gcs}[reason]'
+      banedSilent: '{gcn}[{gcu}Silent{gcn}]{gcs}[playerDisplayName] {gcp}got ip banned
+        by {gcs}[senderDisplayName] {gcp}for: {gcs}[reason]'
+      replacer: '*'
+  ipbanlist:
+    help:
+      info: Ban ip list
+      args: ''
+    info:
+      banList: '{gcs}[ip] {gcp}- {gcs}[reason]  '
+      bannedBy: '{gcp}Banned by: {gcs}[source]'
+      ends: '{gcp}Ends: {gcs}[time]'
+      related: |-
+        {gcp}Related accounts:
+        {gcs}[list]
+  item:
+    help:
+      info: Give item to yourself
+      args: '[itemdata/hand] (-slot:[number]) (unstack) (-s)'
+  itemcmdata:
+    help:
+      info: Check or modify items custom model data
+      args: '[set/delete/list/add] (playerName) (float,true,false,string) (-s)'
+    info:
+      nothing: '{gcp}Doesn''t contain any model data'
+      set: '{gcp}Set new model data to: {gcs}[value]'
+      current: '{gcp}Current model data: {gcs}[value]'
+      deleted: '{gcp}Removed model data: {gcs}[value]'
+  itemframe:
+    help:
+      info: Manage item frames
+      args: (invisible/fixed/invulnerable/all)
+    info:
+      feedback: '{gcs}[count] {gcp}item frames are invisible around you'
+  iteminfo:
+    help:
+      info: Show item information
+      args: (playerName)
+    info:
+      nameMat: ' {gcp}Name: {gcs}[name] {gcp}Material: {gcs}[material]'
+      mojangHover: '{gcp}Mojang Name: {gcs}[name]'
+      display: ' {gcp}Display Name: {gcs}[display]'
+      lore: ' {gcp}Lore:'
+      loreLine: '   {gcs}[loreLine]'
+      enchants: ' {gcp}Enchants: {gcs}[enchants]'
+      entityType: ' {gcp}Entity Type: {gcs}[type]'
+      customModel: ' {gcp}Custom Model Data: {gcs}[data]'
+      durability: ' {gcp}Durability: {gcs}[current]{gcp}/{gcs}[max]'
+      unbreakable: ' {gcs}(Unbreakable)'
+      stackSize: ' {gcp}Max stack size: {gcs}[size]'
+  itemlore:
+    help:
+      info: Change items lore
+      args: (-p:[playerName]) [linenumber/*] [remove/insert/ new lore line]
+    info:
+      feedback: '{gcp}You have changed lore line ({gcs}[line]{gcp}) to ''&r{gcs}[loreLine]{gcp}''
+        for {gcs}[playerDisplayName]{gcp}.'
+      noitem: '{gcd}Not holding any item in hand.'
+      removed: '{gcp}Item lore line {gcs}[line] {gcp}was removed for {gcs}[playerDisplayName]{gcp}.'
+      inserted: '{gcp}Item lore line {gcs}[line] {gcp}was inserted for {gcs}[playerDisplayName]{gcp}.'
+      maxLines: '{gcp}There is only {gcs}[lines] {gcp}lines of lore.'
+      blocked: '{gcp}This item is blocked from re-loring.'
+      nomodification: '{gcw}You can''t modify existing lore lines'
+  itemname:
+    help:
+      info: Rename items
+      args: (-p:[playerName]) [remove/your new item name]
+    info:
+      feedback: '{gcp}You have renamed item to {gcs}[itemname] {gcp}for {gcs}[playerDisplayName]{gcp}.'
+      noitem: '{gcd}Not holding any item in hand.'
+      removed: '{gcp}Item name was removed for {gcs}[playerDisplayName]{gcp}.'
+      blocked: '{gcp}This item is blocked from renaming'
+      maxLength: '{gcw}New value is to long. Max length {gcs}[length] {gcw}characters'
+  itemnbt:
+    help:
+      info: Show item NBT information
+      args: (playerName)
+    info:
+      jump: '{gcs}[key][type]'
+      type: ' {gcp}({gcs}[type]{gcp})'
+      value: ': {gcs}[value]'
+      list: '{gcp}- {gcs}[value]'
+      noNbt: '{gcp}Item does not contain any NBT data'
+  jail:
+    help:
+      info: Jail player for time period
+      args: '[playerName] (time) (jailName) (cellId) (-s) (r:jail_reason)'
+    info:
+      jailed: '{gcp}You put {gcs}[playerDisplayName] {gcp}into jail for the next [time]'
+      jailedPlayer: '{gcs}[playerDisplayName] {gcp}jailed for the next [time]'
+      reason: ' {gcp}For: {gcs}[reason]'
+      leftTime: '!title!{gcn}Jail time:!subtitle![time]'
+      jailedTarget: '{gcp}You have been jailed! [time]'
+      jailedTimeChange: '{gcp}Jail time changed to [time]'
+      cantTalk: '{gcd}You cant talk while you are jailed'
+      cantTalkRange: '!actionbar!{gcn}Your chat range is limited to {gcs}[range] {gcn}blocks'
+      failed: '{gcw}Failed to jail player. Check target jail name, cell id or time
+        format'
+      bossbar: '{gcn}Jail time: [autoTimeLeft]'
+      noCommand: '{gcw}You can''t use this command while jailed!'
+  jailedit:
+    help:
+      info: Edit jails
+      args: ''
+    info:
+      notInArea: '{gcw}You are not standing in jail area'
+      noName: '{gcw}No jail by this name'
+      noCell: '{gcw}No cell by this id'
+      exist: '{gcw}Jail with this name already exist'
+      createdJail: '{gcp}Successfully created new jail ({gcs}[jail]{gcp})'
+      createdCell: '{gcp}Successfully created new jail cell ({gcs}[jail]{gcp}:{gcs}[cellId]{gcp})'
+      collides: '{gcw}Collides with {gcs}[jailName] {gcw}jail'
+      editCells: '{gcp}Edit cell list'
+      cList: '{gcp}Id: {gcs}[id] {gcp}Jailed: {gcs}[amount]'
+      jailListTpHover: '{gcp}Set outside teleport location'
+      jailListAreaHover: '{gcp}Redefine area'
+      jailRemoved: '{gcp}Removed ({gcs}[jail]{gcp}) jail'
+      jailOutside: '{gcp}Set new outside location'
+      jailArea: '{gcp}Redefined area for {gcs}[jail]'
+      cellRemoved: '{gcp}Removed ({gcs}[cellId]{gcp}) cell from {gcs}[jail]'
+      list: '{gcp}Cells: {gcs}[cells] {gcp}Jailed: {gcs}[amount] {gcn}[jail]'
+      listTp: '{gcp}[tp] '
+      listArea: '{gcp}[area] '
+      areaShow: '{gcp}[S] '
+  jaillist:
+    help:
+      info: List jails
+      args: (jailName) (cellId)
+    info:
+      jailList: '{gcs}[place]{gcp}. {gcs}[jailName] {gcp}Cells:{gcs}[cellCount] {gcp}Jailed:{gcs}[count]'
+      cellList: '{gcs}[place]{gcp}. {gcp}Id:{gcs}[cellId] {gcp}Jailed:{gcs}[count]'
+      jailedBy: '{gcp}Jailed by: {gcs}[playerDisplayName]'
+      cellJailedList: '{gcs}[place]. {gcs}[playerDisplayName] {gcp}release in {gcs}[time]'
+      Release: '{gcp}Click to release'
+  jump:
+    help:
+      info: Jump to target block
+      args: ''
+    info:
+      tooFar: '{gcd}No block in sight or it''s too far (max {gcs}[max] {gcd}blocks)'
+  kick:
+    help:
+      info: Kick player with custom message
+      args: '[playerName/all] (message) (-s)'
+      explanation:
+      - cmi.command.kick.bypass - prevents from being kicked out
+    info:
+      defaultMessage: '{gcp}Kicked from server'
+      cantKick: '{gcp}Can''t kick this player'
+      messageToAll: '{gcs}[playerDisplayName] {gcp}got kicked from server.'
+      kickReason: ' {gcp}Reason: {gcs}[reason]'
+      all: '{gcp}Kicked {gcs}[amount] {gcp}players from server'
+  kill:
+    help:
+      info: Kill player
+      args: '[playerName] (-forced) (damageCause) (-s) (-lightning)'
+    info:
+      cantKill: '{gcp}Can''t kill, protected by another plugin, game/god mode. Use
+        {gcs}-forced {gcp}variable'
+      lackOfAccess: '{gcp}Can''t use force kill without permission.'
+      killed: '{gcp}Killed {gcs}[playerDisplayName]'
+  killall:
+    help:
+      info: Kill mobs around you
+      args: (-monsters/-pets/-npc/-animals/-ambient/-named/-all/-force/-lightning/-list/-m:[mobType])
+        (-r:range) (-s) (-w:[worldName])
+    info:
+      infoList: '{gcs}[category]{gcp}: {gcs}[amount] &e([list]&e)'
+      removedList: '{gcs}[type]{gcp}: {gcs}[amount]'
+      total: '{gcp}Removed a total of: {gcs}[amount] {gcp}([list]{gcp})'
+      noRemove: '{gcp}Nothing to remove'
+      monsters: Monsters
+      pets: Pets
+      npc: NPCs
+      animals: Animals
+      ambient: Ambient
+      vehicles: Vehicles
+      named: With custom name
+      withitems: With items
+      force: Force
+      custom: By type
+  kit:
+    help:
+      info: Gives predefined kit.
+      args: '[kitName] (playerName) (-s) (-open) (-preview) (-c)'
+      explanation:
+      - 'Permissions:'
+      - cmi.kit.[kitName] - allows to use particular kit
+      - cmi.kit.bypass.money - bypass money requirement
+      - cmi.kit.bypass.exp - bypass exp requirement
+      - cmi.kit.bypass.onetimeuse - bypass one time use
+      - /cmi kit [kitName] [playerName] - will give kit to another player
+    info:
+      noMoney: '{gcp}Not enough money. Cost: {gcs}[cost] {gcp}you have {gcs}[balance]'
+      noExp: '{gcp}Not enough exp. Cost: {gcs}[cost] {gcp}you have {gcs}[balance]'
+      noCondition: '{gcp}You don''t have special condition permission to use this
+        kit: {gcs}[condition]'
+      oneTime: '{gcd}This is a one time use kit and you have already used it!'
+      cantUseNow: '{gcd}You can''t use this kit for the next {gcs}[time]'
+      limitedTimeUseError: '{gcp}Can''t use more than {gcs}[times] {gcp}times'
+      limitedTimeUse: '{gcp}Can use for {gcs}[times] {gcp}times'
+      limitedTimeAllUsed: '{gcd}You can''t get another one'
+      canUseIn: "{gcp}Can use again in: \n[time]"
+      cooldown: "{gcp}Cooldown: \n[time]"
+      noKit: '{gcp}Can''t find kit by this name'
+      kitDoesntExist: '{gcp}Can''t find kit ([kitName])'
+      noKitAccess: '{gcw}You don''t have access to this kit'
+      noFoundKit: '{gcp}Can''t find any kits'
+      givenKit: '{gcp}You have given {gcs}[kit] {gcp}to {gcs}[playerDisplayName]'
+      title: '{gcp}Kits'
+      # [kitName] or [kitDisplayName] can be used
+      kitGuiTitle: '{gcs}[kitDisplayName]'
+      # List of custom kit GUI titles based by page
+      # If title isint defined we will use default one
+      titlesByPage:
+      - '{gcp}Kits'
+      nameCanUse: '{gcs}[kitName]'
+      nameCantUse: '{gcn}[kitName]'
+      group: '{gcp}Group: {gcs}[group]'
+      left: '{gcs}Left {gcp}click to claim'
+      right: '{gcs}Right {gcp}click to preview'
+      take: '{gcs}Take this kit!'
+      open: '{gcp}Items from {gcs}[kitName] {gcp}kit!'
+      eye: ' {gcp}☬'
+      use: '{gcu}'
+      cantuse: '{gcn}'
+      list: '{gcs}[number]{gcp}. {gcs}[kitName] {gcp}- {gcs}[description]'
+  kitcdreset:
+    help:
+      info: Reset kit timer
+      args: (kitName) (playerName/all)
+    info:
+      notCd: '{gcp}Kit is not in cooldown stage'
+      reset: '{gcp}Kit ({gcs}[kit]{gcp}) cooldown got reset for {gcs}[playerDisplayName]'
+      resetAll: '{gcp}Kit ({gcs}[kit]{gcp}) cooldown got reset for {gcs}[count] {gcp}players'
+      list: '{gcp}[place]. {gcs}[kit] {gcp}[time]'
+      listHover: '{gcp}Click to reset'
+      noCd: '{gcp}There are no kit''s on cooldown'
+  kiteditor:
+    help:
+      info: Kit editor
+      args: ''
+      explanation:
+      - 'Permissions:'
+      - cmi.kit.[kitName] - allows to use particular kit
+      - cmi.kit.bypass.money - bypass money requirement
+      - cmi.kit.bypass.exp - bypass exp requirement
+      - /cmi kiteditor - shows kit list
+    info:
+      kits: '{gcp}Kits: '
+      iconSet: '{gcp}New icon set for {gcs}[kitname] {gcp}kit'
+      kitExists: '{gcp}Kit with this name already exist!'
+      deleteConfirm: '{gcp}Click me if you really want to remove ({gcs}[kitname]{gcp})
+        kit!'
+      deleteConfirmFinal: '{gcw}This action is not reversible!'
+      kitRemoved: '{gcp}Kit ({gcs}[kitname]{gcp}) removed'
+      kitNotRemoved: '{gcw}Kit ({gcs}[kitname]{gcw}) could not be removed'
+      addNewInfo: '{gcp}Type kit name into chat and press enter. Type ''{gcs}cancel{gcp}''
+        to cancel this action.'
+      renameCommandInfo: '{gcp}Type new kit {gcs}command {gcp}name into chat and press
+        enter. Type ''{gcs}cancel{gcp}'' to cancel this action.'
+      renameConfigInfo: '{gcp}Type new kit {gcs}config {gcp}name into chat and press
+        enter. Type ''{gcs}cancel{gcp}'' to cancel this action.'
+      groupInfo: '{gcp}Type new group name into chat and press enter. Type ''{gcs}none{gcp}''
+        to remove group. Type ''{gcs}cancel{gcp}'' to cancel this action.'
+      commandInfo: '{gcp}Type new command into chat and press enter. Type ''{gcs}cancel{gcp}''
+        to cancel this action. Possible placeholders: {gcs}{USERNAME} {DISPLAYNAME}
+        {WORLDNAME} {KITNAME} {RANDOMPLAYER}'
+      conditionsInfo: '{gcp}Type new required permission node into chat and press
+        enter. Type ''{gcs}cancel{gcp}'' to cancel this action'
+      descInfo: '{gcp}Type new description into chat and press enter. Type ''{gcs}cancel{gcp}''
+        to cancel this action'
+      renamed: '{gcp}Renamed {gcs}[kitname] {gcp}to {gcs}[newkitname]{gcp}.'
+      groupSet: '{gcp}New group ({gcs}[groupname]{gcp}) set for {gcs}[kitname]'
+      commandsListTitle: '{gcp}✎{gcs}Commands:'
+      conditionsListTitle: '{gcp}✎{gcs}Conditions:'
+      descListTitle: '{gcp}✎{gcs}Description:'
+      ListTitleHover: '{gcp}Click to open GUI'
+      ListEditKitHover: '&cEdit {gcs}[kitname]'
+      ListAdd: ' {gcu}+'
+      ListAddHover: '{gcu}Add new'
+      guiClickery:
+      - '{gcp}Left mouse click to increase and right click to decrease'
+      - '{gcp}Hold {gcs}Shift {gcp}to speed process by 10 times'
+      - '{gcp}Repeating fast clicks will speed amount change'
+      - '{gcp}Stop clicking for 1 sec to go back to default amount'
+      OffHand: '{gcp}Place offHand item over here'
+      Helmet: '{gcp}Place helmet item over here'
+      Chest: '{gcp}Place chest item over here'
+      Legs: '{gcp}Place leggings over here'
+      Boots: '{gcp}Place boots over here'
+      Weight: '{gcp}Weight: {gcs}[Weight]'
+      WeightExtra:
+      - '{gcp}Higher value have bigger priority'
+      - '{gcp}Kits should be in same group'
+      despiteWeight: '{gcp}Show despite weight: {gcs}[Weight]'
+      despiteWeightExtra:
+      - '{gcp}PLayer is not getting access to kit, but can preview it'
+      Slot: '{gcp}Slot: {gcs}[slot]'
+      Page: '{gcp}Page: {gcs}[page]'
+      SlotAuto: '{gcs}Auto'
+      Clone: '{gcp}Clone items from inventory'
+      CloneExtra:
+      - '{gcp}Use right mouse button to include armors'
+      - '{gcp}Click again to revert changes'
+      timeDelay: '{gcp}Delay: {gcs}[time]'
+      usages: '{gcp}Can be used for {gcs}[times] {gcp}times'
+      withoutUsage: '{gcp}Show without usages left: {gcs}[state]'
+      usagesUnlimited: '{gcs}Unlimited'
+      ignoreWeight: '{gcp}Show despite weight: {gcs}[state]'
+      timeDelaySeconds: '{gcp}In seconds: {gcs}[time]'
+      moneyCost: '{gcp}Money cost: [cost]'
+      expCost: '{gcp}Exp cost: [cost]'
+      enabled: '{gcp}Enabled'
+      disabled: '{gcs}Disabled'
+      delete: '{gcs}Delete kit'
+      clickToSwitch: '{gcp}Click to switch state'
+      clickToEdit: '{gcp}Click to start editing'
+      editConfigName:
+      - '{gcp}Click to rename config name'
+      - '{gcp}This only determines permission node'
+      editCommandName:
+      - '{gcp}Click to rename command name'
+      - '{gcp}This sets command you need to use to get this kit'
+      displayName: '{gcp}DisplayName: &r{gcs}[name]'
+      editDisplayName:
+      - '{gcp}Click to change display name'
+      - '{gcp}This only used for visual purposes'
+      fileName: '{gcp}FileName: &r{gcs}[name]'
+      editFileName:
+      - '{gcp}Click to change file name'
+      - '{gcp}Will define where kit should be saved at'
+      kitGroup: '{gcp}Kit group: {gcs}[group]'
+      dropItems: '{gcp}Drop item if full: {gcs}[state]'
+      commands: '{gcp}Commands:'
+      conditions: '{gcp}Conditions:'
+      desc: '{gcp}Description:'
+      mainMenu: '{gcp}MainMenu'
+      settings: '{gcp}Settings'
+      icon: '{gcp}Icon used when kit is {gcu}available'
+      iconCd: '{gcp}Icon used when kit is {gcn}unavailable'
+  kitusagereset:
+    help:
+      info: Reset kit usage counter
+      args: (kitName) (playerName)
+    info:
+      notLimited: '{gcp}Kit has no limited amount of usage'
+      reset: '{gcp}Kit ({gcs}[kit]{gcp}) usage amount got reset for {gcs}[playerDisplayName]'
+      list: '{gcp}[place]. {gcs}[kit] {gcp}[used]/[usages]'
+      listHover: '{gcp}Click to reset'
+      noCd: '{gcp}There are no kit''s with usage above 0'
+  lastonline:
+    help:
+      info: Show played players from last x minutes
+      args: (-p:[page])
+    info:
+      searching: '{gcp}Searching {gcs}[checked]{gcp}/{gcs}[total] {gcp}({gcs}[found]{gcp})'
+      List: ' {gcs}[place]{gcp}. {gcs}[name] {gcp}-> {gcs}[time]'
+      timeFrame: '{gcp}Last hour ({gcs}[time1]{gcp}), 24 hours ({gcs}[time2]{gcp}),
+        7 days ({gcs}[time3]{gcp}), 30 days ({gcs}[time4]{gcp})'
+  launch:
+    help:
+      info: Launch at direction you are looking or at angle
+      args: (playerName) (p:[power]) (a:[angle]) (d:[direction]) (loc:[x]:[y]:[z])
+        (-nodamage)
+      explanation:
+      - cmi launch - will launch at direction you are looking
+      - cmi launch -nodamage - will launch and prevent damage on fall
+      - cmi launch p:3.2 - will launch with power of 3.2
+      - cmi launch p:2.5 a:25 - will launch at direction you are looking with angle
+        of 25 dgrees and with power of 2.5
+      - cmi launch Zrips d:east - will launch to east direction same angle you are
+        looking
+      - cmi launch Zrips d:0 - will launch at 0 degrees direction (south)
+      - cmi launch Zrips d:~180 - will launch backwards
+      - cmi launch d:45 a:30 p:2 - will launch south-west at 30 degree angle with
+        power of 2
+      - cmi launch loc:150:120:123 - will launch player to target location
+    info:
+      feedback: '!actionbar!{gcp}[{gcu}Whoosh!{gcp}]'
+  lfix:
+    help:
+      info: Fix light in chunks around you
+      args: (range) (playerName) (stop/stopall)
+    info:
+      NoMore: '{gcp}Range can''t be more than server view range. Changed to maximum
+        allowed.'
+      startFixing: '{gcp}Found {gcs}[amount] {gcp}chunks to fix. Starting!'
+      InfoShow: '{gcp}TPS: {gcs}[tps] {gcp}Left {gcs}[left] {gcp}({gcs}[min]m:[sec]s{gcp}{gcp})
+        Speed: {gcs}[speed]'
+      Finished: '{gcp}Light fixing has finished'
+      Stopped: '{gcp}Stopped'
+  list:
+    help:
+      info: Shows online player list
+      args: ''
+      explanation:
+      - 'Perm: '
+      - cmi.command.list.admin
+      - cmi.command.list.staff
+      - cmi.command.list.hidden
+      - cmi.command.list.group.[number]
+    info:
+      # [groupLine] can be replaced with specific grouped names like [group1] and [group2] and so on, you can have as many of those as you want and order them by your own liking
+      List:
+      - '{gcn}========================'
+      - '{gcp}Players online {gcs}[amount][hidden]{gcp}/{gcs}[maxamount]'
+      - '[adminLine]'
+      - '[staffLine]'
+      - '[groupLine]'
+      - '{gcn}========================'
+      staffL: '{gcn}Staff: {gcs}[list]'
+      adminL: '{gcu}Admin: {gcs}[list]'
+      hiddenPref: '{gcn}[H]'
+      hiddenCount: '{gcn}([amount])'
+      groupL: '{gcp}[groupName]: {gcn}[list]'
+      player: '%cmi_user_afk_symbol%{gcn}[playerDisplayName]'
+      # Add as many groups as you wish, by default there is only 10, to create new one, just copy paste one line and add increment into lines name, like group11 or group12 and so on.
+      # ATTENTION! group names should be in 'group[number]' format, where you have word 'group' followed by number. This is required and you cant have custom names as they are not required, but we are using number provided to determine which group goes after which
+      # Player need to have appropriate permission node to be placed in group cmi.command.list.group.[groupnumber], bigger number have bigger priority
+      groups:
+        group1: '{gcp}Group1: {gcn}[list]'
+        group2: '{gcp}Group2: {gcn}[list]'
+        group3: '{gcp}Group3: {gcn}[list]'
+        group4: '{gcp}Group4: {gcn}[list]'
+        group5: '{gcp}Group5: {gcn}[list]'
+        group6: '{gcp}Group6: {gcn}[list]'
+        group7: '{gcp}Group7: {gcn}[list]'
+        group8: '{gcp}Group8: {gcn}[list]'
+        group9: '{gcp}Group9: {gcn}[list]'
+        group10: '{gcp}Group10: {gcn}[list]'
+      noGroupLine: '{gcp}List'
+  lockip:
+    help:
+      info: Prevents logging into account from different ip
+      args: (playername) [add/remove/list/clear] [ip]
+    info:
+      CantLogin: '{gcw}You can''t login from this ip address'
+      add: '{gcp}New ip ({gcs}[ip]{gcp}) added for {gcs}[playerDisplayName]'
+      remove: '{gcp}Ip ({gcs}[ip]{gcp}) removed from {gcs}[playerDisplayName]'
+      clear: '{gcp}All ip''s removed from {gcs}[playerDisplayName]'
+      ipNotFound: '&cIp not found'
+      empty: '&cList is empty'
+      list: '{gcs}[place]{gcp}. {gcs}[ip]'
+  loom:
+    help:
+      info: Open loom
+      args: (playerName)
+    info:
+      feedback: '{gcp}You have opened loom for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened loom for you.'
+  mail:
+    help:
+      info: Send and receive mail
+      args: '[send/clear/read/sendtemp] [playerName] (time) (message)'
+    info:
+      sentMail: '{gcp}Mail sent to {gcs}[playerDisplayName]'
+      gotMail: '!actionbar!{gcp}You received mail from {gcs}[senderDisplayName]'
+      clearMail: '{gcp}All mail has been cleared!'
+      removedMail: '{gcp}Removed mail'
+      noMailsById: '{gcp}There is no mail by this id for this player'
+      noMails: '{gcp}You have no mail'
+      mailHover: "{gcp}[senderName] \n{gcp}[time]"
+      mailHoverExpires: |2-
+
+        {gcp}Expires in: {gcs}[time]
+      mailList: ' {gcs}[senderDisplayName]{gcp}: [mail] '
+      waitingMail: '{gcp}You have {gcs}[amount] {gcp}mails. Click to check them out.'
+  mailall:
+    help:
+      info: Check or send mail to all players
+      args: '[send/clear/remove] [message]'
+    info:
+      sentMail: '{gcp}Sent {gcs}[amount] {gcp}mail(s)'
+      clearMail: '{gcs}[amount] {gcp}mail(s) have been removed'
+      removedMail: '{gcp}Removed {gcs}[amount] {gcp}mail(s)'
+  maintenance:
+    help:
+      info: Set server into maintenance mode
+      args: (true/false) (message)
+      explanation:
+      - cmi.command.maintenance.bypass - to bypass maintenance mode
+    info:
+      feedback: '{gcp}Server is in maintenance mode. Come back later.'
+      set: '{gcp}Server maintenance mode set to {gcs}[state] {gcp}with message: {gcs}[message]'
+  maxhp:
+    help:
+      info: Set a player's max hp
+      args: '[set/add/take/clear] [playerName] [amount] (-s)'
+    info:
+      feedback: '{gcp}You have set {gcs}[maxHp] {gcp}max hp for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your max HP was set to {gcs}[maxHp] {gcp}by {gcs}[senderDisplayName]{gcp}.'
+  maxplayers:
+    help:
+      info: Changes maximum amount of players who can connect to server
+      args: '[amount]'
+      explanation:
+      - 'Permissions: '
+      - cmi.fullserver.bypass - join full server
+    info:
+      changed: '{gcp}Changed max allowed players from {gcs}[old] {gcp}to {gcs}[new]{gcp}.
+        Online: {gcs}[current]'
+      label: '{gcp}Max Players. Currently: {gcs}[online]{gcp}/{gcs}[max]'
+  me:
+    help:
+      info: Sends special message to all players
+      args: '[message]'
+    info:
+      format: '{gcp}* [senderDisplayName] {gcs}[message]'
+  merchant:
+    help:
+      info: Open merchant trade window
+      args: '[type] (playerName) (level)'
+    info:
+      incorrect: '{gcw}Incorrect profession.'
+      feedback: '{gcp}You have opened {gcs}[type] {gcp}trade for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened {gcs}[type] {gcp}trade
+        for you.'
+      professions:
+        leatherworker: Leatherworker
+        mason: Mason
+        fletcher: Fletcher
+        weaponsmith: Weaponsmith
+        toolsmith: Toolsmith
+        librarian: Librarian
+        shepherd: Shepherd
+        farmer: Farmer
+        cleric: Cleric
+        nitwit: Nitwit
+        cartographer: Cartographer
+        armorer: Armorer
+        butcher: Butcher
+        none: None
+        fisherman: Fisherman
+  migratedatabase:
+    help:
+      info: Changes database system and migrates all data
+      args: ''
+  mirror:
+    help:
+      info: Starts block place/break mirroring.
+      args: (start/stop)
+    info:
+      started: '{gcp}Mirroring started'
+      stopped: '{gcn}Mirroring stopped'
+      tooFar: '{gcd}You are too far from mirror center (max {gcs}[blocks] {gcd}blocks).
+        Feature is paused!'
+      noBlocks: '{gcd}Not enough blocks'
+      used: '{gcp}Used: {gcs}[blocks]'
+      title: '{gcp}Mirror'
+      location: '{gcp}Location'
+      offset: '{gcp}Offset'
+      offsetPos: '{gcp}X:{gcs}[x] {gcp}Y:{gcs}[y] {gcp}Z:{gcs}[z] {gcp}- {gcs}[id]'
+      sections: '{gcp}Sections: {gcs}[sections]'
+      flipType: '{gcp}Flip type: {gcs}[type]'
+      sectionsAdjust: '{gcp}Shift + Mouse click to adjust'
+      blocksToPlace: '{gcp}Blocks to be placed: {gcs}[blocks]{gcp}/{gcs}[total]'
+      Action:
+        XR:
+          Name: XR
+          Desc: '{gcp}Mirrors on {gcs}X {gcp}axis'
+        YR:
+          Name: YR
+          Desc: '{gcp}Mirrors on {gcs}Y {gcp}axis'
+        ZR:
+          Name: ZR
+          Desc: '{gcp}Mirrors on {gcs}Z {gcp}axis'
+        X90:
+          Name: X90
+          Desc: '{gcp}90 on {gcs}X {gcp}axis'
+        Y90:
+          Name: Y90
+          Desc: '{gcp}90 on {gcs}Y {gcp}axis'
+        Z90:
+          Name: Z90
+          Desc: '{gcp}90 on {gcs}Z {gcp}axis'
+        X90R:
+          Name: X90R
+          Desc: '{gcp}-90 on {gcs}X {gcp}axis'
+        Y90R:
+          Name: Y90R
+          Desc: '{gcp}-90 on {gcs}Y {gcp}axis'
+        Z90R:
+          Name: Z90R
+          Desc: '{gcp}-90 on {gcs}Z {gcp}axis'
+        XY180:
+          Name: XY180
+          Desc: '{gcp}180 on {gcs}Z {gcp}axis'
+        YZ180:
+          Name: YZ180
+          Desc: '{gcp}180 on {gcs}X {gcp}axis'
+        ZX180:
+          Name: ZX180
+          Desc: '{gcp}180 on {gcs}Y {gcp}axis'
+        XYZ180:
+          Name: XYZ180
+          Desc: '{gcp}180 on {gcs}All {gcp}axis'
+        XS:
+          Name: XS
+          Desc: '{gcp}Spreads on {gcs}X {gcp}axis'
+        YS:
+          Name: YS
+          Desc: '{gcp}Spreads on {gcs}Y {gcp}axis'
+        ZS:
+          Name: ZS
+          Desc: '{gcp}Spreads on {gcs}Z {gcp}axis'
+        XYM:
+          Name: XYM
+          Desc: '{gcp}Mirrors by {gcs}X {gcp}to {gcs}Y {gcp}plane'
+        YZM:
+          Name: YZM
+          Desc: '{gcp}Mirrors by {gcs}Z {gcp}to {gcs}Y {gcp}plane'
+        ZXM:
+          Name: ZXM
+          Desc: '{gcp}Mirrors by {gcs}X {gcp}to {gcs}Z {gcp}plane'
+        XYMR:
+          Name: XYMR
+          Desc: '{gcp}Mirrors by {gcs}X {gcp}to {gcs}Y {gcp}plane reverse'
+        YZMR:
+          Name: YZMR
+          Desc: '{gcp}Mirrors by {gcs}Y {gcp}to {gcs}Z {gcp}plane reverse'
+        ZXMR:
+          Name: ZXMR
+          Desc: '{gcp}Mirrors by {gcs}X {gcp}to {gcs}Z {gcp}plane reverse'
+  mobhead:
+    help:
+      info: Get mob head
+      args: '[mobType] (entryNumber) (playerName) (-s)'
+    info:
+      got: '{gcp}Got {gcs}[type] {gcp}mob head'
+      base: '{gcp}Base drop chance: {gcs}[chance]%'
+      personal: '{gcp}Drop chance for you: {gcs}[chance]%'
+      headSpecific: '{gcp}Head specific drop chance: {gcs}[chance]%'
+      criteria: '{gcp}Criteria: {gcs}[criteria]'
+      title: '{gcs}[current]{gcp}/{gcs}[total]'
+  money:
+    help:
+      info: Manage money balance
+      args: '[pay/give/take/set] [playerName/all/alloffline/allonline] [amount][%rand/1-1000%][1%[min-max][[playerName]]]
+        (-s)'
+    info:
+      newBalance: '{gcs}[playerDisplayName] {gcp}new balance: {gcs}[money]'
+      paid: '{gcp}You have sent {gcs}[amount] {gcp}to {gcs}[playerDisplayName]'
+      gotMoney: '{gcp}You got {gcs}[amount] {gcp}from {gcs}[senderDisplayName]{gcp}.
+        Balance: {gcs}[money]'
+      gotMoneyGive: '{gcp}You received {gcs}[amount]{gcp}. Balance: {gcs}[money]'
+      lostMoney: '{gcs}[amount]{gcp} has been removed from your balance. Remaining:
+        {gcs}[money]'
+      worldGroups: '{gcw}You can''t send money between different world groups'
+      self: '{gcw}You can''t send money to yourself!'
+      confirm: '{gcp}Click to confirm the {gcs}[money] {gcp}transfer to {gcs}[playerDisplayName]
+        {gcu}&l[✔]'
+      notAccepting: '{gcp}This user is not accepting payments from other players'
+      giveAll: '{gcp}Give out {gcs}[totalAmount] {gcp}for {gcs}[playerCount] {gcp}players'
+      takeAll: '{gcp}Took {gcs}[totalAmount] {gcp}from {gcs}[playerCount] {gcp}players'
+      taxes: '{gcp}Taxes: {gcs}[taxes]'
+      overLimit: '{gcs}[playerDisplayName] {gcp}can''t receive your money due limitations
+        in how many he can hold at once'
+  more:
+    help:
+      info: Fills item stack to maximum amount
+      args: (playerName) (-clone/[amount])
+      explanation:
+      - 'Permissions:'
+      - ' cmi.command.more.oversize - to get oversized stacks'
+    info:
+      feedback: '{gcp}Filled stack to {gcs}[amount]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+  msg:
+    help:
+      info: Sends message to player
+      args: '[playerName] [message]'
+      explanation:
+      - If message starts with ! then clean message without sender name will be shown
+      - Requires cmi.command.msg.clean permission
+      - If message starts with !- then clean message without sender name will be shown
+        and without option to reply
+      - Requires cmi.command.msg.noreply permission
+    info:
+      TargetMsg: '{gcn}[{gcs}[senderDisplayName] {gcn}-> &8me{gcn}]&r&f [message]'
+      SenderMsg: '{gcn}[{gcs}me {gcn}-> {gcs}[playerDisplayName]{gcn}]&r&f [message]'
+      noPM: '{gcd}Player is not accepting private messages now'
+      badGroup: '{gcd}Can''t send private messages to this group of players'
+  mute:
+    help:
+      info: Mute player
+      args: '[playerName] (time) (-s) (reason)'
+      explanation:
+      - 'Examples: '
+      - /cmi mute zrips 1m
+      - /cmi mute zrips +30s
+      - /cmi mute zrips -15m
+      - /cmi mute zrips 1h
+      - /cmi mute zrips 1h For swearing
+    info:
+      mutedFor: '{gcs}[playerDisplayName] {gcp}muted for {gcs}[time]'
+      muted: '{gcp}You are muted for {gcs}[time]'
+      reason: '{gcp}Reason: {gcs}[reason]'
+      badTimeRanges: '{gcw}You can''t mute for longer than {gcs}[time] {gcp}({gcs}[seconds]{gcp})'
+  mutechat:
+    help:
+      info: Prevent public messages
+      args: (time) (-s) (reason)
+      explanation:
+      - 'Examples: '
+      - /cmi mutechat 1m
+      - '/cmi mutechat 1h '
+    info:
+      mutedFor: '{gcp}Public chat muted for {gcs}[time]'
+      isMuted: '!actionbar!{gcp}Public chat is muted for {gcs}[time]'
+      muteReason: '{gcp}Mute reason: {gcs}[reason]'
+  nameplate:
+    help:
+      info: Set players name plate prefix, suffix or its color
+      args: (playerName) (-pref:[some_prefix]) (-suf:[some_suffix]) (-c:[colorCode])
+        (reset) (-s)
+      explanation:
+      - Use _ to add space and __ to add underscore for placeholder and similar
+    info:
+      feedback: '{gcp}You have updated nameplate for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your nameplate got updated'
+      namePlate: '{gcp}[playerDisplayName] name plate: {gcs}[namePlate]'
+  near:
+    help:
+      info: Check who is near you
+      args: (distance)
+    info:
+      nope: '{gcp}Nobody is near you'
+      list: '{gcp}[place]. {gcs}[playerDisplayName] {gcp}- {gcs}[distance]m'
+      aproxList: '{gcp}[place]. {gcs}[playerDisplayName] {gcp}- {gcs}[dir] {gcn}~[distance]m'
+  nick:
+    help:
+      info: Changes player name
+      args: '[newNickName/off] (playerName) (-s)'
+      explanation:
+      - 'To change into different nick name: cmi.command.nick.different'
+      - To bypass length protection use cmi.command.nick.bypass.length
+    info:
+      changed: '{gcp}NickName changed to &r[newNickName] {gcp}from &r[oldNickName]'
+      changedTarget: '{gcp}Your nickName changed to &r[newNickName] {gcp}by &r[senderDisplayName]'
+      reset: '{gcp}Nick name set to default one'
+      sameNick: '{gcw}You don''t have permission to change into different nick. You
+        can change only colors'
+      blockedNick: '{gcw}You can''t use this nick name'
+      blockedNickLength: '{gcp}Nick name is to long. Max {gcs}[amount] {gcp}symbols'
+      blockedNickLengthMin: '{gcp}Nick name is to short. Min {gcs}[amount] {gcp}symbols'
+      inUse: '{gcw}Nick name is already being used by another player'
+  notarget:
+    help:
+      info: Toggle no-mob target mode
+      args: (playerName) (true/false) (-s)
+    info:
+      enabled: '{gcp}Monsters will no longer attack you!'
+      disabled: '{gcp}Monsters will now attack you!'
+  note:
+    help:
+      info: Manage players notes
+      args: (playerName) [add/remove/clear/list] (id/note)
+    info:
+      newNote: '{gcp}Added new note for player'
+      clearNote: '{gcp}All notes cleared for player'
+      removedNote: '{gcp}Removed note for player'
+      noNotesById: '{gcp}There is no saved notes by this id for player'
+      noNotes: '{gcp}There is no saved notes for player'
+      listNotes: '{gcs}[note]'
+  openbook:
+    help:
+      info: Open book gui
+      args: (cText) (playerName) (fileName.txt)
+  oplist:
+    help:
+      info: Check operator player list
+      args: ''
+    info:
+      feedback: '{gcp}* {gcs}[number]{gcp}. {gcs}[playerName]'
+  options:
+    help:
+      info: Modify personal options
+      args: (playerName) (option) (enable/disable/toggle/status) (-s)
+      explanation:
+      - 'Possible actions: visibleHolograms, shiftSignEdit, totemBossBar, bossBarCompass,
+        tagSound, chatSpy, cmdSpy, signSpy, acceptingPM, acceptingTPA, acceptingMoney,
+        chatbubble, pmsound, deathmessages'
+    info:
+      title: '{gcn}Options'
+      state: '{gcn}State: {gcs}[state]'
+      feedback: '{gcs}[description]{gcp}: {gcs}[state]'
+      option:
+        visibleHolograms: '{gcp}Visible holograms'
+        shiftSignEdit: '{gcp}Sign shift edit'
+        totemBossBar: '{gcp}Totem BossBar'
+        bossBarCompass: '{gcp}Compass BossBar'
+        tagSound: '{gcp}Chat tagging sound'
+        chatSpy: '{gcp}Chat spy'
+        cmdSpy: '{gcp}Command spy'
+        signSpy: '{gcp}Sign spy'
+        acceptingPM: '{gcp}Accepting private messages'
+        acceptingTPA: '{gcp}Accepting teleportations to you'
+        acceptingMoney: '{gcp}Accepting money payments'
+        chatbubble: '{gcp}Chat bubbles'
+        pmSound: '{gcp}Private messages sounds'
+        rideMe: '{gcp}Players can ride you'
+        pveDamageNumbers: '{gcp}Shows PvE damage numbers'
+        pvpDamageNumbers: '{gcp}Shows PvP damage numbers'
+        InformDurability: '{gcp}Inform on item durability loss'
+        receivePets: '{gcp}Do you want to receive pets as gifts'
+        deathMessages: '{gcp}Do you want to show death messages'
+        notarget: '{gcp}Do you want to be ignored by mobs'
+  panimation:
+    help:
+      info: Play custom particle animation
+      args: (variable/playerName/stopAll) (stop)
+      explanation:
+      - Information on usage can be found at https://www.zrips.net/cmi/extra/particles/
+  particlepicker:
+    help:
+      info: Pick particle
+      args: (particleName)
+  patrol:
+    help:
+      info: Patrol
+      args: ''
+    info:
+      noPatrol: '{gcp}Currently there is no players you can patrol'
+      Patroling: '{gcp}Currently patroling: {gcs}[playerDisplayName]'
+      lastPatrol: '{gcp}Last time patroled {gcs}[time]{gcp}ago'
+      notes: '{gcp}Has {gcs}[amount] {gcp}notes'
+  pay:
+    help:
+      info: Perform money transaction
+      args: '[playerName] [amount] (-s)'
+  ping:
+    help:
+      info: Shows players ping
+      args: (playerName/message)
+    info:
+      feedback: '{gcs}[playerName] {gcp}ping: {gcs}[ping]ms'
+      selffeedback: '{gcp}Your ping is {gcs}[ping]ms'
+  placeholders:
+    help:
+      info: List out all placeholders
+      args: (parse) (placeholder) (playerName)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[placeholder]'
+      outputResult: ' {gcp}result: {gcs}[result]'
+      parse: '{gcs}[placeholder] {gcp}by {gcs}[source] {gcp}result &8|&r[result]&8|'
+  playercollision:
+    help:
+      info: Set players collision mode
+      args: (playerName) [true/false] (-s)
+    info:
+      feedback: '{gcp}You have set collision to {gcs}[boolean]{gcp} for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your collision mode changed to {gcs}[boolean]'
+  playtime:
+    help:
+      info: Shows player total play time
+      args: (playername)
+    info:
+      total: '{gcp}* Total play time: {gcs}[time]'
+      joined: '{gcp}* Joined on: {gcs}[time]'
+  playtimetop:
+    help:
+      info: Shows top list of player total play time
+      args: '[page]'
+    info:
+      topLine: '{gcp}----- TopPlaytime {gcp}-----'
+      scanning: '{gcp}Data is being scanned currently, please wait a minute and try
+        again'
+      loading: '{gcp}Data is not loaded yet. Scan process will start and you will
+        get result after its finished'
+      list: '{gcs}[number]{gcp}. {gcs}[playerDisplayName] {gcp}- {gcs}[time]'
+      place: '{gcs}[playerDisplayName] {gcp}is in {gcs}[place] {gcp}place'
+      ownLine: '{gcu}[number]{gcp}. {gcs}[playerDisplayName] {gcp}- {gcs}[time]'
+  point:
+    help:
+      info: Point to block
+      args: (particleName) (playerName) (-self) (time) (-s:[speed])
+  portals:
+    help:
+      info: Set portals
+      args: (new/nearest/forceupdate/setlocation/enabled) (portalName) (world:x:y:z:yaw:pitch)
+    info:
+      collides: '{gcw}Collides with {gcs}[portalName] {gcw}portal'
+      exist: '{gcw}Portal with this name already exist'
+      notExist: '{gcw}Portal with this name doesn''t exist'
+      locationSet: '{gcp}Portal location set to your position for {gcs}[portalName]'
+      removed: '{gcp}Portal {gcs}[portalName] {gcp}removed'
+      click: '{gcp}Click to set tp location for {gcs}[portalName] {gcp}to your current
+        position'
+      bungeeSet: '{gcp}Travel to position and click on this message to set teleport
+        location'
+      bungeeSetConfirmed: '{gcp}Bungee portal ({gcs}[portal]{gcp}) location set from
+        {gcs}[sourceServer] {gcp}server to {gcp}[location]'
+      bungeeSetEmpty: '{gcp}Initiated portal location set at {gcs}[serverName] {gcp}server,
+        but no one is online in this server. This action will not complete until some
+        one joins it'
+      List: '{gcp}[color][portalName]'
+      redefine: '{gcp}Redefine area from current selection'
+      particles: '{gcp}Particles: {gcs}[state]'
+      particleType: '{gcp}Particle type: {gcs}[type]'
+      particleAmount: '{gcp}Particle amount: {gcs}[amount]'
+      particleOrigin: '{gcp}Particle origin: {gcs}[value]'
+      particlePercent: '{gcp}Percentage of sides shrinked particles: {gcs}[amount]%'
+      activationRange: '{gcp}Activation range: {gcs}[amount]'
+      particlePermission: '{gcp}Show particles without permission: {gcs}[state]'
+      bungeeTeleport: '{gcp}Teleport to exact bungee location: [state]'
+      requiresPermission: '{gcp}Requires {gcs}[perm] {gcp}permission to use: [state]'
+      kickBack: '{gcp}Prevent enter without permission: [state]'
+      informPermission: '{gcp}Inform on missing permission: [state]'
+      cancelWarmup: '{gcp}Cancel command warmup on leave: [state]'
+      teleportToLocation: '{gcp}Teleport to portal location'
+      teleportToTarget: '{gcp}Teleport to portal target location'
+      performCommandsWithoutTp: '{gcp}Perform commands without valid teleport location'
+      editCommands: '{gcp}Edit portal commands'
+      setTeleportLocation: '{gcp}Set teleport location'
+      setSafeLocation: '{gcp}Set safe outside location'
+      save: '{gcp}Save changes to file'
+      removePortal: '{gcp}REMOVE PORTAL'
+      cantUsePortal: '{gcw}You can''t use this portal'
+  pos:
+    help:
+      info: Show current position of a player
+      args: (playerName)
+    info:
+      feedback: '{gcp}[playerDisplayName] {gcp}([world]{gcp},{gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      feedbackRegion: '{gcp}Chunk {gcs}[chunkx]{gcp}:{gcs}[chunkz]{gcp} Region {gcs}[regionx]{gcp}:{gcs}[regionz]'
+      feedbackDirection: '{gcp}Direction {gcs}[direction] {gcp}({gcs}[degrees] {gcp}degrees)'
+      feedbackBiome: '{gcp}Biome {gcs}[biome]'
+      feedbackLight: '{gcp}Light level {gcs}[lightLevel]'
+      netherCoord: '{gcp}Nether World coord: {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+      normalCoord: '{gcp}Normal world coord: {gcp}({gcs}[x]{gcp}:{gcs}[y]{gcp}:{gcs}[z]{gcp})'
+  preview:
+    help:
+      info: Load chunk for given range
+      args: '[range] (innerrange)'
+    info:
+      NoMore: '{gcp}Range can''t be more than 32 chunks. Changed to maximum allowed.'
+      startSending: '{gcp}Found {gcs}[amount] {gcp}chunks to send. Starting!'
+      InfoShow: '{gcp}TPS: {gcs}[tps] {gcp}Left {gcs}[left] {gcp}({gcs}[min]m:[sec]s{gcp})
+        Speed: {gcs}[speed]'
+      Finished: '{gcp}Finished. It can take some extra time to load all chunks on
+        your side.'
+  prewards:
+    help:
+      info: Check playtime rewards
+      args: (playerName)
+    info:
+      list: '{gcs}[place]{gcp}. {gcs}[rewardName] {gcp}reward in {gcs}[time]'
+      listNoStack: '{gcs}[place]{gcp}. {gcs}[rewardName]'
+      listOneTime: '{gcs}[place]{gcp}. {gcs}[rewardName]'
+      claim: ' {gcu}Claim!'
+      claimAmount: ' {gcu}Claim(x[amount])!'
+      claimHover: '{gcu}Click to Claim reward!'
+      inform: '!actionbar!{gcu}You have unclaimed rewards waiting for you! {gcs}/prewards'
+  ptime:
+    help:
+      info: Controls player personal time
+      args: (freeze/unfreeze/day/night/dusk/morning/realtime/reset) (playerName) (-s)
+      explanation:
+      - 'Example:'
+      - /ptime 13:00:00
+      - /ptime 1pm
+      - /ptime 13
+      - /ptime 7000ticks
+      - /ptime Zrips 1pm
+      - /ptime freeze
+      - /ptime unfreeze
+      - /ptime realtime
+      - /ptime reset
+    info:
+      check: '{gcp}Personal Time: {gcs}[24h] {gcp}or {gcs}[12h] {gcp}or {gcs}[ticks]ticks'
+      frozen: ' &c(-)'
+      gotreseted: '{gcs}[playerDisplayName] {gcp}time has been reset'
+      gotfrozen: '{gcs}[playerDisplayName] {gcp}time has been frozen'
+      gotunfrozen: '{gcs}[playerDisplayName] {gcp}time has been unfrozen'
+      setto: '{gcp}Time set to {gcs}[24h] {gcp}or {gcs}[12h] {gcp}or {gcs}[ticks]ticks
+        {gcp}for {gcs}[playerDisplayName]'
+  purge:
+    help:
+      info: Cleans player data from world folder by inactive days
+      args: (stop)
+    info:
+      stopped: '{gcp}Purge stopped.'
+  pweather:
+    help:
+      info: Controls player weather
+      args: '[sun/rain/reset] (playerName) (-s)'
+    info:
+      check: '{gcp}Personal weather: {gcs}[weather]'
+      gotreseted: '{gcs}[playerDisplayName] {gcp}weather has been reset'
+      setto: '{gcp}Personal weather set to {gcs}[weather] {gcp}for {gcs}[playerDisplayName]'
+      gotset: '{gcp}Your personal weather set to {gcs}[weather]'
+      reset: '{gcp}Weather reset'
+  rankdown:
+    help:
+      info: Decrease your rank
+      args: (playerName) (rankName) (confirm) (-cmd) (-cost)
+      explanation:
+      - -cmd will perform command defined for previous rank rankup
+      - -cost will charge player with money, exp or items if defined for previous
+        rank rankup
+    info:
+      noPrev: '{gcp}Can''t find any previous ranks'
+      list: '{gcp}Pick one rank you want to {gcs}rankdown {gcp}to: '
+      confirm: '{gcp}Click me to confirm {gcs}rankdown {gcp}to {gcs}[rank]'
+      downranked: '{gcp}Ranked down to {gcs}[rank]'
+  rankinfo:
+    help:
+      info: Your rank information
+      args: (playerName) (rankName)
+    info:
+      distanceCM: '[value]cm'
+      distanceM: '[value]m'
+      distanceKm: '[value]km'
+      requiredMoney: ' {gcp}Money: [color][current]{gcp}/{gcs}[needed]'
+      requiredExp: ' {gcp}Exp: [color][current]{gcp}/{gcs}[needed]'
+      requiredVotes: ' {gcp}Votes: [color][current]{gcp}/{gcs}[needed]'
+      requiredPerm: ' {gcp}Perm: '
+      requiredPlaceholder: ' {gcp}Custom: '
+      requiredPlaceholderList: '[color][message]'
+      requiredPlaceholderHover: '{gcp}[color][current]{gcp}/{gcs}[needed]'
+      requiredMcmmo: ' {gcp}Mcmmo: '
+      requiredMcmmoList: '{gcp}[color][name]'
+      requiredMcmmoListHover: ' {gcp}[color][current]{gcp}/{gcs}[needed]'
+      requiredMcmmoPower: Power
+      requiredAurelium: ' {gcp}Aurelium: '
+      requiredAureliumList: '{gcp}[color][name]'
+      requiredAureliumListHover: ' {gcp}[color][current]{gcp}/{gcs}[needed]'
+      requiredAuraSkills: ' {gcp}AuraSkills: '
+      requiredAuraSkillsList: '{gcp}[color][name]'
+      requiredAuraSkillsListHover: ' {gcp}[color][current]{gcp}/{gcs}[needed]'
+      requiredJobs: ' {gcp}Jobs: '
+      requiredJobsList: ' {gcp}[color][name]'
+      requiredJobsListHover: ' {gcp}[color][current]{gcp}/{gcs}[needed]'
+      requiredJobsTotalLevel: TotalLevel
+      requiredItem: ' {gcp}Items: '
+      requiredItemsList: '{gcp}[color][name]'
+      requiredItemListHover: '{gcp}[color][current]{gcp}/{gcs}[needed]'
+      currentRank: ' {gcp}Your current rank: {gcs}[rankName]'
+      elseCurrentRank: ' {gcs}[playerDisplayName] {gcp}current rank: {gcs}[rankName]'
+      rankNameLine: ' {gcp}------ {gcs}[rankName] {gcp}[rankupState] {gcp}------'
+      canRankup: ' {gcu}Can rankup!'
+      cantRankup: ''
+      requiredStats: ' {gcp}[name][extra]{gcp}: [color][current]{gcp}/{gcs}[needed]'
+      requiredStatsExtra: ' ({gcs}[type]{gcp})'
+      nextRanks: ' {gcp}Next ranks: {gcs}'
+      finalRank: ' {gcp}This is last rank'
+      noRank: ' {gcp}Cant find rank'
+      check: '{gcp}Check {gcs}[rank] {gcp}rank'
+      progressBarHover: '{gcp}Progress [percent]%'
+  ranklist:
+    help:
+      info: List of possible ranks
+      args: ''
+    info:
+      list: '{gcs}[place]{gcp}. [currentRankMarker]{gcs}[rankName][currentRankMarker]'
+      currentRankMarker: '{gcu}+'
+      hoverNext: "{gcp}Next: \n{gcs}[rankList]"
+      hoverLast: '{gcu}Last rank'
+  rankset:
+    help:
+      info: Set a players rank
+      args: (playerName) [rankName] (-cmd) (-cost)
+      explanation:
+      - -cmd will perform command defined for that rank rankup
+      - -cost will charge player with money, exp or items if defined for that rank
+        rankup
+      - player will get rank even if he doesnt have enough money, exp or required
+        items
+    info:
+      set: '{gcp}Rank changed for {gcs}[playerDisplayName] {gcp}to {gcs}[rankName]'
+  rankup:
+    help:
+      info: Increase your rank
+      args: (playerName) (rankName) (confirm)
+    info:
+      noRank: ' {gcp}You don''t have any rank associated with you'
+      requiresPrevious: ' {gcp}You cant rankup to this rank. It requires you to have
+        {gcs}[rank] {gcp}rank(`s)'
+      list: '{gcp}Pick one rank you want to rank up to: '
+      confirm: '{gcp}Click me to confirm rankup to {gcs}[ranks]'
+  realname:
+    help:
+      info: Check players real name
+      args: (playerName/nickName)
+    info:
+      feedback: '{gcs}[playerDisplayName] {gcp}real name {gcs}[playerName]'
+  recipe:
+    help:
+      info: Check item recipe
+      args: (itemName) (-c)
+    info:
+      type: '{gcs}[type]'
+      types:
+        Shaped: Shaped
+        Shapeless: Shapeless
+        Transmute: Transmute
+        Furnace: Furnace
+        Blasting: Blasting
+        Campfire: Campfire
+        Cooking: Cooking
+        Merchant: Merchant
+        Smoking: Smoking
+        Stonecutting: Stonecutting
+        Smithing: Smithing
+        Complex: Complex
+        Unknown: Unknown
+      page: ' {gcs}[current]{gcp}/{gcs}[total]'
+      noRecipes: '{gcw}Cant find any recipes for this item'
+  releasepet:
+    help:
+      info: Release your tamed pet
+      args: (-s)
+    info:
+      released: '{gcp}You have released {gcs}[type] {gcp}into wilderness!'
+  reload:
+    help:
+      info: Reloads plugins config and locale files
+      args: ''
+    info:
+      feedback: '{gcp}CMI Configs and locale files reloaded! Took {gcs}[ms]ms'
+      failedConfig: '{gcw}Failed to load config file! Check spelling!'
+      failedLocale: '{gcw}Failed to load locale file! Check spelling!'
+  removehome:
+    help:
+      info: Remove home
+      args: (homeName) (playerName)
+    info:
+      remove: '{gcd}Click to remove'
+      removed: '{gcp}Home ({gcs}[home]{gcp}) removed'
+      list: '{gcs}[home]'
+  removeuser:
+    help:
+      info: Removes user and its data
+      args: '[uuid/duplicates]'
+    info:
+      removed: '{gcp}User ({gcs}[uuid]{gcp}) removed'
+      removedDuplicate: '{gcs}[amount]{gcp}/{gcs}[max] {gcp}duplicates removed'
+  removewarp:
+    help:
+      info: Remove warp
+      args: (warpName)
+    info:
+      remove: '{gcd}Click to remove'
+      removed: '{gcp}Warp ({gcs}[warp]{gcp}) removed'
+      notYours: '{gcd}This warp doesn''t belong to you!'
+  repair:
+    help:
+      info: Repair items
+      args: '[hand/offhand/armor/all] (playerName)'
+      explanation:
+      - cmi.command.repair.hand - allows a user to repair items in their hand
+      - cmi.command.repair.offhand - allows a user to repair items in their offhand
+      - cmi.command.repair.armor - allows a user to repair items in armor slots
+      - cmi.command.repair.all - allows a user to repair their whole inventory
+      - cmi.command.repair.repairshare.bypass - allows a user to repair items without
+        adding repair share protection
+    info:
+      feedback: '{gcp}You have repaired {gcs}[amount]{gcp} items for {gcs}[playerDisplayName]{gcp}.'
+      nothing: '{gcp}Nothing to repair'
+      cant: '{gcp}Can''t repair this item'
+      feedbackMoney: '{gcp}You have repaired {gcs}[amount]{gcp} items for {gcs}[playerDisplayName]{gcp}.
+        Cost: {gcs}[cost]'
+      itemOwner: '{gcp}Last repaired by: {gcs}[owner]'
+      cantUse: '!title!{gcw}Can''t use this item!!subtitle!{gcp}Repair it your self!'
+  repaircost:
+    help:
+      info: Check items repair cost
+      args: (hand/offhand/armor/all) (playerName)
+    info:
+      feedback: '{gcp}Repair cost: {gcs}[amount]'
+      noNeed: '{gcp}No need to repair'
+  replaceblock:
+    help:
+      info: Replaces blocks in current world around you
+      args: id [blockName:data/id:data] w [blockName:data/id:data] r [range in chunks/g]
+        y [max height]
+      explanation:
+      - 'SubCommands:'
+      - '- pause &e- pause replacing'
+      - '- continue &e- continue replacing'
+      - '- stop &e- stop replacing'
+      - '- speed [amount] &e- set current replace speed'
+      - '- autospeed [true/false] &e- set autospeed turned off or on'
+      - '- messages [true/false] &e- set message output to off or on'
+      - 'Example:'
+      - /cmi replaceblock id 52 w stone r 10
+      - /cmi replaceblock id 52,gold_block w stone r 15 y 100
+      - /cmi replaceblock id 52 w air r g y 100
+      - /cmi replaceblock id iron_ore%75 w stone%90,dirt%5 r g
+    info:
+      startScanning: '{gcp}Found {gcs}[amount] {gcp}chunks to check. Starting!'
+      paused: '{gcp}Replacing paused, to continue use {gcs}/cmi blockreplace continue.'
+      continuing: '{gcp}Replacing continuing'
+      stoped: '{gcp}Replacing stopped.'
+      speedChange: '{gcp}Speed changed to [amount]'
+      autospeedChange: '{gcp}AutoSpeed changed to [state]'
+      messagesChange: '{gcp}Message state changed to [state]'
+      infoShow: '{gcs}TPS: &3[tps] {gcs}Left {gcp}[left] {gcs}({gcp}[time]{gcs}) {gcs}Speed:
+        {gcp}[speed] {gcs}Replaced: {gcp}[found]'
+      finished: '{gcp}Finished!!! Replaced: {gcs}[amount] {gcp}blocks! In {gcs}[time]{gcp}.'
+  reply:
+    help:
+      info: Reply to last message sender
+      args: '[message]'
+    info:
+      noOneToReply: '{gcp}There is no one to reply'
+  resetback:
+    help:
+      info: Resets players back location
+      args: (playerName) (reason) (-death) (-s)
+    info:
+      feedback: '{gcp}Back location got a reset!'
+  resetdbfields:
+    help:
+      info: Resets particular database columns to default value
+      args: '[columnName] (-w:[worldName]) (-p:[playerName])'
+    info:
+      feedback: '{gcp}Updated {gcs}[amount] {gcp}players'
+      nofield: '{gcw}Cant find field by this name'
+  ride:
+    help:
+      info: Ride target entity
+      args: list
+      explanation:
+      - ' cmi.command.ride.[entityType] - to have access in riding entity'
+    info:
+      riding: '{gcp}You are riding {gcs}[entityName]'
+      cantRide: '{gcw}You cant ride ({gcs}[entityName]{gcq}) entity'
+      someOneElse: '&cSome one is already riding this entity'
+      ridingYou: '{gcs}[playerDisplayName] {gcp}is riding you, do {gcs}/shakeitoff
+        {gcp}to get them off'
+      canRide: '{gcp}Can ride: {gcs}[list]'
+  rt:
+    help:
+      info: Teleports to random location
+      args: (playerName) (worldName) (-s)
+    info:
+      possible: '{gcp}Possible worlds: {gcs}[worlds]'
+      tpLimit: '{gcp}You can''t teleport so fast, please wait {gcs}[time] {gcp}and
+        try again'
+      cantDo: '{gcp}You can''t use random teleport from different world'
+      IncorrectLocation: '{gcs}Could not find correct teleport location, please wait
+        {gcp}[time] {gcs}and try again.'
+      teleported: '!actionbar!{gcs}Whoosh!!!'
+      ongoingSearch: '!actionbar!{gcn}[dots]Searching ({gcs}[current]{gcn}/{gcs}[max]{gcn})[dots]'
+  sameip:
+    help:
+      info: List players logged in from same ip
+      args: ''
+    info:
+      list: '{gcs}[place]. {gcp}'
+  saturation:
+    help:
+      info: Set players saturation
+      args: (playerName) [amount]
+    info:
+      feedback: '{gcp}You have set {gcs}[amount]{gcp} saturation for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your saturation was set to {gcs}[amount]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  saveall:
+    help:
+      info: Saves every player inventory
+      args: (daysRange/-online)
+      explanation:
+      - -online variable can be used to save only online player inventories
+    info:
+      saving: '[symbol] {gcp}checked: {gcs}[checked]{gcp} from {gcs}[total]{gcp} saved:
+        {gcs}[saved] {gcp}skipped: {gcs}[skipped] [simbol]'
+      saved: '{gcp}Save finished. Saved: {gcs}[saved] {gcp}Skipped: {gcs}[skipped]'
+  saveditems:
+    help:
+      info: Save or manage saved items
+      args: '[save/get/remove/list] (savedItemName) (-t:playerName) (-a:amount) (-c:category/all)
+        (-s)'
+    info:
+      info:
+      - '{gcn}Left click to get item'
+      - '{gcn}Middle mouse click to detele'
+      got: '{gcp}Got {gcs}[name] {gcp}item'
+      give: '{gcp}Give {gcs}[name] {gcp}item'
+      removed: '{gcp}Removed {gcs}[name] {gcp}item'
+      saved: '{gcp}Saved {gcs}[name] {gcp}item'
+      uiTitle: 'Category: [category] {gcs}[current]{gcp}/{gcs}[total]'
+      name: '{gcp}Name: {gcs}[name]'
+      category: '{gcp}Category: {gcs}[category]'
+  sc:
+    help:
+      info: Starts sign copy process
+      args: (playerName) (oneside)
+    info:
+      punch: '{gcp}Punch sign to paste text into it, or punch any non-sign block to
+        cancel process'
+      canceled: '{gcp}Sign copy process cancelled'
+      updated: '{gcp}Sign updated'
+  scale:
+    help:
+      info: Set entities scale
+      args: '[set/add/take/clear] (playerName) [amount] (-s)'
+    info:
+      feedback: '{gcp}You have set {gcs}[scale] {gcp}scale for {gcs}[entityName]{gcp}.'
+      scale: '{gcp}Scale: {gcs}[scale]'
+      targetfeedback: '{gcp}Your scale was set to {gcs}[scale] {gcp}by {gcs}[senderDisplayName]{gcp}.'
+  scan:
+    help:
+      info: Scans for items in current world
+      args: ''
+      explanation:
+      - <T>More information at https://www.zrips.net/cmi/extra/scan/</T><URL>https://www.zrips.net/cmi/extra/scan/</URL>
+    info:
+      ListEntity: '{gcs}[number]{gcp}. [location] {gcs}[checked][type] {gcs}[amount]'
+      ListBlock: '{gcs}[number]{gcp}. [location] {gcp}[checked][type] {gcs}[amount]'
+      pause: '{gcp}Scanning paused, to continue use {gcs}/cmi scan resume'
+      resume: '{gcp}Scanning resumed'
+      noInformation: '{gcp}There is no information'
+      nothing: '{gcw}Provided criteria for scan are incorrect'
+      progress: '{gcp}Found: {gcs}[totalFound] {gcp}Chunks to check: {gcs}[checked]{gcp}/{gcs}[from]
+        {gcp}Skipped: {gcs}[skipped] {gcp}Speed: {gcs}[speed]'
+      loading: '{gcn}Loading data...'
+      teleport: '{gcp}Press to teleport'
+  scavenge:
+    help:
+      info: Recycle item and its enchantments
+      args: (playerName)
+    info:
+      enchantWorth: '{gcp}Enchantment worth: {gcs}[price]'
+      enchantFailChance: '{gcw}Fail chance: {gcs}[chance]%'
+      enchantFailed: '{gcw}Failed. {gcs}[enchant]{gcw} level {gcs}[level] {gcw}With
+        {gcs}[chance]% {gcw}fail chance'
+      enchantLevelChance: '{gcw}Level lower chance: {gcs}[chance]%'
+      gotIngredients: '{gcp}You got [itemList]'
+      gotIngredientsFormat: '{gcs}[material]{gcp}-{gcs}[amount]'
+      itemBroke: '{gcw}Item broke with [chance]% break chance'
+      confirm: '{gcu}Confirm scavenge. Cost: {gcs}[price]'
+      itemBreakChance: '{gcw}Item break chance: {gcs}[chance]%'
+      itemBreakChanceExtra: '{gcw}[durability]% durability adds {gcs}[chance]% {gcw}break
+        chance'
+      itemBreak: '{gcw}Item will break on click!'
+      ingredientReturnChance: '{gcp}Ingredient return chance: {gcs}[chance]%'
+      cantScavenge: '{gcw}Can''t scavenge'
+      insertItem: '{gcu}Insert item in a slot above'
+      scavengeCost: '{gcp}Scavenge cost: {gcs}[cost]'
+      moreTitle: '{gcp}Incorrect amount: {gcs}[input]{gcp}/{gcs}[required]'
+      moreLore:
+      - '{gcp}You need more of this item.'
+      - '{gcp}Requires atleast {gcs}[amount]'
+      title: '{gcp}Scavenger'
+  schedule:
+    help:
+      info: Trigger schedule
+      args: '[scheduleName] (-updatetimer)'
+  se:
+    help:
+      info: Changes sign text line.
+      args: (SignLine) [Text]
+      explanation:
+      - Use \n for additional line
+  search:
+    help:
+      info: Search from all players of specific items or stats
+      args: ''
+      explanation:
+      - <T>More information at https://www.zrips.net/cmi/extra/search/</T><URL>https://www.zrips.net/cmi/extra/search/</URL>
+    info:
+      baseList: '{gcs}[number]{gcp}. [location] {gcs}[playerName][amount]'
+      regularList: '{gcs}[number]{gcp}. {gcs}[playerName][amount]'
+      amount: ' {gcp}({gcs}[totalcount]{gcp})'
+      found: '{gcp}Found {gcs}[amount] {gcp}from {gcs}[files] {gcp}checked users'
+      noresults: '{gcp}Nothing found by your criteria'
+      nothing: '{gcw}Provided criteria for search are incorrect'
+      noactive: '{gcp}No active or existing search results'
+      active: '{gcp}Search is already active, wait until its done or cancel it'
+      searching: '{gcp}Searching, this can take some time to finish'
+      progress: '{gcp}Found {gcs}[totalFound] {gcp}out of {gcs}[checked] {gcp}/ {gcs}[from]
+        {gcp}Speed: {gcs}[speed]'
+      location:
+        ender: '{gcs}Ender'
+        enderS: '{gcs}Ender->ShulkerBox'
+        enderB: '{gcs}Ender->Bundle'
+        inv: '{gcp}Inventory'
+        invS: '{gcp}Inventory->ShulkerBox'
+        invB: '{gcp}Inventory->Bundle'
+        PlayerVault: '{gcp}PlayerVault'
+  seen:
+    help:
+      info: Check when player was last seen
+      args: '[playerName/uuid]'
+    info:
+      feedback: '{gcs}[playerDisplayName] {gcp}has been {gcp}[offon] {gcp}since {gcs}[time]{gcp}ago!'
+  select:
+    help:
+      info: Manage selection area
+      args: (pos1/pos2/shift/expand/contract/clear) (amount)
+  sell:
+    help:
+      info: Sell items from inventory
+      args: (all/blocks/hand/same/gui/material) (playerName) (-s)
+    info:
+      total: '{gcp}Earned {gcs}[total] {gcp}by selling {gcs}[amount] {gcp}items. New
+        balance {gcs}[balance]'
+      close: '{gcp}Place items you want to sell'
+      sellInfo: '{gcp}Sell for: {gcs}[price]'
+  sendall:
+    help:
+      info: Send all online players to target server
+      args: '[serverName]'
+  server:
+    help:
+      info: Connect to bungeecord server
+      args: '[serverName] (playerName) (-f)'
+  serverlinks:
+    help:
+      info: Set server links
+      args: ''
+      explanation:
+      - Separate display name and link with ;
+  serverlist:
+    help:
+      info: Show server list
+      args: ''
+    info:
+      listOnline: '{gcs}[place]. {gcu}[serverName] {gcs}[count]{gcp}/{gcs}[max]'
+      listOffline: '{gcs}[place]. {gcd}[serverName] {gcs}0{gcp}/{gcs}0'
+      consoleInfo: ' {gcp}({gcs}[ip]{gcp}:{gcs}[port]{gcp})'
+  servertime:
+    help:
+      info: Show server time
+      args: ''
+    info:
+      time: '{gcp}Server time: {gcs}[time]'
+      format: dd/MM/YYYY HH:mm:ss
+      timeZone: '{gcp}Time zone name: {gcs}[name]'
+      timeZoneId: '{gcp}Time zone id: {gcs}[id]'
+      timeZoneOffset: '{gcp}Time zone offset: {gcs}[offset]'
+  setenchantworth:
+    help:
+      info: Change enchantment worth
+      args: ''
+  setfirstspawn:
+    help:
+      info: Sets first spawn point
+      args: (playerName)
+    info:
+      feedback: '{gcp}First spawn point set ({gcs}[world]{gcp},{gcs}[x]{gcp},{gcs}[y]{gcp},{gcs}[z]{gcp})!'
+  sethome:
+    help:
+      info: Sets home location
+      args: (homeName) (playerName) (-p) (-l:worldName;x;y;z) (block/Material) (slotNumber)
+        (-overwrite)
+      explanation:
+      - cmi.command.sethome.unlimited
+      - -l will define custom location for new home location, this requires cmi.command.sethome.customloc
+        permission node
+    info:
+      set: '{gcp}You correctly created the home with name of {gcs}[homeName]{gcp}!'
+      setBed: '{gcp}Created bed respawn location'
+      private: ' {gcu}(private)'
+      maxFavorites: '{gcw}You can only have {gcp}[amount] {gcw}favorite homes at one
+        time'
+      noMore: '{gcw}You have reached max sethome limit'
+      exist: "{gcw}Home location with this name ({gcs}[name]{gcw}) already exists!\
+        \ \n{gcp}Click to confirm overwrite."
+      noOverwrite: '{gcw}You don''t have permission to overwrite existing home location.
+        Remove old one or pick different home name.'
+      slotTaken: '!actionbar!{gcw}Home slot is already been used by &7[homeName]{gcw},
+        consider another one'
+      setIcon: '!actionbar:3!&7Set home icon as {gcs}[material] &7material'
+      tooManyInWorld: '{gcw}You cant have any more homes in this world. Max {gcs}[max]{gcw}
+        allowed, you have {gcs}[current]'
+  setmotd:
+    help:
+      info: Set server motd
+      args: '[newMotd] (-s)'
+      explanation:
+      - use \n to make second line
+      - use _ to create space, if you need more than one use _ followed with space
+    info:
+      changed: '{gcp}Changed motd to:'
+  setrt:
+    help:
+      info: Set random teleport bounds
+      args: (worldName) (center:[x]:[z]) (min:[range]) (max:[range]) (square/circle)
+        (enabled/disabled)
+    info:
+      list: '{gcs}[place]. {gcp}[world] [enabled] {gcs}[centerX]{gcp}:{gcs}[centerZ]
+        [maxDist]{gcp}/{gcs}[minDist] [type]'
+  setspawn:
+    help:
+      info: Sets spawn command teleport point
+      args: (playerName) (true/false) (-g:[groupName]) (-rng:[range]) (-w:world,world_nether)
+        (-loc:[world;x;y;z;yaw;pitch])
+      explanation:
+      - More info on command usage at https://www.zrips.net/cmi/commands/spawn/
+    info:
+      feedback: '{gcp}Spawn point set ({gcs}[world],[x],[y],[z]{gcp})!'
+      group: ' {gcp}({gcs}[group]{gcp})'
+      rng: ' {gcp}(Rng: {gcs}[rng]{gcp})'
+      respawn: '{gcn}Click to set this spawn point as possible respawn location'
+  setwarp:
+    help:
+      info: Sets warp location
+      args: '[warpName] (reqPermission) (hand/head/head:[playerName]) (slot) (autoLore)
+        (-g:[groupName]) (world;x;y;z;yaw;pitch) (-confirm)'
+      explanation:
+      - 'Examples:'
+      - /cmi setwarp spawn - simple warp to spawn
+      - /cmi setwarp spawn true - creates warp and will require cmi.command.warp.[warpname]
+        permission node to use it
+      - /cmi setwarp spawn hand - creates warp will take item from hand to display
+        in gui for this warp
+      - /cmi setwarp spawn 13 - creates warp and sets gui slot to be used in gui (1-54)
+      - /cmi setwarp spawn true hand 13 - creates warp with icon from hand, slot 13
+        and requires permission
+      - /cmi setwarp spawn true hand 13 false - same as previous, but doesn't generate
+        lore
+    info:
+      newSet: '{gcp}New warp (&6[warp]{gcp}) set'
+      noSet: '{gcw}Warp with this name already exists'
+      noMore: '{gcw}You have reached max allowed warp limit. ({gcps}[max]{gcp})'
+  setworth:
+    help:
+      info: Change item worth
+      args: (itemname) -s:(sellPrice)
+    info:
+      setSell: '{gcp}Set item sell price {gcs}[amount]'
+      setBuy: '{gcp}Set item buy price {gcs}[amount]'
+      notInUse: '{gcp}Mainly used for possible exploit detection'
+      sellPrice: '{gcp}Sell price: {gcp}[amount]'
+      buyPrice: '{gcp}Buy price: {gcs}[amount]'
+      exploit: '{gce}Possible EXPLOIT!'
+      ingredient: '{gcn}Ingredients'
+      ingredients: '{gcs}[ingredient]{gcp}({gcs}[amount]{gcp}) = {gcs}[price]'
+      notSet: '{gcp}price not set'
+      notSetBuy: '{gcd}Buy price not set'
+      result: '{gcp}Crafts into {gcs}[result]{gcp}({gcs}[amount]{gcp})'
+      ingredientsPrice: '{gcp}Ingredient price: {gcs}[price]'
+      resultPrice: '{gcp}Can be sold for: {gcs}[price]'
+      explanation: '{gcn}Buy price is only used in detecting possible exploits'
+  shadowmute:
+    help:
+      info: Mute player without telling him that he is muted
+      args: '[playerName] (time) (-s) (reason)'
+  shakeitoff:
+    help:
+      info: Dismount any entity riding you or target player
+      args: (playerName) (-s)
+    info:
+      shaked: '{gcp}You have shaken off: {gcs}[entity]'
+      nothing: '{gcp}Nothing to shake off'
+  shoot:
+    help:
+      info: Shoot projectile
+      args: (playerName) (-t:targetPlayer) (type) (speed)
+  silence:
+    help:
+      info: Blocks public messages
+      args: ''
+      explanation:
+      - cmi.command.silence.bypass - to bypass silence
+    info:
+      change: '{gcp}Silence mode {gcs}[state]'
+      inMode: '{gcp}Player is in silence mode'
+  silentchest:
+    help:
+      info: Toggles silent chest
+      args: ''
+      explanation:
+      - Players arround you wont see chest opening animation when you opening chest
+      - Protocollib required for this feature to work.
+    info:
+      feedback: '{gcp}You toggled silent chest mode to {gcs}[offon].'
+      onOpen: '{gcp}Opening chest, silently.'
+      cantOpen: '{gcw}Unable to open. Loot not generated yet.'
+  sit:
+    help:
+      info: Sit in your position
+      args: (playerName) (-persistent) (-s) (location) (on/off)
+    info:
+      onSit: '!actionbar!{gcp}You are sitting now'
+      onStandUp: '!actionbar!{gcp}You are no longer sitting'
+      accupied: '!actionbar!{gcw}Someone is sitting here already!'
+  skin:
+    help:
+      info: Changes players skin
+      args: '[skinName/off/update] (playerName) (-s)'
+    info:
+      changed: '{gcp}Changed skin to {gcs}[skinOwner] {gcp}look'
+      failed: '{gcp}Failed to apply skin'
+      resetSteve: '{gcp}Removed skin'
+      reset: '{gcp}Applied default skin'
+      update: '{gcp}Updated skin'
+  smite:
+    help:
+      info: Strike ground or player with lightning
+      args: (playerName/location) (-safe) (-s)
+    info:
+      gotSmited: '{gcp}You got smited!'
+      targetSmited: '{gcp}Smiting target!'
+  smithingtable:
+    help:
+      info: Open smithing table
+      args: (playerName)
+    info:
+      feedback: '{gcp}You have opened smithing table for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened smithing table for you.'
+  solve:
+    help:
+      info: Solve equation
+      args: '[equation]'
+    info:
+      result: '{gcp}Result: {gcs}[res]'
+      incorrect: '{gcw}Incorrect input: {gcs}[input]'
+  sound:
+    help:
+      info: Play sound at target location
+      args: '[sound] (-p:[pitch]) (-v:[volume]) (playerName/-all/-l:playerName) (world;x;y;z)
+        (-r:[radius]) (-s)'
+    info:
+      playing: "{gcp}Playing {gcs}[sound] {gcp}at [world] [x]:[y]:[z] \n{gcp}Pitch:\
+        \ {gcs}[pitch] {gcp}Volume: {gcs}[volume]"
+      playingMultiple: "{gcp}Playing {gcs}[sound] {gcp}for {gcs}[amount] {gcp}players\
+        \ \n{gcp}Pitch: {gcs}[pitch] {gcp}Volume: {gcs}[volume]"
+  spawn:
+    help:
+      info: Teleports back to spawn location
+      args: (playerName) (-s)
+    info:
+      notset: '{gcw}Spawn point is not set!'
+      feedback: '{gcp}You were teleported to spawn.'
+      feedbackother: '{gcs}[playerDisplayName] {gcp}was teleported to spawn.'
+  spawner:
+    help:
+      info: Sets spawner
+      args: '[EntityType]'
+    info:
+      feedback: '{gcp}Spawner is set to {gcs}[type] {gcp}type'
+      wrongEntityIdName: '{gcw}Wrong entity id or name'
+      cantSet: '{gcw}Can''t set this type spawner'
+      cantDetect: '{gcw}Can''t detect spawner block'
+      pickOne: '{gcp}Pick spawner type'
+  spawnereditor:
+    help:
+      info: Edit spawner
+      args: ''
+    info:
+      type: '{gcp}Change type: {gcs}[type]'
+      nextIn: '{gcp}Next spawn in: {gcs}[time]'
+      nearby: '{gcp}MaxNearBy entities: {gcs}[count]'
+      maxdelay: '{gcp}Max Spawn Delay: {gcs}[count]'
+      mindelay: '{gcp}Min Spawn Delay: {gcs}[count]'
+      prange: '{gcp}Required player range: {gcs}[range]'
+      spawncount: '{gcp}Spawn Count: {gcs}[count]'
+      spawnrange: '{gcp}Spawn Range: {gcs}[range]'
+  spawnmob:
+    help:
+      info: Spawns entity at your location
+      args: '[EntityType]'
+      explanation:
+      - 'Example: /cmi spawnmob sheep:adult:rainbow 3 sp:5'
+      - <T>More information at www.zrips.net/cmi/commands/spawnmob/</T><URL>https://www.zrips.net/cmi/commands/spawnmob/</URL>
+    info:
+      wrongEntityName: '{gcp}Incorrect entity name'
+      spawnedEntities: '{gcp}Spawned {gcs}[entities] {gcp}entities '
+      spawnedPasangers: '{gcp}and {gcs}[passengers] {gcp}passengers'
+      nothingSpawned: '{gcp}No entities spawned'
+      cantSpawn: '{gcp}Can''t spawn this type of entity'
+  speed:
+    help:
+      info: Set players walk or fly speed
+      args: (playerName) [amount] (-s)
+  staffmsg:
+    help:
+      info: Sends message to staff channel
+      args: '[message/toggle/on/off]'
+    info:
+      message: '{gcu}[Staff]{gcd}[{gcs}[senderDisplayName]{gcd}]&r{gcw} [message]'
+      toggledOn: '{gcp}A persistent staff chat has been started. You can now write
+        messages in public chat.'
+      toggledOff: '{gcp}Toggled off Persistent staff chat'
+  stats:
+    help:
+      info: Check players stats
+      args: (playerName)
+    info:
+      distanceCM: '{gcs}[value]cm'
+      distanceM: '{gcs}[value]m'
+      distanceKm: '{gcs}[value]km'
+      list: '{gcs}[name]:{gcs}[amount]'
+      listCover: '{gcp}({gcs}[list]{gcp})'
+      Quit: '{gcp}Games Quit: {gcs}[value]'
+      PlayTime: '{gcp}Time Played: {gcs}[value]'
+      SneakTime: '{gcp}Sneak time: {gcs}[value]'
+      Sleep: '{gcp}Sleep in bed: {gcs}[value]'
+      Joined: '{gcp}Joined on: {gcs}[time]'
+      Jumps: '{gcp}Jumps: {gcs}[value]'
+      SinceDeath: '{gcp}Since Last Death: {gcs}[value]'
+      Deaths: '{gcp}Number of Deaths: {gcs}[value]'
+      DeathsByMonsters: '{gcp}Killed by monsters: {gcs}[value]'
+      TotalDistance: '{gcp}Total distance traveled: {gcs}[value]'
+      Walk: '{gcp}Walked: {gcs}[value]'
+      Crouch: '{gcp}Crouched: {gcs}[value]'
+      Sprint: '{gcp}Sprinted: {gcs}[value]'
+      Swim: '{gcp}Swum: {gcs}[value]'
+      Fall: '{gcp}Fallen: {gcs}[value]'
+      Climb: '{gcp}Climbed: {gcs}[value]'
+      Fly: '{gcp}Flown: {gcs}[value]'
+      Dive: '{gcp}Dove: {gcs}[value]'
+      Minecart: '{gcp}Minecart: {gcs}[value]'
+      Boat: '{gcp}Boat: {gcs}[value]'
+      Pig: '{gcp}Pig: {gcs}[value]'
+      Horse: '{gcp}Horse: {gcs}[value]'
+      Elytra: '{gcp}Elytra: {gcs}[value]'
+      Damage: '{gcp}Damage {gcs}[dealt] [taken]'
+      DamageDealt: '{gcp}Dealt: {gcs}[value]'
+      DamageTaken: '{gcp}Taken: {gcs}[value]'
+      JUMP: '{gcp}Jumps: {gcs}[value]'
+      Kills: '{gcp}Kills {gcs}'
+      KillsMob: '{gcp}Mob: {gcs}[value]'
+      KillsPlayer: ' {gcp}Player: {gcs}[value]'
+      Blocks: '{gcp}Blocks {gcs}'
+      BlocksMined: '{gcp}Mined: {gcs}[value]'
+      BlocksPlaced: ' {gcp}Placed: {gcs}[value]'
+      Items: '{gcp}Items {gcs}'
+      ItemsUsed: '{gcp}Use:{gcs}[value]'
+      ItemsDrop: '{gcp}Drop:{gcs}[value]'
+      ItemsPicked: '{gcp}Pick:{gcs}[value]'
+      ItemsBroken: '{gcp}Broke:{gcs}[value]'
+      ItemsCrafted: ' {gcp}Craft:{gcs}[value]'
+      ItemsEnchanted: ' {gcp}Enchant:{gcs}[value]'
+      Opened: '{gcp}Opened {gcs}[list]'
+      OpenChest: '{gcp}Chest:{gcs}[value]'
+      OpenEnder: '{gcp}EnderChest:{gcs}[value]'
+      OpenShulker: '{gcp}ShulkerBox:{gcs}[value]'
+      Interacted: '{gcp}Interacted {gcs}[list]'
+      InteractBeacon: '{gcp}Beacon:{gcs}[value]'
+      InteractBrewingStand: '{gcp}BrewStand:{gcs}[value]'
+      InteractCraftTable: '{gcp}CraftTable:{gcs}[value]'
+      InteractFurnace: '{gcp}Furnace:{gcs}[value]'
+      Inspected: '{gcp}Inspected {gcs}[list]'
+      InspectDispenser: '{gcp}Dispenser:{gcs}[value]'
+      InspectDropper: '{gcp}Dropper:{gcs}[value]'
+      InspectHopper: '{gcp}Hopper:{gcs}[value]'
+      Statistics:
+        LEAVE_GAME: Game quit
+        PLAY_ONE_TICK: Play time
+        TIME_SINCE_DEATH: From last death
+        TIME_SINCE_REST: From last rest
+        SNEAK_TIME: Sneak time
+        ACCOUNT_AGE: Account age
+        TRAVEL: Travel
+        WALK_ONE_CM: Walk
+        CROUCH_ONE_CM: Sneak
+        SPRINT_ONE_CM: Sprint
+        SWIM_ONE_CM: Swim
+        FALL_ONE_CM: Fall
+        CLIMB_ONE_CM: Climb
+        FLY_ONE_CM: Fly
+        DIVE_ONE_CM: Dive
+        WALK_UNDER_WATER_ONE_CM: Walk under water
+        WALK_ON_WATER_ONE_CM: Walk on water
+        MINECART_ONE_CM: Minecart travel
+        BOAT_ONE_CM: Boat travel
+        PIG_ONE_CM: Pig travel
+        HORSE_ONE_CM: Horse travel
+        AVIATE_ONE_CM: Elytra travel
+        HAPPY_GHAST_ONE_CM: Ghast travel
+        JUMP: Jump
+        DAMAGE_DEALT: Damage dealt
+        DAMAGE_TAKEN: Damage taken
+        DAMAGE_DEALT_ABSORBED: Damage dealt absorbed
+        DAMAGE_DEALT_RESISTED: Damage dealt resisted
+        DAMAGE_BLOCKED_BY_SHIELD: Damage blocked by shield
+        DAMAGE_ABSORBED: Damage absorbed
+        DAMAGE_RESISTED: Damage resisted
+        DEATHS: Deaths
+        ENTITY_KILLED_BY: Killed by
+        MOB_KILLS: Mob kills
+        PLAYER_KILLS: Player kills
+        ITEM_ENCHANTED: Item enchanted
+        ANIMALS_BRED: Animals bred
+        FISH_CAUGHT: Fish caught
+        TALKED_TO_VILLAGER: Talked to villager
+        TRADED_WITH_VILLAGER: Traded with villager
+        CAKE_SLICES_EATEN: Cake slices eaten
+        CAULDRON_FILLED: Cauldron filled
+        CAULDRON_USED: Cauldron used
+        ARMOR_CLEANED: Armor cleaned
+        BANNER_CLEANED: Banner cleaned
+        BREWINGSTAND_INTERACTION: Brewingstand interaction
+        BEACON_INTERACTION: Beacon interaction
+        CRAFTING_TABLE_INTERACTION: Crafting table interaction
+        FURNACE_INTERACTION: Furnace interaction
+        DISPENSER_INSPECTED: Dispenser inspected
+        DROPPER_INSPECTED: Dropper inspected
+        HOPPER_INSPECTED: Hopper inspected
+        CHEST_OPENED: Chest opened
+        TRAPPED_CHEST_TRIGGERED: Trapped chest triggered
+        ENDERCHEST_OPENED: Enderchest opened
+        NOTEBLOCK_PLAYED: Noteblock played
+        NOTEBLOCK_TUNED: Noteblock tuned
+        FLOWER_POTTED: Flower potted
+        RECORD_PLAYED: Record played
+        SLEEP_IN_BED: Sleep in bed
+        SHULKER_BOX_OPENED: Shulker box opened
+        CLEAN_SHULKER_BOX: Shulker box cleaned
+        DROP: Item dropped
+        MINE_BLOCK: Blocks mined
+        PLACE_BLOCK: Blocks placed
+        BREAK_ITEM: Item breaks
+        CRAFT_ITEM: Item crafts
+        USE_ITEM: Items used
+        PICKUP: Item pickups
+        KILL_ENTITY: Monster kills
+        STRIDER_ONE_CM: Strider travel
+        INTERACT_WITH_BLAST_FURNACE: Interaction with blast furnace
+        INTERACT_WITH_SMOKER: Interaction with smoker
+        INTERACT_WITH_LECTERN: Interaction with lectern
+        INTERACT_WITH_CAMPFIRE: Interaction with campfire
+        INTERACT_WITH_CARTOGRAPHY_TABLE: Interaction with cartography table
+        INTERACT_WITH_LOOM: Interaction with loom
+        INTERACT_WITH_STONECUTTER: Interaction with stonecutter
+        INTERACT_WITH_ANVIL: Interaction with anvil
+        INTERACT_WITH_GRINDSTONE: Interaction with grindstone
+        INTERACT_WITH_SMITHING_TABLE: Interaction with smithing table
+        BELL_RING: Bell ring
+        RAID_TRIGGER: Raid trigger
+        RAID_WIN: Raid win
+        TARGET_HIT: Target hit
+        OPEN_BARREL: Open barrel
+        DROP_COUNT: Drop count
+        TOTAL_WORLD_TIME: Time in world
+  statsedit:
+    help:
+      info: Edit players statistics
+      args: (playerName) [add/take/set] [statistic] (subType) [amount] (-s)
+    info:
+      cantSet: '{gcw}Can''t set this type of statistics'
+      reqSubType: '{gcw}This statistic requires defined {gcs}[type] {gcw}subtype'
+      set: '{gcp}Changed from {gcs}[old] {gcp}to {gcs}[new] {gcp}value for {gcs}[statistic]
+        {gcp}({gcs}[extra]{gcp})'
+  status:
+    help:
+      info: Show server status
+      args: ''
+    info:
+      Platform: ' {gcp}Platform: {gcs}[platform] {gcp}({gcs}[os]{gcp}) {gcp}Running
+        threads: {gcs}[threads]'
+      Tps: ' {gcp}TPS: {gcs}[tps]'
+      CpuUsage: ' {gcp}Cpu usage: {gcs}[cpuusage]% {gcp}({gcs}[cores] cores{gcp})'
+      Uptime:
+        main: ' {gcp}Uptime: '
+        weeks: '{gcs}[weeks] {gcp}weeks '
+        days: '{gcs}[days] {gcp}days '
+        hours: '{gcs}[hours] {gcp}hours '
+        mins: '{gcs}[mins] {gcp}mins '
+        secs: '{gcs}[secs] {gcp}secs '
+      MemoryUsage: ' {gcp}Memory usage: {gcs}[percent]% {gcp}({gcs}[current]{gcp}/{gcs}[max]
+        MB{gcp})'
+      MemoryUsageHover: "{gcp}Free: {gcs}[free] \n{gcp}Allocated: {gcs}[allocated]\
+        \ \n{gcp}Max: {gcs}[max] \n{gcp}Total: {gcs}[total]"
+      Java: ' {gcp}Java version: {gcs}[mainV].[majorV].[minorV]{gcp}({gcs}[update]{gcp})
+        Build: {gcs}[build]'
+      DiskUsage: ' {gcp}Disk usage: {gcs}[percent]% {gcp}({gcs}[current]{gcp}/{gcs}[max]
+        GB{gcp})'
+      Worlds: '{gcs} [number]. {gcp}[world] {gcs}[chunks] {gcp}Chunks {gcs}[entities]
+        {gcp}Entities {gcs}[tiles] {gcp}tiles {gcs}[players] {gcp}players'
+      MostTiles: '{gcp}Most tiles ({gcs}[tiles]{gcp}) in {gcs}[coord] {gcp}chunk'
+      MostEntities: '{gcp}Most entities ({gcs}[entities]&7) in {gcs}[coord] &7chunk'
+      Pending: '{gcp}Pending Tasks: {gcs}[taskCount]'
+  stonecutter:
+    help:
+      info: Open stonecutter
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have opened stonecutter for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened stonecutter for you.'
+  sudo:
+    help:
+      info: Force another player to perform command
+      args: '[playerName] (command/c:[text])'
+      explanation:
+      - cmi.command.sudo.bypass - protects player from being 'trolled'
+    info:
+      performed: '{gcp}Performed ''{gcs}[command]{gcp}'' command as {gcs}[playerDisplayName]
+        {gcp}player'
+  suicide:
+    help:
+      info: Kill your self
+      args: '[playerName] (-s)'
+    info:
+      feedback: '{gcp}Goodbye cruel world...'
+      message: '{gcs}[playerDisplayName] {gcp}took their own life'
+      totem: '{gcp}Can''t use while holding totem'
+  switchplayerdata:
+    help:
+      info: Switch all data from one player to another
+      args: '[sourcePlayerName/uuid] [targetPlayerName/uuid]'
+      explanation:
+      - Use UUID for more accurate transfers, especially when usernames matching each
+        other
+    info:
+      same: '{gcp}Provided target and source users are same already'
+      transferred: '{gcs}[sourceName] {gcp}data got switched with {gcs}[Name]'
+      failed: '{gcw}Failed to switch player data'
+  tablistupdate:
+    help:
+      info: Force tablist update for all or specific player
+      args: (playerName) (-s)
+    info:
+      updated: '{gcp}Tablist updated'
+  tempban:
+    help:
+      info: TempBan player
+      args: '[playerName] [timeValue] (reason) (-s)'
+      explanation:
+      - Ban max range depends on cmi.command.tempban.max.[amount]
+      - cmi.command.tempban.max.unlimited - allows to ban for as much as you want
+      - In case player doesn't have any, 60 sec will be max value
+      - 'Example: '
+      - /cmi tempban zrips 5m For swearing
+    info:
+      message: '{gcw}Temporarily Banned!'
+      messageToAll: '{gcs}[playerDisplayName] {gcp}got tempbanned by {gcs}[senderDisplayName]
+        {gcp}for: {gcs}[time] {gcp}reason: {gcs}[reason]'
+      banedSilent: '{gcn}[{gcu}Silent{gcn}]{gcs}[playerDisplayName] {gcp}got tempbanned
+        by {gcs}[senderDisplayName] {gcp}for: {gcs}[time] {gcp}reason: {gcs}[reason]'
+      time: '{gcp}You will be unbanned after {gcs}[time]'
+      badTime: '{gcw}Time is defined incorrectly'
+      badTimeRanges: '{gcw}You can''t ban for longer than [time] {gcs}([seconds])'
+  tempipban:
+    help:
+      info: Temp ban ip
+      args: '[ip/playerName] [time] (reason) (-s)'
+      explanation:
+      - cmi.command.banip.bypass - to bypass ban
+    info:
+      message: '{gcw}Temporarily IP Banned!'
+      messageToAll: '{gcs}[playerDisplayName] {gcp}got temp ip banned for {gcs}[time]{gcp}by
+        {gcs}[senderDisplayName]{gcp}: {gcs}[reason]'
+      banedSilent: '{gcp}[{gcu}Silent{gcp}]{gcs}[playerDisplayName] {gcp}got temp
+        ip banned for {gcs}[time]{gcp}: {gcs}[reason]'
+  tfly:
+    help:
+      info: Set temporary players fly mode until relog or until time ends
+      args: (playerName) (timeInSec) (-s)
+      explanation:
+      - 'Examples:'
+      - tfly Zrips 30 - fly mode for the next 30 sec
+      - tfly Zrips +30m - adds fly mode for an additional 30 sec
+      - tfly Zrips 0 - fly mode until relog
+      - tfly Zrips - check if player have tfly mode enabled and until when
+    info:
+      setTimedFly: '{gcp}You have set {gcs}[playerDisplayName]{gcp} temporary fly
+        for the next [time]'
+      addTimedFly: '{gcp}You have added an additional [addTime] ([time]) for {gcs}[playerDisplayName]{gcp}'
+      takeTimedFly: '{gcp}You have taken [addTime] ([time]) for {gcs}[playerDisplayName]{gcp}'
+      setUntilRelogFly: '{gcp}You have set {gcs}[playerDisplayName]{gcp} temporary
+        fly until relog.'
+      targetTimedEnabled: '{gcp}Your flight was enabled by {gcs}[senderDisplayName]{gcp}
+        for the next [time].'
+      targetTimedEnabledAdd: '{gcp}Your flight time was increased by [addTime] ([time]).'
+      targetTimedEnabledTake: '{gcp}Your flight time was decreased by [addTime] ([time]).'
+      targetUntilRelogEnabled: '{gcp}Your flight was enabled by {gcs}[senderDisplayName]{gcp}
+        until you relog.'
+      setFor: '{gcp}Temporary fly mode enabled for the next [time]'
+      setForRelog: '{gcp}Temporary fly mode enabled until relog'
+      notSet: '{gcp}Temporary fly mode is not enabled for player'
+      willBeDisabled: '{gcp}Fly mode will be disabled in [time]'
+      disabled: '{gcp}Temporary fly mode is disabled!'
+  tgod:
+    help:
+      info: Set players temporarily god mode until relog or time end
+      args: '[playerName] (timeInSec) (-s)'
+      explanation:
+      - 'Examples:'
+      - tgod Zrips 30 - god mode for the next 30 sec
+      - tgod Zrips 0 - god mode until relog
+      - tgod Zrips - check how long a player has tgod for, if at all.
+    info:
+      setTimedGod: '{gcp}You have set {gcs}[playerDisplayName]{gcp} temporary god
+        for the next [time]'
+      setUntilRelogGod: '{gcp}You have set {gcs}[playerDisplayName]{gcp} temporary
+        god until relog.'
+      targetTimedEnabled: '{gcp}You got temporary god mode enabled by {gcs}[senderDisplayName]{gcp}
+        for the next [time].'
+      targetUntilRelogEnabled: '{gcp}You got temporary god mode enabled by {gcs}[senderDisplayName]{gcp}
+        until you relog'
+      setFor: '{gcp}Temporary god mode enabled for the next [time]'
+      setForRelog: '{gcp}Temporary god mode enabled until relog'
+      notSet: '{gcp}Temporary god mode is not enabled for player'
+      willBeDisabled: '{gcp}God mode will be disabled in [time]'
+      disabled: '{gcp}Temporary god mode is disabled!'
+  time:
+    help:
+      info: Controls server time
+      args: (time) (world) (alter [value]) (-smooth)
+      explanation:
+      - 'Example:'
+      - /day
+      - /night
+      - /time 13:00:00
+      - /time 1pm
+      - /time 13
+      - /time 7000ticks
+      - /time 1pm Lt_Craft
+      - /time 1pm all
+      - /time add 0:30
+      - /time take 0:30
+      - /time freeze
+      - /time unfreeze
+      - /time realtime
+      - /time autorealtime start/stop
+    info:
+      check: '{gcp}Time: {gcs}[24h] {gcp}or {gcs}[12h] {gcp}or {gcs}[ticks]ticks {gcp}in
+        {gcs}[world]'
+      frozen: ' {gcn}(-)'
+      frozenTime: '{gcp}Frozen time'
+      real: ' {gcs}(+)'
+      realTime: '{gcp}Automatic real time'
+      autorealstart: '{gcp}Automatic time adjustment for {gcs}[world] {gcp}started'
+      autorealstop: '{gcp}Automatic time adjustment for {gcs}[world] {gcp}stopped'
+      gotfrozen: '{gcs}[world] {gcp}time have has been frozen'
+      gotunfrozen: '{gcs}[world] {gcp}time have has been unfrozen'
+      cantset: '{gcp}Can''t set time to this value'
+      setto: '{gcp}Time set to {gcs}[24h] {gcp}or {gcs}[12h] {gcp}or {gcs}[ticks]ticks
+        {gcp}for {gcs}[world]'
+  titlemsg:
+    help:
+      info: Sends title message to player
+      args: "[playerName/all] [title \n subtitle] (-in:[ticks]) (-out:[ticks]) (-keep:[ticks])"
+    info:
+      message: '&f[message]'
+  toast:
+    help:
+      info: Sends toast message to player
+      args: '[playerName/all] (-t:[advType]) (-icon:[material]) [message]'
+    info:
+      message: '&f[message]'
+  top:
+    help:
+      info: Teleport to highest point at your location
+      args: '[playerName] (-s)'
+  tp:
+    help:
+      info: Teleports to player's location
+      args: '[playerName] (playerName)'
+    info:
+      feedback: '{gcp}You have been teleported to {gcp}[sourceDisplayName] {gcp}location.'
+      bad:
+        msg: '{gcw}Teleport location is unsafe. {gcs}[reason]'
+        extraMsg: '{gcp}Use {gcs}/tpbypass {gcp}to bypass this. You have {gcs}[time]'
+        badfloor: '{gcw}Bad floor ({gcs}[material]{gcw})'
+        void: '{gcw}Void'
+        fall: '{gcw}Fall ({gcs}[distance]{gcw})'
+        suffocation: '{gcw}Suffocation'
+        unknown: '{gcw}Unknown'
+        plugin: '{gcw}3rd party plugin'
+      notAllowed: '{gcw}Can''t teleport to this player'
+      prevented: '{gcw}Teleportation has been prevented by another plugin'
+  tpa:
+    help:
+      info: Ask the player if you can teleport to them
+      args: '[playerName] (playerName) (-c)'
+    info:
+      requestSent: '{gcp}Request sent to {gcs}[playerDisplayName]'
+      gotRequest: '{gcs}[senderDisplayName] {gcp}requests teleportation to you!'
+      time: '{gcp}You have {gcs}[time]{gcp}to accept this request'
+      canceled: '{gcp}Teleportation request has been cancelled'
+      # This line cant contain anything else then default variables ([message][cancelButton]), you can switch them around to your liking tho
+      senderFeedbackMessageFormat: '[message][cancelButton]'
+      alreadyRequesting: '{gcp}You are already requesting that {gcs}[playerDisplayName]
+        {gcp}accepts your teleportation request'
+      banned: '{gcp}You can''t send a teleportation request to {gcs}[playerDisplayName]
+        {gcp}for the next {gcs}[time]'
+  tpaall:
+    help:
+      info: Ask all online players to teleport to your location
+      args: ''
+    info:
+      requestSent: '{gcp}Request sent to all players'
+  tpaccept:
+    help:
+      info: Accept teleport request
+      args: (playerName)
+    info:
+      noRequest: '{gcp}There is no teleport requests'
+      NotOnline: '{gcp}Player is no longer online'
+      accepted: '{gcs}[playerDisplayName] {gcp}accepted request'
+      youAccepted: '{gcp}Teleportation accepted'
+  tpahere:
+    help:
+      info: Asks player to accept teleportation to your location
+      args: '[playerName] (playerName) (-c)'
+    info:
+      requestSent: '{gcp}Request sent to {gcs}[playerDisplayName]'
+      gotRequest: '{gcs}[senderDisplayName] {gcp}requests teleportation to them!'
+      accept: '{gcu}Click to accept teleportation request!'
+  tpall:
+    help:
+      info: Teleports all online players to location
+      args: (playerName)
+    info:
+      feedback: '{gcp}You have been teleported ({gcs}[world],[x],[y],[z]{gcp}) to
+        {gcs}[playerDisplayName] {gcp}location.'
+  tpallworld:
+    help:
+      info: Teleports ALL players from specific world
+      args: '[worldName] (worldName;x;y;z(;yaw;pitch)) (-a)'
+      explanation:
+      - -a variable will teleport everyone who are in no longer existing world to
+        target location
+    info:
+      started: '{gcp}Teleportations started!'
+      current: '{gcp}Currently teleported {gcs}[amount] {gcp}and {gcs}[files] {gcp}checked
+        files'
+      total: '{gcp}Teleported a total of {gcs}[amount] {gcp}out of the {gcs}[files]
+        {gcp}users checked'
+      WorldNotFound: '{gcp}World by given {gcs}[name] {gcp}name is not loaded. Make
+        sure its correct one. We will use as it is.'
+  tpbypass:
+    help:
+      info: Bypass teleportation to unsafe location
+      args: (playername)
+    info:
+      noSavedTp: '{gcw}There is no saved bad teleport locations'
+      feedback: '{gcp}Teleported to unsafe location'
+  tpdeny:
+    help:
+      info: Deny teleport request
+      args: (playerName)
+    info:
+      noRequest: '{gcp}You have no active teleportation requests!'
+      youDenied: '{gcp}Your teleportation request was denied!'
+      denied: '{gcs}[senderDisplayName] {gcp}denied your request.'
+  tphere:
+    help:
+      info: Teleports player to your location
+      args: '[playerName] (playerName) (-s)'
+    info:
+      feedback:
+        offline: '{gcp}You have set ({gcs}[world],[x],[y],[z]{gcp}) spawn location
+          for {gcs}[playerDisplayName]{gcp}.'
+        online: '{gcp}You have teleported {gcs}[playerDisplayName] {gcp}to your location'
+        player: '{gcp}You got teleported to {gcs}[sourceDisplayName] {gcp}location'
+      notAllowed: '{gcp}Can''t teleport this player'
+  tpo:
+    help:
+      info: Teleports to player's location by force
+      args: '[playerName] (playerName)'
+  tpohere:
+    help:
+      info: Teleports player to your location by force
+      args: '[playerName] (playerName)'
+  tpopos:
+    help:
+      info: Teleports to location by force
+      args: (-p:playerName) [x] [y] [z] (world) (pitch) (yaw) (-rng:[range])
+    info:
+      feedback: '{gcp}You have been teleported ({gcs}[world],[x],[y],[z]{gcp}).'
+      feedbackOther: '{gcs}[playerDisplayName] {gcp}have been teleported ({gcs}[world],[x],[y],[z]{gcp}).'
+  tppos:
+    help:
+      info: Teleports to location
+      args: (-p:playerName) [x] [y] [z] (world) (pitch) (yaw) (-rng:[range])
+    info:
+      feedback: '{gcp}You have been teleported ({gcs}[world],[x],[y],[z]{gcp}).'
+      feedbackOther: '{gcs}[playerDisplayName] {gcp}have been teleported ({gcs}[world],[x],[y],[z]{gcp}).'
+  tps:
+    help:
+      info: Check servers tps status
+      args: (-spikes)
+    info:
+      tps: '{gcp}TPS: '
+      # Custom tps range can be defined and you can have as many of them as you want
+      tpsList: '{gcs}[3] [10] [30] [60] [600]'
+      explanation: '{gcp}One block {gcs}60 {gcp}seconds. Max {gcs}600 {gcp}seconds'
+      minMax: '{gcp}Max: {gcs}[max] {gcp}Min: {gcs}[min]'
+      hover:
+      - '[tpscolor][tps]'
+      - '{gcs}[time]'
+  tree:
+    help:
+      info: Spawn tree where you are looking
+      args: (TreeType) (-p:[playerName])
+    info:
+      feedback: '{gcs}[tree] {gcp}spawned.'
+      cantSpawn: '{gcw}Cant spawn ({gcs}[tree]{gcw}) on this block.'
+  trim:
+    help:
+      info: Modify trim on armor
+      args: (playerName) (-s) (clear)
+    info:
+      title: '{gcp}Modify trim on armor'
+  unban:
+    help:
+      info: Unban player or ip
+      args: '[playerName/ip] (-s)'
+    info:
+      unBaned: '!broadcast!{gcs}[playerDisplayName] {gcp}unbanned'
+      unBanedSilent: '&7[&8Silent&7]{gcs}[playerDisplayName] {gcp}unbanned'
+      notBanned: '{gcs}[playerDisplayName] {gcp}not banned'
+  unbreakable:
+    help:
+      info: Makes item unbreakable
+      args: (playerName) (true/false) (-o)
+    info:
+      feedback: '{gcp}You made item [state] {gcp}for {gcs}[playerDisplayName]{gcp}.'
+      breakable: '{gcd}breakable'
+      unbreakable: '{gcu}unbreakable'
+  uncondense:
+    help:
+      info: Uncondense items into smaller parts
+      args: (itemName) (playerName) (-s)
+    info:
+      converted: '{gcp}Converted {gcs}[blocks] {gcp}blocks into {gcs}[items] {gcp}items'
+      nothing: '{gcw}There is nothing in your inventory that can be uncondensed.'
+  unjail:
+    help:
+      info: Release player from jail
+      args: '[playerName] (-s)'
+    info:
+      notInJail: '{gcw}Target player is not in jail'
+      unjailed: '{gcp}You have released {gcs}[playerDisplayName] {gcp}from jail'
+      unjailedTarget: '{gcp}You have been released from jail!'
+  unloadchunks:
+    help:
+      info: Unloads chunks from server memory
+      args: (-f)
+      explanation:
+      - -f variable will force for all chunks to be unloaded in one go.
+    info:
+      removed: '{gcp}Removed -{gcs}[list]'
+      startScanning: '{gcp}Found &6[amount] {gcp}chunks to unload. Starting!'
+      InfoShow: '{gcp}TPS: {gcs}[tps] {gcp}Left {gcs}[left] {gcp}({gcs}[min]m:[sec]s{gcp})
+        Speed: {gcs}[speed] {gcp}Unloaded: {gcs}[found]'
+      Finished: '{gcp}Finished!!! Unloaded: {gcs}[amount] {gcp}chunks! In {gcs}[minutes]
+        {gcp}min {gcs}[seconds] {gcp}sec.'
+  unmute:
+    help:
+      info: Unmute player
+      args: '[playerName] (-s)'
+    info:
+      notMuted: '{gcp}Player is not muted'
+      unmuted: '{gcp}Player can talk now'
+      unmutedTarget: '{gcp}You can talk now'
+  unmutechat:
+    help:
+      info: Unmute public chat
+      args: (-s)
+    info:
+      unmuted: '{gcp}Unmuted public chat'
+  usermeta:
+    help:
+      info: Manage players meta data
+      args: '[playerName] [add/remove/clear/list/increment] (key) (value) (-s)'
+      explanation:
+      - Any set meta can be displayed with %cmi_user_meta_[key]% placeholder around
+        plugin
+    info:
+      added: '{gcp}Added meta for {gcs}[playerDisplayName] {gcp}with key as {gcs}[key]
+        {gcp}and value as {gcs}[value]'
+      cleared: '{gcp}Cleared meta from {gcs}[playerDisplayName]'
+      removed: '{gcp}Removed {gcs}[key] {gcp}meta from {gcs}[playerDisplayName]'
+      changed: '{gcp}Changed {gcs}[key] {gcp}meta from {gcs}[oldValue] {gcp}to new
+        value of {gcs}[newValue]'
+      ls: '{gcs}[key]{gcp}: [value]'
+  util:
+    help:
+      info: Administration tools
+      args: (removeseats/testtarget/convertitems)
+    info:
+      removedSits: '{gcp}Removed {gcs}[count] {gcp}empty sits from all worlds.'
+  vanish:
+    help:
+      info: Vanish player
+      args: (playerName/list) (on/off) (-s)
+    info:
+      vanished: '{gcp}You have vanished'
+      unvanish: '{gcp}You became visible'
+      targetVanished: '{gcs}[playerDisplayName] {gcp}have vanished'
+      targetUnvanish: '{gcs}[playerDisplayName] {gcp}became visible'
+      list: '{gcp}[place]. {gcs}[playerDisplayName] {gcp}({gcs}[offon]{gcp})'
+      noVanished: '{gcp}There are no vanished players'
+      noMsg: '{gcw}Cant send messages while vanished. Update this in vanishedit'
+  vanishedit:
+    help:
+      info: Edit vanish mode for player
+      args: (playerName) (action) (true/false)
+    info:
+      isVanished: '&eVanished'
+      damageToEntity: '&eCan deal damage to others'
+      playerDamage: '&eCan take damage'
+      itemPickup: '&eCan pickup items'
+      mobAggro: '&eMobs can target'
+      interaction: '&eCan physically interact'
+      noisyChest: '&eNoisy chest''s'
+      informOnLeave: '&eShows leave message'
+      informOnJoin: '&eShows join message'
+      nightVision: '&eApply night vision'
+      bossbar: '&eShow bossBar when vanished'
+      afkcommands: '&eTrigger afk commands when vanished'
+      PrivateMessages: '&eAccept private messages'
+      relogDisable: '&eDisable vanish on relog'
+      noMessages: '&eNo public messages'
+      fakeJoinLeave: '&eShow fake join/leave messages on vanish state change'
+      mobSpawning: '&eMobs will spawn nearby'
+      stopPlaytime: '&ePlaytime will stop increasing'
+      sleepIgnore: '&eIgnore for sleeping count'
+      joinVanished: '&eAlways join in vanish mode'
+      deathMessages: '&eShow death message'
+      hookPlayers: '&eHooking entities'
+      level: '&eVanish level'
+      bossbarTitle: '{gcp}Vanished'
+      modified: '{gcp}Set {gcs}[type] {gcp}to {gcs}[state]'
+  version:
+    help:
+      info: Show plugin version
+      args: ''
+    info:
+      cmiVersion: '{gcp}CMI: {gcs}[version]'
+      cmiVersionNew: '{gcp}-> [newVersion]'
+      dbType: ' {gcn}[db]'
+      newServer: '{gcp}Server: {gcs}[version]'
+      Economy: '{gcp}CMI economy: {gcs}[state] '
+      Chat: '{gcp}CMI Chat: {gcs}[state] '
+      CMIB: '{gcp}CMIB '
+      newVault: '{gcp}Vault: {gcs}[version] '
+      Modules: '{gcp}Modules -> {gcu}[enabled] enabled {gcd}[disabled] disabled{gcp}:
+        {gcd}[list]'
+      Network: ' {gcp}[type] '
+      CMILib: '{gcp}CMILib: {gcs}[version] '
+      cmilVersionNew: '{gcp}-> [newVersion]'
+  viewdistance:
+    help:
+      info: Change view distance
+      args: '[range] (playerName/worldName/reset) (view/simulation)'
+    info:
+      output: '{gcp}View: {gcs}[view] {gcp}Simulation: {gcs}[simulation] {gcn}[type]'
+  voteedit:
+    help:
+      info: Manage players votes
+      args: (playerName) [add/set/take/clear] [amount] (-s)
+      explanation:
+      - 'Example:'
+      - /voteedit Zrips
+      - /voteedit add 10
+      - /voteedit take 10
+      - /voteedit Zrips clear
+      - /voteedit Zrips add 10
+    info:
+      currentVotes: '{gcs}[playerDisplayName] {gcp}has {gcs}[votes] {gcp}votes'
+      selfFeedback: '{gcp}Votes was set to {gcs}[votes] {gcp}for {gcs}[playerDisplayName]{gcp}.'
+      targetFeedback: '{gcp}Your vote count was set to {gcs}[votes]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+  votes:
+    help:
+      info: Check players vote count
+      args: (playerName)
+    info:
+      currentVoteSelf: '{gcp}You made {gcs}[votes] {gcp}votes'
+      currentVotes: '{gcp}[playerDisplayName] {gcp}has {gcs}[votes] {gcp}votes'
+      voteCooldown: '{gcp}You will need to wait {gcs}[time]{gcp}to vote again'
+      voteLimit: '{gcp}You have reached vote count limit for today. You will need
+        to wait {gcs}[time]{gcp}to vote again'
+  votetop:
+    help:
+      info: Check top vote list
+      args: (playerName)
+    info:
+      topLine: '{gcp}----- TopVotes {gcp}-----'
+      list: '{gcp}[place]. {gcs}[playerDisplayName]{gcp}: {gcs}[votes]'
+      ownLine: '{gcu}[place]. {gcs}[playerDisplayName]{gcp}: {gcs}[votes]'
+  walkspeed:
+    help:
+      info: Set players walk speed from 0 to 5
+      args: (playerName) [amount] (-s)
+    info:
+      feedback: '{gcp}You have set {gcs}[amount]{gcp} walk speed for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcp}Your walkspeed set to {gcs}[amount]{gcp} by {gcs}[senderDisplayName]{gcp}.'
+      max: '{gcp}Max allowed walk speed for you is {gcs}[max]{gcp}.'
+  warn:
+    help:
+      info: Warn player
+      args: '[playerName] (category) (reason) (-s)'
+    info:
+      noSelfWarning: '{gcw}You can''t warn yourself'
+      cantBan: '{gcw}Can''t warn this player'
+      messageToAll: '{gcs}[playerDisplayName] {gcw}got warned by {gcs}[senderDisplayName]
+        {gcw}for: {gcs}[reason]'
+      banedSilent: '{gcn}[{gcu}Silent{gcn}]{gcs}[playerDisplayName] {gcw}got warned
+        by {gcs}[senderDisplayName] {gcw}for: {gcs}[reason]'
+  warnings:
+    help:
+      info: Check player warnings
+      args: (playerName)
+    info:
+      totalPoints: '{gcp}---- {gcs}[playerDisplayName] {gcp}total violation points:
+        {gcs}[totalPoints] {gcp}----'
+      noWarnings: '{gcp}Player doesn''t have any warnings'
+      list: '{gcp}[place]. {gcs}[time] {gcp}by [warnedBy] {gcn}for: {gcp}[warnedFor]'
+      hover:
+      - '{gcp}Expires in: {gcs}[time]'
+      - '{gcp}Violation points: {gcs}[points]'
+  warp:
+    help:
+      info: Teleports to warp location
+      args: (warpName) (playerName) (-s) (-g:[groupName]) (-p:[pageNumber])
+    info:
+      list: '{gcp}Warps: {gcs}'
+      click: '{gcp}Click to teleport to {gcs}[warp]'
+      teleported: '{gcp}Teleported to warp: {gcs}[warp]'
+      noWarps: '{gcw}There is no saved warps'
+      autoLoreName: '{gcs}[warpName]'
+      autoLoreFormat:
+      - '{gcs}[worldName]'
+      - '{gcs}[x]:[y]:[z]'
+      - '{gcs}[creator]'
+      creator: '{gcp}Creator: {gcs}[creator]'
+      noWarpByName: '{gcw}There is no warps by this name'
+      noAccess: '{gcw}No access to this warp'
+      guiTitle: '{gcp}Warps'
+      pageTitles:
+      - '&2Warps 1'
+      - '&8Warps 2'
+      - '&0Warps 3'
+  warpgroups:
+    help:
+      info: Lists warp groups
+      args: ''
+    info:
+      list: '{gcp}[number]. {gcs}[group] {gcp}({gcs}[amount]{gcp})'
+  weather:
+    help:
+      info: Controls server weather
+      args: (sun/rain/storm) (lock/duration) (worldName/all)
+      explanation:
+      - 'Extra time formats can have: s/m/h/d/w/M/Y'
+      - 'Example:'
+      - /sun
+      - /rain
+      - /storm
+      - /sun lock
+      - /sun 120
+      - /sun Lt_Craft
+      - /sun 1h
+      - /sun 10m
+    info:
+      setTo: '{gcp}Set {gcs}[world] {gcp}weather to {gcs}[weather] {gcp}for next {gcs}[time]'
+      currentState: '{gcs}[world] {gcp}-> {gcs}[weather] {gcp}for next {gcs}[time]'
+      sunny: sunny
+      rainy: rainy
+      thundering: thundering
+  workbench:
+    help:
+      info: Open workbench
+      args: (playerName) (-s)
+    info:
+      feedback: '{gcp}You have opened workbench for {gcs}[playerDisplayName]{gcp}.'
+      targetfeedback: '{gcs}[senderDisplayName]{gcp} opened workbench for you.'
+  world:
+    help:
+      info: Teleports to different world
+      args: (normal/nether/end/1/2/3...) (playerName) (-s)
+      explanation:
+      - Requires cmi.command.world.[worldName] in addition to base permission node
+    info:
+      here: '{gcp}Already here'
+  worth:
+    help:
+      info: Check item worth
+      args: (all/blocks/hand/material)
+    info:
+      worthless: '{gcp}Worthless'
+      damaged: ' {gcp}({gcs}[percent]% {gcp}damaged)'
+      shulker: '{gcp}Remove items from shulker box before selling'
+      repair: '{gcp}Repair before selling'
+      basePrice: '{gcs}[itemName]{gcp}({gcs}[amount]{gcp}) -> {gcs}[price]'
+      fullPrice: '{gcs}[price]'
+      total: '{gcp}Total worth: {gcs}[total]'
+  worthlist:
+    help:
+      info: Check list of items with set sell prices
+      args: (playerName) (-missing)
+    info:
+      type: '{gcs}[type]'
+      worth: '{gcp}Worth: {gcs}[price]'
+      title: '{gcp}Worth List'

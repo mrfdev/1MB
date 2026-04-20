@@ -30,6 +30,47 @@ Woodcutter:
       - Get 100 for this!
   Gui:
     ItemStack: birch_log
+  Place:
+    OAK_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    DARK_OAK_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    PALE_OAK_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    BIRCH_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    SPRUCE_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    JUNGLE_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    ACACIA_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    MANGROVE_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    CHERRY_SAPLING:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
+    BAMBOO:
+      income: 1.2
+      points: 1.2
+      experience: 1.25
   Break:
     STRIPPED_OAK_LOG:
       income: 0.75

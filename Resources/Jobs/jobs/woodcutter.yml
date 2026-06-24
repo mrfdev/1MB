@@ -231,3 +231,40 @@ Woodcutter:
       income: 0.5
       points: 0.5
       experience: 0.5
+  Shear:
+    CHERRY_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    MANGROVE_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    OAK_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    DARK_OAK_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    PALE_OAK_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    SPRUCE_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    BIRCH_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    JUNGLE_LEAVES:
+      income: 0.5
+      points: 0.5
+      experience: 0.5
+    ACACIA:
+      income: 0.5
+      points: 0.5
+      experience: 0.5

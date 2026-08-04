@@ -15,7 +15,7 @@ as deliberate follow-up changes.
 
 The baseline records the proven production version; it is not a claim that the
 script is free of edge-case defects. Follow-up work continues with version
-`2.18.3`, build `086`.
+`2.18.4`, build `087`.
 
 ## Completed in 2.17.0 build 073
 
@@ -152,6 +152,13 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Added a path-filtered GitHub Actions workflow that runs the complete suite
   with ShellCheck on current macOS and Ubuntu hosted runners.
 
+## Completed in 2.18.4 build 087
+
+- [x] Removed the Minecraft, Paper, Java and architecture versions from the
+  wrapper header. The metadata now identifies only this wrapper's own version,
+  build and tmux-launcher purpose; runtime compatibility remains the concern of
+  `1MB-minecraft.sh`.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -214,9 +221,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Remove the obsolete Screen and Ubuntu dependency hints. Completed in
   `2.17.1`, build `074`; the missing-tmux error gives the requested macOS
   Homebrew command only.
-- [ ] Make the wrapper header independent of Paper and Java versions, because
+- [x] Make the wrapper header independent of Paper and Java versions, because
   RAM, JVM selection, Java version, and Paper arguments belong in
-  `1MB-minecraft.sh`.
+  `1MB-minecraft.sh`. Completed in `2.18.4`, build `087`.
 - [x] Add the missing final newline. Completed mechanically in `2.17.0`, build
   `073`; broader formatting remains deferred.
 

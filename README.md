@@ -10,7 +10,7 @@ A community-driven Minecraft Java Edition server offering Survival, Creative, an
 ## 🌐 Overview
 
 **1MoreBlock.com (1MB)** is run by a dedicated team of players and staff, built for builders, redstone engineers, explorers, and casual gamers.  
-We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)** server, providing multiple gamemodes, quality-of-life enhancements, and a friendly, welcoming environment.
+We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server for Minecraft 26.2**, providing multiple gamemodes, quality-of-life enhancements, and a friendly, welcoming environment.
 
 ---
 
@@ -27,7 +27,10 @@ We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
 ## 🚀 Quick Start
 
 1. **Connect:**  
-   Java Edition 1.21.8: `1moreblock.com:25565`
+   - Java Edition 26.2: `1moreblock.com:25565`
+   - Bedrock Edition: connect with the latest client through Geyser and Floodgate
+
+   Java players must currently use Minecraft 26.2; other Java client versions cannot connect.
 2. **Whitelist:**  
    Apply via our website or Discord
 3. **Read Rules:**  
@@ -50,7 +53,12 @@ We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
 
 ## 🛠️ Server Details
 
-- **Software:** Standalone [PaperMC 1.21.8](https://papermc.io/software/paper)
+- **Live Server:** `live-1mb-3.13.2-mc-26.2`
+- **1MB Era & Version:** Era 3, version 3.13.2
+- **Minecraft:** Java Edition 26.2
+- **Java Runtime:** Java 26.0.2
+- **Server Engine:** Standalone [PaperMC for Minecraft 26.2](https://papermc.io/software/paper)
+- **Client Compatibility:** Java players must use 26.2; Bedrock players can join with their latest client through Geyser and Floodgate
 - **Host Hardware:** Apple M-series (M1, M2 Pro, M4 Pro)
 - **Primary Gamemodes:** Survival, Creative, OneBlock, Skyblock, Event worlds
 
@@ -64,6 +72,7 @@ We operate as a **standalone [PaperMC 1.21.4](https://papermc.io/software/paper)
 - [DeluxeMenus](https://www.spigotmc.org/resources/deluxemenus.11734/) – Custom GUIs/menus
 - [WorldGuard](https://enginehub.org/worldguard/) & [WorldEdit](https://enginehub.org/worldedit/) – Region protection & building tools
 - [DiscordSRV](https://scarsz.me/discordsrv) – Minecraft ↔ Discord chat bridge
+- [Geyser](https://geysermc.org/) & [Floodgate](https://geysermc.org/wiki/floodgate/) – Bedrock Edition compatibility and authentication
 - [PyroFishingPro](https://www.spigotmc.org/resources/pyrofishingpro.82543/) – Advanced fishing system
 - [PyroMining](https://www.spigotmc.org/resources/pyromining.82813/) – Mining overhaul/expansions
 - [PyroFarming](https://www.spigotmc.org/resources/pyrofarming.85212/) – Farming rework
@@ -104,8 +113,11 @@ We welcome:
 
 ## 📌 Version Info
 
-- **Current Minecraft Version:** Paper 1.21.8
-- **Current Server Build:** 1MB v3.9.7 - released October 7th, 2025
+- **Live Server:** `live-1mb-3.13.2-mc-26.2`
+- **Current 1MB Version:** Era 3, version 3.13.2
+- **Current Minecraft Version:** Minecraft 26.2 on PaperMC's server engine for 26.2
+- **Current Java Runtime:** Java 26.0.2
+- **Supported Clients:** Minecraft Java Edition 26.2 and the latest Bedrock Edition client through Geyser/Floodgate
 
 ---
 

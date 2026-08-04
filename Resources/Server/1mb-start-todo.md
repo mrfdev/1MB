@@ -68,6 +68,14 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Made output-function state local and removed the undefined `B` and `X`
   colour variables.
 
+## Completed in 2.17.5 build 078
+
+- [x] Disabled debug messages now return success without producing output, so
+  `_debug=false` no longer turns an otherwise successful wrapper run into exit
+  status `1`.
+- [x] Real startup failures remain nonzero and continue through their existing
+  error paths when debug output is disabled.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -85,9 +93,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Detect and report when the child exits immediately after tmux successfully
   creates the session. The tmux command confirms session creation, not that
   Paper completed startup.
-- [ ] Fix `_debug=false`: the final debug call currently returns status `1`, so
-  an otherwise successful wrapper exits as a failure when debug output is
-  disabled.
+- [x] Fix `_debug=false`: disabled debug messages now return success, so an
+  otherwise successful wrapper exits successfully. Completed in `2.17.5`,
+  build `078`.
 - [x] Remove the implicit GNU Screen fallback. Completed in `2.17.1`, build
   `074`; tmux is now required.
 - [ ] Add a per-server-instance lock in `1MB-minecraft.sh` during that script's

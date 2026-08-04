@@ -82,6 +82,14 @@ scoped fix. The file's missing final newline was normalized mechanically.
   of implying that Paper completed startup. The wrapper can confirm tmux's
   result, but it cannot confirm that Paper reached its ready state.
 
+## Completed in 2.17.7 build 080
+
+- [x] Require `1MB-minecraft.sh` to be a regular, non-symlink, readable and
+  executable file physically located beside the resolved `1MB-start.sh`.
+- [x] Continue launching that exact sibling through `./1MB-minecraft.sh` with
+  tmux's working directory fixed to the wrapper directory. The caller's current
+  directory, `PATH`, other directories, and other volumes are not searched.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -93,6 +101,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
   the caller's current working directory. Completed in `2.17.3`, build `076`,
   including launchd, systemd, SSH, PATH, absolute-path, and symlinked
   invocation scenarios.
+- [x] Reject a symlinked `1MB-minecraft.sh`, preventing the adjacent filename
+  from redirecting execution to a file in another location. Completed in
+  `2.17.7`, build `080`.
 - [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
   directly. Completed in `2.17.2`, build `075`.

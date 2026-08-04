@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.6, build 079 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.7, build 080 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -120,8 +120,8 @@ function _resolveScriptDirectory {
 _scriptDir=$(_resolveScriptDirectory) || _output oops "Could not resolve the server directory containing '$0'."
 _siblingPath="$_scriptDir/$_sibling"
 
-if [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" ] || [ ! -x "$_siblingPath" ]; then
-    _output oops "This '$0' script requires '$_siblingPath' to be a readable and executable file. Correct the permissions, or download it from https://scripts.1moreblock.com/ "
+if [ -L "$_siblingPath" ] || [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" ] || [ ! -x "$_siblingPath" ]; then
+    _output oops "'$_sibling' must be a regular, non-symlink, readable and executable file beside this wrapper: '$_siblingPath'. Files elsewhere are not used. Correct the file, or download it from https://scripts.1moreblock.com/ "
 fi
 
 if [ -n "$1" ]; then
@@ -141,6 +141,7 @@ if ! type "tmux" >/dev/null 2>&1; then
 fi
 
 _output debug "Found 'tmux', attempting to start '$_sibling' in a detached tmux session ..."
+# Deliberately launch only ./1MB-minecraft.sh from the wrapper's own directory.
 if ! tmux new-session -d -s "$_serverName" -c "$_scriptDir" "exec \"./$_sibling\""; then
     _output oops "Could not create the '$_serverName' tmux session and start '$_sibling'. Review the tmux error above and check with 'tmux ls'."
 fi

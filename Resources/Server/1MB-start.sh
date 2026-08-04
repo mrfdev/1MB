@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.18.1, build 084 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.18.2, build 085 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -18,7 +18,8 @@
 ###
 
 _serverName="mcserver"
-# Keep the name short, simple, and lowercase (no numbers or weird characters).
+# Use 1-32 lowercase ASCII letters, numbers, hyphens or underscores. The first
+# character must be a letter or number.
 # The name makes it easier to recognize the session in 'tmux ls', you can
 # re-attach to the forked sessions with 'tmux attach -t (name)'.
 
@@ -132,23 +133,20 @@ function _showHelp {
         "  --attach [name]  Attach to the exact tmux session." \
         "  --help, -h       Show this help." \
         "" \
-        "The session name defaults to '$_serverName'."
+        "The session name defaults to '$_serverName'." \
+        "Names use 1-32 lowercase ASCII letters, numbers, hyphens or underscores." \
+        "The first character must be a letter or number."
 }
 
 function _setServerName {
-    local _requestedName="${1:-}"
-    local _input=""
+    local _requestedName="${1-}"
+    local LC_ALL=C
 
-    if [ -n "$_requestedName" ]; then
-        _input=$(printf '%s\n' "$_requestedName" | awk '{ print tolower($1) }')
-        _input=$(printf '%s\n' "$_input" | awk '{ print substr($0, 1, 16) }')
-
-        if [[ "$_input" =~ ^[a-z]+$ ]]; then
-            _serverName="$_input"
-        else
-            _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
-        fi
+    if [ "${#_requestedName}" -gt 32 ] || ! [[ "$_requestedName" =~ ^[a-z0-9][a-z0-9_-]*$ ]]; then
+        _output oops "Invalid session name. Use 1-32 lowercase ASCII letters, numbers, hyphens or underscores. The first character must be a letter or number."
     fi
+
+    _serverName="$_requestedName"
 }
 
 function _isPaneId {
@@ -233,25 +231,40 @@ function _verifyStartedPane {
 }
 
 _action="start"
-_nameArgument="${1:-}"
+_nameArgument="$_serverName"
 
 case "${1:-}" in
 -h|--help)
+    [ "$#" -eq 1 ] || _output oops "Unexpected extra arguments. Run '$0 --help' for usage."
     _showHelp
     exit 0
     ;;
 --status)
+    [ "$#" -le 2 ] || _output oops "Unexpected extra arguments. Run '$0 --help' for usage."
     _action="status"
-    _nameArgument="${2:-}"
+    if [ "$#" -eq 2 ]; then
+        _nameArgument="$2"
+    fi
     ;;
 --attach)
+    [ "$#" -le 2 ] || _output oops "Unexpected extra arguments. Run '$0 --help' for usage."
     _action="attach"
-    _nameArgument="${2:-}"
+    if [ "$#" -eq 2 ]; then
+        _nameArgument="$2"
+    fi
     ;;
 --*)
     _output oops "Unknown option '$1'. Run '$0 --help' for usage."
     ;;
+*)
+    [ "$#" -le 1 ] || _output oops "Unexpected extra arguments. Run '$0 --help' for usage."
+    if [ "$#" -eq 1 ]; then
+        _nameArgument="$1"
+    fi
+    ;;
 esac
+
+_setServerName "$_nameArgument"
 
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 
@@ -263,8 +276,6 @@ if [ "$_action" = start ]; then
         _output oops "'$_sibling' must be a regular, non-symlink, readable and executable file beside this wrapper: '$_siblingPath'. Files elsewhere are not used. Correct the file, or download it from https://scripts.1moreblock.com/ "
     fi
 fi
-
-_setServerName "$_nameArgument"
 
 if ! type "tmux" >/dev/null 2>&1; then
     _output oops "'tmux' is required but was not found. On macOS, install it with: brew install tmux"

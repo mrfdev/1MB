@@ -15,7 +15,7 @@ as deliberate follow-up changes.
 
 The baseline records the proven production version; it is not a claim that the
 script is free of edge-case defects. Follow-up work continues with version
-`2.18.1`, build `084`.
+`2.18.2`, build `085`.
 
 ## Completed in 2.17.0 build 073
 
@@ -129,6 +129,16 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] The fatal `_output oops` path remains unchanged: it writes to stderr and
   exits with status `1`.
 
+## Completed in 2.18.2 build 085
+
+- [x] Validate the complete requested session name without lowercasing,
+  splitting or truncating it. Names use 1-32 lowercase ASCII letters, numbers,
+  hyphens or underscores and must begin with a letter or number.
+- [x] Validate the configured default name through the same path and reject
+  empty, uppercase, overlong or otherwise invalid names with a clear error.
+- [x] Reject unexpected extra arguments for startup, `--help`, `--status` and
+  `--attach` instead of silently ignoring them.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -160,9 +170,10 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Medium priority
 
-- [ ] Stop splitting and truncating the requested session name before
+- [x] Stop splitting and truncating the requested session name before
   validation. Validate the complete input and length, reject invalid or
-  overlong names, and reject unexpected extra arguments.
+  overlong names, and reject unexpected extra arguments. Completed in
+  `2.18.2`, build `085`.
 - [x] Close the tmux session when `1MB-minecraft.sh` exits. Approved and
   completed in `2.17.2`, build `075`; the launcher is now the pane's direct
   process.
@@ -231,7 +242,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Compatibility decisions before the next larger revision
 
-1. Confirm whether session names remain letters-only or expand to a documented
-   safe character set.
+1. [x] Session names use a documented safe set: 1-32 lowercase ASCII letters,
+   numbers, hyphens or underscores, beginning with a letter or number.
+   Completed in `2.18.2`, build `085`.
 2. Confirm which quality-of-life commands, if any, belong in this intentionally
    small wrapper.

@@ -100,6 +100,17 @@ scoped fix. The file's missing final newline was normalized mechanically.
   POSIX-defined `1`, preserving the existing 16-character truncation on both
   macOS and Ubuntu.
 
+## Completed in 2.17.9 build 082
+
+- [x] Added `--help` (`-h`) with concise usage that works without tmux or an
+  adjacent `1MB-minecraft.sh`.
+- [x] Added `--status [name]`, using an exact tmux session target and exit
+  status `0` for running or `1` for not running.
+- [x] Added `--attach [name]`, which checks the exact session and then replaces
+  the wrapper with `tmux attach-session` so tmux's exit status is preserved.
+- [x] Kept sibling resolution and validation exclusive to normal startup, so
+  existing sessions remain inspectable when the sibling file is unavailable.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -175,8 +186,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Introduce a `main "$@"` function and explicit checked error paths. Review
   all helper return statuses before considering `set -e`; `set -u` and
   `set -o pipefail` can then be evaluated safely.
-- [ ] Add optional `--help`, `--version`, `--status`, and `--attach` commands
-  only if their added complexity is worthwhile.
+- [x] Add small `--help`, `--status`, and `--attach` commands. Completed in
+  `2.17.9`, build `082`; `--version` was intentionally not added.
 - [ ] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
   isolated tmux sessions for success, duplicate-name, missing-sibling, and
   missing-dependency paths.

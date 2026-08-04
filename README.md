@@ -28,14 +28,12 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 
 1. **Connect:**  
    - Java Edition 26.2: `1moreblock.com:25565`
-   - Bedrock Edition: connect with the latest client through Geyser and Floodgate
+   - Bedrock Edition: `1moreblock.com:19132` through Geyser and Floodgate
 
-   Java players must currently use Minecraft 26.2; other Java client versions cannot connect.
-2. **Whitelist:**  
-   Apply via our website or Discord
-3. **Read Rules:**  
+   Java players must currently use Minecraft 26.2; other Java client versions cannot connect. Bedrock players must use a version currently supported by [Geyser](https://geysermc.org/wiki/geyser/supported-versions/).
+2. **Read Rules:**
    [Server Rules](https://1moreblock.com/rules)
-4. **Join Community:**  
+3. **Join Community:**
    Ask questions on Discord-staff and regulars are happy to help!
 
 ---
@@ -58,7 +56,8 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 - **Minecraft:** Java Edition 26.2
 - **Java Runtime:** Java 26.0.2
 - **Server Engine:** Standalone [PaperMC for Minecraft 26.2](https://papermc.io/software/paper)
-- **Client Compatibility:** Java players must use 26.2; Bedrock players can join with their latest client through Geyser and Floodgate
+- **Bedrock Address:** `1moreblock.com:19132`
+- **Client Compatibility:** Java players must use 26.2; Bedrock players can join with a version currently supported by [Geyser](https://geysermc.org/wiki/geyser/supported-versions/) through Geyser and Floodgate
 - **Host Hardware:** Apple M-series (M1, M2 Pro, M4 Pro)
 - **Primary Gamemodes:** Survival, Creative, OneBlock, Skyblock, Event worlds
 
@@ -108,6 +107,7 @@ We welcome:
 - Open an Issue to discuss ideas or report bugs
 - Submit a Pull Request for docs/config/scripts
 - Review [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines
+- Review [`README-TODO.md`](README-TODO.md) for deferred README improvements
 
 ---
 
@@ -117,7 +117,7 @@ We welcome:
 - **Current 1MB Version:** Era 3, version 3.13.2
 - **Current Minecraft Version:** Minecraft 26.2 on PaperMC's server engine for 26.2
 - **Current Java Runtime:** Java 26.0.2
-- **Supported Clients:** Minecraft Java Edition 26.2 and the latest Bedrock Edition client through Geyser/Floodgate
+- **Supported Clients:** Minecraft Java Edition 26.2 and Bedrock Edition versions currently supported by [Geyser](https://geysermc.org/wiki/geyser/supported-versions/)
 
 ---
 
@@ -125,10 +125,8 @@ We welcome:
 
 - **Author & Maintainer:** [mrfloris](https://github.com/mrfdev)
 - **Community Contributors:** Thank you to everyone who has helped!
-- **Usage Permissions:**
-  - You’re welcome to adapt and use these files for your own servers
-  - Redistribution requires linking back to this repo
-  - Some files/folders may have separate license terms-see those for details
+- **License:** Original 1MB-owned material is available under the [MIT License](LICENSE), unless a file or directory states otherwise
+- **Third-Party Material:** Software, plugin-provided configuration examples, trademarks, and other third-party material remain subject to their respective owners' license terms
 
 ---
 
@@ -145,4 +143,4 @@ Spot an error or want to help? Open an Issue or submit a PR!
 
 ## Version
 
-This is 1MB Github version 2.16.3 build 108, October 7th, 2025.
+This is 1MB GitHub version 3.13.2 build 109, August 4, 2026.

@@ -32,7 +32,7 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 
    Java players must currently use Minecraft 26.2; other Java client versions cannot connect. Bedrock players must use a version currently supported by [Geyser](https://geysermc.org/wiki/geyser/supported-versions/).
 2. **Read Rules:**
-   [Server Rules](https://1moreblock.com/rules)
+   [Server Rules](https://rules.1moreblock.com)
 3. **Join Community:**
    Ask questions on Discord-staff and regulars are happy to help!
 
@@ -40,12 +40,15 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 
 ## 📎 Useful Links
 
-| Purpose    | Link                                                           |
-| ---------- | -------------------------------------------------------------- |
-| Website    | [https://www.1moreblock.com](https://www.1moreblock.com)       |
-| Discord    | [https://discord.gg/floris](https://discord.gg/floris)         |
-| Wiki (WIP) | [https://www.1moreblock.com](https://www.1moreblock.com)       |
-| Rules      | [https://www.1moreblock.com](https://www.1moreblock.com)       |
+| Purpose         | Link |
+| --------------- | ---- |
+| Website         | [https://www.1moreblock.com](https://www.1moreblock.com) |
+| Discord         | [https://discord.gg/floris](https://discord.gg/floris) |
+| Wiki (WIP)      | [https://docs.1moreblock.com](https://docs.1moreblock.com/) |
+| Rules           | [https://www.1moreblock.com](https://www.1moreblock.com) |
+| Voting          | [https://omgboards.com/vote](https://omgboards.com/vote) |
+| Live-map        | [http://1moreblock.com:8100](http://1moreblock.com:8100) |
+| Community stats | [https://stats.1moreblock.com](https://stats.1moreblock.com) |
 
 ---
 
@@ -68,7 +71,6 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 - [Jobs Reborn](https://www.spigotmc.org/resources/jobs-reborn.4216/) – In-game jobs/economy
 - [BentoBox](https://bentobox.world/) – Skyblock/OneBlock/other island gametypes
 - [mcMMO](https://www.spigotmc.org/resources/mcmmo.2445/) – RPG skills system
-- [DeluxeMenus](https://www.spigotmc.org/resources/deluxemenus.11734/) – Custom GUIs/menus
 - [WorldGuard](https://enginehub.org/worldguard/) & [WorldEdit](https://enginehub.org/worldedit/) – Region protection & building tools
 - [DiscordSRV](https://scarsz.me/discordsrv) – Minecraft ↔ Discord chat bridge
 - [Geyser](https://geysermc.org/) & [Floodgate](https://geysermc.org/wiki/floodgate/) – Bedrock Edition compatibility and authentication
@@ -79,7 +81,6 @@ We operate as a **standalone [PaperMC](https://papermc.io/software/paper) server
 - [Votifier](https://www.spigotmc.org/resources/nuvotifier.13449/) & [VotingPlugin](https://www.spigotmc.org/resources/votingplugin.15358/) – Vote rewards
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) – Placeholder integration for plugins
 - [AnimatedScoreboard](https://www.spigotmc.org/resources/animatedscoreboard.20848/) – Dynamic scoreboards
-- [LiteBans](https://www.spigotmc.org/resources/litebans.3715/) – Bans/mutes/warnings
 - Many other custom scripts and public plugins!
 
 ---
@@ -143,4 +144,4 @@ Spot an error or want to help? Open an Issue or submit a PR!
 
 ## Version
 
-This is 1MB GitHub version 3.13.2 build 109, August 4, 2026.
+This is 1MB GitHub version 3.13.2 build 110, August 4, 2026.

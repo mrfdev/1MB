@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.3, build 076 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.9, build 082 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-start.sh
-# @Syntax: ./1MB-start.sh (name)
+# @Syntax: ./1MB-start.sh [name] (see --help for commands)
 # @URL: Latest source, wiki, & support: https://scripts.1moreblock.com/
 
 ### CONFIGURATION
@@ -32,8 +32,6 @@ _serverName="mcserver"
 _sibling="1MB-minecraft.sh"
 _debug=true # Set to false to minimize output.
 
-Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
-
 ### FUNCTIONS AND CODE
 #
 # ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
@@ -41,22 +39,44 @@ Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
 ###
 
 function _output {
-    case "$1" in
+    local _mode="${1:-}"
+    local _args=""
+    local _prefix=""
+    local _fd=1
+    local _yellow=""
+    local _cyan=""
+    local _reset=""
+
+    if [ "$_mode" = debug ] && [ "$_debug" != true ]; then
+        return 0
+    fi
+
+    case "$_mode" in
+    oops|okay) _fd=2 ;;
+    esac
+
+    if [ -z "${NO_COLOR+x}" ] && [ -t "$_fd" ]; then
+        printf -v _yellow '\033[33m'
+        printf -v _cyan '\033[36m'
+        printf -v _reset '\033[0m'
+    fi
+
+    case "$_mode" in
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
-        echo -e "\\n$B$Y$_prefix$X $_args $R" >&2; exit 1
+        printf '\n%s%s %s%s\n' "$_yellow" "$_prefix" "$_args" "$_reset" >&2; exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        echo -e "\\n$B$Y$_prefix$C $_args $R" >&2; exit 1
+        printf '\n%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset" >&2; exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        [[ "$_debug" == true ]] && echo -e "$Y$_prefix$C $_args $R"
+        [[ "$_debug" == true ]] && printf '%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset"
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";
-        echo -e "\\n$_prefix $_args"
+        printf '\n%s %s\n' "$_prefix" "$_args"
     ;;
     esac
 }
@@ -95,37 +115,110 @@ function _resolveScriptDirectory {
     cd -P -- "$(dirname -- "$_source")" >/dev/null 2>&1 && pwd -P
 }
 
+function _showHelp {
+    local _programName="${0##*/}"
+
+    printf '%s\n' \
+        "Usage:" \
+        "  $_programName [name]" \
+        "  $_programName --status [name]" \
+        "  $_programName --attach [name]" \
+        "  $_programName --help" \
+        "" \
+        "Commands:" \
+        "  (none)           Start the adjacent $_sibling in detached tmux." \
+        "  --status [name]  Report whether the exact tmux session exists." \
+        "  --attach [name]  Attach to the exact tmux session." \
+        "  --help, -h       Show this help." \
+        "" \
+        "The session name defaults to '$_serverName'."
+}
+
+function _setServerName {
+    local _requestedName="${1:-}"
+    local _input=""
+
+    if [ -n "$_requestedName" ]; then
+        _input=$(printf '%s\n' "$_requestedName" | awk '{ print tolower($1) }')
+        _input=$(printf '%s\n' "$_input" | awk '{ print substr($0, 1, 16) }')
+
+        if [[ "$_input" =~ ^[a-z]+$ ]]; then
+            _serverName="$_input"
+        else
+            _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
+        fi
+    fi
+}
+
+_action="start"
+_nameArgument="${1:-}"
+
+case "${1:-}" in
+-h|--help)
+    _showHelp
+    exit 0
+    ;;
+--status)
+    _action="status"
+    _nameArgument="${2:-}"
+    ;;
+--attach)
+    _action="attach"
+    _nameArgument="${2:-}"
+    ;;
+--*)
+    _output oops "Unknown option '$1'. Run '$0 --help' for usage."
+    ;;
+esac
+
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
 
-_scriptDir=$(_resolveScriptDirectory) || _output oops "Could not resolve the server directory containing '$0'."
-_siblingPath="$_scriptDir/$_sibling"
+if [ "$_action" = start ]; then
+    _scriptDir=$(_resolveScriptDirectory) || _output oops "Could not resolve the server directory containing '$0'."
+    _siblingPath="$_scriptDir/$_sibling"
 
-if [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" ] || [ ! -x "$_siblingPath" ]; then
-    _output oops "This '$0' script requires '$_siblingPath' to be a readable and executable file. Correct the permissions, or download it from https://scripts.1moreblock.com/ "
-fi
-
-if [ -n "$1" ]; then
-    _input=$(echo "$1" | awk '{ print tolower($1) }'); _input=$(echo "${_input}" | awk '{print substr ($0, 0, 16)}');
-    if [[ "$_input" =~ ^[a-z]+$ ]]; then
-        _serverName="$_input"
-    else
-        _output oops "Provided input is invalid! Input is for a unique '_serverName'. Do not use numbers, spaces or weird chars. Keep it short, and a-z characters only."
+    if [ -L "$_siblingPath" ] || [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" ] || [ ! -x "$_siblingPath" ]; then
+        _output oops "'$_sibling' must be a regular, non-symlink, readable and executable file beside this wrapper: '$_siblingPath'. Files elsewhere are not used. Correct the file, or download it from https://scripts.1moreblock.com/ "
     fi
 fi
 
-_output debug "Attempting to start your Minecraft '$_serverName' server ... "
-_output debug "Using server directory: $_scriptDir"
+_setServerName "$_nameArgument"
 
 if ! type "tmux" >/dev/null 2>&1; then
     _output oops "'tmux' is required but was not found. On macOS, install it with: brew install tmux"
 fi
 
+case "$_action" in
+status)
+    if tmux has-session -t "=$_serverName" 2>/dev/null; then
+        _output "tmux session '$_serverName' is running."
+        exit 0
+    fi
+
+    _output "tmux session '$_serverName' is not running."
+    exit 1
+    ;;
+attach)
+    if ! tmux has-session -t "=$_serverName" 2>/dev/null; then
+        _output oops "No tmux session named '$_serverName' is running."
+    fi
+
+    _output debug "Attaching to tmux session '$_serverName' ..."
+    exec tmux attach-session -t "=$_serverName"
+    _output oops "Could not execute tmux attach-session for '$_serverName'."
+    ;;
+esac
+
+_output debug "Attempting to start your Minecraft '$_serverName' server ... "
+_output debug "Using server directory: $_scriptDir"
+
 _output debug "Found 'tmux', attempting to start '$_sibling' in a detached tmux session ..."
+# Deliberately launch only ./1MB-minecraft.sh from the wrapper's own directory.
 if ! tmux new-session -d -s "$_serverName" -c "$_scriptDir" "exec \"./$_sibling\""; then
     _output oops "Could not create the '$_serverName' tmux session and start '$_sibling'. Review the tmux error above and check with 'tmux ls'."
 fi
 [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
 
-_output debug "Done."
+_output debug "tmux session started."
 
 #EOF Copyright (c) 1977-2026 - Floris Fiedeldij Dop - https://scripts.1moreblock.com

@@ -59,6 +59,58 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Give tmux the resolved server directory explicitly with `new-session -c`
   and validate the sibling through its resolved absolute path.
 
+## Completed in 2.17.4 build 077
+
+- [x] Replaced `echo -e` with Bash's built-in `printf` using fixed format
+  strings and `%s` message arguments.
+- [x] Emit ANSI colours only when the actual output destination is a terminal
+  and `NO_COLOR` is not set. Stdout and stderr are checked independently.
+- [x] Made output-function state local and removed the undefined `B` and `X`
+  colour variables.
+
+## Completed in 2.17.5 build 078
+
+- [x] Disabled debug messages now return success without producing output, so
+  `_debug=false` no longer turns an otherwise successful wrapper run into exit
+  status `1`.
+- [x] Real startup failures remain nonzero and continue through their existing
+  error paths when debug output is disabled.
+
+## Completed in 2.17.6 build 079
+
+- [x] Report `tmux session started.` after successful session creation instead
+  of implying that Paper completed startup. The wrapper can confirm tmux's
+  result, but it cannot confirm that Paper reached its ready state.
+
+## Completed in 2.17.7 build 080
+
+- [x] Require `1MB-minecraft.sh` to be a regular, non-symlink, readable and
+  executable file physically located beside the resolved `1MB-start.sh`.
+- [x] Continue launching that exact sibling through `./1MB-minecraft.sh` with
+  tmux's working directory fixed to the wrapper directory. The caller's current
+  directory, `PATH`, other directories, and other volumes are not searched.
+
+## Completed in 2.17.8 build 081
+
+- [x] Audited the complete wrapper against macOS's stock Bash `3.2.57` and
+  verified that it contains no Bash 4+ constructs.
+- [x] Retained Bash 3.2-compatible implementations for case conversion,
+  indexed `BASH_SOURCE`, output handling, symlink resolution, and conditionals.
+- [x] Changed awk's substring start index from implementation-tolerated `0` to
+  POSIX-defined `1`, preserving the existing 16-character truncation on both
+  macOS and Ubuntu.
+
+## Completed in 2.17.9 build 082
+
+- [x] Added `--help` (`-h`) with concise usage that works without tmux or an
+  adjacent `1MB-minecraft.sh`.
+- [x] Added `--status [name]`, using an exact tmux session target and exit
+  status `0` for running or `1` for not running.
+- [x] Added `--attach [name]`, which checks the exact session and then replaces
+  the wrapper with `tmux attach-session` so tmux's exit status is preserved.
+- [x] Kept sibling resolution and validation exclusive to normal startup, so
+  existing sessions remain inspectable when the sibling file is unavailable.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -70,15 +122,18 @@ scoped fix. The file's missing final newline was normalized mechanically.
   the caller's current working directory. Completed in `2.17.3`, build `076`,
   including launchd, systemd, SSH, PATH, absolute-path, and symlinked
   invocation scenarios.
+- [x] Reject a symlinked `1MB-minecraft.sh`, preventing the adjacent filename
+  from redirecting execution to a file in another location. Completed in
+  `2.17.7`, build `080`.
 - [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
   directly. Completed in `2.17.2`, build `075`.
 - [ ] Detect and report when the child exits immediately after tmux successfully
   creates the session. The tmux command confirms session creation, not that
   Paper completed startup.
-- [ ] Fix `_debug=false`: the final debug call currently returns status `1`, so
-  an otherwise successful wrapper exits as a failure when debug output is
-  disabled.
+- [x] Fix `_debug=false`: disabled debug messages now return success, so an
+  otherwise successful wrapper exits successfully. Completed in `2.17.5`,
+  build `078`.
 - [x] Remove the implicit GNU Screen fallback. Completed in `2.17.1`, build
   `074`; tmux is now required.
 - [ ] Add a per-server-instance lock in `1MB-minecraft.sh` during that script's
@@ -104,12 +159,14 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Low priority and cleanup
 
-- [ ] Replace `echo -e` with Bash's built-in `printf`.
-- [ ] Make output-function variables local, initialize or remove the undefined
-  `B` and `X` color variables, and correct the `okay` branch so it does not exit
+- [x] Replace `echo -e` with Bash's built-in `printf`. Completed in `2.17.4`,
+  build `077`.
+- [x] Make output-function variables local and remove the undefined `B` and `X`
+  colour variables. Completed in `2.17.4`, build `077`.
+- [ ] Correct the `okay` branch so a successful status message does not exit
   with status `1`.
-- [ ] Emit ANSI colors only to an interactive terminal and honor `NO_COLOR` so
-  launchd/systemd logs remain clean.
+- [x] Emit ANSI colours only to an interactive terminal and honor `NO_COLOR`
+  so launchd/systemd logs remain clean. Completed in `2.17.4`, build `077`.
 - [x] Verify that the sibling is a regular readable and executable file, and
   include its absolute path in errors. Completed in `2.17.3`, build `076`.
 - [x] Remove the obsolete Screen and Ubuntu dependency hints. Completed in
@@ -123,14 +180,14 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Bash hardening and quality of life
 
-- [ ] Keep compatibility with the stock macOS Bash 3.2 and current Ubuntu
+- [x] Keep compatibility with the stock macOS Bash 3.2 and current Ubuntu
   Bash. Avoid Bash 4-only lowercase expansion, associative arrays, `mapfile`,
-  GNU `flock`, and `readlink -f`.
+  GNU `flock`, and `readlink -f`. Audited and tested in `2.17.8`, build `081`.
 - [ ] Introduce a `main "$@"` function and explicit checked error paths. Review
   all helper return statuses before considering `set -e`; `set -u` and
   `set -o pipefail` can then be evaluated safely.
-- [ ] Add optional `--help`, `--version`, `--status`, and `--attach` commands
-  only if their added complexity is worthwhile.
+- [x] Add small `--help`, `--status`, and `--attach` commands. Completed in
+  `2.17.9`, build `082`; `--version` was intentionally not added.
 - [ ] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
   isolated tmux sessions for success, duplicate-name, missing-sibling, and
   missing-dependency paths.

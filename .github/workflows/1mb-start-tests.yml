@@ -1,0 +1,49 @@
+name: 1MB start wrapper tests
+
+on:
+  push:
+    paths:
+      - "Resources/Server/1MB-start.sh"
+      - "Resources/Server/tests/1MB-start/**"
+      - ".github/workflows/1mb-start-tests.yml"
+  pull_request:
+    paths:
+      - "Resources/Server/1MB-start.sh"
+      - "Resources/Server/tests/1MB-start/**"
+      - ".github/workflows/1mb-start-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install ShellCheck on macOS
+        if: runner.os == 'macOS'
+        run: command -v shellcheck >/dev/null 2>&1 || brew install shellcheck
+
+      - name: Install ShellCheck on Ubuntu
+        if: runner.os == 'Linux'
+        run: |
+          if ! command -v shellcheck >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install --yes shellcheck
+          fi
+
+      - name: Run syntax, behavior, and lint tests
+        shell: bash
+        run: /bin/bash Resources/Server/tests/1MB-start/run-tests.sh all

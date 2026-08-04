@@ -6,16 +6,16 @@ as deliberate follow-up changes.
 
 ## Known live baseline
 
-- Script version: `2.16.3`, build `072`
+- Script version: `2.17.9`, build `082`
 - Release date: August 4, 2026
 - Status: working, tested, and live in August 2026
-- Git baseline: `a2dc6cc8f5d14062b848c87389859e1eab1e4e48`
+- Git baseline: `c5f6c8c5c5ee4545ec4d0dcccaa46e8cc2fc52dc`
 - Baseline source:
-  `git show a2dc6cc8f5d14062b848c87389859e1eab1e4e48:Resources/Server/1MB-start.sh`
+  `git show c5f6c8c5c5ee4545ec4d0dcccaa46e8cc2fc52dc:Resources/Server/1MB-start.sh`
 
 The baseline records the proven production version; it is not a claim that the
-script was free of edge-case defects. New work begins with version `2.17.0`,
-build `073`.
+script is free of edge-case defects. Follow-up work continues with version
+`2.18.3`, build `086`.
 
 ## Completed in 2.17.0 build 073
 
@@ -111,6 +111,47 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Kept sibling resolution and validation exclusive to normal startup, so
   existing sessions remain inspectable when the sibling file is unavailable.
 
+## Completed in 2.18.0 build 083
+
+- [x] Added a two-second liveness check for the exact tmux pane created for
+  `1MB-minecraft.sh`; attach guidance and success output now wait for it.
+- [x] Temporarily retain only that new pane during the check, allowing immediate
+  clean exits, nonzero statuses, and terminating signals to be reported.
+- [x] Restore `remain-on-exit=off` after a successful check so the tmux session
+  still closes normally whenever `1MB-minecraft.sh` later exits.
+- [x] Keep the check explicitly bounded to process liveness; it does not claim
+  that Paper completed startup.
+
+## Completed in 2.18.1 build 084
+
+- [x] Successful `_output okay` messages now write to stdout, return status
+  `0`, and allow the caller to continue instead of terminating the wrapper.
+- [x] The fatal `_output oops` path remains unchanged: it writes to stderr and
+  exits with status `1`.
+
+## Completed in 2.18.2 build 085
+
+- [x] Validate the complete requested session name without lowercasing,
+  splitting or truncating it. Names use 1-32 lowercase ASCII letters, numbers,
+  hyphens or underscores and must begin with a letter or number.
+- [x] Validate the configured default name through the same path and reject
+  empty, uppercase, overlong or otherwise invalid names with a clear error.
+- [x] Reject unexpected extra arguments for startup, `--help`, `--status` and
+  `--attach` instead of silently ignoring them.
+
+## Completed in 2.18.3 build 086
+
+- [x] Added a committed Bash 3.2-compatible test runner with syntax, behavioral
+  and ShellCheck modes under `Resources/Server/tests/1MB-start/`.
+- [x] Added scenario-driven fake `tmux` and instant fake `sleep` executables.
+  Disposable fixtures exercise startup success and failure without contacting
+  a real tmux server or launching Paper.
+- [x] Covered exact atomic launch arguments, duplicate sessions, pane and child
+  exit states, probe-boundary races, status and attach behavior, sibling and
+  dependency failures, session names, argument arity, and output semantics.
+- [x] Added a path-filtered GitHub Actions workflow that runs the complete suite
+  with ShellCheck on current macOS and Ubuntu hosted runners.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -128,9 +169,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
   directly. Completed in `2.17.2`, build `075`.
-- [ ] Detect and report when the child exits immediately after tmux successfully
-  creates the session. The tmux command confirms session creation, not that
-  Paper completed startup.
+- [x] Detect and report when the child exits immediately after tmux successfully
+  creates the session. Completed in `2.18.0`, build `083`, with a two-second
+  exact-pane liveness check that does not claim Paper completed startup.
 - [x] Fix `_debug=false`: disabled debug messages now return success, so an
   otherwise successful wrapper exits successfully. Completed in `2.17.5`,
   build `078`.
@@ -142,9 +183,10 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Medium priority
 
-- [ ] Stop splitting and truncating the requested session name before
+- [x] Stop splitting and truncating the requested session name before
   validation. Validate the complete input and length, reject invalid or
-  overlong names, and reject unexpected extra arguments.
+  overlong names, and reject unexpected extra arguments. Completed in
+  `2.18.2`, build `085`.
 - [x] Close the tmux session when `1MB-minecraft.sh` exits. Approved and
   completed in `2.17.2`, build `075`; the launcher is now the pane's direct
   process.
@@ -163,8 +205,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
   build `077`.
 - [x] Make output-function variables local and remove the undefined `B` and `X`
   colour variables. Completed in `2.17.4`, build `077`.
-- [ ] Correct the `okay` branch so a successful status message does not exit
-  with status `1`.
+- [x] Correct the `okay` branch so a successful status message does not exit
+  with status `1`. Completed in `2.18.1`, build `084`.
 - [x] Emit ANSI colours only to an interactive terminal and honor `NO_COLOR`
   so launchd/systemd logs remain clean. Completed in `2.17.4`, build `077`.
 - [x] Verify that the sibling is a regular readable and executable file, and
@@ -188,9 +230,10 @@ scoped fix. The file's missing final newline was normalized mechanically.
   `set -o pipefail` can then be evaluated safely.
 - [x] Add small `--help`, `--status`, and `--attach` commands. Completed in
   `2.17.9`, build `082`; `--version` was intentionally not added.
-- [ ] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
+- [x] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
   isolated tmux sessions for success, duplicate-name, missing-sibling, and
-  missing-dependency paths.
+  missing-dependency paths. Completed in `2.18.3`, build `086`, with committed
+  local tests and path-filtered macOS/Ubuntu CI.
 - [ ] Consider an optional `umask 027` only after auditing backup, web, and
   group-access requirements. Do not change inherited Paper file permissions
   as part of an unrelated launcher update.
@@ -213,7 +256,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Compatibility decisions before the next larger revision
 
-1. Confirm whether session names remain letters-only or expand to a documented
-   safe character set.
+1. [x] Session names use a documented safe set: 1-32 lowercase ASCII letters,
+   numbers, hyphens or underscores, beginning with a letter or number.
+   Completed in `2.18.2`, build `085`.
 2. Confirm which quality-of-life commands, if any, belong in this intentionally
    small wrapper.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.18.0, build 083 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.18.1, build 084 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -53,7 +53,7 @@ function _output {
     fi
 
     case "$_mode" in
-    oops|okay) _fd=2 ;;
+    oops) _fd=2 ;;
     esac
 
     if [ -z "${NO_COLOR+x}" ] && [ -t "$_fd" ]; then
@@ -69,7 +69,7 @@ function _output {
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        printf '\n%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset" >&2; exit 1
+        printf '\n%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset"; return 0
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";

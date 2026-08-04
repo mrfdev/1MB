@@ -15,7 +15,7 @@ as deliberate follow-up changes.
 
 The baseline records the proven production version; it is not a claim that the
 script is free of edge-case defects. Follow-up work continues with version
-`2.18.0`, build `083`.
+`2.18.1`, build `084`.
 
 ## Completed in 2.17.0 build 073
 
@@ -122,6 +122,13 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Keep the check explicitly bounded to process liveness; it does not claim
   that Paper completed startup.
 
+## Completed in 2.18.1 build 084
+
+- [x] Successful `_output okay` messages now write to stdout, return status
+  `0`, and allow the caller to continue instead of terminating the wrapper.
+- [x] The fatal `_output oops` path remains unchanged: it writes to stderr and
+  exits with status `1`.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -174,8 +181,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
   build `077`.
 - [x] Make output-function variables local and remove the undefined `B` and `X`
   colour variables. Completed in `2.17.4`, build `077`.
-- [ ] Correct the `okay` branch so a successful status message does not exit
-  with status `1`.
+- [x] Correct the `okay` branch so a successful status message does not exit
+  with status `1`. Completed in `2.18.1`, build `084`.
 - [x] Emit ANSI colours only to an interactive terminal and honor `NO_COLOR`
   so launchd/systemd logs remain clean. Completed in `2.17.4`, build `077`.
 - [x] Verify that the sibling is a regular readable and executable file, and

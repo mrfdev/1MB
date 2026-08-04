@@ -90,6 +90,16 @@ scoped fix. The file's missing final newline was normalized mechanically.
   tmux's working directory fixed to the wrapper directory. The caller's current
   directory, `PATH`, other directories, and other volumes are not searched.
 
+## Completed in 2.17.8 build 081
+
+- [x] Audited the complete wrapper against macOS's stock Bash `3.2.57` and
+  verified that it contains no Bash 4+ constructs.
+- [x] Retained Bash 3.2-compatible implementations for case conversion,
+  indexed `BASH_SOURCE`, output handling, symlink resolution, and conditionals.
+- [x] Changed awk's substring start index from implementation-tolerated `0` to
+  POSIX-defined `1`, preserving the existing 16-character truncation on both
+  macOS and Ubuntu.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -159,9 +169,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Bash hardening and quality of life
 
-- [ ] Keep compatibility with the stock macOS Bash 3.2 and current Ubuntu
+- [x] Keep compatibility with the stock macOS Bash 3.2 and current Ubuntu
   Bash. Avoid Bash 4-only lowercase expansion, associative arrays, `mapfile`,
-  GNU `flock`, and `readlink -f`.
+  GNU `flock`, and `readlink -f`. Audited and tested in `2.17.8`, build `081`.
 - [ ] Introduce a `main "$@"` function and explicit checked error paths. Review
   all helper return statuses before considering `set -e`; `set -u` and
   `set -o pipefail` can then be evaluated safely.

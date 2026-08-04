@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.7, build 080 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.8, build 081 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -125,7 +125,7 @@ if [ -L "$_siblingPath" ] || [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" 
 fi
 
 if [ -n "$1" ]; then
-    _input=$(echo "$1" | awk '{ print tolower($1) }'); _input=$(echo "${_input}" | awk '{print substr ($0, 0, 16)}');
+    _input=$(echo "$1" | awk '{ print tolower($1) }'); _input=$(echo "${_input}" | awk '{print substr ($0, 1, 16)}');
     if [[ "$_input" =~ ^[a-z]+$ ]]; then
         _serverName="$_input"
     else

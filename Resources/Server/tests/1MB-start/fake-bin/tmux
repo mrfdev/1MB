@@ -23,6 +23,18 @@ done
 printf '\n' >>"$_logFile"
 
 case "$_command" in
+-V)
+    case "$_scenario" in
+    doctor-version-failure)
+        printf '%s\n' "fake tmux: version query failed" >&2
+        exit 17
+        ;;
+    *)
+        printf '%s\n' 'tmux 3.5a-test'
+        exit 0
+        ;;
+    esac
+    ;;
 new-session)
     case "$_scenario" in
     duplicate)
@@ -59,6 +71,22 @@ attach-session)
     case "$_scenario" in
     attach-running) exit 23 ;;
     *) exit 1 ;;
+    esac
+    ;;
+list-sessions)
+    case "$_scenario" in
+    list-sessions-empty)
+        printf '%s\n' "no server running on test socket" >&2
+        exit 1
+        ;;
+    list-sessions-failure)
+        printf '%s\n' "fake tmux: list query failed" >&2
+        exit 17
+        ;;
+    *)
+        printf '%s\n' mcserver maintenance_session
+        exit 0
+        ;;
     esac
     ;;
 display-message)

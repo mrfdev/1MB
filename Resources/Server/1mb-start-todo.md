@@ -49,6 +49,16 @@ scoped fix. The file's missing final newline was normalized mechanically.
   stale shell session behind.
 - [x] Stopped suppressing tmux's own session-creation error output.
 
+## Completed in 2.17.3 build 076
+
+- [x] Resolve the physical directory containing `1MB-start.sh` instead of
+  relying on the caller's current working directory.
+- [x] Support relative, absolute, PATH-based, and symlinked invocation without
+  depending on GNU-only `readlink -f`, preserving compatibility with macOS and
+  Ubuntu.
+- [x] Give tmux the resolved server directory explicitly with `new-session -c`
+  and validate the sibling through its resolved absolute path.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -56,9 +66,10 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## High priority
 
-- [ ] Resolve `1MB-minecraft.sh` relative to the wrapper's own directory, not
-  the caller's current working directory. This is required for reliable
-  launchd, systemd, SSH, and absolute-path invocation.
+- [x] Resolve `1MB-minecraft.sh` relative to the wrapper's own directory, not
+  the caller's current working directory. Completed in `2.17.3`, build `076`,
+  including launchd, systemd, SSH, PATH, absolute-path, and symlinked
+  invocation scenarios.
 - [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
   directly. Completed in `2.17.2`, build `075`.
@@ -99,8 +110,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
   with status `1`.
 - [ ] Emit ANSI colors only to an interactive terminal and honor `NO_COLOR` so
   launchd/systemd logs remain clean.
-- [ ] Verify that the sibling is a regular readable and executable file, and
-  include its absolute path in errors.
+- [x] Verify that the sibling is a regular readable and executable file, and
+  include its absolute path in errors. Completed in `2.17.3`, build `076`.
 - [x] Remove the obsolete Screen and Ubuntu dependency hints. Completed in
   `2.17.1`, build `074`; the missing-tmux error gives the requested macOS
   Homebrew command only.

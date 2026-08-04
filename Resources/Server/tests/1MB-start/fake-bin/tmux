@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+# Scenario-driven tmux replacement used only by the 1MB-start.sh test suite.
+# It must never write diagnostics to stdout for new-session because stdout is
+# the pane-ID channel consumed by the wrapper.
+
+_stateDir="${FAKE_TMUX_STATE_DIR:-}"
+_scenario="${FAKE_TMUX_SCENARIO:-healthy}"
+
+if [ -z "$_stateDir" ] || [ ! -d "$_stateDir" ]; then
+    printf '%s\n' "fake tmux: FAKE_TMUX_STATE_DIR is missing or invalid" >&2
+    exit 90
+fi
+
+_logFile="$_stateDir/tmux.log"
+_command="${1:-}"
+
+printf '%s' "$_command" >>"$_logFile"
+shift || true
+for _argument in "$@"; do
+    printf '\t%s' "$_argument" >>"$_logFile"
+done
+printf '\n' >>"$_logFile"
+
+case "$_command" in
+new-session)
+    case "$_scenario" in
+    duplicate)
+        printf '%s\n' "duplicate session: mcserver" >&2
+        exit 1
+        ;;
+    new-failure-with-pane)
+        printf '%s\n' '%42'
+        exit 1
+        ;;
+    new-failure)
+        exit 1
+        ;;
+    empty-pane)
+        exit 0
+        ;;
+    malformed-pane)
+        printf '%s\n' 'not-a-pane'
+        exit 0
+        ;;
+    *)
+        printf '%s\n' '%42'
+        exit 0
+        ;;
+    esac
+    ;;
+has-session)
+    case "$_scenario" in
+    status-running|attach-running) exit 0 ;;
+    *) exit 1 ;;
+    esac
+    ;;
+attach-session)
+    case "$_scenario" in
+    attach-running) exit 23 ;;
+    *) exit 1 ;;
+    esac
+    ;;
+display-message)
+    _format=""
+    for _argument in "$@"; do
+        _format="$_argument"
+    done
+
+    case "$_format" in
+    '#{pane_dead}|#{pane_dead_status}|#{pane_dead_signal}')
+        case "$_scenario" in
+        first-display-missing) exit 1 ;;
+        child-exit-zero) printf '%s\n' '1|0|' ;;
+        child-exit-seven) printf '%s\n' '1|7|' ;;
+        child-signal-fifteen) printf '%s\n' '1||15' ;;
+        child-unknown-exit) printf '%s\n' '1||' ;;
+        unexpected-pane-state) printf '%s\n' 'unexpected||' ;;
+        *) printf '%s\n' '0||' ;;
+        esac
+        ;;
+    '#{pane_dead}')
+        case "$_scenario" in
+        boundary-disappeared) exit 1 ;;
+        boundary-dead) printf '%s\n' '1' ;;
+        *) printf '%s\n' '0' ;;
+        esac
+        ;;
+    *)
+        printf '%s\n' "fake tmux: unexpected display format: $_format" >&2
+        exit 91
+        ;;
+    esac
+    ;;
+set-option)
+    case "$_scenario" in
+    restore-failure|sleep-failure-restore-failure) exit 1 ;;
+    *) exit 0 ;;
+    esac
+    ;;
+kill-pane|kill-session)
+    exit 0
+    ;;
+ls)
+    case "$_scenario" in
+    list-failure) exit 1 ;;
+    *)
+        printf '%s\n' 'fake-session: 1 windows (created for tests)'
+        exit 0
+        ;;
+    esac
+    ;;
+*)
+    printf '%s\n' "fake tmux: unexpected command: $_command" >&2
+    exit 92
+    ;;
+esac

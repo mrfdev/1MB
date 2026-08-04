@@ -15,7 +15,7 @@ as deliberate follow-up changes.
 
 The baseline records the proven production version; it is not a claim that the
 script is free of edge-case defects. Follow-up work continues with version
-`2.18.2`, build `085`.
+`2.18.3`, build `086`.
 
 ## Completed in 2.17.0 build 073
 
@@ -139,6 +139,19 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Reject unexpected extra arguments for startup, `--help`, `--status` and
   `--attach` instead of silently ignoring them.
 
+## Completed in 2.18.3 build 086
+
+- [x] Added a committed Bash 3.2-compatible test runner with syntax, behavioral
+  and ShellCheck modes under `Resources/Server/tests/1MB-start/`.
+- [x] Added scenario-driven fake `tmux` and instant fake `sleep` executables.
+  Disposable fixtures exercise startup success and failure without contacting
+  a real tmux server or launching Paper.
+- [x] Covered exact atomic launch arguments, duplicate sessions, pane and child
+  exit states, probe-boundary races, status and attach behavior, sibling and
+  dependency failures, session names, argument arity, and output semantics.
+- [x] Added a path-filtered GitHub Actions workflow that runs the complete suite
+  with ShellCheck on current macOS and Ubuntu hosted runners.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -217,9 +230,10 @@ scoped fix. The file's missing final newline was normalized mechanically.
   `set -o pipefail` can then be evaluated safely.
 - [x] Add small `--help`, `--status`, and `--attach` commands. Completed in
   `2.17.9`, build `082`; `--version` was intentionally not added.
-- [ ] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
+- [x] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
   isolated tmux sessions for success, duplicate-name, missing-sibling, and
-  missing-dependency paths.
+  missing-dependency paths. Completed in `2.18.3`, build `086`, with committed
+  local tests and path-filtered macOS/Ubuntu CI.
 - [ ] Consider an optional `umask 027` only after auditing backup, web, and
   group-access requirements. Do not change inherited Paper file permissions
   as part of an unrelated launcher update.

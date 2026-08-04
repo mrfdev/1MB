@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Instant sleep replacement for deterministic startup-probe tests.
+
+_stateDir="${FAKE_TMUX_STATE_DIR:-}"
+_scenario="${FAKE_TMUX_SCENARIO:-healthy}"
+
+if [ -z "$_stateDir" ] || [ ! -d "$_stateDir" ]; then
+    printf '%s\n' "fake sleep: FAKE_TMUX_STATE_DIR is missing or invalid" >&2
+    exit 90
+fi
+
+printf '%s\n' "$*" >>"$_stateDir/sleep.log"
+
+case "$_scenario" in
+sleep-failure|sleep-failure-restore-failure) exit 1 ;;
+*) exit 0 ;;
+esac

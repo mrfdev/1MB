@@ -6,16 +6,16 @@ as deliberate follow-up changes.
 
 ## Known live baseline
 
-- Script version: `2.16.3`, build `072`
+- Script version: `2.17.9`, build `082`
 - Release date: August 4, 2026
 - Status: working, tested, and live in August 2026
-- Git baseline: `a2dc6cc8f5d14062b848c87389859e1eab1e4e48`
+- Git baseline: `c5f6c8c5c5ee4545ec4d0dcccaa46e8cc2fc52dc`
 - Baseline source:
-  `git show a2dc6cc8f5d14062b848c87389859e1eab1e4e48:Resources/Server/1MB-start.sh`
+  `git show c5f6c8c5c5ee4545ec4d0dcccaa46e8cc2fc52dc:Resources/Server/1MB-start.sh`
 
 The baseline records the proven production version; it is not a claim that the
-script was free of edge-case defects. New work begins with version `2.17.0`,
-build `073`.
+script is free of edge-case defects. Follow-up work continues with version
+`2.18.0`, build `083`.
 
 ## Completed in 2.17.0 build 073
 
@@ -111,6 +111,17 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Kept sibling resolution and validation exclusive to normal startup, so
   existing sessions remain inspectable when the sibling file is unavailable.
 
+## Completed in 2.18.0 build 083
+
+- [x] Added a two-second liveness check for the exact tmux pane created for
+  `1MB-minecraft.sh`; attach guidance and success output now wait for it.
+- [x] Temporarily retain only that new pane during the check, allowing immediate
+  clean exits, nonzero statuses, and terminating signals to be reported.
+- [x] Restore `remain-on-exit=off` after a successful check so the tmux session
+  still closes normally whenever `1MB-minecraft.sh` later exits.
+- [x] Keep the check explicitly bounded to process liveness; it does not claim
+  that Paper completed startup.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -128,9 +139,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
   directly. Completed in `2.17.2`, build `075`.
-- [ ] Detect and report when the child exits immediately after tmux successfully
-  creates the session. The tmux command confirms session creation, not that
-  Paper completed startup.
+- [x] Detect and report when the child exits immediately after tmux successfully
+  creates the session. Completed in `2.18.0`, build `083`, with a two-second
+  exact-pane liveness check that does not claim Paper completed startup.
 - [x] Fix `_debug=false`: disabled debug messages now return success, so an
   otherwise successful wrapper exits successfully. Completed in `2.17.5`,
   build `078`.

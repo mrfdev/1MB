@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.9, build 082 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.18.0, build 083 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -30,6 +30,7 @@ _serverName="mcserver"
 ###
 
 _sibling="1MB-minecraft.sh"
+_startupCheckSeconds=2 # Check process liveness only; this is not Paper readiness.
 _debug=true # Set to false to minimize output.
 
 ### FUNCTIONS AND CODE
@@ -150,6 +151,87 @@ function _setServerName {
     fi
 }
 
+function _isPaneId {
+    local _paneId="${1:-}"
+    local _paneNumber=""
+
+    case "$_paneId" in
+    %*) _paneNumber="${_paneId#%}" ;;
+    *) return 1 ;;
+    esac
+
+    case "$_paneNumber" in
+    ""|*[!0-9]*) return 1 ;;
+    *) return 0 ;;
+    esac
+}
+
+function _verifyStartedPane {
+    local _paneId="${1:-}"
+    local _paneReport=""
+    local _paneDead=""
+    local _paneResult=""
+    local _paneStatus=""
+    local _paneSignal=""
+    local _exitDescription=""
+
+    _output debug "Checking whether '$_sibling' remains active for $_startupCheckSeconds seconds ..."
+
+    if ! sleep "$_startupCheckSeconds"; then
+        if ! tmux set-option -p -t "$_paneId" remain-on-exit off >/dev/null 2>&1; then
+            _output oops "The $_startupCheckSeconds-second startup check was interrupted, and tmux could not restore normal close-on-exit behavior. Inspect the '$_serverName' session before retrying."
+        fi
+        _output oops "The $_startupCheckSeconds-second startup check was interrupted. The tmux session was not reported as started."
+    fi
+
+    if ! _paneReport=$(tmux display-message -p -t "$_paneId" '#{pane_dead}|#{pane_dead_status}|#{pane_dead_signal}' 2>/dev/null); then
+        tmux set-option -p -t "$_paneId" remain-on-exit off >/dev/null 2>&1 || true
+        _output oops "'$_sibling' ended or its tmux pane disappeared during the $_startupCheckSeconds-second startup check. Run './$_sibling' directly from '$_scriptDir' to inspect its full output."
+    fi
+
+    _paneDead="${_paneReport%%|*}"
+    _paneResult="${_paneReport#*|}"
+    _paneStatus="${_paneResult%%|*}"
+    _paneSignal="${_paneResult#*|}"
+
+    case "$_paneDead" in
+    0)
+        if ! tmux set-option -p -t "$_paneId" remain-on-exit off >/dev/null 2>&1; then
+            _output oops "'$_sibling' remained active, but tmux could not restore normal close-on-exit behavior for pane '$_paneId'. Inspect the '$_serverName' session before retrying."
+        fi
+
+        if ! _paneDead=$(tmux display-message -p -t "$_paneId" '#{pane_dead}' 2>/dev/null); then
+            _output oops "'$_sibling' ended as the $_startupCheckSeconds-second startup check completed. The tmux session was not reported as started."
+        fi
+
+        if [ "$_paneDead" != 0 ]; then
+            tmux kill-pane -t "$_paneId" >/dev/null 2>&1 || true
+            _output oops "'$_sibling' ended as the $_startupCheckSeconds-second startup check completed. The tmux session was not reported as started."
+        fi
+        ;;
+    1)
+        if [ -n "$_paneStatus" ]; then
+            _exitDescription="exit status $_paneStatus"
+        fi
+        if [ -n "$_paneSignal" ]; then
+            if [ -n "$_exitDescription" ]; then
+                _exitDescription="$_exitDescription, signal $_paneSignal"
+            else
+                _exitDescription="signal $_paneSignal"
+            fi
+        fi
+        [ -z "$_exitDescription" ] && _exitDescription="unknown exit status"
+
+        tmux kill-pane -t "$_paneId" >/dev/null 2>&1 || true
+        _output oops "'$_sibling' exited during the $_startupCheckSeconds-second startup check ($_exitDescription). Run './$_sibling' directly from '$_scriptDir' to inspect its full output."
+        ;;
+    *)
+        tmux set-option -p -t "$_paneId" remain-on-exit off >/dev/null 2>&1 || true
+        _output oops "tmux returned an unexpected state for pane '$_paneId' during the startup check. The session was not reported as started."
+        ;;
+    esac
+}
+
 _action="start"
 _nameArgument="${1:-}"
 
@@ -214,9 +296,21 @@ _output debug "Using server directory: $_scriptDir"
 
 _output debug "Found 'tmux', attempting to start '$_sibling' in a detached tmux session ..."
 # Deliberately launch only ./1MB-minecraft.sh from the wrapper's own directory.
-if ! tmux new-session -d -s "$_serverName" -c "$_scriptDir" "exec \"./$_sibling\""; then
-    _output oops "Could not create the '$_serverName' tmux session and start '$_sibling'. Review the tmux error above and check with 'tmux ls'."
+_paneId=""
+if ! _paneId=$(tmux new-session -d -P -F '#{pane_id}' -s "$_serverName" -c "$_scriptDir" "exec \"./$_sibling\"" \; set-option -p -t "=$_serverName:" remain-on-exit on); then
+    if _isPaneId "$_paneId"; then
+        tmux kill-pane -t "$_paneId" >/dev/null 2>&1 || true
+    fi
+    _output oops "Could not create the '$_serverName' tmux session and prepare its startup check. Review the tmux error above and check with 'tmux ls'."
 fi
+
+if ! _isPaneId "$_paneId"; then
+    tmux kill-session -t "=$_serverName" >/dev/null 2>&1 || true
+    _output oops "tmux created the '$_serverName' session but did not return a valid pane identifier, so the new session was closed."
+fi
+
+_verifyStartedPane "$_paneId"
+
 [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
 
 _output debug "tmux session started."

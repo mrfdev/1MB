@@ -30,6 +30,15 @@ build `073`.
 No other behavioral modernization item below is included in this narrowly
 scoped fix. The file's missing final newline was normalized mechanically.
 
+## Completed in 2.17.1 build 074
+
+- [x] Removed GNU Screen support. `tmux` is now the wrapper's only detached
+  session backend.
+- [x] Removed the automatic foreground fallback. A missing `tmux` executable
+  now stops the wrapper instead of starting Paper outside a detached session.
+- [x] Added a focused macOS installation hint: `brew install tmux`. Ubuntu
+  installation guidance is intentionally omitted.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -48,9 +57,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Fix `_debug=false`: the final debug call currently returns status `1`, so
   an otherwise successful wrapper exits as a failure when debug output is
   disabled.
-- [ ] Remove the implicit GNU Screen fallback, make it explicit opt-in, or add
-  reliable duplicate-session protection and checked startup. Screen permits
-  materially different and potentially duplicate session behavior.
+- [x] Remove the implicit GNU Screen fallback. Completed in `2.17.1`, build
+  `074`; tmux is now required.
 - [ ] Add a per-server-instance lock in `1MB-minecraft.sh` during that script's
   later review. Different tmux names can otherwise launch the same server
   directory twice, and this wrapper cannot protect standalone launches.
@@ -66,8 +74,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Establish deterministic command discovery for non-login environments.
   Account for Apple Silicon Homebrew (`/opt/homebrew/bin`), Intel Homebrew
   (`/usr/local/bin`), and standard macOS/Ubuntu paths.
-- [ ] Remove the implicit foreground fallback. If tmux is unavailable, fail
-  clearly and let users run `1MB-minecraft.sh` directly for foreground tests.
+- [x] Remove the implicit foreground fallback. Completed in `2.17.1`, build
+  `074`; a missing tmux executable now fails clearly.
 - [ ] Use exact tmux targets such as `-t "=$name"` in scripted checks so prefix
   matching cannot select another session.
 
@@ -81,8 +89,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
   launchd/systemd logs remain clean.
 - [ ] Verify that the sibling is a regular readable and executable file, and
   include its absolute path in errors.
-- [ ] Correct the Ubuntu dependency hint to recommend `apt install tmux` when
-  tmux is the preferred backend.
+- [x] Remove the obsolete Screen and Ubuntu dependency hints. Completed in
+  `2.17.1`, build `074`; the missing-tmux error gives the requested macOS
+  Homebrew command only.
 - [ ] Make the wrapper header independent of Paper and Java versions, because
   RAM, JVM selection, Java version, and Paper arguments belong in
   `1MB-minecraft.sh`.
@@ -124,9 +133,8 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Compatibility decisions before the next larger revision
 
-1. Confirm whether automatic Screen support may be removed.
-2. Confirm whether the tmux session should disappear when Paper stops.
-3. Confirm whether session names remain letters-only or expand to a documented
+1. Confirm whether the tmux session should disappear when Paper stops.
+2. Confirm whether session names remain letters-only or expand to a documented
    safe character set.
-4. Confirm which quality-of-life commands, if any, belong in this intentionally
+3. Confirm which quality-of-life commands, if any, belong in this intentionally
    small wrapper.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.16.3, build 072 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.0, build 073 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -77,7 +77,9 @@ _output debug "Attempting to start your Minecraft '$_serverName' server ... "
 
 if type "tmux" >/dev/null 2>&1; then
     _output debug "Found 'tmux', attempting to create and fork a new tmux session into background ..."
-    tmux new -d -s "$_serverName" 2>/dev/null || return 1
+    if ! tmux new -d -s "$_serverName" 2>/dev/null; then
+        _output oops "Could not create the '$_serverName' tmux session. It may already exist; check with 'tmux ls'."
+    fi
     tmux send-keys -t "$_serverName" "./$_sibling" ENTER
     [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
 elif type "screen" >/dev/null 2>&1; then

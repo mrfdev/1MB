@@ -15,7 +15,7 @@ as deliberate follow-up changes.
 
 The baseline records the proven production version; it is not a claim that the
 script is free of edge-case defects. Follow-up work continues with version
-`2.18.4`, build `087`.
+`2.19.0`, build `088`.
 
 ## Completed in 2.17.0 build 073
 
@@ -159,6 +159,27 @@ scoped fix. The file's missing final newline was normalized mechanically.
   build and tmux-launcher purpose; runtime compatibility remains the concern of
   `1MB-minecraft.sh`.
 
+## Completed in 2.19.0 build 088
+
+- [x] Added dependency-free `--version` output for the wrapper's own version
+  and build.
+- [x] Added `--doctor`, which aggregates read-only Bash, user, session-name,
+  command, directory, adjacent-launcher and tmux-version checks without
+  querying a tmux session or executing the launcher.
+- [x] Added `--start [name]` as an explicit alias of the existing startup path;
+  both forms share the same validation, atomic tmux launch and liveness probe.
+- [x] Added `--list`, explicitly scoped to all tmux session names visible to
+  the current OS user, with tmux's own output and exit status preserved.
+- [x] Added `--dry-run [name]`, which performs static launch preflight and
+  safely renders the exact shared tmux argument vector without invoking tmux,
+  sleeping, querying session availability, or executing `1MB-minecraft.sh`.
+- [x] Resolve and require both tmux and `sleep` before startup side effects;
+  real startup and dry-run use the resolved executable paths, so a missing
+  liveness-probe dependency cannot fail only after creating a session.
+- [x] Extended the fake-tmux suite to cover command output, argument arity,
+  dependency isolation, exit statuses and the new read-only/no-side-effect
+  guarantees on both Bash 3.2 and current Bash.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -235,8 +256,9 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Introduce a `main "$@"` function and explicit checked error paths. Review
   all helper return statuses before considering `set -e`; `set -u` and
   `set -o pipefail` can then be evaluated safely.
-- [x] Add small `--help`, `--status`, and `--attach` commands. Completed in
-  `2.17.9`, build `082`; `--version` was intentionally not added.
+- [x] Add focused convenience commands. `--help`, `--status` and `--attach`
+  were completed in `2.17.9`, build `082`; `--version`, `--doctor`, `--start`,
+  `--list` and `--dry-run` were completed in `2.19.0`, build `088`.
 - [x] Add repeatable checks with `bash -n`, ShellCheck, and disposable fake or
   isolated tmux sessions for success, duplicate-name, missing-sibling, and
   missing-dependency paths. Completed in `2.18.3`, build `086`, with committed
@@ -266,5 +288,6 @@ scoped fix. The file's missing final newline was normalized mechanically.
 1. [x] Session names use a documented safe set: 1-32 lowercase ASCII letters,
    numbers, hyphens or underscores, beginning with a letter or number.
    Completed in `2.18.2`, build `085`.
-2. Confirm which quality-of-life commands, if any, belong in this intentionally
-   small wrapper.
+2. [x] Add the approved quality-of-life commands: `--version`, `--doctor`,
+   `--start`, `--list` and `--dry-run`. Completed in `2.19.0`, build `088`,
+   with action-specific validation and fake-tmux coverage.

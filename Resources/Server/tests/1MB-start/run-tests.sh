@@ -27,6 +27,7 @@ _caseWrapper=""
 _stdoutFile=""
 _stderrFile=""
 _runStatus=0
+_siblingMarker=""
 
 function _usage {
     printf '%s\n' \
@@ -200,12 +201,20 @@ function _runWrapper {
     local _scenario="$1"
     shift
 
+    _runWrapperWithPath "$_scenario" "$_suiteDir/fake-bin:$_originalPath" "$@"
+}
+
+function _runWrapperWithPath {
+    local _scenario="$1"
+    local _runPath="$2"
+    shift 2
+
     : >"$_stdoutFile"
     : >"$_stderrFile"
     FAKE_TMUX_SCENARIO="$_scenario" \
         FAKE_TMUX_STATE_DIR="$_caseStateDir" \
         NO_COLOR=1 \
-        PATH="$_suiteDir/fake-bin:$_originalPath" \
+        PATH="$_runPath" \
         TMUX='' \
         TMUX_TMPDIR="$_caseStateDir/tmux-socket" \
         "$_bashUnderTest" "$_caseWrapper" "$@" >"$_stdoutFile" 2>"$_stderrFile"
@@ -229,14 +238,22 @@ function _expectContains {
     local _file="$1"
     local _text="$2"
     local _description="$3"
-    grep -Fq "$_text" "$_file" || _problem "missing $_description: $_text"
+    grep -Fq -- "$_text" "$_file" || _problem "missing $_description: $_text"
+}
+
+function _expectExactLine {
+    local _file="$1"
+    local _line="$2"
+    local _description="$3"
+
+    grep -Fqx -- "$_line" "$_file" || _problem "missing exact $_description: $_line"
 }
 
 function _expectNotContains {
     local _file="$1"
     local _text="$2"
     local _description="$3"
-    if grep -Fq "$_text" "$_file"; then
+    if grep -Fq -- "$_text" "$_file"; then
         _problem "unexpected $_description: $_text"
     fi
 }
@@ -247,11 +264,59 @@ function _expectNoTmuxCall {
     fi
 }
 
+function _expectNoSleepCall {
+    if [ -s "$_caseStateDir/sleep.log" ]; then
+        _problem "sleep was called unexpectedly"
+    fi
+}
+
+function _setFixtureDefaultName {
+    local _name="$1"
+    local _updatedWrapper="$_caseDir/updated-1MB-start.sh"
+
+    sed "s/^_serverName=.*/_serverName=\"$_name\"/" "$_caseWrapper" >"$_updatedWrapper" || exit 2
+    mv "$_updatedWrapper" "$_caseWrapper"
+    chmod 0755 "$_caseWrapper"
+}
+
+function _makeToolPathWithoutSleep {
+    local _path="$1"
+    local _tool=""
+    local _toolSource=""
+
+    mkdir -p "$_path"
+    for _tool in dirname readlink; do
+        _toolSource=$(PATH="$_originalPath" command -v "$_tool") || exit 2
+        ln -s "$_toolSource" "$_path/$_tool"
+    done
+    ln -s "$_fakeTmux" "$_path/tmux"
+}
+
+function _armSiblingMarker {
+    _siblingMarker="$_caseDir/sibling-executed"
+    printf '#!/usr/bin/env bash\nprintf "executed\\n" > %q\n' "$_siblingMarker" >"$_caseServerDir/1MB-minecraft.sh"
+    chmod 0755 "$_caseServerDir/1MB-minecraft.sh"
+}
+
+function _expectSiblingNotExecuted {
+    if [ -e "$_siblingMarker" ]; then
+        _problem "the sibling launcher was executed unexpectedly"
+    fi
+}
+
 function _expectLogLine {
     local _line="$1"
-    if ! grep -Fqx "$_line" "$_caseStateDir/tmux.log" 2>/dev/null; then
+    if ! grep -Fqx -- "$_line" "$_caseStateDir/tmux.log" 2>/dev/null; then
         _problem "missing exact tmux call: $_line"
     fi
+}
+
+function _expectOnlyTmuxLogLine {
+    local _line="$1"
+    local _expected="$_caseDir/expected-only-tmux.log"
+
+    printf '%s\n' "$_line" >"$_expected"
+    _expectFilesEqual "$_expected" "$_caseStateDir/tmux.log" "tmux call log"
 }
 
 function _expectNoLogCommand {
@@ -265,6 +330,19 @@ function _setExpectedLaunch {
     local _name="$1"
     printf -v _expectedLaunch 'new-session\t-d\t-P\t-F\t#{pane_id}\t-s\t%s\t-c\t%s\texec "./1MB-minecraft.sh"\t;\tset-option\t-p\t-t\t=%s:\tremain-on-exit\ton' \
         "$_name" "$_caseServerDir" "$_name"
+}
+
+function _writeExpectedHealthyTmuxLog {
+    local _name="$1"
+    local _file="$2"
+
+    _setExpectedLaunch "$_name"
+    printf '%s\n' \
+        "$_expectedLaunch" \
+        $'display-message\t-p\t-t\t%42\t#{pane_dead}|#{pane_dead_status}|#{pane_dead_signal}' \
+        $'set-option\t-p\t-t\t%42\tremain-on-exit\toff' \
+        $'display-message\t-p\t-t\t%42\t#{pane_dead}' \
+        'ls' >"$_file"
 }
 
 function _expectFilesEqual {
@@ -290,17 +368,113 @@ function _testHealthyStart {
     _expectContains "$_stdoutFile" "tmux session started." "success message"
     _escape=$(printf '\033')
     _expectNotContains "$_stdoutFile" "$_escape" "ANSI escape"
-    _setExpectedLaunch mcserver-2
     _expectedLog="$_caseDir/expected-tmux.log"
-    printf '%s\n' \
-        "$_expectedLaunch" \
-        $'display-message\t-p\t-t\t%42\t#{pane_dead}|#{pane_dead_status}|#{pane_dead_signal}' \
-        $'set-option\t-p\t-t\t%42\tremain-on-exit\toff' \
-        $'display-message\t-p\t-t\t%42\t#{pane_dead}' \
-        'ls' >"$_expectedLog"
+    _writeExpectedHealthyTmuxLog mcserver-2 "$_expectedLog"
     _expectFilesEqual "$_expectedLog" "$_caseStateDir/tmux.log" "tmux call order"
     printf '%s\n' '2' >"$_caseDir/expected-sleep.log"
     _expectFilesEqual "$_caseDir/expected-sleep.log" "$_caseStateDir/sleep.log" "sleep call"
+    _finishCase
+}
+
+function _testExplicitStart {
+    local _expectedLog=""
+
+    _beginCase "explicit --start is the exact startup alias"
+
+    _newFixture executable
+    _runWrapper healthy --start mcserver-2
+    _expectStatus 0
+    _expectEmpty "$_stderrFile" "stderr"
+    _expectedLog="$_caseDir/expected-tmux.log"
+    _writeExpectedHealthyTmuxLog mcserver-2 "$_expectedLog"
+    _expectFilesEqual "$_expectedLog" "$_caseStateDir/tmux.log" "explicit-start tmux call order"
+    _expectContains "$_stdoutFile" "tmux session started." "success message"
+    printf '%s\n' '2' >"$_caseDir/expected-sleep.log"
+    _expectFilesEqual "$_caseDir/expected-sleep.log" "$_caseStateDir/sleep.log" "sleep call"
+
+    _newFixture executable
+    _runWrapper healthy --start
+    _expectStatus 0
+    _expectedLog="$_caseDir/expected-tmux.log"
+    _writeExpectedHealthyTmuxLog mcserver "$_expectedLog"
+    _expectFilesEqual "$_expectedLog" "$_caseStateDir/tmux.log" "default explicit-start tmux call order"
+    printf '%s\n' '2' >"$_caseDir/expected-sleep.log"
+    _expectFilesEqual "$_caseDir/expected-sleep.log" "$_caseStateDir/sleep.log" "default explicit-start sleep call"
+    _expectContains "$_stdoutFile" "tmux attach -t mcserver" "default attach guidance"
+    _finishCase
+}
+
+function _testVersionCommand {
+    local _emptyPath=""
+    local _headerVersion=""
+
+    _beginCase "version is exact and independent of runtime dependencies"
+    _newFixture missing
+    _setFixtureDefaultName "Invalid Name"
+    _emptyPath="$_caseDir/empty-path"
+    mkdir -p "$_emptyPath"
+    _runWrapperWithPath healthy "$_emptyPath" --version
+    _expectStatus 0
+    _headerVersion=$(sed -n 's/^# @Version: //p' "$_target")
+    printf '1MB-start.sh %s\n' "$_headerVersion" >"$_caseDir/expected-version"
+    _expectFilesEqual "$_caseDir/expected-version" "$_stdoutFile" "version output"
+    _expectEmpty "$_stderrFile" "stderr"
+    _expectNotContains "$_stdoutFile" "Paper" "runtime product"
+    _expectNotContains "$_stdoutFile" "Java" "runtime version"
+    _expectNotContains "$_stdoutFile" "Minecraft" "game version"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+    _finishCase
+}
+
+function _testDoctorCommand {
+    local _emptyPath=""
+
+    _beginCase "doctor aggregates static checks without touching a session"
+
+    _newFixture executable
+    _armSiblingMarker
+    _runWrapper healthy --doctor
+    _expectStatus 0
+    _expectEmpty "$_stderrFile" "stderr"
+    _expectContains "$_stdoutFile" "Configured default session name: mcserver" "session-name check"
+    _expectContains "$_stdoutFile" "3.5a-test" "tmux version"
+    _expectContains "$_stdoutFile" "Doctor result: PASS" "healthy result"
+    _expectOnlyTmuxLogLine '-V'
+    _expectNoSleepCall
+    _expectSiblingNotExecuted
+
+    _newFixture symlink
+    _runWrapper doctor-version-failure --doctor
+    _expectStatus 1
+    _expectContains "$_stdoutFile" "Adjacent launcher is missing or unsafe" "unsafe-launcher failure"
+    _expectContains "$_stdoutFile" "version check failed" "tmux-version failure"
+    _expectContains "$_stdoutFile" "Doctor result: FAIL (2 failed checks)" "aggregated result"
+    _expectOnlyTmuxLogLine '-V'
+    _expectNoSleepCall
+
+    _newFixture executable
+    _setFixtureDefaultName "Invalid Name"
+    _runWrapper healthy --doctor
+    _expectStatus 1
+    _expectContains "$_stdoutFile" 'Configured default session name is invalid: Invalid\ Name' "invalid-default failure"
+    _expectContains "$_stdoutFile" "Doctor result: FAIL (1 failed checks)" "invalid-default result"
+    _expectOnlyTmuxLogLine '-V'
+
+    _newFixture executable
+    _emptyPath="$_caseDir/empty-path"
+    mkdir -p "$_emptyPath"
+    _runWrapperWithPath healthy "$_emptyPath" --doctor
+    _expectStatus 1
+    _expectContains "$_stdoutFile" "Required command 'dirname' was not found" "dirname failure"
+    _expectContains "$_stdoutFile" "Required command 'readlink' was not found" "readlink failure"
+    _expectContains "$_stdoutFile" "Required command 'sleep' was not found" "sleep failure"
+    _expectContains "$_stdoutFile" "Could not resolve the physical server directory" "directory failure"
+    _expectContains "$_stdoutFile" "tmux was not found" "tmux failure"
+    _expectContains "$_stdoutFile" "Doctor result: FAIL" "missing-tools result"
+    _expectEmpty "$_stderrFile" "structured doctor stderr"
+    _expectNoTmuxCall
+    _expectNoSleepCall
     _finishCase
 }
 
@@ -489,6 +663,37 @@ function _testAttachCommands {
     _finishCase
 }
 
+function _testListCommand {
+    _beginCase "list shows all current-user tmux sessions and preserves status"
+
+    _newFixture missing
+    _setFixtureDefaultName "Invalid Name"
+    _runWrapper list-sessions-present --list
+    _expectStatus 0
+    _expectEmpty "$_stderrFile" "stderr"
+    printf '%s\n' mcserver maintenance_session >"$_caseDir/expected-list"
+    _expectFilesEqual "$_caseDir/expected-list" "$_stdoutFile" "listed sessions"
+    _expectOnlyTmuxLogLine $'list-sessions\t-F\t#{session_name}'
+    _expectNoSleepCall
+
+    _newFixture missing
+    _runWrapper list-sessions-empty --list
+    _expectStatus 1
+    _expectEmpty "$_stdoutFile" "empty-list stdout"
+    _expectContains "$_stderrFile" "no server running on test socket" "empty-list diagnostic"
+    _expectOnlyTmuxLogLine $'list-sessions\t-F\t#{session_name}'
+    _expectNoSleepCall
+
+    _newFixture missing
+    _runWrapper list-sessions-failure --list
+    _expectStatus 17
+    _expectEmpty "$_stdoutFile" "failed-list stdout"
+    _expectContains "$_stderrFile" "list query failed" "list failure"
+    _expectOnlyTmuxLogLine $'list-sessions\t-F\t#{session_name}'
+    _expectNoSleepCall
+    _finishCase
+}
+
 function _testSiblingValidation {
     local _mode=""
 
@@ -500,6 +705,93 @@ function _testSiblingValidation {
         _expectContains "$_stderrFile" "must be a regular, non-symlink, readable and executable file" "sibling validation"
         _expectNoTmuxCall
     done
+    _finishCase
+}
+
+function _testDryRunCommand {
+    local _expectedCommand=""
+    local _tool=""
+    local _toolPath=""
+    local _toolSource=""
+
+    _beginCase "dry-run previews the exact launch without side effects"
+
+    _newFixture executable
+    _armSiblingMarker
+    _runWrapper healthy --dry-run mcserver-2
+    _expectStatus 0
+    _expectEmpty "$_stderrFile" "stderr"
+    _expectContains "$_stdoutFile" "Static launch preflight passed." "preflight result"
+    _expectContains "$_stdoutFile" "Session: mcserver-2" "session"
+    _expectContains "$_stdoutFile" "server\\ directory\\ with\\ spaces" "escaped server directory"
+    _expectContains "$_stdoutFile" "Startup check: 2 seconds (not performed)" "unperformed probe"
+    _expectContains "$_stdoutFile" "sleep executable:" "resolved sleep"
+    _expectContains "$_stdoutFile" "Session availability: not checked" "unqueried session"
+    # The Bash under test renders the same argument vector format as dry-run.
+    # shellcheck disable=SC2016
+    _expectedCommand=$("$_bashUnderTest" -c 'printf "Command:"; for argument in "$@"; do printf " %q" "$argument"; done; printf "\n"' \
+        _ "$_fakeTmux" new-session -d -P -F '#{pane_id}' -s mcserver-2 \
+        -c "$_caseServerDir" 'exec "./1MB-minecraft.sh"' ';' \
+        set-option -p -t '=mcserver-2:' remain-on-exit on)
+    _expectExactLine "$_stdoutFile" "$_expectedCommand" "launch command preview"
+    _expectContains "$_stdoutFile" "no tmux session was created" "side-effect notice"
+    _expectNotContains "$_stdoutFile" "tmux session started." "startup success"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+    _expectSiblingNotExecuted
+
+    _newFixture executable
+    _runWrapper healthy --dry-run
+    _expectStatus 0
+    _expectContains "$_stdoutFile" "Session: mcserver" "default session"
+    _expectContains "$_stdoutFile" "--status mcserver" "default status guidance"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+
+    _newFixture missing
+    _runWrapper healthy --dry-run mcserver
+    _expectStatus 1
+    _expectContains "$_stderrFile" "must be a regular, non-symlink, readable and executable file" "missing sibling"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+
+    _newFixture executable
+    _toolPath="$_caseDir/path-without-tmux"
+    mkdir -p "$_toolPath"
+    for _tool in dirname readlink sleep; do
+        _toolSource=$(PATH="$_originalPath" command -v "$_tool") || exit 2
+        ln -s "$_toolSource" "$_toolPath/$_tool"
+    done
+    _runWrapperWithPath healthy "$_toolPath" --dry-run mcserver
+    _expectStatus 1
+    _expectContains "$_stderrFile" "'tmux' is required but was not found" "missing tmux"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+    _finishCase
+}
+
+function _testMissingSleepPreflight {
+    local _toolPath=""
+
+    _beginCase "missing sleep fails start and dry-run before tmux"
+
+    _newFixture executable
+    _toolPath="$_caseDir/path-without-sleep"
+    _makeToolPathWithoutSleep "$_toolPath"
+    _runWrapperWithPath healthy "$_toolPath" --dry-run mcserver
+    _expectStatus 1
+    _expectContains "$_stderrFile" "'sleep' is required" "dry-run sleep dependency"
+    _expectNoTmuxCall
+    _expectNoSleepCall
+
+    _newFixture executable
+    _toolPath="$_caseDir/path-without-sleep"
+    _makeToolPathWithoutSleep "$_toolPath"
+    _runWrapperWithPath healthy "$_toolPath" --start mcserver
+    _expectStatus 1
+    _expectContains "$_stderrFile" "'sleep' is required" "startup sleep dependency"
+    _expectNoTmuxCall
+    _expectNoSleepCall
     _finishCase
 }
 
@@ -555,12 +847,36 @@ function _testArgumentsAndHelp {
     _runWrapper healthy --help
     _expectStatus 0
     _expectContains "$_stdoutFile" "Names use 1-32 lowercase ASCII letters" "name help"
+    _expectContains "$_stdoutFile" "--version" "version help"
+    _expectContains "$_stdoutFile" "--doctor" "doctor help"
+    _expectContains "$_stdoutFile" "--start [name]" "start help"
+    _expectContains "$_stdoutFile" "--list" "list help"
+    _expectContains "$_stdoutFile" "--dry-run [name]" "dry-run help"
+    _expectContains "$_stdoutFile" "all tmux session names visible to the current OS user" "list scope help"
     _expectNoTmuxCall
 
     _newFixture executable
     _runWrapper healthy --help extra
     _expectStatus 1
     _expectContains "$_stderrFile" "Unexpected extra arguments." "help arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --version extra
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Unexpected extra arguments." "version arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --doctor extra
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Unexpected extra arguments." "doctor arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --start mcserver extra
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Unexpected extra arguments." "start arity error"
     _expectNoTmuxCall
 
     _newFixture executable
@@ -576,9 +892,33 @@ function _testArgumentsAndHelp {
     _expectNoTmuxCall
 
     _newFixture executable
+    _runWrapper healthy --dry-run mcserver extra
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Unexpected extra arguments." "dry-run arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --list extra
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Unexpected extra arguments." "list arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
     _runWrapper healthy mcserver extra
     _expectStatus 1
     _expectContains "$_stderrFile" "Unexpected extra arguments." "startup arity error"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --start --help
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Invalid session name." "option-like start name"
+    _expectNoTmuxCall
+
+    _newFixture executable
+    _runWrapper healthy --dry-run "Invalid Name"
+    _expectStatus 1
+    _expectContains "$_stderrFile" "Invalid session name." "invalid dry-run name"
     _expectNoTmuxCall
 
     _newFixture executable
@@ -640,6 +980,9 @@ function _runBehaviorForBash {
     printf '\nBehavior tests with %s\n' "$_version"
 
     _testHealthyStart
+    _testExplicitStart
+    _testVersionCommand
+    _testDoctorCommand
     _testConfiguredDefaultName
     _testListFailureIsNonfatal
     _testDuplicateSession
@@ -659,7 +1002,10 @@ function _runBehaviorForBash {
     _testSleepFailure sleep-failure-restore-failure "could not restore normal close-on-exit behavior" "interrupted probe reports restore failure"
     _testStatusCommands
     _testAttachCommands
+    _testListCommand
     _testSiblingValidation
+    _testDryRunCommand
+    _testMissingSleepPreflight
     _testMissingTmux
     _testNames
     _testArgumentsAndHelp

@@ -42,9 +42,18 @@ Resources/Server/tests/1MB-start/run-tests.sh lint
 The behavior suite covers healthy startup, exact tmux targets, duplicate
 sessions, child exit statuses and signals, probe-boundary failures,
 `remain-on-exit` restoration, missing or invalid siblings, missing tmux,
-status and attach behavior, session-name validation, argument validation, and
-output return/stream behavior. The fake `sleep` makes the two-second liveness
-probe complete immediately.
+missing preflight `sleep`, status and attach behavior, session-name validation,
+argument validation, and output return/stream behavior. It also verifies
+dependency-free `--version`,
+aggregated read-only `--doctor` checks, exact `--start` aliasing, current-user
+`--list` output/status, and a `--dry-run` preview that invokes neither tmux nor
+sleep. The fake `sleep` makes the two-second liveness probe complete
+immediately.
+
+The fake tmux supports read-only `-V` and `list-sessions` scenarios in addition
+to the startup lifecycle. Tests assert that doctor never contacts a tmux
+session and that dry-run makes no tmux call at all, so these conveniences can
+also be used when reviewing future wrapper changes.
 
 Tests must not be run with `sudo`: the production wrapper deliberately refuses
 to run as root. When a test fails, its disposable state and tmux call log are

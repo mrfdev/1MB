@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.20.0, build 083 for Minecraft 26.1 (Java 25, 64bit)
-# @Release: March 25th, 2026
-# @Description: Helps us start a Spigot 26.1 server.
+# @Version: 2.21.0, build 084 for Minecraft 26.2 (Java 26, 64bit)
+# @Release: August 4th, 2026
+# @Description: Helps us start a Paper 26.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-minecraft.sh
@@ -17,14 +17,15 @@
 #
 ###
 
-_minecraftVersion="26.1"
+_minecraftVersion="26.2"
 # Which version are we running?
 
-_minJavaVersion=25
-# use 25 for java 25.0.2 which can be used with Minecraft 1.21.11+
-# use 24 for java 24.0.2 which can be used with Minecraft 1.21.8
-# use 23 for java 23.0.2 which can be used with Minecraft 1.21.4+
-# use 21 for java 21.0.2 which can be used with Minecraft 1.19.x+
+_minJavaVersion=26
+# use 26 for java 26.0.2 which can be used with Minecraft 26.2+
+# use 25 for java 25.0.4 which can be used with Minecraft 1.21.11+
+# use 24 for java 24.x which can be used with Minecraft 1.21.8
+# use 23 for java 23.x which can be used with Minecraft 1.21.4+
+# use 21 for java 21.x which can be used with Minecraft 1.19.x+
 
 _javaMemory="-Xms4G -Xmx4G"
 # "" = uses the default
@@ -37,7 +38,7 @@ _javaMemory="-Xms4G -Xmx4G"
 # Figure out optimal flags for your configuration here: https://flags.sh/
 
 # jvm startup parameters
-_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-access=ALL-UNNAMED --sun-misc-unsafe-memory-access=allow"
+_javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --sun-misc-unsafe-memory-access=allow -Xlog:gc*:logs/gc.log:time,uptime,level,tags:filecount=5,filesize=10M -XX:ErrorFile=logs/hs_err_pid%p.log"
 # -Dfile.encoding=UTF-8 (UTF-8 characters will be saved properly in the log files, and should correctly display in the console.)
 # -Dapple.awt.UIElement=true (Helps on macOS to not show icon in cmd-tab)
 # -Dhttps.protocols=TLSv1 (Temporary fix for older discordsrv, you can ignore this one probably)
@@ -52,7 +53,7 @@ _javaParams="-Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true --enable-native-ac
 # --sun-misc-unsafe-memory-access=allow (Remove unsafe warning during java24 jvm startup)
 
 # Override auto engine jar detection; only use this if you have issues
-_engine="paper"
+_engine="Paper"
 # spigot until paper jar is out
 # "" assumes auto detection for <engine>-26.1.x.jar 
 # "spigot" assumes to look for spigot-26.1.x.jar

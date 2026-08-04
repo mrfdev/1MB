@@ -76,6 +76,12 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Real startup failures remain nonzero and continue through their existing
   error paths when debug output is disabled.
 
+## Completed in 2.17.6 build 079
+
+- [x] Report `tmux session started.` after successful session creation instead
+  of implying that Paper completed startup. The wrapper can confirm tmux's
+  result, but it cannot confirm that Paper reached its ready state.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup

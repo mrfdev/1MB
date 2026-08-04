@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.1, build 074 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.2, build 075 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -79,11 +79,10 @@ if ! type "tmux" >/dev/null 2>&1; then
     _output oops "'tmux' is required but was not found. On macOS, install it with: brew install tmux"
 fi
 
-_output debug "Found 'tmux', attempting to create and fork a new tmux session into background ..."
-if ! tmux new -d -s "$_serverName" 2>/dev/null; then
-    _output oops "Could not create the '$_serverName' tmux session. It may already exist; check with 'tmux ls'."
+_output debug "Found 'tmux', attempting to start '$_sibling' in a detached tmux session ..."
+if ! tmux new-session -d -s "$_serverName" "exec \"./$_sibling\""; then
+    _output oops "Could not create the '$_serverName' tmux session and start '$_sibling'. Review the tmux error above and check with 'tmux ls'."
 fi
-tmux send-keys -t "$_serverName" "./$_sibling" ENTER
 [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
 
 _output debug "Done."

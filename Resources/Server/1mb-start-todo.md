@@ -39,6 +39,16 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Added a focused macOS installation hint: `brew install tmux`. Ubuntu
   installation guidance is intentionally omitted.
 
+## Completed in 2.17.2 build 075
+
+- [x] Replaced the separate `tmux new` and `tmux send-keys` operations with one
+  checked `tmux new-session -d` command that directly executes
+  `1MB-minecraft.sh`.
+- [x] Made the approved lifecycle explicit: the tmux session closes when
+  `1MB-minecraft.sh` exits, so a stopped or crashed server does not leave a
+  stale shell session behind.
+- [x] Stopped suppressing tmux's own session-creation error output.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -49,11 +59,12 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Resolve `1MB-minecraft.sh` relative to the wrapper's own directory, not
   the caller's current working directory. This is required for reliable
   launchd, systemd, SSH, and absolute-path invocation.
-- [ ] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
+- [x] Replace the two-stage `tmux new` plus `tmux send-keys` launch with one
   checked, atomic `tmux new-session -d` command that starts the sibling
-  directly.
-- [ ] Preserve and report tmux failures accurately. Do not suppress the useful
-  tmux diagnostic or print `Done` after a failed child launch.
+  directly. Completed in `2.17.2`, build `075`.
+- [ ] Detect and report when the child exits immediately after tmux successfully
+  creates the session. The tmux command confirms session creation, not that
+  Paper completed startup.
 - [ ] Fix `_debug=false`: the final debug call currently returns status `1`, so
   an otherwise successful wrapper exits as a failure when debug output is
   disabled.
@@ -68,16 +79,17 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [ ] Stop splitting and truncating the requested session name before
   validation. Validate the complete input and length, reject invalid or
   overlong names, and reject unexpected extra arguments.
-- [ ] Decide whether the tmux session should close when
-  `1MB-minecraft.sh` exits. Starting the script as the pane's direct process
-  avoids the current stale shell/session after Paper stops.
+- [x] Close the tmux session when `1MB-minecraft.sh` exits. Approved and
+  completed in `2.17.2`, build `075`; the launcher is now the pane's direct
+  process.
 - [ ] Establish deterministic command discovery for non-login environments.
   Account for Apple Silicon Homebrew (`/opt/homebrew/bin`), Intel Homebrew
   (`/usr/local/bin`), and standard macOS/Ubuntu paths.
 - [x] Remove the implicit foreground fallback. Completed in `2.17.1`, build
   `074`; a missing tmux executable now fails clearly.
-- [ ] Use exact tmux targets such as `-t "=$name"` in scripted checks so prefix
-  matching cannot select another session.
+- [x] Remove the scripted tmux target lookup. Completed in `2.17.2`, build
+  `075`; the atomic launch no longer uses `send-keys` against a separate
+  session target.
 
 ## Low priority and cleanup
 
@@ -133,8 +145,7 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Compatibility decisions before the next larger revision
 
-1. Confirm whether the tmux session should disappear when Paper stops.
-2. Confirm whether session names remain letters-only or expand to a documented
+1. Confirm whether session names remain letters-only or expand to a documented
    safe character set.
-3. Confirm which quality-of-life commands, if any, belong in this intentionally
+2. Confirm which quality-of-life commands, if any, belong in this intentionally
    small wrapper.

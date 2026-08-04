@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.1, build 074 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.3, build 076 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -61,8 +61,48 @@ function _output {
     esac
 }
 
+function _resolveScriptDirectory {
+    local _source="${BASH_SOURCE[0]}"
+    local _sourceDir=""
+    local _linkTarget=""
+    local _linkDepth=0
+
+    case "$_source" in
+    */*)
+        ;;
+    *)
+        if [ -e "$_source" ] || [ -L "$_source" ]; then
+            _source="./$_source"
+        else
+            _source=$(command -v "$_source") || return 1
+        fi
+        ;;
+    esac
+
+    while [ -L "$_source" ]; do
+        _linkDepth=$((_linkDepth + 1))
+        [ "$_linkDepth" -gt 40 ] && return 1
+
+        _sourceDir=$(cd -P -- "$(dirname -- "$_source")" >/dev/null 2>&1 && pwd -P) || return 1
+        _linkTarget=$(readlink "$_source") || return 1
+
+        case "$_linkTarget" in
+        /*) _source="$_linkTarget" ;;
+        *) _source="$_sourceDir/$_linkTarget" ;;
+        esac
+    done
+
+    cd -P -- "$(dirname -- "$_source")" >/dev/null 2>&1 && pwd -P
+}
+
 [ "$EUID" -eq 0 ] && _output oops "*!* This script should not be run using sudo, or as the root user!"
-[ ! -x "$_sibling" ] && _output oops "This '$0' script requires '$_sibling' to work and be executable. Correct the permissions, or download it from https://scripts.1moreblock.com/ "
+
+_scriptDir=$(_resolveScriptDirectory) || _output oops "Could not resolve the server directory containing '$0'."
+_siblingPath="$_scriptDir/$_sibling"
+
+if [ ! -f "$_siblingPath" ] || [ ! -r "$_siblingPath" ] || [ ! -x "$_siblingPath" ]; then
+    _output oops "This '$0' script requires '$_siblingPath' to be a readable and executable file. Correct the permissions, or download it from https://scripts.1moreblock.com/ "
+fi
 
 if [ -n "$1" ]; then
     _input=$(echo "$1" | awk '{ print tolower($1) }'); _input=$(echo "${_input}" | awk '{print substr ($0, 0, 16)}');
@@ -74,16 +114,16 @@ if [ -n "$1" ]; then
 fi
 
 _output debug "Attempting to start your Minecraft '$_serverName' server ... "
+_output debug "Using server directory: $_scriptDir"
 
 if ! type "tmux" >/dev/null 2>&1; then
     _output oops "'tmux' is required but was not found. On macOS, install it with: brew install tmux"
 fi
 
-_output debug "Found 'tmux', attempting to create and fork a new tmux session into background ..."
-if ! tmux new -d -s "$_serverName" 2>/dev/null; then
-    _output oops "Could not create the '$_serverName' tmux session. It may already exist; check with 'tmux ls'."
+_output debug "Found 'tmux', attempting to start '$_sibling' in a detached tmux session ..."
+if ! tmux new-session -d -s "$_serverName" -c "$_scriptDir" "exec \"./$_sibling\""; then
+    _output oops "Could not create the '$_serverName' tmux session and start '$_sibling'. Review the tmux error above and check with 'tmux ls'."
 fi
-tmux send-keys -t "$_serverName" "./$_sibling" ENTER
 [[ "$_debug" == true ]] && tmux ls; _output debug "To re-attach: tmux attach -t $_serverName"
 
 _output debug "Done."

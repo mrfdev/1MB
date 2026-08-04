@@ -59,6 +59,15 @@ scoped fix. The file's missing final newline was normalized mechanically.
 - [x] Give tmux the resolved server directory explicitly with `new-session -c`
   and validate the sibling through its resolved absolute path.
 
+## Completed in 2.17.4 build 077
+
+- [x] Replaced `echo -e` with Bash's built-in `printf` using fixed format
+  strings and `%s` message arguments.
+- [x] Emit ANSI colours only when the actual output destination is a terminal
+  and `NO_COLOR` is not set. Stdout and stderr are checked independently.
+- [x] Made output-function state local and removed the undefined `B` and `X`
+  colour variables.
+
 ## Critical
 
 - [x] Stop immediately when tmux session creation fails; never send startup
@@ -104,12 +113,14 @@ scoped fix. The file's missing final newline was normalized mechanically.
 
 ## Low priority and cleanup
 
-- [ ] Replace `echo -e` with Bash's built-in `printf`.
-- [ ] Make output-function variables local, initialize or remove the undefined
-  `B` and `X` color variables, and correct the `okay` branch so it does not exit
+- [x] Replace `echo -e` with Bash's built-in `printf`. Completed in `2.17.4`,
+  build `077`.
+- [x] Make output-function variables local and remove the undefined `B` and `X`
+  colour variables. Completed in `2.17.4`, build `077`.
+- [ ] Correct the `okay` branch so a successful status message does not exit
   with status `1`.
-- [ ] Emit ANSI colors only to an interactive terminal and honor `NO_COLOR` so
-  launchd/systemd logs remain clean.
+- [x] Emit ANSI colours only to an interactive terminal and honor `NO_COLOR`
+  so launchd/systemd logs remain clean. Completed in `2.17.4`, build `077`.
 - [x] Verify that the sibling is a regular readable and executable file, and
   include its absolute path in errors. Completed in `2.17.3`, build `076`.
 - [x] Remove the obsolete Screen and Ubuntu dependency hints. Completed in

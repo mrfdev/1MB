@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-start.sh
-# @Version: 2.17.3, build 076 for Minecraft 26.2 (Java 25, 64bit)
+# @Version: 2.17.4, build 077 for Minecraft 26.2 (Java 25, 64bit)
 # @Release: August 4th, 2026
 # @Description: Helps us start and fork a Minecraft 26.2 server session.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
@@ -32,8 +32,6 @@ _serverName="mcserver"
 _sibling="1MB-minecraft.sh"
 _debug=true # Set to false to minimize output.
 
-Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
-
 ### FUNCTIONS AND CODE
 #
 # ! WE ARE DONE, STOP EDITING BEYOND THIS POINT !
@@ -41,22 +39,40 @@ Y="\\033[33m"; C="\\033[36m"; R="\\033[0m" # theme
 ###
 
 function _output {
-    case "$1" in
+    local _mode="${1:-}"
+    local _args=""
+    local _prefix=""
+    local _fd=1
+    local _yellow=""
+    local _cyan=""
+    local _reset=""
+
+    case "$_mode" in
+    oops|okay) _fd=2 ;;
+    esac
+
+    if [ -z "${NO_COLOR+x}" ] && [ -t "$_fd" ]; then
+        printf -v _yellow '\033[33m'
+        printf -v _cyan '\033[36m'
+        printf -v _reset '\033[0m'
+    fi
+
+    case "$_mode" in
     oops)
         _args="${*:2}"; _prefix="(Script Halted!)";
-        echo -e "\\n$B$Y$_prefix$X $_args $R" >&2; exit 1
+        printf '\n%s%s %s%s\n' "$_yellow" "$_prefix" "$_args" "$_reset" >&2; exit 1
     ;;
     okay)
         _args="${*:2}"; _prefix="(Info)";
-        echo -e "\\n$B$Y$_prefix$C $_args $R" >&2; exit 1
+        printf '\n%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset" >&2; exit 1
     ;;
     debug)
         _args="${*:2}"; _prefix="(Debug)";
-        [[ "$_debug" == true ]] && echo -e "$Y$_prefix$C $_args $R"
+        [[ "$_debug" == true ]] && printf '%s%s%s %s%s\n' "$_yellow" "$_prefix" "$_cyan" "$_args" "$_reset"
     ;;
     *)
         _args="${*:1}"; _prefix="(Info)";
-        echo -e "\\n$_prefix $_args"
+        printf '\n%s %s\n' "$_prefix" "$_args"
     ;;
     esac
 }

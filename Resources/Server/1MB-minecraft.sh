@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.22.0, build 085 for Minecraft 26.2 (Java 26, 64bit)
-# @Release: August 22nd, 2026
+# @Version: 2.23.0, build 086 for Minecraft 26.2 (Java 25-26, 64bit)
+# @Release: September 15th, 2026
 # @Description: Helps us start a Paper 26.2 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
@@ -20,12 +20,11 @@
 _minecraftVersion="26.2"
 # Which version are we running?
 
-_minJavaVersion=26
-# use 26 for java 26.0.2 which can be used with Minecraft 26.2+
-# use 25 for java 25.0.4 which can be used with Minecraft 1.21.11+
-# use 24 for java 24.x which can be used with Minecraft 1.21.8
-# use 23 for java 23.x which can be used with Minecraft 1.21.4+
-# use 21 for java 21.x which can be used with Minecraft 1.19.x+
+_minJavaVersion=25
+_maxJavaVersion=26
+# Inclusive Java major-version bounds: 25 and 26 (including all patch releases).
+# Auto-discovery skips Java outside this range, even when it is the system default.
+# Set both to 25 to require Java 25, or use min=26/max=27 when ready for that range.
 
 _javaMemory="-Xms4G -Xmx4G"
 # "" = uses the default
@@ -83,8 +82,8 @@ _noGui="--nogui"
 ###
 
 _javaBin=""
-# Leave empty for auto-discovery of java path, and
-# if this fails, you could hard code the path, as exampled below:
+# Leave empty for auto-discovery, or set an executable path as shown below.
+# A manual path must also satisfy _minJavaVersion and _maxJavaVersion.
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-25.0.2.jdk/Contents/Home/bin/java"
 # _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
 
@@ -125,38 +124,69 @@ _launcherDir=$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd) || \
     _output oops "Could not resolve the directory containing ${BASH_SOURCE[0]}."
 cd -- "$_launcherDir" || _output oops "Could not enter the server directory: $_launcherDir"
 
-# 'better comparing' fix to replace: function version_gt() { test "$(printf '%s\n' "$@"|sort -V|head -n 1)" -ge "$1"; }
-function version_gt() {
-    local result="$1"
-    local value="$2"
+function binExists() { type "$1">/dev/null 2>&1; }
 
-    # When the versions (strings) has fewer components we need to properly split the version strings into arrays
-    IFS='.' read -ra result_parts <<< "$result"
-    IFS='.' read -ra value_parts <<< "$value"
+function _tryJavaBin() {
+    local _candidate="$1"
+    local _versionOutput=""
+    local _major=""
 
-    # So we can then compare each part of the version (using 0 for missing parts).
-    for ((i = 0; i < ${#value_parts[@]}; i++)); do
-        result_part="${result_parts[i]:-0}"
-        value_part="${value_parts[i]}"
+    _javaVersion=""
+    [[ -f "$_candidate" && -x "$_candidate" ]] || return 1
+    _versionOutput=$("$_candidate" -version 2>&1) || return 1
+    _javaVersion=$(printf '%s\n' "$_versionOutput" | awk -F '"' '/^(java|openjdk) version "/ {print $2; exit}')
+    # Compare major versions, so max=26 also accepts versions such as 26.0.2.1.
+    _major=${_javaVersion#1.}
+    [[ "$_major" =~ ^([1-9][0-9]*)([.+-]|$) ]] || return 1
+    _major=${BASH_REMATCH[1]}
+    if (( _major < _minJavaVersion || _major > _maxJavaVersion )); then
+        _output debug "Skipping Java $_javaVersion at $_candidate (allowed: $_minJavaVersion-$_maxJavaVersion)."
+        return 1
+    fi
 
-        if [[ "$result_part" -gt "$value_part" ]]; then
-            # true
-            return 0
-        elif [[ "$result_part" -lt "$value_part" ]]; then
-            # false
-            return 1
-        fi
-    done
-
-    # return true when they're equal or have fewer components.
+    _javaBin="$_candidate"
+    _output debug "Selected Java $_javaVersion at $_javaBin (allowed: $_minJavaVersion-$_maxJavaVersion)."
     return 0
 }
 
-function binExists() { type "$1">/dev/null 2>&1; }
-function binDetails() {
-    _cmd="$1"
-    _cmdpath=$(command -V "$_cmd" | awk '{print $3}')
-    _cmdversion=$($_cmd -version 2>&1 | awk -F '"' '/version/ {print $2}')
+function _selectJava() {
+    local _candidate=""
+    local _javaHome=""
+    local _major=""
+
+    [[ "$_minJavaVersion" =~ ^[1-9][0-9]*$ && "$_maxJavaVersion" =~ ^[1-9][0-9]*$ ]] || \
+        _output oops "_minJavaVersion and _maxJavaVersion must be positive whole Java major versions (for example, 25 and 26)."
+    (( _minJavaVersion <= _maxJavaVersion )) || \
+        _output oops "_minJavaVersion ($_minJavaVersion) must not exceed _maxJavaVersion ($_maxJavaVersion)."
+
+    if [[ -n "$_javaBin" ]]; then
+        _tryJavaBin "$_javaBin" && return 0
+        _output oops "Configured _javaBin ($_javaBin) is not an executable Java in the allowed range $_minJavaVersion-$_maxJavaVersion (reported version: ${_javaVersion:-unknown}). Fix the path or leave it empty for auto-discovery."
+    fi
+
+    # Keep a compatible PATH Java; also try later PATH entries if the first is unsuitable.
+    while IFS= read -r _candidate; do
+        _tryJavaBin "$_candidate" && return 0
+    done < <(type -aP java 2>/dev/null)
+
+    if [[ -n "${JAVA_HOME:-}" ]]; then
+        _tryJavaBin "$JAVA_HOME/bin/java" && return 0
+    fi
+
+    # macOS: ask for each allowed major, newest first. -F prevents default fallback.
+    if [[ -x /usr/libexec/java_home ]]; then
+        for (( _major = _maxJavaVersion; _major >= _minJavaVersion; _major-- )); do
+            _javaHome=$(/usr/libexec/java_home -F -v "$_major" 2>/dev/null) || continue
+            _tryJavaBin "$_javaHome/bin/java" && return 0
+        done
+    fi
+
+    # Common Linux JDK locations, including installations not on PATH.
+    for _candidate in /usr/lib/jvm/*/bin/java /usr/java/*/bin/java /opt/java/*/bin/java; do
+        _tryJavaBin "$_candidate" && return 0
+    done
+
+    _output oops "No executable Java in the allowed range $_minJavaVersion-$_maxJavaVersion was found. Install a supported JDK or set _javaBin to its bin/java path."
 }
 
 function _lowercaseValue() {
@@ -544,32 +574,7 @@ PY
     fi
 }
 
-if binExists "java"; then
-    binDetails "java"
-    if version_gt "$_cmdversion" "$_minJavaVersion"; then
-        if [ -z "$_javaBin" ]; then
-            _output debug "_javaBin is empty, trying to auto discover java .."
-            if [ -z "$_cmdpath" ]; then
-                _output oops "Path to java bin was found empty, maybe set _javaBin manually"
-            else
-                _output debug "Path to java ($_cmdversion) auto discovered: $_cmdpath"
-                _javaBin="$_cmdpath"
-            fi
-        else
-            # todo: Reconsider how to approach this, if _javaBin is set, check that. If that fails, try auto discovery.
-            if [[ -f "$_javaBin" ]]; then
-                _output debug "Path to java was set in _javaBin, found it and trying to use this instead of auto discovery."
-            else
-                _output oops "Could not find $_javaBin, leave _javaBin empty for auto discovery or install java properly."
-            fi
-        fi
-        _output debug "Installed $_cmd version $_cmdversion is newer than $_minJavaVersion (this is great)!"
-    else
-        _output oops "Installed $_cmd version $_cmdversion is NOT newer \\n -> Please upgrade to the minimal required version: $_minJavaVersion "
-    fi
-else
-    _output oops "java was not found, please install it for this operating system \\n -> https://www.digitalocean.com/community/tutorials?q=install+java"
-fi
+_selectJava
 
 # before we continue, let's select the latest matching Paper build or a legacy fallback
 _claimLauncherRunLock
@@ -578,8 +583,9 @@ _recordLastLaunchedJar
 
 [[ "$_eula" == true ]] && _javaParams="${_javaParams} -Dcom.mojang.eula.agree=true"
 
-_startJVM="$_javaBin $_javaMemory $_javaParams -jar $_engineJar $_engineParams $_noGui"
-$_startJVM <&0 &
+# Keep executable and jar paths intact; configured flag strings retain word splitting.
+# shellcheck disable=SC2086
+"$_javaBin" $_javaMemory $_javaParams -jar "$_engineJar" $_engineParams $_noGui <&0 &
 _jvmPid=$!
 wait "$_jvmPid"
 _jvmStatus=$?

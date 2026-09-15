@@ -42,7 +42,7 @@ We operate a **standalone Minecraft 26.2 server** using [Paper 26.2 server softw
 | Website         | [https://www.1moreblock.com](https://www.1moreblock.com) |
 | Discord         | [https://discord.gg/floris](https://discord.gg/floris) |
 | Wiki (WIP)      | [https://docs.1moreblock.com](https://docs.1moreblock.com/) |
-| Rules           | [https://www.1moreblock.com](https://www.1moreblock.com) |
+| Rules           | [https://rules.1moreblock.com](https://rules.1moreblock.com/) |
 | Voting          | [https://omgboards.com/vote](https://omgboards.com/vote) |
 | Live-map        | [http://1moreblock.com:8100](http://1moreblock.com:8100) |
 | Community stats | [https://stats.1moreblock.com](https://stats.1moreblock.com) |

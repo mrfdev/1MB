@@ -22,7 +22,7 @@ _minecraftVersion="26.3"
 
 _minJavaVersion=25
 _maxJavaVersion=27
-# Inclusive Java major-version bounds: 25 and 26 (including all patch releases).
+# Inclusive Java major-version bounds: 25 and 27 (including all patch releases).
 # Auto-discovery skips Java outside this range, even when it is the system default.
 # Set both to 25 to require Java 25, or use min=26/max=27 when ready for that range.
 
@@ -84,8 +84,8 @@ _noGui="--nogui"
 _javaBin=""
 # Leave empty for auto-discovery, or set an executable path as shown below.
 # A manual path must also satisfy _minJavaVersion and _maxJavaVersion.
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-25.0.2.jdk/Contents/Home/bin/java"
-# _javaBin="/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/jdk-25.0.4.1.jdk/Contents/Home/bin/java"
+# _javaBin="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin/java"
 
 _debug=true
 # Debug mode off or on? Default: false (true means it spits out progress)

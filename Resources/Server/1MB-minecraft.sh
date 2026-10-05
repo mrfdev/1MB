@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # @Filename: 1MB-minecraft.sh
-# @Version: 2.23.0, build 086 for Minecraft 26.2 (Java 25-26, 64bit)
-# @Release: September 15th, 2026
-# @Description: Helps us start a Paper 26.2 server.
+# @Version: 2.23.1, build 087 for Minecraft 26.3 (Java 25-27, 64bit)
+# @Release: October 6th, 2026
+# @Description: Helps us start a Paper 26.3 server.
 # @Contact: I am @floris on Twitter, and mrfloris in MineCraft.
 # @Discord: @mrfloris on https://discord.gg/floris
 # @Install: chmod +x 1MB-minecraft.sh
@@ -17,11 +17,11 @@
 #
 ###
 
-_minecraftVersion="26.2"
+_minecraftVersion="26.3"
 # Which version are we running?
 
 _minJavaVersion=25
-_maxJavaVersion=26
+_maxJavaVersion=27
 # Inclusive Java major-version bounds: 25 and 26 (including all patch releases).
 # Auto-discovery skips Java outside this range, even when it is the system default.
 # Set both to 25 to require Java 25, or use min=26/max=27 when ready for that range.
